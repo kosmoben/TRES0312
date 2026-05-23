@@ -670,28 +670,26 @@
 }
 
 % ============================
-% Spørsmål (gul, avrundet)
+% Spørsmål (dempet, flat)
 % ============================
+\definecolor{spmcol}{HTML}{F4F3EE}   % veldig svakt varm grå
 
 \NewDocumentCommand{\spm}{m+m}{
     \begin{tcolorbox}[
         enhanced,
         breakable,
-        arc=5mm,
-        boxrule=1.2pt,
-        colframe=yellow!65!orange,
-        titlerule=0mm,
-        toptitle=2mm,
-        bottomtitle=2mm,
-        fonttitle=\bfseries\large,
-        coltitle=black,
-        title={Spørsmål vi jobber med i dette kapitlet #1},
-        colbacktitle=yellow!60!white,
-        colback=yellow!18!white,
+        arc=2mm,
+        boxrule=0pt,
+        colframe=spmcol,
+        colback=spmcol,
+        top=8pt, bottom=4pt, left=10pt, right=10pt,
         before skip=10pt,
         after skip=10pt,
     ]
-        #2
+        {\bfseries Spørsmål vi jobber med i dette kapitlet #1}
+        \begin{enumerate}[1.]
+            #2
+        \end{enumerate}
     \end{tcolorbox}
 }
 
@@ -702,9 +700,9 @@
 \newtcbtheorem[number within=chapter]{myoppgave}{Oppgave}
 {
     enhanced,
-    arc=3mm,
-    boxrule=0.8pt,
-    colframe=oppgcol!80!black,
+    arc=1mm,
+    boxrule=0pt,
+    colframe=oppgcol!7!white,
     colbacktitle=oppgcol!22!white,
     colback=oppgcol!7!white,
     fonttitle=\bfseries\large,
@@ -775,7 +773,7 @@
 % ============================
 % Python kode
 % ============================
-\definecolor{codebg}{HTML}{F8F1E8}   % veldig svakt varm brun bakgrunn
+\definecolor{codebg}{HTML}{EEECE9}   % veldig svakt varm grå
 \definecolor{codekey}{HTML}{1A6B9A}
 \definecolor{codestr}{HTML}{2D7A4F}
 \definecolor{codecmt}{HTML}{888888}
@@ -789,13 +787,13 @@
     commentstyle=\color{codecmt}\itshape,
     numberstyle=\tiny\color{codenum},
     numbers=left,
-    numbersep=8pt,
+    numbersep=5pt,
     stepnumber=1,
     showstringspaces=false,
     tabsize=4,
     breaklines=true,
     frame=none,
-    xleftmargin=4pt,
+    xleftmargin=16pt,
     xrightmargin=4pt,
     aboveskip=0pt,
     belowskip=0pt,
