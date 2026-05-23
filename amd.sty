@@ -702,7 +702,6 @@
 \newtcbtheorem[number within=chapter]{myoppgave}{Oppgave}
 {
     enhanced,
-    breakable,
     arc=3mm,
     boxrule=0.8pt,
     colframe=oppgcol!80!black,
@@ -776,7 +775,7 @@
 % ============================
 % Python kode
 % ============================
-\definecolor{codebg}{HTML}{F0F4F8}
+\definecolor{codebg}{HTML}{F8F1E8}   % veldig svakt varm brun bakgrunn
 \definecolor{codekey}{HTML}{1A6B9A}
 \definecolor{codestr}{HTML}{2D7A4F}
 \definecolor{codecmt}{HTML}{888888}
@@ -805,9 +804,9 @@
 \newtcblisting{pythonkode}{
     enhanced,
     breakable,
-    arc=3mm,
-    boxrule=0.8pt,
-    colframe=codekey!60,
+    arc=0mm,
+    boxrule=0pt,
+    colframe=codebg,
     colback=codebg,
     top=4pt, bottom=4pt, left=4pt, right=4pt,
     before skip=10pt, after skip=10pt,
