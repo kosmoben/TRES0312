@@ -1,0 +1,816 @@
+%--------------------------------------------------------------------------
+% 		GEOMETRY
+%--------------------------------------------------------------------------
+\ProvidesPackage{mystyle}[2024/07/08 Custom LaTeX Style]
+
+\RequirePackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+%--------------------------------------------------------------------------
+% 		GRAPHICS
+%--------------------------------------------------------------------------
+
+%-------		PACKAGES		-------
+
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{tkz-tab}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, arrows}
+\RequirePackage{varwidth}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{colortbl}
+\tcbuselibrary{listings}
+\usetikzlibrary{shadows,shadows.blur,shapes.misc, positioning}
+
+
+%--------------------------------------------------------------------------
+% 		WRITING PACKAGES & COMMANDS
+%--------------------------------------------------------------------------
+
+%-------		PACKAGES		-------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\RequirePackage{lipsum}
+\RequirePackage{csquotes}
+\RequirePackage{enumerate}
+\RequirePackage[shortlabels,inline]{enumitem}
+\RequirePackage{subfiles}
+\RequirePackage{cancel}
+\RequirePackage[norwegian]{babel} %Language
+
+%--------------------------------------------------------------------------
+% 		MATH PACKAGES & COMMANDS
+%--------------------------------------------------------------------------
+
+
+%-------		PACKAGES		-------
+\RequirePackage{amsmath, amsthm, amssymb, amsfonts}
+\RequirePackage{thmtools}
+\tcbuselibrary{theorems,skins,breakable}
+
+\RequirePackage{mathtools}
+\RequirePackage{dsfont}
+\newcommand{\1}{\mathds 1}
+\newcommand{\A}{\mathcal A}
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\BB}{\mathbb B}
+\newcommand{\C}{\mathcal C}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\DD}{\mathbb D}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\G}{\mathcal G}
+\newcommand{\GG}{\mathbb G}
+\renewcommand{\H}{\mathcal H}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\I}{\mathcal I}
+\newcommand{\II}{\mathbb I}
+\newcommand{\J}{\mathcal J}
+\newcommand{\JJ}{\mathbb J}
+\newcommand{\K}{\mathcal K}
+\newcommand{\KK}{\mathbb K}
+\renewcommand{\L}{\mathcal L}
+\newcommand{\LL}{\mathbb L}
+\newcommand{\M}{\mathcal M}
+\newcommand{\MM}{\mathbb M}
+\newcommand{\N}{\mathcal N}
+\newcommand{\NN}{\mathbb N}
+\renewcommand{\O}{\mathcal O}
+\newcommand{\OO}{\mathbb O}
+\renewcommand{\P}{\mathcal P}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\R}{\mathcal R}
+\newcommand{\RR}{\mathbb R}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\SS}{\mathbb S}
+\newcommand{\T}{\mathcal T}
+\newcommand{\TT}{\mathbb T}
+\newcommand{\U}{\mathcal U}
+\newcommand{\UU}{\mathbb U}
+\newcommand{\VV}{\mathbb V}
+\newcommand{\W}{\mathcal W}
+\newcommand{\WW}{\mathbb W}
+\newcommand{\X}{\mathcal X}
+\newcommand{\XX}{\mathbb X}
+\newcommand{\Y}{\mathcal Y}
+\newcommand{\YY}{\mathbb Y}
+\newcommand{\Z}{\mathcal Z}
+\newcommand{\ZZ}{\mathbb Z}
+
+% Functions
+\newcommand{\expo}[1]{\exp{\left\{#1\right\}}}
+\newcommand{\lno}[1]{\ln{\left\{#1\right\}}}
+\def\doubleunderline#1{\underline{\underline{#1}}}
+
+%--------------------------------------------------------------------------
+% 		COLORS & LINKS
+%--------------------------------------------------------------------------
+\RequirePackage{xcolor}
+\definecolor{mycolor}{RGB}{38,168,148}
+\definecolor{linkscolor}{RGB}{0,60,140}
+\definecolor{citescolor}{RGB}{100,30,30}
+\definecolor{urlscolor}{RGB}{100,80,0}
+
+% Theorem / box colors
+\definecolor{oppsumcol}{rgb}{0.8,0.5,0}
+\definecolor{merkcol}{HTML}{ecd8d7}
+\definecolor{defscol}{HTML}{449944}
+\definecolor{asumscol}{HTML}{ecd8d7}
+\definecolor{tipscol}{HTML}{ecd8d7}
+\definecolor{rmkscol}{HTML}{313160}
+\definecolor{exmscol}{HTML}{e04b52}
+\definecolor{lemscol}{HTML}{2c3943}
+\definecolor{thmscol}{HTML}{595765}
+\definecolor{prpscol}{HTML}{9c98b1}
+\definecolor{corscol}{HTML}{dfd9fd}
+\definecolor{clmscol}{HTML}{165c58}
+\definecolor{facscol}{HTML}{28a8a1}
+\definecolor{oppgcol}{HTML}{1A6B9A}
+
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor=linkscolor,
+  citecolor=citescolor,
+  urlcolor=urlscolor,
+  linktoc=all
+}
+
+%--------------------------------------------------------------------------
+% 		HEADER & FOOTER
+%--------------------------------------------------------------------------
+% ----- Header and footer -----
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+
+\definecolor{headCol}{cmyk}{1,.60,0,.40}
+
+
+\fancyhead[RO,LE]{%
+  \tikz[baseline=(char.base)]{
+    \node[shape=rectangle,fill=headCol,text=white,inner sep=2pt] (char) {\thepage};
+  }
+} % Page number in a small black box
+
+\fancyhead[RE,LO]{\nouppercase{\leftmark}} % chapter name and number on the right for even pages and left for odd pages in the header
+\renewcommand{\headrulewidth}{2pt} % sets thickness of header line
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyfoot{} % removes page number on bottom of page
+
+% ----- Header of the frontpage -----
+\fancypagestyle{frontpage}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\vspace*{1\baselineskip}
+
+	\fancyhead[R]{École Nationale de Commerce et de Gestion
+	\linebreak       Casablanca, 2020\vspace*{.5\baselineskip}}
+ % change to nhhlogo1.png for golden NHH logo
+}
+
+% %--------------------------------------------------------------------------
+% % 		Chapters and sections
+% %--------------------------------------------------------------------------
+\renewcommand\thesubsubsection{\arabic{subsection}.\roman{subsubsection}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesection{\arabic{section}}
+
+\makeatletter
+\@addtoreset{chapter}{part} % for numberring
+\makeatother
+
+\RequirePackage[titles]{tocloft}
+
+\RequirePackage{titletoc}
+% Define a new command to create per-chapter mini-TOCs
+\newcommand{\chaptertoc}{%
+    \startcontents[chapters]
+    \printcontents[chapters]{}{1}{\setcounter{tocdepth}{1}}
+    \vspace{0.5cm}
+}
+
+\newcommand{\introTo}[1]{
+    \noindent
+\begin{minipage}[t]{0.48\textwidth}
+\chaptertoc
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    #1
+\end{minipage}
+\newpage
+}
+
+\newcommand{\intro}[1]{
+\noindent
+\chaptertoc
+#1
+}
+
+
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{titlesec}
+%%%%%%%%%%%%%%%%%%%%%%Kapittel%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}[display]
+{\centering\normalfont\Huge}
+{\titlerule[1pt]\vspace{3pt}\titlerule[2pt]\vspace{3pt}\textbf{\MakeUppercase{\chaptername} \thechapter}}
+{0pt}
+{\titlerule[2pt]\vspace{1pc}\Huge\MakeUppercase{#1}}
+
+\titleformat{name=\chapter,numberless}[display]
+{  \centering\normalfont\Huge}
+{\titlerule[2pt]\vspace{-20pt}}
+{0pt}
+{\Huge\MakeUppercase{#1} \addcontentsline{toc}{chapter}{#1} }
+
+
+
+
+% %--------------------------------------------------------------------------
+% %         Tables et figures
+% %--------------------------------------------------------------------------
+\RequirePackage{subcaption}
+\RequirePackage{chngcntr} % needed for correct table numbering
+\renewcommand{\thefigure}{\thepart.\thechapter.\thesection.\arabic{figure}}
+\counterwithin{table}{chapter} % numbering of tables
+\counterwithin{figure}{chapter} % numbering of figures
+\numberwithin{equation}{chapter} % numbering of equations
+
+\RequirePackage{array}
+\RequirePackage[rightcaption]{sidecap}
+\RequirePackage{wrapfig}
+\RequirePackage{float}
+\RequirePackage[labelfont=bf]{caption} % bold text for captions
+% \RequirePackage[para]{threeparttable} % fancy  tables, check these before you use them
+\RequirePackage{makecell}
+\RequirePackage{hhline}
+
+
+
+% %--------------------------------------------------------------------------
+% %         Bibliographie
+% %--------------------------------------------------------------------------
+\RequirePackage[square, numbers]{natbib}
+\bibliographystyle{BDNbibstyle}
+
+
+%--------------------------------------------------------------------------
+%         THEOREM ENVIRONMENTS
+%--------------------------------------------------------------------------
+
+% ============================
+% Definisjon
+% ============================
+\newtcbtheorem[number within=section]{mydefinition}{Definisjon}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=defscol!38!white,
+    colback=defscol!16!white,
+}{defn}
+
+\NewDocumentCommand{\defn}{m+m}{
+    \begin{mydefinition}{#1}{}
+        #2
+    \end{mydefinition}
+}
+
+\NewDocumentCommand{\defnr}{mm+m}{
+    \begin{mydefinition}{#1}{#2}
+        #3
+    \end{mydefinition}
+}
+
+% ============================
+% Tips!
+% ============================
+\newtcbtheorem[]{mytips}{Tips!}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=tipscol!30!white,
+    colback=asumscol!14!white,
+}{asum}
+
+\NewDocumentCommand{\tips}{m+m}{
+    \begin{mytips}{#1}{}
+        #2
+    \end{mytips}
+}
+
+\NewDocumentCommand{\tipsr}{mm+m}{
+    \begin{mytips}{#1}{#2}
+        #3
+    \end{mytips}
+}
+
+
+% ============================
+% Antakelse
+% ============================
+\newtcbtheorem[number within=section]{myassumption}{Antakelse}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=asumscol!32!white,
+    colback=asumscol!14!white,
+}{asum}
+
+\NewDocumentCommand{\asum}{m+m}{
+    \begin{myassumption}{#1}{}
+        #2
+    \end{myassumption}
+}
+
+\NewDocumentCommand{\asumr}{mm+m}{
+    \begin{myassumption}{#1}{#2}
+        #3
+    \end{myassumption}
+}
+
+% ============================
+% Teorem
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{mytheorem}{Teorem}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=thmscol!40!white,
+    colback=thmscol!20!white,
+}{thm}
+
+\NewDocumentCommand{\thm}{m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+}
+
+\NewDocumentCommand{\thmr}{mm+m}{
+    \begin{mytheorem}{#1}{#2}
+        #3
+    \end{mytheorem}
+}
+
+\newenvironment{thmpf}{
+	{\noindent{\it \textbf{Bevis}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{thmscol!40!white}]
+}{
+    \textcolor{thmscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\thmp}{m+m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+
+    \begin{thmpf}
+        #3
+    \end{thmpf}
+}
+
+% ============================
+% Lemma
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{mylemma}{Lemma}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=lemscol!40!white,
+    colback=lemscol!20!white,
+}{lem}
+
+\NewDocumentCommand{\lem}{m+m}{
+    \begin{mylemma}{#1}{}
+        #2
+    \end{mylemma}
+}
+
+\newenvironment{lempf}{
+	{\noindent{\it \textbf{Proof for Lemma}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{lemscol!40!white}]
+}{
+    \textcolor{lemscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\lemp}{m+m+m}{
+    \begin{mylemma}{#1}{}
+        #2
+    \end{mylemma}
+
+    \begin{lempf}
+        #3
+    \end{lempf}
+}
+
+% ============================
+% Corollary
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{mycorollary}{Corollary}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=corscol!40!white,
+    colback=corscol!20!white,
+}{cor}
+
+\NewDocumentCommand{\cor}{+m}{
+    \begin{mycorollary}{}{}
+        #1
+    \end{mycorollary}
+}
+
+\newenvironment{corpf}{
+	{\noindent{\it \textbf{Proof for Corollary.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{corscol!40!white}]
+}{
+    \textcolor{corscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\corp}{m+m+m}{
+    \begin{mycorollary}{}{}
+        #1
+    \end{mycorollary}
+
+    \begin{corpf}
+        #2
+    \end{corpf}
+}
+
+% ============================
+% Proposition
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{myproposition}{Proposition}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=prpscol!30!white,
+    colback=prpscol!20!white,
+}{prop}
+
+\NewDocumentCommand{\prop}{+m}{
+    \begin{myproposition}{}{}
+        #1
+    \end{myproposition}
+}
+
+\newenvironment{proppf}{
+	{\noindent{\it \textbf{Proof for Proposition.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{prpscol!40!white}]
+}{
+    \textcolor{prpscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+
+
+\NewDocumentCommand{\propp}{+m+m}{
+    \begin{myproposition}{}{}
+        #1
+    \end{myproposition}
+
+    \begin{proppf}
+        #2
+    \end{proppf}
+}
+
+% ============================
+% Claim
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{myclaim}{Claim}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=clmscol!40!white,
+    colback=clmscol!20!white,
+}{clm}
+
+\NewDocumentCommand{\clm}{m+m}{
+    \begin{myclaim*}{#1}{}
+        #2
+    \end{myclaim*}
+}
+
+\newenvironment{clmpf}{
+	{\noindent{\it \textbf{Proof for Claim.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{clmscol!40!white}]
+}{
+    \textcolor{clmscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\clmp}{m+m+m}{
+    \begin{myclaim*}{#1}{}
+        #2
+    \end{myclaim*}
+
+    \begin{clmpf}
+        #3
+    \end{clmpf}
+}
+
+% ============================
+% Fact
+% ============================
+
+\newtcbtheorem[use counter from=mydefinition]{myfact}{Fact}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=facscol!40!white,
+    colback=facscol!20!white,
+}{fact}
+
+\NewDocumentCommand{\fact}{+m}{
+    \begin{myfact}{}{}
+        #1
+    \end{myfact}
+}
+
+% ============================
+% Proof
+% ============================
+
+\NewDocumentCommand{\pf}{+m}{
+    \begin{proof}
+        [\noindent\textbf{Proof.}]
+        #1
+    \end{proof}
+}
+
+
+% ============================
+% Merk
+% ============================
+
+\newtcbtheorem[number within = section]{mymerk}{Merk}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=0mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=merkcol!35!white,
+    colback=merkcol!14!white,
+}{merk}
+
+\NewDocumentCommand{\merk}{m+m}{
+    \begin{mymerk}{#1}{}
+        #2
+    \end{mymerk}
+}
+
+\NewDocumentCommand{\merkr}{mm+m}{
+    \begin{mymerk}{#1}{#2}
+        #3
+    \end{mymerk}
+}
+
+
+% ============================
+% Oppsummering
+% ============================
+
+\newtcbtheorem[number within = section]{myoppsum}{Oppsummering}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=oppsumcol!24!white,
+    colback=oppsumcol!13!white,
+}{oppsum}
+
+\NewDocumentCommand{\oppsum}{m+m}{
+    \begin{myoppsum}{#1}{}
+        #2
+    \end{myoppsum}
+}
+
+\NewDocumentCommand{\oppsumr}{mm+m}{
+    \begin{myoppsum}{#1}{#2}
+        #3
+    \end{myoppsum}
+}
+
+% ============================
+% Spørsmål (gul, avrundet)
+% ============================
+
+\NewDocumentCommand{\spm}{m+m}{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        arc=5mm,
+        boxrule=1.2pt,
+        colframe=yellow!65!orange,
+        titlerule=0mm,
+        toptitle=2mm,
+        bottomtitle=2mm,
+        fonttitle=\bfseries\large,
+        coltitle=black,
+        title={Spørsmål vi jobber med i dette kapitlet #1},
+        colbacktitle=yellow!60!white,
+        colback=yellow!18!white,
+        before skip=10pt,
+        after skip=10pt,
+    ]
+        #2
+    \end{tcolorbox}
+}
+
+% ============================
+% Oppgave (studentoppgaver)
+% ============================
+
+\newtcbtheorem[number within=chapter]{myoppgave}{Oppgave}
+{
+    enhanced,
+    breakable,
+    arc=3mm,
+    boxrule=0.8pt,
+    colframe=oppgcol!80!black,
+    colbacktitle=oppgcol!22!white,
+    colback=oppgcol!7!white,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    titlerule=0mm,
+    toptitle=2mm,
+    bottomtitle=2mm,
+    before skip=12pt,
+    after skip=12pt,
+}{oppg}
+
+\NewDocumentCommand{\oppgave}{m+m}{
+    \begin{myoppgave}{#1}{}
+        #2
+    \end{myoppgave}
+}
+
+% ============================
+% Example
+% ============================
+
+\newenvironment{myexample}{
+    \tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{clmscol!40!white}]
+}{
+    \textcolor{clmscol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$}
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\exm}{m+m}{
+    \begin{myexample}
+	{\noindent{\it \textbf{Eksempel : #1 }}}\\
+        #2
+    \end{myexample}
+}
+
+
+% ============================
+% Remark
+% ============================
+
+\NewDocumentCommand{\rmk}{+m}{
+    {\it \color{rmkscol!40!white}#1}
+}
+
+\newenvironment{remark}{
+    \par
+    \vspace{5pt}
+    \begin{minipage}{\textwidth}
+        {\par\noindent{\textbf{Remark.}}}
+        \tcolorbox[blanker,breakable,left=5mm,
+        before skip=10pt,after skip=10pt,
+        borderline west={1mm}{0pt}{rmkscol!20!white}]
+}{
+        \endtcolorbox
+    \end{minipage}
+    \vspace{5pt}
+}
+
+\NewDocumentCommand{\rmkb}{+m}{
+    \begin{remark}
+        #1
+    \end{remark}
+}
+
+% ============================
+% Python kode
+% ============================
+\definecolor{codebg}{HTML}{F0F4F8}
+\definecolor{codekey}{HTML}{1A6B9A}
+\definecolor{codestr}{HTML}{2D7A4F}
+\definecolor{codecmt}{HTML}{888888}
+\definecolor{codenum}{HTML}{C0392B}
+
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{codekey}\bfseries,
+    stringstyle=\color{codestr},
+    commentstyle=\color{codecmt}\itshape,
+    numberstyle=\tiny\color{codenum},
+    numbers=left,
+    numbersep=8pt,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    frame=none,
+    xleftmargin=4pt,
+    xrightmargin=4pt,
+    aboveskip=0pt,
+    belowskip=0pt,
+}
+
+\newtcblisting{pythonkode}{
+    enhanced,
+    breakable,
+    arc=3mm,
+    boxrule=0.8pt,
+    colframe=codekey!60,
+    colback=codebg,
+    top=4pt, bottom=4pt, left=4pt, right=4pt,
+    before skip=10pt, after skip=10pt,
+    listing only,
+    listing options={style=pythonstyle},
+}

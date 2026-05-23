@@ -1,0 +1,39 @@
+\documentclass[../Main.tex]{subfiles}
+
+\begin{document}
+
+\definecolor{titlepagecolor}{HTML}{2C3E55}
+
+\begin{titlepage}
+\newgeometry{left=0pt, right=0pt, top=0pt, bottom=0pt}
+\thispagestyle{empty}
+\pagecolor{white}
+% tikz overlay – absolute page coordinates, unaffected by text-area geometry
+\begin{tikzpicture}[remember picture, overlay]
+  % ── Dark navy band: lower 40 % of page ──────────────────────────────
+  \fill[titlepagecolor]
+    (current page.south west)
+    rectangle
+    ([yshift=0.40\paperheight] current page.south east);
+  % ── Dashman: centred in upper white area (centre = 0.70 from bottom) ─
+  \node[anchor=center] at
+    ([yshift=0.70\paperheight] current page.south)
+    {\includegraphics[height=0.54\paperheight]{Dashman.png}};
+  % ── Title ────────────────────────────────────────────────────────────
+  \node[text=white] at
+    ([yshift=0.27\paperheight] current page.south)
+    {\fontsize{34}{40}\selectfont\bfseries\sffamily TRESFYSIKK};
+  % ── Author / affiliation ─────────────────────────────────────────────
+  \node[text=white] at
+    ([yshift=0.18\paperheight] current page.south)
+    {\large\sffamily Ben David Normann \quad\textbf{|}\quad NTNU};
+  % ── Year ─────────────────────────────────────────────────────────────
+  \node[text=white] at
+    ([yshift=0.11\paperheight] current page.south)
+    {\normalsize\sffamily Våren 2025};
+\end{tikzpicture}
+\end{titlepage}
+\restoregeometry
+\nopagecolor
+
+\end{document}

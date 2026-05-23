@@ -1,0 +1,232 @@
+\chapter{Elektrisitet}
+
+\intro{Dette er en introtekst, hvor vi henviser til\cite{OleBrumm} for mer informasjon. Dette er altså en flott tekst som fungerer som et slags sammendrag / motivasjon for innholdet i kapitlet.}
+
+\spm{}{%
+Hva er elektrisk ladning og elektrisk strøm?\\
+Hva er sammenhengen mellom spenning, strøm og motstand (Ohms lov)?\\
+Hvordan fungerer serie- og parallellkoblinger i en krets?}
+\newpage
+
+\section{Begreper}
+Her kommer noen begreper som er relevante å forstå for dette kapittelet.
+
+\textbf{Elektrisitet}\\
+Elektrisitet er små partikler med positive eller negative ladninger.\\
+
+
+\textbf{Krets}\\
+En krets er en vei som strømmen går igjennom. Strømmen går alltid gjennom den delen av kretsen som er lukket. Gjennpm en åpen krets går det ingen strøm. Elektronene i en krets beveger seg motsatt retning som strømmen. Elektronene vil bevege seg fra en negativ ladd pol mot en positiv ladd pol. \\
+
+
+\textbf{Elektrisk strøm}\\
+Elektrisk strøm er partikler i bevegelse. Strøm har symbolet \textit{I} og enhet ampere, [A]. Strømmen beveger seg fra den positive polen mot den negative polen. \\
+Strømmen i en krets kan illustreres slik: \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.1\linewidth]{Images/Kapittel6:Elektrisitet/Strøm_illustrering.png}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\textbf{Spenning}\\
+Spenning kan sees på som energipotensialet for et område i en krets. Spenningen er arbeid per ladning og har enhet Volt, [V]=[J/C]. \\
+Spenningskilden i en krets tegnes typisk to forskjellige måter vist i Figur \ref{fig:Spenningskilde1} og Figur \ref{fig:Spenningskilde2}.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Kapittel6:Elektrisitet/Spenningskilde(1).png}
+        \caption{Spenningskilde 1}
+        \label{fig:Spenningskilde1}
+    \end{minipage}%
+    \begin{minipage}{0.28\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Kapittel6:Elektrisitet/Spenningskilde(2).png}
+        \caption{Spenningskilde 2}
+        \label{fig:Spenningskilde2}
+    \end{minipage}
+\end{figure}
+
+
+
+\textbf{Seriekobling}\\
+En seriekobling er en krets som er koblet slik at strømmen bare kan gå "en vei". I Figur \ref{fig:Seriekobling} er R1, R2, og R3 resistanser og V1 er en spenningskilde. Strømmen vil gå inn og gjennom i R1, R2 og R3. Siden strømmen bare "har en vei" å gå, vil det i teorien være like mye strøm over hele området i seriekoblingen som vises i Figur \ref{fig:Seriekobling}. Strømmen har ingen plass å dele seg.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Images/Kapittel6:Elektrisitet/Seriekobling.png}
+    \caption{Seriekobling}
+    \label{fig:Seriekobling}
+\end{figure}
+
+
+\textbf{Parallellkobling}\\
+Parallellkobling er en måte å koble en krets slik at komponentene ligger "over" hverandre. I Figur \ref{fig:Parallellkobling} vises en parallellkobling, der R1 og R2 er resistanser og U er en spenningskilde. I denne kretsen vil strømmen vil gå fra spenningskilden og "dele" seg utover resistansene.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Images/Kapittel6:Elektrisitet/Parallellkobling.png}
+    \caption{Parallellkobling}
+    \label{fig:Parallellkobling}
+\end{figure}
+
+\tips{Forståelse av elektroner, strøm og spenning}{Å forstå hva en elektrisk krets er og hvordan den fungerer kan være utfordrende. En god måte å tenke på en elektrisk krets er å forestille seg en krets bestående av elektroner som kuler plassert side om side. Disse elektronene kan bevege seg fra ett punkt til et annet innen kretsen. \\
+
+Når en spenningskilde, som et batteri, påvirker elektronene nærmest seg, skaper dette en dominoeffekt der elektronene setter hverandre i bevegelse. En motstand kan ses på som en trangere del av kretsen, som gjør det vanskeligere for strømmen å passere, derav navnet "motstand". \\
+
+I en \textbf{seriekobling} har elektronene bare én vei å følge gjennom kretsen. Denne veien forbinder ett punkt til et annet uten avkjøringer. \\
+
+
+I en \textbf{parallellkobling}, derimot, deler veien seg og elektronene kan "velge" mellom flere stier. Dette resulterer i at strømmen tar veien med minst motstand på grunn av fysiske lover.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/Kapittel6:Elektrisitet/Elektroner.png}
+    \caption{Krets med elektroner i}
+    \label{fig:Elektroner}
+\end{figure}
+
+%https://www.codrey.com/dc-circuits/conventional-current-vs-electron-current/   Hentet 31.12.2024
+
+
+\section{Kirchoff's lover}
+Kirchoff's lover brukes til å regne ut strøm eller spenning i en elektrisk krets.
+
+\subsection{Kirchoff's første lov}
+Denne loven er også omtalt som \textit{Kirchoff's strømlov}. Denne loven går ut på at strømmen som går inn, eller ut av en node/knytepunkt til sammen blir 0.
+\[\sum{I}=I_1+I_2+...+I_n=0\]
+
+\subsection{Kirchoff's andre lov}
+Denne loven er også omtalt som \textit{Kirchoff's spenningslov}.
+
+\[\sum{U}=U_1+U_2+...+U_n=0\]
+
+\section{Motstand}
+Motstand, eller resistanser, R, er komponenter i en krets som har påvirkning på strømmen og spenningen. \textit{Ohm's lov} viser at spenningen, U, er proporsjonal med resistansen og strømmen. 
+
+\defn{Ohm's lov}{\centering U=R$\cdot$ I \\
+Hvor U er spenningen i volt, \textit{V}, R er resistansen i ohm \textit{$\Omega$} og I er strømmen i ampere, \textit{A}.}
+
+Ohm's lov viser at strømmen, I$=$$\frac{U}{R}$, er er omvendt proporsjonal med resistansen. Det vil si at det høyere motstand, det mindre strøm vil gå. Ved fullstendig motstand, for eksempel ved en åpen krets, er det teoretisk sett ingen strøm som passerer. Ved mindre motstand, er det lettere for strømmen å gå.
+
+\subsection{Motstander i seriekobling}
+Når motstander er seriekoblet, kan man finne den totale motstanden i kretsen ved bruk av Formel \ref{eq:sum_motstand_serie}.
+
+\begin{align}
+    &\sum R_{tot}= R_1+R_2 +...+ R_n
+    \label{eq:sum_motstand_serie}
+\end{align}
+
+
+\exm{Sum av motstand i seriekobling}{De to øverste i Figur \ref{fig:Seriekobling_motstand} mostandende er henholdsvis 6$\Omega$ og 10$\Omega$. Hvis summen av motstander i kretsen er 25 $\Omega$, hva er da verdien til den siste motstanden? \\
+Bruker formelen:\\
+\[\ R_{tot}=R_1+R_2+R_3\]\\
+\[\ R_3=R_{tot}-R_1-R_2\]}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{Images/Kapittel6:Elektrisitet/Krets_med_spenningskilde(1).png}
+    \caption{Motstander i seriekobling}
+    \label{fig:Seriekobling_motstand}
+\end{figure}
+
+
+
+
+\subsection{Motstander i parallellkobling}
+Når motstander ligger i parallellkobling, kan man finne den totale motstanden i kretsen ved bruk av Formel \ref{eq:sum_motstand_parallell}.
+\begin{align}
+    &\sum \frac{1}{R_{tot}}= \frac{1}{R_1} + \frac{1}{R_2} +...+ \frac{1}{R_n}
+    \label{eq:sum_motstand_parallell}
+\end{align}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{Images/Kapittel6:Elektrisitet/Parallellkobling_motstander.png}
+    \caption{Motstander i parallellkobling}
+    \label{fig:Parallellkobling_motstander}
+\end{figure}
+
+
+\subsection{Elektrisk strøm og ladning}
+Elektrisk strøm er definert som elektrisk ladning i bevegelse. Det finnes \textit{vekselstrøm} og \textit{likestrøm}. Vekselstrøm er strøm med varierende retning, mens likestrøm har samme retning. Strømmen i stikkontakten som er knyttet opp mot strømnettet er vekselstrøm. I TRES skal det være fokus på likestrøm. Likestrøm får man fra for eksempel batterier, hvor strømmen går i en retning. Elektronene går fra negativ pol til positiv pol i en lukket krets. En \textit{lukket krets} er en krets som er koblet sammen på begge sider av batteri og komponenter. En \textit{åpen krets} er en krets som har et "hull" i seg, eller som ikke er koblet opp på både positiv og negativ pol.
+
+
+
+\subsubsection{Elementærladning}
+Elementærladningen er den elektriske ladningen til et proton. Elektroner har samme størrelse på ladning som protoner, bare i motsatt retning. Derfor er ladningen til et elektron lik \textit{-e}. \\
+\[e=1,602 \cdot 10^{-19} C\]
+
+\defn{Strøm og ladning}{Nedenfor står en formel for strøm, hvor \textit{I} er strøm i Ampere, \textit{q} er ladning i Coulomb og \textit{t} er tid i sekund.\\
+\centering I=$\frac{q}{t}$ \\
+Under står en formel for ladningen \textit{q}, elementærladningen er \textit{e}=1,602$\cdot$ 10$^{-19}$ C og \textit{N} er antall elektroner. \\
+\centering q=e$\cdot$N\\
+}
+
+\exm{Antall elektroner}{Ladningen på et område er -100 Coulomb. Hvor mange overskudds-elektroner er på området? \\
+\[q=e\cdot N\]
+\[N=\frac{q}{e}\]
+\[N=\frac{-100 C}{-1,602\cdot 10^{-19}\frac{C}{elektroner}}\]
+\[N=6,24\cdot 10^{20} elektroner\]}
+
+
+\section{Effekt}
+Effekt innenfor elektrisitet er elektrisk energi per tidsenhet. Effekten er proporsjonal med strømmen og spenningen.
+
+\defn{Effekt}{Nedenfor står formelen for effekt, \textit{P}. \textit{U} er spenningen og \textit{I} er strømmen.
+\[P=U\cdot I\]
+Spenningen kan regnes ved:
+\[U=R\cdot I\]
+Dermed kan effekten også skrives som:
+\[P=R\cdot I^2\]
+}
+
+\subsection{Eksempeloppgaver}
+
+\tips{Hvordan løse oppgaver innen for elektrisitet?}{Steg for steg over hvordan løse oppgaver innenfor elektrisitet:
+
+\begin{enumerate}
+    \item \textbf{Tegn kretsen} - Start med å visualisere problemet ved å tegne kretsen. Dette gir en klar oversikt og hjelper deg å identifisere hvilke komponenter som er involvert.
+
+    \item \textbf{Identifiser koblingstype} - Bestem om kretsen består av en seriekobling, parallellkobling eller en kombinasjon av begge. Dette påvirker hvordan strøm og spenning distribueres gjennom kretsen.
+
+    \item \textbf{Forenkel kretsen} - Bruk prinsippene vist i eksemplene i dette kapittelet for å forenkle kretsen til mer håndterbare deler. Dette kan inkludere å kombinere resistanser i serie eller parallell for å redusere kompleksiteten.
+
+    \item \textbf{Løs oppgaven med relevante formler} - Etter at du har forenklet kretsen, bruk relevante elektriske formler for å finne de ønskede verdier som strøm, spenning eller motstand. Sørg for å lese oppgaveteksten nøye for å forstå hva som er spurt om.
+\end{enumerate}}
+
+
+\exm{Krets 1}{Krets 1 består av et batteri som energikilde, med en spenning på 5 V. Batteriet er seriekoblet med spenningen R$_1$. R$_1$ er koblet opp med to resistanser i seriekobling R$_2$ og R$_3$. R$_1$ er på 1 $\Omega$, R$_2$ er på 2 $\Omega$, mens R$_3$ er på 1,4 $\Omega$.
+
+a) Hva er den totale strømmen i kretsen?
+
+Løsning:
+1. \textbf{Tegn kretsen.} Se Figur \ref{fig:parallellkobling_eksempel} som eksempel på en tegning.\\
+
+2. \textbf{Identifiser koblingstype}. R$_1$ er i serie med R$_2$ og R$_3$ i parallellkobling.\\
+
+3 \textbf{Forenkle kretsen.} Første steg her er å "sette sammen" R$_2$ og R$_3$ slik at de representerer en resistans. Formel \ref{eq:sum_motstand_parallell} viser hvordan det kan regnes ut.
+
+\[\Sigma R_{parallell} = (\frac{1}{R_2}+\frac{1}{R_3})^{-1}\]
+\[\Sigma R_{parallell} = (\frac{1}{2}+\frac{1}{1,4})^{-1}\]
+\[\Sigma R_{parallell} = 0,82 \Omega\]
+
+4. \textbf{Løs oppgaven med relevante formler.} Kretsen består nå av batteriet koblet opp med to resistanser, R$_1$ og R$_{paralell}$. Den totale resistansen blir da, ved hjelp av formel for seriekoblet resistanser; Formel \ref{eq:sum_motstand_serie}:
+
+\[\Sigma R_{serie} = \Sigma R_{total} =1 + 0,82\]
+\[\Sigma R_{serie} = 1,82\]
+
+Da blir strømmen 2,74. Det fant vi ved bruk av U=RI.}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/Kapittel6:Elektrisitet/Parallellkobling_eksempel.png}
+    \caption{Tegning av Krets 1}
+    \label{fig:parallellkobling_eksempel}
+\end{figure}

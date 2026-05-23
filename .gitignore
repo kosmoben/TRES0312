@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.claude/
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.toc
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.lof
+*.lot
+*.ptc
+*.listing
+*.idx *.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.lol
+files.zip

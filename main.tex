@@ -1,0 +1,65 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+
+
+% %--------------------------------------------------------------------------
+% %         General Setting
+% %--------------------------------------------------------------------------
+
+\graphicspath{{Images/}{../Images/}} %Path of figures
+\setkeys{Gin}{width=0.85\textwidth} %Size of figures
+\setlength{\cftbeforechapskip}{3pt} %space between items in toc
+\setlength{\parindent}{0.5cm} % Idk
+
+\setlist[itemize]{itemsep=5pt} % Adjust the length as needed
+\setlist[enumerate]{itemsep=5pt} % Adjust the length as needed
+
+
+
+% \usepackage{lmodern} %  Latin Modern font
+% \usepackage{newtxtext,newtxmath}
+
+
+
+
+
+\begin{document}
+
+% %--------------------------------------------------------------------------
+% %         First pages 
+% %--------------------------------------------------------------------------
+\newgeometry{top=8cm,bottom=.5in,left=2cm,right=2cm}
+\subfile{files/0.0.0.titlepage}
+\restoregeometry
+\subfile{files/0.Preface}
+\subfile{files/0.zommaire}
+
+% %--------------------------------------------------------------------------
+% %         Core of the document 
+% %--------------------------------------------------------------------------
+%\part{First part}
+%Her legger man til kapitler
+\subfile{files/0.0.1_Introduksjon}
+\subfile{files/0.0.2_Kinematikk}
+\subfile{files/0.0.3_Krefter}
+\subfile{files/0.0.4_Energi}
+\subfile{files/0.0.5_Fluidynamikk}
+\subfile{files/0.0.7_Elektrisitet}
+
+
+
+
+
+
+% %--------------------------------------------------------------------------
+% %         Appendiks
+% %--------------------------------------------------------------------------
+\appendix
+\subfile{files/0.A_Python_appendiks}
+
+% %--------------------------------------------------------------------------
+% %         Bibliographie
+% %--------------------------------------------------------------------------
+
+{\small\bibliography{References}}
+\end{document}

@@ -1,0 +1,676 @@
+\chapter{Kinematikk}
+\label{Chapter:kinematikk}
+\intro{Dette er det første skrittet i å forstå hvordan objekter beveger seg i rommet, enten det gjelder en bil som akselererer på en vei, en ball som kastes opp i luften, eller planetenes bane rundt solen. Ved å fokusere på begreper som posisjon, hastighet og akselerasjon, gir kinematikken oss verktøyene til å beskrive og forutsi bevegelse. Dette kapittelet gir en innføring i de grunnleggende prinsippene og bevegelseslikningene i kinematikk, og viser hvordan vi kan bruke dem til å analysere en rekke forskjellige situasjoner. Målet er å gi en dypere forståelse av bevegelse som et fundamentalt aspekt av fysikken, og legge grunnlaget for mer avanserte emner som dynamikk (kraftlære).}
+
+\spm{}{%
+Hva er sammenhengen mellom posisjon, hastighet og akselerasjon?\\
+Hvordan beskriver vi bevegelse med matematikk?\\
+Hva skjer med bevegelse i to dimensjoner?}
+\newpage
+
+\section{Hva er kinematikk?}
+Kinematikk er studiet av hvordan objekter beveger seg, uten å vurdere kreftene som forårsaker bevegelsen. For å bekrive dette effektivt er det spesielt tre begreper vi er ute etter, med hver sine forkortelser (i parentes):
+
+\[\textrm{strekning (s)}\quad,\quad\textrm{fart (v)}\quad\textrm{og}\quad\textrm{akselerasjon (a)}\]
+
+Disse begrepene gir oss verktøyene vi trenger for å kunne beskrive alt fra enkle scenario, slik som en ball som ruller ned en bakke og til mer kompliserte systemer, som planetenes bevegelse rundt solen. For å beskrive slike sammenhenger effektivt er det viktig å forstå relasjonene mellom strekning, fart og tid.
+
+\section{Strekning (s)}
+En bil som kjører vekk fra en lyktestolpe tilbakelegger større og større strekning (målt fra lyktestolpen). Vi sier gjerne at strekningen er en funksjon av tid, og skriver $s(t)$:
+
+\[s(t)=\textrm{strekning som funksjon av tid}.\]
+% \vspace{-3em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, trim={0, 60mm, 0, 60mm},clip]{Images/Kapittel2:Kinematikk/Bil_fra_lyktestolpe.png}
+    \caption{Eksempel på avstand mellom en lyktestolpe og forbipasserende bil.}
+    \label{fig:fart strekning}
+\end{figure}
+% \vspace{-3em}
+Vi kan illustrere beveglesen til bilen med grafer for fart og strekning:
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Fartsgraf.png}
+  \caption{Fartsgraf $v(t)$}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Posisjonsgraf.png}
+  \caption{Posisjonsgraf $s(t)$}
+\end{subfigure}
+\caption{Fart- og posisjonsgraf for bil som passerer lyktestolpe.}
+\label{fig:fart- og strekningsgrafer}
+\end{figure}
+
+Stigningstallet til strekningsgrafen kan vi regne ut momentant ved derivasjon, eller som gjennomsnittet av endring i posisjon over en periode:
+\begin{align*}
+    \textrm{v} = \frac{\Delta\textrm{s}}{\Delta\textrm{t}} = \frac{10\textrm{ m}}{1 \textrm{ s}} = 10 \textrm{m/s}
+\end{align*}
+Som vi kan se ut ifra grafene, er farten det samme som stigningstallet til strekningen. Stigningstallet beskriver en endring i funksjonen, på samme måte som farten er en endring i posisjon.
+% {\color{blue} CHECK: Ta med bilde av lyktestolpe og bil, deretter posisjonsgraf, og bygg videre ved å vise at fart er stigningstallet til strekningsgrafen.}]
+
+\section{Fart (v)}
+Fart sier noe om hvor raskt et objekt forflytter seg — altså hvor mye strekning som tilbakelegges per tidsenhet. Avhengig av situasjonen kan vi beskrive farten på tre forskjellige måter: som \textit{konstant hastighet} (når farten ikke endrer seg), som \textit{gjennomsnittshastighet} (gjennomsnittlig endring over en tidsperiode) eller som \textit{momentanhastighet} (farten i et bestemt øyeblikk). I det følgende ser vi nærmere på alle tre.
+
+\subsection{Konstant hastighet}
+
+\textit{Konstant hastighet} refererer til bevegelsen av et objekt som beveger seg med samme hastighet og i samme retning over tid. Dette innebærer at objektets hastighet ikke endrer seg; både farten og retningen forblir uforandret. Ved konstant hastighet vil den tilbakelagte distansen være proporsjonal med tiden som har gått.
+
+\defn{Konstant hastighet}{
+    Når et objekt beveger seg med konstant hastighet, det vil si at hastigheten ikke endres over tid, kan vi bruke formelen:
+    \begin{align}
+        v &= \frac{s}{t}
+    \end{align}
+    Her er \( s \) den tilbakelagte distansen, og \( t \) er tiden som har gått. Denne enkle relasjonen gir oss direkte hastigheten til objektet når bevegelsen er jevn og uforandret.
+}
+
+
+\oppgave{Konstant hastighet}{%
+En syklist kjører med konstant hastighet $v = 8\,\textrm{m/s}$.
+\begin{enumerate}[a)]
+    \item Hvor langt har syklisten kjørt etter $t = 10\,\textrm{s}$?
+    \item Hvor langt har syklisten kjørt etter $t = 2\,\textrm{min}$?
+    \item Hvor lang tid tar det å tilbakelegge $s = 2.0\,\textrm{km}$?
+\end{enumerate}
+}
+
+\subsection{Gjennomsnittshastighet}
+
+\textit{Gjennomsnittshastighet} beskriver den totale forflytningen til et objekt delt på den totale tiden som har gått. Den gir et mål på hvor raskt et objekt har beveget seg i gjennomsnitt over en viss tidsperiode, uten å ta hensyn til variasjoner i hastigheten underveis. 
+
+\defn{Gjennomsnittshastighet}{
+    Matematisk kan gjennomsnittshastigheten uttrykkes som:
+    \begin{align}
+        \bar{v}= \frac{\Delta s}{\Delta t}
+    \end{align}
+    hvor \( \Delta s \) er den totale forflytningen, og \( \Delta t \) er den totale tiden. Denne formelen gir en enkel måte å finne gjennomsnittshastigheten over et gitt tidsrom.
+}
+
+\oppgave{Gjennomsnittshastighet}{%
+En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
+\begin{enumerate}[a)]
+    \item Finn gjennomsnittshastigheten i km/t.
+    \item Gjør om til m/s.
+    \item En annen bil kjører samme strekning på $90\,\textrm{min}$. Hvem kjørte raskest?
+\end{enumerate}
+}
+
+\subsection{Momentanhastighet}
+
+\textit{Momentanhastighet} er hastigheten til et objekt på et spesifikt tidspunkt. Det beskriver hvor raskt et objekt beveger seg i akkurat det øyeblikket, og er derfor den "øyeblikkelige" farten. For å finne momentanfarten, ser vi på bevegelsen over et veldig kort tidsrom, hvor vi antar at hastigheten er konstant i dette lille tidsintervallet.
+
+\defn{Momentanhastighet}{
+    Matematisk kan momentanfart finnes ved å ta den deriverte av posisjonen med hensyn til tid:
+    \begin{align}
+        v &= \frac{ds}{dt}
+    \end{align}
+    Dette gir oss hastigheten nøyaktig i det øyeblikket vi er interessert i.
+}
+
+\exm{Speedometer}{
+Tenk deg at du kjører bil og ser på speedometeret. Hastigheten som vises på speedometeret er momentanhastigheten din. Den kan endre seg fra ett sekund til et annet hvis du akselererer eller bremser. \\
+
+\textit{Metode:}
+Momentanhastighet er hastigheten til et objekt på et spesifikt tidspunkt. I dette tilfellet viser speedometeret bilens hastighet i sanntid, som kan variere hvis du akselererer eller bremser. Speedometeret gir dermed en direkte måling av bilens momentanhastighet, som er et uttrykk for hvor raskt bilen beveger seg i akkurat det øyeblikket.
+}
+
+Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfart ser på hastigheten i et spesifikt øyeblikk, mens gjennomsnittsfart ser på den totale bevegelsen over tid. Momentanfarten kan variere kraftig under en bevegelse, mens gjennomsnittsfarten gir en enkel verdi som representerer hele perioden.
+
+\oppgave{Momentanhastighet}{%
+Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og sekunder).
+\begin{enumerate}[a)]
+    \item Finn momentanhastigheten $v(t)$ ved å derivere $s(t)$.
+    \item Hva er momentanhastigheten ved $t = 2\,\textrm{s}$?
+    \item Ved hvilken tid er momentanhastigheten $v = 20\,\textrm{m/s}$?
+\end{enumerate}
+}
+
+\section{Akselerasjon}
+\textit{Akselerasjon} er et mål på hvor raskt hastigheten til et objekt endrer seg over tid. Mens hastigheten beskriver hvor raskt objektet beveger seg i en bestemt retning, beskriver akselerasjonen hvordan denne hastigheten endrer seg – enten det er snakk om økning, reduksjon eller en endring i retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon eller deselerasjon) betyr at hastigheten minker. 
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/Konstant akselerasjon.png}
+\caption{Eksempel på posisjon, hastighet og akselerasjonsgraf hvor akselerasjonen er konstant}
+\label{Konstant akselerasjon}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/material-mWKB9Nxg.png}
+\caption{Eksempel på posisjon, hastighet og akselerasjonsgraf hvor akselerasjonen varierer}
+\label{Posisjon, hastighet og akselerasjon}
+\end{figure}
+
+\subsection{Gjennomsnittsakselerasjon og momentanakselerasjon}
+\textit{Gjennomsnittsakselerasjon} gir et overordet bilde av hvordan hastigheten har endret seg over en viss periode, mens \textit{momentanakselerasjon} beskriver nøyaktig hvordan hastigheten endrer seg ved et gitt tidspunkt. Hvis akselerasjonen er konstant, vil gjennomsnittsakselerasjon og momentanakselerasjon være identiske. Men i tilfeller hvor akselerasjonen varierer, kan momentanakselerasjonen avvike betydelig fra gjennomsnittsakselerasjon. 
+
+\defn{Gjennomsnittsakselerasjon}{
+    Matematisk kan gjennomsnittsakselerasjonen uttrykkes som:
+    \begin{align}
+        \bar{a} = \frac{\Delta v}{\Delta t}
+    \end{align}
+    hvor \( \Delta v \) er endringen i hastighet, og \( \Delta t \) er den totale tiden. Denne formelen gir en enkel måte å finne gjennomsnittsakselerasjonen over et gitt tidsrom.
+}
+
+\defn{Momentanakselerasjon}{
+    Matematisk kan momentanakselerasjonen uttrykkes som:
+    \begin{align}
+        a = \frac{dv}{dt} = \frac{d^2 s}{dt^2}
+    \end{align}
+    hvor \( a \) er akselerasjonen, \( v \) er hastigheten, \( s \) er posisjonen, og \( t \) er tiden. Denne formelen viser at akselerasjon er den første deriverte av hastigheten med hensyn til tid, eller den dobbeltderiverte av posisjonen med hensyn til tid. Den gir oss akselerasjonen nøyaktig i et gitt øyeblikk.
+}
+
+\oppgave{Akselerasjon}{%
+En bil øker farten fra $v_0 = 20\,\textrm{m/s}$ til $v = 30\,\textrm{m/s}$ på $\Delta t = 5\,\textrm{s}$.
+\begin{enumerate}[a)]
+    \item Finn gjennomsnittsakselerasjonen.
+    \item Er akselerasjonen positiv eller negativ? Hva betyr det?
+    \item Dersom akselerasjonen er konstant, hva er farten etter ytterligere $3\,\textrm{s}$?
+\end{enumerate}
+}
+
+\section{Bevegelseslikningene for konstant hastighet}
+Noen ganger er akselerasjonen konstant;
+
+\[\textrm{a}=\textrm{konst.}\]
+
+I dette tilfellet så blir bevegelseslikningene relativt enkle. Siden det finnes flere scenarioer hvor konstant akselerasjon er en rimelig antakelse så er det verdt å gi disse formlene spesiell oppmerksomhet.
+
+Ved å integrere opp $\textrm{a}=\textrm{konst.}$ så finner vi
+
+\begin{equation}
+    v(t)=\int a\,\textrm{d}t=a t+v_0,
+\end{equation}
+hvor $v_0$ er en integrasjonskonstant.
+Integrerer vi enda en gangså finner vi
+\begin{equation}
+    s(t)=\int v\,\textrm{d}t=\frac{1}{2}a t^2+v_0t+s_0.
+\end{equation}
+
+
+\begin{myoppsum*}{Bevegelseslikningene ved konstant akselerasjon}
+\paragraph{1. Hastighetslikningen} gir farten $(v)$, eller hastigheten, som funksjon av tid:
+    \begin{align}
+        v(t)= v_0 + at
+    \end{align}
+   Her er \( v_0 \) startfarten, altså farten ved $t=0$.
+
+    \paragraph{2. Posisjonslikningen} angir strekningen som funksjon av tid, og hvor startposisjon $s_0$ og startfart $v_0$ inngår som parametre. Vi får:
+    \begin{align}
+        s = s_0 + v_0t + \frac{1}{2}at^2
+    \end{align}
+    Merk at likningen både har et lineært ledd (\( v_0t \)) og et kvadratisk ledd (\( \frac{1}{2}at^2 \)), som viser hvordan akselerasjonen påvirker bevegelsen.
+
+    \paragraph{3. Fart-strekning}-likningen gir en sammenheng mellom farten $v$ og posisjonen $s$.
+    \begin{align}
+       2as=v^2-v_0^2.
+    \end{align}
+    Denne likningen faller ut av noe som heter arbeid-energi-setningen som vi skal lære siden.
+
+    \paragraph{4. Gjennomsnittshastighetslikningen:}
+    \begin{align}
+        s =\frac{v_0 + v}{2}t 
+    \end{align}
+    Denne likningen gir også en formel for gjennomsnittshastigheten $\bar{v}=s/t$. Ved å snu om får vi $\bar{v}=s/t=(v_0+v)/2$. Ved konstant akselerasjon kan altså gjennomsnittsfart beregnes ved å ta startfart + sluttfart og dele på to.
+\end{myoppsum*}
+
+ Disse fire likningene gir et komplett sett med verktøy for å analysere bevegelse under konstant akselerasjon. Det er imidlertid avgjørende å huske at de bare gjelder når akselerasjonen ikke varierer. Hvis akselerasjonen endrer seg, blir bevegelsen mer kompleks, og disse likningene vil ikke lenger være gyldige.
+
+\exm{Bremseavstand}{
+En bil har en startfart på \(30 \, \text{m/s}\) og bremser med en konstant akselerasjon på \(-5 \, \text{m/s}^2\). Hvor langt beveger bilen seg før den stopper helt? \\
+
+\textit{Metode:}
+Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v = 0 \, \text{m/s} \), \( v_0 = 30 \, \text{m/s} \), og \( a = -5 \, \text{m/s}^2 \):
+\[
+0 = (30 \, \text{m/s})^2 + 2 \cdot (-5 \, \text{m/s}^2) \cdot (s - s_0).
+\]
+\[
+0 = 900 - 10(s - s_0).
+\]
+\[
+10(s - s_0) = 900.
+\]
+\[
+s - s_0 = 90 \, \text{m}.
+\]
+Bilen beveger seg \(90 \, \text{m}\) før den stopper.
+}
+
+\exm{Sykkeltur}{
+Du sykler med en startfart på \(5 \, \text{m/s}\) og akselererer til \(15 \, \text{m/s}\) over en tidsperiode på \(10\) sekunder. Hvor langt syklet du i denne perioden? \\
+
+\textit{Metode:}
+Bruk gjennomsnittshastighetslikningen \( s = s_0 + \frac{v_0 + v}{2}t \). Her er \( s_0 = 0 \, \text{m} \), \( v_0 = 5 \, \text{m/s} \), \( v = 15 \, \text{m/s} \), og \( t = 10 \, \text{s} \):
+\[
+s = 0 + \frac{5 + 15}{2} \cdot 10.
+\]
+\[
+s = \frac{20}{2} \cdot 10 = 10 \cdot 10 = 100 \, \text{m}.
+\]
+Du syklet \(100 \, \text{m}\) i løpet av denne perioden.
+}
+
+
+
+\subsection{Fritt fall som eksempel}
+Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Gravitasjonen på jorden er omtrent lik overalt, og er en akselerasjon på ca. $\textrm{g} = 9.81\textrm{ m/s}^2$. 
+% {\color{blue} CHECK: Si litt om g osv...} 
+
+\exm{Hastighetsendring}{
+Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \text{m/s}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.8 \, \text{m/s}^2\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
+
+\textit{Metode:}
+Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \text{m/s} \), \( a = -9.8 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \). Sett inn verdiene:
+\[
+v = 10 \, \text{m/s} + (-9.8 \, \text{m/s}^2) \cdot 2 \, \text{s} = 10 - 19.6 = -9.6 \, \text{m/s}.
+\]
+Ballens hastighet etter \(2\) sekunder er \(-9.6 \, \text{m/s}\), noe som indikerer at ballen nå beveger seg nedover.
+}
+
+\exm{Fallende objekt}{
+En stein blir sluppet fra en bro \(20 \, \text{m}\) over bakken. Hva er steinens posisjon etter \(2\) sekunder, gitt at akselerasjonen på grunn av tyngdekraften er \(9.8 \, \text{m/s}^2\) og initial hastighet \( v_0 = 0 \)? \\
+
+\textit{Metode:}
+Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \text{m} \), \( v_0 = 0 \, \text{m/s} \), \( a = 9.8 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \):
+\[
+s = 20 \, \text{m} + 0 \cdot 2 \, \text{s} + \frac{1}{2} \cdot 9.8 \, \text{m/s}^2 \cdot (2 \, \text{s})^2.
+\]
+\[
+s = 20 \, \text{m} + 0 + \frac{1}{2} \cdot 9.8 \cdot 4 = 20 + 19.6 = 39.6 \, \text{m}.
+\]
+Steinen er \(39.6 \, \text{m}\) fra utgangspunktet etter \(2\) sekunder.
+}
+
+
+\oppgave{Fritt fall}{%
+En ball slippes fra ro fra en høyde $h = 45\,\textrm{m}$ over bakken. Bruk $g = 9.81\,\textrm{m/s}^2$.
+\begin{enumerate}[a)]
+    \item Finn tiden det tar før ballen treffer bakken.
+    \item Finn farten rett før ballen treffer bakken.
+    \item Hva ville farten blitt om ballen var sluppet fra $h = 80\,\textrm{m}$? Legg merke til sammenhengen.
+\end{enumerate}
+}
+
+\section{Krumlinjet bevegelse}
+Krumlinjet bevegelse handler om objekter som beveger seg langs en kurvet bane, og ikke bare i en rett linje. I denne typen bevegelse må vi vurdere hvordan både hastighet og akselerasjon endrer seg i to dimensjoner. Vi går derfor over fra en én-dimensjonal beskrivelse til en to-dimensjonal beskrivelse av bevegelse. For å gjøre dette bruker vi vektorer til å representere strekning, hastighet og akselerasjon, slik at vi kan ta hensyn til både størrelse og retning i bevegelsen.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Krumlinjet bevgelese.png}
+\caption{Prosjektilbevegelsse}
+\label{Posisjon, hastighet og akselerasjon}
+\end{figure}
+
+\subsection{Dekomponering av vektorer i koordinatsystem}
+Dekomponering er en generell teknikk i fysikk som innebærer å bryte ned en vektor i sine komponenter langs bestemte akser. Denne metoden er nyttig i mange situasjoner, enten vi analyserer bevegelse, krefter eller andre vektorielle størrelser. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er nyttig både i kinematikken og i andre områder som kreftelære.
+
+\defn{Dekomponering av hastighet}{
+    En hastighetsvektor i to dimensjoner kan representeres som \( \vec{v} = [v_x, v_y] \), hvor \( v_x \) og \( v_y \) er henholdsvis de horisontale og vertikale komponentene av hastigheten. Størrelsen (skalarverdien) av denne vektoren er \( v \), slik at vi har:
+    \begin{align}
+        v = |\vec{v}|.
+    \end{align}
+    Når vi kjenner vinkelen \( \theta \) mellom hastighetsvektoren og den horisontale aksen, kan vi finne komponentene \( v_x \) og \( v_y \) ved å dekomponere vektoren:
+    \begin{align}
+        v_x &= v \cos \theta, \\
+        v_y &= v \sin \theta.
+    \end{align}
+    Til slutt, hvis vi kjenner komponentene, kan vi finne størrelsen av hastighetsvektoren ved hjelp av Pythagoras' læresetning:
+    \begin{align}
+        v = |\vec{v}| = \sqrt{v_x^2 + v_y^2}.
+    \end{align}
+    Dette viser at størrelsen på vektoren \( \vec{v} \) er lik roten av summen av kvadratene til dens komponenter.
+}
+
+
+\exm{Dekomponering av vektor og beregning av vinkel}{
+    \begin{wrapfigure}{r}{0.4\textwidth} % r for høyre, l for venstre
+        \centering
+        \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Vektor A dekomponert.png} % Sett inn ditt eget bilde her
+        \caption{Illustrasjon av vektoren \( \vec{A} \) og vinkelen \( \theta \).}
+        \label{fig:vektor_illustrasjon}
+    \end{wrapfigure}
+
+    Vi har en vektor \( \vec{A} = [3, 4] \). I del a skal vi finne komponentene \( A_x \), \( A_y \) og størrelsen (skalarverdien) av \( \vec{A} \). I del b skal vi finne vinkelen \( \theta \) som vektoren danner med den horisontale aksen ved bruk av sinus, cosinus og tangens. \\
+    
+    \textbf{Del a:} \\
+    
+    \textit{Metode:}
+    Vektoren \( \vec{A} \) har allerede gitt oss komponentene:
+    \[
+    A_x = 3, \quad A_y = 4.
+    \]
+    Størrelsen (skalarverdien) av \( \vec{A} \) finner vi ved:
+    \[
+    A = |\vec{A}| = \sqrt{A_x^2 + A_y^2} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5.
+    \]
+    Så størrelsen til vektoren \( \vec{A} \) er \( A = 5 \).
+
+    \textbf{Del b:} \\
+
+    \textit{Metode:}
+    For å finne vinkelen \( \theta \) mellom vektoren \( \vec{A} \) og den horisontale aksen, kan vi bruke trigonometriske funksjoner. Vinkelen kan beregnes på tre forskjellige måter:
+
+    1. **Bruke sinus:** 
+    \[
+    \sin \theta = \frac{A_y}{A} = \frac{4}{5}.
+    \]
+    For å finne \( \theta \):
+    \[
+    \theta = \arcsin \left( \frac{4}{5} \right) \approx 53.13^\circ.
+    \]
+
+    2. **Bruke cosinus:**
+    \[
+    \cos \theta = \frac{A_x}{A} = \frac{3}{5}.
+    \]
+    For å finne \( \theta \):
+    \[
+    \theta = \arccos \left( \frac{3}{5} \right) \approx 53.13^\circ.
+    \]
+
+    3. **Bruke tangens:**
+    \[
+    \tan \theta = \frac{A_y}{A_x} = \frac{4}{3}.
+    \]
+    For å finne \( \theta \):
+    \[
+    \theta = \arctan \left( \frac{4}{3} \right) \approx 53.13^\circ.
+    \]
+
+    Uansett hvilken metode vi bruker, finner vi at vinkelen \( \theta \) er omtrent \( 53.13^\circ \).
+}
+
+\newpage
+
+\oppgave{Dekomponering av hastighet}{%
+En ball kastes med startfart $v_0 = 20\,\textrm{m/s}$ i en vinkel $\theta = 30°$ over horisonten.
+\begin{enumerate}[a)]
+    \item Finn den horisontale starthastighetkomponenten $v_{0x}$.
+    \item Finn den vertikale starthastighetkomponenten $v_{0y}$.
+    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = 20\,\textrm{m/s}$.
+\end{enumerate}
+}
+
+\subsection{Konstant akselerasjon i krumlinjet bevegelse}
+Når et objekt har konstant akselerasjon i krumlinjet bevegelse, kan vi fortsatt bruke prinsippene fra rettlinjet bevegelse, men vi må ta hensyn til at akselerasjonen påvirker både den horisontale og vertikale retningen. I motsetning til rettlinjet bevegelse, der akselerasjonen virker langs én dimensjon, må vi i krumlinjet bevegelse dekomponere akselerasjonen i x- og y-komponenter. Bevegelsen kan analyseres separat langs hver akse ved å bruke dekomponerte bevegelseslikninger.
+
+\defn{Dekomponering av hastighets- og posisjonslikningene}{
+    I krumlinjet bevegelse med konstant akselerasjon kan vi uttrykke hastighets- og posisjonslikningene i vektorform slik:
+
+    \textbf{Hastighetslikningen:}
+    \begin{align}
+        \vec{v} = \vec{v}_0 + \vec{a}t,
+    \end{align}
+    hvor \( \vec{v} \) er hastighetsvektoren, \( \vec{v}_0 \) er startfartsvektoren, \( \vec{a} \) er akselerasjonsvektoren, og \( t \) er tiden.
+
+    \textbf{Posisjonslikningen:}
+    \begin{align}
+        \vec{s} = \vec{s}_0 + \vec{v}_0 t + \frac{1}{2} \vec{a} t^2,
+    \end{align}
+    hvor \( \vec{s} \) er posisjonsvektoren, \( \vec{s}_0 \) er startposisjonen, \( \vec{v}_0 \) er startfarten, \( \vec{a} \) er akselerasjonsvektoren, og \( t \) er tiden.
+
+    Når vi analyserer bevegelsen i to dimensjoner, kan vi dekomponere disse vektorene i deres x- og y-komponenter for å se på bevegelsen langs hver akse separat:
+
+    \textbf{Dekomponering av Hastighetslikningen:}
+    \begin{align}
+        v_x &= v_{0x} + a_x t, \\
+        v_y &= v_{0y} + a_y t,
+    \end{align}
+
+    \textbf{Dekomponering av Posisjonslikningen:}
+    \begin{align}
+        x &= x_0 + v_{0x} t + \frac{1}{2} a_x t^2, \\
+        y &= y_0 + v_{0y} t + \frac{1}{2} a_y t^2,
+    \end{align}
+
+}
+
+\tips{Viktige forhold ved prosjektilbevgelse}{Det er viktig å merke seg at i mange situasjoner, som for eksempel ved prosjektilbevegelse, er akselerasjonen i x-retning (\( a_x \)) ofte lik null. Akselerasjonen i y-retning (\( a_y \)) er derimot konstant og ofte lik \( -9.81 \, \text{m/s}^2 \) hvis y retning er definert positivt i oppover, på grunn av tyngdekraften. Dette betyr at bevegelsen i x-retning skjer med konstant hastighet, mens bevegelsen i y-retning påvirkes av gravitasjonen, noe som gir en akselerasjon på \( -9.81 \, \text{m/s}^2 \).}
+
+
+\exm{Fjærkanon og beregning av sluttposisjon}{
+En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h \) og gravitasjonskonstanten \( g \). Målet er å finne hvor kula lander. Vi skal først beregne utgangshastigheten \( v_0 \), deretter bruke posisjonslikningen i y-retning for å finne hvor lenge kula er i lufta, og til slutt bruke tiden \( t \) til å finne sluttposisjonen i x-retning.\\
+
+    \textbf{Del a: Beregn utgangshastigheten} \\
+    
+    \textit{Metode:}
+    For å beregne utgangshastigheten \( v_0 \), bruker vi energikonservering, som sier at den kinetiske energien er lik den potensielle energien i fjæra. Dette gir:
+    \[
+    v_0^2 = 2gh,
+    \]
+    hvor \( g = 9.81 \, \text{m/s}^2 \) og \( h \) er høyden kula skytes ut fra. Utgangshastigheten \( v_0 \) er da:
+    \[
+    v_0 = \sqrt{2gh}.
+    \]
+
+    \textbf{Del b: Beregn tiden kula er i lufta} \\
+
+    \textit{Metode:}
+    For å finne hvor lenge kula er i lufta, bruker vi posisjonslikningen i y-retning. Siden kula returnerer til bakken (y-posisjon = 0) på slutten av sin bevegelse, kan vi bruke følgende likning:
+    \[
+    y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
+    \]
+    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \text{m/s}^2 \). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
+    \[
+    0 = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2.
+    \]
+    Vi løser denne kvadratiske likningen for \( t \) (tiden kula er i lufta):
+    \[
+    t = \frac{2 v_0 \sin \theta}{g}.
+    \]
+
+    \textbf{Del c: Beregn sluttposisjonen i x-retning} \\
+
+    \textit{Metode:}
+    Nå som vi vet hvor lenge kula er i lufta, kan vi bruke tiden \( t \) til å beregne hvor langt kula beveger seg i x-retning. Vi bruker posisjonslikningen i x-retning:
+    \[
+    x = v_{0x} t + \frac{1}{2} a_x t^2.
+    \]
+    Siden det ikke er noen akselerasjon i x-retning (\( a_x = 0 \)), blir likningen:
+    \[
+    x = v_{0x} t,
+    \]
+    hvor \( v_{0x} = v_0 \cos \theta \). Dermed får vi:
+    \[
+    x = v_0 \cos \theta \cdot t.
+    \]
+    Vi setter inn tiden \( t = \frac{2 v_0 \sin \theta}{g} \) fra forrige del:
+    \[
+    x = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g} = \frac{2 v_0^2 \sin \theta \cos \theta}{g}.
+    \]
+    Til slutt kan vi sette inn utgangshastigheten \( v_0^2 = 2gh \) fra del a:
+    \[
+    x = \frac{4gh \sin \theta \cos \theta}{g}.
+    \]
+    Ved å forenkle uttrykket får vi:
+    \[
+    x = 4h \sin \theta \cos \theta.
+    \]
+
+    Siden sluttposisjonen i y-retning er \( y = 0 \) når kula lander, kan vi skrive sluttposisjonen som en vektor:
+   \[
+    [x, y] = [4h \sin \theta \cos \theta, 0].
+    \]
+    Dermed er sluttposisjonen gitt som vektor, der x-komponenten er \( 4h \sin \theta \cos \theta \) og y-komponenten er \( 0 \).
+}
+
+   \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Prosjektile bevegelse 2.png}
+    \caption{Prosjektilbevegelse}
+    \label{fig:prosjektilbevegelse}
+    \end{figure}
+
+\exm{Ball som faller fra en klippe}{
+En ball faller ut fra en klippe som er \(0.8 \, \text{m}\) høy og lander \(0.85 \, \text{m}\) unna foten av klippen. Vi skal beregne:
+\begin{itemize}
+    \item a) Startfarten \(v_0\)
+    \item b) Sluttfarten \(v_1\), som er hastigheten rett før ballen treffer bakken.
+\end{itemize}
+
+\textbf{Del a: Beregn startfarten} \\
+
+\textit{Metode:}
+Vi bruker først posisjonslikningen i y-retning for å finne tiden \(t\) det tar før ballen treffer bakken. Siden ballen faller vertikalt uten startfart i y-retning (\(v_{0y} = 0\)), er posisjonslikningen i y-retning:
+\[
+y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
+\]
+Vi vet at sluttposisjonen \(y = 0\), startposisjonen \(y_0 = 0.8 \, \text{m}\), og akselerasjonen \(a_y = -9.81 \, \text{m/s}^2\). Dette gir:
+\[
+0 = 0.8 + 0 \cdot t - \frac{1}{2} \cdot 9.81 \cdot t^2,
+\]
+som gir:
+\[
+t^2 = \frac{2 \cdot 0.8}{9.81},
+\]
+\[
+t = \sqrt{\frac{1.6}{9.81}} \approx 0.4 \, \text{sekunder}.
+\]
+
+Nå som vi har funnet tiden \(t = 0.4 \, \text{s}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
+\[
+x = v_{0x} t + \frac{1}{2} a_x t^2.
+\]
+Siden akselerasjonen i x-retning \(a_x = 0\), forenkles likningen til:
+\[
+x = v_{0x} t.
+\]
+Vi setter inn \(x = 0.85 \, \text{m}\) og \(t = 0.4 \, \text{s}\):
+\[
+0.85 = v_{0x} \cdot 0.4.
+\]
+Løs for \(v_{0x}\):
+\[
+v_0 = v_{0x} = \frac{0.85}{0.4} \approx 2.125 \, \text{m/s}.
+\]
+
+\textbf{Del b: Beregn sluttfarten rett før ballen treffer bakken} \\
+
+\textit{Metode:}
+For å finne sluttfarten \(v_1\) rett før ballen treffer bakken, må vi beregne både hastigheten i x- og y-retning ved \(t = 0.4 \, \text{s}\). Siden akselerasjonen i x-retning er null, forblir hastigheten i x-retning uendret:
+\[
+v_{1x} = v_{0x} = 2.125 \, \text{m/s}.
+\]
+For y-retningen bruker vi hastighetslikningen i y-retning:
+\[
+v_{1y} = v_{0y} + a_y t.
+\]
+Siden \(v_{0y} = 0\) og \(a_y = -9.81 \, \text{m/s}^2\), får vi:
+\[
+v_{1y} = 0 + (-9.81) \cdot 0.4 \approx -3.924 \, \text{m/s}.
+\]
+
+Den totale hastigheten \(v_1\) rett før ballen treffer bakken er summen av komponentene i x- og y-retning, og kan finnes ved Pythagoras' setning:
+\[
+v_1 = \sqrt{v_{1x}^2 + v_{1y}^2} = \sqrt{(2.125)^2 + (-3.924)^2} \approx \sqrt{4.515 + 15.4} \approx \sqrt{19.915} \approx 4.46 \, \text{m/s}.
+\]
+
+Dermed er sluttfarten rett før ballen treffer bakken \(\doubleunderline{v_1 \approx 4.46 \, \text{m/s}}\).
+}
+
+   \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Ball ut av klippe.png}
+    \caption{Ballen rett før den faller ut av klippen}
+    \label{fig:Ball i klippen}
+    \end{figure}
+
+\oppgave{Prosjektilbevegelse}{%
+En ball kastes horisontalt fra en klippe $h = 5\,\textrm{m}$ over bakken med startfart $v_0 = 10\,\textrm{m/s}$. Bruk $g = 9.81\,\textrm{m/s}^2$.
+\begin{enumerate}[a)]
+    \item Finn tiden ballen bruker på å treffe bakken.
+    \item Finn den horisontale avstanden fra klippen til der ballen lander.
+    \item Finn farten (størrelsen av hastighetsvektoren) rett før ballen treffer bakken.
+\end{enumerate}
+}
+
+\newpage
+
+\section{Sirkelbevegelse}
+
+\textit{Sirkelbevegelse} oppstår når et objekt beveger seg i en bane som danner en sirkel. For eksempel, når en bil kjører rundt i en sving, eller når en stein knyttet til en tråd svinges rundt. Selv om farten (størrelsen på hastigheten) kan være den samme hele tiden, endres retningen til objektet hele tiden, siden det alltid svinger i en sirkel. For å få til denne bevegelsen må det virke en kraft som trekker objektet innover mot sentrum av sirkelen. Denne kraften fører til en akselerasjon som kalles \textit{sentripetalakselerasjon}.
+
+\defn{Sentripetalakselerasjon}{
+    Matematisk kan sentripetalakselerasjonen uttrykkes som:
+    \begin{align}
+        a_\perp = \frac{v^2}{r}
+    \end{align}
+    hvor \( a \) er akselerasjonen som virker innover mot sentrum av sirkelen, \( v \) er konstant banehastighet til objektet langs sirkelen (tangentiell hastighet), og \( r \) er radiusen til sirkelen. Denne formelen beskriver akselerasjonen som er nødvendig for å holde et objekt i jevn sirkelbevegelse.
+}
+
+Sentripetalakselerasjonen peker alltid mot sentrum av sirkelen, selv om objektet hele tiden beveger seg langs kanten av sirkelen. Dette er en viktig idé å forstå når vi ser på bevegelse i sirkulære baner.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Images/Kapittel2:Kinematikk/Sentripetal1.png}
+    \caption{Bil svinger med sentripetalakselerasjon}
+    \label{fig:Sentripetal2}
+    \end{figure}
+
+
+\defn{Utledning av sentripetalakselerasjon}{
+
+    For et objekt som beveger seg i sirkel, endres retningen på hastighetsvektoren \( \vec{v} \), selv om størrelsen på \( v \) forblir konstant. Ser vi på to tidspunkt hvor hastigheten endrer seg fra \( \vec{v}_1 \) til \( \vec{v}_2 \), kan vi bruke forholdet mellom de formlike trekantene for \( \Delta \vec{v} \) og \( \Delta \vec{r} \), som gir oss:
+    \[
+    \frac{\Delta v}{v} = \frac{\Delta r}{r}.
+    \]
+    Der \( r \) er radiusen til sirkelen, og \( \Delta r \) er avstanden objektet har beveget seg langs sirkelen i løpet av et lite tidsintervall \( \Delta t \). 
+
+  \[
+    \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}
+    \]
+
+Vi lar \( \Delta t \to 0 \). Da vil \( \Delta r \to \Delta s \), så kan vi finne akselerasjonen ved å bruke grenseverdien når 
+
+    \[
+    a_\perp = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}={v}\cdot \frac{v}{r}=\frac{v^2}{r}
+    \]
+
+    Dette er formelen for sentripetalakselerasjon, som alltid peker mot sentrum av sirkelen og sørger for at objektet holdes i sirkelbanen.
+}
+
+ \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/Sentripetalakselerasjon.png}
+    \caption{Utledning av sentripetalakselerasjon}
+    \label{fig:Sentripetal2}
+    \end{figure}
+    
+\newpage
+
+\subsection{Omløpstid}
+
+\textit{Omløpstid}, ofte kalt periodetid, refererer til den tiden det tar for et objekt å fullføre én fullstendig runde rundt en sirkel. Dette gjelder for objekter som beveger seg i sirkulære baner, som planeter rundt solen eller en satellitt i bane rundt jorden. Omløpstiden, vanligvis symbolisert som
+\( T \), avhenger både av objektets hastighet og radiusen til sirkelen.
+
+Omløpstiden er nært knyttet til sentripetalakselerasjonen, som holder objektet i sirkulær bevegelse. Selv om objektet har konstant fart, vil det oppleve akselerasjon fordi hastighetsretningen hele tiden endres. Jo kortere omløpstid, desto raskere må objektet bevege seg langs sirkelen, noe som fører til en høyere sentripetalakselerasjon.
+
+
+\defn{Sentripetalakselerasjon ved omløpstid}{
+    For et objekt som beveger seg i en sirkel med radius \( r \), kan sentripetalakselerasjonen uttrykkes som:
+    \begin{align}
+        a_\perp = \frac{4\pi^2 r}{T^2}.
+    \end{align}
+    Her er \( r \) radiusen til sirkelen, og \( T \) er omløpstiden. Denne formelen viser at akselerasjonen er omvendt proporsjonal med kvadratet av omløpstiden.
+}
+
+\tips{Viktige forhold ved sentripetalakselerasjon}{
+    Husk at sentripetalakselerasjonen \( a_\perp \) kan uttrykkes på to måter:
+    \[
+    a_\perp = \frac{v^2}{r} = \frac{4 \pi^2 r}{T^2}.
+    \]
+    Dette viser at akselerasjonen er proporsjonal med kvadratet av hastigheten \( v \) og omvendt proporsjonal med kvadratet av omløpstiden \( T \). Dette er et av de viktigste forholdene å huske på når du jobber med sirkulær bevegelse.
+}
+
+\oppgave{Sirkelbevegelse og omløpstid}{%
+Månens gjennomsnittlige avstand fra jorda er $r = 3.84 \cdot 10^8\,\textrm{m}$, og omløpstiden er $T = 27.3\,\textrm{dager}$.
+\begin{enumerate}[a)]
+    \item Gjør om omløpstiden til sekunder.
+    \item Finn sentripetalakselerasjonen månen opplever ved hjelp av formelen $a_\perp = 4\pi^2 r / T^2$.
+    \item Beregn månens banehastighet $v = 2\pi r / T$ og verifiser svaret ved å bruke $a_\perp = v^2/r$.
+\end{enumerate}
+}

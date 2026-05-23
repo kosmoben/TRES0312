@@ -1,0 +1,114 @@
+\documentclass[../Main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Kom i gang med Python}
+\label{app:python}
+
+\intro{Python er et programmeringsspråk som er svært brukt i vitenskap, ingeniørfag og dataanalyse. Her gir vi en helt grunnleggende innføring i det du trenger for å kjøre kodeeksemplene i dette kompendiet. Du trenger ingen forkunnskaper.}
+
+\section{Jupyter Notebook}
+
+Den enkleste måten å skrive og kjøre Python på er via \textbf{Jupyter Notebook}. En notebook er et dokument der du kan blande kode, tekst og figurer. Slik kommer du i gang:
+
+\begin{enumerate}
+    \item Installer \textbf{Anaconda} fra \url{https://www.anaconda.com} (gratis). Dette installerer Python og Jupyter automatisk.
+    \item Åpne \textbf{Anaconda Navigator} og klikk på \textit{Launch} under Jupyter Notebook.
+    \item En nettleser åpnes. Naviger til mappen \texttt{Python eksempler} og åpne en av \texttt{.ipynb}-filene.
+    \item Klikk på en kodecelle og trykk \textbf{Shift+Enter} for å kjøre den.
+\end{enumerate}
+
+\begin{mymerk*}{Alle eksempler er klare til bruk}
+Alle kodeeksemplene fra dette kompendiet finnes som ferdige Jupyter Notebook-filer i mappen \texttt{Python eksempler}. Du kan åpne dem direkte og kjøre dem uten å skrive noe selv — og deretter modifisere dem for å eksperimentere.
+\end{mymerk*}
+
+\section{Variabler og regneoperasjoner}
+
+I Python lagrer vi verdier i \emph{variabler}. Du oppretter en variabel ved å skrive \texttt{navn = verdi}:
+
+\begin{pythonkode}
+m = 2.0    # masse i kg
+v = 5.0    # fart i m/s
+\end{pythonkode}
+
+De vanlige regneoperasjonene er:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|c|}
+\hline
+\rowcolor{blue!20!black!10}
+\textbf{Symbol} & \textbf{Operasjon} & \textbf{Eksempel} \\
+\hline
+\texttt{+} & Addisjon       & \texttt{3 + 2 = 5}   \\
+\texttt{-} & Subtraksjon    & \texttt{5 - 3 = 2}   \\
+\texttt{*} & Multiplikasjon & \texttt{4 * 3 = 12}  \\
+\texttt{/} & Divisjon       & \texttt{10 / 4 = 2.5}\\
+\texttt{**}& Potens         & \texttt{2**3 = 8}    \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Skrive ut resultater: \texttt{print()}}
+
+Funksjonen \texttt{print()} viser verdier på skjermen. Med en \emph{f-streng} kan vi blande tekst og variabler:
+
+\begin{pythonkode}
+E_k = 0.5 * m * v**2
+print(f"Kinetisk energi: {E_k} J")
+# Skriver ut:  Kinetisk energi: 25.0 J
+\end{pythonkode}
+
+Formatet \texttt{\{E\_k:.2f\}} begrenser til to desimaler. \texttt{\{theta:.1f\}} gir én desimal.
+
+\section{NumPy — matematikk og arrays}
+
+\textbf{NumPy} er et bibliotek for matematiske beregninger. Vi importerer det slik:
+
+\begin{pythonkode}
+import numpy as np
+\end{pythonkode}
+
+Nyttige funksjoner:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{blue!20!black!10}
+\textbf{Funksjon} & \textbf{Hva den gjør} \\
+\hline
+\texttt{np.sqrt(x)}       & Kvadratrot av $x$ \\
+\texttt{np.sin(x)}        & Sinus ($x$ i radianer) \\
+\texttt{np.cos(x)}        & Cosinus \\
+\texttt{np.arctan2(y,x)}  & Vinkel i grader (bruk med \texttt{np.degrees}) \\
+\texttt{np.degrees(x)}    & Gjør om fra radianer til grader \\
+\texttt{np.linspace(a,b,n)}& $n$ jevnt fordelte tall mellom $a$ og $b$ \\
+\texttt{np.array([1,2,3])} & Lager en array (liste med tall) \\
+\texttt{np.dot(u, v)}     & Skalarprodukt \\
+\texttt{np.linalg.norm(v)}& Lengden til en vektor \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Matplotlib — lage grafer}
+
+\textbf{Matplotlib} brukes til å tegne grafer:
+
+\begin{pythonkode}
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 200)   # 200 punkter fra 0 til 10
+y = x**2                       # y = x^2
+
+plt.plot(x, y, color='royalblue', linewidth=2)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Graf av y = x^2')
+plt.grid(True, alpha=0.3)
+plt.show()
+\end{pythonkode}
+
+Det er alt du trenger for å kjøre eksemplene i kapittel~1. Lykke til!
+
+\end{document}
