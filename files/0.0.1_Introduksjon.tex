@@ -425,6 +425,120 @@ plt.show()
 \end{enumerate}
 }
 
+\subsection{Trigonometri}
+
+Trigonometri handler om sammenhengene mellom vinkler og sidelengder i en rettvinklet trekant. I fysikk bruker vi dette \textit{hele tiden} — særlig for å dekomponere vektorer i komponenter, og for å gå fra størrelse og vinkel tilbake til komponentform.
+
+\subsubsection*{Den rettvinklede trekanten}
+
+I en rettvinklet trekant navngir vi sidene i forhold til en valgt vinkel $\theta$:
+\begin{itemize}
+    \item \textbf{Hypotenus} ($h$) — den lengste siden, alltid overfor den rette vinkelen
+    \item \textbf{Hosliggende katet} — siden som grenser til $\theta$
+    \item \textbf{Motstående katet} — siden overfor $\theta$
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.25, baseline=(current bounding box.center)]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.2,0);
+  \coordinate (B) at (3.2,2);
+  \fill[headCol!9] (O) -- (A) -- (B) -- cycle;
+  \draw[thick] (O) -- (A) node[midway, below=6pt] {\small hosliggende};
+  \draw[thick] (A) -- (B) node[midway, right=5pt] {\small motstående};
+  \draw[thick] (O) -- (B) node[midway, above left=2pt] {\small hypotenus $h$};
+  \draw (A) ++(-0.22,0) -- ++(0,0.22) -- ++(0.22,0);
+  \draw[headCol, thick] (0.55,0) arc (0:32:0.55);
+  \node at (0.84,0.14) {$\theta$};
+\end{tikzpicture}
+\hspace{2.5cm}
+\begin{tikzpicture}[scale=1.6, baseline=(current bounding box.center)]
+  \draw[->] (-1.2,0) -- (1.3,0) node[right, font=\small] {$x$};
+  \draw[->] (0,-1.2) -- (0,1.3) node[above, font=\small] {$y$};
+  \draw[thick] (0,0) circle (1);
+  \fill[headCol] (0.707,0.707) circle (1.8pt);
+  \draw[thick, headCol] (0,0) -- (0.707,0.707)
+        node[midway, above left=1pt, font=\small] {$1$};
+  \draw[dashed, gray!60] (0.707,0) -- (0.707,0.707);
+  \draw[dashed, gray!60] (0,0.707) -- (0.707,0.707);
+  \draw[very thick, thmscol] (0,0) -- (0.707,0)
+        node[midway, below=4pt, font=\small] {$\cos\theta$};
+  \draw[very thick, defscol!80!black] (0,0) -- (0,0.707)
+        node[midway, left=4pt, font=\small] {$\sin\theta$};
+  \draw[->] (0.28,0) arc (0:45:0.28);
+  \node[font=\small] at (0.45,0.13) {$\theta$};
+  \node[font=\small, above right=1pt] at (0.707,0.707) {$P$};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\small\textit{Venstre: rettvinklet trekant med vinkel $\theta$. \quad Høyre: enhetssirkelen ($r=1$), der $P=(\cos\theta,\,\sin\theta)$.}
+\end{center}
+
+\defn{Sinus, cosinus og tangens}{For en vinkel $\theta$ i en rettvinklet trekant med hypotenus $h$:
+\begin{align*}
+    \cos\theta = \frac{\text{hosliggende}}{h}, \qquad
+    \sin\theta = \frac{\text{motstående}}{h}, \qquad
+    \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{\text{motstående}}{\text{hosliggende}}
+\end{align*}
+\textit{Huskeregel:} \textbf{Soh-Cah-Toa} — \textbf{S}in = Opposite/Hypotenuse, \textbf{C}os = Adjacent/Hypotenuse, \textbf{T}an = Opposite/Adjacent.
+}
+
+Dersom vi kjenner $h$ og $\theta$, gir dette oss katetene direkte:
+\[
+\text{hosliggende} = h\cos\theta, \qquad \text{motstående} = h\sin\theta.
+\]
+
+\subsubsection*{Viktige verdier}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{blue!20!black!10}
+$\theta$ & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ \\
+\hline
+$0^\circ$  & $0$ & $1$ & $0$ \\
+\hline
+$30^\circ$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{\sqrt{3}}$ \\
+\hline
+$45^\circ$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $1$ \\
+\hline
+$60^\circ$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & $\sqrt{3}$ \\
+\hline
+$90^\circ$ & $1$ & $0$ & — \\
+\hline
+\end{tabular}
+\caption{Viktige trigonometriske verdier.}
+\label{tab:trig}
+\end{table}
+
+\begin{myoppsum*}{Pytagoreisk identitet}
+For alle vinkler $\theta$ gjelder:
+\[
+\sin^2\theta + \cos^2\theta = 1
+\]
+Dette følger direkte fra Pytagoras' setning brukt på enhetssirkelen.
+\end{myoppsum*}
+
+\exm{Trigonometri: stige mot vegg}{En stige av lengde $h = 5.0\ \textrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
+
+\paragraph{Løsning:}
+\begin{align*}
+x &= h\cos\theta = 5.0\cdot\cos 37^\circ \approx 5.0\cdot 0.799 \approx \doubleunderline{4.0\ \textrm{m}} \\
+y &= h\sin\theta = 5.0\cdot\sin 37^\circ \approx 5.0\cdot 0.602 \approx \doubleunderline{3.0\ \textrm{m}}
+\end{align*}
+Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
+}
+
+\oppgave{Trigonometri}{%
+\begin{enumerate}[a)]
+    \item Les av $\sin 30^\circ$, $\cos 45^\circ$ og $\tan 60^\circ$ fra Tabell~\ref{tab:trig}.
+    \item En kraft $F = 20\ \textrm{N}$ virker i vinkel $\theta = 53^\circ$ over horisonten. Finn de horisontale og vertikale komponentene $F_x = F\cos\theta$ og $F_y = F\sin\theta$.
+    \item Vis at $\sin^2 30^\circ + \cos^2 30^\circ = 1$.
+\end{enumerate}
+}
+
 \subsection{Vektorer}
 I motsetning til skalarer, som er helt vanlige éndimensjonale tall, er vektorer tall i flere dimensjoner. Vektorer kan ha alt fra to til uendelig mange dimensjoner. I dette kurset skal vi kun arbeide med vektorer i to dimensjoner. Normalt dekomponerer vi vektorer, slik at vi tar for oss en retning om gangen, som gjør det hele mer håndterbart. For å få forståelse for dette skal vi se nærmere på vektorer i $xy$-planet.
 
@@ -654,6 +768,31 @@ Et ekvivalent uttrykk er
     \vec{u} \cdot \vec{v} = |\vec{u}|\,|\vec{v}|\,\cos\theta,
 \end{align}
 der $\theta$ er vinkelen mellom vektorene.}
+
+\paragraph{Geometrisk tolkning}
+
+Skalarproduktet er et mål på \emph{hvor mye to vektorer peker i samme retning.} Tenk deg at vi slår lodd fra spissen av $\vec{A}$ ned på linjen til $\vec{B}$. Loddfoten gir en \emph{projeksjon} med lengde $|\vec{A}|\cos\theta$, og skalarproduktet er denne projeksjonen ganget med $|\vec{B}|$:
+\[
+\vec{A}\cdot\vec{B} \;=\;
+\underbrace{|\vec{A}|\cos\theta}_{\text{projeksjon av }\vec{A}\text{ på }\vec{B}}
+\;\cdot\; |\vec{B}|
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  \draw[->, very thick, headCol] (0,0) -- (4.5,0) node[right] {$\vec{B}$};
+  \draw[->, very thick, thmscol] (0,0) -- (2.5,1.75) node[above right] {$\vec{A}$};
+  \node[above left=1pt, thmscol, font=\small] at (1.25,0.875) {$|\vec{A}|$};
+  \draw[dashed, thmscol!55, thick] (2.5,1.75) -- (2.5,0);
+  \draw (2.5,0) ++(-0.15,0) -- ++(0,0.15) -- ++(0.15,0);
+  \draw[very thick, oppsumcol] (0,0) -- (2.5,0)
+        node[midway, below=5pt] {$|\vec{A}|\cos\theta$};
+  \draw[->, thick] (0.70,0) arc (0:35:0.70);
+  \node[font=\small] at (0.98,0.22) {$\theta$};
+\end{tikzpicture}
+\end{center}
+
+Spesielle tilfeller: $\theta=0^\circ$ (samme retning) $\Rightarrow$ $\cos\theta=1$ (maksimalt positivt); $\theta=90^\circ$ (vinkelrette) $\Rightarrow$ $\cos\theta=0$; $\theta=180^\circ$ (motsatt retning) $\Rightarrow$ $\cos\theta=-1$ (maksimalt negativt).
 
 Ettersom vinkelen mellom enhetsvektorer i et ortogonalt system er 90°, gir definisjonen over oss følgende resultat: 
 \begin{align*}
