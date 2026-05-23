@@ -799,6 +799,24 @@
     belowskip=0pt,
 }
 
+% Output-boks (terminalutdata under kodeblokk)
+\newtcblisting{pythonoutput}{
+    enhanced,
+    arc=0mm,
+    boxrule=0pt,
+    colback=gray!11,
+    top=3pt, bottom=3pt, left=8pt, right=8pt,
+    before skip=1pt, after skip=10pt,
+    listing only,
+    listing options={
+        basicstyle=\ttfamily\small\color{black!75},
+        numbers=none,
+        aboveskip=0pt,
+        belowskip=0pt,
+        showstringspaces=false,
+    },
+}
+
 \newtcblisting{pythonkode}{
     enhanced,
     breakable,
