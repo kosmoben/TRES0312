@@ -724,6 +724,8 @@
 % Example
 % ============================
 
+\newcounter{myexmcounter}[chapter]
+
 \newenvironment{myexample}{
     \tcolorbox[blanker,breakable,left=5mm,parbox=false,
     before upper={\parindent15pt},
@@ -735,8 +737,9 @@
 }
 
 \NewDocumentCommand{\exm}{m+m}{
+    \refstepcounter{myexmcounter}
     \begin{myexample}
-	{\noindent{\it \textbf{Eksempel : #1 }}}\\
+	{\noindent{\it \textbf{Eksempel~\thechapter.\arabic{myexmcounter}: #1}}}\\
         #2
     \end{myexample}
 }

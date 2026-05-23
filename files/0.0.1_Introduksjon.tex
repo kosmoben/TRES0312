@@ -449,24 +449,24 @@ For å arbeide systematisk med vektorer er det nyttig å innføre et sett med fa
 
 I $xy$-planet finnes det to enhetsvektorer:
 \begin{align}
-\hat{x} = (1,0), \qquad \hat{y} = (0,1)
+\hat{\mathbf{x}} = [1,0], \qquad \hat{\mathbf{y}} = [0,1]
 \end{align}
 
-Her peker $\hat{x}$ i positiv $x$-retning, mens $\hat{y}$ peker i positiv $y$-retning. Sammen danner disse enhetsvektorene grunnlaget for koordinatsystemet.
-
+Her peker $\hat{\mathbf{x}}$ i positiv $x$-retning, mens $\hat{\mathbf{y}}$ peker i positiv $y$-retning. Sammen danner disse enhetsvektorene grunnlaget for koordinatsystemet.
+Merk at $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ er ortogonale, det vil si at de står vinkelrett på hverandre, og at de begge har lengde 1.
 \begin{mymerk*}{Alternativ notasjon for enhetsvektorer}
-I mange lærebøker brukes symbolene $i$, $j$, $k$ for de samme enhetsvektorene, og noen steder skrives disse med hat som $\hat{i}$, $\hat{j}$, $\hat{k}$. I dette kompendiet bruker vi $\hat{x}$, $\hat{y}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
+I mange lærebøker brukes symbolene $i$, $j$, $k$ for de samme enhetsvektorene, og noen steder skrives disse med hat som $\hat{i}$, $\hat{j}$, $\hat{k}$. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
 \end{mymerk*}
 
 \paragraph{Vektorer skrevet med enhetsvektorer}
 
 Enhver vektor i $xy$-planet kan skrives som en kombinasjon av enhetsvektorene. Hvis vi har en vektor
 \begin{align}
-\vec{v} = (v_x, v_y),
+\vec{v} = [v_x, v_y],
 \end{align}
 kan den skrives som
 \begin{align}
-\vec{v} = v_x \hat{x} + v_y \hat{y}.
+\vec{v} = v_x \hat{\mathbf{x}} + v_y \hat{\mathbf{y}}.
 \end{align}
 
 Denne skrivemåten gjør det tydelig hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter.
@@ -477,7 +477,7 @@ Enhetsvektorer er spesielt nyttige i fysikk fordi mange lover gjelder uavhengig 
 
 For eksempel kan en kraftvektor skrives som:
 \begin{align}
-\vec{F} = F_x \hat{x} + F_y \hat{y}
+\vec{F} = F_x \hat{\mathbf{x}} + F_y \hat{\mathbf{y}}
 \end{align}
 der $F_x$ og $F_y$ er kraftens komponenter i henholdsvis $x$- og $y$-retning.
 
@@ -485,8 +485,8 @@ Dette gjør det mulig å bruke Newtons lover separat i hver retning, noe som oft
 
 \oppgave{Enhetsvektorer}{%
 \begin{enumerate}[a)]
-    \item Skriv vektoren $\vec{A} = (4,\,-3)$ som en lineær kombinasjon av enhetsvektorene $\hat{x}$ og $\hat{y}$.
-    \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{x} - 2\hat{y}$ og $\vec{v} = -\hat{x} + 5\hat{y}$. Skriv svaret på komponentform.
+    \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
+    \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$. Skriv svaret på komponentform.
 \end{enumerate}
 }
 
@@ -515,13 +515,13 @@ Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posi
 
 \subsection{Størrelse og retning til en vektor}
 
-Vi har sett at vi kan skrive ut vektorkomponentene i et koordinatsystem. En annen måte å angi en vektor på, er å angi dens \emph{lengde} og \emph{retning} i forhold til en gitt akse. Disse to opplysningene er tilstrekkelig for å fullstendig bestemme en vektor — akkurat som komponentformen $(v_x, v_y)$ er det.
+Vi har sett at vi kan skrive ut vektorkomponentene i et koordinatsystem. En annen måte å angi en vektor på, er å angi dens \emph{lengde} og \emph{retning} i forhold til en gitt akse. Disse to opplysningene er tilstrekkelig for å fullstendig bestemme en vektor — akkurat som komponentformen $[v_x,\, v_y]$ er det.
 
 \subsubsection*{Lengde}
 
 Lengden til en vektor kan finnes ved hjelp av Pytagoras’ setning.
 
-\defn{Vektorlengde}{Lengden til en vektor $\vec{v} = (v_x, v_y)$ er gitt ved
+\defn{Vektorlengde}{Lengden til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
 \begin{align}
 |\vec{v}| = \sqrt{v_x^2 + v_y^2}
 \end{align}
@@ -531,13 +531,13 @@ Lengden til en vektor kan finnes ved hjelp av Pytagoras’ setning.
 
 Retningen beskrives ved vinkelen vektoren danner med positiv $x$-akse.
 
-\defn{Vektorvinkel}{Vinkelen til en vektor $\vec{v} = (v_x, v_y)$ er gitt ved
+\defn{Vektorvinkel}{Vinkelen til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
 \begin{align}
 \theta = \arctan\!\left(\frac{v_y}{v_x}\right)
 \end{align}
 der $\theta$ måles fra positiv $x$-retning.}
 
-\exm{Størrelse og retning}{Finn lengde og vinkel til $\vec{v} = (3,\, 4)$.
+\exm{Størrelse og retning}{Finn lengde og vinkel til $\vec{v} = [3,\, 4]$.
 
 \paragraph{Løsning:}
 \[
@@ -574,10 +574,10 @@ Vinkel:  53.1 grader
 
 \oppgave{Størrelse og retning}{%
 \begin{enumerate}[a)]
-    \item Finn lengden til $\vec{v} = (5,\,12)$.
-    \item Finn lengden til $\vec{u} = (-3,\,4)$.
+    \item Finn lengden til $\vec{v} = [5,\,12]$.
+    \item Finn lengden til $\vec{u} = [-3,\,4]$.
     \item En fugl flyr $6\,\textrm{km}$ østover og $8\,\textrm{km}$ nordover. Hva er luftlinjeavstanden, og hvilken vinkel fra østaksen flyr den?
-    \item Finn vinkelen $\vec{u} = (1,\,\sqrt{3})$ danner med positiv $x$-akse.
+    \item Finn vinkelen $\vec{u} = [1,\,\sqrt{3}]$ danner med positiv $x$-akse.
     \item En kraft $\vec{F}$ har størrelse $F = 10\,\textrm{N}$ og danner vinkel $\theta = 40°$ med horisonten. Finn de horisontale og vertikale komponentene.
 \end{enumerate}
 }
@@ -587,7 +587,7 @@ Vektoraddisjon brukes når vi skal legge sammen to vektorer. Det kan for eksempe
 
 \defn{Vektoraddisjon}{Addisjon av vektorer gjøres grafisk ved å plassere starten til den andre vektoren i sluttpunktet til den første (hale-til-spiss-metoden). Algebraisk legges komponentene sammen retningsvis:
 \begin{align*}
-    \vec{v}+\vec{u} = (v_x + u_x, \; v_y + u_y)
+    \vec{v}+\vec{u} = [v_x + u_x, \; v_y + u_y]
 \end{align*}
 }
 
@@ -601,12 +601,12 @@ Vektorene nedenfor viser vektorligningen
 \end{center}
 Deretter kan vi sette inn verdiene og finne ut hva $\vec{\mathrm{A}}$ er:
 \begin{align*}
-    \vec{\mathrm{B}} &= (3,0) = 3\hat{x} + 0 \hat{y}\\
-    \vec{\mathrm{C}} &= (0,2) = 0 \hat{x} + 2 \hat{y}\\
-    \vec{\mathrm{A}} &= (3+0)\hat{x} + (0+2)\hat{y} \\
-    &= 3 \hat{x} + 2 \hat{y} = (3,2)
+    \vec{\mathrm{B}} &= [3,0] = 3\hat{\mathbf{x}} + 0 \hat{\mathbf{y}}\\
+    \vec{\mathrm{C}} &= [0,2] = 0 \hat{\mathbf{x}} + 2 \hat{\mathbf{y}}\\
+    \vec{\mathrm{A}} &= (3+0)\hat{\mathbf{x}} + (0+2)\hat{\mathbf{y}} \\
+    &= 3 \hat{\mathbf{x}} + 2 \hat{\mathbf{y}} = [3,2]
 \end{align*}
-Da får vi resultantvektoren $\vec{\textrm{A}} = (3,2)$.
+Da får vi resultantvektoren $\vec{\textrm{A}} = [3,2]$.
 }
 
 \subsubsection*{Python: vektoraddisjon}
@@ -633,7 +633,7 @@ a + b   = [2. 3.]
 \end{pythonoutput}
 
 \oppgave{Vektoraddisjon}{%
-Gitt vektorene $\vec{a} = (3,\,-1)$ og $\vec{b} = (-1,\,4)$.
+Gitt vektorene $\vec{a} = [3,\,-1]$ og $\vec{b} = [-1,\,4]$.
 \begin{enumerate}[a)]
     \item Regn ut $\vec{a} + \vec{b}$.
     \item Regn ut $\vec{a} - \vec{b}$.
@@ -645,7 +645,7 @@ Gitt vektorene $\vec{a} = (3,\,-1)$ og $\vec{b} = (-1,\,4)$.
 
 Skalarproduktet, også kalt prikkproduktet (engelsk: \textit{dot product}), er en operasjon mellom to vektorer som gir et tall (en skalar). Det uttrykker i hvilken grad to vektorer peker i samme retning.
 
-\defn{Skalarprodukt}{Skalarproduktet av to vektorer $\vec{u} = (u_x,\, u_y)$ og $\vec{v} = (v_x,\, v_y)$ er definert som
+\defn{Skalarprodukt}{Skalarproduktet av to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ er definert som
 \begin{align}
     \vec{u} \cdot \vec{v} = u_x\,v_x + u_y\,v_y.
 \end{align}
@@ -655,15 +655,30 @@ Et ekvivalent uttrykk er
 \end{align}
 der $\theta$ er vinkelen mellom vektorene.}
 
-Skalarproduktet er spesielt nyttig for å
-\begin{itemize}
-    \item finne vinkelen mellom to vektorer
-    \item beregne arbeid ($W = \vec{F}\cdot\vec{s}$)
-    \item sjekke om to vektorer er vinkelrette: $\vec{u}\cdot\vec{v}=0$ dersom og bare dersom $\theta=90^\circ$
-\end{itemize}
+Ettersom vinkelen mellom enhetsvektorer i et ortogonalt system er 90°, gir definisjonen over oss følgende resultat: 
+\begin{align*}
+\hat{\mathbf{x}} \cdot \hat{\mathbf{x}} = 1, \qquad
+\hat{\mathbf{y}} \cdot \hat{\mathbf{y}} = 1, \qquad
+\hat{\mathbf{x}} \cdot \hat{\mathbf{y}} = 0, \qquad
+\hat{\mathbf{y}} \cdot \hat{\mathbf{x}} = 0.
+\end{align*}
+Her har vi brukt at enhetsvektorene har lengde 1, og at $\cos 90° = 0$ og $\cos 0° = 1$.
+
+\exm{Skalarprodukt}{%
+Finn skalarproduktet av $\vec{u} = 2\hat{\mathbf{x}} + 3\hat{\mathbf{y}}$ og $\vec{v} = 4\hat{\mathbf{x}} - \hat{\mathbf{y}}$.  
+
+\paragraph{Løsning:} Vi bruker definisjonen av skalarproduktet, og setter inn komponentene i forhold til enhetsvektorene:
+\begin{align*}
+\vec{u} \cdot \vec{v} &= (2\hat{\mathbf{x}} + 3\hat{\mathbf{y}}) \cdot (4\hat{\mathbf{x}} - \hat{\mathbf{y}}) \\
+&= 2\cdot 4 (\hat{\mathbf{x}} \cdot \hat{\mathbf{x}}) + 2\cdot(-1) (\hat{\mathbf{x}} \cdot \hat{\mathbf{y}}) + 3\cdot 4 (\hat{\mathbf{y}} \cdot \hat{\mathbf{x}}) + 3\cdot(-1) (\hat{\mathbf{y}} \cdot \hat{\mathbf{y}}) \
+&= 8\cdot 1 + (-2)\cdot 0 + 12\cdot 0 + (-3)\cdot 1 \\
+&= 8 - 3 = 5.
+\end{align*}
+
+}
 
 \exm{Skalarprodukt og vinkel}{%
-Finn skalarproduktet av $\vec{u} = (3,\,4)$ og $\vec{v} = (1,\,-2)$, og bestem vinkelen mellom dem.
+Finn skalarproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$, og bestem vinkelen mellom dem.
 
 \paragraph{Løsning:}
 Komponentvis:
@@ -698,7 +713,7 @@ Vinkel = 116.6 grader
 \end{pythonoutput}
 
 \oppgave{Skalarprodukt}{%
-Gitt $\vec{u} = (4,\,3)$ og $\vec{v} = (2,\,-1)$.
+Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.
 \begin{enumerate}[a)]
     \item Beregn skalarproduktet $\vec{u} \cdot \vec{v}$.
     \item Er vektorene vinkelrette? Begrunn svaret.
@@ -710,7 +725,7 @@ Gitt $\vec{u} = (4,\,3)$ og $\vec{v} = (2,\,-1)$.
 
 Kryssprodukt (engelsk: \textit{cross product}) er en operasjon mellom to vektorer som gir en ny vektor vinkelrett på begge. I to dimensjoner reduseres kryssproduktet til et enkelt tall — z-komponenten — som blant annet brukes til å beregne dreiemoment og areal av parallelogrammer.
 
-\defn{Kryssprodukt i 2D}{For to vektorer $\vec{u} = (u_x,\, u_y)$ og $\vec{v} = (v_x,\, v_y)$ i $xy$-planet er kryssproduktets z-komponent
+\defn{Kryssprodukt i 2D}{For to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ i $xy$-planet er kryssproduktets z-komponent
 \begin{align}
     (\vec{u}\times\vec{v})_z = u_x\,v_y - u_y\,v_x.
 \end{align}
@@ -728,7 +743,7 @@ Noen viktige egenskaper:
 \end{itemize}
 
 \exm{Kryssprodukt}{%
-Finn kryssproduktet av $\vec{u} = (3,\,4)$ og $\vec{v} = (1,\,-2)$.
+Finn kryssproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$.
 
 \paragraph{Løsning:}
 \[
@@ -738,7 +753,7 @@ Negativt fortegn betyr at den resulterende vektoren peker i negativ z-retning (i
 }
 
 \oppgave{Kryssprodukt}{%
-Gitt $\vec{u} = (2,\,1)$ og $\vec{v} = (1,\,3)$.
+Gitt $\vec{u} = [2,\,1]$ og $\vec{v} = [1,\,3]$.
 \begin{enumerate}[a)]
     \item Finn $(\vec{u} \times \vec{v})_z$.
     \item Finn $(\vec{v} \times \vec{u})_z$.
