@@ -1,0 +1,97 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Velkommen til fysikk!}
+\subtitle{TRES0312 --- Introduksjon}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%  Bruk gjerne \setcounter{section}{N} rett før en frame der du bytter
+%  seksjon, i stedet for én gang globalt.
+%--------------------------------------------------------------------------
+\setcounter{section}{1}   % Seksjon 1: "Hva er fysikk?"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — TOM
+%--------------------------------------------------------------------------
+\begin{frame}{}
+  
+  \spq{Hva er fysikk?}
+  \pause
+  \svar{
+  Fysikk er studiet av naturens grunnstruktur, gjerne med matematikk som verktøy.
+  }
+\pause
+  \tanke{}{%
+    Kan alt i verden beskrives i matematikk? Hva med \textit{kjærlighet} eller \textit{bevissthet}? Slike vanskelige, filosofiske spørsmål skal vi ikke vsare på i dette kompendiet, men de er verdt å merke seg.}
+ 
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — FYSISKE STØRRELSER
+%--------------------------------------------------------------------------
+
+\begin{frame}{Fysiske størrelser}
+  \spq{Hvordan beskriver vi virkeligheten ved hjelp av matematikk?}
+  \pause
+  \svar{
+    \begin{itemize}
+      \item Vi bruker fysiske størrelser.
+      \item Vi må være nøyaktige
+    \end{itemize}
+  }
+  \pause
+  \defnxr{fys-storrelse}{Fysisk størrelse}{%
+    En \textit{fysisk størrelse} har både \textit{verdi} og \textit{enhet}:
+    \[
+      \textrm{Fysisk størrelse} = \textrm{verdi} \cdot \textrm{enhet}.
+    \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Enheter
+%--------------------------------------------------------------------------
+
+\begin{frame}{Enheter}
+\spq{Hvor mange forskjellige enheter trenger man for å beskrive \textit{alt} i naturen?}
+  \pause
+  \svar{7}
+  \pause
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{Kapittel1:introduksjon/SI-enheter.png}
+  \end{center}
+  
+
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,533 @@
+%==========================================================================
+%  amd-beamer.sty — Beamer-stil for TRES0312-foiler
+%
+%  Gjenspeiler fargevalg fra kompendiet (amd.sty) og tilbyr de samme
+%  miljøene: \defn, \exm, \oppgave, \spm, \tanke, \merk, \oppsum.
+%
+%  Mørk/lys modus styres av \ifdarkmode, som MÅ defineres i
+%  hoveddokumentet FØR \usepackage{amd-beamer}.
+%
+%  Eksempel (i foiler-mal.tex):
+%    \newif\ifdarkmode
+%    \darkmodetrue      ← mørk modus
+%    %\darkmodefalse    ← lys modus (kommenter ut linjen over)
+%==========================================================================
+\ProvidesPackage{amd-beamer}[2025/05/25 TRES0312 Beamer Style]
+
+%--------------------------------------------------------------------------
+%  PAKKER
+%--------------------------------------------------------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[norwegian]{babel}
+\RequirePackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\RequirePackage{dsfont}
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{listings,theorems,skins}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\graphicspath{{../TRES0312 Kompendium/Images/}}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,shapes.geometric,arrows,shadows}
+\RequirePackage[shortlabels,inline]{enumitem}
+\RequirePackage{cancel}
+\RequirePackage{array}
+
+%--------------------------------------------------------------------------
+%  GRUNFARGER — identiske med kompendiet
+%--------------------------------------------------------------------------
+\definecolor{defscol}   {HTML}{449944}
+\definecolor{clmscol}   {HTML}{165c58}
+\definecolor{oppgcol}   {HTML}{1A6B9A}
+\definecolor{spmcol}    {HTML}{F9F3EE}
+\definecolor{tankecol}  {HTML}{F4F9EE}
+\definecolor{thmscol}   {HTML}{595765}
+\definecolor{oppsumcol} {rgb} {0.8,0.5,0}
+\definecolor{merkcol}   {HTML}{ecd8d7}
+\definecolor{natKonstCol}{RGB}{0,115,60}
+\definecolor{headCol}   {cmyk}{1,.60,0,.40}   % mørk blå fra kompendiet
+
+% Mørk-modus bakgrunnsnyanser
+\definecolor{darkbg}    {RGB}{18, 26, 35}
+\definecolor{darkframe} {RGB}{30, 44, 58}
+\definecolor{darkspm}   {RGB}{45, 42, 38}
+\definecolor{darktanke} {RGB}{35, 45, 38}
+
+%--------------------------------------------------------------------------
+%  MODUSSPESIFIKKE FARGER
+%  Velg farger til boksene avhengig av mørk/lys modus.
+%--------------------------------------------------------------------------
+\ifdarkmode
+  \colorlet{pagecolor}  {darkbg}
+  \colorlet{textcolor}  {white!92!gray}
+  % Definisjon
+  \colorlet{defback}    {defscol!22!darkbg}
+  \colorlet{deftitle}   {defscol!48!darkbg}
+  % Eksempel
+  \colorlet{exmline}    {clmscol!70!white}
+  \colorlet{exmtextcol} {clmscol!80!white}
+  % Oppgave
+  \colorlet{oppgback}   {oppgcol!18!darkbg}
+  \colorlet{oppgtitle}  {oppgcol!40!darkbg}
+  % Spm / tanke
+  \colorlet{spmback}    {darkspm}
+  \colorlet{tankeback}  {darktanke}
+  % Oppsummering
+  \colorlet{oppsumback} {oppsumcol!18!darkbg}
+  \colorlet{oppsumtitle}{oppsumcol!40!darkbg}
+  % Merk
+  \colorlet{merkback}   {merkcol!12!darkbg}
+  \colorlet{merktitle}  {merkcol!35!darkbg}
+  % Svar
+  \colorlet{svartitlecol}{spmback!55!black}
+  \colorlet{bodycolor}  {darkbg}
+\else
+  \colorlet{pagecolor}  {white}
+  \colorlet{textcolor}  {black}
+  % Definisjon
+  \colorlet{defback}    {defscol!16!white}
+  \colorlet{deftitle}   {defscol!38!white}
+  % Eksempel
+  \colorlet{exmline}    {clmscol!40!white}
+  \colorlet{exmtextcol} {clmscol}
+  % Oppgave
+  \colorlet{oppgback}   {oppgcol!7!white}
+  \colorlet{oppgtitle}  {oppgcol!22!white}
+  % Spm / tanke
+  \colorlet{spmback}    {spmcol}
+  \colorlet{tankeback}  {tankecol}
+  % Oppsummering
+  \colorlet{oppsumback} {oppsumcol!13!white}
+  \colorlet{oppsumtitle}{oppsumcol!24!white}
+  % Merk
+  \colorlet{merkback}   {merkcol!14!white}
+  \colorlet{merktitle}  {merkcol!35!white}
+  % Svar
+  \colorlet{svartitlecol}{spmcol!40!black}
+  \colorlet{bodycolor}  {white}
+\fi
+
+%--------------------------------------------------------------------------
+%  BEAMER FARGETEMA
+%--------------------------------------------------------------------------
+\setbeamercolor{background canvas}{bg=pagecolor}
+\setbeamercolor{normal text}      {fg=textcolor}
+\setbeamercolor{frametitle}       {fg=white,   bg=headCol}
+\setbeamercolor{title}            {fg=white}
+\setbeamercolor{subtitle}         {fg=white!80!gray}
+\setbeamercolor{author}           {fg=white!85!gray}
+\setbeamercolor{date}             {fg=white!70!gray}
+\setbeamercolor{institute}        {fg=white!80!gray}
+\setbeamercolor{itemize item}     {fg=headCol!80!white}
+\setbeamercolor{itemize subitem}  {fg=headCol!60!textcolor}
+\setbeamercolor{enumerate item}   {fg=headCol!80!white}
+
+%--------------------------------------------------------------------------
+%  BEAMER SKRIFTTYPER
+%--------------------------------------------------------------------------
+\setbeamerfont{frametitle}{series=\bfseries, size=\large}
+\setbeamerfont{title}     {series=\bfseries, size=\LARGE}
+\setbeamerfont{subtitle}  {size=\large}
+
+%--------------------------------------------------------------------------
+%  NAVIGASJON OG BUNNTEKST
+%--------------------------------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{footline}{%
+  \hfill
+  {\ifdarkmode\color{white!40!gray}\else\color{black!35}\fi
+   \small\insertframenumber\,/\,\inserttotalframenumber\hspace{8pt}}%
+  \vspace{5pt}%
+}
+
+%--------------------------------------------------------------------------
+%  TITTELSIDE
+%--------------------------------------------------------------------------
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Toppfelt
+    \fill[headCol]
+      (current page.north west)
+      rectangle ([yshift=-4cm]current page.north east);
+    % Kursnavn over tittel
+    \node[anchor=center, text=white!65!gray, font=\normalsize]
+      at ([yshift=-1.0cm]current page.north) {TRES0312 Fysikk};
+    % Tittel
+    \node[anchor=center, text=white, font=\bfseries\LARGE]
+      at ([yshift=-2.0cm]current page.north) {\inserttitle};
+    % Undertittel
+    \ifx\insertsubtitle\empty\else
+      \node[anchor=center, text=white!80!gray, font=\large]
+        at ([yshift=-3.0cm]current page.north) {\insertsubtitle};
+    \fi
+    % Forfatter
+    \node[anchor=center,
+          text=\ifdarkmode white!70!gray\else black!60\fi,
+          font=\normalsize]
+      at ([yshift=1.2cm]current page.south) {\insertauthor};
+    % Dato
+    \node[anchor=center,
+          text=\ifdarkmode white!50!gray\else black!45\fi,
+          font=\small]
+      at ([yshift=0.5cm]current page.south) {\insertdate};
+  \end{tikzpicture}%
+}
+
+%--------------------------------------------------------------------------
+%  FRAMETITLE
+%--------------------------------------------------------------------------
+\setbeamertemplate{frametitle}{%
+  \vspace{-0.5pt}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.2ex,leftskip=1em]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  KRYSSREFERANSER FRA KOMPENDIET
+%  Leser numrene direkte fra kompendietets .aux-fil.
+%  Krav: kompiler kompendiet FØR foilene, slik at main.aux er oppdatert.
+%
+%  Merk: I kompendiet brukes \defnr{Tittel}{label}{Innhold},
+%        \exmr{Tittel}{label}{Innhold} og \oppgaver{Tittel}{label}{Innhold}
+%        for å opprette labels som foilene kan referere til.
+%--------------------------------------------------------------------------
+\RequirePackage{xr}
+\externaldocument[K-]{../TRES0312 Kompendium/main}
+
+%--------------------------------------------------------------------------
+%  MATEMATISKE SNARVEIER (identiske med kompendiet)
+%--------------------------------------------------------------------------
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\expo}[1]{\exp{\left\{#1\right\}}}
+\newcommand{\lno}[1]{\ln{\left\{#1\right\}}}
+
+%--------------------------------------------------------------------------
+%  TELLERE
+%  Nullstilles per seksjon, slik at nummereringen
+%  kan samkjøres manuelt med kompendiet ved å sette
+%    \setcounter{section}{N}
+%  øverst i hvert foilsett.
+%--------------------------------------------------------------------------
+\newcounter{defncounter}[section]
+\newcounter{exmcounter} [section]
+\newcounter{oppgcounter}[section]
+
+%--------------------------------------------------------------------------
+%  \defn{Tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\defn}{m+m}{%
+  \refstepcounter{defncounter}%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=deftitle,
+    colback=defback,
+    title={Definisjon \thesection.\thedefncounter:~#1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%  \defnxr{label}{Tittel}{Innhold}
+%  Nummer hentes automatisk fra kompendiet via xr.
+%  Krever at kompendiet bruker \defnr{Tittel}{label}{Innhold}.
+%  Eksempel: \defnxr{fys-storrelse}{Fysisk størrelse}{...}
+\NewDocumentCommand{\defnxr}{mm+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=deftitle,
+    colback=defback,
+    title={Definisjon \ref{K-defn:#1}:~#2},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \exmxr{label}{Tittel}{Innhold}
+%  Krever at kompendiet bruker \exmr{Tittel}{label}{Innhold}.
+\NewDocumentCommand{\exmxr}{mm+m}{%
+  \begin{tcolorbox}[
+    blanker, left=5mm, parbox=false,
+    before skip=5pt, after skip=5pt,
+    borderline west={1mm}{0pt}{exmline},
+  ]
+  {\noindent\itshape\textbf{\color{exmtextcol}%
+    Eksempel \ref{K-exm:#1}:~#2}}\\[2pt]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \oppgavexr{label}{Tittel}{Innhold}
+%  Krever at kompendiet bruker \oppgaver{Tittel}{label}{Innhold}.
+\NewDocumentCommand{\oppgavexr}{mm+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=1mm, boxrule=0pt,
+    colframe=oppgtitle,
+    colbacktitle=oppgtitle,
+    colback=oppgback,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
+    title={Oppgave \ref{K-oppg:#1}:~#2},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \defnat{2.3}{Tittel}{Innhold}
+%  Eksplisitt nummer — teller røres ikke.
+%  Bruk denne når du hopper over definisjoner i lysbildesettet.
+\NewDocumentCommand{\defnat}{mm+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=deftitle,
+    colback=defback,
+    title={Definisjon #1:~#2},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \exmat{2.3}{Tittel}{Innhold} — eksempel med eksplisitt nummer
+\NewDocumentCommand{\exmat}{mm+m}{%
+  \begin{tcolorbox}[
+    blanker, left=5mm, parbox=false,
+    before skip=5pt, after skip=5pt,
+    borderline west={1mm}{0pt}{exmline},
+  ]
+  {\noindent\itshape\textbf{\color{exmtextcol}%
+    Eksempel #1:~#2}}\\[2pt]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \oppgaveat{2.3}{Tittel}{Innhold} — oppgave med eksplisitt nummer
+\NewDocumentCommand{\oppgaveat}{mm+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=1mm, boxrule=0pt,
+    colframe=oppgtitle,
+    colbacktitle=oppgtitle,
+    colback=oppgback,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
+    title={Oppgave #1:~#2},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%  \defnr{Tittel}{label}{Innhold} — med \label for xr-kryssreferanse
+\NewDocumentCommand{\defnr}{mm+m}{%
+  \refstepcounter{defncounter}%
+  \label{defn:#2}%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=deftitle,
+    colback=defback,
+    title={Definisjon \thesection.\thedefncounter:~#1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #3
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \exm{Tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\exm}{m+m}{%
+  \refstepcounter{exmcounter}%
+  \begin{tcolorbox}[
+    blanker, left=5mm, parbox=false,
+    before skip=5pt, after skip=5pt,
+    borderline west={1mm}{0pt}{exmline},
+  ]
+  {\noindent\itshape\textbf{\color{exmtextcol}%
+    Eksempel \thesection.\theexmcounter:~#1}}\\[2pt]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \oppgave{Tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\oppgave}{m+m}{%
+  \refstepcounter{oppgcounter}%
+  \begin{tcolorbox}[
+    enhanced, arc=1mm, boxrule=0pt,
+    colframe=oppgtitle,
+    colbacktitle=oppgtitle,
+    colback=oppgback,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
+    title={Oppgave \thesection.\theoppgcounter:~#1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \spm{ekstra-tittel}{%\item ...\item ...}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\spm}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=spmback, colback=spmback,
+    top=8pt, bottom=4pt, left=10pt, right=10pt,
+    before skip=8pt, after skip=8pt,
+  ]
+  {\bfseries\ifdarkmode\color{white!90!gray}\fi
+   Spørsmål vi jobber med i dette kapitlet #1}
+  \begin{enumerate}[1.]
+    #2
+  \end{enumerate}
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \svar{Innhold} — svarfelt med venstrestrek og "Svar"-tittel
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\svar}{+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=svartitlecol,
+    colback=bodycolor,
+    title={Svar},
+    borderline west={1mm}{0pt}{spmback},
+    left=5mm,
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #1
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \spq{Innhold} — spørsmålsboks uten overskrift
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\spq}{+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=spmback, colback=spmback,
+    top=8pt, bottom=8pt, left=10pt, right=10pt,
+    before skip=8pt, after skip=8pt,
+  ]
+  \begin{center}
+    \large\ifdarkmode\color{white!90!gray}\fi #1
+  \end{center}
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \tanke{ekstra-tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\tanke}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=tankeback, colback=tankeback,
+    top=8pt, bottom=4pt, left=10pt, right=10pt,
+    before skip=8pt, after skip=8pt,
+  ]
+  {\bfseries\ifdarkmode\color{white!90!gray}\fi
+   Til ettertanke\if\relax\detokenize{#1}\relax\else~#1\fi}\\[4pt]
+  \ifdarkmode\color{white!80!gray}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \merk{Tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\merk}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=merktitle,
+    colback=merkback,
+    title={Merk: #1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
+%  \oppsum{Tittel}{Innhold}
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\oppsum}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=black,
+    colbacktitle=oppsumtitle,
+    colback=oppsumback,
+    title={Oppsummering: #1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%==========================================================================
+%  KRYSSREFERANSE TIL KOMPENDIET (valgfritt)
+%==========================================================================
+%
+%  For å vise NØYAKTIG SAMME nummer som i kompendiet, gjør følgende:
+%
+%  1. Legg til \label i kompendiet, f.eks.:
+%        \defnr{Fysisk størrelse}{fys-storrelse}{...}
+%     Dette oppretter etiketten "defn:fys-storrelse" i kompendiet.
+%
+%  2. Kompiler kompendiet én gang, slik at main.aux oppdateres.
+%
+%  3. Fjern kommentaren fra linjene nedenfor i dette filer:
+%
+% \RequirePackage{xr}
+% \externaldocument[K-]{../TRES0312 Kompendium/main}
+%
+%  4. Bruk i foilene:
+%        Definisjon~\ref{K-defn:fys-storrelse}
+%     → viser samme nummer som i kompendiet, oppdateres automatisk.
+%
+%  For eksempler som bruker \exm{} (med refstepcounter), legg til
+%  \label{exm:mitt-eksempel} rett etter \exm{...}{...} i kompendiet,
+%  og bruk \ref{K-exm:mitt-eksempel} i foilene.
+%==========================================================================
