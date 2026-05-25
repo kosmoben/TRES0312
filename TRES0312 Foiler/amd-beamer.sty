@@ -50,40 +50,42 @@
 % Mørk-modus bakgrunnsnyanser
 \definecolor{darkbg}    {RGB}{18, 26, 35}
 \definecolor{darkframe} {RGB}{30, 44, 58}
-\definecolor{darkspm}   {RGB}{45, 42, 38}
-\definecolor{darktanke} {RGB}{35, 45, 38}
+\definecolor{darkspm}   {RGB}{72, 66, 58}
+\definecolor{darktanke} {RGB}{50, 68, 54}
 
 %--------------------------------------------------------------------------
 %  MODUSSPESIFIKKE FARGER
 %  Velg farger til boksene avhengig av mørk/lys modus.
 %--------------------------------------------------------------------------
 \ifdarkmode
-  \colorlet{pagecolor}  {darkbg}
-  \colorlet{textcolor}  {white!92!gray}
+  \colorlet{pagecolor}   {darkbg}
+  \colorlet{textcolor}   {white!92!gray}
+  \colorlet{boxtitletext}{white}
   % Definisjon
-  \colorlet{defback}    {defscol!22!darkbg}
-  \colorlet{deftitle}   {defscol!48!darkbg}
+  \colorlet{defback}    {defscol!40!darkbg}
+  \colorlet{deftitle}   {defscol!68!darkbg}
   % Eksempel
   \colorlet{exmline}    {clmscol!70!white}
   \colorlet{exmtextcol} {clmscol!80!white}
   % Oppgave
-  \colorlet{oppgback}   {oppgcol!18!darkbg}
-  \colorlet{oppgtitle}  {oppgcol!40!darkbg}
+  \colorlet{oppgback}   {oppgcol!32!darkbg}
+  \colorlet{oppgtitle}  {oppgcol!60!darkbg}
   % Spm / tanke
   \colorlet{spmback}    {darkspm}
   \colorlet{tankeback}  {darktanke}
   % Oppsummering
-  \colorlet{oppsumback} {oppsumcol!18!darkbg}
-  \colorlet{oppsumtitle}{oppsumcol!40!darkbg}
+  \colorlet{oppsumback} {oppsumcol!32!darkbg}
+  \colorlet{oppsumtitle}{oppsumcol!60!darkbg}
   % Merk
-  \colorlet{merkback}   {merkcol!12!darkbg}
-  \colorlet{merktitle}  {merkcol!35!darkbg}
+  \colorlet{merkback}   {merkcol!28!darkbg}
+  \colorlet{merktitle}  {merkcol!55!darkbg}
   % Svar
-  \colorlet{svartitlecol}{spmback!55!black}
+  \colorlet{svartitlecol}{headCol!62!darkbg}
   \colorlet{bodycolor}  {darkbg}
 \else
-  \colorlet{pagecolor}  {white}
-  \colorlet{textcolor}  {black}
+  \colorlet{pagecolor}   {white}
+  \colorlet{textcolor}   {black}
+  \colorlet{boxtitletext}{black}
   % Definisjon
   \colorlet{defback}    {defscol!16!white}
   \colorlet{deftitle}   {defscol!38!white}
@@ -223,7 +225,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=deftitle,
     colback=defback,
     title={Definisjon \thesection.\thedefncounter:~#1},
@@ -243,7 +245,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=deftitle,
     colback=defback,
     title={Definisjon \ref{K-defn:#1}:~#2},
@@ -278,7 +280,7 @@
     colbacktitle=oppgtitle,
     colback=oppgback,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
     title={Oppgave \ref{K-oppg:#1}:~#2},
     before skip=5pt, after skip=5pt,
@@ -296,7 +298,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=deftitle,
     colback=defback,
     title={Definisjon #1:~#2},
@@ -329,7 +331,7 @@
     colbacktitle=oppgtitle,
     colback=oppgback,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
     title={Oppgave #1:~#2},
     before skip=5pt, after skip=5pt,
@@ -347,7 +349,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=deftitle,
     colback=defback,
     title={Definisjon \thesection.\thedefncounter:~#1},
@@ -386,7 +388,7 @@
     colbacktitle=oppgtitle,
     colback=oppgback,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
     title={Oppgave \thesection.\theoppgcounter:~#1},
     before skip=5pt, after skip=5pt,
@@ -476,7 +478,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=merktitle,
     colback=merkback,
     title={Merk: #1},
@@ -495,7 +497,7 @@
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
     fonttitle=\bfseries\normalsize,
-    coltitle=black,
+    coltitle=boxtitletext,
     colbacktitle=oppsumtitle,
     colback=oppsumback,
     title={Oppsummering: #1},
