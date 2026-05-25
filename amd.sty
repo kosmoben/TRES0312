@@ -694,7 +694,26 @@
 }
 
 % ============================
-% Til ettertanke 
+% Spørsmål — enkel boks uten overskrift
+% ============================
+
+\NewDocumentCommand{\spq}{+m}{
+    \begin{tcolorbox}[
+        enhanced,
+        arc=2mm,
+        boxrule=0pt,
+        colframe=spmcol,
+        colback=spmcol,
+        top=8pt, bottom=8pt, left=10pt, right=10pt,
+        before skip=10pt,
+        after skip=10pt,
+    ]
+        #1
+    \end{tcolorbox}
+}
+
+% ============================
+% Til ettertanke
 % ============================
 \definecolor{tankecol}{HTML}{F4F9EE}   % veldig svakt varm grå
 
