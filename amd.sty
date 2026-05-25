@@ -672,7 +672,7 @@
 % ============================
 % Spørsmål (dempet, flat)
 % ============================
-\definecolor{spmcol}{HTML}{F4F3EE}   % veldig svakt varm grå
+\definecolor{spmcol}{HTML}{F9F3EE}   % veldig svakt varm grå
 
 \NewDocumentCommand{\spm}{m+m}{
     \begin{tcolorbox}[
@@ -690,6 +690,28 @@
         \begin{enumerate}[1.]
             #2
         \end{enumerate}
+    \end{tcolorbox}
+}
+
+% ============================
+% Til ettertanke 
+% ============================
+\definecolor{tankecol}{HTML}{F4F9EE}   % veldig svakt varm grå
+
+\NewDocumentCommand{\tanke}{m+m}{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        arc=2mm,
+        boxrule=0pt,
+        colframe=tankecol,
+        colback=tankecol,
+        top=8pt, bottom=4pt, left=10pt, right=10pt,
+        before skip=10pt,
+        after skip=10pt,
+    ]
+        {\bfseries Til ettertanke\if\relax\detokenize{#1}\relax\else~#1\fi}\\[4pt]
+        #2
     \end{tcolorbox}
 }
 
