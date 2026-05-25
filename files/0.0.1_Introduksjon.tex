@@ -1,20 +1,18 @@
 % !TEX root = ../main.tex
 \chapter{Hva er fysikk?}
-\intro{Verden består av så mye forskjellig. Her har vi natur, med skoger og fjell, elver og vann. Her lever alle mulige biologiske vesener. Her finner vi også mennesket, som bygger hus, skyskrapere og teknologiske dupeditter som mobiltelefoner. Der oppe på kuleskallet ser vi stjerner og kométer, supernovaer og nordlys. Felles for alle disse svært forskjellige delene av verden er at det lar seg beskrive av matematikk. Dette er jo på en måte helt spinnvilt. Pionerene innen vitenskap, slik som Johannes Kepler, som oppdaget at planetene går i ellipser, og Isaac Newton, som oppdaget at det finnes en kraft som trekker planetene mot solen, var nok ganske forbløffet over at de kunne finne ut av dette ved hjelp av matematikk. Som Kepler sa det:
+\intro{Verden består av så mye forskjellig. Her har vi natur, med skoger og fjell, elver og vann. Her lever alle mulige biologiske vesener. Her finner vi også mennesket, som bygger hus, skyskrapere og teknologiske dupeditter som mobiltelefoner. Der oppe på kuleskallet ser vi stjerner og kométer, supernovaer og nordlys. Felles for alle disse svært forskjellige delene av verden er at det lar seg beskrive av matematikk. Dette er jo på en måte helt spinnvilt. Pionerene innen vitenskap, slik som Johannes Kepler, som oppdaget at planetene går i ellipser, og Isaac Newton, som oppdaget at det finnes en kraft som trekker planetene mot solen, var nok ganske forbløffet over at de kunne finne ut av dette ved hjelp av matematikk. Som Galileo Galilei sa det:
 \begin{center}
-    \textit{``Philosophy is written in this grand book, the Universe. But the book cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics, and its characters are triangles, circles, and other geometrical figures, without which it is humanly impossible to understand a single word of it. Without these, one is wandering about in a dark labyrinth.''}
+    \textit{``Philosophy is written in this grand book, the Universe. But the book cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics, and its characters are triangles, circles, and other geometrical figures, without which it is humanly impossible to understand a single word of it. Without these, one is wandering about in a dark labyrinth.''}\cite{galilei1957assayer}
 \end{center}
-\cite{galilei1957assayer}
 
 \tanke{}{%
     Kan alt i verden beskrives i matematikk? Hva med \textit{kjærlighet} eller \textit{bevissthet}? Slike vanskelige, filosofiske spørsmål skal vi ikke vsare på i dette kompendiet, men de er verdt å merke seg.}
 
-\paragraph{I dette kapitlet} skal vi se på diverse matematiske verktøy som blir brukt i kompendiet. Jeg anbefaler å lese det når du får bruk for det, og ikke nødvendigvis i sin helhet.}
+\paragraph{I dette kapitlet} skal vi se på diverse matematiske verktøy som blir brukt i kompendiet. Jeg anbefaler å lese det i sin helhet, slik at du vet hvor du finner ting når du trenger å friske opp matematikken.}
 
 \spm{}{%
 \item Hva er fysikk?
 \item Hvordan beskriver vi virkeligheten med matematikk?}
-\end{align*}
 
 \section{Hva er fysikk?}
 
@@ -48,7 +46,7 @@ Et enkelt eksempel er avstanden $L$ fra Oslo til Trondheim:
 }
 
 \tanke{}{Hvor mange forskjellige enheter trenger man for å beskrive \textit{alt} i naturen?}
-I tabellen under ser vi noen eksempler på fysiske størrelser, og hvilke enheter de har. Det er mange flere fysiske størrelser enn det som er listet opp her, og det finnes mange flere enheter enn det som er listet opp her, men dette er noen av de mest sentrale i dette kurset.
+I tabellen under ser vi noen av de mest sentrale fysiske størrelsene i mekanikk-delen av pensum, sammen med målenheten for disse størrelsene. 
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3}
@@ -57,16 +55,18 @@ I tabellen under ser vi noen eksempler på fysiske størrelser, og hvilke enhete
 \rowcolor{blue!20!black!10}
 \textbf{Fysisk størrelse} & \textbf{Enhet} & \textbf{Beskrivelse} \\
 \hline
-Masse & kg & Hvor mye stoff det er i et objekt \\
 Tid & s & Hvor lenge noe varer \\
-Temperatur & K & Hvor varmt eller kaldt noe er \\
-Elektrisk strøm & A & Hvor mye elektrisitet som flyter \\
-Avstand & m & Hvor langt det er mellom to punkter \\
+Lengde & m & Avstand mellom to punkter \\
+Masse & kg & Hvor mye stoff det er i et objekt \\
+Fart & m/s & Hvor raskt noe beveger seg \\
+Akselerasjon & m/s$^2$ & Hvor raskt farten endrer seg \\
+Kraft & N & Vekselvirkning mellom legemer \\
+Energi & J & Potensiale for vekselvirkning.\\
 \hline
 \end{tabular}
 \caption{Eksempler på fysiske størrelser og deres enheter.}
-\end{table}\end{align*}
-
+\end{table}
+I det følgende skal vi se på et standardisert system for enheter, og hvordan vi kan regne med enheter. 
 \subsection{SI-enheter}
 Man kunne jo tenkt at det trengs veldig mange enheter for å beskrive alt i naturen, ettersom naturen består av veldig mye forskjellig. Men det viser seg at man ikke trenger flere enn 7 forskjellige enheter. Det finnes mange forskjellige systemer for enheter. Felles for dem er at de koker ned til 7 unike enheter. I dette faget skal vi benytte SI-enheter, som er det internasjonale enhetssystemet sitt system, og benyttet i mange land. Figur \ref{fig:SI_enheter} viser en illustrasjon av SI-enhetene, og i dette faget skal vi benytte alle, så nær som \textit{candela}, som er måleenhet for \textit{opplevd lysstyrke}. 
 
@@ -85,18 +85,18 @@ Tabell~\ref{tab:SI_enheter} viser SI-enhetene og de naturkonstantene som bestemm
 \centering
 \small
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|l|c|l||p{3.8cm}|c|p{3.6cm}|}
+\begin{tabular}{|l|c|l||m{3.8cm}|c|m{3.6cm}|}
 \hline
 \rowcolor{blue!20!black!10}
 \textbf{Måleenhet} & \textbf{Symbol} & \textbf{Fysisk størrelse} &
-\textbf{Bestemt av (nat. konst)} & \textbf{Symbol} & \textbf{Verdi (eksakt)} \\
+\textbf{Bestemt av (naturkonstant)} & \textbf{Symbol} & \textbf{Verdi (eksakt)} \\
 \hline
 Sekund    & s   & Tid             & Cesium-frekvens (hyperfin overgang)           & $\Delta\nu_{Cs}$ & $9\,192\,631\,770\ \text{Hz}$ \\
 Meter     & m   & Avstand         & Lyshastigheten i vakuum                       & $c$              & $299\,792\,458\ \text{m/s}$ \\
 Kilogram  & kg  & Masse           & Plancks konstant                              & $h$              & $6.626\,070\,15\cdot10^{-34}\ \text{J\,s}$ \\
 Ampere    & A   & Elektrisk strøm & {\color{natKonstCol}Elementærladning}         & $e$              & $1.602\,176\,634\cdot10^{-19}\ \text{C}$ \\
 Kelvin    & K   & Temperatur      & {\color{natKonstCol}Boltzmanns konstant}      & $k_B$            & $1.380\,649\cdot10^{-23}\ \text{J\,K}^{-1}$ \\
-Mol       & mol & Stoffmengde     & {\color{natKonstCol}Avogadros konstant}       & $N_A$            & $6.022\,140\,76\cdot10^{23}\ \text{mol}^{-1}$ \\
+Mol       & mol & Stoffmengde     & {\color{natKonstCol}Avogadros konstant}       & $N_A$            & $6.022\,140\,76\cdot 10^{23}\ \text{mol}^{-1}$ \\
 Candela   & cd  & Lys-intensitet  & Luminøs effektivitet                          & $K_{cd}$         & $683\ \text{lm\,W}^{-1}$ \\
 \hline
 \end{tabular}
