@@ -249,7 +249,7 @@
     coltitle=boxtitletext,
     colbacktitle=deftitle,
     colback=defback,
-    title={Definisjon \ref{K-defn:#1}:~#2},
+    title={Definisjon \protect\ref{K-defn:#1}:~#2},
     before skip=5pt, after skip=5pt,
   ]
   \ifdarkmode\color{textcolor}\fi
@@ -266,7 +266,7 @@
     borderline west={1mm}{0pt}{exmline},
   ]
   {\noindent\itshape\textbf{\color{exmtextcol}%
-    Eksempel \ref{K-exm:#1}:~#2}}\\[2pt]
+    Eksempel \protect\ref{K-exm:#1}:~#2}}\\[2pt]
   \ifdarkmode\color{textcolor}\fi
   #3
   \end{tcolorbox}%
@@ -283,7 +283,7 @@
     fonttitle=\bfseries\normalsize,
     coltitle=boxtitletext,
     titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
-    title={Oppgave \ref{K-oppg:#1}:~#2},
+    title={Oppgave \protect\ref{K-oppg:#1}:~#2},
     before skip=5pt, after skip=5pt,
   ]
   \ifdarkmode\color{textcolor}\fi
