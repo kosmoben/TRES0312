@@ -786,6 +786,13 @@
     \end{myoppgave}
 }
 
+% \oppgaver{Tittel}{label}{Innhold} — med \label for xr-kryssreferanse til foiler
+\NewDocumentCommand{\oppgaver}{mm+m}{
+    \begin{myoppgave}{#1}{#2}
+        #3
+    \end{myoppgave}
+}
+
 % ============================
 % Example
 % ============================
@@ -808,6 +815,16 @@
     \begin{myexample}
 	{\noindent{\it \textbf{Eksempel~\thechapter.\arabic{myexmcounter}: #1}}}\\
         #2
+    \end{myexample}
+}
+
+% \exmr{Tittel}{label}{Innhold} — med \label for xr-kryssreferanse til foiler
+\NewDocumentCommand{\exmr}{mm+m}{
+    \refstepcounter{myexmcounter}
+    \label{exm:#2}
+    \begin{myexample}
+	{\noindent{\it \textbf{Eksempel~\thechapter.\arabic{myexmcounter}: #1}}}\\
+        #3
     \end{myexample}
 }
 
