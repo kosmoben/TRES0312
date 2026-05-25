@@ -715,6 +715,30 @@
 }
 
 % ============================
+% Svar — venstrestrek i spmcol, tittel "Svar" i hvitt
+% ============================
+
+\NewDocumentCommand{\svar}{+m}{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        frame hidden,
+        titlerule=0mm,
+        toptitle=1mm, bottomtitle=1mm,
+        fonttitle=\bfseries,
+        coltitle=white,
+        colbacktitle=spmcol!40!black,
+        colback=white,
+        title={Svar},
+        borderline west={1mm}{0pt}{spmcol},
+        left=5mm,
+        before skip=10pt, after skip=10pt,
+    ]
+        #1
+    \end{tcolorbox}
+}
+
+% ============================
 % Til ettertanke
 % ============================
 \definecolor{tankecol}{HTML}{F4F9EE}   % veldig svakt varm grå
