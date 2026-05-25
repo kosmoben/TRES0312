@@ -14,7 +14,6 @@
 \spm{}{%
 \item Hva er fysikk?
 \item Hvordan beskriver vi virkeligheten med matematikk?}
-\newpage
 
 \section{Hva er fysikk?}
 
@@ -47,10 +46,10 @@ Et enkelt eksempel er avstanden $L$ fra Oslo til Trondheim:
 \[L = 500 \cdot \textrm{kilometer}\]
 }
 
-Men... hvor mange forskjellige enheter trenger man for å beskrive \textit{alt} i naturen?
+\tanke{}{Hvor mange forskjellige enheter trenger man for å beskrive \textit{alt} i naturen?}
 
 \subsection{SI-enheter}
-Det viser seg at man ikke trenger flere enn 7 forskjellige enheter! Det finnes mange forskjellige systemer for enheter. Felles for dem er at de koker ned til 7 unike enheter. I dette faget skal vi benytte SI-enheter, som er det internasjonale enhetssystemet sitt system, og benyttet i mange land. Figur \ref{fig:SI_enheter} viser en illustrasjon av SI-enhetene, og i dette faget skal vi benytte alle, så nær som \textit{candela}, som er måleenhet for \textit{opplevd lysstyrke}. 
+Man kunne jo tenkt at det trengs veldig mange enheter for å beskrive alt i naturen, ettersom naturen består av veldig mye forskjellig. Men det viser seg at man ikke trenger flere enn 7 forskjellige enheter. Det finnes mange forskjellige systemer for enheter. Felles for dem er at de koker ned til 7 unike enheter. I dette faget skal vi benytte SI-enheter, som er det internasjonale enhetssystemet sitt system, og benyttet i mange land. Figur \ref{fig:SI_enheter} viser en illustrasjon av SI-enhetene, og i dette faget skal vi benytte alle, så nær som \textit{candela}, som er måleenhet for \textit{opplevd lysstyrke}. 
 
 \begin{figure}[ht!]
 \centering
@@ -59,28 +58,31 @@ Det viser seg at man ikke trenger flere enn 7 forskjellige enheter! Det finnes m
 \label{fig:SI_enheter}
 \end{figure}
 
-Tabell \ref{tab:SI_enheter} viser måleenheter fra SI-enhetene og hva de måler.
+Tabell~\ref{tab:SI_enheter} viser SI-enhetene og de naturkonstantene som bestemmer dem.
 
 \begin{table}[H]
-\caption{SI-enheter}
+\caption{SI-enhetene og de naturkonstantene som definerer dem (2018-definisjonen). Fargede navn markerer de mest sentrale i dette kurset.}
+\label{tab:SI_enheter}
 \centering
-\begin{tabular}{|l|c|c|}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|l||p{3.8cm}|c|p{3.6cm}|}
 \hline
 \rowcolor{blue!20!black!10}
-\textbf{Måleenhet} & \textbf{Symbol} & \textbf{Fysisk størrelse} \\
+\textbf{Måleenhet} & \textbf{Symbol} & \textbf{Fysisk størrelse} &
+\textbf{Bestemt av (nat. konst)} & \textbf{Symbol} & \textbf{Verdi (eksakt)} \\
 \hline
-Sekund & s & Tid \\
-Meter & m & Avstand \\
-Kilogram & kg & Masse \\
-Mol & mol & Stoffmengde \\
-Candela & cd & Lys-intensitet \\
-Kelvin & K & Temperatur \\
-Ampere & A & Elektrisk strøm \\
+Sekund    & s   & Tid             & Cesium-frekvens (hyperfin overgang)           & $\Delta\nu_{Cs}$ & $9\,192\,631\,770\ \text{Hz}$ \\
+Meter     & m   & Avstand         & Lyshastigheten i vakuum                       & $c$              & $299\,792\,458\ \text{m/s}$ \\
+Kilogram  & kg  & Masse           & Plancks konstant                              & $h$              & $6.626\,070\,15\cdot10^{-34}\ \text{J\,s}$ \\
+Ampere    & A   & Elektrisk strøm & {\color{natKonstCol}Elementærladning}         & $e$              & $1.602\,176\,634\cdot10^{-19}\ \text{C}$ \\
+Kelvin    & K   & Temperatur      & {\color{natKonstCol}Boltzmanns konstant}      & $k_B$            & $1.380\,649\cdot10^{-23}\ \text{J\,K}^{-1}$ \\
+Mol       & mol & Stoffmengde     & {\color{natKonstCol}Avogadros konstant}       & $N_A$            & $6.022\,140\,76\cdot10^{23}\ \text{mol}^{-1}$ \\
+Candela   & cd  & Lys-intensitet  & Luminøs effektivitet                          & $K_{cd}$         & $683\ \text{lm\,W}^{-1}$ \\
 \hline
 \end{tabular}
-\label{tab:SI_enheter}
 \end{table}
-I 2018 vedtok Generalkonferansen for mål og vekt at SI-systemet ikke lenger skal definires ut ifra menneskeskapte prototyper, slik som gullstandarden for 1kg i Paris og den slags. I stedet skal enhetene definieres ut ifra fysiske konstanter. Dette gjøres ved at de fysiske konstantene får \textit{definerte} verdier, og så endrer man verdien til sekund, meter, kg, osv ut ifra disse definisjonene. En skjematisk oppsummering er gitt i Figur~\ref{fig:SI_enheter2}
+I 2018 vedtok Generalkonferansen for mål og vekt at SI-systemet ikke lenger skal definires ut ifra menneskeskapte prototyper, slik som gullstandarden for 1\,kg i Paris og den slags. I stedet skal enhetene definieres ut ifra fysiske konstanter, som vist i høyre del av Tabell~\ref{tab:SI_enheter}. En skjematisk oppsummering av sammenhengen er gitt i Figur~\ref{fig:SI_enheter2}.
 
 \begin{figure}[H]
     \centering
@@ -88,27 +90,7 @@ I 2018 vedtok Generalkonferansen for mål og vekt at SI-systemet ikke lenger ska
     \caption{Figuren viser hvilke fysiske konstanter som definerer de enkelte SI-enhetene. [Av Emilio Pisanty – Eget verk, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=50713156]}
 \label{fig:SI_enheter2}
 \end{figure}
-Den ytterste ringen i Figur~\ref{fig:SI_enheter2} representerer altså såkalte \textit{naturkonstanter}.Tabell~\ref{tab:natKonst} listes symbol, navn og verdi for disse opp. Vi kan spesielt merke oss de som er skrevet i blått, da disse er de mest sentrale i dette kurset.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|l|c|}
-\hline
-\rowcolor{blue!20!black!10}
-\textbf{Symbol} & \textbf{Navn} & \textbf{Verdi (eksakt)} \\
-\hline
-$c$ & Lyshastigheten i vakuum & $299\,792\,458 \ \text{m}/\textrm{s}$ \\
-$h$ & Plancks konstant & $6.626\,070\,15 \cdot 10^{-34} \ \text{J s}$ \\
-$e$ & {\color{blue}Elementærladning} & $1.602\,176\,634 \cdot 10^{-19} \ \text{C}$ \\
-$N_A$ & {\color{blue}Avogadros konstant} & $6.022\,140\,76 \cdot 10^{23} \ \text{mol}^{-1}$ \\
-$k_B$ & {\color{blue}Boltzmanns konstant} & $1.380\,649 \cdot 10^{-23} \ \text{J K}^{-1}$ \\
-$\Delta \nu_{Cs}$ & Cesium-frekvens (hyperfin overgang) & $9\,192\,631\,770 \ \text{Hz}$ \\
-$K_{cd}$ & Luminøs effektivitet & $683 \ \text{lm W}^{-1}$ \\
-\hline
-\end{tabular}
-\caption{Naturkonstanter som definerer SI-systemet (2018-definisjonen).}
-\label{tab:natKonst}
-\end{table}
+Den ytterste ringen i Figur~\ref{fig:SI_enheter2} representerer de \textit{naturkonstantene} som er listet i høyre del av Tabell~\ref{tab:SI_enheter}. De med farget navn er mest sentrale i dette kurset.
 
 \oppgave{SI-enheter}{%
 Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
