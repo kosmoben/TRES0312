@@ -40,6 +40,7 @@
 \definecolor{defscol}   {HTML}{449944}
 \definecolor{clmscol}   {HTML}{165c58}
 \definecolor{oppgcol}   {HTML}{1A6B9A}
+\definecolor{aktivcol}  {HTML}{704DA8}   % lilla — klasseaktiviteter
 \definecolor{spmcol}    {HTML}{F9F3EE}
 \definecolor{tankecol}  {HTML}{F4F9EE}
 \definecolor{thmscol}   {HTML}{595765}
@@ -71,6 +72,9 @@
   % Oppgave
   \colorlet{oppgback}   {oppgcol!32!darkbg}
   \colorlet{oppgtitle}  {oppgcol!60!darkbg}
+  % Aktivitet (klasseaktiviteter, ikke obligatorisk)
+  \colorlet{aktivback}  {aktivcol!28!darkbg}
+  \colorlet{aktivtitle} {aktivcol!55!darkbg}
   % Spm / tanke
   \colorlet{spmback}    {darkspm}
   \colorlet{tankeback}  {darktanke}
@@ -96,6 +100,9 @@
   % Oppgave
   \colorlet{oppgback}   {oppgcol!7!white}
   \colorlet{oppgtitle}  {oppgcol!22!white}
+  % Aktivitet (klasseaktiviteter, ikke obligatorisk)
+  \colorlet{aktivback}  {aktivcol!10!white}
+  \colorlet{aktivtitle} {aktivcol!25!white}
   % Spm / tanke
   \colorlet{spmback}    {spmcol}
   \colorlet{tankeback}  {tankecol}
@@ -378,13 +385,15 @@
   \end{tcolorbox}%
 }
 
-%  \oppgavenonum{Tittel}{Innhold} — oppgaveboks uten nummerering
-\NewDocumentCommand{\oppgavenonum}{m+m}{%
+%  \aktivitet{Tittel}{Innhold}
+%  Klasseaktivitet / diskusjonsoppgave — lilla, UTEN nummerering.
+%  Skilles visuelt fra de obligatoriske \oppgavexr-boksene (blå).
+\NewDocumentCommand{\aktivitet}{m+m}{%
   \begin{tcolorbox}[
     enhanced, arc=1mm, boxrule=0pt,
-    colframe=oppgtitle,
-    colbacktitle=oppgtitle,
-    colback=oppgback,
+    colframe=aktivtitle,
+    colbacktitle=aktivtitle,
+    colback=aktivback,
     fonttitle=\bfseries\normalsize,
     coltitle=boxtitletext,
     titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
