@@ -378,6 +378,24 @@
   \end{tcolorbox}%
 }
 
+%  \oppgavenonum{Tittel}{Innhold} — oppgaveboks uten nummerering
+\NewDocumentCommand{\oppgavenonum}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, arc=1mm, boxrule=0pt,
+    colframe=oppgtitle,
+    colbacktitle=oppgtitle,
+    colback=oppgback,
+    fonttitle=\bfseries\normalsize,
+    coltitle=boxtitletext,
+    titlerule=0mm, toptitle=2mm, bottomtitle=2mm,
+    title={#1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
 %--------------------------------------------------------------------------
 %  \oppgave{Tittel}{Innhold}
 %--------------------------------------------------------------------------

@@ -111,7 +111,7 @@ I 2018 vedtok Generalkonferansen for mål og vekt at SI-systemet ikke lenger ska
 \end{figure}
 Den ytterste ringen i Figur~\ref{fig:SI_enheter2} representerer de \textit{naturkonstantene} som er listet i høyre del av Tabell~\ref{tab:SI_enheter}. De med farget navn er mest sentrale i dette kurset.
 
-\oppgave{SI-enheter}{%
+\oppgaver{SI-enheter}{si-enheter}{%
 Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
 \begin{enumerate}[a)]
     \item Masse
@@ -123,13 +123,13 @@ Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
 }
 
 \subsection{Å regne med enheter}
-Grunnen til at det ikke finnes mer enn 7 enheter er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives om til andre, mer fundamentale enheter. La oss ta \textit{fart} som eksempel.
+Grunnen til at det ikke finnes mer enn 7 enheter er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives ved å bruke kombinasjoner av andre, mer fundamentale enheter. La oss ta \textit{fart} som eksempel.
 \exm{Enhet for fart}{%
 Når vi skal gi et variabel-navn til \textit{fart} bruker vi ofte bokstaven $v$ (forkortelse for det engelske \textit{velocity}). La oss si at faren til en bil er
 \[v=50 \textrm{km}/\textrm{h}.\]
 Her ser vi at enheten for fart, nemlig $\textrm{km}/\textrm{h}$ kan skrives ved hjelp av enhetene for strekning (km) og tid (h, for engelske \textit{hour}\footnote{Både $t$ for \textit{time} og  $h$ for \textit{hour} er mye brukte forkortelser. Du står derfor fritt til å velge selv hvilken forkortelse du vil benytte.}). Vi trenger altså ikke en egen enhet for fart.
 }
-At det finnes lover mellom forskjellige deler av fysikken, betyr også at vi må kunne regne med enhetene, slik som vi regner med tall. La oss ta et eksempel:
+Her har vi, uten å si det, brukt sammenhengen $v=s/t$ for å finne enhetene for farten $v$. Det faktum at det finnes sammenhenger og lover mellom forskjellige deler av fysikken, medfører at vi kan regne på enheter, slik som vi regner med tall. Da betrakter vi enhetene som algebraiske størrelser som kan legges sammen, ganges og deles på samme måte som tall. Det er viktig å huske at alle ledd i et uttrykk må ha samme enhet. Her er noen eksempler.
 
 \exm{Sykkel på tog}{%
 I forbindelse med en filminnspilling kjører Tom Cruise en motorsykkel ombord et cruisskip. Det er generelt en veldig dårlig idé. Men han gjør det likevel, og crus-skipet har en fart $v_\textrm{skip}=30\textrm{km}/\textrm{t}$. Tom har en fart $v_\textrm{T}=70\textrm{km}/\textrm{t}$ relativ til båten. Både Tom Cruise og cruisskipet kjører rett mot ei kai. Hvor stor fart har Tom i forhold til kaia?
@@ -139,7 +139,7 @@ I forbindelse med en filminnspilling kjører Tom Cruise en motorsykkel ombord et
 % CHECK
 Når begge objektene beveger seg i nøyaktig samme retning kan vi legge sammen størrelsene.
 \begin{align*}
-    30\textrm{km/t} + 70\textrm{km/t} = 100 \textrm{km/t}
+    30\textrm{km/t} + 70\textrm{km/t} = \underline{100 \textrm{ km/t}}
 \end{align*}
 
 }
@@ -155,25 +155,20 @@ Pytagoras læresetning sier at i en rettinklet trekant er: \\
 \end{align*}
 4 km nord og 3 km vest gir derfor:
 \begin{align*}
-    \text{luftlinje} = \sqrt{4^2 + 3^2} = 5 \text{ km}
+    \text{luftlinje} = \sqrt{(4\text{ km})^2 + (3\text{ km})^2} \text{k/m}= \sqrt{(4^2 + 3^2)\text{km}^2}=\sqrt{(4^2 + 3^2)}\text{ km}=\underline{5\text{ km}}
 \end{align*}
 }
 
 
-
-
-Å bli vant med enhetsregning vil hjelpe med TRES-fysikkfaget som en ekstra sjekk på at man har regnet riktig, som også kan brukes videre i fag for ingeniører. Her er et par eksempler til.
-
-
 \exm{Enhetsregning}{1) Regn ut hvor mange millimeter det er i 20 meter. \\
 
-\paragraph{Løsning: } For å regne ut dette benytter vi en dekadisk omskriving av meter. Merk at \[1\,\textrm{m}= 10^3\,\textrm{mm}.\] Dermed har vi
-\[20\textrm{m}=20\cdot 10^3\,\textrm{mm} = 20\,000\,\textrm{mm}\]
+\paragraph{Løsning: } For å regne ut dette benytter vi en dekadisk omskriving av meter (mer om dette senere). Merk at \[1\,\textrm{m}= 10^3\,\textrm{mm}.\] Dermed har vi
+\[20\textrm{m}=20\cdot 10^3\,\textrm{mm} = 20\,000\,\textrm{mm}.\]
 }
-
+Å kunne regne på enheter er en helt grunnleggende og veldig viktig egenskap når man holder på med fysikk. Det gir en god sjekk på om man har regnet riktig, og det hjelper en å se sammenhenger. 
 \begin{myoppsum*}{Enhetsregning}
 \begin{itemize}
-    \item Man kan bruke algebra-regler for å regne med enheter.
+    \item Man bruker algebra-regler for å regne med enheter.
     \item Alle ledd i et uttrykk må ha samme enhet
 \end{itemize}
 \end{myoppsum*}
