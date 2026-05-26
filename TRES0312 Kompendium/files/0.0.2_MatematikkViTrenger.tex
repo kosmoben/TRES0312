@@ -1,6 +1,8 @@
 % !TEX root = ../main.tex
 \chapter{Matematiske verktøy vi trenger}
-\intro{I fysikk bruker vi matematikken som et presist språk for å beskrive verden rundt oss. Her ser vi på de viktigste matematiske verktøyene du trenger i dette kurset.}
+\intro{I fysikk bruker vi matematikken som et presist språk for å beskrive verden rundt oss. Her ser vi på de viktigste matematiske verktøyene du trenger i dette kurset. Det betyr ikke at vi går nøye gjennom alt, men kapitlet gir en oversikt over de grunnleggende konseptene og reglene du bør være komfortabel med.}
+\tanke{}{%
+Hvorfor kan naturen beskrives med matematikk?}
 
 \begin{mymerk*}{Python og programmering}
 I dette kompendiet bruker vi Python for å illustrere beregninger og lage figurer. Om du aldri har programmert før, anbefaler vi å lese Appendiks~\ref{app:python} før du går videre. Der finner du en kort innføring i alt du trenger for å komme i gang.
@@ -21,7 +23,7 @@ Her er $v$, $s$ og $t$ \emph{variabler} — symboler som kan settes lik ulike ta
     \item \textbf{Potenser:} $x^a \cdot x^b = x^{a+b}$, \quad $\dfrac{x^a}{x^b} = x^{a-b}$, \quad $(x^a)^b = x^{ab}$.
     \item \textbf{Kvadratrot:} $\sqrt{x} = x^{1/2}$.
 \end{itemize}
-
+Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent". La oss ta Newtons 2. lov som eksempel, og se hvordan vi kan løse for akselerasjonen $a$ når vi kjenner kraften $F$ og massen $m$.
 \exm{Løse for ukjent}{Newtons 2. lov sier $F = m \cdot a$. En bil med masse $m = 1\,200\ \textrm{kg}$ utsettes for en kraft $F = 4\,800\ \textrm{N}$. Finn akselerasjonen $a$.
 
 \paragraph{Løsning:} Del begge sider på $m$:
@@ -32,6 +34,10 @@ a = \frac{F}{m} = \frac{4\,800\ \textrm{N}}{1\,200\ \textrm{kg}} = 4.0\ \textrm{
 
 I eksemplet nedenfor beregner vi den kinetiske energien $E_k = \frac{1}{2}mv^2$ med Python. Merk at koden er veldig lik ordinær algebra — vi definerer variablene og regner ut uttrykket:
 
+\exm{Kinetisk energi}{%
+Beregn den kinetiske energien til en gjenstand med masse $m = 2.0\ \textrm{kg}$ som beveger seg med fart $v = 5.0\ \textrm{m/s}$.
+\paragraph{Løsning:} Vi bruker formelen for kinetisk energi: $E_k = \frac{1}{2}mv^2$, og bestemmer oss for å bruke Python som kalkulator. Vi definerer variablene $m$ og $v$, og regner ut $E_k$:
+}
 \begin{pythonkode}
 # Kinetisk energi: E_k = 0.5 * m * v**2
 m = 2.0    # masse i kg
@@ -245,7 +251,7 @@ Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
 \end{enumerate}
 }
 
-\section{Vektorer}
+\section{Vektorer CHECK: Må rydes opp angående koord syst og enhetsvektorer.}
 I motsetning til skalarer, som er helt vanlige éndimensjonale tall, er vektorer tall i flere dimensjoner. Vektorer kan ha alt fra to til uendelig mange dimensjoner. I dette kurset skal vi kun arbeide med vektorer i to dimensjoner. Normalt dekomponerer vi vektorer, slik at vi tar for oss en retning om gangen, som gjør det hele mer håndterbart. For å få forståelse for dette skal vi se nærmere på vektorer i $xy$-planet.
 
 \defn{vektor}{En vektor er et objekt med både størrelse og retning.}
