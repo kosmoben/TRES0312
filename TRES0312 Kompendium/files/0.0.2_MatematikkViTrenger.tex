@@ -10,21 +10,37 @@ I dette kompendiet bruker vi Python for å illustrere beregninger og lage figure
 
 \section{Algebra}
 
-Algebra handler om å uttrykke sammenhenger mellom størrelser ved hjelp av variabler og symboler. I stedet for å skrive at «fart er strekning delt på tid» kan vi skrive den mer presise formelen
+Algebra handler om å uttrykke sammenhenger mellom størrelser ved hjelp av variabler og symboler. I stedet for å skrive at «fart er strekning delt på tid» kan vi skrive
 \[
 v = \frac{s}{t}.
 \]
-Her er $v$, $s$ og $t$ \emph{variabler} — symboler som kan settes lik ulike tallverdier.
+Her er $v$, $s$ og $t$ \emph{variabler} — altså symboler som kan ta ulike tallverdier. 
 
-\subsection*{Noen grunnleggende regler}
-\begin{itemize}
-    \item \textbf{Regnerekkefølge:} Parentes $\to$ Potens $\to$ Gang/del $\to$ Pluss/minus.
-    \item \textbf{Likningslæren:} Det man gjør på én side av et likhetstegn, må man gjøre på begge.
-    \item \textbf{Potenser:} $x^a \cdot x^b = x^{a+b}$, \quad $\dfrac{x^a}{x^b} = x^{a-b}$, \quad $(x^a)^b = x^{ab}$.
-    \item \textbf{Kvadratrot:} $\sqrt{x} = x^{1/2}$.
-\end{itemize}
-Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent". La oss ta Newtons 2. lov som eksempel, og se hvordan vi kan løse for akselerasjonen $a$ når vi kjenner kraften $F$ og massen $m$.
-\exm{Løse for ukjent}{Newtons 2. lov sier $F = m \cdot a$. En bil med masse $m = 1\,200\ \textrm{kg}$ utsettes for en kraft $F = 4\,800\ \textrm{N}$. Finn akselerasjonen $a$.
+Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent".
+\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = 5\ \textrm{km}$ på $t_1 = 20\ \textrm{min}$. Deretter skrur han opp tempo litt og løper han en strekning $s_2 = 4\ \textrm{km}$ på $t_2 = 18\ \textrm{min}$. Hva er gjennomsnittsfarten $\bar{v}$?
+
+\paragraph{Løsning:} Gjennomsnittsfart $\bar{v}$ er også et begrep vi ikke har lært ennå, men det er rett fram, og de fleste kjenner det intuitivt igjen fra erfaring:
+\[\hat{v} = \frac{\text{total strekning}}{\text{total tid}}.\]
+Vi må derfor finne total strekning og total tid før vi kan regne ut gjennomsnittsfarten.
+
+Først finner vi total strekning og total tid:
+\[
+s_{\text{total}} = s_1 + s_2 = 5\ \textrm{km} + 4\ \textrm{km} = 9\ \textrm{km},
+\]
+\[
+t_{\text{total}} = t_1 + t_2 = 20\ \textrm{min} + 18\ \textrm{min} = 38\ \textrm{min}.
+\]
+Gjennomsnittsfarten er da:
+\[
+\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{9\ \textrm{km}}{38\ \textrm{min}}=0.237\ \textrm{km/min}=0.237\ \frac{km}{60\textrm{s}}=0.00395\ \textrm{m/s}.
+\]
+Greier du å gjøre dette om til km/t.
+
+}
+Et annet eksempel kan være Newtons 2. lov, som gir sammenhengen mellom det vi kaller for kraft $F$, masse $m$ og akselerasjon $a$. 
+
+
+\exm{Løse for akselerasjon $a$}{Newtons 2. lov sier $F = m \cdot a$. En bil med masse $m = 1\,200\ \textrm{kg}$ utsettes for en kraft $F = 4\,800\ \textrm{N}$. Finn akselerasjonen $a$.
 
 \paragraph{Løsning:} Del begge sider på $m$:
 \[
@@ -32,11 +48,10 @@ a = \frac{F}{m} = \frac{4\,800\ \textrm{N}}{1\,200\ \textrm{kg}} = 4.0\ \textrm{
 \]
 }
 
-I eksemplet nedenfor beregner vi den kinetiske energien $E_k = \frac{1}{2}mv^2$ med Python. Merk at koden er veldig lik ordinær algebra — vi definerer variablene og regner ut uttrykket:
-
+\paragraph{Python som kalkulator: } I dette faget er ikke Python obligatorisk på noe som helst vis, men dere kommer sikkert borti det i mange andre fag, så det er greit å bli vant med det først som sist. La oss starte med å se et eksempe hvor vi enkelt og greit bruker Python til å utføre noe vi kunne gjort på en gammeldags kalkulator. 
 \exm{Kinetisk energi}{%
-Beregn den kinetiske energien til en gjenstand med masse $m = 2.0\ \textrm{kg}$ som beveger seg med fart $v = 5.0\ \textrm{m/s}$.
-\paragraph{Løsning:} Vi bruker formelen for kinetisk energi: $E_k = \frac{1}{2}mv^2$, og bestemmer oss for å bruke Python som kalkulator. Vi definerer variablene $m$ og $v$, og regner ut $E_k$:
+Beregn den kinetiske energien $E_K=\frac{1}{2}mv^2$ til en gjenstand med masse $m = 2.0\ \textrm{kg}$ som beveger seg med fart $v = 5.0\ \textrm{m/s}$.
+\paragraph{Løsning:} Vi bruker Python som kalkulator og definerer variablene $m$ og $v$, som vist i koden under.
 }
 \begin{pythonkode}
 # Kinetisk energi: E_k = 0.5 * m * v**2
@@ -61,6 +76,9 @@ Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \texttt{Python eks
     \item Bruk Python til å beregne potensiell energi $E_p = m \cdot g \cdot h$ for $m = 5.0\ \textrm{kg}$, $g = 9.81\ \textrm{m/s}^2$ og $h = 10.0\ \textrm{m}$.
 \end{enumerate}
 }
+\begin{mymerk*}{}
+Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_K = \frac{1}{2}mv^2$ og $E_p = mgh$, så er det ikke noe problem. Vi kommer tilbake til det i senere kapitler. Det viktigste akkurat nå er at du har kontroll på algebaraen.
+\end{mymerk*}
 
 \begin{myoppsum*}{Algebraregler}
     \begin{itemize}
@@ -68,25 +86,42 @@ Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \texttt{Python eks
         \item Husk at du alltid kan multiplisere med 1.
     \end{itemize}
 \end{myoppsum*}
+Det kan også være verdt å repetere følgende regler for notasjon:
+\begin{itemize}
+    \item \textbf{Potenser:} $x^a \cdot x^b = x^{a+b}$, \quad $\dfrac{x^a}{x^b} = x^{a-b}$, \quad $(x^a)^b = x^{ab}$.
+    \item \textbf{Kvadratrot:} $\sqrt{x} = x^{1/2}$.
+\end{itemize}
+I tillegg har vi kvadratsetningene:
+\begin{align*}
+    &(a+b)^2 = a^2 + 2ab + b^2, \\
+    &(a-b)^2 = a^2 - 2ab + b^2, \\
+    &(a+b)(a-b) = a^2 - b^2.
+\end{align*}
+Disse bør også sitte i fingrene.
 
 \section{Funksjoner og plotting}
 
-En \emph{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt utverdi $f(x)$. I fysikk er funksjoner et sentralt verktøy — for eksempel er posisjonen til et objekt i bevegelse en funksjon av tid.
+En \emph{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt utverdi $f(x)$. I fysikk er funksjoner et sentralt verktøy — for eksempel er posisjonen $s$ til et objekt i bevegelse en funksjon av tid $t$. Da skriver vi gjerne $s(t)$ som funksjonsnavn. 
 
 \subsection*{Lineær funksjon}
 Den enkleste funksjonen er den lineære:
 \[
-f(x) = ax + b,
+f(x) = b+ ax,
 \]
-der $a$ er \emph{stigningstallet} (hvor bratt grafen er) og $b$ er \emph{konstantleddet} (der grafen skjærer $y$-aksen).
+der $a$ er \emph{stigningstallet} (hvor bratt grafen er) og $b$ er \emph{konstantleddet} (der grafen skjærer $y$-aksen). Et slikt eksempel er farten $v(t)$ når akselerasjonen er konstant: \[v(t) = v_0 + at.\]
+Som du ser så bruker vi forskjellige variabelnavn, avhengig av hva vi prater om. Det er viktig å forstå at variabelnavnene i seg selv ikke er viktige. Vi kunne i prinsippet godt ha kalt fartsfunksjonen for $f(t)$, uten at det hadde endret noesom helst. Det er bare ikek så hensiktsmessig. 
 
 \subsection*{Kvadratisk funksjon}
 En kvadratisk funksjon har formen
 \[
 f(x) = ax^2 + bx + c.
 \]
-Grafen er en parabel. Posisjonen til et legeme med konstant akselerasjon er for eksempel en kvadratisk funksjon av tid: $x(t) = x_0 + v_0 t + \frac{1}{2}at^2$.
+Grafen er en parabel. Posisjonen til et legeme med konstant akselerasjon er for eksempel en kvadratisk funksjon av tid:
+\[s(t) = \frac{1}{2}at^2+ v_0 t + s_0.\]
 
+\begin{mymerk*}{}
+Merk at mange bokstaver kan symbolisere veldig forskjellige ting. Bokstaven $s$ er et godt eksempel. Skriver vi $s(t)$ mener vi nok strekning som funksjon av tid $t$. Men tiden $t$ har jo enhet sekund, som også betegnes med bokstaven $s$! Et annet eksempel er bokstaven $m$, som brukes både til å symbolisere masse, men også som symbol for enheten meter. Ut ifra sammenhengen greier man som regel å forstå hva som er ment — i alle fall med litt trening.
+\end{mymerk*}
 \subsection*{Plotting med Python}
 En av de nyttigste tingene vi kan gjøre med Python, er å tegne grafer. Eksemplet under plotter posisjon og fart som funksjon av tid for et legeme med konstant akselerasjon:
 
@@ -97,19 +132,19 @@ import matplotlib.pyplot as plt
 # Parametre
 a  = 2.0    # akselerasjon [m/s^2]
 v0 = 0.0    # startfart [m/s]
-x0 = 0.0    # startposisjon [m]
+s0 = 0.0    # startposisjon [m]
 
 # Tid fra 0 til 5 sekunder (200 punkter)
 t = np.linspace(0, 5, 200)
 
 # Bevegelsesligninger
-x = x0 + v0*t + 0.5*a*t**2   # posisjon
+s = s0 + v0*t + 0.5*a*t**2   # posisjon
 v = v0 + a*t                  # fart
 
 # To grafer side om side
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-ax1.plot(t, x, color='royalblue', linewidth=2)
+ax1.plot(t, s, color='royalblue', linewidth=2)
 ax1.set_xlabel('Tid [s]')
 ax1.set_ylabel('Posisjon [m]')
 ax1.set_title('Posisjon vs. tid')
@@ -139,15 +174,13 @@ plt.show()
 
 \section{Trigonometri}
 
-Trigonometri handler om sammenhengene mellom vinkler og sidelengder i en rettvinklet trekant. I fysikk bruker vi dette \textit{hele tiden} — særlig for å dekomponere vektorer i komponenter, og for å gå fra størrelse og vinkel tilbake til komponentform.
+Trigonometri er veldig nyttig redskap i fysikken, ettersom vi hele veien har bruk for å dekomponere vektorer i koordinatsystem. Det er antatt at studentene kjenner dette begrepsaparatet fra før, men her følger en liten oppsummering.
 
-\subsection*{Den rettvinklede trekanten}
-
-I en rettvinklet trekant navngir vi sidene i forhold til en valgt vinkel $\theta$:
+\paragraph{I en rettvinklet trekant} navngir vi sidene i forhold til en valgt vinkel $\theta$:
 \begin{itemize}
-    \item \textbf{Hypotenus} ($h$) — den lengste siden, alltid overfor den rette vinkelen
-    \item \textbf{Hosliggende katet} — siden som grenser til $\theta$
-    \item \textbf{Motstående katet} — siden overfor $\theta$
+    \item \textbf{Hypotenus} ($c$) — den lengste siden, alltid overfor den rette vinkelen ($90-$graders vinkelen). Denen sidekanten vil utgjøre det ene benet ivinkelen $\theta$.
+    \item \textbf{Hosliggende katet} (a) — sidekanten som utgjør det andre benet i $\theta$-vinkelen.
+    \item \textbf{Motstående katet} (b) — siden overfor $\theta$
 \end{itemize}
 
 \begin{center}
@@ -156,9 +189,9 @@ I en rettvinklet trekant navngir vi sidene i forhold til en valgt vinkel $\theta
   \coordinate (A) at (3.2,0);
   \coordinate (B) at (3.2,2);
   \fill[headCol!9] (O) -- (A) -- (B) -- cycle;
-  \draw[thick] (O) -- (A) node[midway, below=6pt] {\small hosliggende};
-  \draw[thick] (A) -- (B) node[midway, right=5pt] {\small motstående};
-  \draw[thick] (O) -- (B) node[midway, above left=2pt] {\small hypotenus $h$};
+  \draw[thick] (O) -- (A) node[midway, below=6pt] {\small hosliggende ($a$)};
+  \draw[thick] (A) -- (B) node[midway, right=5pt] {\small motstående ($b$)};
+  \draw[thick] (O) -- (B) node[midway, above left=2pt] {\small hypotenus ($c$)};
   \draw (A) ++(-0.22,0) -- ++(0,0.22) -- ++(0.22,0);
   \draw[headCol, thick] (0.55,0) arc (0:32:0.55);
   \node at (0.84,0.14) {$\theta$};
@@ -186,21 +219,29 @@ I en rettvinklet trekant navngir vi sidene i forhold til en valgt vinkel $\theta
 \small\textit{Venstre: rettvinklet trekant med vinkel $\theta$. \quad Høyre: enhetssirkelen ($r=1$), der $P=(\cos\theta,\,\sin\theta)$.}
 \end{center}
 
-\defn{Sinus, cosinus og tangens}{For en vinkel $\theta$ i en rettvinklet trekant med hypotenus $h$:
+Pythagoras læresetning sier nå at 
 \begin{align*}
-    \cos\theta = \frac{\text{hosliggende}}{h}, \qquad
-    \sin\theta = \frac{\text{motstående}}{h}, \qquad
-    \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{\text{motstående}}{\text{hosliggende}}
+    a^2 + b^2 = c^2.
 \end{align*}
-\textit{Huskeregel:} \textbf{Soh-Cah-Toa} — \textbf{S}in = Opposite/Hypotenuse, \textbf{C}os = Adjacent/Hypotenuse, \textbf{T}an = Opposite/Adjacent.
+Vi kan nå definere de trigonometriske funksjonene sinus, cosinus og tangens.
+\defn{Sinus, cosinus og tangens}{For en vinkel $\theta$ i en rettvinklet trekant med hypotenus $c$ har vi nå følgende definisjoner:
+\begin{align*}
+    \cos\theta = \frac{\text{hosligg.}}{\text{hyp.}}=\frac{a}{c}, \qquad
+    \sin\theta = \frac{\text{motst.}}{\text{hyp.}}=\frac{b}{c}, \qquad
+    \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{\text{motst.}}{\text{hosligg.}}=\frac{b}{a}.
+\end{align*}
 }
-
-Dersom vi kjenner $h$ og $\theta$, gir dette oss katetene direkte:
+Ut ifra formlene over så se vi at vi får følgende formlerfor katetene $a$ og $b$:
 \[
-\text{hosliggende} = h\cos\theta, \qquad \text{motstående} = h\sin\theta.
+\text{a} = c\cos\theta, \qquad \text{b} = c\sin\theta.
 \]
+Dette er uttrykk som vi kommer til å benytte oss av veldig mye. Jeg anbefaler å pugge uttrykkene i den grønne boksen, og alltid utlede ting på nytt derifra når du trenger det.
 
-\subsection*{Viktige verdier}
+\paragraph{Enhetssirkelen} er et veldig nyttig verktøy når man jobber med trigonometriske funksjoner. Enhetssirklene er rett og slett en sirkel med radius 1, slik at katetene i trekanten med vinkel $\theta$ skrevet inn i enhetssirkelen, blir $\cos\theta$ og $\sin\theta$. Da ser vi også umiddelbart fra Pythagoras læesetning at 
+\begin{align*}
+    \cos^2\theta + \sin^2\theta = 1.
+\end{align*}
+Denne formelen er mye brukt, så den kan du bare lære deg med det samme. Tabellen under viser noen eksakte verdier for de trigonometriske funksjonene. De fleste vinklene har ikke eksakte uttrykk på denne formen, men disse er mye brukte vinkler, og det kan derfor være kjekt å kjenne til dem. Jeg anbefaler likevel ikke å bruke tid på å pugge de.
 
 \begin{table}[H]
 \centering
@@ -225,14 +266,6 @@ $90^\circ$ & $1$ & $0$ & — \\
 \label{tab:trig}
 \end{table}
 
-\begin{myoppsum*}{Pytagoreisk identitet}
-For alle vinkler $\theta$ gjelder:
-\[
-\sin^2\theta + \cos^2\theta = 1
-\]
-Dette følger direkte fra Pytagoras' setning brukt på enhetssirkelen.
-\end{myoppsum*}
-
 \exm{Trigonometri: stige mot vegg}{En stige av lengde $h = 5.0\ \textrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
 
 \paragraph{Løsning:}
@@ -246,23 +279,122 @@ Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
 \oppgave{Trigonometri}{%
 \begin{enumerate}[a)]
     \item Les av $\sin 30^\circ$, $\cos 45^\circ$ og $\tan 60^\circ$ fra Tabell~\ref{tab:trig}.
-    \item En kraft $F = 20\ \textrm{N}$ virker i vinkel $\theta = 53^\circ$ over horisonten. Finn de horisontale og vertikale komponentene $F_x = F\cos\theta$ og $F_y = F\sin\theta$.
+    \item En trekant har hypotenus $c = 10\ \textrm{m}$ og vinkel $\theta = 53^\circ$. Finn lengden av den motstående kateten $b$ og den hosliggende kateten $a$.
     \item Vis at $\sin^2 30^\circ + \cos^2 30^\circ = 1$.
+    \item Hva blir $(\sin\theta+1)(\sin\theta-1)$? Hint: Bruk en av kvadratsetningene.
 \end{enumerate}
 }
 
-\section{Vektorer CHECK: Må rydes opp angående koord syst og enhetsvektorer.}
-I motsetning til skalarer, som er helt vanlige éndimensjonale tall, er vektorer tall i flere dimensjoner. Vektorer kan ha alt fra to til uendelig mange dimensjoner. I dette kurset skal vi kun arbeide med vektorer i to dimensjoner. Normalt dekomponerer vi vektorer, slik at vi tar for oss en retning om gangen, som gjør det hele mer håndterbart. For å få forståelse for dette skal vi se nærmere på vektorer i $xy$-planet.
+\section{Vektorer}
+Vektorer kan sees på som utvidelse av tall til flere dimensjoner. Vi får da et objekt som med vår bruk kan representeres som en pil i et koordinatsystem. Vi kan gå så langt som å si at det er dette vektorer er for oss.
 
-\defn{vektor}{En vektor er et objekt med både størrelse og retning.}
+\defn{vektor}{En vektor er et matematisk objekt med både størrelse og retning.}
+Det vi tidligee kalte tall, refererer vi nå gjerne til som \textit{skalarer}, altså ikke vektorer. Skalarer har kun størrelse, og ikke retning. 
+
+\subsection{Koordinatsystem}
+Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. Dette er helt essensielt i fysikken, for eksempel når vi ønsker å beskrive bevegelse i planet eller rommet.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
+  %--- Talllinjen R ---
+  \draw[->] (-1.8,0) -- (4.8,0) node[right, font=\small] {$\mathbb{R}$};
+  \foreach \x in {-1,0,1,2,3,4} {
+    \draw (\x,0.09) -- (\x,-0.09);
+    \node[below=3pt, font=\small] at (\x,0) {$\x$};
+  }
+  \fill[headCol] (3,0) circle (2.5pt);
+  \node[above=5pt, font=\small, headCol] at (3,0) {$P = 3$};
+\end{tikzpicture}
+\hspace{2.5cm}
+\begin{tikzpicture}[scale=0.95, baseline=(current bounding box.center)]
+  %--- Koordinatsystemet R^2 ---
+  \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+  \foreach \x in {1,2,3,4} {
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below=3pt, font=\small] at (\x,0) {$\x$};
+  }
+  \foreach \y in {1,2,3} {
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left=3pt, font=\small] at (0,\y) {$\y$};
+  }
+  \draw[dashed, gray!60] (3,0) -- (3,2) -- (0,2);
+  \fill[headCol] (3,2) circle (2.5pt);
+  \node[above right=2pt, font=\small, headCol] at (3,2) {$P = (3,\,2)$};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+  {\small\textit{Venstre: tallinjen $\mathbb{R}$ med punkt $P=3$.
+  \quad Høyre: planet $\mathbb{R}^2$ med punkt $P=(3,\,2)$.
+  Stiplete linjer markerer koordinatene.}}
+\end{center}
+
+\medskip
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
+  %--- Talllinjen med posisjonsvektor ---
+  \draw[->] (-1.8,0) -- (4.8,0) node[right, font=\small] {$\mathbb{R}$};
+  \foreach \x in {-1,0,1,2,3,4} {
+    \draw (\x,0.09) -- (\x,-0.09);
+    \node[below=3pt, font=\small] at (\x,0) {$\x$};
+  }
+  \draw[->, very thick, headCol] (0,0) -- (3,0);
+  \fill[headCol] (3,0) circle (2.5pt);
+  \node[above=5pt, font=\small, headCol] at (3,0) {$P$};
+  \node[above=14pt, font=\small, headCol] at (1.5,0) {$r = 3$};
+\end{tikzpicture}
+\hspace{2.5cm}
+\begin{tikzpicture}[scale=0.95, baseline=(current bounding box.center)]
+  %--- Koordinatsystemet med posisjonsvektor ---
+  \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+  \foreach \x in {1,2,3,4} {
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below=3pt, font=\small] at (\x,0) {$\x$};
+  }
+  \foreach \y in {1,2,3} {
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left=3pt, font=\small] at (0,\y) {$\y$};
+  }
+  \draw[dashed, gray!60] (3,0) -- (3,2) -- (0,2);
+  \draw[->, very thick, headCol] (0,0) -- (3,2);
+  \fill[headCol] (3,2) circle (2.5pt);
+  \node[above right=2pt, font=\small, headCol] at (3,2) {$P = (3,\,2)$};
+  \node[above left=1pt, font=\small, headCol] at (1.55,1.1) {$\vec{r}$};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+  {\small\textit{Avstand fra origo til $P$ som vektor:
+  $r = 3$ i $\mathbb{R}$ (venstre) og $\vec{r} = (3,\,2)$ i $\mathbb{R}^2$ (høyre).}}
+\end{center}
+
+\medskip
+
+I et todimensjonalt koordinatsystem, som $xy$-planet, beskrives en posisjon ved hjelp av et ordnet par $(x,y)$. Her angir:
+\begin{itemize}
+    \item $x$ posisjonen i horisontal retning
+    \item $y$ posisjonen i vertikal retning
+\end{itemize}
+
+Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posisjoner i koordinatsystemet.
+
+\oppgave{Koordinatsystem}{%
+\begin{enumerate}[a)]
+    \item Tegn punktene $A = (2,\,3)$, $B = (-1,\,4)$ og $C = (0,\,-2)$ i et koordinatsystem.
+    \item Hvilket kvadrant befinner hvert punkt seg i?
+    \item Finn midtpunktet $M$ mellom $A$ og $B$. \textit{Hint: } $M = \left(\frac{x_A + x_B}{2},\, \frac{y_A + y_B}{2}\right)$.
+\end{enumerate}
+}
 
 \oppgave{Skalarer og vektorer}{%
 Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
 \begin{enumerate}[a)]
     \item Temperatur
-    \item Kraft
-    \item Fart (størrelsen av hastigheten)
+    \item Posisjon
+    \item Fart
     \item Hastighet
+    \item Akselerasjon
     \item Masse
 \end{enumerate}
 }
@@ -313,29 +445,6 @@ Dette gjør det mulig å bruke Newtons lover separat i hver retning, noe som oft
 \begin{enumerate}[a)]
     \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
     \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$. Skriv svaret på komponentform.
-\end{enumerate}
-}
-
-\section{Koordinatsystem}
-
-Et koordinatsystem er et verktøy vi bruker for å beskrive plassering og bevegelse på en presis og entydig måte. Ved å knytte tall til posisjoner kan vi bruke matematikk til å analysere fysiske situasjoner, som for eksempel bevegelse langs en vei, krefter på et legeme eller posisjonen til et objekt i rommet.\\
-
-\defn{Koordinatsystem}{Et koordinatsystem er et matematisk verktøy som gjør det mulig å beskrive fysiske posisjoner og bevegelser ved hjelp av tall.}
-
-
-I et todimensjonalt koordinatsystem, som $xy$-planet, beskrives en posisjon ved hjelp av et ordnet par $(x,y)$. Her angir:
-\begin{itemize}
-    \item $x$ posisjonen i horisontal retning
-    \item $y$ posisjonen i vertikal retning
-\end{itemize}
-
-Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posisjoner i koordinatsystemet.
-
-\oppgave{Koordinatsystem}{%
-\begin{enumerate}[a)]
-    \item Tegn punktene $A = (2,\,3)$, $B = (-1,\,4)$ og $C = (0,\,-2)$ i et koordinatsystem.
-    \item Hvilket kvadrant befinner hvert punkt seg i?
-    \item Finn midtpunktet $M$ mellom $A$ og $B$. \textit{Hint: } $M = \left(\frac{x_A + x_B}{2},\, \frac{y_A + y_B}{2}\right)$.
 \end{enumerate}
 }
 
