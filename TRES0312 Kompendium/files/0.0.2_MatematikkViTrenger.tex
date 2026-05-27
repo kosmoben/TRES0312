@@ -289,7 +289,39 @@ Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
 Vektorer kan sees på som utvidelse av tall til flere dimensjoner. Vi får da et objekt som med vår bruk kan representeres som en pil i et koordinatsystem. Vi kan gå så langt som å si at det er dette vektorer er for oss.
 
 \defn{vektor}{En vektor er et matematisk objekt med både størrelse og retning.}
-Det vi tidligee kalte tall, refererer vi nå gjerne til som \textit{skalarer}, altså ikke vektorer. Skalarer har kun størrelse, og ikke retning. 
+Det vi tidligee kalte tall, refererer vi nå gjerne til som \textit{skalarer}, altså ikke vektorer. Skalarer har kun størrelse, og ikke retning. Det neste vi må gjøre er å definere hva vi mener med operasjoner som addisjon ($+$) og multiplikasjon ($\cdot$) for vektorer. 
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+  %--- Frie vektorer A og B (ingen koordinatsystem) ---
+  % Vektor A
+  \draw[->, thick, headCol] (0,0.7) -- (2.4,1.5);
+  \node[above=2pt, font=\small, headCol] at (1.2,1.1) {$\vec{A}$};
+  % Pluss-tegn
+  \node[font=\large] at (2.85,1.1) {$+$};
+  % Vektor B
+  \draw[->, thick, defscol!80!black] (3.3,0.35) -- (4.0,1.75);
+  \node[right=3pt, font=\small, defscol!80!black] at (3.65,1.05) {$\vec{B}$};
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+  %--- Tip-til-hale-addisjon: C = A + B ---
+  % Vektor A fra origo
+  \draw[->, thick, headCol] (0,0) -- (2.4,0.8);
+  \node[below=3pt, font=\small, headCol] at (1.2,0.4) {$\vec{A}$};
+  % Vektor B plassert ved spissen av A
+  \draw[->, thick, defscol!80!black] (2.4,0.8) -- (3.1,2.2);
+  \node[right=3pt, font=\small, defscol!80!black] at (2.75,1.5) {$\vec{B}$};
+  % Resultantvektor C
+  \draw[->, very thick, oppgcol] (0,0) -- (3.1,2.2);
+  \node[left=4pt, font=\small, oppgcol] at (1.55,1.1) {$\vec{C}$};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+  {\small\textit{Venstre: vektorene $\vec{A}$ og $\vec{B}$. \quad
+  Høyre: $\vec{B}$ plassert ved spissen av $\vec{A}$ gir resultantvektoren
+  $\vec{C} = \vec{A} + \vec{B}$ (tip-til-hale-metoden).}}
+\end{center}
 
 \subsection{Koordinatsystem}
 Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. Dette er helt essensielt i fysikken, for eksempel når vi ønsker å beskrive bevegelse i planet eller rommet.
