@@ -183,6 +183,7 @@ Trigonometri er veldig nyttig redskap i fysikken, ettersom vi hele veien har bru
     \item \textbf{Motstående katet} (b) — siden overfor $\theta$
 \end{itemize}
 
+\noindent\begin{minipage}{\linewidth}
 \begin{center}
 \begin{tikzpicture}[scale=1.25, baseline=(current bounding box.center)]
   \coordinate (O) at (0,0);
@@ -218,6 +219,7 @@ Trigonometri er veldig nyttig redskap i fysikken, ettersom vi hele veien har bru
 \begin{center}
 \small\textit{Venstre: rettvinklet trekant med vinkel $\theta$. \quad Høyre: enhetssirkelen ($r=1$), der $P=(\cos\theta,\,\sin\theta)$.}
 \end{center}
+\end{minipage}
 
 Pythagoras læresetning sier nå at 
 \begin{align*}
@@ -288,9 +290,10 @@ Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
 \section{Vektorer}
 Vektorer kan sees på som utvidelse av tall til flere dimensjoner. Vi får da et objekt som med vår bruk kan representeres som en pil i et koordinatsystem. Vi kan gå så langt som å si at det er dette vektorer er for oss.
 
-\defn{vektor}{En vektor er et matematisk objekt med både størrelse og retning.}
-Det vi tidligee kalte tall, refererer vi nå gjerne til som \textit{skalarer}, altså ikke vektorer. Skalarer har kun størrelse, og ikke retning. Det neste vi må gjøre er å definere hva vi mener med operasjoner som addisjon ($+$) og multiplikasjon ($\cdot$) for vektorer. 
+\defn{vektor}{En vektor er et matematisk objekt med både størrelse og retning. Vi bruker en pil for å si at det er en vektor: $\vec{A}.$}
+Det vi tidligere kalte tall, refererer vi nå gjerne til som \textit{skalarer}, altså ikke vektorer. Skalarer har kun størrelse, og ikke retning. Det neste vi må gjøre er å definere hva vi mener med operasjoner som addisjon ($+$) og multiplikasjon ($\cdot$) for vektorer. 
 
+\noindent\begin{minipage}{\linewidth}
 \begin{center}
 \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
   %--- Frie vektorer A og B (ingen koordinatsystem) ---
@@ -322,10 +325,25 @@ Det vi tidligee kalte tall, refererer vi nå gjerne til som \textit{skalarer}, a
   Høyre: $\vec{B}$ plassert ved spissen av $\vec{A}$ gir resultantvektoren
   $\vec{C} = \vec{A} + \vec{B}$ (tip-til-hale-metoden).}}
 \end{center}
+\end{minipage}
+Multiplikasjon skal vi komme tilbake til litt senere.
 
+\oppgave{Skalarer og vektorer}{%
+Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
+\begin{enumerate}[a)]
+    \item Temperatur
+    \item Posisjon
+    \item Fart
+    \item Hastighet
+    \item Akselerasjon
+    \item Masse
+\end{enumerate}
+}
+La oss nå gå over til å introdusere koordinatsystem, som er et viktig verktøy for å kunne regne med vektorer på en effektiv måte i fysikken.
 \subsection{Koordinatsystem}
 Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. Dette er helt essensielt i fysikken, for eksempel når vi ønsker å beskrive bevegelse i planet eller rommet.
 
+\noindent\begin{minipage}{\linewidth}
 \begin{center}
 \begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
   %--- Talllinjen R ---
@@ -360,9 +378,11 @@ Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. Dette er h
   \quad Høyre: planet $\mathbb{R}^2$ med punkt $P=(3,\,2)$.
   Stiplete linjer markerer koordinatene.}}
 \end{center}
+\end{minipage}
 
 \medskip
 
+\noindent\begin{minipage}{\linewidth}
 \begin{center}
 \begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
   %--- Talllinjen med posisjonsvektor ---
@@ -400,7 +420,7 @@ Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. Dette er h
   {\small\textit{Avstand fra origo til $P$ som vektor:
   $r = 3$ i $\mathbb{R}$ (venstre) og $\vec{r} = (3,\,2)$ i $\mathbb{R}^2$ (høyre).}}
 \end{center}
-
+\end{minipage}
 
 I et todimensjonalt koordinatsystem, som $xy$-planet, beskrives en posisjon ved hjelp av et ordnet par $(x,y)$. Her angir:
 \begin{itemize}
@@ -418,18 +438,6 @@ Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posi
 \end{enumerate}
 }
 
-\oppgave{Skalarer og vektorer}{%
-Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
-\begin{enumerate}[a)]
-    \item Temperatur
-    \item Posisjon
-    \item Fart
-    \item Hastighet
-    \item Akselerasjon
-    \item Masse
-\end{enumerate}
-}
-
 \subsection{Enhetsvektorer}
 
 For å arbeide systematisk med vektorer er det nyttig å innføre et sett med faste referansevektorer. Disse kalles \emph{enhetsvektorer} eller \emph{basisvektorer} og definerer retningene i koordinatsystemet. Det som er spesielt med enhetsvektorene, er at alle andre vektorer kan uttrykkes som en lineær kombinasjon av disse.
@@ -438,39 +446,34 @@ For å arbeide systematisk med vektorer er det nyttig å innføre et sett med fa
 
 I $xy$-planet finnes det to enhetsvektorer:
 \begin{align}
-\hat{\mathbf{x}} = [1,0], \qquad \hat{\mathbf{y}} = [0,1]
+\hat{\mathbf{x}} = \frac{\vec{x}}{x}=[1,0], \qquad \hat{\mathbf{y}} = \frac{\vec{y}}{y}=[0,1].
 \end{align}
 
 Her peker $\hat{\mathbf{x}}$ i positiv $x$-retning, mens $\hat{\mathbf{y}}$ peker i positiv $y$-retning. Sammen danner disse enhetsvektorene grunnlaget for koordinatsystemet.
 Merk at $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ er ortogonale, det vil si at de står vinkelrett på hverandre, og at de begge har lengde 1.
 \begin{mymerk*}{Alternativ notasjon for enhetsvektorer}
-I mange lærebøker brukes symbolene $i$, $j$, $k$ for de samme enhetsvektorene, og noen steder skrives disse med hat som $\hat{i}$, $\hat{j}$, $\hat{k}$. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
+I mange lærebøker brukes symbolene $\mathbf{i}$, $\mathbf{j}$, $\mathbf{k}$ for de samme enhetsvektorene. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
 \end{mymerk*}
 
-\paragraph{Vektorer skrevet med enhetsvektorer}
+\paragraph{Notasjon for vektorer}
 
-Enhver vektor i $xy$-planet kan skrives som en kombinasjon av enhetsvektorene. Hvis vi har en vektor
+Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvektorene. Det finnes to ekvivalente skrivemåter:
 \begin{align}
-\vec{v} = [v_x, v_y],
-\end{align}
-kan den skrives som
-\begin{align}
-\vec{v} = v_x \hat{\mathbf{x}} + v_y \hat{\mathbf{y}}.
+\vec{v} = [v_x, v_y] = v_x \hat{\mathbf{x}} + v_y \hat{\mathbf{y}}.
 \end{align}
 
-Denne skrivemåten gjør det tydelig hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter.
+Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter i henholdsvis $x$- og $y$-retning. 
 
-\paragraph{Hvorfor enhetsvektorer er nyttige}
-
-Enhetsvektorer er spesielt nyttige i fysikk fordi mange lover gjelder uavhengig i hver retning. Ved å dekomponere vektorer i komponenter kan vi derfor analysere et problem én retning om gangen.
-
-For eksempel kan en kraftvektor skrives som:
+Fysikkens lover formuleres ved hjelp av vektorer, og er uavhengig av valg av koordinatsystem. Likevel innfører vi koordinatsystem når vi saktisk skal regne på noe. Dette er fordi lovene lar seg dekomponere i hver enkelt retning. La oss ta fart som eksempel. Dersom akselerasjonen er konstant så er hastigheten $\vec{v}(t)$ ved tidspunkt $t$ gitt ved starthastigheten $\vec{v}_0$ og akselerasjonen $\vec{a}$ ved formelen
 \begin{align}
-\vec{F} = F_x \hat{\mathbf{x}} + F_y \hat{\mathbf{y}}
+\vec{v}(t) = \vec{v}_0 + \vec{a}t.
 \end{align}
-der $F_x$ og $F_y$ er kraftens komponenter i henholdsvis $x$- og $y$-retning.
+Dette er en vektorlikning, og den gjelder i alle koordinatsystem. Dersom vi velger et koordinatsystem, så kan vi skrive ut komponentene i hver retning, og dermed få to separate likninger:
+\begin{align}
+v_x(t) = v_{0x} + a_x t, \qquad
+v_y(t) = v_{0y} + a_y t.
+\end{align}
 
-Dette gjør det mulig å bruke Newtons lover separat i hver retning, noe som ofte forenkler beregningene betydelig.
 
 \oppgave{Enhetsvektorer}{%
 \begin{enumerate}[a)]
@@ -479,23 +482,17 @@ Dette gjør det mulig å bruke Newtons lover separat i hver retning, noe som oft
 \end{enumerate}
 }
 
-\section{Størrelse og retning til en vektor}
+\subsection{Størrelse og retning til en vektor}
 
-Vi har sett at vi kan skrive ut vektorkomponentene i et koordinatsystem. En annen måte å angi en vektor på, er å angi dens \emph{lengde} og \emph{retning} i forhold til en gitt akse. Disse to opplysningene er tilstrekkelig for å fullstendig bestemme en vektor — akkurat som komponentformen $[v_x,\, v_y]$ er det.
-
-\subsection*{Lengde}
-
-Lengden til en vektor kan finnes ved hjelp av Pytagoras' setning.
+Vi har sett at vi kan skrive ut vektorkomponentene i et koordinatsystem. En annen måte å angi en vektor på, er å angi dens \emph{lengde} og \emph{retning} i forhold til en gitt akse (dette er egentlig det samme som å angi vektoren i polarkoordinater, for den som har lært om det). Lengden til en vektor med komponenter i $xy$-planet kan finnes ved hjelp av Pytagoras' setning.
 
 \defn{Vektorlengde}{Lengden til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
 \begin{align}
-|\vec{v}| = \sqrt{v_x^2 + v_y^2}
+v=|\vec{v}| = \sqrt{v_x^2 + v_y^2}
 \end{align}
+Merk at vi som regel bare skriver $v$ for lengden, og ikke $|\vec{v}|$.
 }
-
-\subsection*{Retning}
-
-Retningen beskrives ved vinkelen vektoren danner med positiv $x$-akse.
+Retningen til en vektor i forhold til $x$-aksen kan vi beskrive ved hjelp av tangensfunksjonen, som vi alt har sett. 
 
 \defn{Vektorvinkel}{Vinkelen til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
 \begin{align}
@@ -548,8 +545,8 @@ Vinkel:  53.1 grader
 \end{enumerate}
 }
 
-\section{Vektoraddisjon}
-Vektoraddisjon brukes når vi skal legge sammen to vektorer. Det kan for eksempel være et objekt som blir påvirket av flere krefter. Da kan vi legge sammen de enkelte vektorene, og finne resultantvektoren.
+\section{Operasjoner med vektorer}
+Vi har alt sett at vektorer kan adderes (plusses sammen). I tillegg kan vi multiplisere en vektor med en skalar (et tall), samt multiplisere vektorer sammen. I dette delkapitlet skal vi se på disse operasjonene og hvordan vi tolker dem. 
 
 \defn{Vektoraddisjon}{Addisjon av vektorer gjøres grafisk ved å plassere starten til den andre vektoren i sluttpunktet til den første (hale-til-spiss-metoden). Algebraisk legges komponentene sammen retningsvis:
 \begin{align*}
@@ -557,22 +554,53 @@ Vektoraddisjon brukes når vi skal legge sammen to vektorer. Det kan for eksempe
 \end{align*}
 }
 
-\exm{Vektoraddisjon}{
-Vektorene nedenfor viser vektorligningen
+\exm{Vektoraddisjon}{%
+Gitt vektorene $\vec{B} = [3,\,1]$ og $\vec{C} = [1,\,2]$.
+Finn resultantvektoren $\vec{A} = \vec{B} + \vec{C}$ og beregn lengden $|\vec{A}|$.
+
+\paragraph{Løsning:}
+Vi legger komponentene sammen retningsvis:
 \begin{align*}
-\vec{\mathrm{A}} = \vec{\mathrm{B}} + \vec{\mathrm{C}}.
+    \vec{B} &= [3,\,1] = 3\hat{\mathbf{x}} + 1\hat{\mathbf{y}}\\
+    \vec{C} &= [1,\,2] = 1\hat{\mathbf{x}} + 2\hat{\mathbf{y}}\\
+    \vec{A} &= \vec{B} + \vec{C}
+             = (3+1)\hat{\mathbf{x}} + (1+2)\hat{\mathbf{y}}
+             = \doubleunderline{[4,\,3]}.
 \end{align*}
+Lengden til resultantvektoren er
+\[
+|\vec{A}| = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = \doubleunderline{5}.
+\]
+Figuren under viser tip-til-hale-metoden: $\vec{C}$ plasseres ved spissen av $\vec{B}$, og $\vec{A}$ er pilen fra starten av $\vec{B}$ til slutten av $\vec{C}$.
+
 \begin{center}
-    \includegraphics[width=0.55\linewidth]{Images/Kapittel1:introduksjon/Vektorer i xy_planet.png}
+\begin{tikzpicture}[scale=0.85]
+  % Svakt rutenett (tegnes først, slik at vektorer legges oppå)
+  \foreach \x in {1,2,3,4} { \draw[gray!22, very thin] (\x,-0.2) -- (\x,3.7); }
+  \foreach \y in {1,2,3} { \draw[gray!22, very thin] (-0.2,\y) -- (4.8,\y); }
+  % Akser
+  \draw[->] (-0.3,0) -- (5.0,0) node[right, font=\small] {$x$};
+  \draw[->] (0,-0.3) -- (0,3.8) node[above, font=\small] {$y$};
+  % Akseetiketter
+  \foreach \x in {1,2,3,4} {
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below=2pt, font=\scriptsize] at (\x,0) {$\x$};
+  }
+  \foreach \y in {1,2,3} {
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left=2pt, font=\scriptsize] at (0,\y) {$\y$};
+  }
+  %--- Vektor B fra origo ---
+  \draw[->, thick, defscol!80!black] (0,0) -- (3,1);
+  \node[above=3pt, font=\small, defscol!80!black] at (1.5,0.5) {$\vec{B}$};
+  %--- Vektor C fra spissen av B ---
+  \draw[->, thick, headCol] (3,1) -- (4,3);
+  \node[right=4pt, font=\small, headCol] at (3.5,2.0) {$\vec{C}$};
+  %--- Resultantvektor A fra origo ---
+  \draw[->, very thick, oppgcol] (0,0) -- (4,3);
+  \node[above=3pt, font=\small, oppgcol] at (4,3) {$\vec{A}=[4,3]$};
+\end{tikzpicture}
 \end{center}
-Deretter kan vi sette inn verdiene og finne ut hva $\vec{\mathrm{A}}$ er:
-\begin{align*}
-    \vec{\mathrm{B}} &= [3,0] = 3\hat{\mathbf{x}} + 0 \hat{\mathbf{y}}\\
-    \vec{\mathrm{C}} &= [0,2] = 0 \hat{\mathbf{x}} + 2 \hat{\mathbf{y}}\\
-    \vec{\mathrm{A}} &= (3+0)\hat{\mathbf{x}} + (0+2)\hat{\mathbf{y}} \\
-    &= 3 \hat{\mathbf{x}} + 2 \hat{\mathbf{y}} = [3,2]
-\end{align*}
-Da får vi resultantvektoren $\vec{\textrm{A}} = [3,2]$.
 }
 
 \subsection*{Python: vektoraddisjon}
@@ -601,13 +629,11 @@ a + b   = [2. 3.]
 \oppgave{Vektoraddisjon}{%
 Gitt vektorene $\vec{a} = [3,\,-1]$ og $\vec{b} = [-1,\,4]$.
 \begin{enumerate}[a)]
-    \item Regn ut $\vec{a} + \vec{b}$.
-    \item Regn ut $\vec{a} - \vec{b}$.
-    \item Finn lengden til resultantvektoren $\vec{a} + \vec{b}$.
+    \item Regn ut $\vec{c}=\vec{a} + \vec{b}$ og $\vec{d}=\vec{a} - \vec{b}$.
+    \item Finn lengden av $\vec{d}$ og finn en enhetsvektor $\hat{d}$.
+    \item Hva slags vektor blir $\vec{d}=3\vec{a}$? Tegn opp begge vektorene. 
 \end{enumerate}
 }
-
-\section{Skalarprodukt}
 
 Skalarproduktet, også kalt prikkproduktet (engelsk: \textit{dot product}), er en operasjon mellom to vektorer som gir et tall (en skalar). Det uttrykker i hvilken grad to vektorer peker i samme retning.
 
@@ -630,6 +656,7 @@ Skalarproduktet er et mål på \emph{hvor mye to vektorer peker i samme retning.
 \;\cdot\; |\vec{B}|
 \]
 
+\noindent\begin{minipage}{\linewidth}
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
   \draw[->, very thick, headCol] (0,0) -- (4.5,0) node[right] {$\vec{B}$};
@@ -643,6 +670,7 @@ Skalarproduktet er et mål på \emph{hvor mye to vektorer peker i samme retning.
   \node[font=\small] at (0.98,0.22) {$\theta$};
 \end{tikzpicture}
 \end{center}
+\end{minipage}
 
 Spesielle tilfeller: $\theta=0^\circ$ (samme retning) $\Rightarrow$ $\cos\theta=1$ (maksimalt positivt); $\theta=90^\circ$ (vinkelrette) $\Rightarrow$ $\cos\theta=0$; $\theta=180^\circ$ (motsatt retning) $\Rightarrow$ $\cos\theta=-1$ (maksimalt negativt).
 
@@ -707,12 +735,9 @@ Vinkel = 116.6 grader
 Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.
 \begin{enumerate}[a)]
     \item Beregn skalarproduktet $\vec{u} \cdot \vec{v}$.
-    \item Er vektorene vinkelrette? Begrunn svaret.
     \item Finn vinkelen mellom $\vec{u}$ og $\vec{v}$.
 \end{enumerate}
 }
-
-\section{Kryssprodukt}
 
 Kryssprodukt (engelsk: \textit{cross product}) er en operasjon mellom to vektorer som gir en ny vektor vinkelrett på begge. I to dimensjoner reduseres kryssproduktet til et enkelt tall — z-komponenten — som blant annet brukes til å beregne dreiemoment og areal av parallelogrammer.
 
@@ -733,6 +758,40 @@ Noen viktige egenskaper:
     \item Merk at kryssproduktet \emph{ikke} er kommutativt: $\vec{u}\times\vec{v} = -(\vec{v}\times\vec{u})$.
 \end{itemize}
 
+\paragraph{Geometrisk tolkning}
+
+Størrelsen på kryssproduktet er lik \emph{arealet av parallellogrammet} som dannes av de to vektorene. Høyden i parallellogrammet er projeksjonen av $\vec{A}$ vinkelrett på $\vec{B}$, gitt ved $|\vec{A}|\sin\theta$:
+\[
+|\vec{A}\times\vec{B}| = |\vec{B}| \cdot |\vec{A}|\sin\theta = \text{Areal av parallellogrammet.}
+\]
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  % Parallellogram-fyll
+  \fill[thmscol!12] (0,0) -- (4.5,0) -- (7.0,1.75) -- (2.5,1.75) -- cycle;
+  % Vektorer
+  \draw[->, very thick, headCol] (0,0) -- (4.5,0) node[right] {$\vec{B}$};
+  \draw[->, very thick, thmscol] (0,0) -- (2.5,1.75) node[above right] {$\vec{A}$};
+  \node[above left=1pt, thmscol, font=\small] at (1.25,0.875) {$|\vec{A}|$};
+  % Stiplet høydelinje
+  \draw[dashed, thmscol!55, thick] (2.5,1.75) -- (2.5,0);
+  \draw (2.5,0) ++(-0.15,0) -- ++(0,0.15) -- ++(0.15,0);
+  % Høyde-markering
+  \draw[<->, thick, oppsumcol] (2.75,0) -- (2.75,1.75)
+        node[midway, right=3pt, font=\small] {$|\vec{A}|\sin\theta$};
+  % Stiplede kanter som fullstendiggjør parallellogrammet
+  \draw[dashed, gray!55, thick] (4.5,0) -- (7.0,1.75);
+  \draw[dashed, gray!55, thick] (2.5,1.75) -- (7.0,1.75);
+  % Areal-label (plassert i øvre del av parallellogrammet, fri for andre etiketter)
+  \node[font=\small, gray!65] at (4.8,1.35) {Areal $= |\vec{A}\times\vec{B}|$};
+  % Vinkel
+  \draw[->, thick] (0.70,0) arc (0:35:0.70);
+  \node[font=\small] at (0.98,0.22) {$\theta$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
 \exm{Kryssprodukt}{%
 Finn kryssproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$.
 
@@ -748,10 +807,43 @@ Gitt $\vec{u} = [2,\,1]$ og $\vec{v} = [1,\,3]$.
 \begin{enumerate}[a)]
     \item Finn $(\vec{u} \times \vec{v})_z$.
     \item Finn $(\vec{v} \times \vec{u})_z$.
-    \item Hva kan du konkludere om kommutativitet for kryssproduktet?
 \end{enumerate}
 }
 
+\clearpage
 \section{Flere oppgaver}
 
-Ingen oppgaver fra Øving~1 passer direkte til dette kapitlet. Oppgaver legges til etter hvert.
+\oppgave{Trigonometri og vektorkomponenter}{%
+\begin{enumerate}[a)]
+    \item En vektor $\vec{v}$ har størrelse $|\vec{v}| = 20$ og danner vinkel $\theta = 30^\circ$ med positiv $x$-akse. Finn komponentene $v_x$ og $v_y$.
+    \item En fugl flyr $10\ \textrm{km}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn de nord- og østkomponentene til forskyvningsvektoren. \textit{Hint:} Vinkelen er målt fra nordaksen, ikke fra østaksen.
+    \item Gitt $\vec{v} = [5,\,-12]$. Finn lengden $|\vec{v}|$ og vinkelen $\theta$ vektoren danner med positiv $x$-akse.
+\end{enumerate}
+}
+
+\oppgave{Vektorer og skalarprodukt}{%
+Gitt vektorene $\vec{p} = [2,\,5]$ og $\vec{q} = [-3,\,1]$.
+\begin{enumerate}[a)]
+    \item Beregn $\vec{p} + \vec{q}$, $\vec{p} - \vec{q}$ og $2\vec{p} - 3\vec{q}$.
+    \item Finn lengden til vektoren $\vec{p} - \vec{q}$.
+    \item Finn en enhetsvektor $\hat{p}$ i retningen til $\vec{p}$.
+    \item Beregn skalarproduktet $\vec{p}\cdot\vec{q}$ og bestem vinkelen mellom $\vec{p}$ og $\vec{q}$.
+\end{enumerate}
+}
+
+\oppgave{Parallell og vinkelrett}{%
+To vektorer er $\vec{a} = [3,\,k]$ og $\vec{b} = [2,\,-1]$.
+\begin{enumerate}[a)]
+    \item For hvilken verdi av $k$ er $\vec{a}$ og $\vec{b}$ vinkelrette (ortogonale)? \textit{Hint:} Bruk skalarproduktet.
+    \item For hvilken verdi av $k$ er $\vec{a}$ og $\vec{b}$ parallelle? \textit{Hint:} Bruk kryssproduktet.
+\end{enumerate}
+}
+
+\oppgave{Areal med kryssprodukt}{%
+To vektorer er $\vec{u} = [4,\,1]$ og $\vec{v} = [2,\,3]$.
+\begin{enumerate}[a)]
+    \item Beregn $(\vec{u}\times\vec{v})_z$.
+    \item Hva er arealet av parallellogrammet som dannes av $\vec{u}$ og $\vec{v}$?
+    \item Hva er arealet av trekanten med $\vec{u}$ og $\vec{v}$ som to sider?
+\end{enumerate}
+}

@@ -1,23 +1,29 @@
 % !TEX root = ../main.tex
 \chapter{Kinematikk}
 \label{Chapter:kinematikk}
-\intro{Dette er det første skrittet i å forstå hvordan objekter beveger seg i rommet, enten det gjelder en bil som akselererer på en vei, en ball som kastes opp i luften, eller planetenes bane rundt solen. Ved å fokusere på begreper som posisjon, hastighet og akselerasjon, gir kinematikken oss verktøyene til å beskrive og forutsi bevegelse. Dette kapittelet gir en innføring i de grunnleggende prinsippene og bevegelseslikningene i kinematikk, og viser hvordan vi kan bruke dem til å analysere en rekke forskjellige situasjoner. Målet er å gi en dypere forståelse av bevegelse som et fundamentalt aspekt av fysikken, og legge grunnlaget for mer avanserte emner som dynamikk (kraftlære).}
+\intro{En stor del av fysikken handler om å beskrive og forutsi posisjon og bevegelse for objekter (legemer). Kinematikk er læren om \textit{hvordan}legemer beveger seg. I kinematikken konsentrerer vi oss derfor om begreper som posisjon ($\vec{s}$), hastighet ($\vec{v}$) og akselerasjon ($\vec{a}$), som er verktøyene vi trenger for å beskrive bevegelse. Dette gir det rette grunnlaget for \textit{dynamikken} (/kraftlære), som kommer i neste kapittel, og handler om \textit{årsaken} legemers bevegelse.}
 
 \spm{}{%
 \item Hva er sammenhengen mellom posisjon, hastighet og akselerasjon?
 \item Hvordan beskriver vi bevegelse med matematikk?
-\item Hva skjer med bevegelse i to dimensjoner?}
-\newpage
+\item Hva er forskjellen på beskriven av bevegelse i 1 dimensjon og flere dimensjoner?}
 
 \section{Hva er kinematikk?}
-Kinematikk er studiet av hvordan objekter beveger seg, uten å vurdere kreftene som forårsaker bevegelsen. For å bekrive dette effektivt er det spesielt tre begreper vi er ute etter, med hver sine forkortelser (i parentes):
+Kinematikk er studiet av hvordan objekter beveger seg, uten å vurdere (den mekaniske) årsaken til bevegelsen. For å bekrive dette effektivt er det spesielt tre begreper vi er ute etter, med hver sine forkortelser (i parentes):
 
-\[\textrm{strekning (s)}\quad,\quad\textrm{fart (v)}\quad\textrm{og}\quad\textrm{akselerasjon (a)}\]
+\[\textrm{strekning ($\vec{s}$)}\quad,\quad\textrm{hastighet ($\vec{v}$)}\quad\textrm{og}\quad\textrm{akselerasjon ($\vec{a}$)}\]
 
-Disse begrepene gir oss verktøyene vi trenger for å kunne beskrive alt fra enkle scenario, slik som en ball som ruller ned en bakke og til mer kompliserte systemer, som planetenes bevegelse rundt solen. For å beskrive slike sammenhenger effektivt er det viktig å forstå relasjonene mellom strekning, fart og tid.
+Disse begrepene er alle sammen beskrevet som vektorer (derfor har de piler), ettersom de innbefatter konsepter som har både størrelse og retning. Sammen utgjør de verktøyene vi trenger for å kunne beskrive alt fra enkle scenario, slik som en ball som ruller ned en bakke og til mer kompliserte systemer, som planetenes bevegelse rundt solen. For å beskrive slike sammenhenger effektivt er det viktig å forstå relasjonene mellom strekning, fart og tid.
 
-\section{Strekning (s)}
-En bil som kjører vekk fra en lyktestolpe tilbakelegger større og større strekning (målt fra lyktestolpen). Vi sier gjerne at strekningen er en funksjon av tid, og skriver $s(t)$:
+\section{Strekning ($\vec{s}$) og hastighet ($\vec{v}$)}
+Dersom all bevegelse er langs samme, rette linje så kallder vi bevegelsen \textit{rettlinjet}. I dette tilfellet kan vi beskrive strekning og fart som skalarer, altså uten vektornotasjon. Dersom bevegelsen er krum, må vi bruke vektorer. Dette refererer vi til som \textit{krumlinjet} bevegelse. Vi skal se på begge deler. Merk derfor følgende notasjon:
+\begin{itemize}
+    \item $s$ er strekning, altså størrelsen på \textbf{avstandsvektoren} $\vec{s}$. Vi kommer nok til å bruke begrep som \textit{posisjon} og \textit{forflytning} i tillegg til strekning og avstand. Poenget er at vi må gjøre forsljell på $s$ \textit{uten} vektortegn og \textit{med} vektortegn.
+    \item $v$ kalles \textbf{fart} og er størrelsen på \textbf{hastighetsvektoren} $\vec{v}$.
+    \item $a$ er størrelsen på akselerasjonsvektoren $\vec{a}$.
+\end{itemize}
+
+En bil som kjører på en rett strekning vekk fra en lyktestolpe tilbakelegger større og større strekning (målt fra lyktestolpen). Vi sier gjerne at strekningen er en funksjon av tid, og skriver $s(t)$:
 
 \[s(t)=\textrm{strekning som funksjon av tid}.\]
 % \vspace{-3em}
@@ -28,20 +34,84 @@ En bil som kjører vekk fra en lyktestolpe tilbakelegger større og større stre
     \label{fig:fart strekning}
 \end{figure}
 % \vspace{-3em}
-Vi kan illustrere beveglesen til bilen med grafer for fart og strekning:
+Vi kan illustrere beveglesen til bilen med grafer for fart og strekning. La oss anta at bilen holder konstant fart på $v=36\,\text{km/t}=10\,\text{m/s}$. Da vil strekningen øke med 10 meter hvert sekund, og grafen for strekning vil være en rett linje som stiger jevnt. Grafen for fart vil være en horisontal linje på 10 m/s, siden farten ikke endrer seg. Dette er illustrert i figur \ref{fig:fart- og strekningsgrafer}.
 \begin{figure}[H]
 \centering
+%--- Fartsgraf v(t) ----------------------------------------------------
+% Plotområde 4.5 cm × 3.6 cm  |  x: 1.5 cm/s  |  y: 0.3 cm/(m/s), 0–12 m/s
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Fartsgraf.png}
+  \begin{tikzpicture}
+    % Lys rutenett
+    \foreach \xg in {1.5, 3.0, 4.5}{
+      \draw[gray!25, thin] (\xg, 0) -- (\xg, 3.8);
+    }
+    \foreach \yg in {1.5, 3.0}{
+      \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
+    }
+    % Akser
+    \draw[->, thick] (-0.3, 0) -- (5.1, 0)
+          node[right, font=\small] {Tid [s]};
+    \draw[->, thick] (0, -0.3) -- (0, 4.4)
+          node[above, font=\small] {Fart [m/s]};
+    % Tidsaksen: strekmerker
+    \foreach \xpos/\xlbl in {0/0, 1.5/1, 3.0/2, 4.5/3}{
+      \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+      \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
+    }
+    % Fartsaksen: strekmerker
+    \foreach \ypos/\ylbl in {0/0, 1.5/5, 3.0/10}{
+      \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+      \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
+    }
+    % Konstant hastighet v = 10 m/s
+    \draw[headCol, thick] (0, 3.0) -- (4.5, 3.0);
+    \node[above right=2pt, headCol, font=\scriptsize]
+          at (0, 3.0) {$v = 10\ \mathrm{m/s}$};
+  \end{tikzpicture}
   \caption{Fartsgraf $v(t)$}
 \end{subfigure}\hfill
+%--- Posisjonsgraf s(t) ------------------------------------------------
+% Plotområde 4.5 cm × 3.6 cm  |  x: 1.5 cm/s  |  y: 1.2 cm per 10 m, 0–30 m
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Posisjonsgraf.png}
+  \begin{tikzpicture}
+    % Lys rutenett
+    \foreach \xg in {1.5, 3.0, 4.5}{
+      \draw[gray!25, thin] (\xg, 0) -- (\xg, 3.8);
+    }
+    \foreach \yg in {1.2, 2.4, 3.6}{
+      \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
+    }
+    % Akser
+    \draw[->, thick] (-0.3, 0) -- (5.1, 0)
+          node[right, font=\small] {Tid [s]};
+    \draw[->, thick] (0, -0.3) -- (0, 4.4)
+          node[above, font=\small] {Strekning [m]};
+    % Tidsaksen: strekmerker
+    \foreach \xpos/\xlbl in {0/0, 1.5/1, 3.0/2, 4.5/3}{
+      \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+      \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
+    }
+    % Strekningsaksen: strekmerker
+    \foreach \ypos/\ylbl in {0/0, 1.2/10, 2.4/20, 3.6/30}{
+      \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+      \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
+    }
+    % Posisjonslinje s = 10t
+    \draw[headCol, thick] (0, 0) -- (4.5, 3.6);
+    % Posisjonspunkter fra figur 3.1 (0 m, 10 m, 20 m, 30 m ved t = 0,1,2,3 s)
+    \foreach \xpos/\ypos in {0/0, 1.5/1.2, 3.0/2.4, 4.5/3.6}{
+      \fill[headCol] (\xpos, \ypos) circle(2.5pt);
+    }
+    % Kurve-etikett
+    \node[above left=2pt, headCol, font=\scriptsize]
+          at (2.5, 2.0) {$s = 10t$};
+  \end{tikzpicture}
   \caption{Posisjonsgraf $s(t)$}
 \end{subfigure}
-\caption{Fart- og posisjonsgraf for bil som passerer lyktestolpe.}
+\caption{Fart- og posisjonsgraf for bil som passerer lyktestolpe med
+         konstant hastighet $v = 10\,\mathrm{m/s}$.}
 \label{fig:fart- og strekningsgrafer}
 \end{figure}
 
@@ -49,63 +119,231 @@ Stigningstallet til strekningsgrafen kan vi regne ut momentant ved derivasjon, e
 \begin{align*}
     \textrm{v} = \frac{\Delta\textrm{s}}{\Delta\textrm{t}} = \frac{10\textrm{ m}}{1 \textrm{ s}} = 10 \textrm{m/s}
 \end{align*}
-Som vi kan se ut ifra grafene, er farten det samme som stigningstallet til strekningen. Stigningstallet beskriver en endring i funksjonen, på samme måte som farten er en endring i posisjon.
-% {\color{blue} CHECK: Ta med bilde av lyktestolpe og bil, deretter posisjonsgraf, og bygg videre ved å vise at fart er stigningstallet til strekningsgrafen.}]
+Som vi kan se ut ifra grafene, er farten det samme som stigningstallet til strekningsgrafen. Fart er altså størrelsen som beskriver endring i posisjon, og uformelt skriver vi gjerne ``trekantformelen'' som mange alt har sett: 
 
-\section{Fart (v)}
-Fart sier noe om hvor raskt et objekt forflytter seg — altså hvor mye strekning som tilbakelegges per tidsenhet. Avhengig av situasjonen kan vi beskrive farten på tre forskjellige måter: som \textit{konstant hastighet} (når farten ikke endrer seg), som \textit{gjennomsnittshastighet} (gjennomsnittlig endring over en tidsperiode) eller som \textit{momentanhastighet} (farten i et bestemt øyeblikk). I det følgende ser vi nærmere på alle tre.
+\begin{align}
+    v=\frac{s}{t}
+\end{align}
+\tanke{}{%
+Hvordan måler man fart?}
+Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal måle fart i fysikken, så er det alltid over et visst tidsrom, som vi gjerne kaller $\Delta t$. Det kan jo godt være at farten egentlig endret seg underveis i dette tidsrommet, uten at våre målinger fikk det med seg. Et eksempel kan være om du måler tiden Trine bruker på en 60-meter. La oss si at Trine bruker 12 sekunder. Da er den gjennomsnittlige farten hennes $\bar{v}=60\text{m}/12\text{s}=5\,\text{m}/\text{s}.$ Men det er jo ikke slik å forstå at Trine holdt samme fart hele løpet. I starten var farten gjerne 0m/s, mens den på slutten av løpet kanskje var 10 m/s. Det er derfor viktig å være klar over at når vi snakker om \textit{målt} fart, så handler det alltid om gjennomsnittsfart over et tidsintervall $\Delta t$. Tidsintervallene vi måler på kan være veldig små (slik som i et speedometer), men det er likefullt et gjennomsnitt over dette lille tidsintervallet. For å være litt mer presis definerer vi nå det vi kaller for \textit{gjennomsnittsfart}, som altså er lengden av \textit{gjennomsnittshastighets}-vektoren.
 
-\subsection{Konstant hastighet}
-
-\textit{Konstant hastighet} refererer til bevegelsen av et objekt som beveger seg med samme hastighet og i samme retning over tid. Dette innebærer at objektets hastighet ikke endrer seg; både farten og retningen forblir uforandret. Ved konstant hastighet vil den tilbakelagte distansen være proporsjonal med tiden som har gått.
-
-\defn{Konstant hastighet}{
-    Når et objekt beveger seg med konstant hastighet, det vil si at hastigheten ikke endres over tid, kan vi bruke formelen:
-    \begin{align}
-        v &= \frac{s}{t}
-    \end{align}
-    Her er \( s \) den tilbakelagte distansen, og \( t \) er tiden som har gått. Denne enkle relasjonen gir oss direkte hastigheten til objektet når bevegelsen er jevn og uforandret.
-}
-
-
-\oppgave{Konstant hastighet}{%
-En syklist kjører med konstant hastighet $v = 8\,\textrm{m/s}$.
-\begin{enumerate}[a)]
-    \item Hvor langt har syklisten kjørt etter $t = 10\,\textrm{s}$?
-    \item Hvor langt har syklisten kjørt etter $t = 2\,\textrm{min}$?
-    \item Hvor lang tid tar det å tilbakelegge $s = 2.0\,\textrm{km}$?
-\end{enumerate}
-}
-
-\subsection{Gjennomsnittshastighet}
-
-\textit{Gjennomsnittshastighet} beskriver den totale forflytningen til et objekt delt på den totale tiden som har gått. Den gir et mål på hvor raskt et objekt har beveget seg i gjennomsnitt over en viss tidsperiode, uten å ta hensyn til variasjoner i hastigheten underveis. 
-
-\defn{Gjennomsnittshastighet}{
+\defn{Gjennomsnittsfart og gjennomsnittshastighet}{
     Matematisk kan gjennomsnittshastigheten uttrykkes som:
     \begin{align}
-        \bar{v}= \frac{\Delta s}{\Delta t}
+        \bar{\vec{v}}= \frac{\vec{\Delta s}}{\Delta t}
     \end{align}
-    hvor \( \Delta s \) er den totale forflytningen, og \( \Delta t \) er den totale tiden. Denne formelen gir en enkel måte å finne gjennomsnittshastigheten over et gitt tidsrom.
+    hvor \( \Delta \vec{s} \) er den totale forflytningen, og \( \Delta t \) er den totale tiden. Lengden av denne vektoren kalles for gjennomsnittsfarten, og er gitt ved:
+    \begin{align}
+        \bar{v} = |\bar{\vec{v}}| = \frac{|\vec{\Delta s}|}{\Delta t}
+    \end{align}
+}
+Gjennomsnittsfart beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnittshastighet en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
+
+\exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $60\,\textrm{km}$ på $1.5\,\textrm{t}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
+}
+\svar{%
+Vi bruker definisjonen $\bar{v} = \dfrac{\Delta s}{\Delta t}$:
+\[\bar{v} = \frac{60\,\textrm{km}}{1{,}5\,\textrm{t}} = \underline{40\,\textrm{km/t}}\]
+Vi bruker omregningsfaktoren $1\,\textrm{km/t} = \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}}$:
+\[\bar{v} = 40\;\frac{\textrm{km}}{\textrm{t}} \cdot \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}} = \frac{40\,000}{3\,600}\,\frac{\textrm{m}}{\textrm{s}} \approx \doubleunderline{11\,\textrm{m/s}}\]
 }
 
-\oppgave{Gjennomsnittshastighet}{%
+\oppgave{Gjennomsnittsfart i rettlinjet bevegelse}{%
 En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 \begin{enumerate}[a)]
-    \item Finn gjennomsnittshastigheten i km/t.
+    \item Finn gjennomsnittsfarten i km/t.
     \item Gjør om til m/s.
     \item En annen bil kjører samme strekning på $90\,\textrm{min}$. Hvem kjørte raskest?
 \end{enumerate}
 }
 
-\subsection{Momentanhastighet}
+\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom den totale forflytningen $\Delta \vec{s}$ ikke nødvendigvis er i samme retning som farten til enhver tid. La oss se på et eksempel for å illustrere dette.
 
-\textit{Momentanhastighet} er hastigheten til et objekt på et spesifikt tidspunkt. Det beskriver hvor raskt et objekt beveger seg i akkurat det øyeblikket, og er derfor den "øyeblikkelige" farten. For å finne momentanfarten, ser vi på bevegelsen over et veldig kort tidsrom, hvor vi antar at hastigheten er konstant i dette lille tidsintervallet.
+\exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord. \\
+\textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{PR}$ og $\vec{\Delta s}_\text{QR}$ som beskriver de relevante forflytningene.\\
+\textbf{b)} Hva er gjennomsnittsfarten til båt 1?\\
+\textbf{c)}Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
+\textbf{d)} Hva sier disse utregningene om begrepet gjennomsnittsfart?
+}
+
+\svar{%
+\noindent
+\begin{minipage}[t]{0.44\linewidth}
+  \vspace{0pt}
+  \centering
+  \begin{tikzpicture}
+    % Kompassindikator
+    \draw[->,thin,gray!60](0.2,4.2)--(0.2,4.8)
+          node[above,font=\scriptsize]{N};
+    \draw[->,thin,gray!60](0.2,4.2)--(0.8,4.2)
+          node[right,font=\scriptsize]{Ø};
+    % Østlig etappe
+    \draw[->,thick,headCol](0,0)--(3,0)
+          node[midway,below=4pt,font=\small]{$3\,\textrm{km}$};
+    % Nordlig etappe
+    \draw[->,thick,defscol](3,0)--(3,4)
+          node[midway,right=4pt,font=\small]{$4\,\textrm{km}$};
+    % Forflytningsvektor
+    \draw[->,very thick,oppsumcol](0,0)--(3,4)
+          node[midway,above left=2pt,font=\small]{$\vec{\Delta s}_{PR}=5\,\textrm{km}$};
+    % Rett vinkel
+    \draw (3,0)++(-0.22,0)--++(0,0.22)--++(0.22,0);
+    % Punkter
+    \fill(0,0) circle(2pt) node[below left=2pt,font=\small]{$P$};
+    \fill(3,0) circle(2pt) node[below right=2pt,font=\small]{$Q$};
+    \fill[oppsumcol](3,4) circle(2pt) node[above right=1pt,font=\small]{$R$};
+  \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.52\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[a)]
+    \item Forflytningsvektorene (se figur):
+          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\textrm{km},\qquad
+            \vec{\Delta s}_{QR}=[0,\;4]\,\textrm{km},\qquad
+            \vec{\Delta s}_{PR}=[3,\;4]\,\textrm{km}\]
+    \item Båt 1 seiler direkte. Forflytningens størrelse:
+          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\underline{5\,\textrm{km}}\]
+          Gjennomsnittsfart (2 timer totalt):
+          \[\doubleunderline{\bar{v}_1=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
+    \item Gjennomsnittsfart per etappe for båt 2:
+          \[\bar{v}_{PQ}=\frac{3\,\textrm{km}}{1\,\textrm{t}}=3\,\textrm{km/t},\qquad
+            \bar{v}_{QR}=\frac{4\,\textrm{km}}{1\,\textrm{t}}=4\,\textrm{km/t}\]
+          Total gjennomsnittsfart for båt 2 (forflytning $=5\,\textrm{km}$, tid $=2\,\textrm{t}$):
+          \[\doubleunderline{\bar{v}_2=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
+    \item Selv om båt 2 hadde ulik fart på de to etappene ($3$ og $4\,\textrm{km/t}$), er den totale gjennomsnittsfarten identisk med båt 1 ($2{,}5\,\textrm{km/t}$). Dette viser at gjennomsnittsfart kun avhenger av total forflytning og total tid – ikke av hvordan farten varierte underveis.
+  \end{enumerate}
+\end{minipage}
+}
+
+
+\exm{Karsten Warholm}{Se for deg at Karsten Warholm løper med konstant fart gjennom en sving. Etter 7 sekunder har han løpt fra inngangen av svingen (punkt $P$) til midten (punkt $Q$). Radiusen i svingen er 36 meter.\\
+\textbf{a)} Finn $\Delta s$ mellom punktene $P$ og $Q$. Hvordan kan vi beskrive Karstens posisjon og fart i dette tilfellet?\\
+\textbf{b)} Hva er gjennomsnittsfarten på strekningen?}
+
+\svar{%
+\noindent
+\begin{minipage}[t]{0.44\linewidth}
+  \vspace{0pt}
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    % Bane: kvartssirkel fra A=(2.5,0) til B=(0,2.5)
+    \draw[headCol,thick](2.5,0) arc(0:90:2.5);
+    % Stiplede radier
+    \draw[dashed,gray!60](0,0)--(2.5,0)
+          node[midway,below=3pt,font=\scriptsize]{$r{=}36\,\textrm{m}$};
+    \draw[dashed,gray!60](0,0)--(0,2.5);
+    % Rett vinkel ved sentrum
+    \draw(0.22,0)--++(0,0.22)--++(-0.22,0);
+    % Forflytningsvektor (korde A til B)
+    \draw[->,very thick,oppsumcol](2.5,0)--(0,2.5)
+          node[midway,right=4pt,font=\small]{$\vec{\Delta s}$};
+    % Hastighetspiler (tangenter til banen)
+    \draw[->,thick,defscol](2.5,0)--(2.5,0.85)
+          node[right,font=\scriptsize]{$\vec{v}_P$};
+    \draw[->,thick,defscol](0,2.5)--(-0.85,2.5)
+          node[above,font=\scriptsize]{$\vec{v}_Q$};
+    % Punkter og etiketter
+    \fill[headCol](2.5,0) circle(2pt)
+          node[below right=1pt,font=\small]{$P$};
+    \fill[headCol](0,2.5) circle(2pt)
+          node[above left=1pt,font=\small]{$Q$};
+    \fill(0,0) circle(1.5pt);
+  \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.52\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[a)]
+    \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
+          \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
+            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{56{,}5\,\textrm{m}}\]
+          Forflytningens størrelse (korde $PQ$):
+          \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
+            =36\sqrt{2}\approx 50{,}9\,\textrm{m}\]
+          Merk at farten $|\vec{v}|$ er konstant, men \emph{retningen} endrer seg kontinuerlig (jf.\ pilene i figuren) --- hastigheten er derfor \emph{ikke} konstant.
+    \item Gjennomsnittsfart: Dersom vi \textit{vet} at Karsten har løpt i en bue, bruker vi buelengden:
+    \[\doubleunderline{\bar{v}=\frac{18\pi\,\textrm{m}}{7\,\textrm{s}}\approx 8{,}1\,\textrm{m/s}}\]
+    Dersom vi derimot \textit{ikke vet} at Karsten har løpt i en bue, og kun kjenner hans posisjon i $P$ ved $t=0$ og i $Q$ ved $t=7\,\textrm{s}$, bruker vi forflytningens størrelse (korden):
+    \[\bar{v}=\frac{|\vec{\Delta s}|}{\Delta t}=\frac{36\sqrt{2}\,\textrm{m}}{7\,\textrm{s}}
+            \approx 7{,}3\,\textrm{m/s}\]
+    Dette illustrerer at gjennomsnittsfart avhenger av hvilken informasjon vi har om banen.
+  \end{enumerate}
+\end{minipage}
+}
+La oss tilslutt også ta et eksempel hvor vi får vite noe om farten i hver retning i to dimensjoner, og hvor vi skal finne den totale farten.
+\exm{Fart i to dimensjoner}{En båt seiler i en rett linje nordover med en fart på $4\,\textrm{m/s}$, samtidig som det blåser en vind som gir båten en fart på $3\,\textrm{m/s}$ østover. Hva er den totale farten til båten? Sammenlikn svaret med svarene fra eksempelet med båtene i det tidligere eksemplet.}
+
+
+\subsubsection{Momentanfart}
+Fra eksemplet med de to båtene, samt Karsten Warholm, så ser vi at hva gjennomsnittsfarten beregner til å være, er veldig avhengig av hvor ofte vi måler. Desto kortere tidsintervall vi måler på, desto mer nøyaktig blir resultatet. I praksis kan vi ofte måle posisjonen til et legeme veldig ofte, og dermed kan vi finne ut hva farten er på et gitt tidspunkt. Dette kaller vi for \textit{momentanhastighet}. 
+
+Momentanhastighet er hastigheten til et objekt på et spesifikt tidspunkt. Det beskriver hvor raskt et objekt beveger seg i akkurat det øyeblikket, og er derfor den ``øyeblikkelige'' hastigheten.
+
+Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennomsnittsfarten over intervallet $[t_0,\,t_0+\Delta t]$ er stigningstallet til \textit{sekantlinjen} gjennom punktene $(t_0,\,s(t_0))$ og $(t_0+\Delta t,\,s(t_0+\Delta t))$. Lar vi $\Delta t \to 0$, vil sekantlinjen nærme seg \textit{tangentlinjen} ved $t_0$ (se figuren under). Stigningstallet til tangentlinjen er nettopp den deriverte, og vi skriver:
+\[
+  v(t_0)
+  = \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t}
+  = \frac{ds}{dt}\bigg|_{t=t_0}
+\]
+
+%--- Illustrasjon: sekantlinje → tangentlinje når Δt → 0 ---------------
+% Kurve: s(t) = 0.2 t²
+% P ved t₀=2.0  →  s=0.8,  tangentslope = 0.4·2 = 0.80
+% Q ved t =4.5  →  s=4.05, sekant PQ slope = (4.05−0.8)/2.5 = 1.30
+% R ved t =3.2  →  s=2.048, sekant PR slope = (2.048−0.8)/1.2 = 1.04
+\begin{center}
+\begin{tikzpicture}[font=\small]
+  %--- Akser ---
+  \draw[->, thick] (-0.3, 0) -- (5.6, 0) node[right] {$t$};
+  \draw[->, thick] (0, -0.3) -- (0, 4.6) node[above] {$s(t)$};
+  %--- Posisjonskurve: s = 0.2t² ---
+  \draw[headCol, thick, domain=0:4.65, samples=80]
+    plot (\x, {0.2*\x*\x});
+  %--- Fastpunkt P ved t_0=2.0 ---
+  \fill[headCol] (2.0, 0.8) circle(2.5pt);
+  \node[left=3pt] at (2.0, 0.8) {$P$};
+  %--- Sekantlinje PQ (stor Δt): y = 1.30x − 1.80 ---
+  \draw[gray!70, semithick] (1.4, {1.30*1.4-1.80}) -- (4.7, {1.30*4.7-1.80});
+  %--- Punkt Q ---
+  \fill[gray!70] (4.5, 4.05) circle(2pt);
+  \node[above left=2pt, gray!75, font=\scriptsize] at (4.5, 4.05) {$Q$};
+  %--- Sekantlinje PR (liten Δt): y = 1.04x − 1.28 ---
+  \draw[gray!45, semithick] (1.3, {1.04*1.3-1.28}) -- (4.8, {1.04*4.8-1.28});
+  %--- Punkt R ---
+  \fill[gray!55] (3.2, 2.048) circle(2pt);
+  \node[right=3pt, gray!60, font=\scriptsize] at (3.2, 2.048) {$R$};
+  %--- Tangentlinje ved P: y = 0.80x − 0.80 ---
+  \draw[oppsumcol, thick] (1.1, {0.8*1.1-0.8}) -- (4.9, {0.8*4.9-0.8});
+  %--- Δt/Δs-trekant for sekant PQ ---
+  \draw[dashed, gray!60] (2.0, 0.8) -- (4.5, 0.8)
+        node[midway, below=3pt, font=\scriptsize] {$\Delta t$};
+  \draw[dashed, gray!60] (4.5, 0.8) -- (4.5, 4.05)
+        node[midway, right=3pt, font=\scriptsize] {$\Delta s$};
+  %--- t-akse-etiketter ---
+  \draw[thin] (2.0, 2.5pt) -- (2.0, -2.5pt);
+  \node[below=3pt, font=\scriptsize] at (2.0, 0) {$t_0$};
+  \draw[thin] (4.5, 2.5pt) -- (4.5, -2.5pt);
+  \node[below=3pt, font=\scriptsize] at (4.5, 0) {$t_0{+}\Delta t$};
+  %--- Linjeetiketter (plassert for å unngå overlapp med kurven) ---
+  \node[above=2pt, gray!75, font=\scriptsize]
+        at (2.9, {1.30*2.9-1.80}) {sekant $PQ$};
+  \node[above=2pt, gray!50, font=\scriptsize]
+        at (2.5, {1.04*2.5-1.28}) {sekant $PR$};
+  \node[below right=1pt, oppsumcol, font=\scriptsize]
+        at (4.0, {0.8*4.0-0.8}) {tangentlinje};
+  %--- Δt → 0 pil ---
+  \draw[->, thin, gray!65] (3.9, 3.6) to[out=230, in=65] (3.35, 2.35);
+  \node[right=1pt, gray!70, font=\scriptsize] at (3.9, 3.6)
+        {$\Delta t \to 0$};
+\end{tikzpicture}
+\end{center}
 
 \defn{Momentanhastighet}{
     Matematisk kan momentanfart finnes ved å ta den deriverte av posisjonen med hensyn til tid:
     \begin{align}
-        v &= \frac{ds}{dt}
+        \vec{v} &= \frac{d\vec{s}}{dt}
     \end{align}
     Dette gir oss hastigheten nøyaktig i det øyeblikket vi er interessert i.
 }
@@ -119,23 +357,179 @@ Momentanhastighet er hastigheten til et objekt på et spesifikt tidspunkt. I det
 
 Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfart ser på hastigheten i et spesifikt øyeblikk, mens gjennomsnittsfart ser på den totale bevegelsen over tid. Momentanfarten kan variere kraftig under en bevegelse, mens gjennomsnittsfarten gir en enkel verdi som representerer hele perioden.
 
+\exm{Momentanhastighet}{Posisjonen til en firhjuling på et jorde er gitt ved $vec{s}(t) = (2t^2, 3t)$ i meter og sekunder.\\
+\textbf{a)} Vis at uttrykket for momentanhastigheten $\vec{v}(t)$ til firhjulingen er gitt ved $\vec{v}(t) = (4t, 3)$.\\
+\textbf{b)} Hva er momentanhastigheten ved $t = 2\,\textrm{s}$?\\
+\textbf{c)} Ved hvilken tid er momentanhastigheten $\vec{v} = (16, 12)\,\textrm{m/s}$?
+
+}
+
 \oppgave{Momentanhastighet}{%
 Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og sekunder).
 \begin{enumerate}[a)]
-    \item Finn momentanhastigheten $v(t)$ ved å derivere $s(t)$.
+    \item For den som kan derivere: Vis at momentanfarten er gitt ved $v(t) = 6t + 2$.
     \item Hva er momentanhastigheten ved $t = 2\,\textrm{s}$?
-    \item Ved hvilken tid er momentanhastigheten $v = 20\,\textrm{m/s}$?
+    \item Ved hvilken tid er momentanfarten $v = 20\,\textrm{m/s}$?
 \end{enumerate}
 }
+
+\svar{%
+\begin{enumerate}[a)]
+  \item Vi deriverer $s(t) = 3t^2 + 2t$ ledd for ledd med potensregelen
+    $\frac{d}{dt}(t^n) = nt^{n-1}$:
+    \[
+      v(t) = \frac{ds}{dt} = 3 \cdot 2t^{2-1} + 2 \cdot 1 = 6t + 2\;\textrm{m/s}
+      \quad\checkmark
+    \]
+  \item Vi setter inn $t = 2\,\textrm{s}$:
+    \[
+      v(2) = 6 \cdot 2 + 2 = 12 + 2 = 14\,\textrm{m/s}
+    \]
+  \item Vi løser likningen $v(t) = 20\,\textrm{m/s}$:
+    \[
+      6t + 2 = 20
+      \implies 6t = 18
+      \implies t = 3\,\textrm{s}
+    \]
+\end{enumerate}
+}
+
+
+\subsubsection{Konstant fart}
+ Vi kan tilslutt merke oss at desom farten ikke endrer seg, men er konstant, da er \textit{momentanfarten} til enhver tid den samme som \textit{gjennomsnittsfarten}. Ved konstant hastighet vil den tilbakelagte distansen være proporsjonal med tiden som har gått.
+
+
+\oppgave{Konstant hastighet}{%
+En syklist kjører med konstant hastighet $v = 8\,\textrm{m/s}$.
+\begin{enumerate}[a)]
+    \item Hvor langt har syklisten kjørt etter $t = 10\,\textrm{s}$?
+    \item Hvor langt har syklisten kjørt etter $t = 2\,\textrm{min}$?
+    \item Hvor lang tid tar det å tilbakelegge $s = 2.0\,\textrm{km}$?
+\end{enumerate}
+}
+
+\oppgave{En oppgave til}{%
+Noe om dekomponering av fart i to dimensjoner.
+}
+
+
+
 
 \section{Akselerasjon}
 \textit{Akselerasjon} er et mål på hvor raskt hastigheten til et objekt endrer seg over tid. Mens hastigheten beskriver hvor raskt objektet beveger seg i en bestemt retning, beskriver akselerasjonen hvordan denne hastigheten endrer seg – enten det er snakk om økning, reduksjon eller en endring i retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon eller deselerasjon) betyr at hastigheten minker. 
 
 
+%--- Figur 3.3: tre stablede koordinatsystemer, konstant akselerasjon ----
+% Fysikk: s0=0, v0=−2 m/s, a=1 m/s²
+%   s(t) = ½t²−2t,   v(t) = t−2,   a(t) = 1
+% Skala: x: 0.9 cm/s (0–5 s → 4.5 cm)
+%         y_s: 0.72 cm/m  |  y_v: 0.6 cm/(m/s)  |  y_a: 1.2 cm/(m/s²)
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/Konstant akselerasjon.png}
-\caption{Eksempel på posisjon, hastighet og akselerasjonsgraf hvor akselerasjonen er konstant}
+
+%--- (a) Posisjonsgraf s(t) = ½t² − 2t --------------------------------
+\begin{tikzpicture}
+  % Rutenett: vertikale linjer ved t = 1,2,3,4,5 s
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, -1.6) -- (\xg, 2.0);
+  }
+  % Rutenett: horisontale linjer ved s = −2,−1,1,2 m
+  \foreach \yg in {-1.44, -0.72, 0.72, 1.44}{
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
+  }
+  % Akser
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -1.8) -- (0, 2.2)
+        node[above, font=\small] {Posisjon [m]};
+  % Tidsaksen: strekmerker (hopp over t=0, bruker felles «0» ved origo)
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
+  }
+  % Posisjonsaksens strekmerker
+  \foreach \ypos/\ylbl in {-1.44/{-2}, -0.72/{-1}, 0.72/1, 1.44/2}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
+  }
+  % Fellesetikett «0» ved origo (under-venstre for å unngå overlapp)
+  \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
+  % Parabola s(t)=½t²−2t  →  y [cm] = 0.72·(½(x/0.9)²−2(x/0.9))
+  %                          = (4/9)·x²−1.6·x   (x i cm)
+  \draw[headCol, thick, domain=0:4.5, samples=60]
+    plot (\x, {(4/9)*\x*\x - 1.6*\x});
+  % Kurve-etikett
+  \node[above right=2pt, headCol, font=\scriptsize] at (3.6, 1.2) {$s(t)$};
+\end{tikzpicture}
+
+\smallskip
+
+%--- (b) Fartsgraf v(t) = t − 2 ----------------------------------------
+\begin{tikzpicture}
+  % Rutenett: vertikale linjer
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, -1.3) -- (\xg, 2.0);
+  }
+  % Rutenett: horisontale linjer ved v = −2,−1,1,2,3 m/s
+  \foreach \yg in {-1.2, -0.6, 0.6, 1.2, 1.8}{
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
+  }
+  % Akser
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -1.5) -- (0, 2.2)
+        node[above, font=\small] {Fart [m/s]};
+  % Tidsaksen: strekmerker
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
+  }
+  % Fartsaksens strekmerker
+  \foreach \ypos/\ylbl in {-1.2/{-2}, -0.6/{-1}, 0.6/1, 1.2/2, 1.8/3}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
+  }
+  \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
+  % Rett linje v(t)=t−2  →  fra (0, −1.2) til (4.5, 1.8)
+  \draw[headCol, thick] (0, -1.2) -- (4.5, 1.8);
+  \node[above right=2pt, headCol, font=\scriptsize] at (3.5, 1.5) {$v(t)$};
+\end{tikzpicture}
+
+\smallskip
+
+%--- (c) Akselerasjonsgraf a(t) = 1 m/s² --------------------------------
+\begin{tikzpicture}
+  % Rutenett: vertikale linjer
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, 0) -- (\xg, 2.2);
+  }
+  % Rutenett: horisontal linje ved a = 1 m/s²
+  \draw[gray!25, thin] (0, 1.2) -- (4.5, 1.2);
+  % Akser
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -0.3) -- (0, 2.6)
+        node[above, font=\small] {Akselerasjon [m/s\textsuperscript{2}]};
+  % Tidsaksen: strekmerker
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
+  }
+  % Akselerasjonsaksens strekmerker
+  \foreach \ypos/\ylbl in {0/0, 1.2/1}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
+  }
+  % Konstant akselerasjon a = 1 m/s²
+  \draw[headCol, thick] (0, 1.2) -- (4.5, 1.2);
+  \node[above right=2pt, headCol, font=\scriptsize]
+        at (0, 1.2) {$a = 1\ \mathrm{m/s}^2$};
+  % Usynlig node for å gi samme venstre begrensningsboks som de to øvrige grafene
+  \node[left=4pt, font=\scriptsize, opacity=0] at (0, 0) {$-2$};
+\end{tikzpicture}
+
+\caption{Posisjon $s(t)$, fart $v(t)$ og akselerasjon $a(t)$ ved konstant
+         akselerasjon ($s_0=0$, $v_0=-2\,\mathrm{m/s}$, $a=1\,\mathrm{m/s}^2$).}
 \label{Konstant akselerasjon}
 \end{figure}
 
@@ -233,12 +627,12 @@ Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v =
 0 = 900 - 10(s - s_0).
 \]
 \[
-10(s - s_0) = 900.
+\underline{10(s - s_0) = 900}
 \]
 \[
-s - s_0 = 90 \, \text{m}.
+\doubleunderline{s - s_0 = 90 \, \text{m}}
 \]
-Bilen beveger seg \(90 \, \text{m}\) før den stopper.
+Bilen beveger seg $90\,\text{m}$ før den stopper.
 }
 
 \exm{Sykkeltur}{
@@ -250,9 +644,9 @@ Bruk gjennomsnittshastighetslikningen \( s = s_0 + \frac{v_0 + v}{2}t \). Her er
 s = 0 + \frac{5 + 15}{2} \cdot 10.
 \]
 \[
-s = \frac{20}{2} \cdot 10 = 10 \cdot 10 = 100 \, \text{m}.
+\doubleunderline{s = \frac{20}{2} \cdot 10 = 100 \, \text{m}}
 \]
-Du syklet \(100 \, \text{m}\) i løpet av denne perioden.
+Du syklet $100\,\text{m}$ i løpet av denne perioden.
 }
 
 
@@ -267,9 +661,9 @@ Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \te
 \textit{Metode:}
 Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \text{m/s} \), \( a = -9.8 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \). Sett inn verdiene:
 \[
-v = 10 \, \text{m/s} + (-9.8 \, \text{m/s}^2) \cdot 2 \, \text{s} = 10 - 19.6 = -9.6 \, \text{m/s}.
+\doubleunderline{v = 10 \, \text{m/s} + (-9.8 \, \text{m/s}^2) \cdot 2 \, \text{s} = -9{,}6 \, \text{m/s}}
 \]
-Ballens hastighet etter \(2\) sekunder er \(-9.6 \, \text{m/s}\), noe som indikerer at ballen nå beveger seg nedover.
+Ballens hastighet etter $2$ sekunder er $-9{,}6\,\text{m/s}$, noe som indikerer at ballen nå beveger seg nedover.
 }
 
 \exm{Fallende objekt}{
@@ -281,9 +675,9 @@ Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 
 s = 20 \, \text{m} + 0 \cdot 2 \, \text{s} + \frac{1}{2} \cdot 9.8 \, \text{m/s}^2 \cdot (2 \, \text{s})^2.
 \]
 \[
-s = 20 \, \text{m} + 0 + \frac{1}{2} \cdot 9.8 \cdot 4 = 20 + 19.6 = 39.6 \, \text{m}.
+\doubleunderline{s = 20 \, \text{m} + \tfrac{1}{2} \cdot 9{,}8 \cdot 4 = 39{,}6 \, \text{m}}
 \]
-Steinen er \(39.6 \, \text{m}\) fra utgangspunktet etter \(2\) sekunder.
+Steinen er $39{,}6\,\text{m}$ fra utgangspunktet etter $2$ sekunder.
 }
 
 
@@ -346,7 +740,7 @@ Dekomponering er en generell teknikk i fysikk som innebærer å bryte ned en vek
     \]
     Størrelsen (skalarverdien) av \( \vec{A} \) finner vi ved:
     \[
-    A = |\vec{A}| = \sqrt{A_x^2 + A_y^2} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5.
+    A = |\vec{A}| = \sqrt{A_x^2 + A_y^2} = \sqrt{3^2 + 4^2} = \sqrt{25} = \doubleunderline{5}
     \]
     Så størrelsen til vektoren \( \vec{A} \) er \( A = 5 \).
 
@@ -355,34 +749,28 @@ Dekomponering er en generell teknikk i fysikk som innebærer å bryte ned en vek
     \textit{Metode:}
     For å finne vinkelen \( \theta \) mellom vektoren \( \vec{A} \) og den horisontale aksen, kan vi bruke trigonometriske funksjoner. Vinkelen kan beregnes på tre forskjellige måter:
 
-    1. **Bruke sinus:** 
+    1. \textbf{Bruke sinus:}
     \[
-    \sin \theta = \frac{A_y}{A} = \frac{4}{5}.
-    \]
-    For å finne \( \theta \):
-    \[
-    \theta = \arcsin \left( \frac{4}{5} \right) \approx 53.13^\circ.
+    \sin \theta = \frac{A_y}{A} = \frac{4}{5}
+    \qquad\Rightarrow\qquad
+    \doubleunderline{\theta = \arcsin \!\left( \frac{4}{5} \right) \approx 53{,}13^\circ}
     \]
 
-    2. **Bruke cosinus:**
+    2. \textbf{Bruke cosinus:}
     \[
-    \cos \theta = \frac{A_x}{A} = \frac{3}{5}.
-    \]
-    For å finne \( \theta \):
-    \[
-    \theta = \arccos \left( \frac{3}{5} \right) \approx 53.13^\circ.
+    \cos \theta = \frac{A_x}{A} = \frac{3}{5}
+    \qquad\Rightarrow\qquad
+    \doubleunderline{\theta = \arccos \!\left( \frac{3}{5} \right) \approx 53{,}13^\circ}
     \]
 
-    3. **Bruke tangens:**
+    3. \textbf{Bruke tangens:}
     \[
-    \tan \theta = \frac{A_y}{A_x} = \frac{4}{3}.
-    \]
-    For å finne \( \theta \):
-    \[
-    \theta = \arctan \left( \frac{4}{3} \right) \approx 53.13^\circ.
+    \tan \theta = \frac{A_y}{A_x} = \frac{4}{3}
+    \qquad\Rightarrow\qquad
+    \doubleunderline{\theta = \arctan \!\left( \frac{4}{3} \right) \approx 53{,}13^\circ}
     \]
 
-    Uansett hvilken metode vi bruker, finner vi at vinkelen \( \theta \) er omtrent \( 53.13^\circ \).
+    Uansett hvilken metode vi bruker, finner vi at vinkelen \( \theta \) er omtrent \( 53{,}13^\circ \).
 }
 
 \newpage
@@ -445,7 +833,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \]
     hvor \( g = 9.81 \, \text{m/s}^2 \) og \( h \) er høyden kula skytes ut fra. Utgangshastigheten \( v_0 \) er da:
     \[
-    v_0 = \sqrt{2gh}.
+    \doubleunderline{v_0 = \sqrt{2gh}}
     \]
 
     \textbf{Del b: Beregn tiden kula er i lufta} \\
@@ -461,7 +849,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \]
     Vi løser denne kvadratiske likningen for \( t \) (tiden kula er i lufta):
     \[
-    t = \frac{2 v_0 \sin \theta}{g}.
+    \doubleunderline{t = \frac{2 v_0 \sin \theta}{g}}
     \]
 
     \textbf{Del c: Beregn sluttposisjonen i x-retning} \\
@@ -489,7 +877,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \]
     Ved å forenkle uttrykket får vi:
     \[
-    x = 4h \sin \theta \cos \theta.
+    \doubleunderline{x = 4h \sin \theta \cos \theta}
     \]
 
     Siden sluttposisjonen i y-retning er \( y = 0 \) når kula lander, kan vi skrive sluttposisjonen som en vektor:
@@ -529,7 +917,7 @@ som gir:
 t^2 = \frac{2 \cdot 0.8}{9.81},
 \]
 \[
-t = \sqrt{\frac{1.6}{9.81}} \approx 0.4 \, \text{sekunder}.
+\underline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \text{s}}
 \]
 
 Nå som vi har funnet tiden \(t = 0.4 \, \text{s}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
@@ -546,7 +934,7 @@ Vi setter inn \(x = 0.85 \, \text{m}\) og \(t = 0.4 \, \text{s}\):
 \]
 Løs for \(v_{0x}\):
 \[
-v_0 = v_{0x} = \frac{0.85}{0.4} \approx 2.125 \, \text{m/s}.
+\doubleunderline{v_0 = v_{0x} = \frac{0{,}85}{0{,}4} \approx 2{,}125 \, \text{m/s}}
 \]
 
 \textbf{Del b: Beregn sluttfarten rett før ballen treffer bakken} \\
