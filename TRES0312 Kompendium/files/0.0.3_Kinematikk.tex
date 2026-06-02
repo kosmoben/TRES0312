@@ -275,6 +275,18 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 La oss tilslutt også ta et eksempel hvor vi får vite noe om farten i hver retning i to dimensjoner, og hvor vi skal finne den totale farten.
 \exm{Fart i to dimensjoner}{En båt seiler i en rett linje nordover med en fart på $4\,\textrm{m/s}$, samtidig som det blåser en vind som gir båten en fart på $3\,\textrm{m/s}$ østover. Hva er den totale farten til båten? Sammenlikn svaret med svarene fra eksempelet med båtene i det tidligere eksemplet.}
 
+\svar{
+Fartskomponentene er $v_\textrm{nord} = 4\,\textrm{m/s}$ og $v_\textrm{øst} = 3\,\textrm{m/s}$.
+Siden de to komponentene er vinkelrette, finner vi totalfarten med Pythagoras:
+\[
+  |\vec{v}| = \sqrt{v_\textrm{nord}^2 + v_\textrm{øst}^2}
+            = \sqrt{4^2 + 3^2}
+            = \sqrt{16 + 9}
+            = \sqrt{25}
+            = \doubleunderline{5\,\textrm{m/s}}
+\]
+Dette er det samme $3$-$4$-$5$-trekantforholdet som dukket opp i eksempel 3.2: avstanden $|\vec{\Delta s}_{PR}| = 5\,\textrm{km}$ der. Begge situasjoner er geometrisk identiske – bare med ulike størrelser og enheter.
+}
 
 \subsubsection{Momentanfart}
 Fra eksemplet med de to båtene, samt Karsten Warholm, så ser vi at hva gjennomsnittsfarten beregner til å være, er veldig avhengig av hvor ofte vi måler. Desto kortere tidsintervall vi måler på, desto mer nøyaktig blir resultatet. I praksis kan vi ofte måle posisjonen til et legeme veldig ofte, og dermed kan vi finne ut hva farten er på et gitt tidspunkt. Dette kaller vi for \textit{momentanhastighet}. 
@@ -290,52 +302,61 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
 
 %--- Illustrasjon: sekantlinje → tangentlinje når Δt → 0 ---------------
 % Kurve: s(t) = 0.2 t²
-% P ved t₀=2.0  →  s=0.8,  tangentslope = 0.4·2 = 0.80
-% Q ved t =4.5  →  s=4.05, sekant PQ slope = (4.05−0.8)/2.5 = 1.30
-% R ved t =3.2  →  s=2.048, sekant PR slope = (2.048−0.8)/1.2 = 1.04
+% P ved t₀=2.0  →  s=0.8,  tangentslope = 0.80
+% Q ved t =4.5  →  s=4.05, sekant PQ slope = 1.30  (stiplet)
+% R ved t =3.2  →  s=2.048, sekant PR slope = 1.04  (hel)
+% Linjeetiketter: «sekant PQ» over PQ ved x=3.8;
+%                 «sekant PR» under PR ved x=3.8;
+%                 «tangentlinje» under tangent ved x=4.5.
+% «Δt→0»: label øverst ved x=3.6, pil ned-venstre til (2.8, 2.6).
 \begin{center}
 \begin{tikzpicture}[font=\small]
   %--- Akser ---
-  \draw[->, thick] (-0.3, 0) -- (5.6, 0) node[right] {$t$};
-  \draw[->, thick] (0, -0.3) -- (0, 4.6) node[above] {$s(t)$};
+  \draw[->, thick] (-0.3, 0) -- (5.7, 0) node[right] {$t$};
+  \draw[->, thick] (0, -0.3) -- (0, 4.8) node[above] {$s(t)$};
   %--- Posisjonskurve: s = 0.2t² ---
   \draw[headCol, thick, domain=0:4.65, samples=80]
     plot (\x, {0.2*\x*\x});
-  %--- Fastpunkt P ved t_0=2.0 ---
+  %--- Fastpunkt P ---
   \fill[headCol] (2.0, 0.8) circle(2.5pt);
   \node[left=3pt] at (2.0, 0.8) {$P$};
-  %--- Sekantlinje PQ (stor Δt): y = 1.30x − 1.80 ---
-  \draw[gray!70, semithick] (1.4, {1.30*1.4-1.80}) -- (4.7, {1.30*4.7-1.80});
-  %--- Punkt Q ---
-  \fill[gray!70] (4.5, 4.05) circle(2pt);
-  \node[above left=2pt, gray!75, font=\scriptsize] at (4.5, 4.05) {$Q$};
-  %--- Sekantlinje PR (liten Δt): y = 1.04x − 1.28 ---
-  \draw[gray!45, semithick] (1.3, {1.04*1.3-1.28}) -- (4.8, {1.04*4.8-1.28});
-  %--- Punkt R ---
-  \fill[gray!55] (3.2, 2.048) circle(2pt);
-  \node[right=3pt, gray!60, font=\scriptsize] at (3.2, 2.048) {$R$};
-  %--- Tangentlinje ved P: y = 0.80x − 0.80 ---
-  \draw[oppsumcol, thick] (1.1, {0.8*1.1-0.8}) -- (4.9, {0.8*4.9-0.8});
-  %--- Δt/Δs-trekant for sekant PQ ---
-  \draw[dashed, gray!60] (2.0, 0.8) -- (4.5, 0.8)
-        node[midway, below=3pt, font=\scriptsize] {$\Delta t$};
-  \draw[dashed, gray!60] (4.5, 0.8) -- (4.5, 4.05)
-        node[midway, right=3pt, font=\scriptsize] {$\Delta s$};
+  %--- Sekantlinje PQ (stor Δt) – stiplet, mørkere ---
+  \draw[black!55, semithick, dashed]
+    (1.4, {1.30*1.4-1.80}) -- (4.7, {1.30*4.7-1.80});
+  \fill[black!55] (4.5, 4.05) circle(2pt);
+  \node[above left=2pt, black!60, font=\scriptsize] at (4.5, 4.05) {$Q$};
+  %--- Sekantlinje PR (liten Δt) – hel linje, lysere ---
+  \draw[black!30, semithick]
+    (1.3, {1.04*1.3-1.28}) -- (4.8, {1.04*4.8-1.28});
+  \fill[black!36] (3.2, 2.048) circle(2pt);
+  \node[right=3pt, black!42, font=\scriptsize] at (3.2, 2.048) {$R$};
+  %--- Tangentlinje ved P – oransje, tykk ---
+  \draw[oppsumcol, thick]
+    (1.1, {0.8*1.1-0.8}) -- (4.9, {0.8*4.9-0.8});
+  %--- Δt/Δs-trekant (prikket, svak) ---
+  \draw[dotted, gray!65, thin] (2.0, 0.8) -- (4.5, 0.8)
+        node[midway, below=2pt, gray!80, font=\scriptsize] {$\Delta t$};
+  \draw[dotted, gray!65, thin] (4.5, 0.8) -- (4.5, 4.05)
+        node[midway, right=2pt, gray!80, font=\scriptsize] {$\Delta s$};
   %--- t-akse-etiketter ---
   \draw[thin] (2.0, 2.5pt) -- (2.0, -2.5pt);
-  \node[below=3pt, font=\scriptsize] at (2.0, 0) {$t_0$};
+  \node[below=2pt, font=\scriptsize] at (2.0, 0) {$t_0$};
   \draw[thin] (4.5, 2.5pt) -- (4.5, -2.5pt);
-  \node[below=3pt, font=\scriptsize] at (4.5, 0) {$t_0{+}\Delta t$};
-  %--- Linjeetiketter (plassert for å unngå overlapp med kurven) ---
-  \node[above=2pt, gray!75, font=\scriptsize]
-        at (2.9, {1.30*2.9-1.80}) {sekant $PQ$};
-  \node[above=2pt, gray!50, font=\scriptsize]
-        at (2.5, {1.04*2.5-1.28}) {sekant $PR$};
+  \node[below=2pt, font=\scriptsize] at (4.5, 0) {$t_0{+}\Delta t$};
+  %--- Linjeetiketter spredt for å unngå overlapp ---
+  % «sekant PQ»: OVER PQ-linjen ved x=3.8 (PQ=3.14, over kurven=2.89)
+  \node[above=2pt, black!60, font=\scriptsize]
+        at (3.8, {1.30*3.8-1.80}) {sekant $PQ$};
+  % «sekant PR»: UNDER PR-linjen ved x=3.8 (PR=2.67, tangent=2.24 nedenfor)
+  \node[below=2pt, black!42, font=\scriptsize]
+        at (3.8, {1.04*3.8-1.28}) {sekant $PR$};
+  % «tangentlinje»: under tangentlinjen, høyre side
   \node[below right=1pt, oppsumcol, font=\scriptsize]
-        at (4.0, {0.8*4.0-0.8}) {tangentlinje};
-  %--- Δt → 0 pil ---
-  \draw[->, thin, gray!65] (3.9, 3.6) to[out=230, in=65] (3.35, 2.35);
-  \node[right=1pt, gray!70, font=\scriptsize] at (3.9, 3.6)
+        at (4.5, {0.8*4.5-0.8}) {tangentlinje};
+  %--- Δt→0: label øverst, pil kurver ned-venstre til klart rom ---
+  \draw[->, thin, black!45]
+        (3.6, 4.5) to[out=245, in=85] (2.8, 2.6);
+  \node[right=1pt, black!50, font=\scriptsize] at (3.6, 4.5)
         {$\Delta t \to 0$};
 \end{tikzpicture}
 \end{center}
@@ -419,125 +440,201 @@ Noe om dekomponering av fart i to dimensjoner.
 \textit{Akselerasjon} er et mål på hvor raskt hastigheten til et objekt endrer seg over tid. Mens hastigheten beskriver hvor raskt objektet beveger seg i en bestemt retning, beskriver akselerasjonen hvordan denne hastigheten endrer seg – enten det er snakk om økning, reduksjon eller en endring i retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon eller deselerasjon) betyr at hastigheten minker. 
 
 
-%--- Figur 3.3: tre stablede koordinatsystemer, konstant akselerasjon ----
-% Fysikk: s0=0, v0=−2 m/s, a=1 m/s²
-%   s(t) = ½t²−2t,   v(t) = t−2,   a(t) = 1
-% Skala: x: 0.9 cm/s (0–5 s → 4.5 cm)
-%         y_s: 0.72 cm/m  |  y_v: 0.6 cm/(m/s)  |  y_a: 1.2 cm/(m/s²)
+%--- Figur 3.3 og 3.4 side om side: konstant vs. varierende akselerasjon ----
+% Figur 3.3: s₀=0, v₀=−2 m/s, a=1 m/s² (konstant)
+%   s(t)=½t²−2t, v(t)=t−2, a(t)=1
+% Figur 3.4: s₀=0, v₀=−2 m/s; a₁=2 m/s² for t∈[0,2 s], a₂=−1 m/s² for t∈[2,5 s]
+%   Fase 1: v(t)=2t−2, s(t)=t²−2t
+%   Fase 2: v(t)=4−t,  s(t)=2(t−2)−½(t−2)²
+%   Kontrollpunkter: s(1)=−1, s(2)=0, s(4)=2(max), s(5)=1.5
+%                    v(0)=−2, v(1)=0, v(2)=2, v(4)=0, v(5)=−1
+% Skala (begge): x: 0.9 cm/s | y_s: 0.72 cm/m | y_v: 0.6 cm/(m/s) | y_a: 0.6 cm/(m/s²)
 \begin{figure}[ht!]
 \centering
 
-%--- (a) Posisjonsgraf s(t) = ½t² − 2t --------------------------------
+%=== VENSTRE: Figur 3.3 – konstant akselerasjon ==========================
+\begin{minipage}[t]{0.46\textwidth}
+\centering
+
+%--- Posisjonsgraf s(t) = ½t² − 2t ---
 \begin{tikzpicture}
-  % Rutenett: vertikale linjer ved t = 1,2,3,4,5 s
   \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
-    \draw[gray!25, thin] (\xg, -1.6) -- (\xg, 2.0);
-  }
-  % Rutenett: horisontale linjer ved s = −2,−1,1,2 m
+    \draw[gray!25, thin] (\xg, -1.6) -- (\xg, 2.0); }
   \foreach \yg in {-1.44, -0.72, 0.72, 1.44}{
-    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
-  }
-  % Akser
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg); }
   \draw[->, thick] (-0.3, 0) -- (5.2, 0)
         node[right, font=\small] {$t$ [s]};
   \draw[->, thick] (0, -1.8) -- (0, 2.2)
         node[above, font=\small] {Posisjon [m]};
-  % Tidsaksen: strekmerker (hopp over t=0, bruker felles «0» ved origo)
   \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
     \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
-    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
-  }
-  % Posisjonsaksens strekmerker
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
   \foreach \ypos/\ylbl in {-1.44/{-2}, -0.72/{-1}, 0.72/1, 1.44/2}{
     \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
-    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
-  }
-  % Fellesetikett «0» ved origo (under-venstre for å unngå overlapp)
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
   \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
-  % Parabola s(t)=½t²−2t  →  y [cm] = 0.72·(½(x/0.9)²−2(x/0.9))
-  %                          = (4/9)·x²−1.6·x   (x i cm)
   \draw[headCol, thick, domain=0:4.5, samples=60]
     plot (\x, {(4/9)*\x*\x - 1.6*\x});
-  % Kurve-etikett
   \node[above right=2pt, headCol, font=\scriptsize] at (3.6, 1.2) {$s(t)$};
 \end{tikzpicture}
 
 \smallskip
 
-%--- (b) Fartsgraf v(t) = t − 2 ----------------------------------------
+%--- Fartsgraf v(t) = t − 2 ---
 \begin{tikzpicture}
-  % Rutenett: vertikale linjer
   \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
-    \draw[gray!25, thin] (\xg, -1.3) -- (\xg, 2.0);
-  }
-  % Rutenett: horisontale linjer ved v = −2,−1,1,2,3 m/s
+    \draw[gray!25, thin] (\xg, -1.3) -- (\xg, 2.0); }
   \foreach \yg in {-1.2, -0.6, 0.6, 1.2, 1.8}{
-    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg);
-  }
-  % Akser
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg); }
   \draw[->, thick] (-0.3, 0) -- (5.2, 0)
         node[right, font=\small] {$t$ [s]};
   \draw[->, thick] (0, -1.5) -- (0, 2.2)
         node[above, font=\small] {Fart [m/s]};
-  % Tidsaksen: strekmerker
   \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
     \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
-    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
-  }
-  % Fartsaksens strekmerker
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
   \foreach \ypos/\ylbl in {-1.2/{-2}, -0.6/{-1}, 0.6/1, 1.2/2, 1.8/3}{
     \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
-    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
-  }
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
   \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
-  % Rett linje v(t)=t−2  →  fra (0, −1.2) til (4.5, 1.8)
   \draw[headCol, thick] (0, -1.2) -- (4.5, 1.8);
   \node[above right=2pt, headCol, font=\scriptsize] at (3.5, 1.5) {$v(t)$};
 \end{tikzpicture}
 
 \smallskip
 
-%--- (c) Akselerasjonsgraf a(t) = 1 m/s² --------------------------------
+%--- Akselerasjonsgraf a(t) = 1 m/s² ---
 \begin{tikzpicture}
-  % Rutenett: vertikale linjer
   \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
-    \draw[gray!25, thin] (\xg, 0) -- (\xg, 2.2);
-  }
-  % Rutenett: horisontal linje ved a = 1 m/s²
+    \draw[gray!25, thin] (\xg, 0) -- (\xg, 2.2); }
   \draw[gray!25, thin] (0, 1.2) -- (4.5, 1.2);
-  % Akser
   \draw[->, thick] (-0.3, 0) -- (5.2, 0)
         node[right, font=\small] {$t$ [s]};
   \draw[->, thick] (0, -0.3) -- (0, 2.6)
         node[above, font=\small] {Akselerasjon [m/s\textsuperscript{2}]};
-  % Tidsaksen: strekmerker
   \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
     \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
-    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$};
-  }
-  % Akselerasjonsaksens strekmerker
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
   \foreach \ypos/\ylbl in {0/0, 1.2/1}{
     \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
-    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$};
-  }
-  % Konstant akselerasjon a = 1 m/s²
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
   \draw[headCol, thick] (0, 1.2) -- (4.5, 1.2);
   \node[above right=2pt, headCol, font=\scriptsize]
         at (0, 1.2) {$a = 1\ \mathrm{m/s}^2$};
-  % Usynlig node for å gi samme venstre begrensningsboks som de to øvrige grafene
   \node[left=4pt, font=\scriptsize, opacity=0] at (0, 0) {$-2$};
 \end{tikzpicture}
 
-\caption{Posisjon $s(t)$, fart $v(t)$ og akselerasjon $a(t)$ ved konstant
-         akselerasjon ($s_0=0$, $v_0=-2\,\mathrm{m/s}$, $a=1\,\mathrm{m/s}^2$).}
+\caption{Posisjon, fart og akselerasjon ved \emph{konstant} akselerasjon
+         ($s_0=0$, $v_0=-2\,\mathrm{m/s}$, $a=1\,\mathrm{m/s}^2$).}
 \label{Konstant akselerasjon}
-\end{figure}
-
-\begin{figure}[ht!]
+\end{minipage}%
+%=== SKILLELINJE ==========================================================
+\hspace{4pt}{\color{black!25}\rule[-13cm]{0.4pt}{14.5cm}}\hspace{4pt}%
+%=== HØYRE: Figur 3.4 – varierende akselerasjon ===========================
+% Fase 1 (0≤t≤2): a=2 → v=2t−2, s=t²−2t
+%   TikZ s: y=(8/9)x²−1.6x  [verifisert: t=1→y=−0.72, t=2→y=0]
+% Fase 2 (2≤t≤5): a=−1 → v=4−t, s=2(t−2)−½(t−2)²
+%   TikZ s: y=1.6(x−1.8)−(4/9)(x−1.8)²  [verifisert: t=4→y=1.44, t=5→y=1.08]
+\begin{minipage}[t]{0.46\textwidth}
 \centering
-\includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/material-mWKB9Nxg.png}
-\caption{Eksempel på posisjon, hastighet og akselerasjonsgraf hvor akselerasjonen varierer}
-\label{Posisjon, hastighet og akselerasjon}
+
+%--- Posisjonsgraf – stykkvis parabolsk ---
+\begin{tikzpicture}
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, -1.6) -- (\xg, 2.0); }
+  \foreach \yg in {-0.72, 0.72, 1.44}{
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg); }
+  % Faseskille
+  \draw[gray!40, dashed, thin] (1.8, -1.6) -- (1.8, 2.0);
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -1.8) -- (0, 2.2)
+        node[above, font=\small] {Posisjon [m]};
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
+  \foreach \ypos/\ylbl in {-0.72/{-1}, 0.72/1, 1.44/2}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
+  \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
+  % Fase 1: s=t²−2t → y=(8/9)x²−1.6x
+  \draw[headCol, thick, domain=0:1.8, samples=30]
+    plot (\x, {(8/9)*\x*\x - 1.6*\x});
+  % Fase 2: s=2(t−2)−½(t−2)² → y=1.6(x−1.8)−(4/9)(x−1.8)²
+  \draw[headCol, thick, domain=1.8:4.5, samples=30]
+    plot (\x, {1.6*(\x-1.8) - (4/9)*(\x-1.8)*(\x-1.8)});
+  \node[above right=2pt, headCol, font=\scriptsize] at (3.2, 1.44) {$s(t)$};
+  % Usynlig node for lik venstre margin som fig 3.3
+  \node[left=4pt, font=\scriptsize, opacity=0] at (0, -1.44) {$-2$};
+\end{tikzpicture}
+
+\smallskip
+
+%--- Fartsgraf – stykkvis lineær ---
+% Fase 1: v=2t−2 → linje (0,−1.2)→(1.8,1.2)
+% Fase 2: v=4−t  → linje (1.8,1.2)→(4.5,−0.6)
+\begin{tikzpicture}
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, -1.3) -- (\xg, 2.0); }
+  \foreach \yg in {-1.2, -0.6, 0.6, 1.2}{
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg); }
+  % Faseskille
+  \draw[gray!40, dashed, thin] (1.8, -1.5) -- (1.8, 2.2);
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -1.5) -- (0, 2.2)
+        node[above, font=\small] {Fart [m/s]};
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
+  \foreach \ypos/\ylbl in {-1.2/{-2}, -0.6/{-1}, 0.6/1, 1.2/2}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
+  \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
+  \draw[headCol, thick] (0, -1.2) -- (1.8, 1.2);   % fase 1
+  \draw[headCol, thick] (1.8, 1.2) -- (4.5, -0.6); % fase 2
+  \node[above right=2pt, headCol, font=\scriptsize] at (2.8, 0.8) {$v(t)$};
+  % Usynlig node for lik venstre margin
+  \node[left=4pt, font=\scriptsize, opacity=0] at (0, 1.8) {$3$};
+\end{tikzpicture}
+
+\smallskip
+
+%--- Akselerasjonsgraf – stegfunksjon ---
+% Fase 1 (0≤t<2): a=2  → y=1.2
+% Fase 2 (2<t≤5): a=−1 → y=−0.6
+\begin{tikzpicture}
+  \foreach \xg in {0.9, 1.8, 2.7, 3.6, 4.5}{
+    \draw[gray!25, thin] (\xg, -0.8) -- (\xg, 1.6); }
+  \foreach \yg in {-0.6, 0.6, 1.2}{
+    \draw[gray!25, thin] (0, \yg) -- (4.5, \yg); }
+  % Faseskille
+  \draw[gray!40, dashed, thin] (1.8, -0.8) -- (1.8, 1.6);
+  \draw[->, thick] (-0.3, 0) -- (5.2, 0)
+        node[right, font=\small] {$t$ [s]};
+  \draw[->, thick] (0, -1.0) -- (0, 1.9)
+        node[above, font=\small] {Akselerasjon [m/s\textsuperscript{2}]};
+  \foreach \xpos/\xlbl in {0.9/1, 1.8/2, 2.7/3, 3.6/4, 4.5/5}{
+    \draw[thin] (\xpos, 2.5pt) -- (\xpos, -2.5pt);
+    \node[below=3pt, font=\scriptsize] at (\xpos, 0) {$\xlbl$}; }
+  \foreach \ypos/\ylbl in {-0.6/{-1}, 0.6/1, 1.2/2}{
+    \draw[thin] (-2.5pt, \ypos) -- (2.5pt, \ypos);
+    \node[left=4pt, font=\scriptsize] at (0, \ypos) {$\ylbl$}; }
+  \node[below left=1pt, font=\scriptsize] at (0, 0) {$0$};
+  % Stegfunksjon
+  \draw[headCol, thick] (0, 1.2)  -- (1.8, 1.2);   % a=2, fase 1
+  \draw[headCol, thick] (1.8, 1.2) -- (1.8, -0.6); % hopp ned ved t=2
+  \draw[headCol, thick] (1.8, -0.6) -- (4.5, -0.6);% a=−1, fase 2
+  % Usynlig node for lik venstre margin som fig 3.3
+  \node[left=4pt, font=\scriptsize, opacity=0] at (0, 0) {$-2$};
+\end{tikzpicture}
+
+\caption{Posisjon, fart og akselerasjon ved \emph{varierende} akselerasjon
+         ($s_0=0$, $v_0=-2\,\mathrm{m/s}$; $a_1=2\,\mathrm{m/s}^2$ for
+         $t\in[0,2\,\mathrm{s}]$ og $a_2=-1\,\mathrm{m/s}^2$ for $t\in[2,5\,\mathrm{s}]$).}
+\label{Variabel akselerasjon}
+\end{minipage}
+
 \end{figure}
 
 \subsection{Gjennomsnittsakselerasjon og momentanakselerasjon}
