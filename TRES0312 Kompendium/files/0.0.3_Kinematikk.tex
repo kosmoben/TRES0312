@@ -160,16 +160,35 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 
 \paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom den totale forflytningen $\Delta \vec{s}$ ikke nødvendigvis er i samme retning som farten til enhver tid. La oss se på et eksempel for å illustrere dette.
 
-\exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord. \\
-\textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{PR}$ og $\vec{\Delta s}_\text{QR}$ som beskriver de relevante forflytningene.\\
+\exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$ og bruker 2 timer på seilasen. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord.\\
+\textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{QR}$ og $\vec{\Delta s}_\text{PR}$ som beskriver de relevante forflytningene.\\
 \textbf{b)} Hva er gjennomsnittsfarten til båt 1?\\
-\textbf{c)}Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
+\textbf{c)} Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
 \textbf{d)} Hva sier disse utregningene om begrepet gjennomsnittsfart?
 }
 
 \svar{%
 \noindent
-\begin{minipage}[t]{0.44\linewidth}
+\begin{minipage}[t]{0.55\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[\textbf{a)}]
+    \item Forflytningsvektorene (se figur):
+          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\textrm{km},\quad
+            \vec{\Delta s}_{QR}=[0,\;4]\,\textrm{km}\]
+          \[\vec{\Delta s}_{PR}=[3,\;4]\,\textrm{km}\]
+    \item Båt 1 seiler direkte. Forflytningens størrelse:
+          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\underline{5\,\textrm{km}}\]
+          Gjennomsnittsfart (2 timer totalt):
+          \[\doubleunderline{\bar{v}_1=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
+    \item Gjennomsnittsfart per etappe for båt 2:
+          \[\bar{v}_{PQ}=3\,\textrm{km/t},\quad\bar{v}_{QR}=4\,\textrm{km/t}\]
+          Total gjennomsnittsfart for båt 2 (forflytning $=5\,\textrm{km}$, tid $=2\,\textrm{t}$):
+          \[\doubleunderline{\bar{v}_2=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
+    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $4\,\textrm{km/t}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis.
+  \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
   \vspace{0pt}
   \centering
   \begin{tikzpicture}
@@ -194,26 +213,6 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
     \fill(3,0) circle(2pt) node[below right=2pt,font=\small]{$Q$};
     \fill[oppsumcol](3,4) circle(2pt) node[above right=1pt,font=\small]{$R$};
   \end{tikzpicture}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.52\linewidth}
-  \vspace{0pt}
-  \begin{enumerate}[a)]
-    \item Forflytningsvektorene (se figur):
-          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\textrm{km},\qquad
-            \vec{\Delta s}_{QR}=[0,\;4]\,\textrm{km},\qquad
-            \vec{\Delta s}_{PR}=[3,\;4]\,\textrm{km}\]
-    \item Båt 1 seiler direkte. Forflytningens størrelse:
-          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\underline{5\,\textrm{km}}\]
-          Gjennomsnittsfart (2 timer totalt):
-          \[\doubleunderline{\bar{v}_1=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
-    \item Gjennomsnittsfart per etappe for båt 2:
-          \[\bar{v}_{PQ}=\frac{3\,\textrm{km}}{1\,\textrm{t}}=3\,\textrm{km/t},\qquad
-            \bar{v}_{QR}=\frac{4\,\textrm{km}}{1\,\textrm{t}}=4\,\textrm{km/t}\]
-          Total gjennomsnittsfart for båt 2 (forflytning $=5\,\textrm{km}$, tid $=2\,\textrm{t}$):
-          \[\doubleunderline{\bar{v}_2=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
-    \item Selv om båt 2 hadde ulik fart på de to etappene ($3$ og $4\,\textrm{km/t}$), er den totale gjennomsnittsfarten identisk med båt 1 ($2{,}5\,\textrm{km/t}$). Dette viser at gjennomsnittsfart kun avhenger av total forflytning og total tid – ikke av hvordan farten varierte underveis.
-  \end{enumerate}
 \end{minipage}
 }
 
@@ -224,11 +223,29 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 
 \svar{%
 \noindent
-\begin{minipage}[t]{0.44\linewidth}
+\begin{minipage}[t]{0.55\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[\textbf{a)}]
+    \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
+          \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
+            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{56{,}5\,\textrm{m}}\]
+          Forflytningens størrelse (korde $PQ$):
+          \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
+            =36\sqrt{2}\approx 50{,}9\,\textrm{m}\]
+          Merk at farten $|\vec{v}|$ er konstant, men \emph{retningen} endrer seg kontinuerlig (jf.\ pilene i figuren) – hastigheten er derfor \emph{ikke} konstant.
+    \item Dersom vi \textit{vet} at Karsten løper i en bue, bruker vi buelengden:
+          \[\doubleunderline{\bar{v}=\frac{18\pi\,\textrm{m}}{7\,\textrm{s}}\approx 8{,}1\,\textrm{m/s}}\]
+          Dersom vi \textit{ikke vet} det og kun kjenner posisjonene $P$ og $Q$, bruker vi korden:
+          \[\bar{v}=\frac{36\sqrt{2}\,\textrm{m}}{7\,\textrm{s}}\approx 7{,}3\,\textrm{m/s}\]
+          Gjennomsnittsfarten avhenger altså av hvilken informasjon vi har om banen.
+  \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
   \vspace{0pt}
   \centering
   \begin{tikzpicture}[scale=0.9]
-    % Bane: kvartssirkel fra A=(2.5,0) til B=(0,2.5)
+    % Bane: kvartssirkel fra P=(2.5,0) til Q=(0,2.5)
     \draw[headCol,thick](2.5,0) arc(0:90:2.5);
     % Stiplede radier
     \draw[dashed,gray!60](0,0)--(2.5,0)
@@ -236,7 +253,7 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
     \draw[dashed,gray!60](0,0)--(0,2.5);
     % Rett vinkel ved sentrum
     \draw(0.22,0)--++(0,0.22)--++(-0.22,0);
-    % Forflytningsvektor (korde A til B)
+    % Forflytningsvektor (korde P til Q)
     \draw[->,very thick,oppsumcol](2.5,0)--(0,2.5)
           node[midway,right=4pt,font=\small]{$\vec{\Delta s}$};
     % Hastighetspiler (tangenter til banen)
@@ -251,41 +268,52 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
           node[above left=1pt,font=\small]{$Q$};
     \fill(0,0) circle(1.5pt);
   \end{tikzpicture}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.52\linewidth}
-  \vspace{0pt}
-  \begin{enumerate}[a)]
-    \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
-          \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
-            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{56{,}5\,\textrm{m}}\]
-          Forflytningens størrelse (korde $PQ$):
-          \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
-            =36\sqrt{2}\approx 50{,}9\,\textrm{m}\]
-          Merk at farten $|\vec{v}|$ er konstant, men \emph{retningen} endrer seg kontinuerlig (jf.\ pilene i figuren) --- hastigheten er derfor \emph{ikke} konstant.
-    \item Gjennomsnittsfart: Dersom vi \textit{vet} at Karsten har løpt i en bue, bruker vi buelengden:
-    \[\doubleunderline{\bar{v}=\frac{18\pi\,\textrm{m}}{7\,\textrm{s}}\approx 8{,}1\,\textrm{m/s}}\]
-    Dersom vi derimot \textit{ikke vet} at Karsten har løpt i en bue, og kun kjenner hans posisjon i $P$ ved $t=0$ og i $Q$ ved $t=7\,\textrm{s}$, bruker vi forflytningens størrelse (korden):
-    \[\bar{v}=\frac{|\vec{\Delta s}|}{\Delta t}=\frac{36\sqrt{2}\,\textrm{m}}{7\,\textrm{s}}
-            \approx 7{,}3\,\textrm{m/s}\]
-    Dette illustrerer at gjennomsnittsfart avhenger av hvilken informasjon vi har om banen.
-  \end{enumerate}
 \end{minipage}
 }
-La oss tilslutt også ta et eksempel hvor vi får vite noe om farten i hver retning i to dimensjoner, og hvor vi skal finne den totale farten.
-\exm{Fart i to dimensjoner}{En båt seiler i en rett linje nordover med en fart på $4\,\textrm{m/s}$, samtidig som det blåser en vind som gir båten en fart på $3\,\textrm{m/s}$ østover. Hva er den totale farten til båten? Sammenlikn svaret med svarene fra eksempelet med båtene i det tidligere eksemplet.}
+La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal finne komponentene.
+\exm{Dekomponering av hastighet}{En fugl flyr med fart $v = 15\,\textrm{m/s}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
+\textbf{a)} Finn den horisontale komponenten $v_x$ og den vertikale komponenten $v_y$ av hastigheten.\\
+\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = 15\,\textrm{m/s}$.}
 
-\svar{
-Fartskomponentene er $v_\textrm{nord} = 4\,\textrm{m/s}$ og $v_\textrm{øst} = 3\,\textrm{m/s}$.
-Siden de to komponentene er vinkelrette, finner vi totalfarten med Pythagoras:
-\[
-  |\vec{v}| = \sqrt{v_\textrm{nord}^2 + v_\textrm{øst}^2}
-            = \sqrt{4^2 + 3^2}
-            = \sqrt{16 + 9}
-            = \sqrt{25}
-            = \doubleunderline{5\,\textrm{m/s}}
-\]
-Dette er det samme $3$-$4$-$5$-trekantforholdet som dukket opp i eksempel 3.2: avstanden $|\vec{\Delta s}_{PR}| = 5\,\textrm{km}$ der. Begge situasjoner er geometrisk identiske – bare med ulike størrelser og enheter.
+\svar{%
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[\textbf{a)}]
+    \item Vi dekomponerer langs de to aksene (se figur):
+          \[v_x = v\cos\theta = 15\cdot 0{,}80 = \doubleunderline{12\,\textrm{m/s}}\]
+          \[v_y = v\sin\theta = 15\cdot 0{,}60 = \doubleunderline{9\,\textrm{m/s}}\]
+    \item Pythagoras bekrefter:
+          \[\sqrt{v_x^2+v_y^2}=\sqrt{12^2+9^2}=\sqrt{144+81}=\sqrt{225}=\doubleunderline{15\,\textrm{m/s}}\;\checkmark\]
+  \end{enumerate}
+  Merk at dette er det samme $9$-$12$-$15$-trekantforholdet (skalert $3$-$4$-$5$) som dukket opp i eksempel 3.2, men nå brukt til å gå fra totalfart til komponenter.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+  \vspace{0pt}
+  \centering
+  % Vektortrekant: v=15, vx=12, vy=9, theta=37°
+  \begin{tikzpicture}[font=\small, scale=0.85]
+    % Fylt trekant
+    \fill[headCol!12](0,0)--(4,0)--(4,3)--cycle;
+    % Horisontal komponent vx
+    \draw[->,thick,defscol](0,0)--(4,0)
+          node[midway,below=3pt]{$v_x=12\,\textrm{m/s}$};
+    % Vertikal komponent vy
+    \draw[->,thick,oppsumcol](4,0)--(4,3)
+          node[midway,right=3pt]{$v_y=9\,\textrm{m/s}$};
+    % Totalvektoren v
+    \draw[->,very thick,headCol](0,0)--(4,3)
+          node[midway,above left=2pt]{$v=15\,\textrm{m/s}$};
+    % Rett vinkel
+    \draw(4,0)++(-0.28,0)--++(0,0.28)--++(0.28,0);
+    % Vinkel theta
+    \draw[thin](0.85,0) arc(0:36.87:0.85);
+    \node[right=2pt,font=\scriptsize]at(0.80,0.22){$\theta$};
+    % Origo
+    \fill(0,0) circle(1.5pt);
+  \end{tikzpicture}
+\end{minipage}
 }
 
 \subsubsection{Momentanfart}
@@ -665,50 +693,155 @@ En bil øker farten fra $v_0 = 20\,\textrm{m/s}$ til $v = 30\,\textrm{m/s}$ på 
 \end{enumerate}
 }
 
-\section{Bevegelseslikningene for konstant hastighet}
-Noen ganger er akselerasjonen konstant;
+\section{Bevegelseslikningene for konstant akselerasjon}
+\label{sec:bevegelseslikninger}
+Noen ganger er akselerasjonen konstant, $a = \mathrm{konst.}$ Dette er en god antakelse i mange situasjoner: fritt fall, jevn bremsing, en ball kastet skrått opp. Bevegelseslikningene kan da utledes geometrisk ved hjelp av \textit{arealet under grafen}: arealet under $a(t)$-grafen gir endring i fart, og arealet under $v(t)$-grafen gir forflytning.
 
-\[\textrm{a}=\textrm{konst.}\]
+%--- Figur: a(t)-rektangel og v(t)-trapes side om side --------------------
+% Skala: x = 4 cm tilsvarer tid t  |  y skalert for tydlighet
+\begin{center}
+\begin{minipage}[b]{0.46\textwidth}
+  \centering
+  %-- a(t): konstant → rektangel --
+  \begin{tikzpicture}[font=\small]
+    % Fylt rektangel (areal = Δv)
+    \fill[headCol!15](0,0) rectangle (4,1.5);
+    % Akser
+    \draw[->,thick](-0.3,0)--(5.0,0) node[right]{$t$};
+    \draw[->,thick](0,-0.3)--(0,2.3) node[above]{$a(t)$};
+    % Konstant akselerasjon
+    \draw[headCol,thick](0,1.5)--(4,1.5);
+    % Høyre kant (stengsel)
+    \draw[gray!50,dashed,thin](4,0)--(4,1.5);
+    % Strekmerker
+    \draw[thin](4,2.5pt)--(4,-2.5pt);
+    \node[below=3pt,font=\scriptsize]at(4,0){$t$};
+    \draw[thin](-2.5pt,1.5)--(2.5pt,1.5);
+    \node[left=4pt,font=\scriptsize]at(0,1.5){$a$};
+    \node[below left=1pt,font=\scriptsize]at(0,0){$0$};
+    % Arealmerking
+    \node[font=\scriptsize]at(2,0.75){areal $= a\cdot t = \Delta v$};
+    % Usynlig node: holder bredde lik høyre figur
+    \node[right=2pt,opacity=0,font=\scriptsize]at(4.5,1.4){$s{-}s_0$};
+  \end{tikzpicture}
 
-I dette tilfellet så blir bevegelseslikningene relativt enkle. Siden det finnes flere scenarioer hvor konstant akselerasjon er en rimelig antakelse så er det verdt å gi disse formlene spesiell oppmerksomhet.
+  \smallskip
+  {\footnotesize \textbf{(a)} $a(t)$-grafen. Arealet av rektangelet er endringen i fart: $\Delta v = v - v_0$.}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.46\textwidth}
+  \centering
+  %-- v(t): stigende linje → trapes = rektangel + trekant --
+  % v₀ = 1.0 cm, v = v₀+at = 2.8 cm, t = 4 cm
+  \begin{tikzpicture}[font=\small]
+    % Rektangel (v₀·t)
+    \fill[headCol!15](0,0)--(4,0)--(4,1.0)--(0,1.0)--cycle;
+    % Trekant (½at²)
+    \fill[oppsumcol!20](0,1.0)--(4,1.0)--(4,2.8)--cycle;
+    % Akser
+    \draw[->,thick](-0.3,0)--(5.0,0) node[right]{$t$};
+    \draw[->,thick](0,-0.3)--(0,3.5) node[above]{$v(t)$};
+    % v(t)-linje
+    \draw[headCol,thick](0,1.0)--(4,2.8);
+    % Hjelpelinjer
+    \draw[gray!50,dashed,thin](0,1.0)--(4,1.0);
+    \draw[gray!50,dashed,thin](4,0)--(4,2.8);
+    % Strekmerker
+    \draw[thin](4,2.5pt)--(4,-2.5pt);
+    \node[below=3pt,font=\scriptsize]at(4,0){$t$};
+    \draw[thin](-2.5pt,1.0)--(2.5pt,1.0);
+    \node[left=4pt,font=\scriptsize]at(0,1.0){$v_0$};
+    \draw[thin](-2.5pt,2.8)--(2.5pt,2.8);
+    \node[left=4pt,font=\scriptsize]at(0,2.8){$v$};
+    \node[below left=1pt,font=\scriptsize]at(0,0){$0$};
+    % Arealmerking
+    \node[font=\scriptsize]at(2,0.46){$v_0\cdot t$};
+    \node[font=\scriptsize]at(3.1,1.85){$\tfrac{1}{2}at^2$};
+    % Dobbelpil: total Δs
+    \draw[<->,thin,black!50](4.4,0)--(4.4,2.8);
+    \node[right=2pt,font=\scriptsize]at(4.4,1.4){$s{-}s_0$};
+  \end{tikzpicture}
 
-Ved å integrere opp $\textrm{a}=\textrm{konst.}$ så finner vi
+  \smallskip
+  {\footnotesize \textbf{(b)} $v(t)$-grafen. Trapesarealet (rektangel $+$ trekant) er forflytningen: $\Delta s = s - s_0$.}
+\end{minipage}
+\end{center}
 
-\begin{equation}
-    v(t)=\int a\,\textrm{d}t=a t+v_0,
-\end{equation}
-hvor $v_0$ er en integrasjonskonstant.
-Integrerer vi enda en gangså finner vi
-\begin{equation}
-    s(t)=\int v\,\textrm{d}t=\frac{1}{2}a t^2+v_0t+s_0.
-\end{equation}
+\medskip
 
+\paragraph{Likning 1 – Hastighetslikningen.}
+Siden $a(t) = a$ er konstant, er akselerasjonsgrafen en horisontal linje (figur~(a)). Arealet av rektangelet under grafen er lik endringen i fart:
+\[
+  a \cdot t \;=\; \Delta v \;=\; v - v_0.
+\]
+Løser vi for $v$ får vi:
+\begin{align}
+  v = v_0 + at.
+\end{align}
+
+\paragraph{Likning 2 – Posisjonslikningen.}
+Fartsgrafen $v(t) = v_0 + at$ er en stigende rett linje (figur~(b)). Arealet under den – trapeset fra $0$ til $t$ – er forflytningen $\Delta s = s - s_0$. Vi deler trapeset i to deler: et rektangel med bredde $t$ og høyde $v_0$ (areal $= v_0\,t$), og en trekant med base $t$ og høyde $at$ (areal $= \tfrac{1}{2}at^2$). Totalt:
+\[
+  s - s_0 \;=\; v_0\,t + \tfrac{1}{2}at^2,
+\]
+altså:
+\begin{align}
+  s = s_0 + v_0\,t + \tfrac{1}{2}at^2.
+\end{align}
+
+\paragraph{Likning 3 – Fart-strekning-likningen.}
+Likning~3 følger algebraisk av likning~1 og~2. Fra likning~1 er $t = (v - v_0)/a$. Setter vi dette inn i likning~2:
+\begin{align*}
+  s - s_0
+  &= v_0\cdot\frac{v-v_0}{a} + \tfrac{1}{2}a\left(\frac{v-v_0}{a}\right)^2
+   = \frac{v_0(v-v_0)}{a} + \frac{(v-v_0)^2}{2a}
+   = \frac{(v-v_0)\bigl(2v_0 + v - v_0\bigr)}{2a}
+   = \frac{v^2 - v_0^2}{2a}.
+\end{align*}
+Multipliserer vi med $2a$:
+\begin{align}
+  2a(s-s_0) = v^2 - v_0^2.
+\end{align}
+
+\paragraph{Likning 4 – Gjennomsnittshastighetslikningen.}
+Et trapes med parallelle sider $v_0$ og $v$ har gjennomsnittshøyde $(v_0 + v)/2$. Arealet (forflytningen) kan derfor skrives:
+\begin{align}
+  s - s_0 = \frac{v_0 + v}{2}\cdot t.
+\end{align}
+Dette viser at gjennomsnittshastigheten ved konstant akselerasjon er gjennomsnittet av start- og sluttfarten: $\bar{v} = (v_0 + v)/2$.
 
 \begin{myoppsum*}{Bevegelseslikningene ved konstant akselerasjon}
-\paragraph{1. Hastighetslikningen} gir farten $(v)$, eller hastigheten, som funksjon av tid:
+\paragraph{1. Hastighetslikningen} gir farten som funksjon av tid:
     \begin{align}
-        v(t)= v_0 + at
+        v = v_0 + at
     \end{align}
-   Her er \( v_0 \) startfarten, altså farten ved $t=0$.
 
-    \paragraph{2. Posisjonslikningen} angir strekningen som funksjon av tid, og hvor startposisjon $s_0$ og startfart $v_0$ inngår som parametre. Vi får:
+\paragraph{2. Posisjonslikningen} gir posisjonen som funksjon av tid:
     \begin{align}
-        s = s_0 + v_0t + \frac{1}{2}at^2
+        s = s_0 + v_0\,t + \tfrac{1}{2}at^2
     \end{align}
-    Merk at likningen både har et lineært ledd (\( v_0t \)) og et kvadratisk ledd (\( \frac{1}{2}at^2 \)), som viser hvordan akselerasjonen påvirker bevegelsen.
 
-    \paragraph{3. Fart-strekning}-likningen gir en sammenheng mellom farten $v$ og posisjonen $s$.
+\paragraph{3. Fart-strekning-likningen} kopler fart og posisjon uten tid:
     \begin{align}
-       2as=v^2-v_0^2.
+       v^2 = v_0^2 + 2a(s - s_0)
     \end{align}
-    Denne likningen faller ut av noe som heter arbeid-energi-setningen som vi skal lære siden.
 
-    \paragraph{4. Gjennomsnittshastighetslikningen:}
+\paragraph{4. Gjennomsnittshastighetslikningen} (gjelder kun ved konstant $a$):
     \begin{align}
-        s =\frac{v_0 + v}{2}t 
+        s - s_0 = \frac{v_0 + v}{2}\,t, \qquad \bar{v} = \frac{v_0+v}{2}
     \end{align}
-    Denne likningen gir også en formel for gjennomsnittshastigheten $\bar{v}=s/t$. Ved å snu om får vi $\bar{v}=s/t=(v_0+v)/2$. Ved konstant akselerasjon kan altså gjennomsnittsfart beregnes ved å ta startfart + sluttfart og dele på to.
 \end{myoppsum*}
+
+\tips{Alternativ utledning med integrasjon}{%
+Likning 1 og 2 kan også utledes ved integrasjon. Siden $a$ er konstant, integrerer vi over tid:
+\[
+  v(t) = \int a\,\mathrm{d}t = at + v_0,
+\]
+der $v_0$ er integrasjonskonstanten, som vi tolker som startfarten (farten ved $t=0$). Integrerer vi én gang til:
+\[
+  s(t) = \int v\,\mathrm{d}t = \int(v_0 + at)\,\mathrm{d}t = v_0\,t + \tfrac{1}{2}at^2 + s_0,
+\]
+der $s_0$ er startposisjonen. Likning 3 og 4 følger deretter algebraisk, som vist i utledningen ovenfor.
+}
 
  Disse fire likningene gir et komplett sett med verktøy for å analysere bevegelse under konstant akselerasjon. Det er imidlertid avgjørende å huske at de bare gjelder når akselerasjonen ikke varierer. Hvis akselerasjonen endrer seg, blir bevegelsen mer kompleks, og disse likningene vil ikke lenger være gyldige.
 
@@ -818,59 +951,57 @@ Dekomponering er en generell teknikk i fysikk som innebærer å bryte ned en vek
 }
 
 
-\exm{Dekomponering av vektor og beregning av vinkel}{
-    \begin{wrapfigure}{r}{0.4\textwidth} % r for høyre, l for venstre
-        \centering
-        \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Vektor A dekomponert.png} % Sett inn ditt eget bilde her
-        \caption{Illustrasjon av vektoren \( \vec{A} \) og vinkelen \( \theta \).}
-        \label{fig:vektor_illustrasjon}
-    \end{wrapfigure}
+\exm{Dekomponering av vektor og beregning av vinkel}{%
+Vi har en vektor $\vec{A} = [3,\;4]$ med komponenter $A_x = 3$ og $A_y = 4$.\\
+\textbf{a)} Finn størrelsen (skalarverdien) $A = |\vec{A}|$.\\
+\textbf{b)} Finn vinkelen $\theta$ mellom $\vec{A}$ og den horisontale aksen.}
 
-    Vi har en vektor \( \vec{A} = [3, 4] \). I del a skal vi finne komponentene \( A_x \), \( A_y \) og størrelsen (skalarverdien) av \( \vec{A} \). I del b skal vi finne vinkelen \( \theta \) som vektoren danner med den horisontale aksen ved bruk av sinus, cosinus og tangens. \\
-    
-    \textbf{Del a:} \\
-    
-    \textit{Metode:}
-    Vektoren \( \vec{A} \) har allerede gitt oss komponentene:
-    \[
-    A_x = 3, \quad A_y = 4.
-    \]
-    Størrelsen (skalarverdien) av \( \vec{A} \) finner vi ved:
-    \[
-    A = |\vec{A}| = \sqrt{A_x^2 + A_y^2} = \sqrt{3^2 + 4^2} = \sqrt{25} = \doubleunderline{5}
-    \]
-    Så størrelsen til vektoren \( \vec{A} \) er \( A = 5 \).
+\svar{%
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[\textbf{a)}]
+    \item Størrelsen finner vi med Pythagoras:
+          \[A = |\vec{A}| = \sqrt{A_x^2+A_y^2} = \sqrt{3^2+4^2} = \sqrt{25} = \doubleunderline{5}\]
 
-    \textbf{Del b:} \\
-
-    \textit{Metode:}
-    For å finne vinkelen \( \theta \) mellom vektoren \( \vec{A} \) og den horisontale aksen, kan vi bruke trigonometriske funksjoner. Vinkelen kan beregnes på tre forskjellige måter:
-
-    1. \textbf{Bruke sinus:}
-    \[
-    \sin \theta = \frac{A_y}{A} = \frac{4}{5}
-    \qquad\Rightarrow\qquad
-    \doubleunderline{\theta = \arcsin \!\left( \frac{4}{5} \right) \approx 53{,}13^\circ}
-    \]
-
-    2. \textbf{Bruke cosinus:}
-    \[
-    \cos \theta = \frac{A_x}{A} = \frac{3}{5}
-    \qquad\Rightarrow\qquad
-    \doubleunderline{\theta = \arccos \!\left( \frac{3}{5} \right) \approx 53{,}13^\circ}
-    \]
-
-    3. \textbf{Bruke tangens:}
-    \[
-    \tan \theta = \frac{A_y}{A_x} = \frac{4}{3}
-    \qquad\Rightarrow\qquad
-    \doubleunderline{\theta = \arctan \!\left( \frac{4}{3} \right) \approx 53{,}13^\circ}
-    \]
-
-    Uansett hvilken metode vi bruker, finner vi at vinkelen \( \theta \) er omtrent \( 53{,}13^\circ \).
+    \item Vinkelen kan beregnes på tre ekvivalente måter:
+          \[\sin\theta = \frac{A_y}{A} = \frac{4}{5}
+            \;\Rightarrow\;
+            \doubleunderline{\theta = \arcsin\!\tfrac{4}{5} \approx 53{,}1°}\]
+          \[\cos\theta = \frac{A_x}{A} = \frac{3}{5}
+            \;\Rightarrow\;
+            \theta = \arccos\!\tfrac{3}{5} \approx 53{,}1°\]
+          \[\tan\theta = \frac{A_y}{A_x} = \frac{4}{3}
+            \;\Rightarrow\;
+            \theta = \arctan\!\tfrac{4}{3} \approx 53{,}1°\]
+          Alle tre metoder gir samme svar.
+  \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+  \vspace{0pt}
+  \centering
+  % Vektortrekant: Ax=3, Ay=4, A=5
+  \begin{tikzpicture}[font=\small, scale=0.85]
+    \fill[headCol!12](0,0)--(3,0)--(3,4)--cycle;
+    % Komponent Ax
+    \draw[->,thick,defscol](0,0)--(3,0)
+          node[midway,below=3pt]{$A_x=3$};
+    % Komponent Ay
+    \draw[->,thick,oppsumcol](3,0)--(3,4)
+          node[midway,right=3pt]{$A_y=4$};
+    % Totalvektor A
+    \draw[->,very thick,headCol](0,0)--(3,4)
+          node[midway,above left=2pt]{$A=5$};
+    % Rett vinkel
+    \draw(3,0)++(-0.28,0)--++(0,0.28)--++(0.28,0);
+    % Vinkel theta
+    \draw[thin](0.85,0) arc(0:53.13:0.85);
+    \node[right=2pt,font=\scriptsize]at(0.80,0.27){$\theta$};
+    \fill(0,0) circle(1.5pt);
+  \end{tikzpicture}
+\end{minipage}
 }
-
-\newpage
 
 \oppgave{Dekomponering av hastighet}{%
 En ball kastes med startfart $v_0 = 20\,\textrm{m/s}$ i en vinkel $\theta = 30°$ over horisonten.
