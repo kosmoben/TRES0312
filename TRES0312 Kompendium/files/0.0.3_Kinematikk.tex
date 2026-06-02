@@ -158,12 +158,109 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 \end{enumerate}
 }
 
-\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom den totale forflytningen $\Delta \vec{s}$ ikke nødvendigvis er i samme retning som farten til enhver tid. 
+\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom forflytningen $\Delta \vec{s}$ endrer retning. Se for deg en kurve gjennom rommet — la oss si det er banen som Erling Braut Haaland følger i en spurt. For. ethvert par med tidspunkt så kan vi tegne opp en forskjellsvektor $\Delta\vec{s}$ som viser avstanden mellom posisjonen til Haaland ved de to tidspunktene. Denne vektoren kan vi bruke til å beregne gjennomsnittsfarten til Haaland mellom de to tidspunktene. Kanskje ser du nå også at dersom vi lar $\Delta t$ gå mot null, så vil $\Delta\vec{s}$ også gå mot null, og vi vil kunne finne den momentane hastigheten til Haaland på et gitt tidspunkt. Denne hastigheten vil for et hvert tidspunkt være tangent til kurva som Haaland løper. Det er som en buss som er ute og kjører. Bussen sin lengde peker alltid i fartsretningen, og hadde vi tegnet en linje gjennom bussen så ville den linja til enhvert tid vært tangent til veien (mer presist til bussens bane). 
 
-[CHECK HER]
+%--- To figurer side om side: posisjonsvektorer (venstre) og hastighetsvektorer (høyre)
+% Bezier: P0=(1.5,2.5), P1=(2.8,3.3), P2=(4.2,1.8), P3=(5.8,2.4)
+% A (t=0.35): (2.906,2.683)  B (t=0.65): (4.189,2.353)  [verifisert]
+% Tangenter (normalisert): t=0.20→(0.999,0.042), t=0.50→(0.963,-0.270), t=0.75→(0.994,-0.115)
+\begin{figure}[ht!]
+\centering
+
+%=== VENSTRE: posisjonsvektorer og gjennomsnittshastighet ====================
+\begin{minipage}[t]{0.52\textwidth}
+\centering
+\begin{tikzpicture}[font=\small, scale=1.0, >=stealth]
+
+  %--- Origo ---------------------------------------------------------------
+  \fill (0,0) circle(2.5pt);
+  \node[below left=2pt] at (0,0) {$O$};
+
+  %--- Kurven C ------------------------------------------------------------
+  \draw[headCol, very thick]
+    (1.5, 2.5) .. controls (2.8, 3.3) and (4.2, 1.8) .. (5.8, 2.4);
+  \fill[headCol] (1.5, 2.5) circle(2pt);
+  \node[headCol, left=5pt] at (1.5, 2.5) {$t=0$};
+  \node[headCol, above right=2pt] at (5.55, 2.40) {$C$};
+
+  %--- Punkt A = s(t) (t=0.35): (2.906, 2.683) ----------------------------
+  \fill[defscol] (2.906, 2.683) circle(3pt);
+
+  %--- Punkt B = s(t+Δt) (t=0.65): (4.189, 2.353) -------------------------
+  \fill[oppsumcol] (4.189, 2.353) circle(3pt);
+
+  %--- Posisjonsvektor s(t) ------------------------------------------------
+  \draw[->, thick, defscol] (0,0) -- (2.906, 2.683)
+        node[midway, above left=1pt] {$\vec{s}(t)$};
+
+  %--- Posisjonsvektor s(t+Δt) ---------------------------------------------
+  \draw[->, thick, oppsumcol] (0,0) -- (4.189, 2.353)
+        node[midway, below right=1pt] {$\vec{s}(t{+}\Delta t)$};
+
+  %--- Differansevektor Δs(t) ----------------------------------------------
+  \draw[->, very thick, black!65, dashed] (2.906, 2.683) -- (4.189, 2.353);
+  \node[font=\small] (dslabel) at (3.548, 2.90) {$\Delta\vec{s}(t)$};
+
+  %--- Formel for gjennomsnittshastighet -----------------------------------
+  \node[draw, rounded corners=3pt, fill=white, inner sep=5pt]
+        (formula) at (2.6, 4.5)
+        {$\bar{\vec{v}} = \dfrac{\Delta\vec{s}(t)}{\Delta t}$};
+
+  %--- Pil fra etiketten opp til formelen ----------------------------------
+  \draw[->, thin, black!50]
+        (dslabel.north) to[out=90, in=270] (formula.south);
+
+\end{tikzpicture}
+\caption{Posisjonsvektorene $\vec{s}(t)$ og $\vec{s}(t{+}\Delta t)$ peker fra origo $O$ til to posisjoner på Haalands løpebane $C$. Forflytningsvektoren $\Delta\vec{s}(t)$ gir gjennomsnittshastigheten $\bar{\vec{v}} = \Delta\vec{s}(t)/\Delta t$ over tidsintervallet.}
+\label{fig:haaland-pos}
+\end{minipage}%
+\hfill
+%=== HØYRE: hastighetsvektorer langs banen ===================================
+\begin{minipage}[t]{0.44\textwidth}
+\centering
+\begin{tikzpicture}[font=\small, scale=1.0, >=stealth]
+
+  %--- Phantom: same bounding box som venstre figur (y=0 til y≈4.9) --------
+  \path (0,0);
+  \node[opacity=0] at (3.5, 4.9) {$x$};
+
+  %--- Kurven C (samme Bezier) ---------------------------------------------
+  \draw[headCol, very thick]
+    (1.5, 2.5) .. controls (2.8, 3.3) and (4.2, 1.8) .. (5.8, 2.4);
+  \fill[headCol] (1.5, 2.5) circle(2pt);
+  \node[headCol, left=5pt] at (1.5, 2.5) {$t=0$};
+  \node[headCol, above right=2pt] at (5.55, 2.40) {$C$};
+
+  %--- v(t₁): pos=(2.293,2.739), dir=(0.999,0.042), l=0.60 ----------------
+  % endpoint: (2.892, 2.764)
+  \fill[defscol] (2.293, 2.739) circle(3pt);
+  \node[below=3pt, font=\scriptsize] at (2.293, 2.739) {$t_1$};
+  \draw[->, very thick, defscol] (2.293, 2.739) -- (2.892, 2.764)
+        node[right=2pt] {$\vec{v}(t_1)$};
+
+  %--- v(t₂): pos=(3.538,2.525), dir=(0.963,-0.270), l=0.90 ---------------
+  % endpoint: (4.405, 2.282)
+  \fill[defscol] (3.538, 2.525) circle(3pt);
+  \node[below=3pt, font=\scriptsize] at (3.538, 2.525) {$t_2$};
+  \draw[->, very thick, defscol] (3.538, 2.525) -- (4.405, 2.282)
+        node[right=2pt] {$\vec{v}(t_2)$};
+
+  %--- v(t₃): pos=(4.636,2.275), dir=(0.994,-0.115), l=1.10 ---------------
+  % endpoint: (5.729, 2.148)
+  \fill[defscol] (4.636, 2.275) circle(3pt);
+  \node[below=3pt, font=\scriptsize] at (4.636, 2.275) {$t_3$};
+  \draw[->, very thick, defscol] (4.636, 2.275) -- (5.729, 2.148)
+        node[right=2pt] {$\vec{v}(t_3)$};
+
+\end{tikzpicture}
+\caption{Hastighetsvektorene $\vec{v}(t_1)$, $\vec{v}(t_2)$ og $\vec{v}(t_3)$ er tangenter til Haalands løpebane ved tre tidspunkter. Lengre piler indikerer at farten øker gjennom spurten.}
+\label{fig:haaland-vel}
+\end{minipage}
+
+\end{figure}
 
 
-La oss se på et eksempel for å illustrere dette.
+La oss se på et par eksempler.
 
 \exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$ og bruker 2 timer på seilasen. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord.\\
 \textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{QR}$ og $\vec{\Delta s}_\text{PR}$ som beskriver de relevante forflytningene.\\
@@ -710,7 +807,7 @@ En bil øker farten fra $v_0 = 20\,\textrm{m/s}$ til $v = 30\,\textrm{m/s}$ på 
 
 \section{Bevegelseslikningene for konstant akselerasjon}
 \label{sec:bevegelseslikninger}
-Noen ganger er akselerasjonen konstant, $a = \mathrm{konst.}$ Dette er en god antakelse i mange situasjoner: fritt fall, jevn bremsing, en ball kastet skrått opp. Bevegelseslikningene kan da utledes geometrisk ved hjelp av \textit{arealet under grafen}: arealet under $a(t)$-grafen gir endring i fart, og arealet under $v(t)$-grafen gir forflytning.
+Noen ganger er akselerasjonen konstant, $a = \mathrm{konst.}$ Dette er en god antakelse i mange situasjoner, slik som fritt fall eller jevn bremsing.Bevegelseslikningene kan da utledes geometrisk ved hjelp av \textit{arealet under grafen}: arealet under $a(t)$-grafen gir endring i fart, og arealet under $v(t)$-grafen gir forflytning.
 
 %--- Figur: a(t)-rektangel og v(t)-trapes side om side --------------------
 % Skala: x = 4 cm tilsvarer tid t  |  y skalert for tydlighet
@@ -790,7 +887,7 @@ Siden $a(t) = a$ er konstant, er akselerasjonsgrafen en horisontal linje (figur~
 \]
 Løser vi for $v$ får vi:
 \begin{align}
-  v = v_0 + at.
+  \colorbox{black!7}{$\displaystyle v = v_0 + at$}
 \end{align}
 
 \paragraph{Likning 2 – Posisjonslikningen.}
@@ -800,7 +897,7 @@ Fartsgrafen $v(t) = v_0 + at$ er en stigende rett linje (figur~(b)). Arealet und
 \]
 altså:
 \begin{align}
-  s = s_0 + v_0\,t + \tfrac{1}{2}at^2.
+  \colorbox{black!7}{$\displaystyle s = s_0 + v_0\,t + \tfrac{1}{2}at^2$}
 \end{align}
 
 \paragraph{Likning 3 – Fart-strekning-likningen.}
@@ -814,35 +911,36 @@ Likning~3 følger algebraisk av likning~1 og~2. Fra likning~1 er $t = (v - v_0)/
 \end{align*}
 Multipliserer vi med $2a$:
 \begin{align}
-  2a(s-s_0) = v^2 - v_0^2.
+  \colorbox{black!7}{$\displaystyle 2a(s-s_0) = v^2 - v_0^2$}
 \end{align}
 
 \paragraph{Likning 4 – Gjennomsnittshastighetslikningen.}
 Et trapes med parallelle sider $v_0$ og $v$ har gjennomsnittshøyde $(v_0 + v)/2$. Arealet (forflytningen) kan derfor skrives:
 \begin{align}
-  s - s_0 = \frac{v_0 + v}{2}\cdot t.
+  \colorbox{black!7}{$\displaystyle s - s_0 = \frac{v_0 + v}{2}\cdot t$}
 \end{align}
 Dette viser at gjennomsnittshastigheten ved konstant akselerasjon er gjennomsnittet av start- og sluttfarten: $\bar{v} = (v_0 + v)/2$.
 
+Selv om vi nå har utledet formlene over ved hjelp av de skalare størrelsene, sp gjelder de samme relasjonene også for krumlinjet bevegelse, hvor vi altså må benytte vektorer. I oppsumeringen under har vi derfor skrevet likningene i vektorform, slik at de gjelder for alle typer bevegelse – både rettlinjet og krumlinjet.
 \begin{myoppsum*}{Bevegelseslikningene ved konstant akselerasjon}
-\paragraph{1. Hastighetslikningen} gir farten som funksjon av tid:
+\paragraph{1. Hastighetslikningen} gir hastighetsvektoren som funksjon av tid:
     \begin{align}
-        v = v_0 + at
+        \vec{v} = \vec{v}_0 + \vec{a}\,t
     \end{align}
 
-\paragraph{2. Posisjonslikningen} gir posisjonen som funksjon av tid:
+\paragraph{2. Posisjonslikningen} gir posisjonsvektoren som funksjon av tid:
     \begin{align}
-        s = s_0 + v_0\,t + \tfrac{1}{2}at^2
+        \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2
     \end{align}
 
 \paragraph{3. Fart-strekning-likningen} kopler fart og posisjon uten tid:
     \begin{align}
-       v^2 = v_0^2 + 2a(s - s_0)
+       |\vec{v}|^2 = |\vec{v}_0|^2 + 2\,\vec{a} \cdot (\vec{s} - \vec{s}_0)
     \end{align}
 
-\paragraph{4. Gjennomsnittshastighetslikningen} (gjelder kun ved konstant $a$):
+\paragraph{4. Gjennomsnittshastighetslikningen} (gjelder kun ved konstant $\vec{a}$):
     \begin{align}
-        s - s_0 = \frac{v_0 + v}{2}\,t, \qquad \bar{v} = \frac{v_0+v}{2}
+        \vec{s} - \vec{s}_0 = \frac{\vec{v}_0 + \vec{v}}{2}\,t, \qquad \bar{\vec{v}} = \frac{\vec{v}_0 + \vec{v}}{2}
     \end{align}
 \end{myoppsum*}
 
@@ -933,13 +1031,13 @@ En ball slippes fra ro fra en høyde $h = 45\,\textrm{m}$ over bakken. Bruk $g =
 \end{enumerate}
 }
 
-\section{Krumlinjet bevegelse}
+\subsection{Dekomponering ved krumlinjet bevegelse}
 Krumlinjet bevegelse handler om objekter som beveger seg langs en kurvet bane, og ikke bare i en rett linje. I denne typen bevegelse må vi vurdere hvordan både hastighet og akselerasjon endrer seg i to dimensjoner. Vi går derfor over fra en én-dimensjonal beskrivelse til en to-dimensjonal beskrivelse av bevegelse. For å gjøre dette bruker vi vektorer til å representere strekning, hastighet og akselerasjon, slik at vi kan ta hensyn til både størrelse og retning i bevegelsen.
 
 \subsection{Konstant akselerasjon i krumlinjet bevegelse}
 Når et objekt har konstant akselerasjon i krumlinjet bevegelse, kan vi fortsatt bruke prinsippene fra rettlinjet bevegelse, men vi må ta hensyn til at akselerasjonen påvirker både den horisontale og vertikale retningen. I motsetning til rettlinjet bevegelse, der akselerasjonen virker langs én dimensjon, må vi i krumlinjet bevegelse dekomponere akselerasjonen i x- og y-komponenter. Bevegelsen kan analyseres separat langs hver akse ved å bruke dekomponerte bevegelseslikninger.
 
-\defn{Dekomponering av hastighets- og posisjonslikningene}{
+\begin{myoppsum*}{Dekomponering av hastighets- og posisjonslikningene}
     I krumlinjet bevegelse med konstant akselerasjon kan vi uttrykke hastighets- og posisjonslikningene i vektorform slik:
 
     \textbf{Hastighetslikningen:}
@@ -968,7 +1066,7 @@ Når et objekt har konstant akselerasjon i krumlinjet bevegelse, kan vi fortsatt
         y &= y_0 + v_{0y} t + \frac{1}{2} a_y t^2,
     \end{align}
 
-}
+\end{myoppsum*}
 
 \tips{Viktige forhold ved prosjektilbevgelse}{Det er viktig å merke seg at i mange situasjoner, som for eksempel ved prosjektilbevegelse, er akselerasjonen i x-retning (\( a_x \)) ofte lik null. Akselerasjonen i y-retning (\( a_y \)) er derimot konstant og ofte lik \( -9.81 \, \text{m/s}^2 \) hvis y retning er definert positivt i oppover, på grunn av tyngdekraften. Dette betyr at bevegelsen i x-retning skjer med konstant hastighet, mens bevegelsen i y-retning påvirkes av gravitasjonen, noe som gir en akselerasjon på \( -9.81 \, \text{m/s}^2 \).}
 
