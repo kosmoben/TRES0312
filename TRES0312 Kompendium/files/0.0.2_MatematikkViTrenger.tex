@@ -32,7 +32,7 @@ t_{\text{total}} = t_1 + t_2 = 20\ \textrm{min} + 18\ \textrm{min} = 38\ \textrm
 \]
 Gjennomsnittsfarten er da:
 \[
-\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{9\ \textrm{km}}{38\ \textrm{min}}=0.237\ \textrm{km/min}=0.237\ \frac{km}{60\textrm{s}}=0.00395\ \textrm{m/s}.
+\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{9\ \textrm{km}}{38\ \textrm{min}} = \doubleunderline{0.237\ \textrm{km/min}} = 0.237\cdot\frac{1\,000\ \textrm{m}}{60\ \textrm{s}} = \doubleunderline{3.95\ \textrm{m/s}}.
 \]
 Greier du å gjøre dette om til km/t.
 
@@ -44,7 +44,7 @@ Et annet eksempel kan være Newtons 2. lov, som gir sammenhengen mellom det vi k
 
 \paragraph{Løsning:} Del begge sider på $m$:
 \[
-a = \frac{F}{m} = \frac{4\,800\ \textrm{N}}{1\,200\ \textrm{kg}} = 4.0\ \textrm{m/s}^2.
+a = \frac{F}{m} = \frac{4\,800\ \textrm{N}}{1\,200\ \textrm{kg}} = \doubleunderline{4.0\ \textrm{m/s}^2}.
 \]
 }
 
@@ -452,10 +452,15 @@ I $xy$-planet finnes det to enhetsvektorer:
 Her peker $\hat{\mathbf{x}}$ i positiv $x$-retning, mens $\hat{\mathbf{y}}$ peker i positiv $y$-retning. Sammen danner disse enhetsvektorene grunnlaget for koordinatsystemet.
 Merk at $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ er ortogonale, det vil si at de står vinkelrett på hverandre, og at de begge har lengde 1.
 \begin{mymerk*}{Alternativ notasjon for enhetsvektorer}
-I mange lærebøker brukes symbolene $\mathbf{i}$, $\mathbf{j}$, $\mathbf{k}$ for de samme enhetsvektorene. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
+I mange lærebøker brukes symbolene $\mathbf{i}$, $\mathbf{j}$ (og  $\mathbf{k}$ i tre dimensjoner) for de samme enhetsvektorene. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
 \end{mymerk*}
 
-\paragraph{Notasjon for vektorer}
+\oppgave{Vektorer som en lineærkombinasjon av enhetsvektorer}{%
+\begin{enumerate}[a)]
+    \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
+    \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$. Skriv svaret på komponentform.
+\end{enumerate}
+}
 
 Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvektorene. Det finnes to ekvivalente skrivemåter:
 \begin{align}
@@ -463,6 +468,15 @@ Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvekt
 \end{align}
 
 Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter i henholdsvis $x$- og $y$-retning. 
+
+\subsection{Dekomponering av vektorer i koordinatsystem}
+Dekomponering er en generell teknikk i fysikk som innebærer å dele opp en vektor i dens komponenter langs de enkelte koordinataksene. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er helt essensielt i alle deler av fysikken som omhandler vektorer. For eksempel, når vi studerer bevegelse i to dimensjoner, som for eksempel en prosjektilbevegelse, slik som vist i Figur~\ref{fig:Prosjektilbevegelse}, så er det veldig nyttig å dekomponere bevegelsen i horisontal og vertikal retning. Da kan vi bruke de enklere bevegelsesligningene for hver retning, og deretter kombinere resultatene for å få en fullstendig beskrivelse av bevegelsen.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Krumlinjet bevgelese.png}
+\caption{Prosjektilbevegelsse}
+\label{fig:Prosjektilbevegelse}
+\end{figure}
 
 Fysikkens lover formuleres ved hjelp av vektorer, og er uavhengig av valg av koordinatsystem. Likevel innfører vi koordinatsystem når vi saktisk skal regne på noe. Dette er fordi lovene lar seg dekomponere i hver enkelt retning. La oss ta fart som eksempel. Dersom akselerasjonen er konstant så er hastigheten $\vec{v}(t)$ ved tidspunkt $t$ gitt ved starthastigheten $\vec{v}_0$ og akselerasjonen $\vec{a}$ ved formelen
 \begin{align}
@@ -475,12 +489,89 @@ v_y(t) = v_{0y} + a_y t.
 \end{align}
 
 
-\oppgave{Enhetsvektorer}{%
+
+\exm{Dekomponering av hastighet}{%
+En ball kastes med fart $v = 20\,\textrm{m/s}$ i en vinkel $\theta = 37°$ over horisonten
+($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
+\textbf{a)} Finn komponentene $v_x$ og $v_y$.\\
+\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = 20\,\textrm{m/s}$.}
+
+\svar{%
+\textbf{a)} Vi bruker de trigonometriske relasjonene $v_x = v\cos\theta$ og $v_y = v\sin\theta$:
+\[
+v_x = 20\,\textrm{m/s}\cdot 0{,}80 = \doubleunderline{16\,\textrm{m/s}},
+\qquad
+v_y = 20\,\textrm{m/s}\cdot 0{,}60 = \doubleunderline{12\,\textrm{m/s}}.
+\]
+\textbf{b)} Pythagoras bekrefter:
+\[
+\sqrt{v_x^2 + v_y^2} = \sqrt{(16\,\textrm{m/s})^2 + (12\,\textrm{m/s})^2}
+= \sqrt{256 + 144}\,\textrm{m/s} = \sqrt{400}\,\textrm{m/s} = \doubleunderline{20\,\textrm{m/s}}\;\checkmark
+\]
+}
+
+
+\exm{Dekomponering av vektor og beregning av vinkel}{%
+Vi har en vektor $\vec{A} = [3,\;4]$ med komponenter $A_x = 3$ og $A_y = 4$.\\
+\textbf{a)} Finn størrelsen (skalarverdien) $A = |\vec{A}|$.\\
+\textbf{b)} Finn vinkelen $\theta$ mellom $\vec{A}$ og den horisontale aksen.}
+
+\svar{%
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+  \vspace{0pt}
+  \begin{enumerate}[\textbf{a)}]
+    \item Størrelsen finner vi med Pythagoras:
+          \[A = |\vec{A}| = \sqrt{A_x^2+A_y^2} = \sqrt{3^2+4^2} = \sqrt{25} = \doubleunderline{5}\]
+
+    \item Vinkelen kan beregnes på tre ekvivalente måter:
+          \[\sin\theta = \frac{A_y}{A} = \frac{4}{5}
+            \;\Rightarrow\;
+            \doubleunderline{\theta = \arcsin\!\tfrac{4}{5} \approx 53{,}1°}\]
+          \[\cos\theta = \frac{A_x}{A} = \frac{3}{5}
+            \;\Rightarrow\;
+            \theta = \arccos\!\tfrac{3}{5} \approx 53{,}1°\]
+          \[\tan\theta = \frac{A_y}{A_x} = \frac{4}{3}
+            \;\Rightarrow\;
+            \theta = \arctan\!\tfrac{4}{3} \approx 53{,}1°\]
+          Alle tre metoder gir samme svar.
+  \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+  \vspace{0pt}
+  \centering
+  % Vektortrekant: Ax=3, Ay=4, A=5
+  \begin{tikzpicture}[font=\small, scale=0.85]
+    \fill[headCol!12](0,0)--(3,0)--(3,4)--cycle;
+    % Komponent Ax
+    \draw[->,thick,defscol](0,0)--(3,0)
+          node[midway,below=3pt]{$A_x=3$};
+    % Komponent Ay
+    \draw[->,thick,oppsumcol](3,0)--(3,4)
+          node[midway,right=3pt]{$A_y=4$};
+    % Totalvektor A
+    \draw[->,very thick,headCol](0,0)--(3,4)
+          node[midway,above left=2pt]{$A=5$};
+    % Rett vinkel
+    \draw(3,0)++(-0.28,0)--++(0,0.28)--++(0.28,0);
+    % Vinkel theta
+    \draw[thin](0.85,0) arc(0:53.13:0.85);
+    \node[right=2pt,font=\scriptsize]at(0.80,0.27){$\theta$};
+    \fill(0,0) circle(1.5pt);
+  \end{tikzpicture}
+\end{minipage}
+}
+
+\oppgave{Dekomponering av vektorer}{%
+En ball kastes med startfart $v_0 = 20\,\textrm{m/s}$ i en vinkel $\theta = 30°$ over horisonten.
 \begin{enumerate}[a)]
-    \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
-    \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$. Skriv svaret på komponentform.
+    \item Finn den horisontale starthastighetkomponenten $v_{0x}$.
+    \item Finn den vertikale starthastighetkomponenten $v_{0y}$.
+    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = 20\,\textrm{m/s}$.
 \end{enumerate}
 }
+
 
 \subsection{Størrelse og retning til en vektor}
 
@@ -504,8 +595,8 @@ der $\theta$ måles fra positiv $x$-retning.}
 
 \paragraph{Løsning:}
 \[
-|\vec{v}| = \sqrt{3^2 + 4^2} = 5, \qquad
-\theta = \arctan\!\left(\tfrac{4}{3}\right) \approx 53.1^\circ.
+|\vec{v}| = \sqrt{3^2 + 4^2} = \doubleunderline{5}, \qquad
+\theta = \arctan\!\left(\tfrac{4}{3}\right) \approx \doubleunderline{53.1^\circ}.
 \]
 Vektoren har lengde 5 og peker ca.\ $53^\circ$ over den positive $x$-aksen.
 }
@@ -691,7 +782,7 @@ Finn skalarproduktet av $\vec{u} = 2\hat{\mathbf{x}} + 3\hat{\mathbf{y}}$ og $\v
 \vec{u} \cdot \vec{v} &= (2\hat{\mathbf{x}} + 3\hat{\mathbf{y}}) \cdot (4\hat{\mathbf{x}} - \hat{\mathbf{y}}) \\
 &= 2\cdot 4 (\hat{\mathbf{x}} \cdot \hat{\mathbf{x}}) + 2\cdot(-1) (\hat{\mathbf{x}} \cdot \hat{\mathbf{y}}) + 3\cdot 4 (\hat{\mathbf{y}} \cdot \hat{\mathbf{x}}) + 3\cdot(-1) (\hat{\mathbf{y}} \cdot \hat{\mathbf{y}}) \\
 &= 8\cdot 1 + (-2)\cdot 0 + 12\cdot 0 + (-3)\cdot 1 \\
-&= 8 - 3 = 5.
+&= 8 - 3 = \doubleunderline{5}.
 \end{align*}
 
 }

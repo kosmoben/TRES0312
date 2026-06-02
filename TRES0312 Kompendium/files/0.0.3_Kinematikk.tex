@@ -131,20 +131,20 @@ Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal 
 \defn{Gjennomsnittsfart og gjennomsnittshastighet}{
     Matematisk kan gjennomsnittshastigheten uttrykkes som:
     \begin{align}
-        \bar{\vec{v}}= \frac{\vec{\Delta s}}{\Delta t}
+        \bar{\vec{v}}= \frac{\vec{\Delta s}}{\Delta t}= \frac{s(t+\Delta t) - s(t)}{\Delta t}
     \end{align}
     hvor \( \Delta \vec{s} \) er den totale forflytningen, og \( \Delta t \) er den totale tiden. Lengden av denne vektoren kalles for gjennomsnittsfarten, og er gitt ved:
     \begin{align}
         \bar{v} = |\bar{\vec{v}}| = \frac{|\vec{\Delta s}|}{\Delta t}
     \end{align}
 }
-Gjennomsnittsfart beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnittshastighet en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
+Gjennomsnitts\textit{fart}beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
 
 \exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $60\,\textrm{km}$ på $1.5\,\textrm{t}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
 }
 \svar{%
 Vi bruker definisjonen $\bar{v} = \dfrac{\Delta s}{\Delta t}$:
-\[\bar{v} = \frac{60\,\textrm{km}}{1{,}5\,\textrm{t}} = \underline{40\,\textrm{km/t}}\]
+\[\bar{v} = \frac{60\,\textrm{km}}{1{,}5\,\textrm{t}} = \doubleunderline{40\,\textrm{km/t}}\]
 Vi bruker omregningsfaktoren $1\,\textrm{km/t} = \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}}$:
 \[\bar{v} = 40\;\frac{\textrm{km}}{\textrm{t}} \cdot \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}} = \frac{40\,000}{3\,600}\,\frac{\textrm{m}}{\textrm{s}} \approx \doubleunderline{11\,\textrm{m/s}}\]
 }
@@ -158,7 +158,12 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
 \end{enumerate}
 }
 
-\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom den totale forflytningen $\Delta \vec{s}$ ikke nødvendigvis er i samme retning som farten til enhver tid. La oss se på et eksempel for å illustrere dette.
+\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom den totale forflytningen $\Delta \vec{s}$ ikke nødvendigvis er i samme retning som farten til enhver tid. 
+
+[CHECK HER]
+
+
+La oss se på et eksempel for å illustrere dette.
 
 \exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$ og bruker 2 timer på seilasen. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord.\\
 \textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{QR}$ og $\vec{\Delta s}_\text{PR}$ som beskriver de relevante forflytningene.\\
@@ -177,7 +182,7 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
             \vec{\Delta s}_{QR}=[0,\;4]\,\textrm{km}\]
           \[\vec{\Delta s}_{PR}=[3,\;4]\,\textrm{km}\]
     \item Båt 1 seiler direkte. Forflytningens størrelse:
-          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\underline{5\,\textrm{km}}\]
+          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\doubleunderline{5\,\textrm{km}}\]
           Gjennomsnittsfart (2 timer totalt):
           \[\doubleunderline{\bar{v}_1=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
     \item Gjennomsnittsfart per etappe for båt 2:
@@ -228,7 +233,7 @@ En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
   \begin{enumerate}[\textbf{a)}]
     \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
           \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
-            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{56{,}5\,\textrm{m}}\]
+            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \doubleunderline{56{,}5\,\textrm{m}}\]
           Forflytningens størrelse (korde $PQ$):
           \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
             =36\sqrt{2}\approx 50{,}9\,\textrm{m}\]
@@ -432,13 +437,13 @@ Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og se
     \]
   \item Vi setter inn $t = 2\,\textrm{s}$:
     \[
-      v(2) = 6 \cdot 2 + 2 = 12 + 2 = 14\,\textrm{m/s}
+      v(2) = 6 \cdot 2 + 2 = 12 + 2 = \doubleunderline{14\,\textrm{m/s}}
     \]
   \item Vi løser likningen $v(t) = 20\,\textrm{m/s}$:
     \[
       6t + 2 = 20
       \implies 6t = 18
-      \implies t = 3\,\textrm{s}
+      \implies \doubleunderline{t = 3\,\textrm{s}}
     \]
 \end{enumerate}
 }
@@ -465,7 +470,13 @@ Noe om dekomponering av fart i to dimensjoner.
 
 
 \section{Akselerasjon}
-\textit{Akselerasjon} er et mål på hvor raskt hastigheten til et objekt endrer seg over tid. Mens hastigheten beskriver hvor raskt objektet beveger seg i en bestemt retning, beskriver akselerasjonen hvordan denne hastigheten endrer seg – enten det er snakk om økning, reduksjon eller en endring i retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon eller deselerasjon) betyr at hastigheten minker. 
+Vi har så langt sett at endringen i strekning kalles fart. Men hva kalles endring i fart? Jo, det kalles \textit{akselerasjon}. Eller mer presist, så er akselerasjon et mål på endring i hastighet. Og hastighet har både størrelse og retning (er en vektor). Derfor handler akselerasjon om endring både av fartens størrelse og retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon, deselerasjon eller bare bremsing) betyr at hastigheten minker.
+\tanke{}{%
+Hva tenker du om størrelse og retning på akselerasjonen i følgende to tilfeller?\\
+(I) En racerbil kjører med konstant fart på et rett strekke.\\
+(II) En racerbil kjører med konstant fart gjennom en sving.
+}
+
 
 
 %--- Figur 3.3 og 3.4 side om side: konstant vs. varierende akselerasjon ----
@@ -557,7 +568,7 @@ Noe om dekomponering av fart i to dimensjoner.
 \label{Konstant akselerasjon}
 \end{minipage}%
 %=== SKILLELINJE ==========================================================
-\hspace{4pt}{\color{black!25}\rule[-13cm]{0.4pt}{14.5cm}}\hspace{4pt}%
+\hspace{4pt}{\color{black!25}\rule[-10cm]{0.4pt}{10cm}}\hspace{4pt}%
 %=== HØYRE: Figur 3.4 – varierende akselerasjon ===========================
 % Fase 1 (0≤t≤2): a=2 → v=2t−2, s=t²−2t
 %   TikZ s: y=(8/9)x²−1.6x  [verifisert: t=1→y=−0.72, t=2→y=0]
@@ -665,24 +676,28 @@ Noe om dekomponering av fart i to dimensjoner.
 
 \end{figure}
 
-\subsection{Gjennomsnittsakselerasjon og momentanakselerasjon}
-\textit{Gjennomsnittsakselerasjon} gir et overordet bilde av hvordan hastigheten har endret seg over en viss periode, mens \textit{momentanakselerasjon} beskriver nøyaktig hvordan hastigheten endrer seg ved et gitt tidspunkt. Hvis akselerasjonen er konstant, vil gjennomsnittsakselerasjon og momentanakselerasjon være identiske. Men i tilfeller hvor akselerasjonen varierer, kan momentanakselerasjonen avvike betydelig fra gjennomsnittsakselerasjon. 
+På samme vis som for fart, så definerer vi også for akselerasjon det vi kaller \textit{gjennomsnittsakselerasjon}, som altså handler om å måle hastighetsendring over et tidsintervall.
 
 \defn{Gjennomsnittsakselerasjon}{
-    Matematisk kan gjennomsnittsakselerasjonen uttrykkes som:
+    Gjennomsnittsakselerasjonen over et tidsintervall $\Delta t$ er definert som endringen i hastighetsvektoren delt på tidsintervallet:
     \begin{align}
-        \bar{a} = \frac{\Delta v}{\Delta t}
+        \bar{\vec{a}} = \frac{\Delta \vec{v}}{\Delta t} = \frac{\vec{v}(t+\Delta t) - \vec{v}(t)}{\Delta t}
     \end{align}
-    hvor \( \Delta v \) er endringen i hastighet, og \( \Delta t \) er den totale tiden. Denne formelen gir en enkel måte å finne gjennomsnittsakselerasjonen over et gitt tidsrom.
+    Størrelsen $|\bar{\vec{a}}|$ kalles gjennomsnittlig akselerasjon, og enheten er m/s$^2$.
+}
+\textit{Momentanakselerasjonen} er da grenseverdien av gjennomsnittsakselerasjonen når tidsintervallet $\Delta t$ går mot null. Dette gir oss den eksakte akselerasjonen i et spesifikt øyeblikk, og kan uttrykkes som den deriverte av hastighetsvektoren med hensyn til tid, eller den andrederiverte av posisjonsvektoren med hensyn til tid.
+\defn{Momentanakselerasjon}{
+    Momentanakselerasjonen er grenseverdien av gjennomsnittsakselerasjonen når $\Delta t \to 0$, det vil si den deriverte av hastighetsvektoren – eller den andrederiverte av posisjonsvektoren – med hensyn til tid:
+    \begin{align}
+        \vec{a} = \lim_{\Delta t \to 0}\frac{\Delta \vec{v}}{\Delta t} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{s}}{dt^2}
+    \end{align}
+    Akselerasjonen er altså en vektor: den har både størrelse og retning. I figurene \ref{Konstant akselerasjon} og \ref{Variabel akselerasjon} kan vi lese av akselerasjonen som stigningstallet til $v(t)$-kurven.
 }
 
-\defn{Momentanakselerasjon}{
-    Matematisk kan momentanakselerasjonen uttrykkes som:
-    \begin{align}
-        a = \frac{dv}{dt} = \frac{d^2 s}{dt^2}
-    \end{align}
-    hvor \( a \) er akselerasjonen, \( v \) er hastigheten, \( s \) er posisjonen, og \( t \) er tiden. Denne formelen viser at akselerasjon er den første deriverte av hastigheten med hensyn til tid, eller den dobbeltderiverte av posisjonen med hensyn til tid. Den gir oss akselerasjonen nøyaktig i et gitt øyeblikk.
-}
+Figurene \ref{Konstant akselerasjon} og \ref{Variabel akselerasjon} illustrerer sammenhengen mellom strekning, fart og akselerasjon godt.I hvert panel viser øverste graf posisjonen $s(t)$, midterste graf farten $v(t)$, og nederste graf akselerasjonen $a(t)$. Legg merke til at fartsgrafens stigningstall til enhver tid tilsvarer verdien på akselerasjonsgrafen, og at posisjonsgrafens stigningstall tilsvarer verdien på fartsgrafens graf – slik det følger av derivasjonsrelasjonen.
+
+\paragraph{Konstant akselerasjon}Når akselerasjonen er konstant, vil gjennomsnittsakselerasjon og momentanakselerasjon være identiske. 
+
 
 \oppgave{Akselerasjon}{%
 En bil øker farten fra $v_0 = 20\,\textrm{m/s}$ til $v = 30\,\textrm{m/s}$ på $\Delta t = 5\,\textrm{s}$.
@@ -854,10 +869,10 @@ Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v =
 0 = (30 \, \text{m/s})^2 + 2 \cdot (-5 \, \text{m/s}^2) \cdot (s - s_0).
 \]
 \[
-0 = 900 - 10(s - s_0).
+0 = 900\,\text{m}^2/\text{s}^2 - 10\,\text{m/s}^2 \cdot (s - s_0).
 \]
 \[
-\underline{10(s - s_0) = 900}
+10\,\text{m/s}^2 \cdot (s - s_0) = 900\,\text{m}^2/\text{s}^2
 \]
 \[
 \doubleunderline{s - s_0 = 90 \, \text{m}}
@@ -871,10 +886,7 @@ Du sykler med en startfart på \(5 \, \text{m/s}\) og akselererer til \(15 \, \t
 \textit{Metode:}
 Bruk gjennomsnittshastighetslikningen \( s = s_0 + \frac{v_0 + v}{2}t \). Her er \( s_0 = 0 \, \text{m} \), \( v_0 = 5 \, \text{m/s} \), \( v = 15 \, \text{m/s} \), og \( t = 10 \, \text{s} \):
 \[
-s = 0 + \frac{5 + 15}{2} \cdot 10.
-\]
-\[
-\doubleunderline{s = \frac{20}{2} \cdot 10 = 100 \, \text{m}}
+s = 0\,\text{m} + \frac{5\,\text{m/s} + 15\,\text{m/s}}{2} \cdot 10\,\text{s} = \doubleunderline{100 \, \text{m}}
 \]
 Du syklet $100\,\text{m}$ i løpet av denne perioden.
 }
@@ -886,26 +898,27 @@ Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt 
 % {\color{blue} CHECK: Si litt om g osv...} 
 
 \exm{Hastighetsendring}{
-Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \text{m/s}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.8 \, \text{m/s}^2\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
+Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \text{m/s}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.81 \, \text{m/s}^2\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
 
 \textit{Metode:}
-Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \text{m/s} \), \( a = -9.8 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \). Sett inn verdiene:
+Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \text{m/s} \), \( a = -9.81 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \). Sett inn verdiene:
 \[
-\doubleunderline{v = 10 \, \text{m/s} + (-9.8 \, \text{m/s}^2) \cdot 2 \, \text{s} = -9{,}6 \, \text{m/s}}
+\doubleunderline{v = 10 \, \text{m/s} + (-9.81 \, \text{m/s}^2) \cdot 2 \, \text{s} = -9{,}62 \, \text{m/s}}
 \]
-Ballens hastighet etter $2$ sekunder er $-9{,}6\,\text{m/s}$, noe som indikerer at ballen nå beveger seg nedover.
+Ballens hastighet etter $2$ sekunder er $-9{,}62\,\text{m/s}$, noe som indikerer at ballen nå beveger seg nedover.
 }
 
 \exm{Fallende objekt}{
-En stein blir sluppet fra en bro \(20 \, \text{m}\) over bakken. Hva er steinens posisjon etter \(2\) sekunder, gitt at akselerasjonen på grunn av tyngdekraften er \(9.8 \, \text{m/s}^2\) og initial hastighet \( v_0 = 0 \)? \\
+En stein blir sluppet fra en bro \(20 \, \text{m}\) over bakken. Hva er steinens posisjon etter \(2\) sekunder, gitt at akselerasjonen på grunn av tyngdekraften er \(9.81 \, \text{m/s}^2\) og initial hastighet \( v_0 = 0 \)? \\
 
 \textit{Metode:}
-Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \text{m} \), \( v_0 = 0 \, \text{m/s} \), \( a = 9.8 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \):
+Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \text{m} \), \( v_0 = 0 \, \text{m/s} \), \( a = 9.81 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \):
 \[
-s = 20 \, \text{m} + 0 \cdot 2 \, \text{s} + \frac{1}{2} \cdot 9.8 \, \text{m/s}^2 \cdot (2 \, \text{s})^2.
+s = 20 \, \text{m} + 0\,\text{m/s} \cdot 2 \, \text{s} + \frac{1}{2} \cdot 9.81 \, \text{m/s}^2 \cdot (2 \, \text{s})^2
+  = 20\,\text{m} + 19{,}62\,\text{m}.
 \]
 \[
-\doubleunderline{s = 20 \, \text{m} + \tfrac{1}{2} \cdot 9{,}8 \cdot 4 = 39{,}6 \, \text{m}}
+\doubleunderline{s = 39{,}6 \, \text{m}}
 \]
 Steinen er $39{,}6\,\text{m}$ fra utgangspunktet etter $2$ sekunder.
 }
@@ -922,95 +935,6 @@ En ball slippes fra ro fra en høyde $h = 45\,\textrm{m}$ over bakken. Bruk $g =
 
 \section{Krumlinjet bevegelse}
 Krumlinjet bevegelse handler om objekter som beveger seg langs en kurvet bane, og ikke bare i en rett linje. I denne typen bevegelse må vi vurdere hvordan både hastighet og akselerasjon endrer seg i to dimensjoner. Vi går derfor over fra en én-dimensjonal beskrivelse til en to-dimensjonal beskrivelse av bevegelse. For å gjøre dette bruker vi vektorer til å representere strekning, hastighet og akselerasjon, slik at vi kan ta hensyn til både størrelse og retning i bevegelsen.
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Krumlinjet bevgelese.png}
-\caption{Prosjektilbevegelsse}
-\label{fig:Prosjektilbevegelse}
-\end{figure}
-
-\subsection{Dekomponering av vektorer i koordinatsystem}
-Dekomponering er en generell teknikk i fysikk som innebærer å bryte ned en vektor i sine komponenter langs bestemte akser. Denne metoden er nyttig i mange situasjoner, enten vi analyserer bevegelse, krefter eller andre vektorielle størrelser. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er nyttig både i kinematikken og i andre områder som kreftelære.
-
-\defn{Dekomponering av hastighet}{
-    En hastighetsvektor i to dimensjoner kan representeres som \( \vec{v} = [v_x, v_y] \), hvor \( v_x \) og \( v_y \) er henholdsvis de horisontale og vertikale komponentene av hastigheten. Størrelsen (skalarverdien) av denne vektoren er \( v \), slik at vi har:
-    \begin{align}
-        v = |\vec{v}|.
-    \end{align}
-    Når vi kjenner vinkelen \( \theta \) mellom hastighetsvektoren og den horisontale aksen, kan vi finne komponentene \( v_x \) og \( v_y \) ved å dekomponere vektoren:
-    \begin{align}
-        v_x &= v \cos \theta, \\
-        v_y &= v \sin \theta.
-    \end{align}
-    Til slutt, hvis vi kjenner komponentene, kan vi finne størrelsen av hastighetsvektoren ved hjelp av Pythagoras' læresetning:
-    \begin{align}
-        v = |\vec{v}| = \sqrt{v_x^2 + v_y^2}.
-    \end{align}
-    Dette viser at størrelsen på vektoren \( \vec{v} \) er lik roten av summen av kvadratene til dens komponenter.
-}
-
-
-\exm{Dekomponering av vektor og beregning av vinkel}{%
-Vi har en vektor $\vec{A} = [3,\;4]$ med komponenter $A_x = 3$ og $A_y = 4$.\\
-\textbf{a)} Finn størrelsen (skalarverdien) $A = |\vec{A}|$.\\
-\textbf{b)} Finn vinkelen $\theta$ mellom $\vec{A}$ og den horisontale aksen.}
-
-\svar{%
-\noindent
-\begin{minipage}[t]{0.55\linewidth}
-  \vspace{0pt}
-  \begin{enumerate}[\textbf{a)}]
-    \item Størrelsen finner vi med Pythagoras:
-          \[A = |\vec{A}| = \sqrt{A_x^2+A_y^2} = \sqrt{3^2+4^2} = \sqrt{25} = \doubleunderline{5}\]
-
-    \item Vinkelen kan beregnes på tre ekvivalente måter:
-          \[\sin\theta = \frac{A_y}{A} = \frac{4}{5}
-            \;\Rightarrow\;
-            \doubleunderline{\theta = \arcsin\!\tfrac{4}{5} \approx 53{,}1°}\]
-          \[\cos\theta = \frac{A_x}{A} = \frac{3}{5}
-            \;\Rightarrow\;
-            \theta = \arccos\!\tfrac{3}{5} \approx 53{,}1°\]
-          \[\tan\theta = \frac{A_y}{A_x} = \frac{4}{3}
-            \;\Rightarrow\;
-            \theta = \arctan\!\tfrac{4}{3} \approx 53{,}1°\]
-          Alle tre metoder gir samme svar.
-  \end{enumerate}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.40\linewidth}
-  \vspace{0pt}
-  \centering
-  % Vektortrekant: Ax=3, Ay=4, A=5
-  \begin{tikzpicture}[font=\small, scale=0.85]
-    \fill[headCol!12](0,0)--(3,0)--(3,4)--cycle;
-    % Komponent Ax
-    \draw[->,thick,defscol](0,0)--(3,0)
-          node[midway,below=3pt]{$A_x=3$};
-    % Komponent Ay
-    \draw[->,thick,oppsumcol](3,0)--(3,4)
-          node[midway,right=3pt]{$A_y=4$};
-    % Totalvektor A
-    \draw[->,very thick,headCol](0,0)--(3,4)
-          node[midway,above left=2pt]{$A=5$};
-    % Rett vinkel
-    \draw(3,0)++(-0.28,0)--++(0,0.28)--++(0.28,0);
-    % Vinkel theta
-    \draw[thin](0.85,0) arc(0:53.13:0.85);
-    \node[right=2pt,font=\scriptsize]at(0.80,0.27){$\theta$};
-    \fill(0,0) circle(1.5pt);
-  \end{tikzpicture}
-\end{minipage}
-}
-
-\oppgave{Dekomponering av hastighet}{%
-En ball kastes med startfart $v_0 = 20\,\textrm{m/s}$ i en vinkel $\theta = 30°$ over horisonten.
-\begin{enumerate}[a)]
-    \item Finn den horisontale starthastighetkomponenten $v_{0x}$.
-    \item Finn den vertikale starthastighetkomponenten $v_{0y}$.
-    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = 20\,\textrm{m/s}$.
-\end{enumerate}
-}
 
 \subsection{Konstant akselerasjon i krumlinjet bevegelse}
 Når et objekt har konstant akselerasjon i krumlinjet bevegelse, kan vi fortsatt bruke prinsippene fra rettlinjet bevegelse, men vi må ta hensyn til at akselerasjonen påvirker både den horisontale og vertikale retningen. I motsetning til rettlinjet bevegelse, der akselerasjonen virker langs én dimensjon, må vi i krumlinjet bevegelse dekomponere akselerasjonen i x- og y-komponenter. Bevegelsen kan analyseres separat langs hver akse ved å bruke dekomponerte bevegelseslikninger.
@@ -1145,7 +1069,7 @@ som gir:
 t^2 = \frac{2 \cdot 0.8}{9.81},
 \]
 \[
-\underline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \text{s}}
+\doubleunderline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \text{s}}
 \]
 
 Nå som vi har funnet tiden \(t = 0.4 \, \text{s}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
