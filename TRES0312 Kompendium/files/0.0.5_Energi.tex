@@ -9,63 +9,57 @@
 \newpage
 
 \section{Arbeid}
-I fysikk utfører vi arbeid når en kraft flytter et objekt over en avstand. Når en kraft \( \vec{F} \) virker på et objekt og forårsaker en forflytning \( \vec{s} \), utføres det et arbeid dersom kraften og forflytningen ikke er vinkelrette på hverandre. Arbeidet er størst når kraften virker i samme retning som forflytningen, og null når kraften virker vinkelrett på forflytningen.
+I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. I fysikk er begrepet mer presist: arbeid utføres når en kraft forskyver et objekt. Det er ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid i fysisk forstand, selv om muskler spenner.
 
 \defn{Arbeid}{
-    Matematisk kan arbeid \( W \) uttrykkes som:
+    Arbeidet \( W \) som utføres av en kraft \( \vec{F} \) over en forflytning \( \vec{s} \) er gitt ved prikkproduktet:
     \begin{align}
-        W = \vec{F} \cdot \vec{s} = F \cdot s \cdot \cos(\theta)
+        W = \vec{F} \cdot \vec{s} = F \cdot s \cdot \cos\theta
     \end{align}
-    hvor \( \vec{F} \) er kraftvektoren, \( \vec{s} \) er forflytningsvektoren, og \( \theta \) er vinkelen mellom kraften og forflytningen. Dersom \( \theta = 0^\circ \), er \( \cos(\theta) = 1 \), og arbeidet er maksimalt. Arbeid måles i joule (J), som tilsvarer newtonmeter (N·m).
+    Her er \( \theta \) vinkelen mellom kraftretningen og forflytningsretningen. Arbeid er en skalar og måles i joule \( (\si{\joule}) \), der \( \SI{1}{\joule} = \SI{1}{\newton\metre} \).
 }
 
+Legg merke til at \( \cos\theta \) avgjør hvor mye av kraften som «drar» i bevegelsesretningen. Når \( \theta = 0^\circ \) virker kraften rett frem og arbeidet er maksimalt. Når \( \theta = 90^\circ \) er kraften vinkelrett på bevegelsen, og \( W = 0 \) – typisk for en normalkraft eller sentripetalkraft. Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
+
 \exm{Dytte en boks}{
-    Tenk deg at du dytter en boks langs et gulv med en kraft på \( 10 \, \text{N} \) over en avstand på \( 5 \, \text{m} \). Kraften du bruker er i samme retning som bevegelsen (\( \theta = 0^\circ \)). Da kan vi regne ut arbeidet slik:
+    En boks dyttes langs et gulv med en kraft \( F = \SI{10}{\newton} \) over en avstand \( s = \SI{5}{\metre} \). Kraften virker i samme retning som bevegelsen (\( \theta = 0^\circ \)):
     \[
-    W = F \cdot d \cdot \cos(\theta) = 10 \, \text{N} \cdot 5 \, \text{m} \cdot \cos(0^\circ)
+    W = F \cdot s \cdot \cos(0^\circ) = \SI{10}{\newton} \cdot \SI{5}{\metre} \cdot 1 = \doubleunderline{\SI{50}{\joule}}
     \]
-    \[
-    W = 10 \, \text{N} \cdot 5 \, \text{m} \cdot 1 = 50 \, \text{J}
-    \]
-    Arbeidet som utføres er \( 50 \, \text{J} \).
 }
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Kapittel3:Arbeid&Energi/Arbeidbokseksempel.png}
-    \caption{Dytte en boks}
+    \caption{Konstant kraft \( F \) dytter en boks en avstand \( s \). Arbeidet er \( W = F \cdot s \).}
     \label{fig:Dytte_en_boks}
     \end{figure}
 
-\tips{Husk vinkelen}{
-    Når du beregner arbeid, er det viktig å ta hensyn til vinkelen \( \theta \) mellom kraften og forflytningen. Hvis vinkelen er 90 grader, blir det ikke utført noe arbeid, selv om en kraft er til stede. Hvis vinkelen er 0 grader, er arbeidet maksimalt, fordi all kraften virker i forflytningens retning.
-}
+I eksemplet over var kraften konstant. Men hva om kraften varierer underveis? Et typisk eksempel er en fjær: ifølge Hookes lov øker motstanden jo mer fjæren presses sammen. Kraften som trengs er proporsjonal med forskyvningen \( x \) fra likevektsposisjonen,
+\[
+F = k \cdot x,
+\]
+der \( k \) er fjærkonstanten (enhet \si{\newton\per\metre}). Siden kraften ikke er konstant, kan arbeidet ikke beregnes direkte som \( F \cdot s \). Geometrisk er arbeidet arealet under \( F(x) \)-grafen, og resultatet blir
+\[
+W = \frac{1}{2} k x^2.
+\]
+Den energien som lagres i fjæren kalles elastisk potensiell energi – mer om dette i seksjon~\ref{sec:potensiell}.
 
-\defn{Arbeid for å presse sammen en fjær}{
-    Når en fjær presses sammen eller strekkes, utføres et arbeid som lagrer energi i fjæren som elastisk potensiell energi. Denne typen arbeid kan uttrykkes ved hjelp av Hookes lov, som sier at kraften \( F \) som virker på fjæren er proporsjonal med forlengelsen eller sammentrekningen \( x \) av fjæren:
-    \[
-    F = k \cdot x
-    \]
-    hvor \( k \) er fjærkonstanten som måler fjærens stivhet. For å presse sammen en fjær fra en posisjon \( x = 0 \) til \( x = x \), kan arbeidet \( W \) beregnes som:
-    \begin{align}
-        W = \frac{1}{2} k x^2
-    \end{align}
-    Dette viser at arbeidet som utføres for å komprimere fjæren er proporsjonalt med kvadratet av fjærens forskyvning. Den energien som lagres i fjæren som et resultat av dette arbeidet kalles elastisk potensiell energi, og måles i joule (J).
-}
+Figurene nedenfor illustrerer de to tilfellene grafisk: i begge tilfeller er arbeidet lik arealet under kraftkurven.
 
-\noindent % Dette sørger for at det ikke er noe innrykk
+\noindent
 \begin{minipage}{0.45\textwidth}
     \centering
-    \raisebox{5mm}{ % Løfter bildet litt opp, juster verdien etter behov
+    \raisebox{5mm}{
         \includegraphics[width=\linewidth]{Images/Kapittel3:Arbeid&Energi/Arbeidpåboksgraf.png}
     }
-    \captionof{figure}{Arealet er eksempel på arbeidet på en boks, \( W = F \cdot s \).}
+    \captionof{figure}{Konstant kraft: \( W = F \cdot s \) er arealet av rektangelet under kurven.}
     \label{fig:image1}
 \end{minipage}\hfill
 \begin{minipage}{0.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Arbeidpåfjærgraf.png}
-    \captionof{figure}{Arealet er eksempel på arbeidet for å presse sammen en fjær, når \( F = k \cdot x \) og \( W = \frac{1}{2} k x^2 \).}
+    \captionof{figure}{Lineært voksende kraft \( F = kx \): \( W = \tfrac{1}{2}kx^2 \) er arealet av trekanten under kurven.}
     \label{fig:image2}
 \end{minipage}
 
@@ -153,6 +147,7 @@ W_{\text{totalt}} = 8.0 \, \text{N} \cdot 2.0 \, \text{m} - 5.6 \, \text{N} \cdo
 
 
 \subsection{Potensiell energi}
+\label{sec:potensiell}
 
 Potensiell energi er energien som er lagret i et objekt på grunn av dets posisjon eller tilstand. Et vanlig eksempel på potensiell energi er gravitasjonspotensiell energi, som avhenger av et objekts høyde over bakken og tyngdekraften. Når et objekt løftes opp fra bakken, lagres det energi som potensiell energi, og denne energien kan omformes til kinetisk energi når objektet faller tilbake mot bakken.
 

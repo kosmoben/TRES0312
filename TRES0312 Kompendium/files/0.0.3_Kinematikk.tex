@@ -34,7 +34,7 @@ En bil som kjører på en rett strekning vekk fra en lyktestolpe tilbakelegger s
     \label{fig:fart strekning}
 \end{figure}
 % \vspace{-3em}
-Vi kan illustrere beveglesen til bilen med grafer for fart og strekning. La oss anta at bilen holder konstant fart på $v=36\,\text{km/t}=10\,\text{m/s}$. Da vil strekningen øke med 10 meter hvert sekund, og grafen for strekning vil være en rett linje som stiger jevnt. Grafen for fart vil være en horisontal linje på 10 m/s, siden farten ikke endrer seg. Dette er illustrert i figur \ref{fig:fart- og strekningsgrafer}.
+Vi kan illustrere beveglesen til bilen med grafer for fart og strekning. La oss anta at bilen holder konstant fart på $v=\SI{36}{\kilo\metre\per\hour}=\SI{10}{\metre\per\second}$. Da vil strekningen øke med 10 meter hvert sekund, og grafen for strekning vil være en rett linje som stiger jevnt. Grafen for fart vil være en horisontal linje på 10 m/s, siden farten ikke endrer seg. Dette er illustrert i figur \ref{fig:fart- og strekningsgrafer}.
 \begin{figure}[H]
 \centering
 %--- Fartsgraf v(t) ----------------------------------------------------
@@ -117,7 +117,7 @@ Vi kan illustrere beveglesen til bilen med grafer for fart og strekning. La oss 
 
 Stigningstallet til strekningsgrafen kan vi regne ut momentant ved derivasjon, eller som gjennomsnittet av endring i posisjon over en periode:
 \begin{align*}
-    \textrm{v} = \frac{\Delta\textrm{s}}{\Delta\textrm{t}} = \frac{10\textrm{ m}}{1 \textrm{ s}} = 10 \textrm{m/s}
+    \textrm{v} = \frac{\Delta\textrm{s}}{\Delta\textrm{t}} = \frac{\SI{10}{\metre}}{\SI{1}{\second}} = \SI{10}{\metre\per\second}
 \end{align*}
 Som vi kan se ut ifra grafene, er farten det samme som stigningstallet til strekningsgrafen. Fart er altså størrelsen som beskriver endring i posisjon, og uformelt skriver vi gjerne ``trekantformelen'' som mange alt har sett: 
 
@@ -126,7 +126,7 @@ Som vi kan se ut ifra grafene, er farten det samme som stigningstallet til strek
 \end{align}
 \tanke{}{%
 Hvordan måler man fart?}
-Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal måle fart i fysikken, så er det alltid over et visst tidsrom, som vi gjerne kaller $\Delta t$. Det kan jo godt være at farten egentlig endret seg underveis i dette tidsrommet, uten at våre målinger fikk det med seg. Et eksempel kan være om du måler tiden Trine bruker på en 60-meter. La oss si at Trine bruker 12 sekunder. Da er den gjennomsnittlige farten hennes $\bar{v}=60\text{m}/12\text{s}=5\,\text{m}/\text{s}.$ Men det er jo ikke slik å forstå at Trine holdt samme fart hele løpet. I starten var farten gjerne 0m/s, mens den på slutten av løpet kanskje var 10 m/s. Det er derfor viktig å være klar over at når vi snakker om \textit{målt} fart, så handler det alltid om gjennomsnittsfart over et tidsintervall $\Delta t$. Tidsintervallene vi måler på kan være veldig små (slik som i et speedometer), men det er likefullt et gjennomsnitt over dette lille tidsintervallet. For å være litt mer presis definerer vi nå det vi kaller for \textit{gjennomsnittsfart}, som altså er lengden av \textit{gjennomsnittshastighets}-vektoren.
+Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal måle fart i fysikken, så er det alltid over et visst tidsrom, som vi gjerne kaller $\Delta t$. Det kan jo godt være at farten egentlig endret seg underveis i dette tidsrommet, uten at våre målinger fikk det med seg. Et eksempel kan være om du måler tiden Trine bruker på en 60-meter. La oss si at Trine bruker 12 sekunder. Da er den gjennomsnittlige farten hennes $\bar{v}=\SI{60}{\metre}/\SI{12}{\second}=\SI{5}{\metre\per\second}.$ Men det er jo ikke slik å forstå at Trine holdt samme fart hele løpet. I starten var farten gjerne 0m/s, mens den på slutten av løpet kanskje var 10 m/s. Det er derfor viktig å være klar over at når vi snakker om \textit{målt} fart, så handler det alltid om gjennomsnittsfart over et tidsintervall $\Delta t$. Tidsintervallene vi måler på kan være veldig små (slik som i et speedometer), men det er likefullt et gjennomsnitt over dette lille tidsintervallet. For å være litt mer presis definerer vi nå det vi kaller for \textit{gjennomsnittsfart}, som altså er lengden av \textit{gjennomsnittshastighets}-vektoren.
 
 \defn{Gjennomsnittsfart og gjennomsnittshastighet}{
     Matematisk kan gjennomsnittshastigheten uttrykkes som:
@@ -140,21 +140,21 @@ Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal 
 }
 Gjennomsnitts\textit{fart}beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
 
-\exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $60\,\textrm{km}$ på $1.5\,\textrm{t}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
+\exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $\SI{60}{\kilo\metre}$ på $\SI{1.5}{\hour}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
 }
 \svar{%
 Vi bruker definisjonen $\bar{v} = \dfrac{\Delta s}{\Delta t}$:
-\[\bar{v} = \frac{60\,\textrm{km}}{1{,}5\,\textrm{t}} = \doubleunderline{40\,\textrm{km/t}}\]
-Vi bruker omregningsfaktoren $1\,\textrm{km/t} = \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}}$:
-\[\bar{v} = 40\;\frac{\textrm{km}}{\textrm{t}} \cdot \frac{1\,000\,\textrm{m}}{3\,600\,\textrm{s}} = \frac{40\,000}{3\,600}\,\frac{\textrm{m}}{\textrm{s}} \approx \doubleunderline{11\,\textrm{m/s}}\]
+\[\bar{v} = \frac{\SI{60}{\kilo\metre}}{\SI{1{,}5}{\hour}} = \doubleunderline{\SI{40}{\kilo\metre\per\hour}}\]
+Vi bruker omregningsfaktoren $\SI{1}{\kilo\metre\per\hour} = \frac{\SI{1\,000}{\metre}}{\SI{3\,600}{\second}}$:
+\[\bar{v} = 40\;\si{\kilo\metre\per\hour} \cdot \frac{\SI{1\,000}{\metre}}{\SI{3\,600}{\second}} = \frac{40\,000}{3\,600}\,\si{\metre\per\second} \approx \doubleunderline{\SI{11}{\metre\per\second}}\]
 }
 
 \oppgave{Gjennomsnittsfart i rettlinjet bevegelse}{%
-En bil kjører $120\,\textrm{km}$ på $1.5\,\textrm{t}$.
+En bil kjører $\SI{120}{\kilo\metre}$ på $\SI{1.5}{\hour}$.
 \begin{enumerate}[a)]
     \item Finn gjennomsnittsfarten i km/t.
     \item Gjør om til m/s.
-    \item En annen bil kjører samme strekning på $90\,\textrm{min}$. Hvem kjørte raskest?
+    \item En annen bil kjører samme strekning på $\SI{90}{\minute}$. Hvem kjørte raskest?
 \end{enumerate}
 }
 
@@ -275,18 +275,18 @@ La oss se på et par eksempler.
   \vspace{0pt}
   \begin{enumerate}[\textbf{a)}]
     \item Forflytningsvektorene (se figur):
-          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\textrm{km},\quad
-            \vec{\Delta s}_{QR}=[0,\;4]\,\textrm{km}\]
-          \[\vec{\Delta s}_{PR}=[3,\;4]\,\textrm{km}\]
+          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\si{\kilo\metre},\quad
+            \vec{\Delta s}_{QR}=[0,\;4]\,\si{\kilo\metre}\]
+          \[\vec{\Delta s}_{PR}=[3,\;4]\,\si{\kilo\metre}\]
     \item Båt 1 seiler direkte. Forflytningens størrelse:
-          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\doubleunderline{5\,\textrm{km}}\]
+          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\doubleunderline{\SI{5}{\kilo\metre}}\]
           Gjennomsnittsfart (2 timer totalt):
-          \[\doubleunderline{\bar{v}_1=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
+          \[\doubleunderline{\bar{v}_1=\frac{\SI{5}{\kilo\metre}}{\SI{2}{\hour}}=\SI{2{,}5}{\kilo\metre\per\hour}}\]
     \item Gjennomsnittsfart per etappe for båt 2:
-          \[\bar{v}_{PQ}=3\,\textrm{km/t},\quad\bar{v}_{QR}=4\,\textrm{km/t}\]
-          Total gjennomsnittsfart for båt 2 (forflytning $=5\,\textrm{km}$, tid $=2\,\textrm{t}$):
-          \[\doubleunderline{\bar{v}_2=\frac{5\,\textrm{km}}{2\,\textrm{t}}=2{,}5\,\textrm{km/t}}\]
-    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $4\,\textrm{km/t}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis.
+          \[\bar{v}_{PQ}=\SI{3}{\kilo\metre\per\hour},\quad\bar{v}_{QR}=\SI{4}{\kilo\metre\per\hour}\]
+          Total gjennomsnittsfart for båt 2 (forflytning $=\SI{5}{\kilo\metre}$, tid $=\SI{2}{\hour}$):
+          \[\doubleunderline{\bar{v}_2=\frac{\SI{5}{\kilo\metre}}{\SI{2}{\hour}}=\SI{2{,}5}{\kilo\metre\per\hour}}\]
+    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $\SI{4}{\kilo\metre\per\hour}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis.
   \end{enumerate}
 \end{minipage}%
 \hfill
@@ -301,13 +301,13 @@ La oss se på et par eksempler.
           node[right,font=\scriptsize]{Ø};
     % Østlig etappe
     \draw[->,thick,headCol](0,0)--(3,0)
-          node[midway,below=4pt,font=\small]{$3\,\textrm{km}$};
+          node[midway,below=4pt,font=\small]{$\SI{3}{\kilo\metre}$};
     % Nordlig etappe
     \draw[->,thick,defscol](3,0)--(3,4)
-          node[midway,right=4pt,font=\small]{$4\,\textrm{km}$};
+          node[midway,right=4pt,font=\small]{$\SI{4}{\kilo\metre}$};
     % Forflytningsvektor
     \draw[->,very thick,oppsumcol](0,0)--(3,4)
-          node[midway,above left=2pt,font=\small]{$\vec{\Delta s}_{PR}=5\,\textrm{km}$};
+          node[midway,above left=2pt,font=\small]{$\vec{\Delta s}_{PR}=\SI{5}{\kilo\metre}$};
     % Rett vinkel
     \draw (3,0)++(-0.22,0)--++(0,0.22)--++(0.22,0);
     % Punkter
@@ -330,15 +330,15 @@ La oss se på et par eksempler.
   \begin{enumerate}[\textbf{a)}]
     \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
           \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
-            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \doubleunderline{56{,}5\,\textrm{m}}\]
+            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \doubleunderline{\SI{56{,}5}{\metre}}\]
           Forflytningens størrelse (korde $PQ$):
           \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
-            =36\sqrt{2}\approx 50{,}9\,\textrm{m}\]
+            =36\sqrt{2}\approx \SI{50{,}9}{\metre}\]
           Merk at farten $|\vec{v}|$ er konstant, men \emph{retningen} endrer seg kontinuerlig (jf.\ pilene i figuren) – hastigheten er derfor \emph{ikke} konstant.
     \item Dersom vi \textit{vet} at Karsten løper i en bue, bruker vi buelengden:
-          \[\doubleunderline{\bar{v}=\frac{18\pi\,\textrm{m}}{7\,\textrm{s}}\approx 8{,}1\,\textrm{m/s}}\]
+          \[\doubleunderline{\bar{v}=\frac{18\pi\,\si{\metre}}{\SI{7}{\second}}\approx \SI{8{,}1}{\metre\per\second}}\]
           Dersom vi \textit{ikke vet} det og kun kjenner posisjonene $P$ og $Q$, bruker vi korden:
-          \[\bar{v}=\frac{36\sqrt{2}\,\textrm{m}}{7\,\textrm{s}}\approx 7{,}3\,\textrm{m/s}\]
+          \[\bar{v}=\frac{36\sqrt{2}\,\si{\metre}}{\SI{7}{\second}}\approx \SI{7{,}3}{\metre\per\second}\]
           Gjennomsnittsfarten avhenger altså av hvilken informasjon vi har om banen.
   \end{enumerate}
 \end{minipage}%
@@ -351,7 +351,7 @@ La oss se på et par eksempler.
     \draw[headCol,thick](2.5,0) arc(0:90:2.5);
     % Stiplede radier
     \draw[dashed,gray!60](0,0)--(2.5,0)
-          node[midway,below=3pt,font=\scriptsize]{$r{=}36\,\textrm{m}$};
+          node[midway,below=3pt,font=\scriptsize]{$r{=}\SI{36}{\metre}$};
     \draw[dashed,gray!60](0,0)--(0,2.5);
     % Rett vinkel ved sentrum
     \draw(0.22,0)--++(0,0.22)--++(-0.22,0);
@@ -373,9 +373,9 @@ La oss se på et par eksempler.
 \end{minipage}
 }
 La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal finne komponentene.
-\exm{Dekomponering av hastighet}{En fugl flyr med fart $v = 15\,\textrm{m/s}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
+\exm{Dekomponering av hastighet}{En fugl flyr med fart $v = \SI{15}{\metre\per\second}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
 \textbf{a)} Finn den horisontale komponenten $v_x$ og den vertikale komponenten $v_y$ av hastigheten.\\
-\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = 15\,\textrm{m/s}$.}
+\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = \SI{15}{\metre\per\second}$.}
 
 \svar{%
 \noindent
@@ -383,10 +383,10 @@ La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal f
   \vspace{0pt}
   \begin{enumerate}[\textbf{a)}]
     \item Vi dekomponerer langs de to aksene (se figur):
-          \[v_x = v\cos\theta = 15\cdot 0{,}80 = \doubleunderline{12\,\textrm{m/s}}\]
-          \[v_y = v\sin\theta = 15\cdot 0{,}60 = \doubleunderline{9\,\textrm{m/s}}\]
+          \[v_x = v\cos\theta = 15\cdot 0{,}80 = \doubleunderline{\SI{12}{\metre\per\second}}\]
+          \[v_y = v\sin\theta = 15\cdot 0{,}60 = \doubleunderline{\SI{9}{\metre\per\second}}\]
     \item Pythagoras bekrefter:
-          \[\sqrt{v_x^2+v_y^2}=\sqrt{12^2+9^2}=\sqrt{144+81}=\sqrt{225}=\doubleunderline{15\,\textrm{m/s}}\;\checkmark\]
+          \[\sqrt{v_x^2+v_y^2}=\sqrt{12^2+9^2}=\sqrt{144+81}=\sqrt{225}=\doubleunderline{\SI{15}{\metre\per\second}}\;\checkmark\]
   \end{enumerate}
   Merk at dette er det samme $9$-$12$-$15$-trekantforholdet (skalert $3$-$4$-$5$) som dukket opp i eksempel 3.2, men nå brukt til å gå fra totalfart til komponenter.
 \end{minipage}%
@@ -400,13 +400,13 @@ La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal f
     \fill[headCol!12](0,0)--(4,0)--(4,3)--cycle;
     % Horisontal komponent vx
     \draw[->,thick,defscol](0,0)--(4,0)
-          node[midway,below=3pt]{$v_x=12\,\textrm{m/s}$};
+          node[midway,below=3pt]{$v_x=\SI{12}{\metre\per\second}$};
     % Vertikal komponent vy
     \draw[->,thick,oppsumcol](4,0)--(4,3)
-          node[midway,right=3pt]{$v_y=9\,\textrm{m/s}$};
+          node[midway,right=3pt]{$v_y=\SI{9}{\metre\per\second}$};
     % Totalvektoren v
     \draw[->,very thick,headCol](0,0)--(4,3)
-          node[midway,above left=2pt]{$v=15\,\textrm{m/s}$};
+          node[midway,above left=2pt]{$v=\SI{15}{\metre\per\second}$};
     % Rett vinkel
     \draw(4,0)++(-0.28,0)--++(0,0.28)--++(0.28,0);
     % Vinkel theta
@@ -510,8 +510,8 @@ Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfar
 
 \exm{Momentanhastighet}{Posisjonen til en firhjuling på et jorde er gitt ved $vec{s}(t) = (2t^2, 3t)$ i meter og sekunder.\\
 \textbf{a)} Vis at uttrykket for momentanhastigheten $\vec{v}(t)$ til firhjulingen er gitt ved $\vec{v}(t) = (4t, 3)$.\\
-\textbf{b)} Hva er momentanhastigheten ved $t = 2\,\textrm{s}$?\\
-\textbf{c)} Ved hvilken tid er momentanhastigheten $\vec{v} = (16, 12)\,\textrm{m/s}$?
+\textbf{b)} Hva er momentanhastigheten ved $t = \SI{2}{\second}$?\\
+\textbf{c)} Ved hvilken tid er momentanhastigheten $\vec{v} = (16, 12)\,\si{\metre\per\second}$?
 
 }
 
@@ -519,8 +519,8 @@ Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfar
 Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og sekunder).
 \begin{enumerate}[a)]
     \item For den som kan derivere: Vis at momentanfarten er gitt ved $v(t) = 6t + 2$.
-    \item Hva er momentanhastigheten ved $t = 2\,\textrm{s}$?
-    \item Ved hvilken tid er momentanfarten $v = 20\,\textrm{m/s}$?
+    \item Hva er momentanhastigheten ved $t = \SI{2}{\second}$?
+    \item Ved hvilken tid er momentanfarten $v = \SI{20}{\metre\per\second}$?
 \end{enumerate}
 }
 
@@ -529,18 +529,18 @@ Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og se
   \item Vi deriverer $s(t) = 3t^2 + 2t$ ledd for ledd med potensregelen
     $\frac{d}{dt}(t^n) = nt^{n-1}$:
     \[
-      v(t) = \frac{ds}{dt} = 3 \cdot 2t^{2-1} + 2 \cdot 1 = 6t + 2\;\textrm{m/s}
+      v(t) = \frac{ds}{dt} = 3 \cdot 2t^{2-1} + 2 \cdot 1 = 6t + \SI{2}{\metre\per\second}
       \quad\checkmark
     \]
-  \item Vi setter inn $t = 2\,\textrm{s}$:
+  \item Vi setter inn $t = \SI{2}{\second}$:
     \[
-      v(2) = 6 \cdot 2 + 2 = 12 + 2 = \doubleunderline{14\,\textrm{m/s}}
+      v(2) = 6 \cdot 2 + 2 = 12 + 2 = \doubleunderline{\SI{14}{\metre\per\second}}
     \]
-  \item Vi løser likningen $v(t) = 20\,\textrm{m/s}$:
+  \item Vi løser likningen $v(t) = \SI{20}{\metre\per\second}$:
     \[
       6t + 2 = 20
       \implies 6t = 18
-      \implies \doubleunderline{t = 3\,\textrm{s}}
+      \implies \doubleunderline{t = \SI{3}{\second}}
     \]
 \end{enumerate}
 }
@@ -551,11 +551,11 @@ Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og se
 
 
 \oppgave{Konstant hastighet}{%
-En syklist kjører med konstant hastighet $v = 8\,\textrm{m/s}$.
+En syklist kjører med konstant hastighet $v = \SI{8}{\metre\per\second}$.
 \begin{enumerate}[a)]
-    \item Hvor langt har syklisten kjørt etter $t = 10\,\textrm{s}$?
-    \item Hvor langt har syklisten kjørt etter $t = 2\,\textrm{min}$?
-    \item Hvor lang tid tar det å tilbakelegge $s = 2.0\,\textrm{km}$?
+    \item Hvor langt har syklisten kjørt etter $t = \SI{10}{\second}$?
+    \item Hvor langt har syklisten kjørt etter $t = \SI{2}{\minute}$?
+    \item Hvor lang tid tar det å tilbakelegge $s = \SI{2.0}{\kilo\metre}$?
 \end{enumerate}
 }
 
@@ -797,11 +797,11 @@ Figurene \ref{Konstant akselerasjon} og \ref{Variabel akselerasjon} illustrerer 
 
 
 \oppgave{Akselerasjon}{%
-En bil øker farten fra $v_0 = 20\,\textrm{m/s}$ til $v = 30\,\textrm{m/s}$ på $\Delta t = 5\,\textrm{s}$.
+En bil øker farten fra $v_0 = \SI{20}{\metre\per\second}$ til $v = \SI{30}{\metre\per\second}$ på $\Delta t = \SI{5}{\second}$.
 \begin{enumerate}[a)]
     \item Finn gjennomsnittsakselerasjonen.
     \item Er akselerasjonen positiv eller negativ? Hva betyr det?
-    \item Dersom akselerasjonen er konstant, hva er farten etter ytterligere $3\,\textrm{s}$?
+    \item Dersom akselerasjonen er konstant, hva er farten etter ytterligere $\SI{3}{\second}$?
 \end{enumerate}
 }
 
@@ -959,117 +959,115 @@ der $s_0$ er startposisjonen. Likning 3 og 4 følger deretter algebraisk, som vi
  Disse fire likningene gir et komplett sett med verktøy for å analysere bevegelse under konstant akselerasjon. Det er imidlertid avgjørende å huske at de bare gjelder når akselerasjonen ikke varierer. Hvis akselerasjonen endrer seg, blir bevegelsen mer kompleks, og disse likningene vil ikke lenger være gyldige.
 
 \exm{Bremseavstand}{
-En bil har en startfart på \(30 \, \text{m/s}\) og bremser med en konstant akselerasjon på \(-5 \, \text{m/s}^2\). Hvor langt beveger bilen seg før den stopper helt? \\
+En bil har en startfart på \(30 \, \si{\metre\per\second}\) og bremser med en konstant akselerasjon på \(-5 \, \si{\metre\per\second\squared}\). Hvor langt beveger bilen seg før den stopper helt? \\
 
 \textit{Metode:}
-Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v = 0 \, \text{m/s} \), \( v_0 = 30 \, \text{m/s} \), og \( a = -5 \, \text{m/s}^2 \):
+Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v = 0 \, \si{\metre\per\second} \), \( v_0 = 30 \, \si{\metre\per\second} \), og \( a = -5 \, \si{\metre\per\second\squared} \):
 \[
-0 = (30 \, \text{m/s})^2 + 2 \cdot (-5 \, \text{m/s}^2) \cdot (s - s_0).
+0 = (30 \, \si{\metre\per\second})^2 + 2 \cdot (-5 \, \si{\metre\per\second\squared}) \cdot (s - s_0).
 \]
 \[
-0 = 900\,\text{m}^2/\text{s}^2 - 10\,\text{m/s}^2 \cdot (s - s_0).
+0 = \SI{900}{\metre\squared\per\second\squared} - \SI{10}{\metre\per\second\squared} \cdot (s - s_0).
 \]
 \[
-10\,\text{m/s}^2 \cdot (s - s_0) = 900\,\text{m}^2/\text{s}^2
+\SI{10}{\metre\per\second\squared} \cdot (s - s_0) = \SI{900}{\metre\squared\per\second\squared}
 \]
 \[
-\doubleunderline{s - s_0 = 90 \, \text{m}}
+\doubleunderline{s - s_0 = 90 \, \si{\metre}}
 \]
-Bilen beveger seg $90\,\text{m}$ før den stopper.
+Bilen beveger seg $\SI{90}{\metre}$ før den stopper.
 }
 
 \exm{Sykkeltur}{
-Du sykler med en startfart på \(5 \, \text{m/s}\) og akselererer til \(15 \, \text{m/s}\) over en tidsperiode på \(10\) sekunder. Hvor langt syklet du i denne perioden? \\
+Du sykler med en startfart på \(5 \, \si{\metre\per\second}\) og akselererer til \(15 \, \si{\metre\per\second}\) over en tidsperiode på \(10\) sekunder. Hvor langt syklet du i denne perioden? \\
 
 \textit{Metode:}
-Bruk gjennomsnittshastighetslikningen \( s = s_0 + \frac{v_0 + v}{2}t \). Her er \( s_0 = 0 \, \text{m} \), \( v_0 = 5 \, \text{m/s} \), \( v = 15 \, \text{m/s} \), og \( t = 10 \, \text{s} \):
+Bruk gjennomsnittshastighetslikningen \( s = s_0 + \frac{v_0 + v}{2}t \). Her er \( s_0 = 0 \, \si{\metre} \), \( v_0 = 5 \, \si{\metre\per\second} \), \( v = 15 \, \si{\metre\per\second} \), og \( t = 10 \, \si{\second} \):
 \[
-s = 0\,\text{m} + \frac{5\,\text{m/s} + 15\,\text{m/s}}{2} \cdot 10\,\text{s} = \doubleunderline{100 \, \text{m}}
+s = \SI{0}{\metre} + \frac{\SI{5}{\metre\per\second} + \SI{15}{\metre\per\second}}{2} \cdot \SI{10}{\second} = \doubleunderline{100 \, \si{\metre}}
 \]
-Du syklet $100\,\text{m}$ i løpet av denne perioden.
+Du syklet $\SI{100}{\metre}$ i løpet av denne perioden.
 }
 
 
 
 \subsection{Fritt fall som eksempel}
-Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Gravitasjonen på jorden er omtrent lik overalt, og er en akselerasjon på ca. $\textrm{g} = 9.81\textrm{ m/s}^2$. 
+Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Gravitasjonen på jorden er omtrent lik overalt, og er en akselerasjon på ca. $\textrm{g} = \SI{9.81}{\metre\per\second\squared}$. 
 % {\color{blue} CHECK: Si litt om g osv...} 
 
 \exm{Hastighetsendring}{
-Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \text{m/s}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.81 \, \text{m/s}^2\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
+Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \si{\metre\per\second}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.81 \, \si{\metre\per\second\squared}\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
 
 \textit{Metode:}
-Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \text{m/s} \), \( a = -9.81 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \). Sett inn verdiene:
+Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \si{\metre\per\second} \), \( a = -9.81 \, \si{\metre\per\second\squared} \), og \( t = 2 \, \si{\second} \). Sett inn verdiene:
 \[
-\doubleunderline{v = 10 \, \text{m/s} + (-9.81 \, \text{m/s}^2) \cdot 2 \, \text{s} = -9{,}62 \, \text{m/s}}
+\doubleunderline{v = 10 \, \si{\metre\per\second} + (-9.81 \, \si{\metre\per\second\squared}) \cdot 2 \, \si{\second} = -9{,}62 \, \si{\metre\per\second}}
 \]
-Ballens hastighet etter $2$ sekunder er $-9{,}62\,\text{m/s}$, noe som indikerer at ballen nå beveger seg nedover.
+Ballens hastighet etter $2$ sekunder er $\SI{-9{,}62}{\metre\per\second}$, noe som indikerer at ballen nå beveger seg nedover.
 }
 
 \exm{Fallende objekt}{
-En stein blir sluppet fra en bro \(20 \, \text{m}\) over bakken. Hva er steinens posisjon etter \(2\) sekunder, gitt at akselerasjonen på grunn av tyngdekraften er \(9.81 \, \text{m/s}^2\) og initial hastighet \( v_0 = 0 \)? \\
+En stein blir sluppet fra en bro \(20 \, \si{\metre}\) over bakken. Hva er steinens posisjon etter \(2\) sekunder, gitt at akselerasjonen på grunn av tyngdekraften er \(9.81 \, \si{\metre\per\second\squared}\) og initial hastighet \( v_0 = 0 \)? \\
 
 \textit{Metode:}
-Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \text{m} \), \( v_0 = 0 \, \text{m/s} \), \( a = 9.81 \, \text{m/s}^2 \), og \( t = 2 \, \text{s} \):
+Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \si{\metre} \), \( v_0 = 0 \, \si{\metre\per\second} \), \( a = 9.81 \, \si{\metre\per\second\squared} \), og \( t = 2 \, \si{\second} \):
 \[
-s = 20 \, \text{m} + 0\,\text{m/s} \cdot 2 \, \text{s} + \frac{1}{2} \cdot 9.81 \, \text{m/s}^2 \cdot (2 \, \text{s})^2
-  = 20\,\text{m} + 19{,}62\,\text{m}.
+s = 20 \, \si{\metre} + \SI{0}{\metre\per\second} \cdot 2 \, \si{\second} + \frac{1}{2} \cdot 9.81 \, \si{\metre\per\second\squared} \cdot (2 \, \si{\second})^2
+  = \SI{20}{\metre} + \SI{19{,}62}{\metre}.
 \]
 \[
-\doubleunderline{s = 39{,}6 \, \text{m}}
+\doubleunderline{s = 39{,}6 \, \si{\metre}}
 \]
-Steinen er $39{,}6\,\text{m}$ fra utgangspunktet etter $2$ sekunder.
+Steinen er $\SI{39{,}6}{\metre}$ fra utgangspunktet etter $2$ sekunder.
 }
 
 
 \oppgave{Fritt fall}{%
-En ball slippes fra ro fra en høyde $h = 45\,\textrm{m}$ over bakken. Bruk $g = 9.81\,\textrm{m/s}^2$.
+En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
 \begin{enumerate}[a)]
     \item Finn tiden det tar før ballen treffer bakken.
     \item Finn farten rett før ballen treffer bakken.
-    \item Hva ville farten blitt om ballen var sluppet fra $h = 80\,\textrm{m}$? Legg merke til sammenhengen.
+    \item Hva ville farten blitt om ballen var sluppet fra $h = \SI{80}{\metre}$? Legg merke til sammenhengen.
 \end{enumerate}
 }
 
 \subsection{Dekomponering ved krumlinjet bevegelse}
-Krumlinjet bevegelse handler om objekter som beveger seg langs en kurvet bane, og ikke bare i en rett linje. I denne typen bevegelse må vi vurdere hvordan både hastighet og akselerasjon endrer seg i to dimensjoner. Vi går derfor over fra en én-dimensjonal beskrivelse til en to-dimensjonal beskrivelse av bevegelse. For å gjøre dette bruker vi vektorer til å representere strekning, hastighet og akselerasjon, slik at vi kan ta hensyn til både størrelse og retning i bevegelsen.
+Vi har tidligere utledet formler for 
+$$a=\text{konst},$$
+og brukt vektorer i oppsummeringen, fordi disse formlene gjelder for krumlinjet bevegelse også. Men hvordan regner vi egentlig med konstant akselerasjon i krumlinjet bevegelse i praksis? I denne seksjonen skal vi se på nettopp det, gjennom eksempler og oppgaver.
 
-\subsection{Konstant akselerasjon i krumlinjet bevegelse}
-Når et objekt har konstant akselerasjon i krumlinjet bevegelse, kan vi fortsatt bruke prinsippene fra rettlinjet bevegelse, men vi må ta hensyn til at akselerasjonen påvirker både den horisontale og vertikale retningen. I motsetning til rettlinjet bevegelse, der akselerasjonen virker langs én dimensjon, må vi i krumlinjet bevegelse dekomponere akselerasjonen i x- og y-komponenter. Bevegelsen kan analyseres separat langs hver akse ved å bruke dekomponerte bevegelseslikninger.
+\paragraph{Dekomponering.} Se for deg en stein som kastes utfor en klippe. Steinen vil falle nedover på grunn av tyngdekraftens konstante akselerasjon på $\text{g}=\SI{9.81}{\metre\per\second\squared}$. Men i horisontal retning så vil steinen bare fortsette rett fram uten å akselerere. Vi må \textit{dekomponere} likningene og analysere hver retning for seg. 
 
 \begin{myoppsum*}{Dekomponering av hastighets- og posisjonslikningene}
-    I krumlinjet bevegelse med konstant akselerasjon kan vi uttrykke hastighets- og posisjonslikningene i vektorform slik:
+Krumlinjet bevegelse med konstant akselerasjon analyseres ved å dekomponere vektorlikningene i x- og y-komponenter:
 
-    \textbf{Hastighetslikningen:}
-    \begin{align}
-        \vec{v} = \vec{v}_0 + \vec{a}t,
-    \end{align}
-    hvor \( \vec{v} \) er hastighetsvektoren, \( \vec{v}_0 \) er startfartsvektoren, \( \vec{a} \) er akselerasjonsvektoren, og \( t \) er tiden.
+\medskip
+\textbf{Hastighetslikningen:}
+\[
+  \vec{v} = \vec{v}_0 + \vec{a}\,t
+  \quad\Longrightarrow\quad
+  \begin{cases}
+    v_x = v_{0x} + a_x\,t \\[5pt]
+    v_y = v_{0y} + a_y\,t
+  \end{cases}
+\]
 
-    \textbf{Posisjonslikningen:}
-    \begin{align}
-        \vec{s} = \vec{s}_0 + \vec{v}_0 t + \frac{1}{2} \vec{a} t^2,
-    \end{align}
-    hvor \( \vec{s} \) er posisjonsvektoren, \( \vec{s}_0 \) er startposisjonen, \( \vec{v}_0 \) er startfarten, \( \vec{a} \) er akselerasjonsvektoren, og \( t \) er tiden.
-
-    Når vi analyserer bevegelsen i to dimensjoner, kan vi dekomponere disse vektorene i deres x- og y-komponenter for å se på bevegelsen langs hver akse separat:
-
-    \textbf{Dekomponering av Hastighetslikningen:}
-    \begin{align}
-        v_x &= v_{0x} + a_x t, \\
-        v_y &= v_{0y} + a_y t,
-    \end{align}
-
-    \textbf{Dekomponering av Posisjonslikningen:}
-    \begin{align}
-        x &= x_0 + v_{0x} t + \frac{1}{2} a_x t^2, \\
-        y &= y_0 + v_{0y} t + \frac{1}{2} a_y t^2,
-    \end{align}
-
+\medskip
+\textbf{Posisjonslikningen:}
+\[
+  \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2
+  \quad\Longrightarrow\quad
+  \begin{cases}
+    x = x_0 + v_{0x}\,t + \tfrac{1}{2}a_x\,t^2 \\[5pt]
+    y = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y\,t^2
+  \end{cases}
+\]
 \end{myoppsum*}
+Vi kunne gjort tilsvarende dekomponeringer av de to andre likningene — og hvilke som helst andre vektorlikninger.
 
-\tips{Viktige forhold ved prosjektilbevgelse}{Det er viktig å merke seg at i mange situasjoner, som for eksempel ved prosjektilbevegelse, er akselerasjonen i x-retning (\( a_x \)) ofte lik null. Akselerasjonen i y-retning (\( a_y \)) er derimot konstant og ofte lik \( -9.81 \, \text{m/s}^2 \) hvis y retning er definert positivt i oppover, på grunn av tyngdekraften. Dette betyr at bevegelsen i x-retning skjer med konstant hastighet, mens bevegelsen i y-retning påvirkes av gravitasjonen, noe som gir en akselerasjon på \( -9.81 \, \text{m/s}^2 \).}
-
+\tips{Fortegn ved dekomponering}{Husk at når du dekomponerer så er alle fortegn avhengig av hva du har valt som positiv retning for hver koordinat-akse. For eksempel, hvis du velger oppover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være negativ, altså $a_y = -g$. Hvis du velger nedover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være positiv, altså $a_y = g$. Dette er bare et valg av koordinatsystem, og har ingen innvirkning på fysikken.
+}
+La oss nå se på eksempler for å lære dette med dekomponering ordentlig.
 
 \exm{Fjærkanon og beregning av sluttposisjon}{
 En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h \) og gravitasjonskonstanten \( g \). Målet er å finne hvor kula lander. Vi skal først beregne utgangshastigheten \( v_0 \), deretter bruke posisjonslikningen i y-retning for å finne hvor lenge kula er i lufta, og til slutt bruke tiden \( t \) til å finne sluttposisjonen i x-retning.\\
@@ -1081,7 +1079,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \[
     v_0^2 = 2gh,
     \]
-    hvor \( g = 9.81 \, \text{m/s}^2 \) og \( h \) er høyden kula skytes ut fra. Utgangshastigheten \( v_0 \) er da:
+    hvor \( g = 9.81 \, \si{\metre\per\second\squared} \) og \( h \) er høyden kula skytes ut fra. Utgangshastigheten \( v_0 \) er da:
     \[
     \doubleunderline{v_0 = \sqrt{2gh}}
     \]
@@ -1093,7 +1091,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \[
     y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
     \]
-    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \text{m/s}^2 \). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
+    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \si{\metre\per\second\squared} \). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
     \[
     0 = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2.
     \]
@@ -1145,7 +1143,7 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \end{figure}
 
 \exm{Ball som faller fra en klippe}{
-En ball faller ut fra en klippe som er \(0.8 \, \text{m}\) høy og lander \(0.85 \, \text{m}\) unna foten av klippen. Vi skal beregne:
+En ball faller ut fra en klippe som er \(0.8 \, \si{\metre}\) høy og lander \(0.85 \, \si{\metre}\) unna foten av klippen. Vi skal beregne:
 \begin{itemize}
     \item a) Startfarten \(v_0\)
     \item b) Sluttfarten \(v_1\), som er hastigheten rett før ballen treffer bakken.
@@ -1158,7 +1156,7 @@ Vi bruker først posisjonslikningen i y-retning for å finne tiden \(t\) det tar
 \[
 y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
 \]
-Vi vet at sluttposisjonen \(y = 0\), startposisjonen \(y_0 = 0.8 \, \text{m}\), og akselerasjonen \(a_y = -9.81 \, \text{m/s}^2\). Dette gir:
+Vi vet at sluttposisjonen \(y = 0\), startposisjonen \(y_0 = 0.8 \, \si{\metre}\), og akselerasjonen \(a_y = -9.81 \, \si{\metre\per\second\squared}\). Dette gir:
 \[
 0 = 0.8 + 0 \cdot t - \frac{1}{2} \cdot 9.81 \cdot t^2,
 \]
@@ -1167,10 +1165,10 @@ som gir:
 t^2 = \frac{2 \cdot 0.8}{9.81},
 \]
 \[
-\doubleunderline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \text{s}}
+\doubleunderline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \si{\second}}
 \]
 
-Nå som vi har funnet tiden \(t = 0.4 \, \text{s}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
+Nå som vi har funnet tiden \(t = 0.4 \, \si{\second}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
 \[
 x = v_{0x} t + \frac{1}{2} a_x t^2.
 \]
@@ -1178,37 +1176,37 @@ Siden akselerasjonen i x-retning \(a_x = 0\), forenkles likningen til:
 \[
 x = v_{0x} t.
 \]
-Vi setter inn \(x = 0.85 \, \text{m}\) og \(t = 0.4 \, \text{s}\):
+Vi setter inn \(x = 0.85 \, \si{\metre}\) og \(t = 0.4 \, \si{\second}\):
 \[
 0.85 = v_{0x} \cdot 0.4.
 \]
 Løs for \(v_{0x}\):
 \[
-\doubleunderline{v_0 = v_{0x} = \frac{0{,}85}{0{,}4} \approx 2{,}125 \, \text{m/s}}
+\doubleunderline{v_0 = v_{0x} = \frac{0{,}85}{0{,}4} \approx 2{,}125 \, \si{\metre\per\second}}
 \]
 
 \textbf{Del b: Beregn sluttfarten rett før ballen treffer bakken} \\
 
 \textit{Metode:}
-For å finne sluttfarten \(v_1\) rett før ballen treffer bakken, må vi beregne både hastigheten i x- og y-retning ved \(t = 0.4 \, \text{s}\). Siden akselerasjonen i x-retning er null, forblir hastigheten i x-retning uendret:
+For å finne sluttfarten \(v_1\) rett før ballen treffer bakken, må vi beregne både hastigheten i x- og y-retning ved \(t = 0.4 \, \si{\second}\). Siden akselerasjonen i x-retning er null, forblir hastigheten i x-retning uendret:
 \[
-v_{1x} = v_{0x} = 2.125 \, \text{m/s}.
+v_{1x} = v_{0x} = 2.125 \, \si{\metre\per\second}.
 \]
 For y-retningen bruker vi hastighetslikningen i y-retning:
 \[
 v_{1y} = v_{0y} + a_y t.
 \]
-Siden \(v_{0y} = 0\) og \(a_y = -9.81 \, \text{m/s}^2\), får vi:
+Siden \(v_{0y} = 0\) og \(a_y = -9.81 \, \si{\metre\per\second\squared}\), får vi:
 \[
-v_{1y} = 0 + (-9.81) \cdot 0.4 \approx -3.924 \, \text{m/s}.
+v_{1y} = 0 + (-9.81) \cdot 0.4 \approx -3.924 \, \si{\metre\per\second}.
 \]
 
 Den totale hastigheten \(v_1\) rett før ballen treffer bakken er summen av komponentene i x- og y-retning, og kan finnes ved Pythagoras' setning:
 \[
-v_1 = \sqrt{v_{1x}^2 + v_{1y}^2} = \sqrt{(2.125)^2 + (-3.924)^2} \approx \sqrt{4.515 + 15.4} \approx \sqrt{19.915} \approx 4.46 \, \text{m/s}.
+v_1 = \sqrt{v_{1x}^2 + v_{1y}^2} = \sqrt{(2.125)^2 + (-3.924)^2} \approx \sqrt{4.515 + 15.4} \approx \sqrt{19.915} \approx 4.46 \, \si{\metre\per\second}.
 \]
 
-Dermed er sluttfarten rett før ballen treffer bakken \(\doubleunderline{v_1 \approx 4.46 \, \text{m/s}}\).
+Dermed er sluttfarten rett før ballen treffer bakken \(\doubleunderline{v_1 \approx 4.46 \, \si{\metre\per\second}}\).
 }
 
    \begin{figure}[ht!]
@@ -1219,7 +1217,7 @@ Dermed er sluttfarten rett før ballen treffer bakken \(\doubleunderline{v_1 \ap
     \end{figure}
 
 \oppgave{Prosjektilbevegelse}{%
-En ball kastes horisontalt fra en klippe $h = 5\,\textrm{m}$ over bakken med startfart $v_0 = 10\,\textrm{m/s}$. Bruk $g = 9.81\,\textrm{m/s}^2$.
+En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med startfart $v_0 = \SI{10}{\metre\per\second}$. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
 \begin{enumerate}[a)]
     \item Finn tiden ballen bruker på å treffe bakken.
     \item Finn den horisontale avstanden fra klippen til der ballen lander.
@@ -1231,7 +1229,131 @@ En ball kastes horisontalt fra en klippe $h = 5\,\textrm{m}$ over bakken med sta
 
 \section{Sirkelbevegelse}
 
-\textit{Sirkelbevegelse} oppstår når et objekt beveger seg i en bane som danner en sirkel. For eksempel, når en bil kjører rundt i en sving, eller når en stein knyttet til en tråd svinges rundt. Selv om farten (størrelsen på hastigheten) kan være den samme hele tiden, endres retningen til objektet hele tiden, siden det alltid svinger i en sirkel. For å få til denne bevegelsen må det virke en kraft som trekker objektet innover mot sentrum av sirkelen. Denne kraften fører til en akselerasjon som kalles \textit{sentripetalakselerasjon}.
+\textit{Sirkelbevegelse} Vi Sirkelbevegelse er en form for krumlinjet bevegelse i planet som vi skal se ekstra nøye på. 
+\tanke{}{%
+I hvilken retning peker akselerasjonen i sirkelbevegelse?}
+
+Se for deg at du sitter i en bil som holder konstant høy fart gjennom en rundkjøring. Du vil oppleve at du presses ut mo høyre i bilen (gitt at bilens kjøreretning er overholder norske trafikkregler!). Men om vi zoomer ut av bilen og tar perspektivet til den forskrekkede måken som sitter på en flaggstand midt i rundkjøringen, så ser vi tydelig at det ikke er det som skjer. Det som egentlig skjer er at bilen stadig endrer kjøreretning. Dette fører til at du (som passasjer i bilen) stadig aksellereres inn mot sentrum! Denne akselerasjonen kalles \textit{sentripetalakselerasjon}, og er altså grunnen til at det føles som om noe dytter deg ut av rundkjøringen, selv om det altså ikke er det som skjer.
+
+\paragraph{Utledning av sentripetalakselerasjon} I det følgende skal vi utlede et uttrykk for størrelsen på sentripetalakselerasjon. 
+Se for deg et legeme (f.eks. en bil) som holder konstant fart i sirkelbevegelse. Selv om farten \( v \) forblir konstant så endrer harstighetsvektoren \( \vec{v} \) seg, ettersom retningen til farten endres. Ser vi på to tidspunkt hvor hastigheten endrer seg fra \( \vec{v}_1 \) til \( \vec{v}_2 \), kan vi bruke forholdet mellom de formlike trekantene for \( \Delta \vec{v} \) og \( \Delta \vec{s} \), som gir oss:
+    \[
+    \frac{\Delta v}{v} = \frac{\Delta s}{r}.
+    \]
+    Der \( r \) er radiusen til sirkelen, og \( \Delta s \) er avstanden objektet har beveget seg langs sirkelen i løpet av et lite tidsintervall \( \Delta t \). 
+
+
+\begin{figure}[h]
+\centering
+% LEFT: position diagram
+\begin{minipage}[t]{0.50\textwidth}
+\centering
+\begin{tikzpicture}[font=\small, scale=1.15, >=stealth]
+  % Centre O
+  \fill (0,0) circle (2pt);
+  \node[below left=2pt] at (0,0) {$O$};
+
+  % Partial circle arc (40° – 140°)
+  \draw[headCol, thick]
+    ({2*cos(40)},{2*sin(40)}) arc[start angle=40, end angle=140, radius=2];
+
+  % Points P1 (110°) and P2 (70°)
+  \coordinate (P1) at ({2*cos(110)},{2*sin(110)});
+  \coordinate (P2) at ({2*cos(70)},{2*sin(70)});
+
+  % Radii
+  \draw[black!40, semithick] (0,0) -- (P1);
+  \draw[black!40, semithick] (0,0) -- (P2);
+
+  % r labels at midpoints of radii
+  \node[left=2pt,  black!55, font=\footnotesize] at ({cos(110)},{sin(110)}) {$r$};
+  \node[right=2pt, black!55, font=\footnotesize] at ({cos(70)}, {sin(70)})  {$r$};
+
+  % Angle Δθ arc at O
+  \draw ({0.52*cos(110)},{0.52*sin(110)})
+        arc[start angle=110, end angle=70, radius=0.52];
+  \node[above=1pt, font=\footnotesize] at (0, 0.62) {$\Delta\theta$};
+
+  % Points
+  \fill[defscol] (P1) circle (2.5pt);
+  \node[defscol, above left=2pt] at (P1) {$P_1$};
+  \fill[defscol] (P2) circle (2.5pt);
+  \node[defscol, above right=2pt] at (P2) {$P_2$};
+
+  % Chord Δr (P1 → P2, horizontal since symmetric about 90°)
+  \draw[->, oppsumcol, thick, dashed] (P1) -- (P2)
+        node[midway, above=4pt] {$\Delta r$};
+
+  % Velocity v1 at P1 (tangent = 110° − 90° = 20°)
+  \draw[->, very thick, defscol]
+        (P1) -- ++({cos(20)},{sin(20)})
+        node[above right=-1pt] {$\vec{v}_1$};
+
+  % Velocity v2 at P2 (tangent = 70° − 90° = −20°)
+  \draw[->, very thick, defscol]
+        (P2) -- ++({cos(-20)},{sin(-20)})
+        node[right=2pt] {$\vec{v}_2$};
+\end{tikzpicture}
+\end{minipage}%
+\hfill
+% RIGHT: velocity triangle
+\begin{minipage}[t]{0.46\textwidth}
+\centering
+\begin{tikzpicture}[font=\small, scale=1.15, >=stealth]
+  % Tails at origin, v_len = 1.5
+  \coordinate (tail) at (0,0);
+  \coordinate (tip1) at ({1.5*cos(20)}, { 1.5*sin(20)});
+  \coordinate (tip2) at ({1.5*cos(20)}, {-1.5*sin(20)});
+
+  % v1 and v2
+  \draw[->, very thick, defscol] (tail) -- (tip1);
+  \draw[->, very thick, defscol] (tail) -- (tip2);
+
+  % v labels along the arrows
+  \node[defscol, above left=1pt, font=\footnotesize]
+        at ({0.75*cos(20)},{ 0.75*sin(20)}) {$v$};
+  \node[defscol, below left=1pt, font=\footnotesize]
+        at ({0.75*cos(20)},{-0.75*sin(20)}) {$v$};
+
+  % Arrow-head labels (v1, v2)
+  \node[defscol, above=2pt]  at (tip1) {$\vec{v}_1$};
+  \node[defscol, below=2pt]  at (tip2) {$\vec{v}_2$};
+
+  % Δv from tip1 to tip2 (straight down)
+  \draw[->, very thick, oppsumcol] (tip1) -- (tip2)
+        node[right=3pt, midway] {$\Delta\vec{v}$};
+
+  % Tail point
+  \fill (tail) circle (1.5pt);
+
+  % Angle Δθ at tail
+  \draw ({0.52*cos(20)},{0.52*sin(20)})
+        arc[start angle=20, end angle=-20, radius=0.52];
+  \node[right=3pt, font=\footnotesize] at (0.60, 0) {$\Delta\theta$};
+
+  % Bounding-box adjustment (match height of left panel)
+  \path (0,0); \node[opacity=0] at (0,2.5) {$x$};
+  \path (0,-1.7);
+\end{tikzpicture}
+\end{minipage}
+\caption{Utledning av sentripetalakselerasjon.
+\textbf{Venstre:} To nærliggende posisjoner $P_1$ og $P_2$ på sirkelbanen adskilt med vinkelen $\Delta\theta$. Hastighetsvektorene $\vec{v}_1$ og $\vec{v}_2$ er tangenter til banen.
+\textbf{Høyre:} Hastighetstrekanten (vektorene lagt hale mot hale). De to trekantene er formlike med samme toppvinkel $\Delta\theta$ og forholdssidene $r$ og $v$, slik at $\Delta v/v = \Delta r/r$.}
+\label{fig:Sentripetalakselerasjon}
+\end{figure}
+Formlikheten mellom trekantene er altså illustrert i figur~\ref{fig:Sentripetalakselerasjon}. Ved å multiplisere med $v$ og dele på $\Delta t$ finner vi nå 
+
+\[
+    \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}
+    \]
+
+For å finne størrelsen på momentanakselerasjonen så må vi la \( \Delta t \to 0 \). Vi finner da 
+
+    \[
+    a_\perp = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}={v}\cdot \frac{v}{r}=\frac{v^2}{r},
+    \]
+hvor vi har brukt at $v=\Delta s/\Delta t$. Dette er formelen for sentripetalakselerasjon, som alltid peker mot sentrum av sirkelen og sørger for at objektet holdes i sirkelbanen.
+
 
 \defn{Sentripetalakselerasjon}{
     Matematisk kan sentripetalakselerasjonen uttrykkes som:
@@ -1251,33 +1373,7 @@ Sentripetalakselerasjonen peker alltid mot sentrum av sirkelen, selv om objektet
     \end{figure}
 
 
-\defn{Utledning av sentripetalakselerasjon}{
 
-    For et objekt som beveger seg i sirkel, endres retningen på hastighetsvektoren \( \vec{v} \), selv om størrelsen på \( v \) forblir konstant. Ser vi på to tidspunkt hvor hastigheten endrer seg fra \( \vec{v}_1 \) til \( \vec{v}_2 \), kan vi bruke forholdet mellom de formlike trekantene for \( \Delta \vec{v} \) og \( \Delta \vec{r} \), som gir oss:
-    \[
-    \frac{\Delta v}{v} = \frac{\Delta r}{r}.
-    \]
-    Der \( r \) er radiusen til sirkelen, og \( \Delta r \) er avstanden objektet har beveget seg langs sirkelen i løpet av et lite tidsintervall \( \Delta t \). 
-
-  \[
-    \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}
-    \]
-
-Vi lar \( \Delta t \to 0 \). Da vil \( \Delta r \to \Delta s \), så kan vi finne akselerasjonen ved å bruke grenseverdien når 
-
-    \[
-    a_\perp = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}={v}\cdot \frac{v}{r}=\frac{v^2}{r}
-    \]
-
-    Dette er formelen for sentripetalakselerasjon, som alltid peker mot sentrum av sirkelen og sørger for at objektet holdes i sirkelbanen.
-}
-
- \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Images/Kapittel2:Kinematikk/Sentripetalakselerasjon.png}
-    \caption{Utledning av sentripetalakselerasjon}
-    \label{fig:Sentripetalakselerasjon}
-    \end{figure}
     
 \newpage
 
@@ -1306,7 +1402,7 @@ Omløpstiden er nært knyttet til sentripetalakselerasjonen, som holder objektet
 }
 
 \oppgave{Sirkelbevegelse og omløpstid}{%
-Månens gjennomsnittlige avstand fra jorda er $r = 3.84 \cdot 10^8\,\textrm{m}$, og omløpstiden er $T = 27.3\,\textrm{dager}$.
+Månens gjennomsnittlige avstand fra jorda er $r = 3.84 \cdot 10^8\,\si{\metre}$, og omløpstiden er $T = 27.3\,\textrm{dager}$.
 \begin{enumerate}[a)]
     \item Gjør om omløpstiden til sekunder.
     \item Finn sentripetalakselerasjonen månen opplever ved hjelp av formelen $a_\perp = 4\pi^2 r / T^2$.

@@ -17,7 +17,7 @@ v = \frac{s}{t}.
 Her er $v$, $s$ og $t$ \emph{variabler} — altså symboler som kan ta ulike tallverdier. 
 
 Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent".
-\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = 5\ \textrm{km}$ på $t_1 = 20\ \textrm{min}$. Deretter skrur han opp tempo litt og løper han en strekning $s_2 = 4\ \textrm{km}$ på $t_2 = 18\ \textrm{min}$. Hva er gjennomsnittsfarten $\bar{v}$?
+\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper han en strekning $s_2 = \SI{4}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
 
 \paragraph{Løsning:} Gjennomsnittsfart $\bar{v}$ er også et begrep vi ikke har lært ennå, men det er rett fram, og de fleste kjenner det intuitivt igjen fra erfaring:
 \[\hat{v} = \frac{\text{total strekning}}{\text{total tid}}.\]
@@ -25,14 +25,14 @@ Vi må derfor finne total strekning og total tid før vi kan regne ut gjennomsni
 
 Først finner vi total strekning og total tid:
 \[
-s_{\text{total}} = s_1 + s_2 = 5\ \textrm{km} + 4\ \textrm{km} = 9\ \textrm{km},
+s_{\text{total}} = s_1 + s_2 = \SI{5}{\kilo\metre} + \SI{4}{\kilo\metre} = \SI{9}{\kilo\metre},
 \]
 \[
-t_{\text{total}} = t_1 + t_2 = 20\ \textrm{min} + 18\ \textrm{min} = 38\ \textrm{min}.
+t_{\text{total}} = t_1 + t_2 = \SI{20}{\minute} + \SI{18}{\minute} = \SI{38}{\minute}.
 \]
 Gjennomsnittsfarten er da:
 \[
-\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{9\ \textrm{km}}{38\ \textrm{min}} = \doubleunderline{0.237\ \textrm{km/min}} = 0.237\cdot\frac{1\,000\ \textrm{m}}{60\ \textrm{s}} = \doubleunderline{3.95\ \textrm{m/s}}.
+\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{\SI{9}{\kilo\metre}}{\SI{38}{\minute}} = \doubleunderline{\SI{0.237}{\kilo\metre\per\minute}} = 0.237\cdot\frac{\SI{1\,000}{\metre}}{\SI{60}{\second}} = \doubleunderline{\SI{3.95}{\metre\per\second}}.
 \]
 Greier du å gjøre dette om til km/t.
 
@@ -40,17 +40,17 @@ Greier du å gjøre dette om til km/t.
 Et annet eksempel kan være Newtons 2. lov, som gir sammenhengen mellom det vi kaller for kraft $F$, masse $m$ og akselerasjon $a$. 
 
 
-\exm{Løse for akselerasjon $a$}{Newtons 2. lov sier $F = m \cdot a$. En bil med masse $m = 1\,200\ \textrm{kg}$ utsettes for en kraft $F = 4\,800\ \textrm{N}$. Finn akselerasjonen $a$.
+\exm{Løse for akselerasjon $a$}{Newtons 2. lov sier $F = m \cdot a$. En bil med masse $m = \SI{1\,200}{\kilo\gram}$ utsettes for en kraft $F = \SI{4\,800}{\newton}$. Finn akselerasjonen $a$.
 
 \paragraph{Løsning:} Del begge sider på $m$:
 \[
-a = \frac{F}{m} = \frac{4\,800\ \textrm{N}}{1\,200\ \textrm{kg}} = \doubleunderline{4.0\ \textrm{m/s}^2}.
+a = \frac{F}{m} = \frac{\SI{4\,800}{\newton}}{\SI{1\,200}{\kilo\gram}} = \doubleunderline{\SI{4.0}{\metre\per\second\squared}}.
 \]
 }
 
 \paragraph{Python som kalkulator: } I dette faget er ikke Python obligatorisk på noe som helst vis, men dere kommer sikkert borti det i mange andre fag, så det er greit å bli vant med det først som sist. La oss starte med å se et eksempe hvor vi enkelt og greit bruker Python til å utføre noe vi kunne gjort på en gammeldags kalkulator. 
 \exm{Kinetisk energi}{%
-Beregn den kinetiske energien $E_K=\frac{1}{2}mv^2$ til en gjenstand med masse $m = 2.0\ \textrm{kg}$ som beveger seg med fart $v = 5.0\ \textrm{m/s}$.
+Beregn den kinetiske energien $E_K=\frac{1}{2}mv^2$ til en gjenstand med masse $m = \SI{2.0}{\kilo\gram}$ som beveger seg med fart $v = \SI{5.0}{\metre\per\second}$.
 \paragraph{Løsning:} Vi bruker Python som kalkulator og definerer variablene $m$ og $v$, som vist i koden under.
 }
 \begin{pythonkode}
@@ -73,7 +73,7 @@ Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \texttt{Python eks
 \oppgave{Algebra og Python}{%
 \begin{enumerate}[a)]
     \item Beregn $\dfrac{15 + 3^2}{6 - 2}$ for hånd, og sjekk svaret med Python.
-    \item Bruk Python til å beregne potensiell energi $E_p = m \cdot g \cdot h$ for $m = 5.0\ \textrm{kg}$, $g = 9.81\ \textrm{m/s}^2$ og $h = 10.0\ \textrm{m}$.
+    \item Bruk Python til å beregne potensiell energi $E_p = m \cdot g \cdot h$ for $m = \SI{5.0}{\kilo\gram}$, $g = \SI{9.81}{\metre\per\second\squared}$ og $h = \SI{10.0}{\metre}$.
 \end{enumerate}
 }
 \begin{mymerk*}{}
@@ -162,13 +162,13 @@ plt.show()
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{Images/Kapittel1:introduksjon/python_plot_02_bevegelse.pdf}
-\caption{Posisjon og fart som funksjon av tid for konstant akselerasjon $a=2.0\ \textrm{m/s}^2$, $v_0 = 0$.}
+\caption{Posisjon og fart som funksjon av tid for konstant akselerasjon $a=\SI{2.0}{\metre\per\second\squared}$, $v_0 = 0$.}
 \end{figure}
 
 \oppgave{Funksjoner og plotting}{%
 \begin{enumerate}[a)]
     \item Bruk Python til å plotte funksjonen $f(x) = 2x^2 - 3x + 1$ for $x \in [-2,\, 4]$.
-    \item Modifiser koden over slik at startfarten er $v_0 = 3.0\ \textrm{m/s}$. Hva forandrer seg i grafene?
+    \item Modifiser koden over slik at startfarten er $v_0 = \SI{3.0}{\metre\per\second}$. Hva forandrer seg i grafene?
 \end{enumerate}
 }
 
@@ -268,20 +268,20 @@ $90^\circ$ & $1$ & $0$ & — \\
 \label{tab:trig}
 \end{table}
 
-\exm{Trigonometri: stige mot vegg}{En stige av lengde $h = 5.0\ \textrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
+\exm{Trigonometri: stige mot vegg}{En stige av lengde $h = \SI{5.0}{\metre}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
 
 \paragraph{Løsning:}
 \begin{align*}
-x &= h\cos\theta = 5.0\cdot\cos 37^\circ \approx 5.0\cdot 0.799 \approx \doubleunderline{4.0\ \textrm{m}} \\
-y &= h\sin\theta = 5.0\cdot\sin 37^\circ \approx 5.0\cdot 0.602 \approx \doubleunderline{3.0\ \textrm{m}}
+x &= h\cos\theta = 5.0\cdot\cos 37^\circ \approx 5.0\cdot 0.799 \approx \doubleunderline{\SI{4.0}{\metre}} \\
+y &= h\sin\theta = 5.0\cdot\sin 37^\circ \approx 5.0\cdot 0.602 \approx \doubleunderline{\SI{3.0}{\metre}}
 \end{align*}
-Dette er nøyaktig et $(3,4,5)$-trekant skalert med $1\ \textrm{m}$.
+Dette er nøyaktig et $(3,4,5)$-trekant skalert med $\SI{1}{\metre}$.
 }
 
 \oppgave{Trigonometri}{%
 \begin{enumerate}[a)]
     \item Les av $\sin 30^\circ$, $\cos 45^\circ$ og $\tan 60^\circ$ fra Tabell~\ref{tab:trig}.
-    \item En trekant har hypotenus $c = 10\ \textrm{m}$ og vinkel $\theta = 53^\circ$. Finn lengden av den motstående kateten $b$ og den hosliggende kateten $a$.
+    \item En trekant har hypotenus $c = \SI{10}{\metre}$ og vinkel $\theta = 53^\circ$. Finn lengden av den motstående kateten $b$ og den hosliggende kateten $a$.
     \item Vis at $\sin^2 30^\circ + \cos^2 30^\circ = 1$.
     \item Hva blir $(\sin\theta+1)(\sin\theta-1)$? Hint: Bruk en av kvadratsetningene.
 \end{enumerate}
@@ -491,22 +491,22 @@ v_y(t) = v_{0y} + a_y t.
 
 
 \exm{Dekomponering av hastighet}{%
-En ball kastes med fart $v = 20\,\textrm{m/s}$ i en vinkel $\theta = 37°$ over horisonten
+En ball kastes med fart $v = \SI{20}{\metre\per\second}$ i en vinkel $\theta = 37°$ over horisonten
 ($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
 \textbf{a)} Finn komponentene $v_x$ og $v_y$.\\
-\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = 20\,\textrm{m/s}$.}
+\textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = \SI{20}{\metre\per\second}$.}
 
 \svar{%
 \textbf{a)} Vi bruker de trigonometriske relasjonene $v_x = v\cos\theta$ og $v_y = v\sin\theta$:
 \[
-v_x = 20\,\textrm{m/s}\cdot 0{,}80 = \doubleunderline{16\,\textrm{m/s}},
+v_x = \SI{20}{\metre\per\second}\cdot 0{,}80 = \doubleunderline{\SI{16}{\metre\per\second}},
 \qquad
-v_y = 20\,\textrm{m/s}\cdot 0{,}60 = \doubleunderline{12\,\textrm{m/s}}.
+v_y = \SI{20}{\metre\per\second}\cdot 0{,}60 = \doubleunderline{\SI{12}{\metre\per\second}}.
 \]
 \textbf{b)} Pythagoras bekrefter:
 \[
-\sqrt{v_x^2 + v_y^2} = \sqrt{(16\,\textrm{m/s})^2 + (12\,\textrm{m/s})^2}
-= \sqrt{256 + 144}\,\textrm{m/s} = \sqrt{400}\,\textrm{m/s} = \doubleunderline{20\,\textrm{m/s}}\;\checkmark
+\sqrt{v_x^2 + v_y^2} = \sqrt{(\SI{16}{\metre\per\second})^2 + (\SI{12}{\metre\per\second})^2}
+= \sqrt{256 + 144}\,\si{\metre\per\second} = \sqrt{400}\,\si{\metre\per\second} = \doubleunderline{\SI{20}{\metre\per\second}}\;\checkmark
 \]
 }
 
@@ -564,11 +564,11 @@ Vi har en vektor $\vec{A} = [3,\;4]$ med komponenter $A_x = 3$ og $A_y = 4$.\\
 }
 
 \oppgave{Dekomponering av vektorer}{%
-En ball kastes med startfart $v_0 = 20\,\textrm{m/s}$ i en vinkel $\theta = 30°$ over horisonten.
+En ball kastes med startfart $v_0 = \SI{20}{\metre\per\second}$ i en vinkel $\theta = 30°$ over horisonten.
 \begin{enumerate}[a)]
     \item Finn den horisontale starthastighetkomponenten $v_{0x}$.
     \item Finn den vertikale starthastighetkomponenten $v_{0y}$.
-    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = 20\,\textrm{m/s}$.
+    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = \SI{20}{\metre\per\second}$.
 \end{enumerate}
 }
 
@@ -630,9 +630,9 @@ Vinkel:  53.1 grader
 \begin{enumerate}[a)]
     \item Finn lengden til $\vec{v} = [5,\,12]$.
     \item Finn lengden til $\vec{u} = [-3,\,4]$.
-    \item En fugl flyr $6\,\textrm{km}$ østover og $8\,\textrm{km}$ nordover. Hva er luftlinjeavstanden, og hvilken vinkel fra østaksen flyr den?
+    \item En fugl flyr $\SI{6}{\kilo\metre}$ østover og $\SI{8}{\kilo\metre}$ nordover. Hva er luftlinjeavstanden, og hvilken vinkel fra østaksen flyr den?
     \item Finn vinkelen $\vec{u} = [1,\,\sqrt{3}]$ danner med positiv $x$-akse.
-    \item En kraft $\vec{F}$ har størrelse $F = 10\,\textrm{N}$ og danner vinkel $\theta = 40°$ med horisonten. Finn de horisontale og vertikale komponentene.
+    \item En kraft $\vec{F}$ har størrelse $F = \SI{10}{\newton}$ og danner vinkel $\theta = 40°$ med horisonten. Finn de horisontale og vertikale komponentene.
 \end{enumerate}
 }
 
@@ -907,7 +907,7 @@ Gitt $\vec{u} = [2,\,1]$ og $\vec{v} = [1,\,3]$.
 \oppgave{Trigonometri og vektorkomponenter}{%
 \begin{enumerate}[a)]
     \item En vektor $\vec{v}$ har størrelse $|\vec{v}| = 20$ og danner vinkel $\theta = 30^\circ$ med positiv $x$-akse. Finn komponentene $v_x$ og $v_y$.
-    \item En fugl flyr $10\ \textrm{km}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn de nord- og østkomponentene til forskyvningsvektoren. \textit{Hint:} Vinkelen er målt fra nordaksen, ikke fra østaksen.
+    \item En fugl flyr $\SI{10}{\kilo\metre}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn de nord- og østkomponentene til forskyvningsvektoren. \textit{Hint:} Vinkelen er målt fra nordaksen, ikke fra østaksen.
     \item Gitt $\vec{v} = [5,\,-12]$. Finn lengden $|\vec{v}|$ og vinkelen $\theta$ vektoren danner med positiv $x$-akse.
 \end{enumerate}
 }

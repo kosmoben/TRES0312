@@ -31,8 +31,8 @@ Det er spesielt det første temaet; mekanikk, som blir lagt vekt på. Ca. halvpa
 \section{Fysiske størrelser}
 Når vi anvender matematikk for å beskrive naturen, kommer vi frem til noe vi kan kalle \textit{fysiske størrelser}. La oss se litt på dette.
 
-En fysisk størrelse har et tall knyttet til seg, men også en énhet. Ta forelesers vekt og høyde som eksempel. Vi kan tenke oss at foreleser veier $m=75\,\textrm{kg}$ og har en høyde på $h=1.75\,\textrm{m}$. Både \textit{vekt} og \textit{høyde} er fysiske størrelser, og vi gir gjerne disse størrelsene en variabel som navn (i dette tilfellet $m$ for masse og $h$ for høyde). Tallet i hver av disse fysiske størrelsene indikerer noe om \textit{mengde} eller \textit{omfang}. La oss kalle det \textit{verdi}.  Tallet sier noe om verdi.
-Det er ikke tilstrekkelig å spesifisere verdien. For $m=75$ sier lite. 75 \textit{hva da}?? Vi må spesifiserer hva målestokken er. Dette kaller vi å spesifisere \textit{måleenhet}, også kalt bare \textit{enhet}. Alle objekter som har samme enhet kan sammenliknes. For eksempel kan jeg si at $h=1.74\,\textrm{m}$ er mindre enn høyden $H=1.84\,\textrm{m}$. Men jeg kan ikke si at $h=1.74\,\textrm{m}$ er mindre enn $m=75\,\textrm{kg}$. Hva i huleste skulle et slikt utsagn bety? Vi ser altså at i fysikken er både verdi og enhet viktig.
+En fysisk størrelse har et tall knyttet til seg, men også en énhet. Ta forelesers vekt og høyde som eksempel. Vi kan tenke oss at foreleser veier $m=\SI{75}{\kilo\gram}$ og har en høyde på $h=\SI{1.75}{\metre}$. Både \textit{vekt} og \textit{høyde} er fysiske størrelser, og vi gir gjerne disse størrelsene en variabel som navn (i dette tilfellet $m$ for masse og $h$ for høyde). Tallet i hver av disse fysiske størrelsene indikerer noe om \textit{mengde} eller \textit{omfang}. La oss kalle det \textit{verdi}.  Tallet sier noe om verdi.
+Det er ikke tilstrekkelig å spesifisere verdien. For $m=75$ sier lite. 75 \textit{hva da}?? Vi må spesifiserer hva målestokken er. Dette kaller vi å spesifisere \textit{måleenhet}, også kalt bare \textit{enhet}. Alle objekter som har samme enhet kan sammenliknes. For eksempel kan jeg si at $h=\SI{1.74}{\metre}$ er mindre enn høyden $H=\SI{1.84}{\metre}$. Men jeg kan ikke si at $h=\SI{1.74}{\metre}$ er mindre enn $m=\SI{75}{\kilo\gram}$. Hva i huleste skulle et slikt utsagn bety? Vi ser altså at i fysikken er både verdi og enhet viktig.
 
 \defnr{Fysisk størrelse}{fys-storrelse}{En \textit{fysisk størrelse} har både \textit{verdi} og \textit{enhet}:
 \begin{align*}
@@ -126,20 +126,20 @@ Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
 Grunnen til at det ikke finnes mer enn 7 enheter er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives ved å bruke kombinasjoner av andre, mer fundamentale enheter. La oss ta \textit{fart} som eksempel.
 \exm{Enhet for fart}{%
 Når vi skal gi et variabel-navn til \textit{fart} bruker vi ofte bokstaven $v$ (forkortelse for det engelske \textit{velocity}). La oss si at faren til en bil er
-\[v=50 \textrm{km}/\textrm{h}.\]
-Her ser vi at enheten for fart, nemlig $\textrm{km}/\textrm{h}$ kan skrives ved hjelp av enhetene for strekning (km) og tid (h, for engelske \textit{hour}\footnote{Både $t$ for \textit{time} og  $h$ for \textit{hour} er mye brukte forkortelser. Du står derfor fritt til å velge selv hvilken forkortelse du vil benytte.}). Vi trenger altså ikke en egen enhet for fart.
+\[v=\SI{50}{\kilo\metre\per\hour}.\]
+Her ser vi at enheten for fart, nemlig $\si{\kilo\metre\per\hour}$ kan skrives ved hjelp av enhetene for strekning (km) og tid (h, for engelske \textit{hour}\footnote{Både $t$ for \textit{time} og  $h$ for \textit{hour} er mye brukte forkortelser. Du står derfor fritt til å velge selv hvilken forkortelse du vil benytte.}). Vi trenger altså ikke en egen enhet for fart.
 }
 Her har vi, uten å si det, brukt sammenhengen $v=s/t$ for å finne enhetene for farten $v$. Det faktum at det finnes sammenhenger og lover mellom forskjellige deler av fysikken, medfører at vi kan regne på enheter, slik som vi regner med tall. Da betrakter vi enhetene som algebraiske størrelser som kan legges sammen, ganges og deles på samme måte som tall. Det er viktig å huske at alle ledd i et uttrykk må ha samme enhet. Her er noen eksempler.
 
 \exm{Sykkel på tog}{%
-I forbindelse med en filminnspilling kjører Tom Cruise en motorsykkel ombord et cruisskip. Det er generelt en veldig dårlig idé. Men han gjør det likevel, og crus-skipet har en fart $v_\textrm{skip}=30\textrm{km}/\textrm{t}$. Tom har en fart $v_\textrm{T}=70\textrm{km}/\textrm{t}$ relativ til båten. Både Tom Cruise og cruisskipet kjører rett mot ei kai. Hvor stor fart har Tom i forhold til kaia?
+I forbindelse med en filminnspilling kjører Tom Cruise en motorsykkel ombord et cruisskip. Det er generelt en veldig dårlig idé. Men han gjør det likevel, og crus-skipet har en fart $v_\textrm{skip}=\SI{30}{\kilo\metre\per\hour}$. Tom har en fart $v_\textrm{T}=\SI{70}{\kilo\metre\per\hour}$ relativ til båten. Både Tom Cruise og cruisskipet kjører rett mot ei kai. Hvor stor fart har Tom i forhold til kaia?
 
 \paragraph{Løsning:} For å finne ut dette kan vi legge sammen hastighetene.\\
 % \vspace{6em}\\
 % CHECK
 Når begge objektene beveger seg i nøyaktig samme retning kan vi legge sammen størrelsene.
 \begin{align*}
-    30\textrm{km/t} + 70\textrm{km/t} = \doubleunderline{100\,\textrm{km/t}}
+    \SI{30}{\kilo\metre\per\hour} + \SI{70}{\kilo\metre\per\hour} = \doubleunderline{\SI{100}{\kilo\metre\per\hour}}
 \end{align*}
 
 }
@@ -155,15 +155,15 @@ Pytagoras læresetning sier at i en rettinklet trekant er: \\
 \end{align*}
 4 km nord og 3 km vest gir derfor:
 \begin{align*}
-    \text{luftlinje} = \sqrt{(4\text{ km})^2 + (3\text{ km})^2} = \sqrt{(4^2 + 3^2)\text{km}^2}=\sqrt{(4^2 + 3^2)}\text{ km}=\doubleunderline{5\,\textrm{km}}
+    \text{luftlinje} = \sqrt{(\SI{4}{\kilo\metre})^2 + (\SI{3}{\kilo\metre})^2} = \sqrt{(4^2 + 3^2)\si{\kilo\metre}^2}=\sqrt{(4^2 + 3^2)}\si{\kilo\metre}=\doubleunderline{\SI{5}{\kilo\metre}}
 \end{align*}
 }
 
 
 \exm{Enhetsregning}{1) Regn ut hvor mange millimeter det er i 20 meter. \\
 
-\paragraph{Løsning: } For å regne ut dette benytter vi en dekadisk omskriving av meter (mer om dette senere). Merk at \[1\,\textrm{m}= 10^3\,\textrm{mm}.\] Dermed har vi
-\[20\textrm{m}=20\cdot 10^3\,\textrm{mm} = \doubleunderline{20\,000\,\textrm{mm}}.\]
+\paragraph{Løsning: } For å regne ut dette benytter vi en dekadisk omskriving av meter (mer om dette senere). Merk at \[\SI{1}{\metre}= 10^3\,\si{\milli\metre}.\] Dermed har vi
+\[\SI{20}{\metre}=20\cdot 10^3\,\si{\milli\metre} = \doubleunderline{\SI{20\,000}{\milli\metre}}.\]
 }
 Å kunne regne på enheter er en helt grunnleggende og veldig viktig egenskap når man holder på med fysikk. Det gir en god sjekk på om man har regnet riktig, og det hjelper en å se sammenhenger. 
 \begin{myoppsum*}{Enhetsregning}
@@ -174,11 +174,11 @@ Pytagoras læresetning sier at i en rettinklet trekant er: \\
 \end{myoppsum*}
 
 \oppgaver{Enhetsregning}{enhetsregning}{%
-En bil kjører med fart $v = 90\,\textrm{km/t}$.
+En bil kjører med fart $v = \SI{90}{\kilo\metre\per\hour}$.
 \begin{enumerate}[a)]
-    \item Gjør om farten til m/s. \textit{Hint: } $1\,\textrm{km} = 10^3\,\textrm{m}$ og $1\,\textrm{t} = 3600\,\textrm{s}$.
-    \item Kjøreturen varer i $t = 2.5\,\textrm{t}$. Finn tilbakelagt strekning i km og i m.
-    \item Tyngdeakselerasjonen på månen er $g_\textrm{M} = 1.62\,\textrm{m/s}^2$. Gjør om til $\textrm{km/min}^2$.
+    \item Gjør om farten til m/s. \textit{Hint: } $\SI{1}{\kilo\metre} = 10^3\,\si{\metre}$ og $\SI{1}{\hour} = \SI{3600}{\second}$.
+    \item Kjøreturen varer i $t = \SI{2.5}{\hour}$. Finn tilbakelagt strekning i km og i m.
+    \item Tyngdeakselerasjonen på månen er $g_\textrm{M} = \SI{1.62}{\metre\per\second\squared}$. Gjør om til $\si{\kilo\metre\per\minute\squared}$.
 \end{enumerate}
 }
 
@@ -208,10 +208,10 @@ Hvor mange signifikante siffer har tallene a) 165.00 b) 0.791400 og c) 14?
 \exm{Signifikante siffer i utregning}{Eline kjører 5.00 km på 6.0 minutter. Hvor fort kjører hun i gjennomsnitt?
 
 \paragraph{Løsning: } Gjennomsnittsfart betegnes $\bar{v}$ og er rett og slett tilbakelagt strekning delt på tilbakelagt tid:
-\[\bar{v}=\frac{5.00\textrm{km}}{6.0\textrm{min}}=0.83333...\textrm{km}/\textrm{min}=\doubleunderline{0.83\textrm{km}/\textrm{min}}\]
-Dette kunne vi også gjort om til km$/$h ved å huske at $\textrm{min}=h/60.$ Dersom vi setter inn dette får vi
+\[\bar{v}=\frac{\SI{5.00}{\kilo\metre}}{\SI{6.0}{\minute}}=0.83333...\si{\kilo\metre\per\minute}=\doubleunderline{\SI{0.83}{\kilo\metre\per\minute}}\]
+Dette kunne vi også gjort om til km$/$h ved å huske at $\si{\minute}=h/60.$ Dersom vi setter inn dette får vi
 
-\[ \bar{v}=0.8333...\frac{\textrm{km}}{\textrm{h}/60}=60\cdot 0.8333...\,\textrm{km}/\textrm{h}=\doubleunderline{50\,\textrm{km}/\textrm{h}}\]
+\[ \bar{v}=0.8333...\frac{\si{\kilo\metre}}{\si{\hour}/60}=60\cdot 0.8333...\,\si{\kilo\metre\per\hour}=\doubleunderline{\SI{50}{\kilo\metre\per\hour}}\]
 }
 
 \begin{mymerk*}{Avrunding}
@@ -305,9 +305,9 @@ $10^{-24}$& yocto & y & kvadrilliondel & 0.000000000000000000000001 \\
 
 \oppgaver{Dekadiske prefikser}{dekpref}{%
 \begin{enumerate}[a)]
-    \item Et batteri har kapasitet $4\,200\,\textrm{mAh}$ (milliamperetimer). Skriv dette som et tall i Ah og på standardform.
-    \item En avstand måles til $0.043\,\textrm{mm}$. Skriv dette i $\mu\textrm{m}$ (mikrometer) og i nm (nanometer).
-    \item Lyset bruker ca. $499\,\textrm{s}$ fra solen til jorda. Lyset har fart $c = 3.00 \cdot 10^8\,\textrm{m/s}$. Finn avstanden fra solen til jorda i km og skriv svaret på standardform.
+    \item Et batteri har kapasitet $\SI{4\,200}{\milli\ampere\hour}$ (milliamperetimer). Skriv dette som et tall i Ah og på standardform.
+    \item En avstand måles til $\SI{0.043}{\milli\metre}$. Skriv dette i $\mu\textrm{m}$ (mikrometer) og i nm (nanometer).
+    \item Lyset bruker ca. $\SI{499}{\second}$ fra solen til jorda. Lyset har fart $c = 3.00 \cdot 10^8\,\si{\metre\per\second}$. Finn avstanden fra solen til jorda i km og skriv svaret på standardform.
 \end{enumerate}
 }
 
@@ -346,6 +346,6 @@ Hvordan ser tallet $100.1$ ut når det er skrevet på standardform?
 }
 
 \oppgave{Signifikante siffer}{%
-Per kjøper 1523 skruer til garasjen sin. Hver skrue veier $10.1\,\textrm{g}$.
+Per kjøper 1523 skruer til garasjen sin. Hver skrue veier $\SI{10.1}{\gram}$.
 Hvor mange signifikante sifre kan vi angi totalvekten til skruene med?
 }
