@@ -1280,9 +1280,9 @@ Se for deg et legeme (f.eks. en bil) som holder konstant fart i sirkelbevegelse.
   \fill[defscol] (P2) circle (2.5pt);
   \node[defscol, above right=2pt] at (P2) {$P_2$};
 
-  % Chord Δr (P1 → P2, horizontal since symmetric about 90°)
+  % Chord Δs (P1 → P2, horizontal since symmetric about 90°)
   \draw[->, oppsumcol, thick, dashed] (P1) -- (P2)
-        node[midway, above=4pt] {$\Delta r$};
+        node[midway, below=5pt] {$\Delta s$};
 
   % Velocity v1 at P1 (tangent = 110° − 90° = 20°)
   \draw[->, very thick, defscol]
@@ -1338,7 +1338,7 @@ Se for deg et legeme (f.eks. en bil) som holder konstant fart i sirkelbevegelse.
 \end{minipage}
 \caption{Utledning av sentripetalakselerasjon.
 \textbf{Venstre:} To nærliggende posisjoner $P_1$ og $P_2$ på sirkelbanen adskilt med vinkelen $\Delta\theta$. Hastighetsvektorene $\vec{v}_1$ og $\vec{v}_2$ er tangenter til banen.
-\textbf{Høyre:} Hastighetstrekanten (vektorene lagt hale mot hale). De to trekantene er formlike med samme toppvinkel $\Delta\theta$ og forholdssidene $r$ og $v$, slik at $\Delta v/v = \Delta r/r$.}
+\textbf{Høyre:} Hastighetstrekanten (vektorene lagt hale mot hale). De to trekantene er formlike med samme toppvinkel $\Delta\theta$ og forholdssidene $r$ og $v$, slik at $\Delta v/v = \Delta s/r$.}
 \label{fig:Sentripetalakselerasjon}
 \end{figure}
 Formlikheten mellom trekantene er altså illustrert i figur~\ref{fig:Sentripetalakselerasjon}. Ved å multiplisere med $v$ og dele på $\Delta t$ finner vi nå 
@@ -1347,8 +1347,7 @@ Formlikheten mellom trekantene er altså illustrert i figur~\ref{fig:Sentripetal
     \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}
     \]
 
-For å finne størrelsen på momentanakselerasjonen så må vi la \( \Delta t \to 0 \). Vi finner da 
-
+For å finne størrelsen på momentanakselerasjonen så må vi la \( \Delta t \to 0 \). Vi ser da at $\Delta s$ blir mer og mer likt et lite buesegment, etterhvert som $\Delta t \to 0$. Dermed finner vi
     \[
     a_\perp = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{\Delta r \cdot v}{\Delta t \cdot r}={v}\cdot \frac{v}{r}=\frac{v^2}{r},
     \]
@@ -1356,49 +1355,79 @@ hvor vi har brukt at $v=\Delta s/\Delta t$. Dette er formelen for sentripetalaks
 
 
 \defn{Sentripetalakselerasjon}{
-    Matematisk kan sentripetalakselerasjonen uttrykkes som:
+    Sentripetalakselerasjonen er akselerasjonen inn mot sentrum i ren sirkelbevegelse med konstant fart. Uttrykket for størrelsen på denne akselerasjonen kan vises å være 
     \begin{align}
         a_\perp = \frac{v^2}{r}
     \end{align}
-    hvor \( a \) er akselerasjonen som virker innover mot sentrum av sirkelen, \( v \) er konstant banehastighet til objektet langs sirkelen (tangentiell hastighet), og \( r \) er radiusen til sirkelen. Denne formelen beskriver akselerasjonen som er nødvendig for å holde et objekt i jevn sirkelbevegelse.
+    hvor \( v \) er banehastigheten til objektet og \( r \) er radiusen til sirkelen. 
+}
+Sentripetalakselerasjonen peker alltid mot sentrum av sirkelen, selv om objektet hele tiden beveger seg langs kanten av sirkelen. Dette er en viktig idé å forstå når vi ser på bevegelse i sirkulære baner. Men... hva om bilen også øker farten sin langs sirkelbanen, og ikke bare endrer retning? I det tilfelel vil bilen både ha en akselerasjon inn mot sentrum (sentripetalakselerasjonen) og en akselerasjon i kjøreretningen (tangentialakselerasjonen). Den totale akselerasjonsvektoren kan da skrives som en sum av disse to komponentene:
+\[
+\vec{a} = \vec{a}_\perp + \vec{a}_\parallel,
+\]
+hvor \( \vec{a}_\perp \) er sentripetalakselerasjonen og \( \vec{a}_\parallel \) er tangentialakselerasjonen. I dette faget skal vi ikke se på slike tilfeller, men det er greit å ha sett sammenhengen. 
+
+
+\exm{Bil i rundkjøring}{%
+En bil kjører gjennom en rundkjøring med konstant fart $v = \SI{36}{\kilo\metre\per\hour}$ og radius $r = \SI{20}{\metre}$.
+Hva er sentripetalakselerasjonen til bilen?
 }
 
-Sentripetalakselerasjonen peker alltid mot sentrum av sirkelen, selv om objektet hele tiden beveger seg langs kanten av sirkelen. Dette er en viktig idé å forstå når vi ser på bevegelse i sirkulære baner.
+\svar{%
+\noindent
+Vi starter med å gjøre om farten til \si{\metre\per\second}:
+\[
+    v = \SI{36}{\kilo\metre\per\hour} = \SI{10}{\metre\per\second}
+\]
+Deretter bruker vi formelen for sentripetalakselerasjon:
+\[
+    a_\perp = \frac{v^2}{r} = \frac{(\SI{10}{\metre\per\second})^2}{\SI{20}{\metre}}
+    = \frac{\SI{100}{\metre\squared\per\second\squared}}{\SI{20}{\metre}}
+    = \doubleunderline{\SI{5}{\metre\per\second\squared}}
+\]
+Akselerasjonen peker hele tiden inn mot sentrum av rundkjøringen, selv om bilen beveger seg fremover.
+}
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.4\textwidth]{Images/Kapittel2:Kinematikk/Sentripetal1.png}
-    \caption{Bil svinger med sentripetalakselerasjon}
-    \label{fig:Sentripetal2}
-    \end{figure}
+\oppgave{Sykkel i sving}{%
+En syklist kjører gjennom en sirkulær sving med radius $r = \SI{12}{\metre}$ og konstant fart $v = \SI{5{,}4}{\kilo\metre\per\hour}$.
+\begin{enumerate}[a)]
+    \item Gjør om farten til \si{\metre\per\second}.
+    \item Finn sentripetalakselerasjonen til syklisten.
+    \item Hva skjer med sentripetalakselerasjonen om syklisten dobler farten? Forklar svaret.
+\end{enumerate}
+}
 
-
-
-    
-\newpage
 
 \subsection{Omløpstid}
-
-\textit{Omløpstid}, ofte kalt periodetid, refererer til den tiden det tar for et objekt å fullføre én fullstendig runde rundt en sirkel. Dette gjelder for objekter som beveger seg i sirkulære baner, som planeter rundt solen eller en satellitt i bane rundt jorden. Omløpstiden, vanligvis symbolisert som
-\( T \), avhenger både av objektets hastighet og radiusen til sirkelen.
-
-Omløpstiden er nært knyttet til sentripetalakselerasjonen, som holder objektet i sirkulær bevegelse. Selv om objektet har konstant fart, vil det oppleve akselerasjon fordi hastighetsretningen hele tiden endres. Jo kortere omløpstid, desto raskere må objektet bevege seg langs sirkelen, noe som fører til en høyere sentripetalakselerasjon.
-
-
-\defn{Sentripetalakselerasjon ved omløpstid}{
-    For et objekt som beveger seg i en sirkel med radius \( r \), kan sentripetalakselerasjonen uttrykkes som:
+Når vi snakker om legemer som har periodisk bevegelse, slik som en satelitt rundt jorda, en planet eller en drill i en borerigg, så er det praktisk å definere begrepet \textit{periode}, $T$, også kalt \textit{omløpstid}. Dette er rett og slett tiden brukt på ett omløp (én runde), Det viser seg at vi nå kan skrive om uttrykket for sentripetalakselerasjonen ved hjelp av omløpstiden. Farten i konstant sirkelbevegelse må nesten kunne uttrykkes som avstanden rundt sirkelen (omkretsen) delt på tiden det tar å fullføre ett omløp, altså $T$. Vi får
+\[
+v = \frac{2\pi r}{T}.
+\]
+Ved å sette dette uttrykket for $v$ inn i formelen for sentripetalakselerasjon, får vi
     \begin{align}
-        a_\perp = \frac{4\pi^2 r}{T^2}.
+        \colorbox{black!7}{$\displaystyle a_\perp = \dfrac{4\pi^2 r}{T^2}$}
     \end{align}
-    Her er \( r \) radiusen til sirkelen, og \( T \) er omløpstiden. Denne formelen viser at akselerasjonen er omvendt proporsjonal med kvadratet av omløpstiden.
+
+
+\exm{Jorda rundt sola}{%
+Jorda beveger seg i en tilnærmet sirkulær bane rundt sola med gjennomsnittlig radius $r = \SI{1{,}496e11}{\metre}$ og omløpstid $T = \SI{365{,}25}{\day}$.
+Hva er den gjennomsnittlige sentripetalakselerasjonen jorda opplever?
 }
 
-\tips{Viktige forhold ved sentripetalakselerasjon}{
-    Husk at sentripetalakselerasjonen \( a_\perp \) kan uttrykkes på to måter:
-    \[
-    a_\perp = \frac{v^2}{r} = \frac{4 \pi^2 r}{T^2}.
-    \]
-    Dette viser at akselerasjonen er proporsjonal med kvadratet av hastigheten \( v \) og omvendt proporsjonal med kvadratet av omløpstiden \( T \). Dette er et av de viktigste forholdene å huske på når du jobber med sirkulær bevegelse.
+\svar{%
+\noindent
+Vi starter med å gjøre om omløpstiden til sekunder:
+\[
+    T = \SI{365{,}25}{\day} \cdot \frac{\SI{24}{\hour}}{\SI{1}{\day}} \cdot \frac{\SI{3600}{\second}}{\SI{1}{\hour}}
+    = \SI{3{,}156e7}{\second}
+\]
+Deretter setter vi inn i formelen for sentripetalakselerasjon:
+\[
+    a_\perp = \frac{4\pi^2 r}{T^2}
+    = \frac{4\pi^2 \cdot \SI{1{,}496e11}{\metre}}{\left(\SI{3{,}156e7}{\second}\right)^2}
+    = \doubleunderline{\SI{5{,}93e-3}{\metre\per\second\squared}}
+\]
+Dette er omtrent $6{,}1\cdot10^{-3}$ ganger tyngdeakselerasjonen $g$. Selv om akselerasjonen er svært liten, er det nok til å holde jorda i bane rundt sola — fordi tyngdekraften virker over en enorm avstand.
 }
 
 \oppgave{Sirkelbevegelse og omløpstid}{%
