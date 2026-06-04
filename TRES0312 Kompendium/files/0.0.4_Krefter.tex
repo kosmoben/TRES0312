@@ -1,76 +1,1042 @@
 % !TEX root = ../main.tex
 \chapter{Dynamikk}
-\intro{Kan godt inneholde kapittel 2 og 13}
-
+\chaptersubtitle{— årsaken til bevegelse}
+\intro{Så langt har vi tatt bevegelse for gitt, og studert hvordan legemer beveger seg. Vi har ikke spurt oss hvorfor de beveger seg, eller hva som er årsaken til bevegelsen. I dette kapitlet skal vi jobbe med den \textit{mekaniske årsaken til bevegelse.} Da blir begrep som \textit{bevegelsesmengde} og ikke minst \textit{kraft} viktige.}
 \spm{}{%
-\item Hva er en kraft?
-\item Hva er bevegelsesmengde?
+\item ``May the force be with you!´´ Takk, men... hva er egentlig en kraft (``force'' på engelsk)?
+\item Hvorfor er det verre å krasje med en buss som kjører i 5 km/t enn en flue som flyr i 5 km/t?
+}
+\section{Bevegelsesmengde}
+Når man gjennom middelalderen studerte bevegelse, kom man fram til at produktet av legemets masse og dets fart er en viktig størrelse.
+\[p = m \cdot v\]
+I dag kaller vi denne størrelsen for \textit{bevegelsesmengde}, og det er rett og slett det det er: et mål på mengden bevegelse. Begrepet tar sikte på å forklare to aspekter ved bevegelse. For det første så er det mye bevegelse når farten er stor. For det andre er det mer bevegelse når massen er stor. En bøffel som løper på savannen har bevegelse. Men 100 bøfler som løper i samme retning utgjør mer bevegelse. Og intuisjonen viser seg å være riktig: Det er hensiktsmessig å ta med både masse og fart i definisjonen av det vi skal kalle bevegelsesmengde.
+
+I tillegg har bevegelsen en retning, så i den formelle definisjonen av bevegelsesmengde er det viktig å huske på at det er en vektor, og ikke en skalar størrelse. Det betyr at bevegelsesmengde har både størrelse og retning.
+
+\defn{Bevegelsesmengde}{
+Bevegelsesmengde, $p$, er definert som produktet av et legemes masse, $m$, og dets hastighet, $v$:
+\[\vec{p} = m \cdot \vec{v}\]
+Enheten for bevegelsesmengde er kilogrammeter per sekund (kg·m/s).
+}
+Bevegelsesmengde er et viktig konsept i fysikken, spesielt i mekanikk og partikkelfysikk, fordi det er bevart i isolerte systemer. Vi kommer tilbake til dette om litt, etter at vi har definert krefter ordentlig.
+
+
+\exm{Ishockey-puck}{%
+En ishockey-puck har masse $m = \SI{170}{\gram}$ og slås slik at den oppnår farten $v = \SI{40}{\metre\per\second}$.
+Hva er bevegelsesmengden til pucken?
 }
 
-\newpage
-\section{Krefter}
-Krefter i fysikken handler rett og slett om \textit{vekselvirkning mellom legemer}. Med legemer mener vi da bestanddeler i naturen, slik som trær, mennesker, kvarker, ostehøvler, hår eller maurslukere, for å nevne noen vilkårlige eksempler. Videre i dette kapitlet skal vi studere krefter slik det defineres i fysikken. Den naturlige matematiske språkdrakten for å beskrive vekselvirkning mellom legemer er vektorer. Grunnen er at en mekanisk påkjenning vil ha både størrelse og retning.
+\svar{%
+\noindent
+Vi gjør om massen til kilogram:
+\[
+    m = \SI{170}{\gram} = \SI{0{,}170}{\kilo\gram}
+\]
+Deretter bruker vi definisjonen av bevegelsesmengde:
+\[
+    p = m \cdot v = \SI{0{,}170}{\kilo\gram} \cdot \SI{40}{\metre\per\second}
+    = \doubleunderline{\SI{6{,}8}{\kilo\gram\metre\per\second}}
+\]
+}
 
-Matematisk sett så beskrives altså krefter som vektorer. Derfor bruker vi pil over symbolet for kraft; $\vec{F},$ mens sylbolet \textit{uten} vektortegn, altså i dette tilfellet $F$, betegner størrelsen på kraften. Merk at grunnen til at vi ofte bruker bokstaven $F$ når vi prater om en kraft generelt sett er at kraft på engelsk heter \textit{force.}
-
-La oss starte med Newton's tre kraftlover, som vi godt kan ta som selve definisjonen av hva vi mener med krefter i fysikken.
-\begin{enumerate}
-\item \textbf{Newtons første lov:} Dersom det ikke virker noen krefter på et legeme vil legemet forbli i ro eller fortsette med konstant fart.
-\begin{align}
-\Sigma\vec{F} = 0
-\end{align}
-\item \textbf{Newtons andre lov:} Dersom et legeme blir påvirket av én eller flere krefter vil legemet akselerere i retning av  resultant-kraften $\sum\vec{F};$
-\begin{align}
-\Sigma\vec{F} = m \cdot\vec{a}.
-\end{align}
-Her ser vi også at akselerasjonen $\vec{a}$ er en vektor, mens massen $m$ er en skalar størrelse.
-\item \textbf{Newtons tredje lov:} I og med at krefter handler om \textit{vekselvirkning} mellom legemer, så optrer de \textit{alltid i par}. Mer konkret så er det slik at til enhver kraft $F$ svarer en \textit{motkraft} $F^\prime$. Disse kreftene vil være like store men motsatt rettet:
-
-\begin{align}
-\vec{F}=-\vec{F}^\prime.
-\end{align}
-Her brukes $(^\prime)$ bare for å signalisere at det er motkraften til $F$. Samme symbol brukes også for den deriverte, men i dette tilfelle har det ikke med derivasjon å gjøre.
+\oppgave{Geværkule og bil}{%
+En typisk geværkule har masse $m_k = \SI{10}{\gram}$ og forlater løpet med fart $v_k = \SI{900}{\metre\per\second}$.
+En bil har masse $m_b = \SI{1500}{\kilo\gram}$.
+\begin{enumerate}[a)]
+    \item Finn bevegelsesmengden til geværkula.
+    \item Hvor fort må bilen kjøre for å ha nøyaktig samme bevegelsesmengde som kula?
+          Gi svaret i både \si{\metre\per\second} og \si{\kilo\metre\per\hour}.
+    \item Hva forteller dette oss om forholdet mellom masse og fart i bevegelsesmengde?
 \end{enumerate}
-Disse tre lovene danner grunnlaget for kraftlæren slik vi fremstiller den i ingeniørfysikken.
+}
 
-\paragraph{Enheter:} Sånn ellers kan vi merke oss at enheten til kraft er Newton (N). Fra Newtons andre lov ser vi da at 
-\[\textrm{N}=\textrm{kg}\cdot\textrm{m}/\textrm{s}^2\]
+\section{Newtons lover og kraft-begrepet}
+Se for deg en ishockey-puck ute på isen. Hva skal til for å endre bevegelsen til pucken? Jo, da må pucken interagere med et annet legeme. Så langt har vi brukt begrep som \textit{legeme} og \textit{objekt} om hverandre. La oss være litt mer presise:
+\defn{Legeme}{%
+Et legeme er et objekt med masse og posisjon. Massen $m$ måles i kg (kilogram), og posisjonen $\vec{r}$ måles i meter (m).
+}
+Dette kan være alt fra en liten partikkel til en stor planet. Alle legemer kan derfor erverve bevegelsesmengde, så lenge de kan interagere med andre legemer. Legemer er brikkene i spillet vi kaller \textit{dynamikk}. Dette spillet har videre noen regler for hvordan brikkene, altså legemene, kan interagere. Interaksjon mellom legemer kalles i fysikken for \text{krefter}. Vi ser iat \textit{krefter} er \textit{vekselvirkning mellom legemer}. Og som i all interaksjon så er den ikke ensidig. Dersom legeme A virker på legeme B, så virker legeme B på legeme A. Det som kanskje ikke er like opplagt, er at legemene virker like mye på hverandre. Det vil si at kraften som legeme A utøver på legeme B, er like stor som kraften som legeme B utøver på legeme A, bare i motsatt retning. Dette kalles Newtons tredje lov, og vi skal tenke på den som en av tre definisjoner som beskriver det vi kaller \textit{krefter} i fysikken.
+
+\defn{Kraft som vekselvirkning}{%
+En kraft er en vekselvirkning mellom legemer. Krefter opptrer derfor alltid i par, slik at dersom legeme $A$ virker på legeme $B$ med en kraft $\vec{F}$, så virker legeme $B$ på legeme $A$ med en kraft $\vec{F}^\prime$. Videre er disse to kreftene like store, men motsatt rettet;
+\[\vec{F}=-\vec{F}^\prime\qquad \textbf{(Newtons 3. lov)}.\]
+Enheten for kraft er Newton (N), til ære for Isaac Newton, som var den første til å formulere en systematisk teori for krefter og bevegelse.
+}
+
+[CHECK: Insert bilde av kraft og motkraft på to legemer]
+
+Videre kan vi spørre hva som skjer når legemer vekselvirker, altså når det virker krefter mellom legemene. Pucken i interaksjon med hockeykøllen er et eksempel, og her ser vi tydelig hva som kan skje: pucken på isen får sin bevegelse endret; altså endret bevegelsesmengde. La oss bruke begrepet bevegelsesmengde for å beskrive denne endringen. La oss si at pucken først hadde en bevegelsesmengde
+\(\vec{p}_1=m\vec{v}_1\). Så dytter du den med hockey-køllen en tid $\Delta t$, slik at pucken endrer retning og fart. Da virker det krefter mellom hockeykøllen og pucken i dette tidsrommet. Etter interaksjonen har pucken bevegelsesmengde \(\vec{p}_2=m\vec{v}_2\). Det er ikke sikkert du dytter like hardt på pucken hele tiden gjennom interaksjonen, og det begrepet som viser seg å ha størst nytte er derfor endringen av bevegelsesmengde \textit{per tid}. Først finner vi at  $\Delta \vec{p}$:
+\[\Delta \vec{p} = \vec{p}_2 - \vec{p}_1=m(\vec{v}_2 - \vec{v}_1)=m\Delta\vec{v}.\]
+Gjennomsnittsendrignen \textit{per tid} må derfor være 
+\[\frac{\Delta \vec{p}}{\Delta t} = m\frac{\Delta\vec{v}}{\Delta t}=m\vec{a}.\]
+Denne endringen skyldes vekselvirkning mellom legemene, og vi kaller det \textit{kraft};
+\[\vec{F}=\frac{\Delta \vec{p}}{\Delta t}= m\vec{a}.\]
+Kraft som årsak til hastighetsendring er oppsumert i det som er kjent som Newtons 2. lov.
+\defn{Kraft som endring av bevegelse}{%}
+Dersom et legeme blir påvirket av én eller flere krefter vil legemet akselerere i retning av  resultant-kraften $\sum\vec{F};$
+\begin{align}
+\Sigma\vec{F} = m \cdot\vec{a}\qquad \textbf{(Newtons 2. lov)}.
+\end{align}
+Fra denne sammenhengen ser vi at enheten for kraft, Newton (N) kan uttrykkes som \[\textrm{N}=\textrm{kg}\cdot\frac{\textrm{m}}{\textrm{s}^2}\]
+}
+Matematisk sett så beskrives altså krefter som vektorer. Derfor bruker vi pil over symbolet for kraft; $\vec{F},$ mens sylbolet \textit{uten} vektortegn, altså i dette tilfellet $F$, betegner størrelsen på kraften.
+
+Tilslutt er det verdt å skrive ned en lovmessighet som gjelder et legeme hvor summen av krefter som virker på legemet er null. Et eksempel kan være en stige mot en vegg, eller en peson som sitter og ser ut vinduet på et tog som suser avsted med konstant fart. Summen av påvirkning på stigen er slik at stigen står i ro. Personen i toget påvirkes også av krefter, men på en slik måte at det ikke er noen hastigehtsendring. Men går det an å ha akselerasjon dersom $\sum\vec{F}=0$? Vel, fra Newtons 2. lov ser vi at dersom $\sum\vec{F}=0$ så må vi enten ha $m\to 0$ eller $\vec{a}\to 0$. Så dersom vi krever $\vec{a}\neq 0$ så står vi igjen med $m\to 0$. Kan det hende at massen forsvinner når kreftene forsvinner? 
+
+Hvordan sammenhengen mellom bevegelse og vekselvirkning egentlig er, tok det lang tid å foredle. Aristoteles trodde for eksempel at et legeme hadde en slags indre drivkraft. En stein som kastes og forlater hånden ville derfor fortsette i en rett linje oppover, før den plutselig falt mot bakken. Legemer hadde altså en iboende slags kraft. Det var midt imot slikt gammelt tankegods at Newton formulerte sine lover. Nei, sa Newton, det er ikke en iboende kraft i materie, som får de til å ha en bevegelse. Snarere er det slik at alle legemer vil beholde den bevegelsen de har såfremt det virker ytre krefter som forstyrrer denne bevegelsen. Legemers evne til å beholde bevegelsen sin, kaller vi \textit{treghet}. Og dette er det vi i dagligtale kaller \textit{masse}. Newton sier altså at $m\to0$ ikke er en gyldig løsning. Legemer beholder sin treghet, eller masse. La oss formulere dette som en egen lov.
+
+\defn{Krefter og treghet}{%
+Alle legemer har en iboende treghet, kalt \textbf{masse}, som gjør at bevegelsen beholdes så lenge det ikke virker krefter på legemet:
+\begin{align}
+\Sigma\vec{F} = 0\Leftrightarrow v=\text{konst.}\qquad \textbf{(Newtons 1. lov)}.
+\end{align}
+Det er altså ikke bevegelse som må ha en årsak, men snarere \textit{endring i bevegelse} som må forklares med en årsak.}
 
 
 
-\subsection{Krefter i dagliglivet}
+
+\section{Krefter i dagliglivet}
 I dette avsnittet viser vi noen eksempler på krefter som du møter i hverdagen.
+\tanke{}{%
+Hvordan måler vi krefter?}
+For å måle og sammenlikne krefter med hverandre bruker vi noe som kalles et \textit{Newtonmeter}. Det er rett og slett en fjær som presses sammen i et rør. Jo mer den presses sammen, jo større er krafta som trykker på fjæra. Så... la oss starte med å studere nettopp kraften fra en spiralfjær.
 
-\subsubsection{Tyngdekraft}
-Tyngdekraften, \textit{G}, er kraften som drar deg ned mot jorden. Jorden har en typisk tyngdeakselerasjon på 9.81 $\frac{\textrm{m}}{\textrm{s}^2}$. På månen er den 0.17 $\frac{\textrm{m}}{\textrm{s}^2}$. Denne akselerasjonen sier noe om hvor stor kraft du blir dratt ned med. Den blir skrevet som \textit{G}.
-\[G=m\cdot g\]
+\subsection{Kraft fra spiralfjær}
+Tenk på en spiralfjær. Når den er uspennt, hviler den i sin naturlige lengde — vi kaller dette \textit{likevektsposisjonen}. Presser du fjæra sammen (eller drar den ut), vil den forsøke å sprette tilbake. Jo mer du presser, jo sterkere er kraften som prøver å rette den ut igjen.
+
+La $\vec{x}$ betegne forflytningen til den ene enden av fjæra fra likevektsposisjonen. Da er fjærkraften gitt ved Hookes lov:
+
+\defn{Hookes lov}{%
+Kraften fra en fjær på det den er festet til er proporsjonal med avviket $\vec{x}$ fra likevektsposisjonen:
+\[
+    \vec{F} = -k\vec{x}
+\]
+Her er $k > 0$ \textit{fjærkonstanten} (enhet: \si{\newton\per\metre}), og $\vec{x}$ er forflytningen fra likevekt. Minustegnet viser at kraften alltid peker \textit{mot} likevekt — uansett om fjæra er presset sammen eller strukket ut.
+}
+
+\noindent
+\begin{minipage}[t]{0.50\linewidth}
+\vspace{0pt}
+Figur~\ref{fig:hooke} viser en fjær som er presset sammen. Vi definerer positiv $x$-retning mot høyre. Fjæra presses slik at avviket fra likevekt er $\vec{x}$ (peker mot venstre, altså $x < 0$). Da er fjærkraften
+\[
+    \vec{F} = -k\vec{x},
+\]
+som peker mot høyre — tilbake mot likevekt. Stivheten til fjæra bestemmes av fjærkonstanten $k$: en stiv fjær (stor $k$) gir stor kraft selv ved lite avvik, mens en myk fjær (liten $k$) gir liten kraft.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small, scale=1.0]
+  % Wall
+  \fill[black!15] (-0.35,-0.85) rectangle (0,0.85);
+  \draw[very thick] (0,-0.85) -- (0,0.85);
+  \foreach \y in {-0.70,-0.45,-0.20,0.05,0.30,0.55,0.70} {
+    \draw[black!40, thin] (0,\y) -- (-0.28,\y+0.22);
+  }
+  % Spring (compressed zigzag, x=0 to x=2.6)
+  \draw[line width=1.2pt, headCol!70!black]
+    (0,0)
+    -- (0.20, 0)
+    -- (0.35, 0.38) -- (0.55,-0.38)
+    -- (0.75, 0.38) -- (0.95,-0.38)
+    -- (1.15, 0.38) -- (1.35,-0.38)
+    -- (1.55, 0.38) -- (1.75,-0.38)
+    -- (1.95, 0.38) -- (2.15,-0.38)
+    -- (2.35, 0.38) -- (2.50, 0)
+    -- (2.70, 0);
+  % Block
+  \fill[headCol!18] (2.70,-0.45) rectangle (3.40,0.45);
+  \draw[headCol!65!black, thick] (2.70,-0.45) rectangle (3.40,0.45);
+  \node at (3.05, 0) {$m$};
+  % Equilibrium dashed line
+  \draw[dashed, black!50, semithick] (4.10,-0.75) -- (4.10,0.75);
+  \node[black!55, font=\scriptsize, above] at (4.10,0.75) {likevekt};
+  % x arrow: from current block pos to equilibrium (x < 0, arrow points left)
+  \draw[-{Stealth[length=7pt,width=5pt]}, black!65, semithick]
+    (4.10,-0.68) -- (3.40,-0.68);
+  \node[black!65, font=\scriptsize, below=2pt] at (3.75,-0.68) {$\vec{x}$};
+  % F arrow: restoring force points right
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (3.40,0) -- (4.55,0);
+  \node[right=3pt, defscol, font=\normalsize\bfseries] at (4.55,0) {$\vec{F}$};
+  % Floor
+  \draw[black!30, thin] (-0.35,-0.88) -- (5.0,-0.88);
+\end{tikzpicture}
+\captionof{figure}{Fjær trykket sammen. Avviket $\vec{x}$ peker mot venstre (fra likevekt til klossen), og fjærkraften $\vec{F}=-k\vec{x}$ peker mot høyre — tilbake mot likevekt.}
+\label{fig:hooke}
+\end{minipage}
+
+\medskip
+
+\exm{Komprimert fjær}{%
+En spiralfjær har fjærkonstant $k = \SI{250}{\newton\per\metre}$. Den trykkes \SI{6{,}0}{\centi\metre} sammen fra likevektsposisjonen.
+Hva er størrelsen på fjærkraften?
+}
+
+\svar{%
+\noindent
+Avviket fra likevekt er $x = \SI{6{,}0}{\centi\metre} = \SI{0{,}060}{\metre}$.
+Hookes lov gir størrelsen på kraften:
+\[
+    F = k \cdot |x| = \SI{250}{\newton\per\metre} \cdot \SI{0{,}060}{\metre}
+    = \doubleunderline{\SI{15}{\newton}}
+\]
+Kraften peker vekk fra veggen — tilbake mot likevektsposisjonen.
+}
+
+\oppgave{Finn fjærkonstanten}{%
+Du fester et lodd til en vertikal fjær og måler at fjæra strekkes \SI{12}{\centi\metre} når loddet har masse $m = \SI{250}{\gram}$.
+\begin{enumerate}[a)]
+    \item Hva er fjærkonstanten $k$? (Hint: når fjæra er i ro, er fjærkraften lik tyngdekraften på loddet.)
+    \item Hvor mye strekkes fjæra om du bytter til et lodd med masse $m = \SI{400}{\gram}$?
+\end{enumerate}
+}
+
+\subsection{Tyngdekraft}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Tyngdekraften $\vec{G}$ er kraften jorda trekker et legeme mot sitt sentrum med. Størrelsen avhenger av legemets masse $m$ og hvor langt unna jordas sentrum vi er. Men på jordoverflaten viser det seg at tyngdekraften er 
+\[
+    \vec{G} = m\vec{\mathrm{g}},
+\]
+hvor $\mathrm{g}=\approx \SI{9{,}81}{\metre\per\second\squared}$. Vi ser altså at tyngdekraften er proporsjonal med massen $m$. Dette er spesielt. For se nå for deg et legeme som faller mot jorda, kun under påvirkning av tyngdekraften. Da gir Newtons andre lov at
+\begin{align*}
+\sum F=ma\quad\rightarrow m\text{g}=ma\\
+a=\text{g}=\SI{9{,}81}{\metre\per\second\squared}.
+\end{align*}
+Tyngdekraften trekker altså alle legemer mot bakken med samme akselerasjon. Dette kalles fritt fall.
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+    \includegraphics[width=4.8cm]{jente_tyngdekraft}%
+  };
+  \begin{scope}[x={(image.south east)}, y={(image.north west)}]
+    \draw[-{Stealth[length=14pt, width=9pt]}, line width=3.5pt, defscol]
+      (0.50, 0.345) -- (0.50, 0.05);
+    \node[right=8pt, defscol, font=\normalsize\bfseries,
+          fill=white, draw=defscol, line width=0.4pt,
+          inner sep=3pt, rounded corners=1pt]
+      at (0.50, 0.19) {$\vec{G} = m\vec{\mathrm{g}}$};
+    \fill[defscol] (0.50, 0.345) circle (3pt);
+  \end{scope}
+\end{tikzpicture}
+\captionof{figure}{Sofie påvirkes av tyngdekraften $\vec{G}=m\vec{\mathrm{g}}$ ned mot jordas sentrum.}
+\label{fig:tyngdekraft}
+\end{minipage}
+
+\medskip
+På overflaten av månen ville tyngdens akselerasjon vært en annen. Der har vi nemlig $\mathrm{g}_\text{måne} \approx \SI{1{,}62}{\metre\per\second\squared}$ — omtrent $\frac{1}{6}$ av jordas. Merk at \textit{massen} $m$ er den samme uansett hvor du befinner deg, mens \textit{tyngdekraften} $G$ varierer med stedet.
+\exm{Tyngdekraft på jordoverflaten}{%
+Sofie har masse $m = \SI{60}{\kilo\gram}$. Hva er tyngdekraften som virker på henne på jordoverflaten?
+}
+
+\svar{%
+\noindent
+Vi bruker definisjonen av tyngdekraft med $\mathrm{g} = \SI{9{,}81}{\metre\per\second\squared}$:
+\[
+    G = m \cdot \mathrm{g} = \SI{60}{\kilo\gram} \cdot \SI{9{,}81}{\metre\per\second\squared}
+    = \doubleunderline{\SI{588{,}6}{\newton}}
+\]
+}
+
+\oppgave{Tyngdekraft på jord og måne}{%
+Ola har masse $m = \SI{75}{\kilo\gram}$.
+\begin{enumerate}[a)]
+    \item Finn tyngdekraften på Ola på jordoverflaten ($\mathrm{g} = \SI{9{,}81}{\metre\per\second\squared}$).
+    \item Finn tyngdekraften på Ola på månens overflate ($\mathrm{g}_\text{måne} = \SI{1{,}62}{\metre\per\second\squared}$).
+    \item Hva er Olas masse på månen? Forklar svaret.
+\end{enumerate}
+}
+\oppgave{Fritt fall}{%
+En hammer og en fjær slippes samtidig fra samme høyde.
+\begin{enumerate}[a)]
+    \item Hva tror du skjer — hvilket objekt når bakken først?
+    \item Hva skjer om vi pumper vekk all lufta i rommet? Bruk det du har lært om tyngdekraft til å forklare svaret.
+\end{enumerate}
+}
+\subsection{Underlagskrefter}
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Når et objekt står på et underlag så virker det krefter fra underlaget, som sørger for at objektet ikke faller gjennom. Vi dekomponerer gjerne slike \textit{underlagskrefter} $\vec{U}$ i to deler: normalkraft ($\vec{N}$) og friksjonskraft ($\vec{R}$), slik at
+\[\vec{U}=\vec{N}+\vec{R}.\]
+Normalkraften $\vec{N}$ virker \textit{vinkelrett} på underlaget, mens friksjonskraften $\vec{R}$ virker \textit{parallelt} med underlaget. Figur~\ref{fig:underlagskrefter} viser en fot som står skrått på bakken — underlagskraften $\vec{U}$ kan da dekomponeres i begge disse retningene.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+    \includegraphics[width=5.6cm]{fot_underlag}%
+  };
+  \begin{scope}[x={(image.south east)}, y={(image.north west)}]
+    % Contact point: toe at floor level
+    % data coords x=3.32/5=0.664, y=(0-(-0.35))/4.15=0.084
+    \coordinate (P) at (0.664, 0.084);
+    % N: perpendicular to floor (vertical, upward)
+    \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+      (P) -- ($(P)+(0,0.38)$);
+    \node[right=5pt, defscol, font=\small\bfseries,
+          fill=white, draw=defscol, line width=0.3pt,
+          inner sep=2pt, rounded corners=1pt]
+      at ($(P)+(0,0.19)$) {$\vec{N}$};
+    % R: parallel to floor (horizontal, rightward)
+    \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, oppsumcol]
+      (P) -- ($(P)+(0.22,0)$);
+    \node[below=4pt, oppsumcol, font=\small\bfseries,
+          fill=white, draw=oppsumcol, line width=0.3pt,
+          inner sep=2pt, rounded corners=1pt]
+      at ($(P)+(0.11,0)$) {$\vec{R}$};
+    % U: resultant diagonal
+    \draw[-{Stealth[length=13pt,width=9pt]}, line width=2.5pt, black!72]
+      (P) -- ($(P)+(0.22,0.38)$);
+    \node[right=5pt, black!72, font=\small\bfseries,
+          fill=white, draw=black!50, line width=0.3pt,
+          inner sep=2pt, rounded corners=1pt]
+      at ($(P)+(0.22,0.38)$) {$\vec{U}$};
+    % Dashed parallelogram lines
+    \draw[dashed, black!40, semithick]
+      ($(P)+(0,0.38)$) -- ($(P)+(0.22,0.38)$);
+    \draw[dashed, black!40, semithick]
+      ($(P)+(0.22,0)$) -- ($(P)+(0.22,0.38)$);
+    % Right-angle marker at contact point
+    \draw[black!50, thin]
+      ($(P)+(0,0.055)$) -- ($(P)+(0.030,0.055)$) -- ($(P)+(0.030,0)$);
+    % Dot at contact point
+    \fill[black!60] (P) circle (2pt);
+  \end{scope}
+\end{tikzpicture}
+\captionof{figure}{En fot som står skrått på bakken. Underlagskraften $\vec{U}$ dekomponeres i normalkraften $\vec{N}$ (vinkelrett) og friksjonskraften $\vec{R}$ (parallelt med underlaget).}
+\label{fig:underlagskrefter}
+\end{minipage}
+
+\medskip
+
+La oss se nærmere på hver av disse.
 
 \subsubsection{Normalkraft}
-Normalkraften, \textit{N}, er kraften som gjør en motkraft på tyngdekraften. Datamaskinen som ligger på en pult står stille på pulten hvis normalkraften fra pulten er like stor som tyngdekraften. Dette samsvarer med newton's tredje lov. Normalkraften i fysikoppgavene er ofte den samme som G, bare i motsatt retning. Normalkraften kan også være lik -G$_y$, altså tyngdekraften dekomponert i y-retning. Hva \textit{N} er avhenger av det definerte koordinatsystemet og på vinkelen til bakken. 
+Normalkraften $\vec{N}$ er den delen av underlagskraften som virker \textit{vinkelrett} på underlaget (/normalt på underlaget, derav navnet). Som vi skal se i de følgende eksemplene så kan vi i mange tilfeller bruke Newtons 1. eller 2. lov til å finne størrelsen på normalkraften. 
+
+\exm{Person i ro på flatt underlag}{%
+Ola har masse $m = \SI{80}{\kilo\gram}$ og står i ro på et flatt gulv.
+Hva er normalkraften som gulvet utøver på Ola?
+}
+
+\svar{%
+\noindent
+Siden Ola er i ro, er summen av krefter i vertikal retning null (Newtons 2. lov med $a = 0$):
+\[
+    \sum F_y = N - G = 0 \implies N = G = m \cdot \mathrm{g}
+\]
+\[
+    N = \SI{80}{\kilo\gram} \cdot \SI{9{,}81}{\metre\per\second\squared}
+    = \doubleunderline{\SI{784{,}8}{\newton}}
+\]
+Gulvet skyver Ola opp med nøyaktig like stor kraft som tyngdekraften trekker Ola ned — dette er et eksempel på Newtons 3. lov i praksis.
+}
+Som vi så i eksemplet over så er Normalkraften like stor og motsatt rettet i forhold til tyngdekraften når et legeme står i ro på et gulv. Slik må det nesten være, ettersom det da kun er $G$ og $N$ som virker. Likevel er ikke $N$ motkraften til $G$. 
+\tanke{}{%
+Hvorfor er ikke $N$ og $G$ et kraft-motkraft par slik som det er definert i Newtons 3. lov?}
+Grunnen er enkel: Både $N$ og $G$ virker på samme legeme. Newtons 3. lov handler om \textit{vekselvirkning} mellom legemer, og kraft-motkraftpar virker derfor alltid på to forskjellige legemer. Det er liksom hele poenget. Derfor må vi stille oss et viktig spørsmål til.
+\tanke{}{%
+Hva er motkreftene til $N$ og $G$ i eksemplet over? På hvilke legemer virker de?}
+
+\exm{Normalkraft i akselererende heis}{%
+Kari har masse $m = \SI{70}{\kilo\gram}$ og står i en heis. Heisen akselererer oppover med $a = \SI{2{,}0}{\metre\per\second\squared}$.
+Hva er normalkraften $N$ som gulvet utøver på Kari?
+}
+
+\svar{%
+\noindent
+Vi tegner inn kreftene på Kari: tyngdekraften $G$ peker ned og normalkraften $N$ peker opp. Kari akselererer oppover, så vi velger oppover som positiv retning. Newtons 2. lov gir
+\[
+    \sum F_y = N - G = ma
+\]
+\[
+    N = G + ma = m(\mathrm{g} + a)
+    = \SI{70}{\kilo\gram} \cdot (\SI{9{,}81}{\metre\per\second\squared} + \SI{2{,}0}{\metre\per\second\squared})
+    = \doubleunderline{\SI{827}{\newton}}
+\]
+Til sammenligning er tyngdekraften på Kari $G = \SI{70}{\kilo\gram} \cdot \SI{9{,}81}{\metre\per\second\squared} \approx \SI{687}{\newton}$. Normalkraften er altså større enn tyngdekraften når heisen akselererer oppover — Kari føler seg tyngre enn til vanlig.
+}
+
+\oppgave{Normalkraft i heis — ulike situasjoner}{%
+Ola har masse $m = \SI{80}{\kilo\gram}$ og er i en heis. Finn normalkraften $N$ i følgende tilfeller:
+\begin{enumerate}[a)]
+    \item Heisen bremser ned mens den beveger seg oppover, slik at $a = \SI{-3{,}0}{\metre\per\second\squared}$.
+    \item Heisen er i fritt fall (tau røk!). Hva er $N$ da, og hva ville Ola oppleve?
+\end{enumerate}
+}M
 
 \subsubsection{Friksjonskraft}
-Friksjonskraft, \textit{R}, er krefter fra en overflate som er motsatt rettet av noe som glir langs overflaten. En ligning for friksjonskrefter, \textit{R}, står på linjen under:
-\[R=\mu \cdot N\]
-$\mu$ er friksjonskoeffisienten og \textit{N} er normalkraften fra bakken.
-Et eksempel hvor friksjonskraft fra bakken er viktig er foreksempel på vinteren når det legger seg is på bakken. Is har lav friksjonskraft, som gjør at det er lett å skli å slå seg. Ved å strø salt eller stein på isen fører det til større friksjonskraft, og da blir det tryggere å gå på området. Et eksempel hvor det bør ha lite friksjonskraft fra bakken er en skøytebane. 
 
-\subsubsection{Underlagskraft}
-bla bla
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Friksjonskraft $\vec{R}$ er den delen av underlagskraften som virker \textit{parallelt} med kontaktflaten. Den motstår alltid relativ bevegelse mellom to overflater — eller tendensen til slik bevegelse. Figur~\ref{fig:friksjon} viser et objekt som skyves horisontalt: normalkraften $\vec{N}$ peker opp, tyngdekraften $\vec{G}$ peker ned, den påførte kraften $\vec{F}$ peker til høyre, og friksjonskraften $\vec{R}$ peker til venstre — motsatt av bevegelsesretningen.
 
-\subsection{Dekomponering av krefter}
-Figur \ref{fig:skråplankrefter1} viser en kloss som står på et skråplan. Kreftene er tegnet på. 
+Størrelsen på friksjonskraften avhenger av to ting: normalkraften $N$ og et tall som beskriver hvor «glatt» eller «ru» kontakten mellom overflatene er. Dette tallet kalles \textit{friksjonskoeffisienten}, og det finnes én for hvert av de to tilfellene vi nå skal studere.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Surface
+  \fill[black!12] (-0.6,-0.38) rectangle (4.0,0);
+  \draw[very thick] (-0.6,0) -- (4.0,0);
+  \foreach \x in {-0.45,-0.20,...,3.85} {
+    \draw[black!35, thin] (\x,0) -- (\x-0.22,-0.22);
+  }
+  % Block
+  \fill[headCol!20] (0.80,0) rectangle (2.80,1.20);
+  \draw[headCol!65!black, thick] (0.80,0) rectangle (2.80,1.20);
+  \node at (1.80,0.60) {$m$};
+  % N: normalkraft — angriper ved kontaktflaten (bunn av blokk), peker opp
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (1.50, 0) -- (1.50, 1.65);
+  \node[left=5pt, defscol, font=\small\bfseries,
+        fill=white, draw=defscol, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.50, 1.33) {$\vec{N}$};
+  % G: tyngdekraft — angriper ved massesentrum, peker ned
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (1.80, 0.60) -- (1.80, -0.72);
+  \node[right=5pt, black!65, font=\small\bfseries,
+        fill=white, draw=black!50, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.80, -0.06) {$\vec{G}$};
+  % F: påført kraft — angriper ved høyre side, peker høyre
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, oppsumcol]
+    (2.80, 0.60) -- (4.10, 0.60);
+  \node[right=4pt, oppsumcol, font=\small\bfseries] at (4.10, 0.60) {$\vec{F}$};
+  % R: friksjonskraft — angriper ved kontaktflaten, peker venstre
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, red!70!black]
+    (2.10, 0) -- (0.70, 0);
+  \node[below=5pt, red!70!black, font=\small\bfseries,
+        fill=white, draw=red!70!black, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.40, 0) {$\vec{R}$};
+  % Prikker ved angrepspunkt
+  \fill[defscol] (1.50, 0) circle (2pt);
+  \fill[red!70!black] (2.10, 0) circle (2pt);
+  \fill[black!55] (1.80, 0.60) circle (2pt);
+\end{tikzpicture}
+\captionof{figure}{Krefter på et objekt som skyves horisontalt. Friksjonskraften $\vec{R}$ virker alltid motsatt av bevegelsesretningen.}
+\label{fig:friksjon}
+\end{minipage}
+
+\medskip
+
+\defn{Friksjonskoeffisienter}{%
+Den \textbf{statiske friksjonskoeffisienten} $\mu_s$ bestemmer maksimal hvilefriksjon. Når et objekt er \textit{i ro}, tilpasser friksjonskraften seg automatisk og kan ta alle verdier opp til
+\[
+    R_s \leq \mu_s N.
+\]
+Den \textbf{kinetiske friksjonskoeffisienten} $\mu_k$ bestemmer glidefriksjonen. Når et objekt \textit{glir} langs underlaget, er friksjonskraften tilnærmet konstant:
+\[
+    R_k = \mu_k N.
+\]
+Begge koeffisientene er dimensjonsløse tall ($\mu > 0$) som avhenger av materialene i kontakt. Som regel er $\mu_k < \mu_s$.
+}
+
+Verdiene til $\mu_s$ og $\mu_k$ avhenger sterkt av overflatene. Is mot stål gir lave verdier ($\mu_k \approx 0{,}03$), gummi mot asfalt gir høye ($\mu_s \approx 0{,}8$). Legg merke til at $\mu_k < \mu_s$: det kreves alltid mer kraft for å \textit{sette} noe i bevegelse enn for å \textit{holde} det i bevegelse — noe alle som noen gang har prøvd å flytte et tungt møbel, kjenner godt til.
+
+\paragraph*{Hvilefriksjon}
+
+\exm{Kasse på gulv}{%
+En kasse med masse $m = \SI{15}{\kilo\gram}$ står på et gulv med statisk friksjonskoeffisient $\mu_s = 0{,}40$. Du skyver horisontalt med kraft $F = \SI{40}{\newton}$.
+Begynner kassen å bevege seg?
+}
+
+\svar{%
+\noindent
+Normalkraften er $N = m\mathrm{g} = \SI{15}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared} = \SI{147{,}2}{\newton}$.
+Maksimal hvilefriksjon er
+\[
+    R_{s,\text{maks}} = \mu_s \cdot N = 0{,}40 \cdot \SI{147{,}2}{\newton}
+    = \doubleunderline{\SI{58{,}9}{\newton}}
+\]
+Siden $F = \SI{40}{\newton} < R_{s,\text{maks}} = \SI{58{,}9}{\newton}$, holder hvilefriksjonen kassen i ro. Den beveger seg ikke.
+}
+
+\oppgave{Flytte et skap}{%
+Et skap har masse $m = \SI{80}{\kilo\gram}$ og står på et tregulv med $\mu_s = 0{,}35$.
+\begin{enumerate}[a)]
+    \item Hva er den minste horisontale kraften som trengs for å sette skapet i bevegelse?
+    \item To personer skyver med en samlet kraft på $F = \SI{260}{\newton}$. Begynner skapet å bevege seg? Forklar.
+\end{enumerate}
+}
+
+\paragraph*{Glidefriksjon}
+
+Et nyttig resultat: hva er akselerasjonen til et objekt som glir langs et flatt underlag uten noen annen horisontal kraft enn friksjon? Newtons 2. lov i vertikal retning gir $N = mg$ (ingen vertikal akselerasjon). I horisontal retning er eneste kraft friksjonskraften:
+\[
+    \sum F_x = -R_k = ma
+    \quad\Rightarrow\quad
+    -\mu_k N = ma
+    \quad\Rightarrow\quad
+    -\mu_k m\mathrm{g} = ma
+\]
+\[
+    \boxed{a = -\mu_k \mathrm{g}}
+\]
+Akselerasjonen (retardasjonen) avhenger altså \textit{ikke} av massen — kun av friksjonskoeffisienten og tyngdeakselerasjonen. En tung og en lett gjenstand med samme $\mu_k$ bremser like raskt.
+
+\exm{Boks som sklir}{%
+En boks med masse $m = \SI{10}{\kilo\gram}$ glir langs et gulv med kinetisk friksjonskoeffisient $\mu_k = 0{,}30$. Ingen andre horisontale krefter virker.
+\begin{enumerate}[a)]
+    \item Hva er friksjonskraften på boksen?
+    \item Hva er boksens akselerasjon?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Normalkraften er $N = m\mathrm{g} = \SI{10}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared} = \SI{98{,}1}{\newton}$.
+\[
+    R_k = \mu_k \cdot N = 0{,}30 \cdot \SI{98{,}1}{\newton} = \doubleunderline{\SI{29{,}4}{\newton}}
+\]
+
+\noindent
+\textbf{b)} Friksjonskraften er eneste horisontale kraft, og den peker motsatt av bevegelsesretningen. Newtons 2. lov gir
+\[
+    \sum F = -R_k = ma \implies a = -\frac{R_k}{m}
+    = -\frac{\SI{29{,}4}{\newton}}{\SI{10}{\kilo\gram}}
+    = \doubleunderline{\SI{-2{,}94}{\metre\per\second\squared}}
+\]
+Minustegnet betyr at boksen bremser ned.
+}
+
+\oppgave{Hockeypuck på is}{%
+En hockeypuck har masse $m = \SI{170}{\gram}$ og glir på is med $\mu_k = 0{,}03$.
+\begin{enumerate}[a)]
+    \item Hva er friksjonskraften på pucken?
+    \item Hva er puckens akselerasjon?
+    \item Pucken skyves avgårde med startfart $v_0 = \SI{15}{\metre\per\second}$. Bruk kinematikk til å beregne hvor lang strekning den glir før den stopper.
+\end{enumerate}
+}
+
+\oppgave{Bremselengde for bildekk}{%
+Et kjøretøy bremser hardt på flatt underlag slik at hjulene låser seg og bildekket sklir. Startfarten er $v_0 = \SI{80}{\kilo\metre\per\hour}$.
+\begin{enumerate}[a)]
+    \item Vis ved hjelp av Newtons 2. lov og kinematikk at bremselengden er gitt ved
+    \[
+        s = \frac{v_0^2}{2\,\mu_k\,\mathrm{g}}.
+    \]
+    \item Beregn bremselengden for tørr asfalt ($\mu_k = 0{,}70$), våt vei ($\mu_k = 0{,}40$) og is ($\mu_k = 0{,}10$).
+    \item Hva skjer med bremselengden om farten dobles? Forklar med formelen.
+\end{enumerate}
+}
+
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\vspace{0pt}
+\oppgave{Kjelke med skrå trekkraft}{%
+En kjelke med masse $m = \SI{15}{\kilo\gram}$ dras langs et flatt, snødekket underlag. Trekkraften $\vec{F} = \SI{50}{\newton}$ er rettet i vinkel $\theta = 30°$ over horisontal (se figur). Den kinetiske friksjonskoeffisienten er $\mu_k = 0{,}20$.
+\begin{enumerate}[a)]
+    \item Finn normalkraften $N$. (Husk at $\vec{F}$ har en vertikal komponent som påvirker $N$.)
+    \item Finn friksjonskraften $R_k$.
+    \item Finn kjelkens akselerasjon.
+\end{enumerate}
+}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\vspace{6pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Surface
+  \fill[black!12] (-0.7,-0.38) rectangle (4.7,0);
+  \draw[very thick] (-0.7,0) -- (4.7,0);
+  \foreach \x in {-0.55,-0.30,...,4.55} {
+    \draw[black!35, thin] (\x,0) -- (\x-0.22,-0.22);
+  }
+  % Kjelke (lavere profil)
+  \fill[headCol!20] (0.80,0) rectangle (2.80,0.90);
+  \draw[headCol!65!black, thick] (0.80,0) rectangle (2.80,0.90);
+  \node at (1.80,0.45) {$m$};
+  % N: normalkraft opp fra kontaktflate
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (1.50, 0) -- (1.50, 1.60);
+  \node[left=5pt, defscol, font=\small\bfseries,
+        fill=white, draw=defscol, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.50, 1.28) {$\vec{N}$};
+  % G: tyngdekraft ned fra massesentrum
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (1.80, 0.45) -- (1.80, -0.70);
+  \node[right=5pt, black!65, font=\small\bfseries,
+        fill=white, draw=black!50, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.80, -0.07) {$\vec{G}$};
+  % F: trekkraft i 30 grader (cos30=0.866, sin30=0.5; L=1.12)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, oppsumcol]
+    (2.80, 0.45) -- (3.77, 1.01);
+  \node[right=4pt, oppsumcol, font=\small\bfseries] at (3.77, 1.01) {$\vec{F}$};
+  % Stiplet horisontal referanselinje for vinkel
+  \draw[black!35, thin, dashed] (2.80,0.45) -- (3.55,0.45);
+  % Vinkelbue 0 -> 30 grader, radius 0.48, sentrum (2.80,0.45)
+  \draw[black!60, thin] (3.28,0.45) arc (0:30:0.48);
+  \node[black!70, font=\scriptsize] at (3.43, 0.58) {$\theta$};
+  % R: friksjonskraft venstre fra kontaktflate
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, red!70!black]
+    (2.10, 0) -- (0.70, 0);
+  \node[below=5pt, red!70!black, font=\small\bfseries,
+        fill=white, draw=red!70!black, line width=0.3pt,
+        inner sep=2pt, rounded corners=1pt]
+    at (1.40, 0) {$\vec{R}$};
+  % Prikker ved angrepspunkt
+  \fill[defscol] (1.50, 0) circle (2pt);
+  \fill[red!70!black] (2.10, 0) circle (2pt);
+  \fill[black!55] (1.80, 0.45) circle (2pt);
+\end{tikzpicture}
+\captionof{figure}{Kjelke dradd med kraft $\vec{F}$ i vinkel $\theta=30°$ over horisontal. Friksjonskraften $\vec{R}$ og normalkraften $\vec{N}$ angriper ved kontaktflaten.}
+\label{fig:kjelke}
+\end{minipage}
+
+\section{Anvendelser}
+I dette avsnittet skal vi studere anvendelser av det vi har lært så langt. Vi skal se på noen eksempler som demonstrerer hvordan vi bør tenke og jobbe når mange krefter opptrer samtidig, og når vi må dekomponere i forhold til et koordinatsystem. La oss derfor starte med å repetere viktigheten av koordinatsystem.
+
+\begin{myoppsum*}{Dekomponering av Newtons lover}
+Når du skal løse oppgaver med krefter i planet, er det viktig å innføre et koordinatsystem, og deretter dekomponere Newtons lover. La oss velge koordinater $x$ og $y$ i planet. Da har vi
+
+\medskip
+\textbf{Newtons 2. lov:}
+\[
+  \sum\vec{F} = m\vec{a}\quad\Longrightarrow\quad
+  \begin{cases}
+    \sum F_x = m a_x\\[5pt]
+    \sum F_y = m a_y\\[5pt]
+  \end{cases}
+\]
+Og selvsagt helt tilsvarende for Newtons første lov, eller andre lover skrevet på vektorform.
+\end{myoppsum*}
+Med dette i bakhodet kan vi skrive ned algoritmen som vi skal lære å følge når vi løser sammensatte oppgaver med krefter.
+\begin{myoppsum*}{Algoritme for løsing av sammensatte kraftoppgaver}
+\begin{enumerate}
+    \item Tegn figur av problemet, med relevante krefter.
+    \item Skriv ned de relevante lovene.
+    \item Gjør et hensiktsmessig valg av koordinatsystem.
+    \item Dekomponer vektorlovene i koordinatsystemet.
+    \item Løs settet med skalare likninger for de ukjente. 
+\end{enumerate}
+\end{myoppsum*}
+
+% ---- Eksempel 1: Kloss hengende i fjær ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Følgende eksempel viser algoritmen i bruk for et enkelt likevektsproblem i én dimensjon.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small, scale=0.92]
+  % Tak
+  \fill[black!15] (-0.85,4.05) rectangle (0.85,4.35);
+  \draw[very thick] (-0.85,4.05) -- (0.85,4.05);
+  \foreach \x in {-0.70,-0.45,-0.20,0.05,0.30,0.55,0.70} {
+    \draw[black!40,thin] (\x,4.05) -- (\x+0.22,4.30);
+  }
+  % Festepunkt
+  \draw[black!50,thick] (0,4.05) -- (0,3.88);
+  % Fjær (zigzag)
+  \draw[line width=1.2pt, headCol!70!black]
+    (0,3.88) -- (0,3.70)
+    -- (0.27,3.48) -- (-0.27,3.26) -- (0.27,3.04)
+    -- (-0.27,2.82) -- (0.27,2.60) -- (-0.27,2.38)
+    -- (0.27,2.16) -- (0,1.98) -- (0,1.80);
+  % Kloss
+  \fill[headCol!20] (-0.52,1.14) rectangle (0.52,1.80);
+  \draw[headCol!65!black,thick] (-0.52,1.14) rectangle (0.52,1.80);
+  \node at (0,1.47) {$m$};
+  % x-markering (fjærforlenging)
+  \draw[{Stealth[length=6pt,width=4pt]}-{Stealth[length=6pt,width=4pt]}, black!50,thin]
+    (0.70,1.80) -- (0.70,3.88);
+  \node[right=2pt,black!60,font=\scriptsize] at (0.70,2.84) {$x$};
+  % Koordinatsystem
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (-0.95,1.47) -- (-0.95,2.38);
+  \node[left=2pt,black!70,font=\small] at (-0.95,2.38) {$y$};
+  \fill[black!70] (-0.95,1.47) circle (1.5pt);
+  % Fjærkraft F (opp fra topp av kloss)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (0,1.80) -- (0,3.10);
+  \node[right=5pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0,2.45) {$\vec{F}$};
+  % Tyngdekraft G (ned fra massesentrum)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (0,1.47) -- (0,0.28);
+  \node[right=5pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0,0.88) {$\vec{G}$};
+  % Prikker
+  \fill[defscol] (0,1.80) circle (2pt);
+  \fill[black!55] (0,1.47) circle (2pt);
+\end{tikzpicture}
+\captionof{figure}{Kloss i ro i en vertikal fjær. $x$ er fjærforlenging fra likevekt, $y$ peker oppover.}
+\label{fig:kloss_fjaer_hengende}
+\end{minipage}
+
+\medskip
+
+\exm{Kloss hengende i fjær}{%
+En kloss med masse $m = \SI{500}{\gram}$ festes til en vertikal spiralfjær som er festet i taket. I ro strekkes fjæra $x = \SI{4{,}0}{\centi\metre}$ ut fra likevektsposisjonen. Bestem fjærkonstanten $k$.
+}
+
+\svar{%
+\noindent
+\textbf{1. Figur:} Se figur over — kreftene er $\vec{F}$ (fjærkraft, opp) og $\vec{G}$ (tyngdekraft, ned).
+
+\smallskip\noindent
+\textbf{2. Lov:} Klossen er i ro, så Newtons 1. lov gir $\sum\vec{F}=0$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $y$-akse peker oppover (se figur).
+
+\smallskip\noindent
+\textbf{4. Dekomponér i $y$-retning:}
+\[
+    \sum F_y = F - G = 0 \implies kx = m\mathrm{g}
+\]
+
+\smallskip\noindent
+\textbf{5. Løs for $k$:}
+\[
+    k = \frac{m\mathrm{g}}{x}
+    = \frac{\SI{0{,}500}{\kilo\gram} \cdot \SI{9{,}81}{\metre\per\second\squared}}{\SI{0{,}040}{\metre}}
+    = \doubleunderline{\SI{123}{\newton\per\metre}}
+\]
+}
+
+\subsection{Skråplan}
+Et legeme på skråplan er et mye brukt eksempel som gir oss anledning til å øve på å anvende tre av kreftene vi har pratet om så langt ($\vec{G}, \vec{N}$ og $\vec{R}$) samtidig. I tillegg gir det god øvelse i dekomponering, som vi skal se. La oss se for oss en bil i en isete bakke. Vi ønsker å kunne besvare spørsmål som
+\begin{itemize}
+    \item Ved hvilken vinkel begynner bilen å skli?
+    \item Hvor fort akselererer den nedover bakken når den først sklir?
+\end{itemize}
+La oss nå besvare disse to spørsmålene systematisk ved å bruke Newtons 2. lov. Figur~\ref{fig:skråplankrefter1} viser kreftene som virker på en kloss som sklir nedover et skråplan med helningsvinkel $\theta$.
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Images/Kapittel3:Arbeid&Energi/Krefter i skråplan1.PNG}
-    \caption{Krefter i skråplan}
+    \includegraphics[width=0.65\textwidth]{Images/Kapittel3:Arbeid&Energi/Krefter i skråplan1.PNG}
+    \caption{Krefter på en kloss som sklir nedover et skråplan. Normalkraften $\vec{N}$ peker normalt ut fra planet, tyngdekraften $\vec{G}$ peker rett ned, og friksjonskraften $\vec{R}_k$ peker opp langs planet siden klossen beveger seg ned.}
     \label{fig:skråplankrefter1}
 \end{figure}
 
+\paragraph*{Utledning av akselerasjon ned et skråplan med friksjon.}
 
+\noindent
+\textbf{1. Figur:} Se figur~\ref{fig:skråplankrefter1}.
 
-\subsection{Koordinatsystem}
+\smallskip\noindent
+\textbf{2. Lov:} Klossen akselererer nedover langs planet med $\vec{a}$ ned bakken. Friksjonskraften er glidefriksjon og peker \textit{opp} langs planet (den motvirker bevegelsen): $R_k = \mu_k N$.
 
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} Vi velger $x'$ nedover langs planet (positiv retning ned bakken) og $y'$ normalt ut fra overflaten. Klossen beveger seg bare langs $x'$, så $a_{y'} = 0$.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\begin{align*}
+    \sum F_{y'} = 0 &:\quad N - mg\cos\theta = 0 \implies N = mg\cos\theta\\
+    \sum F_{x'} = ma &:\quad mg\sin\theta - R_k = ma
+\end{align*}
+
+\smallskip\noindent
+\textbf{5. Løs:} Setter inn $R_k = \mu_k N = \mu_k mg\cos\theta$:
+\begin{align*}
+    mg\sin\theta - \mu_k mg\cos\theta &= ma\\
+    \mathrm{g}(\sin\theta - \mu_k\cos\theta) &= a
+\end{align*}
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt, top=5pt, bottom=5pt, left=8pt, right=8pt]
+\[
+    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta)
+\]
+\end{tcolorbox}
+
+\noindent
+Legg merke til at massen $m$ falt ut av ligningen. Akselerasjonen ned et skråplan er uavhengig av massen — en tung buss og en lett sykkel akselererer like fort nedover den samme bakken.
+
+\medskip
+
+\paragraph*{Kritisk vinkel — ved hvilken helning begynner klossen å skli?}
+
+Klossen er nettopp på grensen til å begynne å skli når tyngdekraftens komponent langs planet er lik den maksimale hvilefriksjonen. I dette grensetilfelle er $\sum F_{x'} = 0$ med $R_s = \mu_s N$ (maksimal hvilefriksjon):
+\[
+mg\sin\theta_c - \mu_s mg\cos\theta_c = 0
+\quad\implies\quad
+\tan\theta_c = \mu_s
+\]
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt, top=5pt, bottom=5pt, left=8pt, right=8pt]
+\[
+    \theta_c = \arctan(\mu_s)
+\]
+\end{tcolorbox}
+
+\noindent
+Er $\theta < \theta_c$ holder friksjonskraften klossen i ro. Er $\theta > \theta_c$ begynner klossen å skli.
+
+\oppgave{Buss på glatt vei}{%
+En buss parkerer på en bakke. Friksjonskoeffisientene mellom dekk og vei er $\mu_s = 0{,}70$ (statisk) og $\mu_k = 0{,}50$ (kinetisk).
+\begin{enumerate}[a)]
+    \item Ved hvilken helningsvinkel $\theta_c$ begynner bussen å skli nedover?
+    \item Hva blir akselerasjonen til bussen idet den begynner å skli?
+\end{enumerate}
+}
+
+\medskip
+
+% ---- Eksempel 2: Kloss på skråplan holdt av fjær og friksjon ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+I neste eksempel kombinerer vi fjærkraft og friksjon på et skråplan. Koordinatsystemet velges med $x'$-aksen langs planet (positiv retning opp bakken) og $y'$-aksen normalt ut fra overflaten. Figuren viser en kloss som er på grensen til å gli nedover, slik at $R_s = \mu_s N$ (maks hvilefriksjon).
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Skråplan-kropp (theta=30 grader: cos=0.866, sin=0.5)
+  \fill[black!12] (0,0) -- (3.46,2.0) -- (3.46,0) -- cycle;
+  \draw[very thick] (0,0) -- (3.46,2.0);
+  \draw[very thick] (0,0) -- (3.46,0);
+  \draw[thick,black!50] (3.46,0) -- (3.46,2.0);
+  % Vinkelmerke
+  \draw[black!55,thin] (0.65,0) arc (0:30:0.65);
+  \node[font=\scriptsize,black!70] at (0.82,0.16) {$\theta$};
+  % Vegg venstre
+  \fill[black!15] (-0.35,0) rectangle (0,0.55);
+  \draw[very thick] (0,0) -- (0,0.55);
+  \foreach \y in {0.05,0.20,0.35,0.50} {
+    \draw[black!40,thin] (0,\y) -- (-0.25,\y+0.20);
+  }
+  % Fjær langs planet (rotert 30 grader)
+  \begin{scope}[rotate=30]
+    \draw[line width=1.2pt,headCol!70!black]
+      (0.08,0) -- (0.22,0)
+      -- (0.34,0.17) -- (0.46,-0.17) -- (0.58,0.17)
+      -- (0.70,-0.17) -- (0.82,0.17) -- (0.94,-0.17)
+      -- (1.06,0.17) -- (1.18,0) -- (1.30,0);
+  \end{scope}
+  % Kloss (rotert 30 grader)
+  % Klosssenter i rotert ramme: (1.70, 0)
+  % Verdenskoordinater: (1.70*0.866, 1.70*0.5) = (1.472, 0.850)
+  \begin{scope}[rotate=30]
+    \fill[headCol!20] (1.35,-0.24) rectangle (2.05,0.24);
+    \draw[headCol!65!black,thick] (1.35,-0.24) rectangle (2.05,0.24);
+    \node[font=\scriptsize] at (1.70,0) {$m$};
+  \end{scope}
+  % Koordinataksene (langs planet)
+  % Klosssenter verden: (1.472, 0.850)
+  % x': opp langs planet (cos30,sin30) = (0.866,0.5)
+  % y': normalt ut (-sin30,cos30) = (-0.5,0.866)
+  \draw[-{Stealth[length=7pt,width=5pt]},black!70,semithick]
+    (1.472,0.850) -- (2.252,1.250);
+  \node[right=2pt,black!70,font=\scriptsize] at (2.252,1.250) {$x'$};
+  \draw[-{Stealth[length=7pt,width=5pt]},black!70,semithick]
+    (1.472,0.850) -- (0.972,1.716);
+  \node[left=2pt,black!70,font=\scriptsize] at (0.972,1.716) {$y'$};
+  \fill[black!70] (1.472,0.850) circle (1.5pt);
+  % N: normalt ut fra bunnflate
+  % Bunnflate-senter (rotert: (1.70,-0.24)):
+  %   verden: (1.70*0.866-(-0.24)*0.5, 1.70*0.5+(-0.24)*0.866) = (1.592, 0.642)
+  % Retning N: (-0.5, 0.866), lengde 0.90
+  % Tupp: (1.592-0.45, 0.642+0.779) = (1.142, 1.421)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (1.592,0.642) -- (1.142,1.421);
+  \node[left=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.367,1.032) {$\vec{N}$};
+  % G: ned fra massesentrum (1.472, 0.850)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (1.472,0.850) -- (1.472,-0.20);
+  \node[right=4pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.472,0.325) {$\vec{G}$};
+  % F_fjær: opp langs planet fra venstre flate
+  % Venstre flate-senter (rotert: (1.35,0)):
+  %   verden: (1.169, 0.675)
+  % Retning: (0.866,0.5), lengde 0.80
+  % Tupp: (1.169+0.693, 0.675+0.4) = (1.862, 1.075)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, oppsumcol]
+    (1.169,0.675) -- (1.862,1.075);
+  \node[above=2pt,oppsumcol,font=\small\bfseries,fill=white,draw=oppsumcol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.52,0.88) {$\vec{F}$};
+  % R_s: opp langs planet fra bunnflate (1.592, 0.642)
+  % Retning: (0.866,0.5), lengde 0.70
+  % Tupp: (1.592+0.606, 0.642+0.35) = (2.198, 0.992)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, red!70!black]
+    (1.592,0.642) -- (2.198,0.992);
+  \node[below=3pt,red!70!black,font=\small\bfseries,fill=white,draw=red!70!black,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.895,0.817) {$\vec{R}_s$};
+  % Prikker
+  \fill[defscol] (1.592,0.642) circle (2pt);
+  \fill[red!70!black] (1.592,0.642) circle (2pt);
+  \fill[black!55] (1.472,0.850) circle (2pt);
+\end{tikzpicture}
+\captionof{figure}{Kloss på skråplan ($\theta=30°$) holdt av fjær $\vec{F}$ og friksjon $\vec{R}_s$. Koordinatsystem: $x'$ opp langs planet, $y'$ normalt ut.}
+\label{fig:kloss_fjaer_skraa}
+\end{minipage}
+
+\medskip
+
+\exm{Kloss på skråplan — fjær og friksjon}{%
+En kloss med masse $m = \SI{2{,}0}{\kilo\gram}$ ligger på et skråplan med helningsvinkel $\theta = 30°$. En fjær langs planet er festet mellom klossen og en vegg i bunnen av bakken, og er komprimert $x = \SI{3{,}0}{\centi\metre}$. Klossen er akkurat på grensen til å gli nedover, og den statiske friksjonskoeffisienten er $\mu_s = 0{,}20$. Finn fjærkonstanten $k$.
+}
+
+\svar{%
+\noindent
+\textbf{1. Figur:} Se figur over.
+
+\smallskip\noindent
+\textbf{2. Lov:} Klossen er (nesten) i ro: $\sum\vec{F}=0$. Maks hvilefriksjon gjelder: $R_s = \mu_s N$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $x'$ opp langs planet, $y'$ normalt ut fra planet.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\begin{align*}
+    \sum F_{y'} = 0&:\quad N - G\cos\theta = 0 \implies N = mg\cos\theta\\
+    \sum F_{x'} = 0&:\quad kx + R_s - G\sin\theta = 0
+\end{align*}
+
+\smallskip\noindent
+\textbf{5. Løs:} Sett inn $R_s = \mu_s N = \mu_s mg\cos\theta$:
+\[
+    kx = mg\sin\theta - \mu_s mg\cos\theta = mg(\sin\theta - \mu_s\cos\theta)
+\]
+\[
+    k = \frac{mg(\sin\theta - \mu_s\cos\theta)}{x}
+    = \frac{\SI{2{,}0}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}(\sin 30° - 0{,}20\cdot\cos 30°)}{\SI{0{,}030}{\metre}}
+    = \doubleunderline{\SI{214}{\newton\per\metre}}
+\]
+}
+
+\medskip
+
+% ---- Eksempel 3: Trafikklys ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Neste eksempel handler om to-dimensjonal likevekt. Et trafikklys henger i to snorer som danner vinkel $\alpha = 30°$ med horisontalplanet. Symmetri forteller oss at begge snorkreftene er like store.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Tak
+  \fill[black!15] (-1.85,1.78) rectangle (1.85,2.05);
+  \draw[very thick] (-1.85,1.78) -- (1.85,1.78);
+  \foreach \x in {-1.70,-1.45,-1.20,-0.95,-0.70,-0.45,-0.20,0.05,0.30,0.55,0.80,1.05,1.30,1.55} {
+    \draw[black!40,thin] (\x,1.78) -- (\x+0.20,2.02);
+  }
+  % Snorer: fra knutepunkt (0,0.80) til takfeste
+  % alpha=30 fra horisontal: retning (-cos30,sin30)=(-0.866,0.5)
+  % Lengde 1.14: endepkt (-0.987,1.37)... juster til y=1.78:
+  % Deltay=1.78-0.80=0.98, deltax=0.98/tan30=0.98*sqrt3=1.697
+  % Venstre: (0-1.697, 0.80+0.98)=(−1.697,1.78) ✓
+  % Høyre: (1.697, 1.78)
+  \draw[very thick, headCol!60!black] (0,0.80) -- (-1.697,1.78);
+  \draw[very thick, headCol!60!black] (0,0.80) -- (1.697,1.78);
+  % Trafikklys (rektangel)
+  \fill[headCol!20] (-0.40,-0.05) rectangle (0.40,0.80);
+  \draw[headCol!65!black,thick] (-0.40,-0.05) rectangle (0.40,0.80);
+  \fill[red!80] (0,0.60) circle (0.08);
+  \fill[yellow!70!orange] (0,0.37) circle (0.08);
+  \fill[green!70!black] (0,0.14) circle (0.08);
+  % Koordinatsystem ved knutepunkt
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (0,0.80) -- (0.75,0.80);
+  \node[right=2pt,black!70,font=\scriptsize] at (0.75,0.80) {$x$};
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (0,0.80) -- (0,1.60);
+  \node[above=2pt,black!70,font=\scriptsize] at (0,1.60) {$y$};
+  \fill[black!70] (0,0.80) circle (1.5pt);
+  % Krefter på knutepunkt
+  % S1: fra knutepunkt opp-venstre (-cos30,sin30)=(-0.866,0.5), lengde 0.90
+  % Tupp: (-0.779, 1.25)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (0,0.80) -- (-0.779,1.25);
+  \node[left=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (-0.390,1.025) {$\vec{S}_1$};
+  % S2: fra knutepunkt opp-høyre (cos30,sin30)=(0.866,0.5), lengde 0.90
+  % Tupp: (0.779, 1.25)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (0,0.80) -- (0.779,1.25);
+  \node[right=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0.390,1.025) {$\vec{S}_2$};
+  % G: ned fra knutepunkt
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (0,0.80) -- (0,-0.32);
+  \node[right=5pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0,0.24) {$\vec{G}$};
+  % Vinkelbuer alpha
+  \draw[black!60,thin] (0.38,0.80) arc (0:30:0.38);
+  \node[black!70,font=\scriptsize] at (0.50,0.88) {$\alpha$};
+  \draw[black!60,thin] (-0.38,0.80) arc (180:150:0.38);
+  \node[black!70,font=\scriptsize] at (-0.50,0.88) {$\alpha$};
+  % Prikk ved knutepunkt
+  \fill[black!60] (0,0.80) circle (2.5pt);
+\end{tikzpicture}
+\captionof{figure}{Trafikklys i ro. Snorkreftene $\vec{S}_1$ og $\vec{S}_2$ danner vinkel $\alpha$ med horisontal.}
+\label{fig:trafikklys}
+\end{minipage}
+
+\medskip
+
+\exm{Trafikklys}{%
+Et trafikklys med masse $m = \SI{50}{\kilo\gram}$ henger i to like lange snorer som danner vinkel $\alpha = 30°$ med horisontalplanet (se figur). Finn snorkraften $S$ i hver snor.
+}
+
+\svar{%
+\noindent
+\textbf{1. Figur:} Se figur over.
+
+\smallskip\noindent
+\textbf{2. Lov:} Systemet er i ro: $\sum\vec{F}=0$. Symmetri gir $S_1 = S_2 = S$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $x$ horisontal, $y$ vertikal oppover.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\begin{align*}
+    \sum F_x = 0&:\quad -S\cos\alpha + S\cos\alpha = 0 \quad \checkmark \quad \text{(automatisk oppfylt)}\\
+    \sum F_y = 0&:\quad S\sin\alpha + S\sin\alpha - G = 0 \implies 2S\sin\alpha = mg
+\end{align*}
+
+\smallskip\noindent
+\textbf{5. Løs for $S$:}
+\[
+    S = \frac{mg}{2\sin\alpha}
+    = \frac{\SI{50}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}}{2\cdot\sin 30°}
+    = \frac{\SI{490{,}5}{\newton}}{1{,}0}
+    = \doubleunderline{\SI{490{,}5}{\newton}}
+\]
+Merk at $\sin 30° = \tfrac{1}{2}$, så snorkraften er nøyaktig lik tyngdekraften. En lavere vinkel $\alpha$ ville krevd \textit{større} snorkraft — derav det kjente rådet om ikke å henge noe i nær-horisontale snorer.
+}
 
 \exm{Kloss på skråplan}{En kloss på 3.0 kg beveger seg nedover et skråplan med en akselerasjon på 3.0 m/s. Vinkelen til skråplanet er $\theta$ 25 $^\circ$. \textbf{a)} Hva blir friksjonskrafta som virker på klossen? og \textbf{b)} Hva blir normalkraften?
 
@@ -111,17 +1077,498 @@ For å finne N trenger vi å vite G$_y$. G$_y$ kan vi finne fra de trigonometris
     \label{fig:skråplankrefter}
     \end{figure}
 \newpage
-\tips{Koordinatsystem}{1) Husk å definere positiv og negativ retning i koordinatsystemet. Bruk disse retningene for når du skriver ned kreftene. Går kraften i samme retning som positivt definert retning, får kraften et positivt fortegn og motsatt om kraften går i motsatt retning som den definerte positive.\\
-2) Bruk de trigonometriske ligningene.}
 
 \subsection{Krefter i sirkelbevegelse}
-For sirkelbevegelse med konstant hastighet er kreftene lik:
+For sirkelbevegelse med konstant fart har vi sett at akselerasjonens størrelse er gitt ved
+\[a=\frac{v^2}{r},\]
+hvor $r$ er sirkelens radius. Om vi nå samstiller dette med Newtons 2. lov, $\sum\vec{F}=m\vec{a}$ så finner vi et uttrykk for kraftsummen inn mot sentrum.
 
-\defn{Krefter i sirkelbevegelse}{
-\[\sum \vec{F}=m\cdot \vec{a}\]
-\[\sum \vec{F}=m\cdot \frac{v^2}{r}\]
+\defn{Sentripetalkraft}{
+Kraftsummen for sirkelbevegelse med radius $r$ og konstant banefart $v$ er gitt ved
+\[\sum F=m\cdot \frac{v^2}{r},\]
+og rettet inn mot sentrum av sirkelbevegelsen.
 }
 
-\section{Bevegelsesmengde}
-CHECK: Tror jeg hadde no på bevegelsesmengde som jeg har slettet. Er sikkert fremdeles på Overleaf i såfall.
+
+% ---- Eksempel: Ball i sirkelbane ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Som et første eksempel ser vi på en ball som glir rundt i en sirkelbane på en friksjonsfri horisontal overflate, festet til et senter med en snor. Snorkraften $\vec{S}$ peker hele tiden inn mot sentrum — det er denne kraften som gir ballen sentripetalakselerasjonen.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Sirkelbane (stiplet)
+  \draw[dashed, gray!60, line width=0.8pt] (0,0) circle (1.5);
+  % Sentrum
+  \fill[black!60] (0,0) circle (2pt);
+  \node[font=\scriptsize, below left=2pt] at (0,0) {sentrum};
+  % Snor
+  \draw[headCol!70!black, line width=1.4pt] (0,0) -- (1.5,0);
+  % Ball
+  \fill[headCol!40] (1.5,0) circle (0.18);
+  \draw[headCol!70!black, line width=1pt] (1.5,0) circle (0.18);
+  \node[font=\scriptsize, right=3pt] at (1.68,0) {$m$};
+  % Snorkraft S (innover)
+  \draw[-{Stealth[length=10pt,width=6pt]}, line width=2pt, defscol]
+    (1.32,0) -- (0.35,0);
+  \node[defscol, font=\small\bfseries, below=3pt] at (0.84,0) {$\vec{S}$};
+  % Hastighet v (tangent, oppover)
+  \draw[-{Stealth[length=10pt,width=6pt]}, line width=2pt, oppsumcol]
+    (1.5,0.18) -- (1.5,1.10);
+  \node[oppsumcol, font=\small\bfseries, right=3pt] at (1.5,0.64) {$\vec{v}$};
+  % Radius r
+  \draw[<->, gray!70, thin] (0,-0.35) -- (1.5,-0.35);
+  \node[font=\scriptsize, gray!70, below] at (0.75,-0.35) {$r$};
+\end{tikzpicture}
+\captionof{figure}{Sett ovenfra: ball i sirkelbane. Snorkraften $\vec{S}$ er alltid rettet inn mot sentrum.}
+\label{fig:ball_sirkelbane}
+\end{minipage}
+
+\medskip
+
+\exm{Ball i sirkelbane}{%
+En ball med masse $m = \SI{0{,}30}{\kilo\gram}$ er festet til en snor og glir rundt i en sirkelbane på en friksjonsfri bordflate. Snoras lengde er $r = \SI{0{,}80}{\metre}$ og ballen holder konstant fart $v = \SI{3{,}0}{\metre\per\second}$.
+
+Finn kraften i snora.
+}
+
+\svar{%
+Snorkraften $S$ er den eneste horisontale kraften, og den peker alltid inn mot sentrum. Den sørger for sentripetalakselerasjonen:
+\[
+    \sum F = \frac{mv^2}{r}
+    \quad\implies\quad
+    S = \frac{mv^2}{r}
+    = \frac{\SI{0{,}30}{\kilo\gram} \cdot (\SI{3{,}0}{\metre\per\second})^2}{\SI{0{,}80}{\metre}}
+    = \frac{\SI{2{,}7}{\newton\metre}}{\SI{0{,}80}{\metre}}
+    = \doubleunderline{\SI{3{,}4}{\newton}}
+\]
+}
+
+\oppgave{Karusell}{%
+Et barn med masse $m = \SI{25}{\kilo\gram}$ sitter $r = \SI{3{,}0}{\metre}$ fra sentrum av en karusell. Karusellen snurrer med konstant fart $v = \SI{4{,}0}{\metre\per\second}$.
+
+Hva er den resulterende sentripetalkraften på barnet?
+}
+
+% ---- Eksempel: Dosering av veibane ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Kan en bil kjøre gjennom en sirkelformet sving uten friksjon mellom dekk og vei? Ja — hvis veibanen er dosert (hellet innover) med riktig vinkel $\alpha$. Da gir normalkraftens horisontale komponent sentripetalakselerasjonen. Koordinatsystemet velges med $V$-akse (vertikalt opp) og $H$-akse (horisontalt inn mot sentrum), se figur.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Dosert veibane i tverrsnitt, vinkel alpha=22 grader (visuelt tydelig)
+  % cos22=0.927, sin22=0.375
+  % Veibane fra (0.3,0) til (3.5, 3.2*sin22/cos22) = (3.5, 1.29)
+  \fill[black!12] (0.3,0.0) -- (3.5,1.29) -- (3.5,0.0) -- cycle;
+  \draw[very thick] (0.3,0.0) -- (3.5,1.29);
+  \draw[black!30,thin] (0.3,0.0) -- (3.5,0.0);
+  \draw[black!30,thin] (3.5,0.0) -- (3.5,1.29);
+  % Vinkel alpha
+  \draw[black!55,thin] (0.90,0) arc (0:22:0.60);
+  \node[font=\scriptsize,black!70] at (1.04,0.13) {$\alpha$};
+  % Bil (rotert 22 grader) langs planet ved pos 1.95 langs planet
+  % (1.95*cos22, 1.95*sin22) = (1.808, 0.731)
+  % Bil (rotert ramme): fra (1.50,-0) til (2.40,0.55)
+  \begin{scope}[rotate=22]
+    \fill[headCol!20] (1.50,0.0) rectangle (2.40,0.50);
+    \draw[headCol!65!black,thick] (1.50,0.0) rectangle (2.40,0.50);
+    \node[font=\scriptsize] at (1.95,0.25) {$m$};
+  \end{scope}
+  % Bil-senter verden: roter (1.95,0.25) med 22 grader
+  %   x=1.95*0.927-0.25*0.375=1.808-0.094=1.714
+  %   y=1.95*0.375+0.25*0.927=0.731+0.232=0.963
+  % Bunnflate-senter verden: roter (1.95,0) med 22 deg
+  %   x=1.95*0.927=1.808, y=1.95*0.375=0.731
+  % N: normalt ut av veibanen, retning (-sin22,cos22)=(-0.375,0.927)
+  % Fra bunnflate (1.808, 0.731), lengde 1.35
+  % Tupp: (1.808-0.506, 0.731+1.251) = (1.302, 1.982)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (1.808,0.731) -- (1.302,1.982);
+  \node[left=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.555,1.357) {$\vec{N}$};
+  % G: ned fra bil-senter (1.714, 0.963)
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (1.714,0.963) -- (1.714,-0.22);
+  \node[right=4pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (1.714,0.37) {$\vec{G}$};
+  % Dekomponering av N: N_V (opp) og N_H (venstre mot sentrum)
+  % N tupp: (1.302, 1.982)
+  % N_V: fra (1.808,0.731) rett opp til (1.808,1.982)  [stiplet]
+  % N_H: fra (1.808,1.982) til (1.302,1.982)           [stiplet]
+  \draw[dashed,black!45,semithick] (1.808,0.731) -- (1.808,1.982);
+  \draw[dashed,black!45,semithick] (1.808,1.982) -- (1.302,1.982);
+  \node[right=2pt,black!55,font=\scriptsize] at (1.808,1.357) {$N_V$};
+  \node[above=2pt,black!55,font=\scriptsize] at (1.555,1.982) {$N_H$};
+  % Vinkelbue mellom N og vertikalen
+  \draw[black!50,thin] (1.808,1.32) arc (90:112:0.60);
+  \node[black!65,font=\scriptsize] at (1.67,1.36) {$\alpha$};
+  % Koordinatsystem (V og H)
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (3.2,0.08) -- (3.2,0.95);
+  \node[right=2pt,black!70,font=\scriptsize] at (3.2,0.95) {$V$};
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (3.2,0.08) -- (2.40,0.08);
+  \node[below=2pt,black!70,font=\scriptsize] at (2.40,0.08) {$H$};
+  \fill[black!70] (3.2,0.08) circle (1.5pt);
+  % Prikker
+  \fill[defscol] (1.808,0.731) circle (2pt);
+  \fill[black!55] (1.714,0.963) circle (2pt);
+\end{tikzpicture}
+\captionof{figure}{Dosert veibane i tverrsnitt. $\vec{N}$ dekomponeres i $N_V$ (opp) og $N_H$ (inn mot sentrum). $H$-aksen peker inn mot svingsentrummet.}
+\label{fig:dosering_veibane}
+\end{minipage}
+
+\medskip
+
+\exm{Dosering av veibane}{%
+Er det mulig for en bil med konstant fart $v$ å kjøre gjennom en sirkelformet sving med radius $r$ uten friksjon mellom dekk og vei? Bestem nødvendig dosering (helningsvinkel) $\alpha$. Bruk $v = \SI{90}{\kilo\metre\per\hour}$ og $r = \SI{200}{\metre}$.
+}
+
+\svar{%
+\noindent
+\textbf{1. Figur:} Se figur over. To krefter virker på bilen: $\vec{N}$ (normalt på veidekket) og $\vec{G}$ (rett ned). Ingen friksjon.
+
+\smallskip\noindent
+\textbf{2. Lov:} Newtons 2. lov. Sentripetalakselerasjon $a = v^2/r$ i $H$-retningen; null akselerasjon i $V$-retningen.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $V$-akse vertikalt opp, $H$-akse horisontalt inn mot sentrum.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\begin{align*}
+    \sum F_V = 0 &:\quad N_V - G = 0 \implies N_V = mg \tag{$\star$}\\
+    \sum F_H = m\frac{v^2}{r} &:\quad N_H = m\frac{v^2}{r} \tag{$\star\star$}
+\end{align*}
+
+\smallskip\noindent
+\textbf{5. Løs:} Fra geometrien (se figur) er $\tan\alpha = N_H/N_V$. Del $(\star\star)$ på $(\star)$:
+\[
+    \tan\alpha = \frac{N_H}{N_V} = \frac{m\,v^2/r}{m\,\mathrm{g}} = \frac{v^2}{r\,\mathrm{g}}
+\]
+Massen faller ut — doseringa er uavhengig av kjøretøyets masse. Med tall ($v = \SI{25}{\metre\per\second}$, $r = \SI{200}{\metre}$):
+\[
+    \tan\alpha = \frac{(\SI{25}{\metre\per\second})^2}{\SI{200}{\metre}\cdot\SI{9{,}81}{\metre\per\second\squared}} = 0{,}318
+    \implies
+    \alpha = \arctan(0{,}318) = \doubleunderline{17{,}7°}
+\]
+}
+
+
+
+\section{Bevaring av bevegelsesmengde}
+\label{sec:bevaring}
+
+Tidligere i dette kapitlet definerte vi bevegelsesmengde som $\vec{p} = m\vec{v}$, og vi nevnte at bevegelsesmengde er bevart i isolerte systemer. Nå skal vi se nøye på hva dette betyr, og vise hvorfor det er sant.
+
+\paragraph*{Interne og ytre krefter.}
+Tenk deg to biljardkuler som kolliderer (figur~\ref{fig:biljard}). De utøver krefter på \textit{hverandre} i kollisjonsøyeblikket — dette er \textit{interne} krefter i systemet av to kuler. Dersom vi ser bort fra friksjon mot bordet og luftmotstand, er summen av \textit{ytre} krefter på systemet lik 0. Et slikt system kaller vi \textit{isolert}.
+
+\begin{center}
+\begin{tikzpicture}[font=\small, scale=0.92]
+  % Delt inn i tre paneler: Før (x≈0–2.6), Kollisjon (x≈3.4–5.8), Etter (x≈6.6–10.0)
+
+  %────── FØR ──────
+  \node[font=\small\bfseries] at (1.30, 2.00) {Før:};
+  % Kule A (hvit cue-kule)
+  \fill[white] (0.42, 0.80) circle (0.42);
+  \draw[gray!55, line width=0.9pt] (0.42, 0.80) circle (0.42);
+  \fill[gray!20, opacity=0.80] (0.26, 1.00) circle (0.12);
+  \node[gray!65, font=\scriptsize\bfseries] at (0.42, 0.74) {A};
+  % Hastighetsvektor A
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
+    (0.84, 0.80) -- (1.72, 0.80);
+  \node[defscol, font=\scriptsize, above=1pt] at (1.28, 0.80) {$\vec{v}_A$};
+  % Kule B (rød, i ro)
+  \fill[red!72!black] (2.60, 0.80) circle (0.42);
+  \draw[red!45!black, line width=0.9pt] (2.60, 0.80) circle (0.42);
+  \fill[red!15!white, opacity=0.55] (2.44, 1.00) circle (0.12);
+  \node[white, font=\scriptsize\bfseries] at (2.60, 0.74) {B};
+  \node[gray!60, font=\scriptsize] at (2.60, 0.22) {i ro};
+  % Bordflate
+  \draw[gray!40, dashed, thin] (-0.10, 0.18) -- (3.00, 0.18);
+
+  % Overgangsmarkør →
+  \draw[-{Stealth[length=8pt,width=5pt]}, gray!55, line width=1.0pt]
+    (3.10, 0.80) -- (3.50, 0.80);
+
+  %────── KOLLISJON ──────
+  \node[font=\small\bfseries] at (4.80, 2.00) {Kollisjon:};
+  % Kule A og B i kontakt — A sentrum (4.00, 0.80), B sentrum (4.84, 0.80)
+  \fill[white] (4.00, 0.80) circle (0.42);
+  \draw[gray!55, line width=0.9pt] (4.00, 0.80) circle (0.42);
+  \fill[gray!20, opacity=0.80] (3.84, 1.00) circle (0.12);
+  \node[gray!65, font=\scriptsize\bfseries] at (4.00, 0.74) {A};
+  \fill[red!72!black] (4.84, 0.80) circle (0.42);
+  \draw[red!45!black, line width=0.9pt] (4.84, 0.80) circle (0.42);
+  \fill[red!15!white, opacity=0.55] (4.68, 1.00) circle (0.12);
+  \node[white, font=\scriptsize\bfseries] at (4.84, 0.74) {B};
+  % Indre kreftpar — F_BA (på A, peker venstre, øverst)
+  \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, red!65!black]
+    (4.42, 1.42) -- (3.58, 1.42);
+  \node[red!65!black, font=\scriptsize] at (4.00, 1.64) {$\vec{F}_{BA}$};
+  % F_AB (på B, peker høyre, nederst)
+  \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, red!65!black]
+    (4.42, -0.02) -- (5.26, -0.02);
+  \node[red!65!black, font=\scriptsize] at (4.84, -0.24) {$\vec{F}_{AB}$};
+  % Bordflate
+  \draw[gray!40, dashed, thin] (3.40, 0.18) -- (5.60, 0.18);
+
+  % Overgangsmarkør →
+  \draw[-{Stealth[length=8pt,width=5pt]}, gray!55, line width=1.0pt]
+    (5.70, 0.80) -- (6.10, 0.80);
+
+  %────── ETTER ──────
+  \node[font=\small\bfseries] at (8.00, 2.00) {Etter:};
+  % Kule A (stopper)
+  \fill[white] (6.80, 0.80) circle (0.42);
+  \draw[gray!55, line width=0.9pt] (6.80, 0.80) circle (0.42);
+  \fill[gray!20, opacity=0.80] (6.64, 1.00) circle (0.12);
+  \node[gray!65, font=\scriptsize\bfseries] at (6.80, 0.74) {A};
+  \node[gray!60, font=\scriptsize] at (6.80, 0.22) {i ro};
+  % Kule B (beveger seg videre)
+  \fill[red!72!black] (9.20, 0.80) circle (0.42);
+  \draw[red!45!black, line width=0.9pt] (9.20, 0.80) circle (0.42);
+  \fill[red!15!white, opacity=0.55] (9.04, 1.00) circle (0.12);
+  \node[white, font=\scriptsize\bfseries] at (9.20, 0.74) {B};
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
+    (9.62, 0.80) -- (10.50, 0.80);
+  \node[defscol, font=\scriptsize, above=1pt] at (10.06, 0.80) {$\vec{v}_B'$};
+  % Bordflate
+  \draw[gray!40, dashed, thin] (6.20, 0.18) -- (10.60, 0.18);
+\end{tikzpicture}
+\captionof{figure}{Biljardkollisjon. Kreftene $\vec{F}_{BA}$ og $\vec{F}_{AB}$ er interne og like store (Newtons 3. lov). Ved elastisk støt mellom like kuler stopper A og B overtar hele farten.}
+\label{fig:biljard}
+\end{center}
+
+\paragraph*{Utledning fra Newtons lover.}
+Vi ser på to legemer A og B som vekselvirker. Newtons 3. lov sier at kreftene de utøver på hverandre er like store og motsatt rettet:
+\[
+\vec{F}_{AB} = -\vec{F}_{BA},
+\]
+der $\vec{F}_{BA}$ er kraften B utøver på A og $\vec{F}_{AB}$ er kraften A utøver på B.
+
+Fra Newtons 2. lov er kraft lik endring i bevegelsesmengde per tidsenhet:
+\[
+\vec{F}_{BA} = \frac{\Delta\vec{p}_A}{\Delta t}, \qquad \vec{F}_{AB} = \frac{\Delta\vec{p}_B}{\Delta t}.
+\]
+Legger vi disse to uttrykkene sammen og bruker Newtons 3. lov:
+\[
+\frac{\Delta\vec{p}_A}{\Delta t} + \frac{\Delta\vec{p}_B}{\Delta t}
+= \vec{F}_{BA} + \vec{F}_{AB} = \vec{0}.
+\]
+Det betyr at:
+\[
+\frac{\Delta\!\left(\vec{p}_A + \vec{p}_B\right)}{\Delta t} = \vec{0}
+\quad\Longrightarrow\quad
+\vec{p}_{tot} = \vec{p}_A + \vec{p}_B = \text{konstant}.
+\]
+Den totale bevegelsesmengden endrer seg ikke. Dette følger direkte av Newtons 2. og 3. lov — ingen ny antagelse er nødvendig.
+
+\defn{Bevaring av bevegelsesmengde}{%
+Dersom summen av ytre krefter på et system er null,
+\[
+\sum \vec{F}_{ytre} = \vec{0},
+\]
+er den totale bevegelsesmengden til systemet bevart:
+\[
+\vec{p}_{tot} = \text{konstant}.
+\]
+For to legemer med masser $m_1$ og $m_2$ skrives dette som:
+\[
+m_1\vec{v}_1 + m_2\vec{v}_2 = m_1\vec{v}_1\,' + m_2\vec{v}_2\,'
+\]
+der primtegnet ($'$) betegner hastighetene \textit{etter} kollisjonen eller hendelsen.
+}
+
+\tips{For deg som kjenner derivasjon}{%
+Newtons 2. lov kan skrives i sin mest generelle form ved hjelp av derivasjon:
+\[
+\sum\vec{F} = \frac{d\vec{p}}{dt}
+\]
+Her er $\frac{d\vec{p}}{dt}$ den deriverte av bevegelsesmengden med hensyn på tid — altså hvor raskt $\vec{p}$ endrer seg.
+
+Dersom summen av ytre krefter er null, $\sum\vec{F}_{ytre} = \vec{0}$, gir dette direkte:
+\[
+\frac{d\vec{p}_{tot}}{dt} = \vec{0}
+\]
+En funksjon med derivert lik null er konstant. Dermed følger bevaringsloven umiddelbart: $\vec{p}_{tot} = \text{konstant}$. Ingen nye antagelser trengs — loven er en direkte konsekvens av Newtons 2. lov.
+}
+
+\paragraph{Impuls:} Vi har altså sett at 
+\[\frac{\vec{p}}{\Delta t}=\vec{F}\quad\text{som medfører}\quad \Delta\vec{p}=\vec{F}\Delta t.\]
+Dette viser at kraft gjort over tid gir endring i bevegelsesmengde. For dere som kan å integrere, ser vi altså at \textit{integralet} av kraft over tid er bevegelsesmengde. Dette gir mening. Når en kraft virker på et legeme over tid, så endrer det bevegelsesmengden til legemet. Endring i bevegelsesmengde forårsaket av et kraftstøt har faktisk et eget navn. Vi kaller det for \textit{impuls}. I dette faget skal vi riktignok ikke bruke dette begrepet noe videre.
+
+\begin{myoppsum*}{Algoritme for løsning}
+Fremgangsmåten i slike oppgaver er alltid den samme:
+\begin{enumerate}
+    \item Identifiser systemet og sjekk at ytre krefter er null (eller neglisjerbare).
+    \item Velg en positiv retning.
+    \item Skriv opp bevaringsligningen: $\vec{p}_{tot,\,\text{før}} = \vec{p}_{tot,\,\text{etter}}$.
+    \item Løs for den ukjente.
+\end{enumerate}
+\end{myoppsum*}
+
+% ── EKSEMPEL 1: Rekyl ─────────────────────────────────────────────────────────
+
+\paragraph*{Rekyl.}
+Et klassisk eksempel er rekyl fra et gevær. Før avfyringen er kula og geværet i ro — den totale bevegelsesmengden er null. Etter avfyringen beveger kula seg raskt fremover og geværet sakte bakover, men de to bidragene kansellerer nøyaktig, slik at totalen fortsatt er null.
+
+\exm{Rekyl fra gevær}{%
+Et gevær med masse $M = \SI{3{,}0}{\kilo\gram}$ avfyres horisontalt. En kule med masse $m = \SI{10}{\gram} = \SI{0{,}010}{\kilo\gram}$ forlater løpet med fart $v = \SI{800}{\metre\per\second}$ fremover. Både geværet og kula er i ro før avfyringen.
+
+Finn rekylhastigheten til geværet.
+}
+
+\svar{%
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+Vi velger fremover som positiv retning ($+x$). Siden alt er i ro før avfyringen:
+\[
+p_{tot,\,\text{før}} = 0
+\]
+Det virker ingen ytre horisontale krefter i avfyringsøyeblikket, så bevegelsesmengden er bevart:
+\begin{align*}
+p_{tot,\,\text{etter}} &= p_{tot,\,\text{før}} = 0\\[4pt]
+mv + MV &= 0\\[4pt]
+V &= -\frac{mv}{M}
+\end{align*}
+Setter inn tallene:
+\[
+V = -\frac{\SI{0{,}010}{\kilo\gram}\cdot\SI{800}{\metre\per\second}}{\SI{3{,}0}{\kilo\gram}}
+  = \doubleunderline{\SI{-2{,}7}{\metre\per\second}}
+\]
+Minustegnet viser at geværet beveger seg \textit{bakover} — det er det vi kjenner som rekyl.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\begin{tikzpicture}[scale=0.88]
+  %--- FØR ---
+  \node[font=\small\bfseries] at (1.7, 2.6) {Før:};
+  % Gevær
+  \fill[headCol!20] (0.0, 1.5) rectangle (2.4, 2.0);
+  \draw[line width=1pt, headCol!70!black] (0.0, 1.5) rectangle (2.4, 2.0);
+  % Løp
+  \fill[headCol!35] (2.0, 1.35) rectangle (2.6, 2.15);
+  \draw[line width=1pt, headCol!70!black] (2.0, 1.35) rectangle (2.6, 2.15);
+  \node[font=\scriptsize] at (1.1, 1.75) {$M$};
+  % Kule
+  \fill[gray!60] (2.95, 1.75) circle (0.18);
+  \node[font=\scriptsize, above] at (2.95, 1.93) {\scriptsize$m$};
+  % i ro
+  \node[font=\scriptsize, gray] at (1.5, 1.15) {i ro};
+
+  %--- ETTER ---
+  \node[font=\small\bfseries] at (1.7, 0.6) {Etter:};
+  % Gevær (har beveget seg litt til venstre)
+  \fill[headCol!20] (0.0, -0.6) rectangle (2.4, -0.1);
+  \draw[line width=1pt, headCol!70!black] (0.0, -0.6) rectangle (2.4, -0.1);
+  \fill[headCol!35] (2.0, -0.75) rectangle (2.6, 0.05);
+  \draw[line width=1pt, headCol!70!black] (2.0, -0.75) rectangle (2.6, 0.05);
+  \node[font=\scriptsize] at (1.1, -0.35) {$M$};
+  % Kule (langt til høyre)
+  \fill[gray!60] (3.6, -0.35) circle (0.18);
+  \node[font=\scriptsize, above] at (3.6, -0.17) {\scriptsize$m$};
+  % Pil gevær (V, venstre)
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, red!70!black]
+    (0.6, -0.9) -- (-0.4, -0.9);
+  \node[font=\scriptsize, below] at (0.1, -0.9) {$V$};
+  % Pil kule (v, høyre)
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
+    (3.3, -0.9) -- (4.3, -0.9);
+  \node[font=\scriptsize, below] at (3.8, -0.9) {$v$};
+\end{tikzpicture}
+\end{minipage}
+}
+
+% ── EKSEMPEL 2: Støt mellom vogner ───────────────────────────────────────────
+
+\paragraph*{Støt mellom legemer.}
+Det vanligste bruksområdet for bevaring av bevegelsesmengde er kollisjoner. Vi skiller mellom to typer: ved et \textit{fullstendig uelastisk støt} henger legemene fast i hverandre etter kollisjonen og beveger seg som ett objekt, mens de ved et \textit{elastisk støt} spretter fra hverandre og bevarer i tillegg den kinetiske energien. I begge tilfeller er bevegelsesmengden bevart. Vi skal komme tilbake til dette i neste kapittel, 
+
+\exm{Uelastisk støt: vogner som kolliderer og henger fast}{%
+En vogn med masse $m_1 = \SI{2{,}0}{\kilo\gram}$ ruller med fart $v_1 = \SI{3{,}0}{\metre\per\second}$ og støter inn i en vogn med masse $m_2 = \SI{1{,}0}{\kilo\gram}$ som er i ro. Vognene henger seg fast i hverandre etter støtet.
+
+Finn farten $v_f$ til de sammenkoblede vognene.
+}
+
+\svar{%
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+Vi velger $+x$ langs bevegelsesretningen til vogn 1.
+
+Bevaringsligningen:
+\begin{align*}
+m_1 v_1 + m_2 \cdot 0 &= (m_1 + m_2)\,v_f\\[4pt]
+v_f &= \frac{m_1 v_1}{m_1 + m_2}
+\end{align*}
+Setter inn tallene:
+\[
+v_f = \frac{\SI{2{,}0}{\kilo\gram}\cdot\SI{3{,}0}{\metre\per\second}}{\SI{3{,}0}{\kilo\gram}}
+    = \doubleunderline{\SI{2{,}0}{\metre\per\second}}
+\]
+De sammenkoblede vognene beveger seg med $\SI{2{,}0}{\metre\per\second}$ i samme retning som vogn 1.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\begin{tikzpicture}[scale=0.88]
+  %--- FØR ---
+  \node[font=\small\bfseries] at (1.7, 2.6) {Før:};
+  % Vogn 1
+  \fill[headCol!20] (0.0, 1.5) rectangle (1.5, 2.1);
+  \draw[line width=1pt, headCol!70!black] (0.0, 1.5) rectangle (1.5, 2.1);
+  \node[font=\scriptsize] at (0.75, 1.8) {$m_1$};
+  % Pil v1
+  \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, defscol]
+    (1.5, 2.3) -- (2.4, 2.3);
+  \node[font=\scriptsize, above] at (1.95, 2.3) {$v_1$};
+  % Vogn 2 (i ro)
+  \fill[gray!20] (2.6, 1.5) rectangle (3.7, 2.1);
+  \draw[line width=1pt, gray!60] (2.6, 1.5) rectangle (3.7, 2.1);
+  \node[font=\scriptsize] at (3.15, 1.8) {$m_2$};
+  \node[font=\scriptsize, gray] at (3.15, 1.2) {i ro};
+
+  %--- ETTER ---
+  \node[font=\small\bfseries] at (1.7, 0.6) {Etter:};
+  % Sammenkoblet vogn
+  \fill[headCol!30] (0.0, -0.6) rectangle (2.4, 0.0);
+  \draw[line width=1pt, headCol!70!black] (0.0, -0.6) rectangle (2.4, 0.0);
+  \node[font=\scriptsize] at (1.2, -0.3) {$m_1 + m_2$};
+  % Pil vf
+  \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, defscol]
+    (2.4, 0.2) -- (3.3, 0.2);
+  \node[font=\scriptsize, above] at (2.85, 0.2) {$v_f$};
+\end{tikzpicture}
+\end{minipage}
+}
+
+% ── OPPGAVER ──────────────────────────────────────────────────────────────────
+
+\oppgave{To skøyteløpere}{%
+Oda ($m_O = \SI{55}{\kilo\gram}$) og Per ($m_P = \SI{80}{\kilo\gram}$) står i ro på isen og skyver fra hverandre. Etter skyvingen beveger Oda seg med fart $\SI{4{,}0}{\metre\per\second}$ i én retning.
+\begin{enumerate}[a)]
+    \item Hva er Pers hastighet etter skyvingen?
+    \item Hva er bevegelsesmengden til hvert av dem etter skyvingen? Kommenter svaret.
+\end{enumerate}
+}
+
+\oppgave{Bilkollisjon}{%
+En bil med masse $m_1 = \SI{1200}{\kilo\gram}$ kjører med fart $\SI{20}{\metre\per\second}$ mot en bil med masse $m_2 = \SI{1000}{\kilo\gram}$ som kjører i \textit{motsatt} retning med fart $\SI{15}{\metre\per\second}$. Bilene henger fast etter kollisjonen.
+\begin{enumerate}[a)]
+    \item Hva er den totale bevegelsesmengden til systemet \textit{før} kollisjonen?
+    \item Finn farten og retningen til bilene etter kollisjonen.
+\end{enumerate}
+}
+
 
