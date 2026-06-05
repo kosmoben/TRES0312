@@ -550,6 +550,145 @@ Fjæren blir maksimalt komprimert med \( 6.3 \, \text{cm} \) under kollisjonen.
     \label{fig:Kollisjon}
     \end{figure}
 
+
+\exm{Loop-the-loop}{%
+En ball med masse $m = \SI{1{,}0}{\kilo\gram}$ slippes fra ro fra en høyde $H = \SI{10{,}0}{\metre}$
+over bunnen av en friksjonsfri sirkularloop med radius $R = \SI{2{,}0}{\metre}$.
+Beregn normalkraften på ballen i de tre markerte posisjonene:
+\textbf{1}~bunn av loopen ($h = 0$),
+\textbf{2}~halvveis opp på siden ($h = R$), og
+\textbf{3}~toppen av loopen ($h = 2R$).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
+  \pgfmathsetmacro{\R}{1.6}
+
+  % Ground
+  \draw[gray!50, thick] (-3.6, 0) -- (2.9, 0);
+
+  % Ramp from start height down to loop entry
+  \draw[thick] (-2.8, 4*\R) -- (0.02, 0.02);
+
+  % Loop circle
+  \draw[thick] (0, \R) circle (\R);
+
+  % Starting ball
+  \filldraw[headCol!50!white] (-2.8, 4*\R) circle (0.13);
+  \node[right=2pt, font=\footnotesize] at (-2.65, 4*\R) {start, $v_0 = 0$};
+
+  % Height H annotation (left)
+  \draw[<->, thin, gray!70] (-3.4, 0) -- (-3.4, 4*\R)
+      node[midway, left, font=\footnotesize] {$H$};
+  \draw[dashed, thin, gray!40] (-2.8, 4*\R) -- (-3.4, 4*\R);
+  \draw[dashed, thin, gray!40] (0, 0) -- (-3.4, 0);
+
+  % 2R annotation (right)
+  \draw[<->, thin, gray!70] (2.4, 0) -- (2.4, 2*\R)
+      node[midway, right, font=\footnotesize] {$2R$};
+  \draw[dashed, thin, gray!40] (0, 2*\R) -- (2.4, 2*\R);
+
+  % R annotation: center dot to right edge
+  \fill[gray!50] (0, \R) circle (0.055);
+  \draw[<->, thin, gray!70] (0.06, \R) -- (\R, \R)
+      node[midway, above, font=\footnotesize] {$R$};
+
+  %--- Posisjon 1: Bunn (0, 0) ---
+  \filldraw[headCol] (0, 0) circle (0.13);
+  \node[below right=1pt, font=\small, headCol!60!black] at (0.1, -0.08) {\textbf{1}};
+  % N1 up (offset right), mg down (offset left)
+  \draw[->, very thick, defscol]
+      (0.18, 0) -- (0.18, 1.1) node[right, font=\footnotesize] {$N_1$};
+  \draw[->, very thick, red!70!black]
+      (-0.18, 0) -- (-0.18, -0.85) node[left, font=\footnotesize] {$m\mathrm{g}$};
+
+  %--- Posisjon 2: Høyre side (\R, \R) ---
+  \filldraw[headCol] (\R, \R) circle (0.13);
+  \node[right=3pt, font=\small, headCol!60!black] at (\R+0.13, \R+0.25) {\textbf{2}};
+  % N2 left toward center (shifted up to avoid overlap with R annotation)
+  \draw[->, very thick, defscol]
+      (\R, \R+0.30) -- (\R-1.1, \R+0.30) node[above, font=\footnotesize] {$N_2$};
+  % mg down
+  \draw[->, very thick, red!70!black]
+      (\R, \R) -- (\R, \R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+
+  %--- Posisjon 3: Topp (0, 2R) ---
+  \filldraw[headCol] (0, 2*\R) circle (0.13);
+  \node[above=3pt, font=\small, headCol!60!black] at (0, 2*\R+0.13) {\textbf{3}};
+  % Both N3 and mg point down -- offset left/right
+  \draw[->, very thick, defscol]
+      (-0.22, 2*\R) -- (-0.22, 2*\R-0.85) node[left, font=\footnotesize] {$N_3$};
+  \draw[->, very thick, red!70!black]
+      (0.22, 2*\R) -- (0.22, 2*\R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Hastighet i hver posisjon}
+
+Energibevaring fra start ($v_0 = 0$, høyde $H$) til høyde $h$:
+\[
+  mgH = \tfrac{1}{2}mv^2 + mgh \implies v^2 = 2\mathrm{g}(H - h)
+\]
+
+\medskip
+\noindent\textbf{Normalkraft via Newtons 2.\ lov}
+
+I sirkulær bevegelse er nettokraften \emph{mot sentrum} lik sentripetalkraften:
+\[
+  \sum F_{\text{sentripetal}} = \frac{mv^2}{R}
+\]
+
+\medskip
+\noindent\textit{Posisjon 1 — bunn} ($h = 0$, sentrum peker opp).
+$N_1$ peker opp, $m\mathrm{g}$ peker ned:
+\[
+  N_1 - m\mathrm{g} = \frac{mv_1^2}{R}, \qquad v_1^2 = 2\mathrm{g}H
+\]
+\[
+  N_1 = m\mathrm{g}\!\left(1 + \frac{2H}{R}\right)
+      = \SI{1{,}0}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}
+        \!\left(1 + \frac{2\cdot\SI{10{,}0}{\metre}}{\SI{2{,}0}{\metre}}\right)
+      = \doubleunderline{\SI{108}{\newton}}
+\]
+
+\medskip
+\noindent\textit{Posisjon 2 — siden} ($h = R$, sentrum peker horisontalt).
+$N_2$ peker horisontalt mot sentrum; $m\mathrm{g}$ er loddrett og bidrar
+\emph{ikke} til sentripetalkraften:
+\[
+  N_2 = \frac{mv_2^2}{R}, \qquad v_2^2 = 2\mathrm{g}(H - R)
+\]
+\[
+  N_2 = \frac{2m\mathrm{g}(H - R)}{R}
+      = \frac{2\cdot\SI{1{,}0}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}
+              \cdot\SI{8{,}0}{\metre}}{\SI{2{,}0}{\metre}}
+      = \doubleunderline{\SI{78{,}5}{\newton}}
+\]
+
+\medskip
+\noindent\textit{Posisjon 3 — toppen} ($h = 2R$, sentrum peker ned).
+Både $N_3$ og $m\mathrm{g}$ peker nedover (mot sentrum):
+\[
+  N_3 + m\mathrm{g} = \frac{mv_3^2}{R}, \qquad v_3^2 = 2\mathrm{g}(H - 2R)
+\]
+\[
+  N_3 = m\mathrm{g}\!\left(\frac{2(H - 2R)}{R} - 1\right)
+      = \SI{1{,}0}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}
+        \!\left(\frac{2\cdot\SI{6{,}0}{\metre}}{\SI{2{,}0}{\metre}} - 1\right)
+      = \doubleunderline{\SI{49{,}1}{\newton}}
+\]
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=4pt, right=4pt, top=3pt, bottom=3pt]
+  Normalkraften er størst i bunnen og minst på toppen.
+  For at ballen skal holde kontakt med skinna på toppen, må $N_3 \geq 0$:
+  \[
+    \frac{2(H-2R)}{R} \geq 1 \implies H \geq \frac{5R}{2}
+  \]
+  Med $R = \SI{2{,}0}{\metre}$ er minste tillatte starthøyde $H_{\min} = \SI{5{,}0}{\metre}$.
+\end{tcolorbox}
+}
+
 \section{Effekt}
 Effekt \( P \) er et mål på hvor raskt energi omformes eller utføres arbeid. Den defineres som mengden energi som overføres eller arbeidet som utføres per tidsenhet.
 

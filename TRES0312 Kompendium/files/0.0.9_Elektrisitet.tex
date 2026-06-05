@@ -33,7 +33,18 @@ Strømmen i en krets kan illustreres slik: \\
 
 
 \textbf{Spenning}\\
-Spenning kan sees på som energipotensialet for et område i en krets. Spenningen er arbeid per ladning og har enhet Volt, [V]=[J/C]. \\
+Tenk på spenning som et «elektrisk høydekart»: akkurat som en ball ruller ned fra høyt til lavt i tyngdefeltet,
+beveger ladninger seg fra høyt spenningspotensial til lavt.
+
+\defn{Spenning}{%
+Spenningen $U$ mellom to punkter er arbeidet som kreves for å flytte ladningen $q$ fra det ene punktet til det andre:
+\[
+  U = \frac{W}{q}
+\]
+Enhet: volt, $\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}$.
+En spenning på $\SI{9}{\volt}$ betyr at det kreves $\SI{9}{\joule}$ per coulomb ladning som flyttes.
+}
+
 Spenningskilden i en krets tegnes typisk to forskjellige måter vist i Figur \ref{fig:Spenningskilde1} og Figur \ref{fig:Spenningskilde2}.
 
 \begin{figure}[H]
@@ -74,6 +85,18 @@ Parallellkobling er en måte å koble en krets slik at komponentene ligger "over
     \label{fig:Parallellkobling}
 \end{figure}
 
+
+\textbf{Leder, isolator og halvleder}\\
+Stoffer deles inn i tre grupper etter evnen til å lede elektrisk strøm:
+\begin{itemize}
+  \item \textbf{Ledere} har mange løst bundne elektroner i det ytterste skallet.
+        Disse kan bevege seg fritt og transportere ladning — metaller som kopper og aluminium er gode ledere.
+  \item \textbf{Isolatorer} holder fast på alle elektroner; ingen kan bevege seg fritt.
+        Eksempler: gummi, plast, glass. Brukes til å hindre strøm fra å renne «feil vei».
+  \item \textbf{Halvledere} er midt imellom — ledningsevnen kan styres ved temperatur eller spenning.
+        Grunnlaget for transistorer, dioder og all moderne elektronikk (silisium, Si).
+\end{itemize}
+
 \tips{Forståelse av elektroner, strøm og spenning}{Å forstå hva en elektrisk krets er og hvordan den fungerer kan være utfordrende. En god måte å tenke på en elektrisk krets er å forestille seg en krets bestående av elektroner som kuler plassert side om side. Disse elektronene kan bevege seg fra ett punkt til et annet innen kretsen. \\
 
 Når en spenningskilde, som et batteri, påvirker elektronene nærmest seg, skaper dette en dominoeffekt der elektronene setter hverandre i bevegelse. En motstand kan ses på som en trangere del av kretsen, som gjør det vanskeligere for strømmen å passere, derav navnet "motstand". \\
@@ -93,6 +116,53 @@ I en \textbf{parallellkobling}, derimot, deler veien seg og elektronene kan "vel
 %https://www.codrey.com/dc-circuits/conventional-current-vs-electron-current/   Hentet 31.12.2024
 
 
+
+\section{Elektrisk kraft og ladning}
+
+Elektrisk ladning er det som gir opphav til elektriske krefter.
+To ladede legemer tiltrekker eller frastøter hverandre — akkurat som gravitasjon tiltrekker to masser,
+men med en viktig forskjell: elektrisk kraft kan \emph{både} tiltrekke og frastøte.
+
+\defn{Coulombs lov}{%
+Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ er:
+\[
+  F_e = k \frac{|q_1|\,|q_2|}{r^2}, \qquad k = \SI{8{,}99e9}{\newton\metre\squared\per\coulomb\squared}
+\]
+Kraften er \emph{tiltrekkende} dersom ladningene har motsatt fortegn, og \emph{frastøtende} dersom de har likt fortegn.
+}
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\textbf{Gravitasjon vs.\ elektrisitet — to naturkrefter med samme form}
+
+\medskip
+\begin{tabular}{lll}
+  & \textbf{Gravitasjon} & \textbf{Elektrisitet} \\
+  \hline
+  Formel & $F_g = G\,\dfrac{m_1 m_2}{r^2}$ & $F_e = k\,\dfrac{|q_1||q_2|}{r^2}$ \\[8pt]
+  «Ladning» & Masse $m$ & Elektrisk ladning $q$ \\
+  Konstant & $G = \SI{6{,}67e-11}{}$ & $k = \SI{8{,}99e9}{}$ \\
+  Retning & Alltid tiltrekkende & Tiltrekker (±) eller frastøter (++) \\
+\end{tabular}
+
+\medskip
+Merk at $k$ er \emph{enorm} sammenliknet med $G$ — elektrisk kraft er typisk mange størrelsesordener sterkere enn gravitasjon på atomnivå.
+\end{tcolorbox}
+
+\exm{Kraft mellom to ladninger}{%
+To ladninger $q_1 = \SI{+2{,}0}{\micro\coulomb}$ og $q_2 = \SI{-3{,}0}{\micro\coulomb}$
+befinner seg $r = \SI{0{,}10}{\metre}$ fra hverandre.
+Finn kraften mellom dem.
+
+\[
+  F_e = k\frac{|q_1||q_2|}{r^2}
+      = \SI{8{,}99e9}{\newton\metre\squared\per\coulomb\squared}
+        \cdot \frac{\SI{2{,}0e-6}{\coulomb}\cdot\SI{3{,}0e-6}{\coulomb}}{(\SI{0{,}10}{\metre})^2}
+      = \doubleunderline{\SI{5{,}4}{\newton}}
+\]
+Siden ladningene har motsatt fortegn, er kraften \emph{tiltrekkende}.
+}
+
 \section{Kirchoff's lover}
 Kirchoff's lover brukes til å regne ut strøm eller spenning i en elektrisk krets.
 
@@ -104,6 +174,91 @@ Denne loven er også omtalt som \textit{Kirchoff's strømlov}. Denne loven går 
 Denne loven er også omtalt som \textit{Kirchoff's spenningslov}.
 
 \[\sum{U}=U_1+U_2+...+U_n=0\]
+
+
+
+\subsection{Fysisk tolkning}
+
+\textbf{Kirchhoffs 1.\ lov} (strømloven) følger av at ladning er bevart: ingen ladning kan «forsvinne» i et forgreningspunkt, så all strøm inn må ut igjen.
+
+\textbf{Kirchhoffs 2.\ lov} (spenningsloven) følger av energibevaring: i en lukket sløyfe må summen av alle spenningsfall (over motstander) være lik summen av alle spenningsstigninger (fra kilder). Tilsvarende: vandrer du i en ring tilbake til startpunktet, er nettohøydeforskjellen null.
+
+\exm{Krets med Kirchhoffs lover}{%
+En krets har en spenningskilde $U_0 = \SI{24}{\volt}$.
+Motstand $R_1 = \SI{3}{\ohm}$ er i serie med en parallellkobling av $R_2 = \SI{6}{\ohm}$ og $R_3 = \SI{12}{\ohm}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.92, >={Stealth[length=4pt,width=3pt]},
+    component/.style={draw, thick, minimum width=0.5cm, minimum height=0.9cm}]
+  % Nodes
+  \coordinate (A) at (0,2);
+  \coordinate (B) at (3,2);
+  \coordinate (C) at (5,2);
+  \coordinate (D) at (5,0);
+  \coordinate (E) at (3,0);
+  \coordinate (F) at (0,0);
+  % Battery
+  \draw[thick] (A) -- (F);
+  \draw[thick] (0,1.3) -- (0,0.7);
+  \node[left, font=\footnotesize] at (-0.1,1.0) {$U_0$};
+  \draw[thick, double] (0,1.15) -- (0,0.85);
+  % Top wire
+  \draw[thick] (A) -- (B);
+  % R1
+  \draw[thick] (B) -- (B)+(0.3,0);
+  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
+      (3.3,2) -- (4.7,2);
+  \node[above, font=\footnotesize] at (4,2.3) {$R_1$};
+  \draw[thick] (4.7,2) -- (C);
+  % Junction C
+  \fill (C) circle (0.06);
+  % R2 (upper branch)
+  \draw[thick] (C) -- (5,2.7);
+  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
+      (5,2.7) -- (5,3.5);
+  \node[right, font=\footnotesize] at (5.2,3.1) {$R_2$};
+  \draw[thick] (5,3.5) -- (3,3.5) -- (E);
+  % R3 (lower branch)
+  \draw[thick] (C) -- (5,1.3);
+  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
+      (5,1.3) -- (5,0.5);
+  \node[right, font=\footnotesize] at (5.2,0.9) {$R_3$};
+  \draw[thick] (5,0.5) -- (D);
+  % Bottom wire
+  \fill (E) circle (0.06);
+  \draw[thick] (E) -- (F);
+  % Current labels
+  \node[above, font=\footnotesize, defscol] at (1.5,2) {$I_0$};
+  \node[right, font=\footnotesize, headCol] at (5.5,3.1) {$I_2$};
+  \node[right, font=\footnotesize, headCol!60!black] at (5.5,0.9) {$I_3$};
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Steg 1 — Totalmotstand:}
+
+Parallellkoblingen: $\frac{1}{R_p} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$,
+så $R_p = \SI{4}{\ohm}$.
+
+Totalmotstanden: $R_{\text{tot}} = R_1 + R_p = 3 + 4 = \SI{7}{\ohm}$.
+
+\noindent\textbf{Steg 2 — Totalstrøm (Kirchhoffs 2.\ lov + Ohms lov):}
+\[
+  U_0 = R_{\text{tot}}\,I_0 \implies I_0 = \frac{U_0}{R_{\text{tot}}} = \frac{\SI{24}{\volt}}{\SI{7}{\ohm}}
+  \approx \doubleunderline{\SI{3{,}43}{\ampere}}
+\]
+
+\noindent\textbf{Steg 3 — Spenning over parallellkoblingen:}
+\[
+  U_p = R_p\,I_0 = \SI{4}{\ohm}\cdot\SI{3{,}43}{\ampere} \approx \SI{13{,}7}{\volt}
+\]
+
+\noindent\textbf{Steg 4 — Strøm i grenene (Kirchhoffs 1.\ lov):}
+\[
+  I_2 = \frac{U_p}{R_2} = \frac{13{,}7}{6} \approx \SI{2{,}29}{\ampere}, \qquad
+  I_3 = \frac{U_p}{R_3} = \frac{13{,}7}{12} \approx \SI{1{,}14}{\ampere}
+\]
+Sjekk K1: $I_2 + I_3 \approx 2{,}29 + 1{,}14 = \SI{3{,}43}{\ampere} = I_0$ \checkmark
+}
 
 \section{Motstand}
 Motstand, eller resistanser, R, er komponenter i en krets som har påvirkning på strømmen og spenningen. \textit{Ohm's lov} viser at spenningen, U, er proporsjonal med resistansen og strømmen. 

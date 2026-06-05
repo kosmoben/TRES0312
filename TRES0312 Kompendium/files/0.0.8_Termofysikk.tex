@@ -1,0 +1,653 @@
+% !TEX root = ../main.tex
+\chapter{Termofysikk}
+\intro{Termofysikk handler om varme, temperatur og energioverføring. Vi ser på hva varme egentlig er på mikroskopisk nivå, hva som skjer med energien til et system når vi varmer det opp, og hva som foregår under faseoverganger som smelting og fordamping. Disse ideene er grunnleggende for å forstå alt fra klimaendringer og forbrenningmotorer til kjøleskap og koking av mat.}
+
+\spm{}{%
+\item Hva er forskjellen mellom varme og temperatur?
+\item Hva sier termodynamikkens 1.\ lov, og hvordan bruker vi den?
+\item Hva skjer med temperaturen til et stoff \emph{under} en faseovergang?
+\item Hvordan beregner vi energien som trengs for å varme opp eller smelte et stoff?}
+
+\newpage
+
+%=============================================================
+\section{Indre energi og varme}
+%=============================================================
+
+Alt stoff er bygget opp av atomer og molekyler i stadig bevegelse. Den samlede energien knyttet til disse mikroskopiske bevegelsene og posisjonene kalles \emph{indre energi} $U$.
+
+Den indre energien deles i to: \emph{kinetisk} indre energi (bevegelsesenergi til molekylene) og \emph{potensiell} indre energi (energi lagret i bindingene mellom molekylene).
+
+\medskip
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\vspace{0pt}
+Den kinetiske delen har tre bidrag:
+\begin{itemize}
+  \item \textbf{Translasjon} — molekylene beveger seg lineært fra sted til sted. Temperaturen $T$ er direkte knyttet til nettopp denne bevegelsen.
+  \item \textbf{Vibrasjon} — atomene innad i molekylet svinger frem og tilbake.
+  \item \textbf{Rotasjon} — molekylet spinner rundt sin egen akse.
+\end{itemize}
+\smallskip
+Den potensielle delen inkluderer energi lagret i faseoverganger (f.eks.\ isen som smelter) og i kjemiske bindinger.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88,
+  box/.style={draw, rounded corners=3pt, inner sep=5pt, fill=gray!8, font=\small},
+  >={Stealth[length=5pt,width=4pt]}
+]
+  \node[box, fill=headCol!20, font=\small\bfseries] (root) at (1.8, 0) {Indre energi};
+  \node[box, fill=defscol!15] (kin) at (-0.1, -1.7) {Kinetisk};
+  \node[box, fill=red!10]     (pot) at (3.7, -1.7) {Potensiell};
+  \node[box, font=\footnotesize] (tr) at (-1.7,-3.4)
+      {\parbox{1.5cm}{\centering Transla-\\sjon ($\Delta T$)}};
+  \node[box, font=\footnotesize] (vi) at (0.1,-3.4) {Vibrasjon};
+  \node[box, font=\footnotesize] (ro) at (1.8,-3.4) {Rotasjon};
+  \node[box, font=\footnotesize] (fa) at (3.4,-3.4)
+      {\parbox{1.5cm}{\centering Faseovergangs-\\energi}};
+  \node[box, font=\footnotesize] (ke) at (5.2,-3.4)
+      {\parbox{1.4cm}{\centering Kjemisk\\reaksjon}};
+  \draw[->] (root) -- (kin);
+  \draw[->] (root) -- (pot);
+  \draw[->] (kin) -- (tr);
+  \draw[->] (kin) -- (vi);
+  \draw[->] (kin) -- (ro);
+  \draw[->] (pot) -- (fa);
+  \draw[->] (pot) -- (ke);
+\end{tikzpicture}
+\captionof{figure}{Indre energi og dens komponenter. Temperaturendring $\Delta T$ er knyttet til den translatoriske kinetiske energien.}
+\label{fig:indre_energi_tre}
+\end{minipage}
+
+\medskip
+
+Den indre energien kan økes på to måter: ved å tilføre \emph{varme}, eller ved å utføre \emph{arbeid} på systemet. Bremseklosser varmes opp av friksjon (arbeid), og en kopp te avkjøles ved å avgi varme til omgivelsene.
+
+\defn{Varme}{
+Varme $Q$ er indre energi som overføres fra ett system til et annet \emph{utelukkende} på grunn av en temperaturforskjell $\Delta T$. Varme er ikke noe et system «har» — det er energi i bevegelse mellom systemer.
+}
+
+Temperatur og varme er to ulike størrelser. Temperaturen forteller om den gjennomsnittlige translasjonsenergien til molekylene. Varme forteller om \emph{overføringen} av energi mellom to systemer på grunn av temperaturforskjellen mellom dem.
+
+%=============================================================
+\section{Termodynamikkens 1.\ lov}
+%=============================================================
+
+Den indre energien $U$ til et system kan endres på to måter: varme $Q$ tilføres (eller avgis), og arbeid $W$ utføres på (eller av) systemet. Termodynamikkens 1.\ lov er energibevaringsloven uttrykt for termodynamiske systemer:
+
+\defn{Termodynamikkens 1. lov}{
+Endringen i den indre energien $\Delta U$ er lik summen av tilført varme $Q$ og arbeid $W$ utført \emph{på} systemet:
+\[
+  \Delta U = Q + W
+\]
+}
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\textbf{Fortegnskonvensjon:}
+\begin{itemize}
+  \item $\Delta U > 0$: indre energi øker (systemet lagrer mer energi)
+  \item $Q > 0$: varme strømmer \emph{inn} i systemet
+  \item $Q < 0$: systemet avgir varme til omgivelsene
+  \item $W > 0$: arbeid utføres \emph{på} systemet (f.eks.\ stempelet komprimerer gassen)
+  \item $W < 0$: systemet gjør arbeid \emph{på} omgivelsene (f.eks.\ gassen ekspanderer og løfter et stempel)
+\end{itemize}
+\end{tcolorbox}
+
+\medskip
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Figuren viser et typisk termodynamisk system: en gass i en sylinder med bevegelig stempel. Varme $Q > 0$ kan tilføres fra en varmekilde. Stempelet kan gjøre arbeid $W > 0$ på gassen ved å komprimere den — eller gassen kan ekspandere og løfte stempelet ($W < 0$). Endringen $\Delta U$ samler opp begge bidragene.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88, >={Stealth[length=6pt,width=4pt]}]
+  % Sylinder
+  \fill[gray!10] (0.0, 0.0) rectangle (2.6, 2.2);
+  \draw[thick] (0.0, 0.0) -- (0.0, 2.2) -- (2.6, 2.2) -- (2.6, 0.0) -- (0.0, 0.0);
+  % Stempel
+  \fill[gray!40] (0.0, -0.35) rectangle (2.6, 0.0);
+  \draw[thick] (0.0, -0.35) rectangle (2.6, 0.0);
+  % Stempel-stang
+  \draw[thick, gray!60] (1.3, -0.35) -- (1.3, -0.80);
+  % W-pil oppover mot stempel
+  \draw[->, very thick, defscol]
+      (1.3, -1.4) -- (1.3, -0.85)
+      node[midway, right=2pt, font=\small, defscol] {$W > 0$};
+  % Gass-partikler
+  \node[font=\small, gray!50] at (1.3, 1.1) {Gass $(U)$};
+  \foreach \px/\py in {0.4/0.4, 0.9/1.5, 1.8/0.7, 0.6/1.8, 2.1/1.5, 1.5/0.5} {
+    \fill[defscol!50] (\px,\py) circle (0.055);
+  }
+  % Q-pil inn fra venstre
+  \draw[->, very thick, red!70!black]
+      (-1.3, 1.1) -- (-0.05, 1.1)
+      node[midway, above=2pt, font=\small, red!70!black] {$Q > 0$};
+  % Varmekilde-boks
+  \draw[red!50, thick, rounded corners=2pt] (-2.0,0.7) rectangle (-1.4,1.5);
+  \node[font=\tiny, red!70!black, align=center] at (-1.7, 1.1) {varme-\\kilde};
+\end{tikzpicture}
+\captionof{figure}{Gass i sylinder. Varme $Q$ tilføres fra en varmekilde, og stempelet gjør arbeid $W$ på gassen.}
+\label{fig:1lov_system}
+\end{minipage}
+
+\medskip
+
+\exm{Gass i sylinder}{%
+$Q = \SI{500}{\joule}$ tilføres en gass i en sylinder. Den indre energien øker med $\Delta U = \SI{100}{\joule}$.
+\begin{enumerate}[a)]
+  \item Hvor stort arbeid gjør stempelet på gassen?
+  \item Dersom stempelet har masse $m = \SI{50}{\kilo\gram}$ og beveger seg vertikalt \emph{mot} tyngdekraftens retning, hvor langt flyttes det?
+\end{enumerate}
+}
+
+\svar{%
+\textbf{a)} Fra 1.\ lov løser vi for $W$:
+\[
+  \Delta U = Q + W \implies W = \Delta U - Q = \SI{100}{\joule} - \SI{500}{\joule}
+  = \doubleunderline{-\SI{400}{\joule}}
+\]
+Det negative fortegnet viser at stempelet \emph{ikke} gjør arbeid på gassen — det er gassen som gjør \SI{400}{\joule} arbeid på stempelet og løfter det oppover.
+
+\textbf{b)} Gassen gjør \SI{400}{\joule} arbeid på stempelet. Dette arbeidet brukes til å løfte stempelet mot tyngdekraften ($W = \Delta E_{\text{pot}} = mgy$):
+\[
+  y = \frac{W}{mg} = \frac{\SI{400}{\joule}}{\SI{50}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}}
+  = \doubleunderline{\SI{0{,}82}{\metre}}
+\]
+Stempelet flyttes \SI{82}{\centi\metre}.
+}
+
+\tips{Adiabatisk prosess}{%
+En \emph{adiabatisk} prosess er en prosess uten varmeoverføring: $Q = 0$. Da gir 1.\ lov:
+\[
+  \Delta U = W
+\]
+All endring i indre energi skyldes arbeid. Eksempler: en \textbf{sykkelpumpe} (komprimering skjer for raskt til at varme rekker å slippe ut — pumpa blir varm), og \textbf{dieselmotorer} (luften komprimeres adiabatisk inntil temperaturen er høy nok til at drivstoffet antennes av seg selv, uten tennplugg).
+}
+
+\oppgave{Sykkelpumpe}{%
+En sykkelpumpe komprimerer luft raskt slik at prosessen er tilnærmet adiabatisk. Et arbeid på $W = \SI{30}{\joule}$ utføres på luften.
+\begin{enumerate}[a)]
+  \item Hva er endringen i den indre energien til luften?
+  \item Stiger eller synker temperaturen i pumpa? Forklar fysisk hvorfor.
+\end{enumerate}
+}
+
+\svar{%
+\textbf{a)} Adiabatisk: $Q = 0$. Fra 1.\ lov:
+\[
+  \Delta U = Q + W = 0 + \SI{30}{\joule} = \doubleunderline{+\SI{30}{\joule}}
+\]
+
+\textbf{b)} $\Delta U > 0$ betyr at den indre energien øker. Siden den indre energien er knyttet til den molekylære bevegelsen (og dermed temperaturen), \emph{stiger} temperaturen. Du kan kjenne dette ved å ta på pumpa etter bruk — den er varm.
+}
+
+%=============================================================
+\section{Faseoverganger}
+%=============================================================
+
+Stoff kan eksistere i tre faser: \emph{fast stoff}, \emph{væske} og \emph{gass}. Overgangen mellom fasene — smelting, størkningsfrysing, fordamping, kondensering — kalles \emph{faseovergang}. Det karakteristiske er at temperaturen holder seg \emph{konstant} under en faseovergang, selv om vi fortsetter å tilføre energi. Den tilførte energien går i stedet med til å bryte opp de molekylære bindingene (potensiell indre energi), ikke til å øke hastigheten til molekylene.
+
+\medskip
+\noindent
+\begin{minipage}[t]{0.52\linewidth}
+\vspace{0pt}
+Figuren viser oppvarmingskurven for \SI{1}{\kilo\gram} vann, fra is ved $-20\,^\circ$C til vanndamp:
+
+\begin{itemize}
+  \item \textbf{Is} (skrå linje): temperatur stiger lineært.
+  \item \textbf{Smeltepunkt} (horisontalt platå ved $0\,^\circ$C): \SI{334}{\kilo\joule} brukes til å bryte krystallstrukturen i isen — temperaturen holdes konstant.
+  \item \textbf{Vann} (skrå linje): temperaturen stiger igjen. Linjen er slakere enn for is fordi $c_{\text{vann}} > c_{\text{is}}$ — vann krever mer energi per grads oppvarming.
+  \item \textbf{Kokepunkt} (horisontalt platå ved $100\,^\circ$C): hele \SI{2259}{\kilo\joule} brukes til fordamping — langt mer enn til smelting.
+  \item \textbf{Damp}: temperaturen stiger igjen.
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88]
+  % Axes
+  \draw[->, thin, black!70] (-0.3, 0) -- (9.1, 0)
+      node[right, font=\scriptsize] {$E$/\si{kJ}};
+  \draw[->, thin, black!70] (0, -0.3) -- (0, 7.8)
+      node[above, font=\scriptsize] {$t$/\si{\celsius}};
+
+  % x-axis ticks (1 TikZ unit = 400 kJ)
+  \foreach \x/\lab in {0/0, 2/800, 4/1600, 6/2400, 8/3200} {
+    \draw[thin, black!60] (\x, 0.08) -- (\x, -0.08);
+    \node[below, font=\tiny] at (\x, -0.08) {\lab};
+  }
+
+  % y-axis ticks (1 TikZ unit = 20 °C, y=0 ↔ t=-20°C)
+  \foreach \y/\lab in {0/{-20}, 1/0, 2/20, 3/40, 4/60, 5/80, 6/100, 7/120} {
+    \draw[thin, black!60] (0.08, \y) -- (-0.08, \y);
+    \node[left, font=\tiny] at (-0.08, \y) {$\lab$};
+  }
+
+  % === Oppvarmingskurve ===
+  % Is: (0, 0) -> (0.105, 1)  [42 kJ, 0°C]
+  \draw[line width=2pt, defscol] (0,0) -- (0.105, 1);
+  % Smeltepunkt: (0.105,1) -> (0.94, 1)  [376 kJ, 0°C]
+  \draw[line width=2pt, headCol] (0.105, 1) -- (0.94, 1);
+  % Vann: (0.94,1) -> (1.99, 6)  [796 kJ, 100°C]
+  \draw[line width=2pt, defscol] (0.94, 1) -- (1.99, 6);
+  % Kokepunkt: (1.99,6) -> (7.64, 6)  [3055 kJ, 100°C]
+  \draw[line width=2pt, headCol] (1.99, 6) -- (7.64, 6);
+  % Damp: fortsetter
+  \draw[line width=2pt, defscol] (7.64, 6) -- (8.5, 7.2);
+
+  % Region labels
+  \node[font=\tiny, black!70, right] at (0.02, 0.45) {Is};
+  \node[font=\tiny, headCol]        at (0.52, 1.22) {Smelting};
+  \node[font=\tiny, black!70, right] at (1.40, 3.60) {Vann};
+  \node[font=\tiny, headCol]        at (4.82, 6.22) {Fordamping};
+  \node[font=\tiny, black!70, right] at (7.90, 6.80) {Damp};
+
+  % Energy labels on plateaus
+  \node[font=\tiny, headCol!80!black] at (0.52, 0.72) {\SI{334}{kJ}};
+  \node[font=\tiny, headCol!80!black] at (4.82, 5.68) {\SI{2259}{kJ}};
+
+  % Dashed reference lines
+  \draw[dashed, gray!45, thin] (0.105,1) -- (-0.3,1);
+  \draw[dashed, gray!45, thin] (1.99, 6) -- (-0.3,6);
+\end{tikzpicture}
+\captionof{figure}{Oppvarmingskurve for \SI{1}{\kilo\gram} vann. De horisontale platåene ved $0\,^\circ$C og $100\,^\circ$C er faseovergangene.}
+\label{fig:fasediagram_vann}
+\end{minipage}
+
+\medskip
+
+\merk{Faseoverganger avhenger av trykk}{%
+Smelte- og kokepunktet avhenger av omgivelsenes trykk. Høyt til fjells, der lufttrykket er lavere, koker vann ved under $100\,^\circ$C — og det tar lenger tid å koke egg fordi temperaturen aldri blir høy nok.
+}
+
+%=============================================================
+\section{Kalorimetri}
+%=============================================================
+
+Kalorimetri er den kvantitative beskrivelsen av varme — vi beregner nøyaktig hvor mye energi som trengs for å varme opp et stoff eller gjennomføre en faseovergang.
+
+\subsection*{Temperaturendring innen en fase}
+
+\defn{Spesifikk varmekapasitet}{
+Varmen som trengs for å endre temperaturen til et legeme med masse $m$ med $\Delta T$:
+\[
+  Q = c \cdot m \cdot \Delta T
+\]
+der $c$ er den \emph{spesifikke varmekapasiteten} med enhet \si{\kilo\joule\per(\kilo\gram\kelvin)}.
+
+\smallskip\noindent
+\textit{Merk:} $\Delta T$ er den samme i Celsius og Kelvin: $\Delta T[\si{K}] = \Delta T[\si{^\circ C}]$.
+}
+
+\begin{center}
+\small
+\begin{tabular}{lc}
+\hline
+\textbf{Stoff} & $c$ / \si{kJ/(kg\,K)} \\
+\hline
+Bly            & 0{,}13 \\
+Sølv           & 0{,}24 \\
+Kopper         & 0{,}39 \\
+Jern           & 0{,}45 \\
+Glass          & 0{,}84 \\
+Aluminium      & 0{,}90 \\
+Luft           & 1{,}0 \\
+Vanndamp       & 2{,}0 \\
+Is             & 2{,}1 \\
+Menneskekropp  & 3{,}5 \\
+\textbf{Vann}  & \textbf{4{,}2} \\
+\hline
+\end{tabular}
+\end{center}
+
+For sammensatte systemer (f.eks.\ termos + vann) bruker vi den totale \emph{varmekapasiteten} $C$ (uten masse):
+
+\defn{Varmekapasitet}{
+\[
+  Q = C \cdot \Delta T \qquad [C] = \si{J/K}
+\]
+$C$ er summen av $c_i m_i$ for alle deler av systemet.
+}
+
+\subsection*{Faseovergang}
+
+\defn{Spesifikk fasevarme}{
+Varmen som tilføres eller avgis når en masse $m$ av et stoff skifter fase ved konstant temperatur:
+\[
+  Q = \ell \cdot m
+\]
+der $\ell$ er den \emph{spesifikke fasevarmen} med enhet \si{kJ/kg}.
+}
+
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\hline
+\textbf{Stoff} & $\ell_{\text{smelte}}$ / \si{kJ/kg} & $\ell_{\text{fordamp}}$ / \si{kJ/kg} \\
+\hline
+Oksygen         &  13{,}8 &    213 \\
+Nitrogen        &  25{,}8 &    199 \\
+Kvikksølv       &  11{,}7 &    270 \\
+Bly             &  25     &    871 \\
+Etanol          & 104     &    854 \\
+Sølv            & 105     &  2\,336 \\
+Kopper          & 205     &  5\,069 \\
+\textbf{Vann}   & \textbf{334}  & \textbf{2\,259} \\
+Aluminium       & 395     & 10\,500 \\
+\hline
+\end{tabular}
+\end{center}
+
+\exm{Fordampe vann}{%
+Hvor mye energi kreves for å fordampe $\SI{2{,}0}{\litre}$ vann fra $100\,^\circ$C (væske) til $100\,^\circ$C (damp)?
+}
+
+\svar{%
+Massen: $m = \rho V = \SI{1{,}0}{kg/L}\cdot\SI{2{,}0}{L} = \SI{2{,}0}{\kilo\gram}$.
+
+Siden temperaturen er konstant (faseovergang):
+\[
+  Q = \ell_{\text{fordamp}} \cdot m
+    = \SI{2259}{kJ/kg} \cdot \SI{2{,}0}{\kilo\gram}
+    = \doubleunderline{\SI{4518}{\kilo\joule} \approx \SI{4{,}5}{\mega\joule}}
+\]
+\textit{Til sammenlikning:} denne energien tilsvarer å løfte de \SI{2{,}0}{\kilo\gram} til en høyde
+$h = Q/(mg) = 4{,}518\!\cdot\!10^6/(2{,}0\cdot 9{,}81) \approx \SI{2{,}3e5}{\metre}$ — over 200\,km opp i luften!
+}
+
+\exm{Avkjøling av glass}{%
+Et legeme av glass med masse $m = \SI{10}{\kilo\gram}$ avkjøles fra $35\,^\circ$C til $-15\,^\circ$C. Hvor mye energi avgir glasset som varme?
+}
+
+\svar{%
+$c_{\text{glass}} = \SI{0{,}84}{kJ/(kg\,K)}$, \quad $\Delta T = -15 - 35 = -\SI{50}{\kelvin}$.
+\[
+  Q = c \cdot m \cdot \Delta T
+    = \SI{0{,}84}{kJ/(kg\,K)} \cdot \SI{10}{\kilo\gram} \cdot (-\SI{50}{\kelvin})
+    = \doubleunderline{-\SI{420}{\kilo\joule}}
+\]
+Det negative fortegnet bekrefter at glasset \emph{avgir} \SI{420}{\kilo\joule} til omgivelsene.
+}
+
+\exm{Varmekapasitet til en termosflaske}{%
+Det trengs \SI{180}{\joule} for å øke temperaturen i en termosflaske med $\Delta T = \SI{5{,}0}{\kelvin}$. Hva er varmekapasiteten til flaska?
+}
+
+\svar{%
+\[
+  Q = C\cdot\Delta T \implies C = \frac{Q}{\Delta T} = \frac{\SI{180}{\joule}}{\SI{5{,}0}{\kelvin}}
+    = \doubleunderline{\SI{36}{\joule\per\kelvin}}
+\]
+}
+
+\exm{Kalorimeter — spesifikk varmekapasitet}{%
+En ukjent væske med masse $m_v = \SI{200}{\gram}$ legges i en termosflaske med varmekapasitet $C_{\text{termos}} = \SI{50}{\joule\per\kelvin}$. Tilsammen \SI{7{,}00}{\kilo\joule} tilføres, og temperaturen stiger fra $15{,}2\,^\circ$C til $28{,}0\,^\circ$C. Finn den spesifikke varmekapasiteten $c_v$ til væska.
+}
+
+\svar{%
+Temperaturendring: $\Delta T = 28{,}0 - 15{,}2 = \SI{12{,}8}{\kelvin}$.
+
+All tilført energi $E$ fordeles mellom væsken og termosen:
+\[
+  E = Q_v + Q_{\text{termos}} = c_v m_v \Delta T + C_{\text{termos}} \Delta T
+\]
+\[
+  \implies c_v = \frac{E - C_{\text{termos}}\,\Delta T}{m_v\,\Delta T}
+    = \frac{\SI{7000}{\joule} - \SI{50}{\joule\per\kelvin}\cdot\SI{12{,}8}{\kelvin}}
+           {\SI{0{,}200}{\kilo\gram}\cdot\SI{12{,}8}{\kelvin}}
+    = \frac{7000 - 640}{2{,}56}
+    \approx \doubleunderline{\SI{2{,}5}{\kilo\joule\per(\kilo\gram\kelvin)}}
+\]
+}
+
+\oppgave{Cola og is}{%
+En boks cola ($m_c = \SI{350}{\gram}$) er ved romtemperatur $t_c = \SI{20}{\celsius}$. Du legger i $m_{\text{is}} = \SI{20}{\gram}$ is ved $t_{\text{is}} = -5\,^\circ$C. Anta at cola oppfører seg termisk som vann.
+
+\begin{enumerate}[a)]
+  \item Beregn energien som trengs for å varme opp isen til $0\,^\circ$C og smelte den.
+  \item Finn slutt-temperaturen $t_f$ i blandingen.
+\end{enumerate}
+\textit{(Spesifikk varmekapasitet: $c_{\text{vann}} = c_{\text{cola}} = \SI{4{,}2}{kJ/(kg\,K)}$, $c_{\text{is}} = \SI{2{,}1}{kJ/(kg\,K)}$; fasevarme: $\ell_{\text{smelte}} = \SI{334}{kJ/kg}$.)}
+}
+
+\svar{%
+\textbf{a)}
+
+Varme opp is fra $-5\,^\circ$C til $0\,^\circ$C:
+\[
+  Q_1 = c_{\text{is}}\cdot m_{\text{is}}\cdot\SI{5}{\kelvin}
+      = \SI{2{,}1}{kJ/(kg\,K)}\cdot\SI{0{,}020}{kg}\cdot 5
+      = \SI{0{,}21}{\kilo\joule} = \SI{210}{\joule}
+\]
+Smelte isen ved $0\,^\circ$C:
+\[
+  Q_2 = \ell_{\text{smelte}}\cdot m_{\text{is}}
+      = \SI{334}{kJ/kg}\cdot\SI{0{,}020}{kg}
+      = \SI{6{,}68}{\kilo\joule}
+\]
+Totalt: $Q_1 + Q_2 = \SI{6{,}89}{\kilo\joule}$.
+
+Sjekk: maksimal varme colaen kan avgi (ned til $0\,^\circ$C): $4{,}2\cdot0{,}350\cdot20 = \SI{29{,}4}{kJ} \gg \SI{6{,}89}{kJ}$ — all isen smelter, og $t_f > 0\,^\circ$C.
+
+\textbf{b)} Energibalanse (colaen avgir = isen absorberer):
+\[
+  c_{\text{cola}}\,m_c\,(20 - t_f) = Q_1 + Q_2 + c_{\text{vann}}\,m_{\text{is}}\,t_f
+\]
+\[
+  4{,}2\cdot0{,}350\cdot(20 - t_f) = 6{,}89 + 4{,}2\cdot0{,}020\cdot t_f
+\]
+\[
+  1{,}47\,(20 - t_f) = 6{,}89 + 0{,}084\,t_f
+\]
+\[
+  29{,}4 - 1{,}47\,t_f = 6{,}89 + 0{,}084\,t_f
+  \implies t_f = \frac{29{,}4 - 6{,}89}{1{,}47 + 0{,}084}
+  = \frac{22{,}51}{1{,}554}
+  \approx \doubleunderline{\SI{14{,}5}{\celsius}}
+\]
+}
+
+
+\section{Temperaturskalaer}
+
+Temperatur måler den gjennomsnittlige kinetiske translasjonsenergien til molekylene i et stoff.
+Vi bruker tre skalaer i fysikk og hverdagsliv:
+
+\defn{Kelvin og Celsius}{%
+Kelvin (K) er SI-enheten for temperatur og tar utgangspunkt i det \emph{absolutte nullpunktet}
+— den laveste mulige temperaturen, der molekylbevegelsen stopper.
+Sammenhengen med Celsius er:
+\[
+  T\,[\text{K}] = t\,[{^\circ}\text{C}] + 273{,}15 \approx t + 273
+\]
+}
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\textbf{Omregningstabell}
+
+\medskip
+\begin{tabular}{lll}
+  \textbf{Situasjon} & \textbf{Celsius} & \textbf{Kelvin} \\
+  \hline
+  Absolutt nullpunkt & $-273\,^\circ\text{C}$ & $\SI{0}{\kelvin}$ \\
+  Vann fryser        & $0\,^\circ\text{C}$    & $\SI{273}{\kelvin}$ \\
+  Romtemperatur      & $20\,^\circ\text{C}$   & $\SI{293}{\kelvin}$ \\
+  Vann koker         & $100\,^\circ\text{C}$  & $\SI{373}{\kelvin}$ \\
+\end{tabular}
+
+\medskip
+Fahrenheit (brukes i USA): $t_F = \frac{9}{5}\,t_C + 32$.
+\end{tcolorbox}
+
+\merk{Bruk alltid Kelvin i formler}{%
+I fysikk-formler (kinetisk gassteori, tilstandslikninga) \emph{må} du bruke kelvin.
+Celsius fungerer bare når du regner med \emph{temperaturforskjeller} $\Delta T$,
+siden $\Delta T_{\text{K}} = \Delta T_{\text{C}}$.}
+
+
+\section{Kinetisk gassteori}
+
+Kinetisk gassteori kobler makroskopiske størrelser (trykk, temperatur) til mikroskopisk
+molekylbevegelse. Utgangspunktet er enkle antagelser: mange små molekyler,
+urelaterte elastiske kollisjoner, ubetydeliges eget volum.
+
+Det kan vises at den gjennomsnittlige translasjonsenergien til ett molekyl er
+direkte proporsjonal med den absolutte temperaturen:
+
+\defn{Gjennomsnittlig kinetisk energi per molekyl}{%
+\[
+  \bar{E}_k = \frac{3}{2}\,k_B T
+\]
+Her er $k_B = \SI{1{,}38e-23}{\joule\per\kelvin}$ Boltzmanns konstant og
+$T$ temperaturen i kelvin.
+}
+
+\merk{Temperatur = bevegelse}{%
+Temperatur er \emph{ikke} en egenskap ved ett enkelt molekyl — det er et statistisk
+gjennomsnitt over svært mange molekyler.
+Dobler du den absolutte temperaturen ($T_2 = 2T_1$),
+dobles også den gjennomsnittlige kinetiske energien.}
+
+\exm{Gjennomsnittlig energi til et heliumatom}{%
+Heliumgass holdes ved romtemperatur $T = \SI{293}{\kelvin}$.
+Finn den gjennomsnittlige translasjonsenergien til ett He-atom.
+
+\[
+  \bar{E}_k = \frac{3}{2}\,k_B T
+            = \frac{3}{2} \cdot \SI{1{,}38e-23}{\joule\per\kelvin} \cdot \SI{293}{\kelvin}
+            = \doubleunderline{\SI{6{,}1e-21}{\joule}}
+\]
+Selv om dette er svært lite, beveger et heliumatom seg ved romtemperatur med en
+gjennomsnittlig hastighet på rundt $\SI{1350}{\metre\per\second}$ — raskere enn lyden!
+}
+
+
+\section{Tilstandslikninga for idealgass}
+
+For en idealgass er det en enkel sammenheng mellom trykk $p$, volum $V$ og
+absolutt temperatur $T$. Vi bruker $N$ for antall molekyler og
+$k_B$ for Boltzmanns konstant:
+
+\defn{Tilstandslikninga for idealgass}{%
+\[
+  pV = N k_B T
+\]
+Alle fire størrelser $p$, $V$, $N$, $T$ er koblet: holder man to konstante,
+bestemmer de to andre hverandre.
+}
+
+\merk{Molform: $pV = nRT$}{%
+Er antall \emph{mol} $n$ gitt i stedet for antall molekyler $N$,
+bruker man gassonstanten $R = \SI{8{,}314}{\joule\per(\mol\kelvin)}$:
+$pV = nRT$.
+Sammenhengen er $N k_B = n R$.}
+
+\exm{Oppvarming av gass i lukket beholder}{%
+En luftbobble med volum $V_1 = \SI{30}{\deci\metre\cubed}$ er ved trykk
+$p_1 = \SI{100}{\kilo\pascal}$ og temperatur $T_1 = \SI{300}{\kelvin}$
+(lukket beholder, $V = $ konst.).
+Trykket økes til $p_2 = \SI{180}{\kilo\pascal}$.
+Finn den nye temperaturen $T_2$.
+
+Siden $N$ og $V$ er konstante, gir tilstandslikninga:
+\[
+  \frac{p_1}{T_1} = \frac{p_2}{T_2}
+  \implies
+  T_2 = T_1 \cdot \frac{p_2}{p_1}
+      = \SI{300}{\kelvin} \cdot \frac{\SI{180}{\kilo\pascal}}{\SI{100}{\kilo\pascal}}
+      = \doubleunderline{\SI{540}{\kelvin} = \SI{267}{\celsius}}
+\]
+}
+
+\oppgave{Sylindereksperiment}{%
+En gass i en sylinder har volum $V_1 = \SI{30}{\deci\metre\cubed}$,
+trykk $p_1 = \SI{100}{\kilo\pascal}$ og temperatur $T_1 = \SI{300}{\kelvin}$.
+Stempelet beveges slik at gassen ekspanderer isobartett
+(konstant trykk) til temperaturen er $T_2 = \SI{600}{\kelvin}$.
+
+\begin{enumerate}[label=\alph*)]
+  \item Hva er det nye volumet $V_2$?
+  \item Hva skjer med den indre energien til gassen?
+\end{enumerate}
+}{%
+\textbf{a)} Isobar prosess ($p$ konst.): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$, så
+$V_2 = V_1 \cdot \dfrac{T_2}{T_1} = 30 \cdot \dfrac{600}{300} = \doubleunderline{\SI{60}{\deci\metre\cubed}}$.
+
+\textbf{b)} Den indre energien øker (temperaturen dobles → molekylenes bevegelsesenergi dobles).
+Siden gassen ekspanderer mot stempelet, gjør den \emph{positivt arbeid} på omgivelsene.
+Fra 1.\ lov: $\Delta U = Q + W$; gassen mottar varme, og noe av det forsvinner som mekanisk arbeid.
+}
+
+
+\section{Prosesstyper og $pV$-diagram}
+
+Tilstandslikninga $pV = Nk_BT$ forbinder tre størrelser.
+Avhengig av hvilken som holdes \emph{konstant}, skiller vi mellom tre idealprosesser:
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\begin{tabular}{llll}
+  \textbf{Prosesstype} & \textbf{Konstant} & \textbf{Sammenheng} & \textbf{Eksempel} \\
+  \hline
+  Isochor  & $V = $ konst. & $p/T = $ konst. & Trykkbeholder \\
+  Isobar   & $p = $ konst. & $V/T = $ konst. & Stempel under atm.\ trykk \\
+  Isotherm & $T = $ konst. & $pV = $ konst.  & Sakte kompresjon \\
+\end{tabular}
+\end{tcolorbox}
+
+Et \emph{$pV$-diagram} viser trykket $p$ som funksjon av volumet $V$.
+Arealet under kurven tilsvarer arbeidet gassen gjør (eller arbeidet som gjøres på gassen).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >={Stealth[length=5pt,width=4pt]}]
+  % Axes
+  \draw[->] (0,0) -- (5.2,0) node[right, font=\small] {$V$};
+  \draw[->] (0,0) -- (0,4.2) node[above, font=\small] {$p$};
+
+  % Starting point A
+  \fill[headCol] (1.2, 3.2) circle (0.07);
+  \node[above left, font=\small] at (1.2, 3.2) {A};
+
+  % Isochor from A downward (V=const)
+  \draw[->, thick, red!70!black] (1.2, 3.2) -- (1.2, 1.4)
+      node[midway, left, font=\footnotesize, red!70!black] {isochor};
+  \fill[red!70!black] (1.2, 1.4) circle (0.07);
+  \node[below left, font=\small, red!70!black] at (1.2, 1.4) {B};
+
+  % Isobar from A rightward (p=const)
+  \draw[->, thick, defscol] (1.2, 3.2) -- (3.5, 3.2)
+      node[midway, above, font=\footnotesize, defscol] {isobar};
+  \fill[defscol] (3.5, 3.2) circle (0.07);
+  \node[above right, font=\small, defscol] at (3.5, 3.2) {C};
+
+  % Isotherm (hyperbola) from A downward-right
+  % pV = const = 1.2*3.2 = 3.84; points: (1.5,2.56),(2.0,1.92),(2.56,1.5),(3.84,1.0)
+  \draw[->, thick, headCol!70!black]
+      (1.2, 3.2)
+      .. controls (1.8, 2.4) and (2.6, 1.7) ..
+      (3.84, 1.0)
+      node[right, font=\footnotesize, headCol!70!black] {isotherm};
+  \fill[headCol!70!black] (3.84, 1.0) circle (0.07);
+  \node[below right, font=\small, headCol!70!black] at (3.84, 1.0) {D};
+
+  % Axis tick labels
+  \node[below, font=\footnotesize, gray] at (1.2, 0) {$V_A$};
+  \node[left, font=\footnotesize, gray] at (0, 3.2) {$p_A$};
+\end{tikzpicture}
+\end{center}
+
+\captionof{figure}{$pV$-diagram for tre prosesser som starter i punkt A.
+Isochor (rød): volumet er konstant, trykket synker — bare A$\to$B.
+Isobar (blå): trykket er konstant, volumet øker — A$\to$C.
+Isotherm (grønn): temperaturen er konstant, $pV$ er konstant — A$\to$D.}
+

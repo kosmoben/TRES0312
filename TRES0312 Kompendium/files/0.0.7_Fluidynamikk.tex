@@ -261,6 +261,55 @@ Når vi utøver et ytre trykk \( \Delta p \) på en væske som er i ro, vil tryk
     \label{fig:pascalslov}
 \end{figure}
 
+
+
+\exm{Hydraulisk jekk}{%
+En hydraulisk jekk har to stempler. Det lille stempelet har areal
+$A_1 = \SI{5{,}0}{\centi\metre\squared} = \SI{5{,}0e-4}{\metre\squared}$
+og det store stempelet har areal
+$A_2 = \SI{200}{\centi\metre\squared} = \SI{2{,}0e-2}{\metre\squared}$.
+En kraft $F_1 = \SI{50}{\newton}$ påføres det lille stempelet.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95, >={Stealth[length=5pt,width=4pt]}]
+  % Left cylinder (small)
+  \draw[thick] (0,0) rectangle (0.7, 1.5);
+  % Right cylinder (large)
+  \draw[thick] (1.5,0) rectangle (4.5, 1.5);
+  % Connecting base
+  \draw[thick] (0,0) -- (4.5,0);
+  % Fluid fill
+  \fill[defscol!15] (0.05,0.05) rectangle (0.65,0.7);
+  \fill[defscol!15] (1.55,0.05) rectangle (4.45,0.7);
+  % Left piston
+  \fill[gray!50] (0.05,0.65) rectangle (0.65,0.85);
+  % Right piston
+  \fill[gray!50] (1.55,0.65) rectangle (4.45,0.85);
+  % Force arrow left
+  \draw[->, very thick, red!70!black] (0.35, 2.0) -- (0.35, 0.87)
+      node[midway, right, font=\footnotesize] {$F_1$};
+  % Force arrow right (up, larger)
+  \draw[->, very thick, headCol] (3.0, 0.87) -- (3.0, 2.5)
+      node[midway, right, font=\footnotesize] {$F_2$};
+  % Area labels
+  \node[font=\footnotesize, gray!60!black] at (0.35, -0.3) {$A_1$};
+  \node[font=\footnotesize, gray!60!black] at (3.0, -0.3) {$A_2$};
+\end{tikzpicture}
+\end{center}
+
+\noindent Hva er kraften $F_2$ som løfter på det store stempelet?
+
+Fra Pascals lov er trykket likt på begge sider:
+\[
+  \frac{F_1}{A_1} = \frac{F_2}{A_2}
+  \implies
+  F_2 = F_1 \cdot \frac{A_2}{A_1}
+      = \SI{50}{\newton} \cdot \frac{\SI{2{,}0e-2}{\metre\squared}}{\SI{5{,}0e-4}{\metre\squared}}
+      = \doubleunderline{\SI{2000}{\newton}}
+\]
+Med et lite stempel kan vi altså løfte en last som er 40 ganger så tung — det er prinsippet bak bilheis og hydrauliske bremser.
+}
+
 \section{Oppdrift og Arkimedes' lov}
 
 Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes forskjellen i trykk mellom væskens underside og overside av legemet. Oppdriftskraften \( O \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
@@ -286,6 +335,67 @@ hvor \( \rho_B \) er tettheten til væsken, \( g \) er tyngdeakselerasjonen, og 
     \caption{Oppdrift \( F_b \), hvor oppdriftskraften beregnes ut fra volumet av væsken som fortrenges. Det fortrengte volumet er gitt som \( V_q = h_{\text{sub}} \cdot A \), der \( h_{\text{sub}} \) er dybden av den nedsenkede delen av legemet, og \( A \) er arealet av bunnflaten.}
     \label{fig:h-fortrengt}
 \end{figure}
+
+
+\subsection{Utledning fra trykkdifferanse}
+
+Oppdriftskraften kan utledes direkte fra det hydrostatiske trykket.
+Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket til dybde $h_1$ (topp) og $h_2 = h_1 + h_s$ (bunn):
+
+\begin{center}
+\begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
+  % Water surface
+  \draw[dashed, gray!60] (-1.2, 2.5) -- (2.8, 2.5) node[right, font=\footnotesize, gray!60] {overflate};
+  % Body
+  \fill[headCol!20] (0.4, 0.6) rectangle (2.0, 1.9);
+  \draw[thick] (0.4, 0.6) rectangle (2.0, 1.9);
+  % Depth annotations
+  \draw[<->, thin, gray!70] (-0.8, 2.5) -- (-0.8, 1.9)
+      node[midway, left, font=\footnotesize] {$h_1$};
+  \draw[<->, thin, gray!70] (-0.8, 2.5) -- (-0.8, 0.6)
+      node[midway, right, font=\footnotesize] {$h_2$};
+  % Force arrows
+  \draw[->, very thick, defscol] (1.2, 1.9) -- (1.2, 2.6)
+      node[above, font=\footnotesize] {$F_{\text{topp}}$};
+  \draw[->, very thick, headCol] (1.2, 0.6) -- (1.2, -0.1)
+      node[below, font=\footnotesize] {$F_{\text{bunn}}$};
+  % Area label
+  \node[font=\footnotesize] at (1.2, 1.25) {$A$};
+\end{tikzpicture}
+\end{center}
+
+Trykkkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v g h_1)\,A$,
+og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v g h_2)\,A$.
+Nettokraften oppover er:
+\[
+  O = F_{\text{bunn}} - F_{\text{topp}}
+    = \rho_v g A (h_2 - h_1)
+    = \rho_v g A h_s
+    = \rho_v g V_{\text{fortrengt}}
+\]
+Dette er Arkimedes' lov, utledet fra hydrostatikk.
+
+\subsection{Flyter eller synker?}
+
+Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ i en væske med tetthet $\rho_v$ er:
+\[
+  F_{\text{netto}} = O - G = \rho_v g V - \rho_L g V = (\rho_v - \rho_L)\,g V
+\]
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\begin{itemize}
+  \item $\rho_L < \rho_v$: $F_{\text{netto}} > 0$ — legemet \textbf{flyter} (akselererer opp til det er delvis ute av væsken).
+  \item $\rho_L = \rho_v$: $F_{\text{netto}} = 0$ — legemet \textbf{svever} i likevekt inne i væsken.
+  \item $\rho_L > \rho_v$: $F_{\text{netto}} < 0$ — legemet \textbf{synker}.
+\end{itemize}
+\end{tcolorbox}
+
+\merk{Stål flyter ikke i vann — men et stålskip gjør det!}{%
+Stål har tetthet $\rho \approx \SI{7850}{\kilo\gram\per\metre\cubed}$, langt høyere enn vann.
+Likevel flyter et skip laget av stål, fordi \emph{skipet som helhet} — stål pluss luft inni —
+har en gjennomsnittlig tetthet \emph{lavere} enn vann.
+Det er den totale massen delt på det totale volumet som avgjør.}
 
 \subsection{Gravitasjonskraft på et legeme}
 Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( g \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:

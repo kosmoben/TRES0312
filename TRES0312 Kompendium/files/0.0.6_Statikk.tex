@@ -1,0 +1,484 @@
+% !TEX root = ../main.tex
+\chapter{Statikk}
+\intro{Statikk handler om legemer i ro — eller mer presist: om betingelsene som må være oppfylt for at et legeme \emph{ikke} skal begynne å bevege seg eller rotere. I dette kapitlet ser vi på krefter i likevekt, kraftmoment og hvordan vi finner massesenter.}
+
+\spm{}{%
+\item Hvilke krav må kreftene på et legeme oppfylle for at det skal være i ro?
+\item Hva er et kraftmoment, og hvordan beregnes det?
+\item Hva skjer når summen av kraftmomenter ikke er null?
+\item Hvordan finner vi massesenteret til et objekt?}
+
+\newpage
+
+%=============================================================
+\section{Kraftlikevekt: \texorpdfstring{$\sum \vec{F} = 0$}{ΣF = 0}}
+%=============================================================
+
+Et legeme er i \emph{translasjonslikevekt} når den samlede kraften som virker på det er null. Fra Newtons 2.\ lov, $\sum\vec{F} = m\vec{a}$, ser vi at $\sum\vec{F}=\vec{0}$ nettopp betyr $\vec{a}=\vec{0}$: legemet er enten i ro eller beveger seg med konstant hastighet.
+
+\defn{Translasjonslikevekt}{
+Et legeme er i translasjonslikevekt når:
+\[
+  \sum \vec{F} = \vec{0}
+\]
+I to dimensjoner betyr dette to separate ligninger:
+\[
+  \sum F_x = 0 \qquad \text{og} \qquad \sum F_y = 0
+\]
+}
+
+Framgangsmåten er den samme som vi brukte i kapittelet om krefter:
+\begin{enumerate}
+  \item Tegn et fritt-legeme-diagram med alle krefter.
+  \item Velg et koordinatsystem og dekomponér kreftene langs aksene.
+  \item Sett $\sum F_x = 0$ og $\sum F_y = 0$ og løs for de ukjente.
+\end{enumerate}
+
+\medskip
+
+% ---- Trafikklys-eksempel (flyttet fra Krefter-kapittelet) ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Neste eksempel handler om to-dimensjonal likevekt. Et trafikklys henger i to snorer som danner vinkel $\alpha = 30°$ med horisontalplanet. Symmetri forteller oss at begge snorkreftene er like store.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small]
+  % Tak
+  \fill[black!15] (-1.85,1.78) rectangle (1.85,2.05);
+  \draw[very thick] (-1.85,1.78) -- (1.85,1.78);
+  \foreach \x in {-1.70,-1.45,-1.20,-0.95,-0.70,-0.45,-0.20,0.05,0.30,0.55,0.80,1.05,1.30,1.55} {
+    \draw[black!40,thin] (\x,1.78) -- (\x+0.20,2.02);
+  }
+  % Snorer
+  \draw[very thick, headCol!60!black] (0,0.80) -- (-1.697,1.78);
+  \draw[very thick, headCol!60!black] (0,0.80) -- (1.697,1.78);
+  % Trafikklys (rektangel)
+  \fill[headCol!20] (-0.40,-0.05) rectangle (0.40,0.80);
+  \draw[headCol!65!black,thick] (-0.40,-0.05) rectangle (0.40,0.80);
+  \fill[red!80] (0,0.60) circle (0.08);
+  \fill[yellow!70!orange] (0,0.37) circle (0.08);
+  \fill[green!70!black] (0,0.14) circle (0.08);
+  % Koordinatsystem
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (0,0.80) -- (0.75,0.80);
+  \node[right=2pt,black!70,font=\scriptsize] at (0.75,0.80) {$x$};
+  \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+    (0,0.80) -- (0,1.60);
+  \node[above=2pt,black!70,font=\scriptsize] at (0,1.60) {$y$};
+  \fill[black!70] (0,0.80) circle (1.5pt);
+  % Krefter på knutepunkt
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (0,0.80) -- (-0.779,1.25);
+  \node[left=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (-0.390,1.025) {$\vec{S}_1$};
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+    (0,0.80) -- (0.779,1.25);
+  \node[right=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0.390,1.025) {$\vec{S}_2$};
+  \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+    (0,0.80) -- (0,-0.32);
+  \node[right=5pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+        line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+    at (0,0.24) {$\vec{G}$};
+  % Vinkelbuer
+  \draw[black!60,thin] (0.38,0.80) arc (0:30:0.38);
+  \node[black!70,font=\scriptsize] at (0.50,0.88) {$\alpha$};
+  \draw[black!60,thin] (-0.38,0.80) arc (180:150:0.38);
+  \node[black!70,font=\scriptsize] at (-0.50,0.88) {$\alpha$};
+  \fill[black!60] (0,0.80) circle (2.5pt);
+\end{tikzpicture}
+\captionof{figure}{Trafikklys i ro. Snorkreftene $\vec{S}_1$ og $\vec{S}_2$ danner vinkel $\alpha$ med horisontal.}
+\label{fig:trafikklys}
+\end{minipage}
+
+\medskip
+
+\exm{Trafikklys}{%
+Et trafikklys med masse $m = \SI{50}{\kilo\gram}$ henger i to like lange snorer som danner vinkel $\alpha = 30°$ med horisontalplanet (se figur). Finn snorkraften $S$ i hver snor.
+}
+
+\svar{%
+\noindent
+\textbf{1. Figur:} Se figur over.
+
+\smallskip\noindent
+\textbf{2. Lov:} Systemet er i ro: $\sum\vec{F}=0$. Symmetri gir $S_1 = S_2 = S$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $x$ horisontal, $y$ vertikal oppover.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\begin{align*}
+    \sum F_x = 0&:\quad -S\cos\alpha + S\cos\alpha = 0 \quad \checkmark \quad \text{(automatisk oppfylt)}\\
+    \sum F_y = 0&:\quad S\sin\alpha + S\sin\alpha - G = 0 \implies 2S\sin\alpha = mg
+\end{align*}
+
+\smallskip\noindent
+\textbf{5. Løs for $S$:}
+\[
+    S = \frac{mg}{2\sin\alpha}
+    = \frac{\SI{50}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}}{2\cdot\sin 30°}
+    = \frac{\SI{490{,}5}{\newton}}{1{,}0}
+    = \doubleunderline{\SI{490{,}5}{\newton}}
+\]
+Merk at $\sin 30° = \tfrac{1}{2}$, så snorkraften er nøyaktig lik tyngdekraften. En lavere vinkel $\alpha$ ville krevd \textit{større} snorkraft — derav det kjente rådet om ikke å henge noe i nær-horisontale snorer.
+}
+
+%=============================================================
+\section{Kraftmoment}
+%=============================================================
+
+Kraftlikevekt hindrer at legemet begynner å \emph{gli}. Men en kraft kan også sette et legeme i \emph{rotasjon} — tenk på å åpne en dør: du trykker på håndtaket, ikke på hengslene. Det som bestemmer rotasjonseffekten av en kraft, kalles \emph{kraftmoment} (også kalt dreiemoment eller torque).
+
+\defn{Kraftmoment}{
+Kraftmomentet $\tau$ (tau) om et punkt $O$ er definert som kryssprodukt mellom armvektoren $\vec{r}$ (fra $O$ til kraftens angrepspunkt) og kraftvektoren $\vec{F}$:
+\[
+  \vec{\tau} = \vec{r} \times \vec{F}
+\]
+Størrelsen er:
+\[
+  \tau = r \cdot F \cdot \sin\theta = d \cdot F
+\]
+der $\theta$ er vinkelen mellom $\vec{r}$ og $\vec{F}$, og $d = r\sin\theta$ er den \emph{momentarmen} — den vinkelrette avstanden fra $O$ til kraftens virkningslinje.
+
+Enheten for kraftmoment er \si{\newton\metre} (\si{\N\m}).
+}
+
+Kraftmomentet er positivt når rotasjonen er mot klokken (positiv dreieretning), og negativt når det er med klokken.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, >={Stealth[length=7pt,width=5pt]}]
+  % Dreiepunkt O
+  \fill[headCol] (0,0) circle (0.10);
+  \node[below left, font=\small] at (0,0) {$O$};
+
+  % Armvektor r
+  \draw[->, line width=1.5pt, black!70] (0,0) -- (3.2,0)
+      node[below=3pt, font=\small] {$\vec{r}$};
+
+  % Kraft F (skrå)
+  \draw[->, line width=2.5pt, defscol]
+      (3.2,0) -- (3.2+1.0*0.5, 0+1.0*0.866)
+      node[right=2pt, font=\small, defscol] {$\vec{F}$};
+
+  % Vinkel theta
+  \draw[black!60, thin] (3.2+0.35,0) arc (0:60:0.35);
+  \node[font=\small, black!70] at (3.2+0.55, 0.20) {$\theta$};
+
+  % Momentarm d (lodderett fra O til kraftlinjen)
+  % Kraftlinja: gjennom (3.2, 0) i retning (0.5, 0.866), ligning:
+  % Lodderett fra O=(0,0): d = |r × F̂| = 3.2*sin(60°) ≈ 2.77
+  % Foten av loddet: projeksjonsformelen
+  % F̂ = (0.5, 0.866), proj = (r·F̂)F̂ = (3.2*0.5)*F̂ = 1.6*(0.5,0.866) = (0.8,1.386)
+  % Fot på linja: angrepspkt + t*F̂ der t = r·F̂ = 1.6 → fot = (3.2+0.8, 0+1.386) = (4.0, 1.386)
+  % Men vi vil vise d fra O til kraftlinja
+  % Enklere: vis d som vertikal linje fra x=0 til kraftlinja ved x=0
+  % Kraftlinja: y = tan(60°)*(x - 3.2) = 1.732*(x-3.2) → ved x=0: y = -5.54 (for langt)
+  % Vis heller braketten fra angrepspunktet ned til x-aksen
+  \draw[dashed, gray!60] (3.2,0) -- (3.2, 0.866*1.0);
+  \draw[<->, thin, gray!70] (3.6, 0) -- (3.6, 0.866)
+      node[midway, right, font=\small] {$d$};
+  \draw[dashed, gray!50] (3.2, 0.866) -- (3.6, 0.866);
+
+  % Label for moment
+  \node[font=\small, headCol!80!black, align=left] at (1.0, 0.85)
+      {$\tau = r F\sin\theta$\\[2pt]$\phantom{\tau} = d\cdot F$};
+\end{tikzpicture}
+\end{center}
+
+\exm{Bolt og skiftenøkkel}{%
+En skiftenøkkel med armlengde $\ell = \SI{25}{\centi\metre}$ brukes til å stramme en bolt. En kraft
+$F = \SI{80}{\newton}$ påføres vinkelrett på nøkkelskaftet. Beregn kraftmomentet om boltens sentrum.
+}
+
+\svar{%
+Siden kraften er vinkelrett på armen, er $\sin 90° = 1$ og momentarmen er lik armlengden:
+\[
+  \tau = \ell \cdot F = \SI{0{,}25}{\metre} \cdot \SI{80}{\newton}
+       = \doubleunderline{\SI{20}{\newton\metre}}
+\]
+}
+
+\oppgave{Dørhengsler}{%
+En dør er \SI{90}{\centi\metre} bred. Du trykker vinkelrett på døren med en kraft på \SI{15}{\newton}.
+\begin{enumerate}[a)]
+  \item Hva er kraftmomentet om hengslene når du trykker på kanten av døren (dvs.\ \SI{90}{\centi\metre} fra hengslene)?
+  \item Hva er kraftmomentet dersom du i stedet trykker på midten av døren (\SI{45}{\centi\metre} fra hengslene)?
+  \item Hva skjer med kraften som trengs for å oppnå det samme momentet dersom armen halveres?
+\end{enumerate}
+}
+
+\svar{%
+\textbf{a)} $\tau = \SI{0{,}90}{\metre}\cdot\SI{15}{\newton} = \doubleunderline{\SI{13{,}5}{\N\m}}$
+
+\textbf{b)} $\tau = \SI{0{,}45}{\metre}\cdot\SI{15}{\newton} = \doubleunderline{\SI{6{,}75}{\N\m}}$
+
+\textbf{c)} Når armen halveres, må kraften dobles for å oppnå samme moment: $\tau = d\cdot F$ er konstant, så $F \propto 1/d$.
+}
+
+%=============================================================
+\section{Rotasjonslikevekt og fullstendig likevekt}
+%=============================================================
+
+Et legeme kan stå stille selv om det finnes krefter på det — men bare dersom kraftene hverken gir nettokraft \emph{eller} nettomoment. Begge betingelsene må være oppfylt samtidig.
+
+\defn{Fullstendig statisk likevekt}{
+Et legeme er i fullstendig statisk likevekt når:
+\[
+  \sum \vec{F} = \vec{0} \qquad \text{og} \qquad \sum \tau = 0
+\]
+Momentligningen $\sum\tau = 0$ må gjelde om \emph{ethvert} valgt dreiepunkt.
+\textit{Tips: velg dreiepunkt der flest ukjente krefter angriper — da faller de ut av ligningen.}
+}
+
+\exm{Ensartet bjelke på to støtter}{%
+En ensartet bjelke med masse $M = \SI{20}{\kilo\gram}$ og lengde $L = \SI{4{,}0}{\metre}$ hviler på to søyler. Venstre søyle er $\SI{0{,}5}{\metre}$ fra venstre ende, høyre søyle er $\SI{1{,}0}{\metre}$ fra høyre ende. Finn reaksjonskraften i hver søyle.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >={Stealth[length=6pt,width=4pt]}]
+  % Bjelke
+  \fill[headCol!15] (0,0) rectangle (8.0,0.28);
+  \draw[headCol!60!black, thick] (0,0) rectangle (8.0,0.28);
+
+  % Søyle A (x=1.0, dvs. 0.5 m fra venstre -> skalert 2 per meter -> x=1.0)
+  \pgfmathsetmacro{\xA}{1.0}
+  \pgfmathsetmacro{\xB}{6.0} % 0.5m fra høyre = (4.0-1.0)*2 = 6.0
+  \pgfmathsetmacro{\xMid}{4.0} % massesenter
+
+  % Reaksjonskrefter opp
+  \draw[->, line width=2.5pt, defscol]
+      (\xA, 0) -- (\xA, -1.1) node[below, font=\small] {$N_A$};
+  \draw[->, line width=2.5pt, defscol]
+      (\xB, 0) -- (\xB, -1.1) node[below, font=\small] {$N_B$};
+
+  % Tyngdekraft ned fra massesenter
+  \draw[->, line width=2.5pt, black!65]
+      (\xMid, 0.28) -- (\xMid, 1.3) node[above, font=\small] {$Mg$};
+
+  % Lengdemål
+  \draw[<->, thin, gray!70] (0,-1.7) -- (8.0,-1.7)
+      node[midway, below, font=\footnotesize] {$L = \SI{4{,}0}{\m}$};
+  \draw[<->, thin, gray!70] (0,-1.3) -- (\xA,-1.3)
+      node[midway, below, font=\footnotesize] {\SI{0{,}5}{\m}};
+  \draw[<->, thin, gray!70] (\xB,-1.3) -- (8.0,-1.3)
+      node[midway, below, font=\footnotesize] {\SI{1{,}0}{\m}};
+
+  % Støttesymbol under søylene
+  \draw[black!60, thick] (\xA,0) -- (\xA-0.2,-0.35) -- (\xA+0.2,-0.35) -- cycle;
+  \draw[black!60, thick] (\xB,0) -- (\xB-0.2,-0.35) -- (\xB+0.2,-0.35) -- cycle;
+  \draw[black!60, thin] (\xA-0.3,-0.38) -- (\xA+0.3,-0.38);
+  \draw[black!60, thin] (\xB-0.3,-0.38) -- (\xB+0.3,-0.38);
+
+  % Etiketter A og B
+  \node[above, font=\small\bfseries, headCol] at (\xA, 0.28) {A};
+  \node[above, font=\small\bfseries, headCol] at (\xB, 0.28) {B};
+\end{tikzpicture}
+\end{center}
+}
+
+\svar{%
+\textbf{Kjente størrelser:} $M = \SI{20}{\kilo\gram}$, $L = \SI{4{,}0}{\metre}$.
+Søyle A er $a = \SI{0{,}5}{\metre}$ fra venstre ende, søyle B er $b = \SI{1{,}0}{\metre}$ fra høyre ende.
+Massesenteret er midt på bjelken ($L/2 = \SI{2{,}0}{\metre}$ fra venstre).
+
+\textbf{Avstander fra A:}
+\begin{itemize}
+  \item Massesenter: $d_{Mg} = 2{,}0 - 0{,}5 = \SI{1{,}5}{\metre}$
+  \item Søyle B: $d_B = (4{,}0 - 1{,}0) - 0{,}5 = \SI{2{,}5}{\metre}$
+\end{itemize}
+
+\textbf{Kraftligning ($\sum F_y = 0$):}
+\[
+  N_A + N_B = Mg = \SI{20}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared} = \SI{196{,}2}{\newton}
+\]
+
+\textbf{Momentligning om A ($\sum\tau_A = 0$, positivt mot klokken):}
+\[
+  N_B \cdot d_B - Mg \cdot d_{Mg} = 0
+  \implies N_B = \frac{Mg\cdot d_{Mg}}{d_B}
+  = \frac{\SI{196{,}2}{\newton}\cdot\SI{1{,}5}{\metre}}{\SI{2{,}5}{\metre}}
+  = \doubleunderline{\SI{117{,}7}{\newton}}
+\]
+
+\textbf{Fra kraftligningen:}
+\[
+  N_A = Mg - N_B = 196{,}2 - 117{,}7 = \doubleunderline{\SI{78{,}5}{\newton}}
+\]
+}
+
+\exm{Vegghengt hylle med stag}{%
+En \SI{60}{\centi\metre} lang, masselos hylle er festet til veggen i venstre ende (hengsel) og holdt oppe av et diagonalt stag festet til veggen \SI{40}{\centi\metre} over hyllen, i en horisontal avstand $\SI{60}{\centi\metre}$ fra veggen. En gjenstand med masse $m = \SI{3{,}0}{\kilo\gram}$ er plassert på enden av hyllen. Finn stagkraften $T$ og reaksjonskraften i hengselet.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >={Stealth[length=6pt,width=5pt]}]
+  % Vegg (grå stripe)
+  \fill[black!12] (-0.4,-0.15) rectangle (0.0, 1.85);
+  \draw[thick, black!40] (0,-0.15) -- (0,1.85);
+  \foreach \y in {-0.10,-0.02,0.06,...,1.80} {
+    \draw[black!25,thin] (0,\y) -- (-0.20,\y+0.20);
+  }
+
+  % Hylle
+  \fill[headCol!15] (0,-0.05) rectangle (3.0,0.05);
+  \draw[headCol!60!black, thick] (0,-0.05) rectangle (3.0,0.05);
+
+  % Hengsel
+  \fill[black!60] (0,0) circle (0.08);
+  \node[left=4pt, font=\small] at (0,0) {hengsel};
+
+  % Stag: fra (3.0, 0) til (0, 1.2) [= 40 cm opp skalert]
+  \draw[line width=2pt, headCol!70!black] (3.0,0) -- (0,1.2);
+  \node[right=2pt, font=\small, headCol!70!black] at (1.5, 0.6+0.15) {$T$};
+
+  % Vinkel stag
+  % atan(1.2/3.0) = atan(0.4) ≈ 21.8°
+  \draw[black!50, thin] (3.0-0.5, 0) arc (180:180-21.8:0.5);
+  % Hmm let me just draw at correct angle from (0,1.2) down:
+  % Direction from (3,0) to (0,1.2): (-3, 1.2), angle = atan(1.2/3)=21.8°
+  % Show angle at top attachment (0,1.2):
+  \draw[black!50, thin] (0, 1.2-0.4) arc (270:270+21.8:0.4);
+  \node[right=2pt, font=\scriptsize, black!60] at (0.10, 0.85) {$\beta$};
+
+  % Vekt på enden
+  \draw[->, line width=2.5pt, black!65]
+      (3.0, -0.05) -- (3.0, -0.90) node[right, font=\small] {$mg$};
+  \fill[headCol!30] (2.75,-0.05) rectangle (3.25,0.20);
+  \draw[headCol!60!black] (2.75,-0.05) rectangle (3.25,0.20);
+
+  % Reaksjonskraft i hengsel (ukjent retning, viser komponenter)
+  \draw[->, line width=2pt, defscol]
+      (0,0) -- (-0.7, 0) node[left, font=\small, defscol] {$H_x$};
+  \draw[->, line width=2pt, defscol]
+      (0,0) -- (0, 0.6) node[left, font=\small, defscol] {$H_y$};
+
+  % Mål
+  \draw[<->, thin, gray!70] (0,-1.2) -- (3.0,-1.2)
+      node[midway, below, font=\footnotesize] {$\SI{60}{\centi\metre}$};
+  \draw[<->, thin, gray!70] (-0.8,0) -- (-0.8,1.2)
+      node[midway, left, font=\footnotesize] {$\SI{40}{\centi\metre}$};
+\end{tikzpicture}
+\end{center}
+}
+
+\svar{%
+Stagfestet er i $(L,\,0)=(0{,}60\,\text{m},\,0)$ og stagtoppen er i $(0,\,h)=(0,\,0{,}40\,\text{m})$.
+Stagvinkelen med horisontal: $\beta = \arctan\!\bigl(\tfrac{0{,}40}{0{,}60}\bigr) \approx 33{,}7°$.
+
+\textbf{Momentligning om hengselet} ($\sum\tau = 0$, positiv mot klokken):
+
+Tyngdekraften $mg$ lager et negativt (medurs) moment, den vertikale komponenten av stagkraften $T_y = T\sin\beta$ lager et positivt moment:
+\[
+  T\sin\beta\cdot L - mg\cdot L = 0
+  \implies T = \frac{mg}{\sin\beta}
+  = \frac{\SI{3{,}0}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}}{\sin 33{,}7°}
+  = \doubleunderline{\SI{53{,}0}{\newton}}
+\]
+
+\textbf{Kraftligninger:}
+\begin{align*}
+  \sum F_x = 0&:\quad H_x - T\cos\beta = 0 \implies H_x = T\cos\beta = 53{,}0\cdot\cos 33{,}7° \approx \SI{44{,}1}{\newton}\\
+  \sum F_y = 0&:\quad H_y + T\sin\beta - mg = 0 \implies H_y = mg - T\sin\beta \approx \SI{0}{\newton}
+\end{align*}
+(Som forventet: momentligningen om hengselet sa nettopp at $T\sin\beta = mg$, så $H_y = 0$.)
+}
+
+\oppgave{Stige mot vegg}{%
+En ensartet stige med masse $m = \SI{15}{\kilo\gram}$ og lengde $L = \SI{4{,}0}{\metre}$ hviler mot en glatt vegg (ingen friksjon) i en vinkel $\theta = 65°$ med horisontal. Gulvet har friksjon. En person med masse $M = \SI{70}{\kilo\gram}$ klatrer \SI{2{,}5}{\metre} opp stigen.
+\begin{enumerate}[a)]
+  \item Finn normalkraften fra veggen.
+  \item Finn normalkraften og friksjonskraften fra gulvet.
+\end{enumerate}
+\textit{Hint: Velg dreiepunkt i bunnen av stigen — da faller gulvreaksjonene ut av momentligningen.}
+}
+
+\svar{%
+\textbf{Krefter:} normalkraft fra vegg $N_v$ (horisontal), normalkraft fra gulv $N_g$ (vertikal), friksjon fra gulv $f$ (horisontal), tyngdekraft på stige $mg$ (ned fra midten), tyngdekraft på person $Mg$ (ned fra \SI{2{,}5}{\metre} langs stigen).
+
+\textbf{Momentligning om bunnen:} (positiv mot klokken)
+\begin{align*}
+  &N_v\cdot L\sin\theta
+  - mg\cdot\tfrac{L}{2}\cos\theta
+  - Mg\cdot d\cos\theta = 0
+\end{align*}
+der $d = \SI{2{,}5}{\metre}$. Løser for $N_v$:
+\[
+  N_v = \frac{(m/2 + Md/L)\,g\cos\theta}{\sin\theta}
+  = \frac{(\SI{7{,}5}{} + \SI{43{,}75}{})\cdot\SI{9{,}81}{}\cdot\cos 65°}{\sin 65°}
+  \approx \doubleunderline{\SI{238}{\newton}}
+\]
+
+\textbf{Kraftligninger:}
+\[
+  N_g = (m+M)g = \SI{85}{\kilo\gram}\cdot\SI{9{,}81}{\metre\per\second\squared}
+      = \doubleunderline{\SI{834}{\newton}}
+\]
+\[
+  f = N_v = \doubleunderline{\SI{238}{\newton}}
+\]
+}
+
+%=============================================================
+\section{Massesenter}
+%=============================================================
+
+Vi har antatt at tyngdekraften angriper i ett enkelt punkt — massesenteret. Men \emph{hvor} er dette punktet?
+
+\defn{Massesenter}{
+Massesenteret (eller tyngdepunktet) til et system av partikler med masser $m_1, m_2, \ldots, m_n$ og posisjoner $x_1, x_2, \ldots, x_n$ langs en akse, er:
+\[
+  x_{\text{ms}} = \frac{\sum_i m_i x_i}{\sum_i m_i} = \frac{m_1 x_1 + m_2 x_2 + \cdots + m_n x_n}{m_1 + m_2 + \cdots + m_n}
+\]
+I to dimensjoner beregnes $x_{\text{ms}}$ og $y_{\text{ms}}$ hver for seg med tilsvarende formel.
+}
+
+\merk{Momentlikevekt og massesenter}{%
+Massesenteret er nettopp det punktet der tyngdekraften har null nettomoment. Hvis man støtter opp et legeme i massesenteret, er systemet i rotasjonslikevekt — momentene fra venstre og høyre side kansellerer hverandre.
+}
+
+\exm{Massesenter for to barn på en huske}{%
+To barn sitter på en \SI{3{,}0}{\metre} lang, masselos huske festet i midten ($x = 0$). Barn~1 har masse $m_1 = \SI{25}{\kilo\gram}$ og sitter i $x_1 = -\SI{1{,}2}{\metre}$ (venstre side). Barn~2 har masse $m_2 = \SI{35}{\kilo\gram}$. Hvor må barn~2 sitte for at huska skal balansere?
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, >={Stealth[length=6pt,width=4pt]}]
+  % Huskeplanke
+  \draw[headCol!60!black, line width=3pt] (-2.0,0) -- (2.0,0);
+  % Støttepunkt (triangel)
+  \fill[black!50] (-0.15,-0.15) -- (0.15,-0.15) -- (0,0) -- cycle;
+  \draw[black!60] (-0.25,-0.18) -- (0.25,-0.18);
+  % Barn 1
+  \fill[defscol!60] (-1.5,0) circle (0.18);
+  \node[above=2pt, font=\footnotesize] at (-1.5,0.18) {$m_1$};
+  \draw[->, line width=1.8pt, black!65] (-1.5,0) -- (-1.5,-0.80) node[below, font=\footnotesize] {$m_1 g$};
+  \node[below=2pt, font=\footnotesize, gray!70] at (-1.5,-0.05) {$x_1$};
+  % Barn 2 (ukjent posisjon, vis som spørsmål)
+  \fill[defscol!60] (1.0,0) circle (0.18);
+  \node[above=2pt, font=\footnotesize] at (1.0,0.18) {$m_2$};
+  \draw[->, line width=1.8pt, black!65] (1.0,0) -- (1.0,-0.80) node[below, font=\footnotesize] {$m_2 g$};
+  \node[below=2pt, font=\footnotesize, gray!70] at (1.0,-0.05) {$x_2=?$};
+  % x-akse
+  \draw[->, thin, black!40] (-2.2,0) -- (2.3,0) node[right, font=\footnotesize] {$x$};
+  \node[below, font=\footnotesize] at (0,-0.22) {$0$};
+\end{tikzpicture}
+\end{center}
+}
+
+\svar{%
+For at huska skal balansere, må massesenteret være i støttepunktet $x = 0$:
+\[
+  x_{\text{ms}} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2} = 0
+  \implies m_1 x_1 + m_2 x_2 = 0
+\]
+\[
+  x_2 = -\frac{m_1}{m_2}\,x_1
+      = -\frac{\SI{25}{\kilo\gram}}{\SI{35}{\kilo\gram}}\cdot(-\SI{1{,}2}{\metre})
+      = \doubleunderline{+\SI{0{,}857}{\metre} \approx \SI{0{,}86}{\metre}}
+\]
+Barn~2 må sitte \SI{0{,}86}{\metre} til høyre for midten.
+}
