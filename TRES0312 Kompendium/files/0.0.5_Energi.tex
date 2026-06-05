@@ -9,11 +9,13 @@
 \newpage
 
 \section{Arbeid}
-I forrige kapittel så vi at 
-\[\frac{\vec{p}}{\Delta t}=\vec{F}\quad\text{som medfører}\quad \Delta\vec{p}=\vec{F}\Delta t.\]
-Dette viser at kraft gjort over tid gir endring i bevegelsesmengde. For dere som kan å integrere, ser vi altså at \textit{integralet} av kraft over tid er bevegelsesmengde. Dette gir mening. Når en kraft virker på et legeme over tid, så endrer det bevegelsesmengden til legemet. Dette har faktisk et eget navn: \textit{impuls}.
-I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. I fysikk er begrepet mer presist: arbeid utføres når en kraft forskyver et objekt. Det er ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid i fysisk forstand, selv om muskler spenner.
+ I forrige kapittel så vi at kraft anvendt over tid forårsaket en endring i bevegelsesmengde:
+ \[\Delta\vec{p}=\vec{F}\Delta t.\]
+Arealet under en $F(t)$-graf tilsvarer altså (endring i) bevegelsesmengde. Men... da er det saktens fristende å prøve noe annet også: Hva blir arealet under en $F(s)$-graf? 
+\[??=\vec{F}\cdot \Delta\vec{s}.\]
+La oss si at Eva er på Hyrox-trening og dytter en kasse bortover et humpete gulv, slik at kraften hun virker på kassen med varierer med posisjonen; $F(s)$. Hvordan skal vi da tolke arealet under F$F(s)$-grafen? Jo, dette arealet er et mål på det vi i fysikken kaller \textit{arbeid};
 
+I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. Men i fysikk tilsvarer det impuls, eller endring i bevegelsesmengde. Begrepet arbeid er i fysikken reservert for kraft anvendt over strekning.
 \defn{Arbeid}{
     Arbeidet \( W \) som utføres av en kraft \( \vec{F} \) over en forflytning \( \vec{s} \) er gitt ved prikkproduktet:
     \begin{align}
@@ -21,8 +23,7 @@ I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. I fysi
     \end{align}
     Her er \( \theta \) vinkelen mellom kraftretningen og forflytningsretningen. Arbeid er en skalar og måles i joule \( (\si{\joule}) \), der \( \SI{1}{\joule} = \SI{1}{\newton\metre} \).
 }
-
-Legg merke til at \( \cos\theta \) avgjør hvor mye av kraften som «drar» i bevegelsesretningen. Når \( \theta = 0^\circ \) virker kraften rett frem og arbeidet er maksimalt. Når \( \theta = 90^\circ \) er kraften vinkelrett på bevegelsen, og \( W = 0 \) – typisk for en normalkraft eller sentripetalkraft. Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
+Legg merke til at vi tar skalarproduktet mellom kraft og forflytning. Det sikrer at kun den delen av $F$ som peker i samme retning som $s$ blir med i definisjonen av arbeid. Det er altså ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid i fysisk forstand, selv om muskler spenner og fyren blir sliten. Dette ser vi av vinkelen \( \cos\theta \) som kommer inn i definisjonen via skalarproduktet. Når \( \theta = 0^\circ \) virker kraften i samme retning som bevegelsen, og arbeidet er maksimalt. Når \( \theta = 90^\circ \) virker kraften vinkelrett på bevegelsen, og \( W = 0 \). Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
 
 \exm{Dytte en boks}{
     En boks dyttes langs et gulv med en kraft \( F = \SI{10}{\newton} \) over en avstand \( s = \SI{5}{\metre} \). Kraften virker i samme retning som bevegelsen (\( \theta = 0^\circ \)):
@@ -51,24 +52,64 @@ Den energien som lagres i fjæren kalles elastisk potensiell energi – mer om d
 Figurene nedenfor illustrerer de to tilfellene grafisk: i begge tilfeller er arbeidet lik arealet under kraftkurven.
 
 \noindent
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \raisebox{5mm}{
-        \includegraphics[width=\linewidth]{Images/Kapittel3:Arbeid&Energi/Arbeidpåboksgraf.png}
-    }
-    \captionof{figure}{Konstant kraft: \( W = F \cdot s \) er arealet av rektangelet under kurven.}
-    \label{fig:image1}
-\end{minipage}\hfill
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Images/Kapittel2:Kinematikk/Arbeidpåfjærgraf.png}
-    \captionof{figure}{Lineært voksende kraft \( F = kx \): \( W = \tfrac{1}{2}kx^2 \) er arealet av trekanten under kurven.}
-    \label{fig:image2}
+\begin{minipage}[t]{0.47\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.88, font=\small]
+    % Skravert rektangel
+    \fill[headCol!22] (0,0) rectangle (3.6, 2.0);
+    % Aksler
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$s$};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
+    % Konstant kraft-linje
+    \draw[headCol!80!black, line width=2.2pt] (0, 2.0) -- (3.6, 2.0);
+    % Stiplete markørlinjer
+    \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.0);
+    % Aksetiketter
+    \node[left=3pt, black!65, font=\scriptsize] at (0, 2.0) {$F_0$};
+    \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$s$};
+    \node[below left=1pt, black!55, font=\scriptsize] at (0,0) {$0$};
+    % Areal-etikett
+    \node[headCol!80!black, font=\small\bfseries] at (1.80, 1.10) {$W = F_0 \cdot s$};
+    \node[headCol!65!black, font=\scriptsize] at (1.80, 0.55) {$=$ areal av rektangel};
+  \end{tikzpicture}
+  \captionof{figure}{Konstant kraft $F_0$: arbeidet $W = F_0\cdot s$ er arealet av rektangelet under kurven.}
+  \label{fig:arbeid_konstant}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.88, font=\small]
+    % Skravert trekant
+    \fill[headCol!22] (0,0) -- (3.6, 2.52) -- (3.6, 0) -- cycle;
+    % Aksler
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$x$};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
+    % F = kx linje
+    \draw[headCol!80!black, line width=2.2pt] (0, 0) -- (3.6, 2.52);
+    % Stiplete markørlinjer
+    \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.52);
+    \draw[dashed, gray!55, thin] (0, 2.52) -- (3.6, 2.52);
+    % Aksetiketter
+    \node[left=3pt, black!65, font=\scriptsize] at (0, 2.52) {$kx$};
+    \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$x$};
+    \node[below left=1pt, black!55, font=\scriptsize] at (0,0) {$0$};
+    % F = kx-etikett langs linjen
+    \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.08) {$F = kx$};
+    % Areal-etikett
+    \node[headCol!80!black, font=\small\bfseries] at (2.65, 0.62) {$W = \tfrac{1}{2}kx^2$};
+    \node[headCol!65!black, font=\scriptsize] at (2.65, 0.18) {$=$ areal av trekant};
+  \end{tikzpicture}
+  \captionof{figure}{Lineært voksende fjærkraft $F = kx$: arbeidet $W = \tfrac{1}{2}kx^2$ er arealet av trekanten under kurven.}
+  \label{fig:arbeid_fjaer}
 \end{minipage}
 
 \section{Energi}
 
-I fysikk beskriver energi et legemes evne til å påvirke omgivelsene, enten ved å utføre arbeid eller overføre varme. Når en kraft virker på et objekt og forårsaker en forflytning, blir energi overført til objektet gjennom arbeidet som utføres. Derfor kan arbeid sees som en måte å overføre energi på mellom objekter eller systemer.
+I fysikk beskriver energi et legemes evne til å påvirke omgivelsene, enten ved å utføre arbeid eller overføre varme. Når en kraft virker på et objekt og forårsaker en forflytning, blir energi overført til objektet gjennom arbeidet som utføres. Derfor kan arbeid sees som en måte å overføre energi på mellom objekter eller systemer. 
 
 Det finnes mange ulike former for energi, som kinetisk energi (bevegelsesenergi) og potensiell energi (lagret energi). Disse formene gir objekter mulighet til å påvirke andre objekter eller endre deres tilstand, for eksempel ved å flytte dem, deformere dem, eller varme dem opp. Arbeid og energi måles begge i joule (J), som er standardenheten for energi i fysikk.
 
@@ -95,30 +136,50 @@ Kinetisk energi er en viktig form for energi, som spiller en sentral rolle i man
     \label{fig:Bil_kinetisk}
     \end{figure}
 
-\defn{Arbeid og endring i kinetisk energi}{
-    Arbeid-energi-teoremet sier at arbeidet \( W \) som utføres på et objekt er lik endringen i objektets kinetiske energi:
-    \[
-    W = \Delta E_k = E_k^{\text{slutt}} - E_k^{\text{start}}
-    \]
-    For å se dette, starter vi med definisjonen av arbeid som kraft ganget med forflytning:
-    \[
-    W = F \cdot s
-    \]
-    I følge Newtons andre lov er \( F = m \cdot a \), der \( a \) er akselerasjonen. Arbeid kan dermed skrives som:
-    \[
-    W = m \cdot a \cdot s
-    \]
-    Ved å bruke bevegelseslikningen \( v^2 = v_0^2 + 2as \), som beskriver forholdet mellom hastighet, akselerasjon og forflytning, kan vi erstatte \( a \cdot d \) med \( \frac{v^2 - v_0^2}{2} \). Dermed blir arbeidet:
-    \[
-    W = m \cdot \frac{v^2 - v_0^2}{2}
-    \]
-    Dette viser at arbeidet utført på objektet er lik endringen i dets kinetiske energi:
-    \[
-    W = \Delta E_k = \frac{1}{2} m v^2 - \frac{1}{2} m v_0^2
-    \]
+\subsubsection{Arbeid-energi-setningen}
+La oss vende tilbake til begrepet arbeid; $W.$ Vi har 
+
+\[
+W = \vec{F}\cdot \Delta\vec{s} = \frac{\Delta\vec{p}}{\Delta t}\cdot\Delta\vec{s}
+\]
+Vi bytter om på $\Delta t$ og skriver om:
+\[
+W = \Delta\vec{p} \cdot \frac{\Delta\vec{s}}{\Delta t}
+\]
+Størrelsen $\frac{\Delta s}{\Delta t}$ er gjennomsnittsfarten $\bar{v}$ i tidsintervallet. Vi antar her at kraften — og dermed akselerasjonen — er konstant. Da gjelder at gjennomsnittsfarten er midtpunktet mellom start- og sluttfart:
+\[
+\bar{v} = \frac{v_0 + v}{2} \qquad \text{(kun for konstant akselerasjon)}
+\]
+Videre er $\Delta p = m(v - v_0)$. Setter vi dette inn:
+\[
+W = m(v - v_0)\cdot\frac{v_0 + v}{2} = \frac{m}{2}(v - v_0)(v + v_0)
+\]
+Vi bruker algebraidentiteten $(a - b)(a + b) = a^2 - b^2$:
+\[
+W = \frac{m}{2}(v^2 - v_0^2) = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2
+\]
+Størrelsen $\frac{1}{2}mv^2$ er det vi kaller \textit{kinetisk energi} — energien legemet har på grunn av bevegelsen. Arbeidet er altså lik \textit{endringen} i kinetisk energi.
+\noindent
+
+\defn{Arbeid-energi-setningen}{%
+Arbeidet som summen av ytre krefter gjør på et legeme er lik endringen i legemets kinetiske energi:
+\[
+W_{\text{total}} = \Delta E_k
+\]
 }
 
-\vspace{20pt} % Gir ekstra mellomrom på 10 punkter
+\tips{For dem som kan integrere}{%
+For varierende kraft — der akselerasjonen ikke er konstant — trenger man integrasjon. Da er arbeidet $W = \int F\,ds$. Ved å skrive $F = m\frac{dv}{dt}$ og bruke kjerneregelen ($\frac{dv}{dt}\,ds = \frac{ds}{dt}\,dv = v\,dv$) får man
+\[
+W = \int_{v_0}^{v} mv\,dv = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2.
+\]
+Resultatet er det samme. Arbeid-energi-setningen $W = \Delta E_k$ er derfor \emph{generell} — den gjelder uansett om kraften varierer eller ikke. Det er bare utledningen her over som forutsetter konstant kraft.
+}
+\tanke{}{%
+Merk at på samme måte som at $\Delta \vec{p}=\vec{F}\Delta t$ så er altså $\Delta E_\textrm{k}=\vec{F}\Delta \vec{s}$.}
+
+
+\medskip
 
 \exm{Horisontal bevegelse med friksjon}{
 En kloss med masse \(0.8 \, \text{kg}\) har en startfart på \(2.0 \, \text{m/s}\) og blir flyttet med en horisontal kraft på \(8.0 \, \text{N}\). Friksjonskraften som virker mot bevegelsen er \(5.6 \, \text{N}\), og etter å ha blitt flyttet \(2.0 \, \text{m}\) får klossen en fart på \(4.0 \, \text{m/s}\).
@@ -152,56 +213,136 @@ W_{\text{totalt}} = 8.0 \, \text{N} \cdot 2.0 \, \text{m} - 5.6 \, \text{N} \cdo
 \subsection{Potensiell energi}
 \label{sec:potensiell}
 
-Potensiell energi er energien som er lagret i et objekt på grunn av dets posisjon eller tilstand. Et vanlig eksempel på potensiell energi er gravitasjonspotensiell energi, som avhenger av et objekts høyde over bakken og tyngdekraften. Når et objekt løftes opp fra bakken, lagres det energi som potensiell energi, og denne energien kan omformes til kinetisk energi når objektet faller tilbake mot bakken.
+Tenk deg at du løfter en stein opp på en hylle. Du bruker energi — du gjør et arbeid mot tyngdekraften. Men energien er ikke borte. Den er lagret i steinen som \textit{potensiell energi}: slipp steinen, og den faller ned og oppnår kinetisk energi. Den lagrede energien er omdannet.
 
-\defn{Gravitasjonspotensiell Energi}{
-    Matematisk kan gravitasjonspotensiell energi \( E_p \) uttrykkes som:
-    \begin{align}
-        E_p = mgh
-    \end{align}
-    hvor \( m \) er massen til objektet, \( g \) er tyngdeakselerasjonen (som på jorden har en verdi på \( 9.81 \, \text{m/s}^2 \)), og \( h \) er høyden over et valgt nullnivå. 
+Det samme skjer med en fjær: du komprimerer den mot fjærkraften og bruker energi. Slipp den, og energien frigjøres og skyver gjenstanden avgårde.
+
+Dette er kjernen i begrepet potensiell energi — \textit{arbeid lagret mot en kraft, klar til å omdannes til bevegelsesenergi}. Felles for tyngdekraft og fjærkraft er at de er \textit{konservative}: arbeidet du gjør mot dem er ikke tapt som varme, men bevart i systemet. Friksjon er derimot ikke-konservativ — det arbeidet forsvinner som varme og kan ikke hentes tilbake.
+
+% ── Gravitasjonspotensiell energi ─────────────────────────────────────────────
+
+\medskip
+\noindent\textbf{Gravitasjonspotensiell energi.}\par\smallskip
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+For å løfte en masse $m$ en høyde $h$ i tyngdefeltet uten akselerasjon, må løftekraften nøyaktig oppheve tyngdekraften: $F_\text{løft} = mg$. Arbeidet denne kraften gjør er:
+\[
+W_\text{løft} = F_\text{løft} \cdot h = mgh
+\]
+Siden tyngdekraften er konservativ, er dette arbeidet ikke tapt — det er lagret som gravitasjonspotensiell energi $E_p$. Slippes massen, gjør tyngdekraften nøyaktig det samme arbeidet tilbake på massen, og all potensiell energi omdannes til kinetisk energi.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88, font=\small]
+  % Bakken
+  \fill[black!12] (-0.9,-0.28) rectangle (1.9, 0);
+  \draw[line width=1.2pt, black!65] (-0.9,0) -- (1.9,0);
+  \foreach \x in {-0.75,-0.45,-0.15,0.15,0.45,0.75,1.05,1.35,1.65} {
+    \draw[black!35,thin] (\x,0) -- (\x-0.22,-0.24);
+  }
+  % Ball nede (utvannet)
+  \fill[gray!25] (0.50,0.38) circle (0.34);
+  \draw[gray!45, thin] (0.50,0.38) circle (0.34);
+  \node[gray!55, font=\scriptsize] at (0.50,0.38) {$m$};
+  % Høydepil
+  \draw[<->, gray!60, thin] (1.35, 0.38) -- (1.35, 3.12);
+  \node[right=2pt, black!65, font=\scriptsize] at (1.35, 1.75) {$h$};
+  % Ball oppe
+  \fill[headCol!35] (0.50, 3.12) circle (0.34);
+  \draw[headCol!70!black, line width=1pt] (0.50, 3.12) circle (0.34);
+  \node[black!70, font=\scriptsize] at (0.50, 3.12) {$m$};
+  % Tyngdekraft G (ned)
+  \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, black!60]
+    (0.50, 2.78) -- (0.50, 1.70);
+  \node[right=3pt, black!60, font=\scriptsize\bfseries] at (0.50, 2.24) {$\vec{G}$};
+  % Løftekraft (opp)
+  \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, defscol]
+    (-0.08, 3.12) -- (-0.08, 4.20);
+  \node[left=3pt, defscol, font=\scriptsize\bfseries] at (-0.08, 3.66) {$\vec{F}_{\!\text{løft}}$};
+  % Ep-etikett
+  \node[headCol!80!black, font=\scriptsize\bfseries,
+        fill=headCol!10, draw=headCol!40, rounded corners=2pt,
+        inner sep=3pt] at (0.50, 4.70) {$E_p = mgh$};
+\end{tikzpicture}
+\captionof{figure}{Masse $m$ løftes mot tyngdekraften til høyde $h$. Arbeidet $W=mgh$ lagres som potensiell energi.}
+\label{fig:gravitasjon_ep}
+\end{minipage}
+
+\medskip
+
+\defn{Gravitasjonspotensiell energi}{%
+Gravitasjonspotensiell energi for en masse $m$ i høyde $h$ over et valgt nullnivå er:
+\[
+E_p = mgh
+\]
+$\mathrm{g} = \SI{9{,}81}{\metre\per\second\squared}$ er tyngdeakselerasjonen, og $h$ måles fra et fritt valgt nullnivå.
 }
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/Kapittel3:Arbeid&Energi/Ball_over_bakken.png}
-    \caption{Potensiell energi i ball med høydeavstand}
-    \label{fig:Ball_over_bakken}
-    \end{figure}
+% ── Elastisk potensiell energi ─────────────────────────────────────────────────
 
-\defn{Utledning av Gravitasjonspotensiell Energi}{
-    Arbeidet som må utføres på et legeme med masse \( m \) for å løfte det en høyde \( h \) i tyngdefeltet, er gitt ved:
-    \[
-    W = F \cdot h
-    \]
-    hvor kraften \( F \) som virker på objektet er tyngdekraften, \( F = m \cdot g \). Dermed blir arbeidet:
-    \[
-    W = m \cdot g \cdot h
-    \]
-    Dette arbeidet er lik den potensiell energien \( E_p \) som er lagret i objektet. Derfor får vi:
-    \[
-    E_p = m \cdot g \cdot h
-    \]
+\medskip
+\noindent\textbf{Elastisk potensiell energi.}\par\smallskip
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+For å komprimere en fjær en avstand $x$ fra likevekt, må man arbeide mot fjærkraften $F = kx$. Siden kraften øker lineært med kompresjonen, er arbeidet arealet under $F(x)$-kurven — en trekant (se figur~\ref{fig:arbeid_fjaer}):
+\[
+W = \frac{1}{2}kx^2
+\]
+Fjærkraften er konservativ, så dette arbeidet lagres som elastisk potensiell energi. Slippes fjæren, omdannes all lagret energi til kinetisk energi.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88, font=\small]
+  % Vegg
+  \fill[black!18] (-0.55,-0.55) rectangle (0, 0.55);
+  \draw[line width=1.2pt, black!65] (0,-0.55) -- (0, 0.55);
+  \foreach \y in {-0.45,-0.25,-0.05,0.15,0.35} {
+    \draw[black!35,thin] (0,\y) -- (-0.30,\y+0.18);
+  }
+  % Fjær (zigzag, komprimert)
+  \draw[line width=1.5pt, headCol!70!black]
+    (0,0)
+    -- (0.18, 0)
+    -- (0.29, 0.18) -- (0.41,-0.18)
+    -- (0.53, 0.18) -- (0.65,-0.18)
+    -- (0.77, 0.18) -- (0.89,-0.18)
+    -- (1.01, 0.18) -- (1.13,-0.18)
+    -- (1.25, 0)
+    -- (1.43, 0);
+  % Kloss
+  \fill[headCol!25] (1.43,-0.28) rectangle (1.97, 0.28);
+  \draw[headCol!65!black, line width=1pt] (1.43,-0.28) rectangle (1.97, 0.28);
+  \node[font=\scriptsize] at (1.70, 0) {$m$};
+  % Kompresjonspil x
+  \draw[<->, gray!65, thin] (0, -0.52) -- (1.43, -0.52);
+  \node[below=2pt, black!65, font=\scriptsize] at (0.72, -0.52) {$x$};
+  % Fjærkraft på kloss (peker høyre = fjæren skyver)
+  \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, red!65!black]
+    (1.97, 0) -- (2.85, 0);
+  \node[above=2pt, red!65!black, font=\scriptsize\bfseries] at (2.41, 0) {$\vec{F} = kx$};
+  % Ep-etikett
+  \node[headCol!80!black, font=\scriptsize\bfseries,
+        fill=headCol!10, draw=headCol!40, rounded corners=2pt,
+        inner sep=3pt] at (1.20, 0.75) {$E_p = \tfrac{1}{2}kx^2$};
+\end{tikzpicture}
+\captionof{figure}{Komprimert fjær med kompresjon $x$. Fjærkraften $F=kx$ skyver klossen vekk. Arbeidet $W=\frac{1}{2}kx^2$ er lagret som elastisk potensiell energi.}
+\label{fig:elastisk_ep}
+\end{minipage}
+
+\medskip
+
+\defn{Elastisk potensiell energi}{%
+Den elastiske potensielle energien lagret i en fjær med fjærkonstant $k$ og kompresjon eller forlengelse $x$ er:
+\[
+E_p = \frac{1}{2}kx^2
+\]
 }
-
-
-Potensiell energi kan også finnes i andre former, som elastisk potensiell energi, som er energien lagret i en elastisk fjær når den strekkes eller presses sammen. Potensiell energi er alltid relatert til en posisjon eller en tilstand som gir objektet muligheten til å utføre arbeid når energien frigjøres.
-
-
-\defn{Elastisk Potensiell Energi}{
-    For en fjær kan den elastiske potensiell energien \( E_p \) uttrykkes som:
-    \begin{align}
-        E_p = \frac{1}{2} k x^2
-    \end{align}
-    hvor \( k \) er fjærkonstanten som beskriver fjærens stivhet, og \( x \) er forlengelsen eller kompresjonen fra fjærens likevektsposisjon. 
-}
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.4\textwidth]{Images/Kapittel3:Arbeid&Energi/fjær.png}
-    \caption{Energi i ball på fjær}
-    \label{fig:Fjær_energi}
-    \end{figure}
 
 \newpage
 
@@ -435,22 +576,7 @@ Effekt kan også uttrykkes i sammenheng med kraft og hastighet. Hvis en konstant
 Denne formelen viser at jo større kraft eller hastighet, desto mer arbeid utføres per tidsenhet, og dermed større effekt.
 
 
-\section{Bevegelsesmengde}
-
-Har du noen gang lurt på hvordan en rakett kan bevege seg i tomt rom, der det ikke finnes luft eller andre objekter å skyve fra? Svaret ligger i prinsippet om bevegelsesmengde. Selv om det ikke finnes noe å dytte mot i rommet, kan en rakett likevel akselerere ved å skyve ut gass med høy hastighet i motsatt retning. Dette skjer på grunn av bevaring av bevegelsesmengde.
-
-Bevegelsesmengde, også kalt impulsmengde, er et mål på hvor mye bevegelse et objekt har, og det avhenger av både objektets masse og hastighet.
-
-\defn{Bevegelsesmengde}{
-    Bevegelsesmengden \( \vec{p} \) til et objekt er definert som:
-    \begin{align}
-        \vec{p} = m \cdot \vec{v}
-    \end{align}
-    hvor \( m \) er massen til objektet, og \( \vec{v} \) er objektets hastighet.
-}
-
-Bevegelsesmengden er en vektor, noe som betyr at den har både størrelse og retning. Større masse eller høyere hastighet gir mer bevegelsesmengde. For eksempel, en lastebil i bevegelse har mer bevegelsesmengde enn en sykkel i bevegelse, selv om de har samme hastighet, fordi lastebilen har mye større masse.
-
+\section{Elastiske støt}
 I lukkede systemer, der ingen ytre krefter virker, er bevegelsesmengden bevart. Dette prinsippet, kalt bevaringsloven, er grunnen til at en rakett kan bevege seg i rommet. Når raketten skyver gassen ut bakover, får gassen en bevegelsesmengde i én retning, og raketten får en like stor, men motsatt bevegelsesmengde, som fører til at raketten beveger seg fremover.
 
 \defn{Bevaring av bevegelsesmengde}{

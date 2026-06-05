@@ -1406,9 +1406,50 @@ Dersom summen av ytre krefter er null, $\sum\vec{F}_{ytre} = \vec{0}$, gir dette
 En funksjon med derivert lik null er konstant. Dermed følger bevaringsloven umiddelbart: $\vec{p}_{tot} = \text{konstant}$. Ingen nye antagelser trengs — loven er en direkte konsekvens av Newtons 2. lov.
 }
 
-\paragraph{Impuls:} Vi har altså sett at 
-\[\frac{\vec{p}}{\Delta t}=\vec{F}\quad\text{som medfører}\quad \Delta\vec{p}=\vec{F}\Delta t.\]
-Dette viser at kraft gjort over tid gir endring i bevegelsesmengde. For dere som kan å integrere, ser vi altså at \textit{integralet} av kraft over tid er bevegelsesmengde. Dette gir mening. Når en kraft virker på et legeme over tid, så endrer det bevegelsesmengden til legemet. Endring i bevegelsesmengde forårsaket av et kraftstøt har faktisk et eget navn. Vi kaller det for \textit{impuls}. I dette faget skal vi riktignok ikke bruke dette begrepet noe videre.
+\paragraph{Impuls:} Vi har altså sett at
+\[\frac{\Delta\vec{p}}{\Delta t}=\vec{F}\quad\text{som medfører}\quad \Delta\vec{p}=\vec{F}\,\Delta t.\]
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Dette viser at kraft virket over tid gir endring i bevegelsesmengde. I virkeligheten varierer kraften under et kraftstøt — tenk på hockeykøllens slag mot pucken: kraften stiger raskt og faller igjen. For dem som kjenner integraler: $\Delta\vec{p} = \int_{t_1}^{t_2}\vec{F}\,dt$, altså \textit{arealet under $F(t)$-kurven} (figur~\ref{fig:impuls_areal}). I det enklere tilfellet med konstant kraft er dette arealet nøyaktig rektangelet $F\cdot\Delta t$.
+
+Endringen i bevegelsesmengde forårsaket av et slikt kraftstøt kalles \textit{impuls}. I dette faget skal vi ikke bruke dette begrepet noe videre.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88, font=\small]
+  % Aksler
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.2pt, black!70]
+    (-0.2, 0) -- (5.0, 0) node[right, black!80] {$t$};
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.2pt, black!70]
+    (0, -0.2) -- (0, 3.2) node[above, black!80] {$F(t)$};
+  % Skravert areal under kurven (halvsinuskurve fra t1=0.6 til t2=4.2)
+  % f(t) = 2.6*sin(180*(t-0.6)/3.6) grader = 2.6*sin(50*(t-0.6))
+  \fill[headCol!30, domain=0.6:4.2, samples=80]
+    (0.6, 0)
+    -- plot[domain=0.6:4.2] (\x, {2.6*sin(50*(\x-0.6))})
+    -- (4.2, 0) -- cycle;
+  % Kurven
+  \draw[headCol!80!black, line width=2.2pt, domain=0.6:4.2, samples=80]
+    plot (\x, {2.6*sin(50*(\x-0.6))});
+  % Null-linje markert
+  \draw[gray!50, dashed, thin] (0.6, 0) -- (0.6, 0.02);
+  \draw[gray!50, dashed, thin] (4.2, 0) -- (4.2, 0.02);
+  % t1 og t2
+  \node[below=3pt, black!70, font=\scriptsize] at (0.6, 0) {$t_1$};
+  \node[below=3pt, black!70, font=\scriptsize] at (4.2, 0) {$t_2$};
+  % Origo
+  \node[below left=1pt, black!60, font=\scriptsize] at (0,0) {$0$};
+  % Δp-etikett inne i arealet
+  \node[headCol!80!black, font=\small\bfseries] at (2.4, 0.72) {$\Delta p$};
+  % Pil som peker fra etiketten mot arealet
+  \node[headCol!60!black, font=\scriptsize] at (2.4, 1.10) {$=$ areal};
+\end{tikzpicture}
+\captionof{figure}{Arealet under $F(t)$-kurven er lik endringen i bevegelsesmengde $\Delta p$. Kraften varierer typisk under et støt.}
+\label{fig:impuls_areal}
+\end{minipage}
 
 \begin{myoppsum*}{Algoritme for løsning}
 Fremgangsmåten i slike oppgaver er alltid den samme:
