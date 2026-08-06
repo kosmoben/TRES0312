@@ -24,12 +24,20 @@
 \RequirePackage{dsfont}
 \RequirePackage[most]{tcolorbox}
 \tcbuselibrary{listings,theorems,skins}
+\RequirePackage{listings}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \graphicspath{{../TRES0312_Kompendium/Images/}}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,shapes.geometric,arrows,shadows}
-\RequirePackage[shortlabels,inline]{enumitem}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\RequirePackage[shortlabels]{enumitem}
+%  NB: "inline"-opsjonen til enumitem er BEVISST utelatt. Den bryter Beamers
+%  itemize-punktmarkør fullstendig (itemize-lister vises uten prikk/pil),
+%  og forårsaker "TeX capacity exceeded [grouping levels]"-krasj dersom man
+%  i tillegg prøver å sette \setlist[itemize]{label=...} for å rette dette.
 \RequirePackage{cancel}
 \RequirePackage{array}
 \RequirePackage{colortbl}
@@ -45,6 +53,7 @@
 \definecolor{tankecol}  {HTML}{F4F9EE}
 \definecolor{thmscol}   {HTML}{595765}
 \definecolor{oppsumcol} {rgb} {0.8,0.5,0}
+\definecolor{repcol}    {rgb} {0.82,0.33,0.12}  % repetisjon — rustrød, i slekt med oppsumcol
 \definecolor{merkcol}   {HTML}{ecd8d7}
 \definecolor{natKonstCol}{RGB}{0,115,60}
 \definecolor{headCol}   {RGB}{18, 82, 88}      % dyp teal
@@ -81,6 +90,9 @@
   % Oppsummering
   \colorlet{oppsumback} {oppsumcol!32!darkbg}
   \colorlet{oppsumtitle}{oppsumcol!60!darkbg}
+  % Repetisjon
+  \colorlet{repback}    {repcol!32!darkbg}
+  \colorlet{reptitle}   {repcol!60!darkbg}
   % Merk
   \colorlet{merkback}   {merkcol!28!darkbg}
   \colorlet{merktitle}  {merkcol!55!darkbg}
@@ -90,6 +102,16 @@
   % Grå boks (utheving av formler/resultater, brukes i stedet for \boxed{})
   \colorlet{grayboxback}{white!25!darkbg}
   \colorlet{grayboxtext}{white!92!gray}
+  % Kinematikk-grafer (akselerasjon/fart/strekning) og Python-kodeboks
+  \colorlet{accGraphColor}{oppgcol!75!white}
+  \colorlet{velGraphColor}{aktivcol!75!white}
+  \colorlet{posGraphColor}{defscol!75!white}
+  \colorlet{pycodeback}   {white!6!darkbg}
+  \colorlet{pycodeframe}  {white!22!darkbg}
+  \colorlet{pycodetext}   {white!92!gray}
+  \colorlet{pycodekw}     {oppgcol!45!white}
+  \colorlet{pycodestr}    {defscol!45!white}
+  \colorlet{pycodecom}    {white!45!gray}
 \else
   \colorlet{pagecolor}   {white}
   \colorlet{textcolor}   {black}
@@ -112,6 +134,9 @@
   % Oppsummering
   \colorlet{oppsumback} {oppsumcol!13!white}
   \colorlet{oppsumtitle}{oppsumcol!24!white}
+  % Repetisjon
+  \colorlet{repback}    {repcol!13!white}
+  \colorlet{reptitle}   {repcol!24!white}
   % Merk
   \colorlet{merkback}   {merkcol!14!white}
   \colorlet{merktitle}  {merkcol!35!white}
@@ -121,6 +146,16 @@
   % Grå boks (utheving av formler/resultater, brukes i stedet for \boxed{})
   \colorlet{grayboxback}{black!12!white}
   \colorlet{grayboxtext}{black}
+  % Kinematikk-grafer (akselerasjon/fart/strekning) og Python-kodeboks
+  \colorlet{accGraphColor}{oppgcol}
+  \colorlet{velGraphColor}{aktivcol}
+  \colorlet{posGraphColor}{defscol!80!black}
+  \colorlet{pycodeback}   {black!4!white}
+  \colorlet{pycodeframe}  {black!15!white}
+  \colorlet{pycodetext}   {black}
+  \colorlet{pycodekw}     {oppgcol}
+  \colorlet{pycodestr}    {defscol!80!black}
+  \colorlet{pycodecom}    {black!45}
 \fi
 
 %--------------------------------------------------------------------------
@@ -137,6 +172,13 @@
 \setbeamercolor{itemize item}     {fg=headCol!80!white}
 \setbeamercolor{itemize subitem}  {fg=headCol!60!textcolor}
 \setbeamercolor{enumerate item}   {fg=headCol!80!white}
+
+%  Eksplisitte itemize-punktmarkører.
+%  (Uten disse forsvinner punktmarkøren helt, siden enumitem overstyrer
+%  Beamers itemize-maler med sine egne --- se merknad ved \RequirePackage{enumitem}.)
+\setlist[itemize,1]{label={\usebeamercolor[fg]{itemize item}$\blacktriangleright$}}
+\setlist[itemize,2]{label={\usebeamercolor[fg]{itemize subitem}$\triangleright$}}
+\setlist[itemize,3]{label={\usebeamercolor[fg]{itemize subitem}$\bullet$}}
 
 %--------------------------------------------------------------------------
 %  BEAMER SKRIFTTYPER
@@ -473,6 +515,31 @@
 }
 
 %--------------------------------------------------------------------------
+%  \eksbox{Innhold} — samme utseende som \svar, men med tittelen
+%  "Eksempel" i stedet for "Svar". Brukes til frittstående illustrerende
+%  eksempler som IKKE svarer på et forutgående \spq-spørsmål, og som
+%  IKKE er hentet fra en nummerert \exm i kompendiet (bruk \exmxr/\exm
+%  for de tilfellene i stedet).
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\eksbox}{+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=svartitlecol,
+    colback=bodycolor,
+    title={Eksempel},
+    borderline west={1mm}{0pt}{spmback},
+    left=5mm,
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #1
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
 %  \spq{Innhold} — spørsmålsboks uten overskrift
 %--------------------------------------------------------------------------
 \NewDocumentCommand{\spq}{+m}{%
@@ -544,6 +611,28 @@
 }
 
 %--------------------------------------------------------------------------
+%  \repetisjon{Tittel}{Innhold}
+%  Brukes til raske repetisjonsspørsmål fra forrige forelesning
+%  (f.eks. "Tre kjappe fra forrige gang"). Egen boks, atskilt fra
+%  \oppsum, med en beslektet men annen farge (repcol).
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\repetisjon}{m+m}{%
+  \begin{tcolorbox}[
+    enhanced, frame hidden,
+    titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
+    fonttitle=\bfseries\normalsize,
+    coltitle=boxtitletext,
+    colbacktitle=reptitle,
+    colback=repback,
+    title={Repetisjon: #1},
+    before skip=5pt, after skip=5pt,
+  ]
+  \ifdarkmode\color{textcolor}\fi
+  #2
+  \end{tcolorbox}%
+}
+
+%--------------------------------------------------------------------------
 %  \graabox{Innhold} — grå boks for å utheve formler/resultater
 %  Brukes i STEDET FOR \boxed{} når noe skal fremheves på en slide.
 %--------------------------------------------------------------------------
@@ -558,6 +647,56 @@
   \centering\color{grayboxtext} #1
   \end{tcolorbox}
   \end{center}%
+}
+
+%--------------------------------------------------------------------------
+%  \begin{pycode} ... \end{pycode} — Python-kodeboks
+%  Tynn, gjennomsiktig-aktig ramme som fungerer på både mørk og lys
+%  bakgrunn (farger styrt av \ifdarkmode via pycode*-fargene over).
+%--------------------------------------------------------------------------
+\lstdefinestyle{pystyle}{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize\color{pycodetext},
+  keywordstyle=\color{pycodekw}\bfseries,
+  stringstyle=\color{pycodestr},
+  commentstyle=\color{pycodecom}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  columns=fullflexible,
+  numbers=none,
+  tabsize=4,
+  frame=none,
+  backgroundcolor=,
+}
+\newtcblisting{pycode}{
+  enhanced,
+  colback=pycodeback,
+  colframe=pycodeframe,
+  boxrule=0.5pt,
+  arc=2mm,
+  listing only,
+  listing options={style=pystyle},
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  before skip=6pt, after skip=6pt,
+}
+
+%--------------------------------------------------------------------------
+%  Felles pgfplots-stil for kinematikkgrafer (akselerasjon/fart/strekning)
+%  Gjennomsiktig bakgrunn, akser/tekst i "textcolor" slik at de er
+%  synlige på både mørk og lys bakgrunn.
+%--------------------------------------------------------------------------
+\pgfplotsset{
+  kinemplot/.style={
+    width=0.98\textwidth,
+    axis lines=left,
+    axis line style={color=textcolor},
+    tick style={color=textcolor},
+    tick label style={font=\scriptsize, color=textcolor},
+    label style={font=\scriptsize, color=textcolor},
+    every axis label/.append style={color=textcolor},
+    axis background/.style={fill=none},
+    xmin=0,
+  },
 }
 
 %==========================================================================

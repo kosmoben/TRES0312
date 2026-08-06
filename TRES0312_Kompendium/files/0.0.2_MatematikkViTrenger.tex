@@ -8,15 +8,16 @@ Hvorfor kan naturen beskrives med matematikk?}
 I dette kompendiet bruker vi Python for å illustrere beregninger og lage figurer. Om du aldri har programmert før, anbefaler vi å lese Appendiks~\ref{app:python} før du går videre. Der finner du en kort innføring i alt du trenger for å komme i gang.
 \end{mymerk*}
 
-\section{Algebra}
+\section{Likninger og algebra}
 
-Algebra handler om å uttrykke sammenhenger mellom størrelser ved hjelp av variabler og symboler. I stedet for å skrive at «fart er strekning delt på tid» kan vi skrive
+Likninger handler om å uttrykke sammenhenger mellom størrelser ved hjelp av variabler og symboler. I stedet for å skrive at «fart er strekning delt på tid» kan vi skrive
 \[
 v = \frac{s}{t}.
 \]
 Her er $v$, $s$ og $t$ \emph{variabler} — altså symboler som kan ta ulike tallverdier. 
 
-Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent".
+Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent". Da må vi følge gitte logiske regler. Disse reglene kalles algebra-regler, eller bare algebra.
+
 \exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper han en strekning $s_2 = \SI{4}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
 
 \paragraph{Løsning:} Gjennomsnittsfart $\bar{v}$ er også et begrep vi ikke har lært ennå, men det er rett fram, og de fleste kjenner det intuitivt igjen fra erfaring:
@@ -82,7 +83,7 @@ Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_K = \frac{1}{2}
 
 \begin{myoppsum*}{Algebraregler}
     \begin{itemize}
-        \item Det du gjør på ett ledd må du gjøre på alle ledd i enlikning.
+        \item Det du gjør på ett ledd i en likningmå du gjøre på alle ledd.
         \item Husk at du alltid kan multiplisere med 1.
     \end{itemize}
 \end{myoppsum*}
@@ -276,6 +277,43 @@ x &= h\cos\theta = 5.0\cdot\cos 37^\circ \approx 5.0\cdot 0.799 \approx \doubleu
 y &= h\sin\theta = 5.0\cdot\sin 37^\circ \approx 5.0\cdot 0.602 \approx \doubleunderline{\SI{3.0}{\metre}}
 \end{align*}
 Dette er nøyaktig et $(3,4,5)$-trekant skalert med $\SI{1}{\metre}$.
+}
+
+\exm{Bruk av $\sin^2\theta + \cos^2\theta = 1$}{En vinkel $\theta$ i første kvadrant har $\sin\theta = \dfrac{3}{5}$.
+\begin{enumerate}[a)]
+    \item Bruk sammenhengen $\sin^2\theta + \cos^2\theta = 1$ til å finne $\cos\theta$.
+    \item Finn $\tan\theta$.
+\end{enumerate}
+
+\paragraph{Løsning:}
+\paragraph{a)} Vi løser for $\cos\theta$:
+\[
+\cos^2\theta = 1 - \sin^2\theta = 1 - \left(\frac{3}{5}\right)^2 = 1 - \frac{9}{25} = \frac{16}{25}.
+\]
+Siden $\theta$ er i første kvadrant er $\cos\theta$ positiv, så
+\[
+\cos\theta = \sqrt{\frac{16}{25}} = \doubleunderline{\frac{4}{5}}.
+\]
+\paragraph{b)}
+\[
+\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{3/5}{4/5} = \doubleunderline{\frac{3}{4}}.
+\]
+}
+
+\exm{Fortegn til $\sin\theta$ og $\cos\theta$}{Bruk enhetssirkelen til å avgjøre om $\sin\theta$ og $\cos\theta$ er positiv eller negativ for hver av vinklene:
+\begin{enumerate}[a)]
+    \item $\theta = 120^\circ$
+    \item $\theta = 200^\circ$
+    \item $\theta = 300^\circ$
+\end{enumerate}
+I hvilken kvadrant er både $\sin\theta$ og $\cos\theta$ positive? I hvilken kvadrant er begge negative?
+
+\paragraph{Løsning:} På enhetssirkelen er $\cos\theta$ lik $x$-koordinaten og $\sin\theta$ lik $y$-koordinaten til punktet på sirkelen. Fortegnet avhenger derfor av hvilken kvadrant vinkelen $\theta$ befinner seg i.
+\paragraph{a)} $\theta = 120^\circ$ ligger i andre kvadrant ($90^\circ < \theta < 180^\circ$), der $x<0$ og $y>0$: \doubleunderline{$\sin\theta$ positiv, $\cos\theta$ negativ.}
+\paragraph{b)} $\theta = 200^\circ$ ligger i tredje kvadrant ($180^\circ < \theta < 270^\circ$), der $x<0$ og $y<0$: \doubleunderline{$\sin\theta$ negativ, $\cos\theta$ negativ.}
+\paragraph{c)} $\theta = 300^\circ$ ligger i fjerde kvadrant ($270^\circ < \theta < 360^\circ$), der $x>0$ og $y<0$: \doubleunderline{$\sin\theta$ negativ, $\cos\theta$ positiv.}
+
+Begge er positive i \doubleunderline{første kvadrant} ($0^\circ < \theta < 90^\circ$), og begge er negative i \doubleunderline{tredje kvadrant} ($180^\circ < \theta < 270^\circ$).
 }
 
 \oppgave{Trigonometri}{%

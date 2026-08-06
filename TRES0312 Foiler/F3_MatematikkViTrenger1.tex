@@ -43,7 +43,7 @@
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
-  \oppsum{Tre kjappe fra forrige gang}{%
+  \repetisjon{Tre kjappe fra forrige gang}{%
     \begin{enumerate}[1.,itemsep=10pt]
       \item Hvor mange signifikante siffer har tallet $0.0450$?
       \item Skriv $4\,500\,000$ på standardform.
@@ -76,14 +76,14 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Algebra: introduksjon
+%  SLIDE 5 — Likninger: introduksjon
 %--------------------------------------------------------------------------
-\begin{frame}{Algebra}
+\begin{frame}{Likninger}
 
   \spq{Hvordan uttrykker vi sammenhenger mellom fysiske størrelser?}
   \pause
   \svar{
-  Vi bruker algebra --- variabler og symboler i stedet for ord. I stedet for ``fart er strekning delt på tid'' skriver vi
+  Vi bruker likninger --- variabler og symboler i stedet for ord. I stedet for ``fart er strekning delt på tid'' skriver vi
   \[
     v = \frac{s}{t}.
   \]
@@ -128,22 +128,20 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 9 — Potenser og røtter
+%  SLIDE 9 — Notasjon for potenser og røtter
 %--------------------------------------------------------------------------
-\begin{frame}{Potenser og røtter}
+\begin{frame}{Notasjon for potenser og røtter}
 
-  \oppsum{Potensregler}{%
-    \[
+  \graabox{%
+    $\displaystyle
       x^a \cdot x^b = x^{a+b}, \qquad
       \frac{x^a}{x^b} = x^{a-b}, \qquad
       (x^a)^b = x^{ab}.
-    \]
+    $
   }
   \pause
-  \oppsum{Kvadratrot}{%
-    \[
-      \sqrt{x} = x^{1/2}.
-    \]
+  \graabox{%
+    $\displaystyle \sqrt{x} = x^{1/2}.$
   }
 
 \end{frame}
@@ -162,7 +160,7 @@
     \end{align*}
     \end{minipage}
   }
-  \tanke{}{%
+  \merk{Dette bør du kunne}{%
     Disse tre identitetene dukker opp overalt i fysikken --- det er verdt å kunne dem utenat.
   }
 
@@ -173,9 +171,7 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Funksjoner og plotting}
 
-  \defn{Funksjon}{
   En \textit{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt utverdi $f(x)$. I fysikk er posisjonen $s$ til et objekt i bevegelse for eksempel en funksjon av tid $t$, og vi skriver da $s(t)$.
-  }
 
 \end{frame}
 
@@ -184,14 +180,11 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Lineær funksjon}
 
-  \defn{Lineær funksjon}{
-  \[
-    f(x) = b + ax,
-  \]
+  Den enkleste funksjonen er den lineære:
+  \graabox{$f(x) = b + ax$}
   der $a$ er \textit{stigningstallet} (hvor bratt grafen er) og $b$ er \textit{konstantleddet} (der grafen skjærer $y$-aksen).
-  }
   \pause
-  \svar{
+  \eksbox{
   Et eksempel er farten $v(t)$ ved konstant akselerasjon:
   \[
     v(t) = v_0 + at.
@@ -205,14 +198,11 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Kvadratisk funksjon}
 
-  \defn{Kvadratisk funksjon}{
-  \[
-    f(x) = ax^2 + bx + c.
-  \]
+  En kvadratisk funksjon har formen
+  \graabox{$f(x) = ax^2 + bx + c$}
   Grafen er en \textit{parabel}.
-  }
   \pause
-  \svar{
+  \eksbox{
   Posisjonen til et legeme med konstant akselerasjon er et eksempel på en kvadratisk funksjon av tid:
   \[
     s(t) = \tfrac{1}{2}at^2 + v_0 t + s_0.
@@ -227,27 +217,150 @@
 \begin{frame}{}
 
   \merk{Bokstaver kan bety flere ting}{
-  Skriver vi $s(t)$, mener vi nok strekning som funksjon av tid $t$. Men tiden $t$ har jo enhet \textit{sekund}, som også betegnes med bokstaven $s$! Bokstaven $m$ brukes både til å symbolisere \textit{masse} og enheten \textit{meter}. Ut ifra sammenhengen forstår man som regel hva som er ment --- i alle fall med litt trening.
+    \begin{itemize}
+      \item Skriver vi $s(t)$, mener vi nok \textit{strekning} som funksjon av tid $t$. Men tiden $t$ har jo enhet \textit{sekund}, som også betegnes med bokstaven $s$!
+      \item Bokstaven $m$ brukes både til å symbolisere \textit{masse} og enheten \textit{meter}.
+    \end{itemize}
+    Ut ifra sammenhengen forstår man som regel hva som er ment --- i alle fall med litt trening.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Plotting med Python
+%  SLIDE 15 — Plotting med Python: akselerasjon
 %--------------------------------------------------------------------------
-\begin{frame}{Plotting med Python}
+\begin{frame}[fragile]{Plotting med Python --- akselerasjon}
 
-  \merk{Grafer i Python}{
-  En av de nyttigste tingene vi kan gjøre med Python, er å tegne grafer. Figuren under viser posisjon og fart som funksjon av tid for et legeme med konstant akselerasjon.
-  }
-  \begin{center}
-    \includegraphics[width=0.62\textwidth]{Kapittel1:introduksjon/python_plot_02_bevegelse.pdf}
-  \end{center}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+\begin{pycode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 5, 100)
+a = np.full_like(t, 2.0)   # konstant akselerasjon
+
+plt.plot(t, a)
+plt.xlabel("Tid [s]")
+plt.ylabel("Akselerasjon [m/s^2]")
+plt.show()
+\end{pycode}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}
+      \begin{axis}[
+        kinemplot, height=6.0cm,
+        xlabel={Tid $t$ [s]},
+        xmax=5, ymin=0, ymax=26,
+        legend style={font=\scriptsize, draw=none, fill=none,
+                      at={(0.03,0.97)}, anchor=north west},
+        legend cell align=left,
+      ]
+        \addplot[thick, accGraphColor, domain=0:5, samples=2] {2};
+        \addlegendentry{$a(t)$ [m/s$^2$]}
+      \end{axis}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 16 — Pause
+%  SLIDE 16 — Plotting med Python: akselerasjon og fart
+%--------------------------------------------------------------------------
+\begin{frame}[fragile]{Plotting med Python --- akselerasjon og fart}
+
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+\begin{pycode}
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.linspace(0, 5, 100)
+a = np.full_like(t, 2.0)   # akselerasjon
+v = 2.0 * t                # fart: v(t) = v0 + a*t
+
+plt.plot(t, a, label="a(t)")
+plt.plot(t, v, label="v(t)")
+plt.xlabel("Tid [s]")
+plt.legend()
+plt.show()
+\end{pycode}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}
+      \begin{axis}[
+        kinemplot, height=6.0cm,
+        xlabel={Tid $t$ [s]},
+        xmax=5, ymin=0, ymax=26,
+        legend style={font=\scriptsize, draw=none, fill=none,
+                      at={(0.03,0.97)}, anchor=north west},
+        legend cell align=left,
+      ]
+        \addplot[thick, accGraphColor, domain=0:5, samples=2] {2};
+        \addlegendentry{$a(t)$ [m/s$^2$]}
+        \addplot[thick, velGraphColor, domain=0:5, samples=50] {2*x};
+        \addlegendentry{$v(t)$ [m/s]}
+      \end{axis}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Plotting med Python: akselerasjon, fart og strekning
+%--------------------------------------------------------------------------
+\begin{frame}[fragile]{Plotting med Python --- hele bevegelsen}
+
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+\begin{pycode}
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.linspace(0, 5, 100)
+a = np.full_like(t, 2.0)
+v = 2.0 * t
+s = 0.5 * 2.0 * t**2
+
+plt.plot(t, a, label="a(t)")
+plt.plot(t, v, label="v(t)")
+plt.plot(t, s, label="s(t)")
+plt.xlabel("Tid [s]")
+plt.legend()
+plt.show()
+\end{pycode}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}
+      \begin{axis}[
+        kinemplot, height=6.0cm,
+        xlabel={Tid $t$ [s]},
+        xmax=5, ymin=0, ymax=26,
+        legend style={font=\scriptsize, draw=none, fill=none,
+                      at={(0.03,0.97)}, anchor=north west},
+        legend cell align=left,
+      ]
+        \addplot[thick, accGraphColor, domain=0:5, samples=2] {2};
+        \addlegendentry{$a(t)$ [m/s$^2$]}
+        \addplot[thick, velGraphColor, domain=0:5, samples=50] {2*x};
+        \addlegendentry{$v(t)$ [m/s]}
+        \addplot[thick, posGraphColor, domain=0:5, samples=50] {x*x};
+        \addlegendentry{$s(t)$ [m]}
+      \end{axis}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Pause
 %--------------------------------------------------------------------------
 \begin{frame}{}
 \begin{center}
@@ -256,7 +369,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Trigonometri: introduksjon
+%  SLIDE 19 — Trigonometri: introduksjon
 %--------------------------------------------------------------------------
 \begin{frame}{Trigonometri}
 
@@ -265,22 +378,21 @@
   \begin{center}
   \begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
     \coordinate (O) at (0,0);
-    \coordinate (A) at (3.0,0);
-    \coordinate (B) at (3.0,1.9);
-    \fill[headCol!12] (O) -- (A) -- (B) -- cycle;
-    \draw[thick] (O) -- (A) node[midway, below=6pt] {\small hosliggende ($a$)};
-    \draw[thick] (A) -- (B) node[midway, right=5pt] {\small motstående ($b$)};
-    \draw[thick] (O) -- (B) node[midway, above left=2pt] {\small hypotenus ($c$)};
-    \draw (A) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
-    \draw[headCol, thick] (0.5,0) arc (0:32:0.5);
-    \node at (0.8,0.13) {$\theta$};
+    \coordinate (A) at (3.2,0);
+    \coordinate (B) at (3.2,2.0);
+    \draw[thick, textcolor] (O) -- (A) node[midway, below=6pt, font=\small] {hosliggende ($a$)};
+    \draw[thick, textcolor] (A) -- (B) node[midway, right=5pt, font=\small] {motstående ($b$)};
+    \draw[thick, textcolor] (O) -- (B) node[midway, above left=2pt, font=\small] {hypotenus ($c$)};
+    \draw[textcolor] (A) ++(-0.22,0) -- ++(0,0.22) -- ++(0.22,0);
+    \draw[accGraphColor, thick] (0.7,0) arc (0:32:0.7);
+    \node[accGraphColor] at (16:0.95) {$\theta$};
   \end{tikzpicture}
   \end{center}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 18 — Definisjon: sinus, cosinus og tangens
+%  SLIDE 20 — Definisjon: sinus, cosinus og tangens
 %--------------------------------------------------------------------------
 \begin{frame}{Sinus, cosinus og tangens}
 
@@ -296,7 +408,18 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 19 — Viktige trigonometriske verdier
+%  SLIDE 21 — Aktivitet: stige mot vegg
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Trigonometri: stige mot vegg}{%
+  En stige av lengde $h = 5.0\,\mathrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 22 — Viktige trigonometriske verdier
 %--------------------------------------------------------------------------
 \begin{frame}{Viktige trigonometriske verdier}
 
@@ -323,36 +446,80 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 20 — Enhetssirkelen
+%  SLIDE 23 — Enhetssirkelen
 %--------------------------------------------------------------------------
 \begin{frame}{Enhetssirkelen}
 
-  Enhetssirkelen er en sirkel med radius 1. Katetene i trekanten med vinkel $\theta$ tegnet inn i enhetssirkelen blir da nettopp $\cos\theta$ og $\sin\theta$. Fra Pythagoras' læresetning ser vi da umiddelbart at:
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      Enhetssirkelen er en sirkel med radius 1. Katetene i trekanten med vinkel $\theta$ tegnet inn i enhetssirkelen blir da nettopp $\cos\theta$ og $\sin\theta$. Fra Pythagoras' læresetning ser vi da umiddelbart at:
 
-  \graabox{%
-    $\cos^2\theta + \sin^2\theta = 1$
-  }
+      \graabox{%
+        $\cos^2\theta + \sin^2\theta = 1$
+      }
 
-  \pause
-  \tanke{}{%
-  Denne formelen er mye brukt --- den kan du bare lære deg med det samme.
-  }
+      \pause
+      \merk{Dette bør du kunne}{%
+      Denne formelen er mye brukt --- den kan du bare lære deg med det samme.
+      }
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+        \def\ang{35}
+        \draw[textcolor, ->] (-1.3,0) -- (1.3,0) node[right, font=\small] {$x$};
+        \draw[textcolor, ->] (0,-1.3) -- (0,1.3) node[above, font=\small] {$y$};
+        \draw[textcolor, thick] (0,0) circle (1);
+        \draw[velGraphColor, dashed, thick] ({cos(\ang)},{sin(\ang)}) -- ({cos(\ang)},0)
+          node[midway, left=1pt, font=\scriptsize] {$\sin\theta$};
+        \draw[posGraphColor, dashed, thick] ({cos(\ang)},{sin(\ang)}) -- (0,{sin(\ang)})
+          node[midway, above, font=\scriptsize] {$\cos\theta$};
+        \draw[accGraphColor, thick, ->] (0,0) -- ({cos(\ang)},{sin(\ang)});
+        \draw[textcolor] (0.28,0) arc (0:\ang:0.28);
+        \node[textcolor] at (0.44,0.14) {\scriptsize $\theta$};
+        \node[accGraphColor, anchor=south west, xshift=3pt, yshift=1pt, font=\scriptsize]
+          at ({cos(\ang)},{sin(\ang)}) {$(\cos\theta,\sin\theta)$};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 21 — Aktivitet: stige mot vegg
+%  SLIDE 24 — Aktivitet: bruk av sin^2 + cos^2 = 1
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
-  \aktivitet{Trigonometri: stige mot vegg}{%
-  En stige av lengde $h = 5.0\,\mathrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
+  \aktivitet{Bruk av $\sin^2\theta + \cos^2\theta = 1$}{%
+  En vinkel $\theta$ i første kvadrant har $\sin\theta = \dfrac{3}{5}$.
+    \begin{enumerate}[a)]
+      \item Bruk sammenhengen $\sin^2\theta + \cos^2\theta = 1$ til å finne $\cos\theta$.
+      \item Finn $\tan\theta$.
+    \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 22 — Neste gang
+%  SLIDE 25 — Aktivitet: fortegn til sin theta og cos theta
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fortegn til $\sin\theta$ og $\cos\theta$}{%
+  Bruk enhetssirkelen til å avgjøre om $\sin\theta$ og $\cos\theta$ er positiv eller negativ for hver av vinklene:
+    \begin{enumerate}[a)]
+      \item $\theta = 120^\circ$
+      \item $\theta = 200^\circ$
+      \item $\theta = 300^\circ$
+    \end{enumerate}
+  I hvilken kvadrant er både $\sin\theta$ og $\cos\theta$ positive? I hvilken kvadrant er begge negative?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 26 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
