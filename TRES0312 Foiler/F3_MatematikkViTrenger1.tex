@@ -1,0 +1,369 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Matematikk vi trenger}
+\subtitle{TRES0312 --- Algebra, funksjoner og trigonometri}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%  Bruk gjerne \setcounter{section}{N} rett før en frame der du bytter
+%  seksjon, i stedet for én gang globalt.
+%--------------------------------------------------------------------------
+\setcounter{section}{2}   % Kapittel 2: "Matematiske verktøy vi trenger"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.,itemsep=10pt]
+      \item Hvor mange signifikante siffer har tallet $0.0450$?
+      \item Skriv $4\,500\,000$ på standardform.
+      \item Hva er symbolet for det dekadiske prefikset ``mikro''?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: matematikk og naturen
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+    Hvorfor kan naturen beskrives med matematikk?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Python og programmering
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \merk{Python og programmering}{
+  I dette kurset bruker vi noen ganger Python til å illustrere beregninger og lage figurer. Python er \textit{ikke} obligatorisk, men det er nyttig å bli kjent med det --- dere kommer garantert borti det i andre fag også.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Algebra: introduksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Algebra}
+
+  \spq{Hvordan uttrykker vi sammenhenger mellom fysiske størrelser?}
+  \pause
+  \svar{
+  Vi bruker algebra --- variabler og symboler i stedet for ord. I stedet for ``fart er strekning delt på tid'' skriver vi
+  \[
+    v = \frac{s}{t}.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: gjennomsnittsfart
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Finne gjennomsnittsfart}{%
+  Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = 5\,\mathrm{km}$ på $t_1 = 20\,\mathrm{min}$. Deretter skrur han opp farten litt og løper en strekning $s_2 = 4\,\mathrm{km}$ på $t_2 = 18\,\mathrm{min}$. Hva er gjennomsnittsfarten $\bar{v}$?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: løse for akselerasjon
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Løse for akselerasjon}{%
+  Newtons 2.\ lov sier $F = m\cdot a$. En bil med masse $m = 1\,200\,\mathrm{kg}$ utsettes for en kraft $F = 4\,800\,\mathrm{N}$. Finn akselerasjonen $a$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Algebraregler
+%--------------------------------------------------------------------------
+\begin{frame}{Algebraregler}
+
+  \oppsum{Algebraregler}{%
+    \begin{itemize}
+      \item Det du gjør på ett ledd, må du gjøre på alle ledd i en likning.
+      \item Husk at du alltid kan multiplisere med 1.
+    \end{itemize}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Potenser og røtter
+%--------------------------------------------------------------------------
+\begin{frame}{Potenser og røtter}
+
+  \oppsum{Potensregler}{%
+    \[
+      x^a \cdot x^b = x^{a+b}, \qquad
+      \frac{x^a}{x^b} = x^{a-b}, \qquad
+      (x^a)^b = x^{ab}.
+    \]
+  }
+  \pause
+  \oppsum{Kvadratrot}{%
+    \[
+      \sqrt{x} = x^{1/2}.
+    \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Kvadratsetningene
+%--------------------------------------------------------------------------
+\begin{frame}{Kvadratsetningene}
+
+  \graabox{%
+    \begin{minipage}{0.85\textwidth}
+    \begin{align*}
+      (a+b)^2     &= a^2 + 2ab + b^2, \\
+      (a-b)^2     &= a^2 - 2ab + b^2, \\
+      (a+b)(a-b)  &= a^2 - b^2.
+    \end{align*}
+    \end{minipage}
+  }
+  \tanke{}{%
+    Disse tre identitetene dukker opp overalt i fysikken --- det er verdt å kunne dem utenat.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Funksjoner: introduksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Funksjoner og plotting}
+
+  \defn{Funksjon}{
+  En \textit{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt utverdi $f(x)$. I fysikk er posisjonen $s$ til et objekt i bevegelse for eksempel en funksjon av tid $t$, og vi skriver da $s(t)$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Lineær funksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Lineær funksjon}
+
+  \defn{Lineær funksjon}{
+  \[
+    f(x) = b + ax,
+  \]
+  der $a$ er \textit{stigningstallet} (hvor bratt grafen er) og $b$ er \textit{konstantleddet} (der grafen skjærer $y$-aksen).
+  }
+  \pause
+  \svar{
+  Et eksempel er farten $v(t)$ ved konstant akselerasjon:
+  \[
+    v(t) = v_0 + at.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Kvadratisk funksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Kvadratisk funksjon}
+
+  \defn{Kvadratisk funksjon}{
+  \[
+    f(x) = ax^2 + bx + c.
+  \]
+  Grafen er en \textit{parabel}.
+  }
+  \pause
+  \svar{
+  Posisjonen til et legeme med konstant akselerasjon er et eksempel på en kvadratisk funksjon av tid:
+  \[
+    s(t) = \tfrac{1}{2}at^2 + v_0 t + s_0.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Til ettertanke: bokstaver med flere betydninger
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \merk{Bokstaver kan bety flere ting}{
+  Skriver vi $s(t)$, mener vi nok strekning som funksjon av tid $t$. Men tiden $t$ har jo enhet \textit{sekund}, som også betegnes med bokstaven $s$! Bokstaven $m$ brukes både til å symbolisere \textit{masse} og enheten \textit{meter}. Ut ifra sammenhengen forstår man som regel hva som er ment --- i alle fall med litt trening.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Plotting med Python
+%--------------------------------------------------------------------------
+\begin{frame}{Plotting med Python}
+
+  \merk{Grafer i Python}{
+  En av de nyttigste tingene vi kan gjøre med Python, er å tegne grafer. Figuren under viser posisjon og fart som funksjon av tid for et legeme med konstant akselerasjon.
+  }
+  \begin{center}
+    \includegraphics[width=0.62\textwidth]{Kapittel1:introduksjon/python_plot_02_bevegelse.pdf}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Trigonometri: introduksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Trigonometri}
+
+  Trigonometri er et svært nyttig redskap i fysikken, ettersom vi hele veien har bruk for å dekomponere vektorer i et koordinatsystem.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1.05, baseline=(current bounding box.center)]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.0,0);
+    \coordinate (B) at (3.0,1.9);
+    \fill[headCol!12] (O) -- (A) -- (B) -- cycle;
+    \draw[thick] (O) -- (A) node[midway, below=6pt] {\small hosliggende ($a$)};
+    \draw[thick] (A) -- (B) node[midway, right=5pt] {\small motstående ($b$)};
+    \draw[thick] (O) -- (B) node[midway, above left=2pt] {\small hypotenus ($c$)};
+    \draw (A) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
+    \draw[headCol, thick] (0.5,0) arc (0:32:0.5);
+    \node at (0.8,0.13) {$\theta$};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Definisjon: sinus, cosinus og tangens
+%--------------------------------------------------------------------------
+\begin{frame}{Sinus, cosinus og tangens}
+
+  \defn{Sinus, cosinus og tangens}{
+  For en vinkel $\theta$ i en rettvinklet trekant med hypotenus $c$:
+  \[
+    \cos\theta = \frac{\text{hosligg.}}{\text{hyp.}} = \frac{a}{c}, \qquad
+    \sin\theta = \frac{\text{motst.}}{\text{hyp.}} = \frac{b}{c}, \qquad
+    \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{b}{a}.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 19 — Viktige trigonometriske verdier
+%--------------------------------------------------------------------------
+\begin{frame}{Viktige trigonometriske verdier}
+
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  \rowcolor{blue!10!black!80}
+  $\theta$ & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ \\
+  \hline
+  $0^\circ$  & $0$ & $1$ & $0$ \\
+  \hline
+  $30^\circ$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{\sqrt{3}}$ \\
+  \hline
+  $45^\circ$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $1$ \\
+  \hline
+  $60^\circ$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & $\sqrt{3}$ \\
+  \hline
+  $90^\circ$ & $1$ & $0$ & --- \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 20 — Enhetssirkelen
+%--------------------------------------------------------------------------
+\begin{frame}{Enhetssirkelen}
+
+  Enhetssirkelen er en sirkel med radius 1. Katetene i trekanten med vinkel $\theta$ tegnet inn i enhetssirkelen blir da nettopp $\cos\theta$ og $\sin\theta$. Fra Pythagoras' læresetning ser vi da umiddelbart at:
+
+  \graabox{%
+    $\cos^2\theta + \sin^2\theta = 1$
+  }
+
+  \pause
+  \tanke{}{%
+  Denne formelen er mye brukt --- den kan du bare lære deg med det samme.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 21 — Aktivitet: stige mot vegg
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Trigonometri: stige mot vegg}{%
+  En stige av lengde $h = 5.0\,\mathrm{m}$ lener seg mot en vegg i vinkel $\theta = 37^\circ$ med gulvet. Finn den horisontale og vertikale komponenten til stigen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 22 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Vektorer!}
+  \begin{itemize}
+    \item Vektoraddisjon og koordinatsystem
+    \item Skalarprodukt og kryssprodukt
+    \item Matematisk modellering
+  \end{itemize}
+\end{center}
+\end{frame}
+
+
+\end{document}

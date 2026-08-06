@@ -26,7 +26,7 @@
 \tcbuselibrary{listings,theorems,skins}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
-\graphicspath{{../TRES0312 Kompendium/Images/}}
+\graphicspath{{../TRES0312_Kompendium/Images/}}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,shapes.geometric,arrows,shadows}
 \RequirePackage[shortlabels,inline]{enumitem}
@@ -87,6 +87,9 @@
   % Svar
   \colorlet{svartitlecol}{headCol!62!darkbg}
   \colorlet{bodycolor}  {darkbg}
+  % Grå boks (utheving av formler/resultater, brukes i stedet for \boxed{})
+  \colorlet{grayboxback}{white!25!darkbg}
+  \colorlet{grayboxtext}{white!92!gray}
 \else
   \colorlet{pagecolor}   {white}
   \colorlet{textcolor}   {black}
@@ -115,6 +118,9 @@
   % Svar
   \colorlet{svartitlecol}{spmcol!40!black}
   \colorlet{bodycolor}  {white}
+  % Grå boks (utheving av formler/resultater, brukes i stedet for \boxed{})
+  \colorlet{grayboxback}{black!12!white}
+  \colorlet{grayboxtext}{black}
 \fi
 
 %--------------------------------------------------------------------------
@@ -197,14 +203,15 @@
 %--------------------------------------------------------------------------
 %  KRYSSREFERANSER FRA KOMPENDIET
 %  Leser numrene direkte fra kompendietets .aux-fil.
-%  Krav: kompiler kompendiet FØR foilene, slik at main.aux er oppdatert.
+%  Krav: kompiler kompendiet FØR foilene, slik at KompendiumTRES0312.aux
+%  er oppdatert.
 %
 %  Merk: I kompendiet brukes \defnr{Tittel}{label}{Innhold},
 %        \exmr{Tittel}{label}{Innhold} og \oppgaver{Tittel}{label}{Innhold}
 %        for å opprette labels som foilene kan referere til.
 %--------------------------------------------------------------------------
 \RequirePackage{xr}
-\externaldocument[K-]{../TRES0312 Kompendium/main}
+\externaldocument[K-]{../TRES0312_Kompendium/KompendiumTRES0312}
 
 %--------------------------------------------------------------------------
 %  MATEMATISKE SNARVEIER (identiske med kompendiet)
@@ -536,6 +543,23 @@
   \end{tcolorbox}%
 }
 
+%--------------------------------------------------------------------------
+%  \graabox{Innhold} — grå boks for å utheve formler/resultater
+%  Brukes i STEDET FOR \boxed{} når noe skal fremheves på en slide.
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\graabox}{+m}{%
+  \begin{center}
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=grayboxback, colback=grayboxback,
+    top=7pt, bottom=7pt, left=12pt, right=12pt,
+    before skip=6pt, after skip=6pt,
+  ]
+  \centering\color{grayboxtext} #1
+  \end{tcolorbox}
+  \end{center}%
+}
+
 %==========================================================================
 %  KRYSSREFERANSE TIL KOMPENDIET (valgfritt)
 %==========================================================================
@@ -546,12 +570,12 @@
 %        \defnr{Fysisk størrelse}{fys-storrelse}{...}
 %     Dette oppretter etiketten "defn:fys-storrelse" i kompendiet.
 %
-%  2. Kompiler kompendiet én gang, slik at main.aux oppdateres.
+%  2. Kompiler kompendiet én gang, slik at KompendiumTRES0312.aux oppdateres.
 %
 %  3. Fjern kommentaren fra linjene nedenfor i dette filer:
 %
 % \RequirePackage{xr}
-% \externaldocument[K-]{../TRES0312 Kompendium/main}
+% \externaldocument[K-]{../TRES0312_Kompendium/KompendiumTRES0312}
 %
 %  4. Bruk i foilene:
 %        Definisjon~\ref{K-defn:fys-storrelse}

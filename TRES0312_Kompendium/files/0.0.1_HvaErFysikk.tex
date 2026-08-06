@@ -128,7 +128,7 @@ Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
 \end{enumerate}
 }
 
-\subsection{Å regne med enheter}
+\section{Å regne med enheter}
 Grunnen til at det ikke finnes mer enn 7 enheter er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives ved å bruke kombinasjoner av andre, mer fundamentale enheter. La oss ta \textit{fart} som eksempel.
 \exm{Enhet for fart}{%
 Når vi skal gi et variabel-navn til \textit{fart} bruker vi ofte bokstaven $v$ (forkortelse for det engelske \textit{velocity}). La oss si at faren til en bil er
@@ -188,7 +188,7 @@ En bil kjører med fart $v = \SI{90}{\kilo\metre\per\hour}$.
 \end{enumerate}
 }
 
-\subsection{Signifikante siffer}
+\section{Signifikante siffer}
 Fysikk handler altså om å anvende matematikk på naturen. Dette kan vi gjøre fordi naturen er målbar. I fysikken er vi derfor helt avhengig av å \textit{måle}, altså å gjøre forsøk. Disse forsøkene gir aldri 100\% nøyaktige svar. Derfor er det viktig å ha kontroll på usikkerhet når man gjør fysikk. I dette kurset skal vi ikke se så mye på dette, men vi skal få med oss det mest grunnleggende, nemlig \textit{Signifikante siffer}. Signifikante siffer handler om å bruke riktig antall siffer i en utregning. La oss starte med å se på hvordan vi skal finne antall signifikante siffer. Tallet 459 har tre signifikante siffer, ettersom det består av tre siffer. Tallet 12\,001.\,03700 har 10 signifikante siffer, etter som det består av 10 siffer.
 Men merk at tallet 0.00059400 kun har 5 signifikante siffer (nemlig 59400). Antall signifikante siffer telles nemlig fra \textit{første siffer som er forskjellig fra null.}
 
@@ -236,7 +236,7 @@ Vi minner om følgende regler for avrunding:
 \end{enumerate}
 }
 
-\subsection{Tall på standardform}
+\section{Tall på standardform}
 Standardform er en måte å skrive tall på som tydeliggjør både antall siffer og størrelsesorden. Et tall $T$ skrevet på standardform har følgende form:
 \[
 \label{eq:standardform}
@@ -308,6 +308,26 @@ $10^{-24}$& yocto & y & kvadrilliondel & 0.000000000000000000000001 \\
 \caption{SI-prefikser for potenser av ti.}
 \label{tab:dekPref}
 \end{table}
+
+\exm{Dekadiske prefikser}{%
+En viruspartikkel har diameter $d = \SI{90}{\nano\metre}$.
+\begin{enumerate}[a)]
+    \item Skriv diameteren i mikrometer ($\mu\mathrm{m}$).
+    \item Skriv diameteren på standardform i meter.
+\end{enumerate}
+
+\paragraph{Løsning: }
+
+\paragraph{a)} Siden $1\,\si{\micro\metre} = 10^{3}\,\si{\nano\metre}$, får vi
+\[
+\SI{90}{\nano\metre} = \frac{90}{1000}\,\si{\micro\metre} = \doubleunderline{\SI{0.090}{\micro\metre}}.
+\]
+
+\paragraph{b)} Vi vet at $1\,\si{\nano\metre} = 10^{-9}\,\si{\metre}$, så
+\[
+\SI{90}{\nano\metre} = 90 \cdot 10^{-9}\,\si{\metre} = \doubleunderline{9.0 \cdot 10^{-8}\,\si{\metre}}.
+\]
+}
 
 \oppgaver{Dekadiske prefikser}{dekpref}{%
 \begin{enumerate}[a)]

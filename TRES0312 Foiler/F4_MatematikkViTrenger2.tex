@@ -1,0 +1,377 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Matematikk vi trenger}
+\subtitle{TRES0312 --- Vektorer og modellering}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%  Bruk gjerne \setcounter{section}{N} rett før en frame der du bytter
+%  seksjon, i stedet for én gang globalt.
+%--------------------------------------------------------------------------
+\setcounter{section}{2}   % Kapittel 2: "Matematiske verktøy vi trenger"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.,itemsep=10pt]
+      \item Hva kalles $a$ i en lineær funksjon $f(x) = b + ax$?
+      \item Hva er $\cos(60^\circ)$?
+      \item Skriv Pythagoras' setning for sidene i en rettvinklet trekant.
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Definisjon: vektor
+%--------------------------------------------------------------------------
+\begin{frame}{Vektorer}
+
+  \defn{Vektor}{
+  En \textit{vektor} er et matematisk objekt med både størrelse og retning. Vi bruker en pil for å vise at noe er en vektor: $\vec{A}$.
+  }
+  \pause
+  \svar{
+  Det vi tidligere kalte tall, kaller vi nå gjerne \textit{skalarer}. Skalarer har kun størrelse, ikke retning.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Vektoraddisjon: intuisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Å legge sammen vektorer}
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    \draw[->, thick, headCol] (0,0) -- (2.4,0.8);
+    \node[below=3pt, font=\small, headCol] at (1.2,0.4) {$\vec{A}$};
+    \draw[->, thick, defscol!80!black] (2.4,0.8) -- (3.1,2.2);
+    \node[right=3pt, font=\small, defscol!80!black] at (2.75,1.5) {$\vec{B}$};
+    \draw[->, very thick, oppgcol] (0,0) -- (3.1,2.2);
+    \node[left=4pt, font=\small, oppgcol] at (1.55,1.1) {$\vec{C}$};
+  \end{tikzpicture}
+  \end{center}
+  \tanke{}{%
+  $\vec{B}$ plasseres ved spissen av $\vec{A}$. Resultantvektoren $\vec{C} = \vec{A} + \vec{B}$ går fra start av $\vec{A}$ til slutten av $\vec{B}$ --- den såkalte hale-til-spiss-metoden.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: skalarer og vektorer
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Skalarer og vektorer}{%
+  Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
+    \begin{enumerate}[a)]
+      \item Temperatur
+      \item Posisjon
+      \item Fart
+      \item Hastighet
+      \item Akselerasjon
+      \item Masse
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Koordinatsystem
+%--------------------------------------------------------------------------
+\begin{frame}{Koordinatsystem}
+
+  Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. I et todimensjonalt koordinatsystem beskrives en posisjon ved et ordnet par $(x,y)$.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.95, baseline=(current bounding box.center)]
+    \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+    \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+    \foreach \x in {1,2,3,4} {
+      \draw (\x,0.08) -- (\x,-0.08);
+      \node[below=3pt, font=\small] at (\x,0) {$\x$};
+    }
+    \foreach \y in {1,2,3} {
+      \draw (0.08,\y) -- (-0.08,\y);
+      \node[left=3pt, font=\small] at (0,\y) {$\y$};
+    }
+    \draw[dashed, gray!60] (3,0) -- (3,2) -- (0,2);
+    \fill[headCol] (3,2) circle (2.5pt);
+    \node[above right=2pt, font=\small, headCol] at (3,2) {$P = (3,\,2)$};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Definisjon: enhetsvektor
+%--------------------------------------------------------------------------
+\begin{frame}{Enhetsvektorer}
+
+  \defn{Enhetsvektor}{
+  En \textit{enhetsvektor} er en vektor med lengde 1 som angir en bestemt retning i rommet.
+  }
+  \pause
+  \svar{
+  I $xy$-planet finnes det to enhetsvektorer:
+  \[
+    \hat{\mathbf{x}} = [1,0], \qquad \hat{\mathbf{y}} = [0,1].
+  \]
+  Enhver vektor kan skrives som en kombinasjon av disse: $\vec{v} = [v_x,v_y] = v_x\hat{\mathbf{x}} + v_y\hat{\mathbf{y}}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: enhetsvektorer
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Vektorer som lineærkombinasjon av enhetsvektorer}{%
+    \begin{enumerate}[a)]
+      \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
+      \item Regn ut summen $\vec{u}+\vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$.
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Dekomponering av vektorer
+%--------------------------------------------------------------------------
+\begin{frame}{Dekomponering av vektorer}
+
+  Fysikkens lover formuleres med vektorer, uavhengig av koordinatsystem. Når vi skal regne, \textit{dekomponerer} vi vektorlikningen i hver retning:
+
+  \graabox{%
+    $\vec{v}(t) = \vec{v}_0 + \vec{a}t$
+    \quad$\Longrightarrow$\quad
+    $v_x(t) = v_{0x} + a_x t, \;\; v_y(t) = v_{0y} + a_y t$
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Aktivitet: dekomponering av hastighet
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Dekomponering av hastighet}{%
+  En ball kastes med fart $v = 20\,\mathrm{m/s}$ i en vinkel $\theta = 37^\circ$ over horisonten ($\cos 37^\circ \approx 0.80$, $\sin 37^\circ \approx 0.60$).
+    \begin{enumerate}[a)]
+      \item Finn komponentene $v_x$ og $v_y$.
+      \item Verifiser at $|\vec{v}| = \sqrt{v_x^2+v_y^2} = 20\,\mathrm{m/s}$.
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Vektorlengde og -vinkel
+%--------------------------------------------------------------------------
+\begin{frame}{Størrelse og retning til en vektor}
+
+  \defn{Vektorlengde}{
+  Lengden til en vektor $\vec{v} = [v_x,v_y]$ er gitt ved
+  \[
+    v = |\vec{v}| = \sqrt{v_x^2 + v_y^2}.
+  \]
+  }
+  \pause
+  \defn{Vektorvinkel}{
+  Vinkelen til en vektor $\vec{v} = [v_x,v_y]$, målt fra positiv $x$-retning, er gitt ved
+  \[
+    \theta = \arctan\!\left(\frac{v_y}{v_x}\right).
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Aktivitet: størrelse og retning
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Størrelse og retning}{%
+  Finn lengde og vinkel til vektoren $\vec{v} = [3,\,4]$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Definisjon: vektoraddisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Operasjoner med vektorer}
+
+  \defn{Vektoraddisjon}{
+  Addisjon av vektorer gjøres grafisk med hale-til-spiss-metoden. Algebraisk legges komponentene sammen retningsvis:
+  \[
+    \vec{v} + \vec{u} = [v_x+u_x, \; v_y+u_y].
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Aktivitet: vektoraddisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Vektoraddisjon}{%
+  Gitt vektorene $\vec{B} = [3,\,1]$ og $\vec{C} = [1,\,2]$. Finn resultantvektoren $\vec{A} = \vec{B}+\vec{C}$ og beregn lengden $|\vec{A}|$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Definisjon: skalarprodukt
+%--------------------------------------------------------------------------
+\begin{frame}{Skalarprodukt}
+
+  \defn{Skalarprodukt}{
+  Skalarproduktet av to vektorer $\vec{u}=[u_x,u_y]$ og $\vec{v}=[v_x,v_y]$ er
+  \[
+    \vec{u}\cdot\vec{v} = u_x v_x + u_y v_y = |\vec{u}|\,|\vec{v}|\,\cos\theta,
+  \]
+  der $\theta$ er vinkelen mellom vektorene.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Geometrisk tolkning
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \merk{Geometrisk tolkning}{
+  Skalarproduktet er et mål på hvor mye to vektorer peker i samme retning. Er $\theta=0^\circ$ er produktet maksimalt positivt, er $\theta=90^\circ$ er produktet null, og er $\theta=180^\circ$ er produktet maksimalt negativt.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Aktivitet: skalarprodukt og vinkel
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Skalarprodukt og vinkel}{%
+  Finn skalarproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$, og bestem vinkelen mellom dem.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 19 — Definisjon: kryssprodukt
+%--------------------------------------------------------------------------
+\begin{frame}{Kryssprodukt}
+
+  \defn{Kryssprodukt i 2D}{
+  For $\vec{u}=[u_x,u_y]$ og $\vec{v}=[v_x,v_y]$ i $xy$-planet er kryssproduktets $z$-komponent
+  \[
+    (\vec{u}\times\vec{v})_z = u_x v_y - u_y v_x,
+  \]
+  med størrelse $|\vec{u}\times\vec{v}| = |\vec{u}|\,|\vec{v}|\,\sin\theta$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 20 — Aktivitet: kryssprodukt
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kryssprodukt}{%
+  Finn kryssproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 21 — Matematisk modellering
+%--------------------------------------------------------------------------
+\begin{frame}{Matematisk modellering}
+
+  \oppsum{Matematisk modellering}{%
+    En matematisk modell av virkeligheten vil for oss inneholde:
+    \begin{enumerate}[1.,itemsep=6pt]
+      \item Representasjon av objektene involvert.
+      \item Representasjon av påvirkningen mellom objektene (kreftene).
+      \item Effektivt valg av koordinatsystem.
+    \end{enumerate}
+  }
+  \pause
+  \tanke{}{%
+  Tegninger er ofte fysikernes beste venn --- det er ikke uten grunn at Feynman utarbeidet de såkalte Feynman-diagrammene.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 22 — Aktivitet: trigonometri og vektorkomponenter
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Trigonometri og vektorkomponenter}{%
+  En fugl flyr $10\,\mathrm{km}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn nord- og østkomponentene til forskyvningsvektoren. \textit{Hint: } vinkelen måles fra nordaksen, ikke østaksen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 23 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Kapittel 3 --- Kinematikk!}
+  \begin{itemize}
+    \item Hva er kinematikk?
+    \item Strekning og hastighet
+    \item Akselerasjon
+    \item Bevegelseslikningene
+  \end{itemize}
+\end{center}
+\end{frame}
+
+
+\end{document}

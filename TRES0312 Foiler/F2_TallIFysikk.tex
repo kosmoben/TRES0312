@@ -1,0 +1,214 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Tall i fysikk!}
+\subtitle{TRES0312 --- Signifikante siffer og standardform}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%  Bruk gjerne \setcounter{section}{N} rett før en frame der du bytter
+%  seksjon, i stedet for én gang globalt.
+%--------------------------------------------------------------------------
+\setcounter{section}{3}   % Seksjon 3: "Signifikante siffer"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+
+\begin{frame}{}
+
+  \oppsum{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.,itemsep=10pt]
+      \item Hva er en fysisk størrelse?
+      \item Hva er de 7 SI-enhetene?
+      \item Gjør om $250\,\mathrm{cm}$ til meter.
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Sau og sort hull
+%--------------------------------------------------------------------------
+
+\begin{frame}{}
+
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{Images/sau.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{Images/sort_hull.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Avrunding
+%--------------------------------------------------------------------------
+
+\begin{frame}{Målenøyaktighet (signifikans) og avrunding}
+\oppsum{Signifikante siffer}{%
+    \begin{itemize}
+        \item Antall signifikante siffer regnes fra første tall forskjellig fra null.
+        \item I en utregning skal svaret angis med samme nøyaktighet (antall siffer) som den \textit{minst nøyaktige} størrelsen som inngikk i beregningen.
+    \end{itemize}
+}
+\oppsum{Avrunding}{%
+Vi minner om følgende regler for avrunding:
+\begin{itemize}
+    \item Tall fra 0-4 rundes ned. Tall fra og med 5 til 9 rundes opp.
+    \item Avrunding til riktig antall signifikante siffer må skje helt tilslutt i en beregning!
+\end{itemize}
+}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Signifikante siffer
+%--------------------------------------------------------------------------
+\begin{frame}{}
+  \aktivitet{Beregning av areal}{%
+En rektangulær hage har lengde $L = 12.3\,\mathrm{m}$ og bredde $B = 4.56\,\mathrm{m}$. Hva er arealet av hagen? Oppgi svaret med riktig antall signifikante siffer.
+}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Eksempel: Signifikante siffer
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+  \aktivitet{Eksempel 1.6: Signifikante siffer}{%
+    Hvor mange signifikante siffer har tallene
+    \begin{enumerate}[a)]
+      \item $165.00$
+      \item $0.791400$
+      \item $14$
+    \end{enumerate}
+  }
+  \aktivitet{Eksempel 1.7: Signifikante siffer i utregning}{%
+    Eline kjører $5.00\,\mathrm{km}$ på $6.0$ minutter. Hvor fort kjører hun i gjennomsnitt?
+  }
+\end{frame}
+
+\begin{frame}{Tall på standardform}
+Standardform er en måte å skrive tall på som tydeliggjør både antall siffer og størrelsesorden.
+\[
+\textrm{T}=t \cdot 10^n,
+\]
+\aktivitet{Standardform}{%
+\begin{enumerate}[a)]
+    \item Skriv $0.000000000000000000000000001$ på standardform.
+    \item Skriv $123\,000\,000\,000$ på standardform.
+    \item Regn ut $1.23 \times 10^8 \div 4.56 \times 10^3$ og oppgi svaret med riktig antall signifikante siffer.
+    \item Regn ut $7.89 \times 10^{-5} \cdot 1.23 \times 10^4$ og oppgi svaret med riktig antall signifikante siffer.
+\end{enumerate}
+}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Eksempel: Standardform
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+  \aktivitet{Eksempel 1.8: Standardform}{%
+    Skriv følgende tall på standardform:
+    \begin{enumerate}[a)]
+      \item $0.07$
+      \item $112$
+      \item $56\,700\,000$
+    \end{enumerate}
+  }
+\end{frame}
+
+\begin{frame}{Dekadiske prefikser}
+  \begin{center}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{|c|l|c|l|}
+  \hline
+  \rowcolor{blue!10!black!80}
+  $10^n$ & Prefiks & Symbol & Navn \\
+  \hline
+  $10^{24}$ & yotta & Y & kvadrilion \\
+  $10^{21}$ & zetta & Z & trilliard \\
+  $10^{18}$ & exa   & E & trillion \\
+  $10^{15}$ & peta  & P & billiard \\
+  $10^{12}$ & tera  & T & billion \\
+  $10^{9}$  & giga  & G & milliard \\
+  $10^{6}$  & mega  & M & million \\
+  $10^{3}$  & kilo  & k & tusen \\
+  $10^{2}$  & hekto & h & hundre \\
+  $10^{1}$  & deka  & da & ti \\
+  $10^{-1}$ & desi  & d & tidel \\
+  $10^{-2}$ & centi & c & hundredel \\
+  $10^{-3}$ & milli & m & tusendel \\
+  $10^{-6}$ & mikro & $\mu$ & milliondel \\
+  $10^{-9}$ & nano  & n & milliarddel \\
+  $10^{-12}$& piko  & p & billiondel \\
+  $10^{-15}$& femto & f & billiarddel \\
+  $10^{-18}$& atto  & a & trilliondel \\
+  $10^{-21}$& zepto & z & trilliarddel \\
+  $10^{-24}$& yocto & y & kvadrilliondel \\
+  \hline
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Eksempel: Dekadiske prefikser
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+  \aktivitet{Eksempel 1.9: Dekadiske prefikser}{%
+    En viruspartikkel har diameter $d = 90\,\mathrm{nm}$.
+    \begin{enumerate}[a)]
+      \item Skriv diameteren i mikrometer ($\mu\mathrm{m}$).
+      \item Skriv diameteren på standardform i meter.
+    \end{enumerate}
+  }
+\end{frame}
+
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Kapittel 2 — Matematikk vi trenger!}
+  \begin{itemize}
+    \item Grunnleggende algebra
+    \item Trigonometri
+    \item Vektorer
+  \end{itemize}
+\end{center}
+\end{frame}
+
+
+\end{document}
