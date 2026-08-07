@@ -66,9 +66,10 @@ print(f"Kinetisk energi: {E_k} J")
 \begin{pythonoutput}
 Kinetisk energi: 25.0 J
 \end{pythonoutput}
+\pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_algebra\_beregning.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_algebra_beregning.ipynb}
 
 \begin{mymerk*}{Kjøre koden selv}
-Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \texttt{Python eksempler}. Se Appendiks~\ref{app:python} for hvordan du åpner og kjører dem.
+Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \pyfolderlink. Se Appendiks~\ref{app:python} for hvordan du åpner og kjører dem.
 \end{mymerk*}
 
 \oppgave{Algebra og Python}{%
@@ -160,6 +161,7 @@ ax2.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
 \end{pythonkode}
+\pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_funksjoner\_og\_plotting.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_funksjoner_og_plotting.ipynb}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{Images/Kapittel1:introduksjon/python_plot_02_bevegelse.pdf}
@@ -511,8 +513,19 @@ Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag 
 Dekomponering er en generell teknikk i fysikk som innebærer å dele opp en vektor i dens komponenter langs de enkelte koordinataksene. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er helt essensielt i alle deler av fysikken som omhandler vektorer. For eksempel, når vi studerer bevegelse i to dimensjoner, som for eksempel en prosjektilbevegelse, slik som vist i Figur~\ref{fig:Prosjektilbevegelse}, så er det veldig nyttig å dekomponere bevegelsen i horisontal og vertikal retning. Da kan vi bruke de enklere bevegelsesligningene for hver retning, og deretter kombinere resultatene for å få en fullstendig beskrivelse av bevegelsen.
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Krumlinjet bevgelese.png}
-\caption{Prosjektilbevegelsse}
+\begin{tikzpicture}
+\node[anchor=south west, inner sep=0] (img) at (0,0)
+  {\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_clean.png}};
+\begin{scope}[x={(img.south east)-(img.south west)}, y={(img.north west)-(img.south west)}]
+\draw[-{Stealth[length=4mm,width=3mm]}, very thick, headCol] (0.2646,0.1728) -- (0.3443,0.7188);
+\draw[-{Stealth[length=4mm,width=3mm]}, very thick, headCol] (0.2646,0.1728) -- (0.5632,0.6313);
+\draw[-{Stealth[length=4mm,width=3mm]}, very thick, headCol] (0.2646,0.1728) -- (0.6891,0.4577);
+\node[font=\footnotesize, headCol] at (0.3727,0.5094) {$\vec{S}(t_1)$};
+\node[font=\footnotesize, headCol] at (0.5044,0.4033) {$\vec{S}(t_2)$};
+\node[font=\footnotesize, headCol] at (0.5588,0.2963) {$\vec{S}(t_3)$};
+\end{scope}
+\end{tikzpicture}
+\caption{En malingsbombe i prosjektilbevegelse. Posisjonsvektoren $\vec{S}(t)$ peker fra origo til bomben ved de ulike tidspunktene $t_1$, $t_2$ og $t_3$, og bestemmer dermed banen.}
 \label{fig:Prosjektilbevegelse}
 \end{figure}
 
@@ -659,6 +672,7 @@ Vektor:  (3.0, 4.0)
 Lengde:  5.00
 Vinkel:  53.1 grader
 \end{pythonoutput}
+\pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_vektorlengde\_og\_vinkel.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_vektorlengde_og_vinkel.ipynb}
 
 \begin{mymerk*}{Bruk \texttt{arctan2}, ikke \texttt{arctan}}
 \texttt{np.arctan2(vy, vx)} er bedre enn \texttt{np.arctan(vy/vx)} fordi den håndterer alle fire kvadranter riktig — også når $v_x = 0$ eller $v_x < 0$.
@@ -754,6 +768,7 @@ b       = [-1.  4.]
 a + b   = [2. 3.]
 |a + b| = 3.61
 \end{pythonoutput}
+\pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_vektoraddisjon.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_vektoraddisjon.ipynb}
 
 \oppgave{Vektoraddisjon}{%
 Gitt vektorene $\vec{a} = [3,\,-1]$ og $\vec{b} = [-1,\,4]$.
@@ -859,6 +874,7 @@ print(f"Vinkel = {theta:.1f} grader")
 u . v  = -5.0
 Vinkel = 116.6 grader
 \end{pythonoutput}
+\pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_skalarprodukt.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_skalarprodukt.ipynb}
 
 \oppgave{Skalarprodukt}{%
 Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.

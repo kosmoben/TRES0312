@@ -30,6 +30,7 @@
 \graphicspath{{../TRES0312_Kompendium/Images/}}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,shapes.geometric,arrows,shadows}
+\usetikzlibrary{arrows.meta}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots}
@@ -112,6 +113,12 @@
   \colorlet{pycodekw}     {oppgcol!45!white}
   \colorlet{pycodestr}    {defscol!45!white}
   \colorlet{pycodecom}    {white!45!gray}
+  % Vektorfigurer (A, B, C) — som i kompendiet, men lysnet for lesbarhet på mørk bakgrunn
+  \colorlet{vecAcol}{orange!80!white}
+  \colorlet{vecBcol}{defscol!70!white}
+  \colorlet{vecCcol}{oppgcol!70!white}
+  % Fremhevet punkt (f.eks. koordinatsystem-eksempel)
+  \colorlet{pointCol}{orange!80!white}
 \else
   \colorlet{pagecolor}   {white}
   \colorlet{textcolor}   {black}
@@ -156,6 +163,12 @@
   \colorlet{pycodekw}     {oppgcol}
   \colorlet{pycodestr}    {defscol!80!black}
   \colorlet{pycodecom}    {black!45}
+  % Vektorfigurer (A, B, C) — som i kompendiet
+  \colorlet{vecAcol}{orange!85!black}
+  \colorlet{vecBcol}{defscol!80!black}
+  \colorlet{vecCcol}{oppgcol}
+  % Fremhevet punkt (f.eks. koordinatsystem-eksempel)
+  \colorlet{pointCol}{orange!85!black}
 \fi
 
 %--------------------------------------------------------------------------

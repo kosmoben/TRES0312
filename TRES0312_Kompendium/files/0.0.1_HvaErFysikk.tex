@@ -337,6 +337,90 @@ En viruspartikkel har diameter $d = \SI{90}{\nano\metre}$.
 \end{enumerate}
 }
 
+\section{Eksempel på beregning}
+Vi har nå sett på fysiske størrelser, enheter og hvordan vi regner med tall i fysikken. La oss avslutte kapittelet med en liten smakebit på hvordan disse verktøyene brukes i praksis --- både når det gjelder \textit{kinematikk} (bevegelseslære, som vi skal se mye mer av i et senere kapittel) og når det gjelder \textit{Python}, som vi også skal bli mye bedre kjent med i neste kapittel.
+
+Tenk deg at posisjonen til en gjenstand er målt med jevne mellomrom, for eksempel hvert sekund. Slike diskrete målepunkter er akkurat det man ofte sitter igjen med fra ekte sensorer og måleinstrumenter. Tabell~\ref{tab:posisjonsmaling} viser et eksempel på slike målinger.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor{blue!20!black!10}
+Tid $t$ [s] & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+Posisjon $s$ [m] & 0 & 2 & 5 & 9 & 14 & 20 \\
+\hline
+\end{tabular}
+\caption{Målt posisjon som funksjon av tid.}
+\label{tab:posisjonsmaling}
+\end{table}
+
+Fra disse posisjonsmålingene kan vi regne ut gjennomsnittsfarten mellom hvert par av påfølgende målepunkter, ved å bruke definisjonen av gjennomsnittsfart:
+\graabox{$\displaystyle \bar{v} = \frac{\Delta s}{\Delta t} = \frac{s_{i+1}-s_i}{t_{i+1}-t_i}$}
+og deretter finne gjennomsnittsakselerasjonen mellom hvert par av fartsverdier, på akkurat samme måte:
+\graabox{$\displaystyle \bar{a} = \frac{\Delta v}{\Delta t} = \frac{v_{i+1}-v_i}{t_{i+1}-t_i}$}
+
+I Python kan vi gjøre nettopp dette svært effektivt, ved hjelp av funksjonen \texttt{np.diff()}, som regner ut differansen mellom alle par av påfølgende elementer i en liste. Koden under regner ut og plotter posisjon, fart og akselerasjon fra måledataene i tabellen.
+
+\begin{pythonkode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Malt posisjon som funksjon av tid
+t = np.array([0, 1, 2, 3, 4, 5])       # tid [s]
+s = np.array([0, 2, 5, 9, 14, 20])     # posisjon [m]
+
+# Gjennomsnittsfart mellom hvert malepunkt: v = delta_s / delta_t
+v = np.diff(s) / np.diff(t)            # fart [m/s]
+t_v = (t[:-1] + t[1:]) / 2             # tidspunkt (midtpunkt) for hver fart
+
+# Gjennomsnittsakselerasjon mellom hvert fartspunkt: a = delta_v / delta_t
+a = np.diff(v) / np.diff(t_v)          # akselerasjon [m/s^2]
+t_a = (t_v[:-1] + t_v[1:]) / 2         # tidspunkt (midtpunkt) for hver akselerasjon
+
+print(f"Fart:         {v} m/s")
+print(f"Akselerasjon: {a} m/s^2")
+
+fig, axs = plt.subplots(3, 1, figsize=(6, 7.5), sharex=True)
+
+axs[0].plot(t, s, 'o-', color='royalblue', linewidth=2)
+axs[0].set_ylabel('Posisjon [m]')
+axs[0].grid(True, alpha=0.3)
+
+axs[1].plot(t_v, v, 'o-', color='tomato', linewidth=2)
+axs[1].set_ylabel('Fart [m/s]')
+axs[1].grid(True, alpha=0.3)
+
+axs[2].plot(t_a, a, 'o-', color='seagreen', linewidth=2)
+axs[2].set_ylabel('Akselerasjon [m/s$^2$]')
+axs[2].set_xlabel('Tid [s]')
+axs[2].set_ylim(0, 2)
+axs[2].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+\end{pythonkode}
+\begin{pythonoutput}
+Fart:         [2. 3. 4. 5. 6.] m/s
+Akselerasjon: [1. 1. 1. 1.] m/s^2
+\end{pythonoutput}
+\pyfile{TRES0312 Python/Kap1\_HvaErFysikk/K1\_fart\_og\_akselerasjon.ipynb}{Kap1_HvaErFysikk/K1_fart_og_akselerasjon.ipynb}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\linewidth]{Images/Kapittel1:introduksjon/python_plot_03_fart_akselerasjon.pdf}
+\caption{Posisjon, fart og akselerasjon regnet ut fra de diskrete målepunktene i Tabell~\ref{tab:posisjonsmaling}.}
+\label{fig:fart_akselerasjon_eksempel}
+\end{figure}
+
+Legg merke til at akselerasjonen her er helt konstant, lik $\bar a = \SI{1.0}{\metre\per\second\squared}$. Det er ingen tilfeldighet --- måledataene i Tabell~\ref{tab:posisjonsmaling} er konstruert nettopp for å gi konstant akselerasjon. Slik bevegelse, med konstant akselerasjon, skal vi se mye mer av snart.
+
+\begin{mymerk*}{Bare en liten smakebit}
+Dette eksempelet er ment som en liten forsmak --- både på Python, som vi skal bli mye bedre kjent med i neste kapittel, og på kinematikk (bevegelseslære), som vi skal gå grundig gjennom i kapittelet etter det.
+\end{mymerk*}
+
 \section{Flere oppgaver}
 
 \oppgave{Fysisk størrelse}{%

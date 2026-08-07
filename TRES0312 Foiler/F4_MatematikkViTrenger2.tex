@@ -75,12 +75,22 @@
 
   \begin{center}
   \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
-    \draw[->, thick, headCol] (0,0) -- (2.4,0.8);
-    \node[below=3pt, font=\small, headCol] at (1.2,0.4) {$\vec{A}$};
-    \draw[->, thick, defscol!80!black] (2.4,0.8) -- (3.1,2.2);
-    \node[right=3pt, font=\small, defscol!80!black] at (2.75,1.5) {$\vec{B}$};
-    \draw[->, very thick, oppgcol] (0,0) -- (3.1,2.2);
-    \node[left=4pt, font=\small, oppgcol] at (1.55,1.1) {$\vec{C}$};
+    % Frie vektorer A og B (ingen koordinatsystem)
+    \draw[->, thick, vecAcol] (0,0.7) -- (2.4,1.5);
+    \node[above=2pt, font=\small, vecAcol] at (1.2,1.1) {$\vec{A}$};
+    \node[font=\large, textcolor] at (2.85,1.1) {$+$};
+    \draw[->, thick, vecBcol] (3.3,0.35) -- (4.0,1.75);
+    \node[right=3pt, font=\small, vecBcol] at (3.65,1.05) {$\vec{B}$};
+  \end{tikzpicture}
+  \hspace{1.5cm}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    % Hale-til-spiss-addisjon: C = A + B
+    \draw[->, thick, vecAcol] (0,0) -- (2.4,0.8);
+    \node[below=3pt, font=\small, vecAcol] at (1.2,0.4) {$\vec{A}$};
+    \draw[->, thick, vecBcol] (2.4,0.8) -- (3.1,2.2);
+    \node[right=3pt, font=\small, vecBcol] at (2.75,1.5) {$\vec{B}$};
+    \draw[->, very thick, vecCcol] (0,0) -- (3.1,2.2);
+    \node[left=4pt, font=\small, vecCcol] at (1.55,1.1) {$\vec{C}$};
   \end{tikzpicture}
   \end{center}
   \tanke{}{%
@@ -128,8 +138,8 @@
       \node[left=3pt, font=\small] at (0,\y) {$\y$};
     }
     \draw[dashed, gray!60] (3,0) -- (3,2) -- (0,2);
-    \fill[headCol] (3,2) circle (2.5pt);
-    \node[above right=2pt, font=\small, headCol] at (3,2) {$P = (3,\,2)$};
+    \fill[pointCol] (3,2) circle (2.5pt);
+    \node[above right=2pt, font=\small, pointCol] at (3,2) {$P = (3,\,2)$};
   \end{tikzpicture}
   \end{center}
 
@@ -182,14 +192,73 @@
   }
 
   \pause
-  \tanke{}{%
-  Lengden til et hus er den samme enten du måler det med en tommestokk i meter eller i tommer --- tallverdien endrer seg, men huset er like langt. På samme måte er selve vektoren uavhengig av koordinatsystemet; det er bare tallene (komponentene $v_x$ og $v_y$) som endrer seg avhengig av hvordan vi velger å måle.
+  \merk{Fysikkens lover er uavhengig av koordinatsystem}{%
+  Lengden til et hus er den samme enten du måler det med en tommestokk i meter eller i tommer.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 10 — Aktivitet: dekomponering av hastighet
+%  SLIDE 10 — Eksempel: posisjonsvektor i prosjektilbevegelse
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: posisjonsvektor}
+
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (img) at (0,0)
+    {\includegraphics[width=0.72\textwidth]{Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_\ifdarkmode dark\else clean\fi.png}};
+  \begin{scope}[x={(img.south east)-(img.south west)}, y={(img.north west)-(img.south west)}]
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.3443,0.7188);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.5632,0.6313);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.6891,0.4577);
+  \node[font=\footnotesize, posGraphColor] at (0.3727,0.5094) {$\vec{S}(t_1)$};
+  \node[font=\footnotesize, posGraphColor] at (0.5044,0.4033) {$\vec{S}(t_2)$};
+  \node[font=\footnotesize, posGraphColor] at (0.5588,0.2963) {$\vec{S}(t_3)$};
+  \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \vfill
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Eksempel: hastighetsvektor i prosjektilbevegelse
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: hastighetsvektor}
+
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (img) at (0,0)
+    {\includegraphics[width=0.68\textwidth]{Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_\ifdarkmode dark\else clean\fi.png}};
+  \begin{scope}[x={(img.south east)-(img.south west)}, y={(img.north west)-(img.south west)}]
+  % Posisjonsvektorer
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.3443,0.7188);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.5632,0.6313);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.6891,0.4577);
+  \node[font=\footnotesize, posGraphColor] at (0.3727,0.5094) {$\vec{S}(t_1)$};
+  \node[font=\footnotesize, posGraphColor] at (0.5044,0.4033) {$\vec{S}(t_2)$};
+  \node[font=\footnotesize, posGraphColor] at (0.5588,0.2963) {$\vec{S}(t_3)$};
+  % Hastighetsvektorer (samme horisontalkomponent $v_x$ hele veien, tangent til banen)
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.3443,0.7188) -- (0.4181,0.7109);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.5632,0.6313) -- (0.6369,0.5663);
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.6891,0.4577) -- (0.7629,0.3072);
+  \node[font=\footnotesize, velGraphColor] at (0.3835,0.7629) {$\vec{v}(t_1)$};
+  \node[font=\footnotesize, velGraphColor] at (0.6162,0.6405) {$\vec{v}(t_2)$};
+  \node[font=\footnotesize, velGraphColor] at (0.7517,0.4113) {$\vec{v}(t_3)$};
+  % Hastighetsvektor for kula til venstre (samme høyde som $S(t_3)$, kun vertikal fart)
+  \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.0627,0.4597) -- (0.0627,0.3092);
+  \node[font=\footnotesize, velGraphColor] at (0.0898,0.3845) {$\vec{v}$};
+  \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \vfill
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Aktivitet: dekomponering av hastighet
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -204,7 +273,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 11 — Vektorlengde og -vinkel
+%  SLIDE 13 — Vektorlengde og -vinkel
 %--------------------------------------------------------------------------
 \begin{frame}{Størrelse og retning til en vektor}
 
@@ -225,7 +294,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Aktivitet: størrelse og retning
+%  SLIDE 14 — Aktivitet: størrelse og retning
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -236,7 +305,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — Pause
+%  SLIDE 15 — Pause
 %--------------------------------------------------------------------------
 \begin{frame}{}
 \begin{center}
@@ -245,7 +314,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Definisjon: vektoraddisjon
+%  SLIDE 16 — Definisjon: vektoraddisjon
 %--------------------------------------------------------------------------
 \begin{frame}{Operasjoner med vektorer}
 
@@ -259,7 +328,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Aktivitet: vektoraddisjon
+%  SLIDE 17 — Aktivitet: vektoraddisjon
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -270,7 +339,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 16 — Definisjon: skalarprodukt
+%  SLIDE 18 — Definisjon: skalarprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Skalarprodukt}
 
@@ -285,7 +354,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Geometrisk tolkning
+%  SLIDE 19 — Geometrisk tolkning
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -296,7 +365,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 18 — Aktivitet: skalarprodukt og vinkel
+%  SLIDE 20 — Aktivitet: skalarprodukt og vinkel
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -307,7 +376,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 19 — Definisjon: kryssprodukt
+%  SLIDE 21 — Definisjon: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Kryssprodukt}
 
@@ -322,7 +391,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 20 — Aktivitet: kryssprodukt
+%  SLIDE 22 — Aktivitet: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -333,7 +402,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 21 — Matematisk modellering
+%  SLIDE 23 — Matematisk modellering
 %--------------------------------------------------------------------------
 \begin{frame}{Matematisk modellering}
 
@@ -353,7 +422,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 22 — Aktivitet: trigonometri og vektorkomponenter
+%  SLIDE 24 — Aktivitet: trigonometri og vektorkomponenter
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -364,7 +433,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 23 — Neste gang
+%  SLIDE 25 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}

@@ -15,12 +15,12 @@ Den enkleste måten å skrive og kjøre Python på er via \textbf{Jupyter Notebo
 \begin{enumerate}
     \item Installer \textbf{Anaconda} fra \url{https://www.anaconda.com} (gratis). Dette installerer Python og Jupyter automatisk.
     \item Åpne \textbf{Anaconda Navigator} og klikk på \textit{Launch} under Jupyter Notebook.
-    \item En nettleser åpnes. Naviger til mappen \texttt{Python eksempler} og åpne en av \texttt{.ipynb}-filene.
+    \item En nettleser åpnes. Naviger til mappen \texttt{TRES0312 Python} og åpne en av \texttt{.ipynb}-filene (samme filer ligger også på GitHub: \pyfolderlink).
     \item Klikk på en kodecelle og trykk \textbf{Shift+Enter} for å kjøre den.
 \end{enumerate}
 
 \begin{mymerk*}{Alle eksempler er klare til bruk}
-Alle kodeeksemplene fra dette kompendiet finnes som ferdige Jupyter Notebook-filer i mappen \texttt{Python eksempler}. Du kan åpne dem direkte og kjøre dem uten å skrive noe selv — og deretter modifisere dem for å eksperimentere.
+Alle kodeeksemplene fra dette kompendiet finnes som ferdige Jupyter Notebook-filer i mappen \pyfolderlink. Du kan åpne dem direkte og kjøre dem uten å skrive noe selv — og deretter modifisere dem for å eksperimentere.
 \end{mymerk*}
 
 \section{Variabler og regneoperasjoner}
@@ -31,6 +31,7 @@ I Python lagrer vi verdier i \emph{variabler}. Du oppretter en variabel ved å s
 m = 2.0    # masse i kg
 v = 5.0    # fart i m/s
 \end{pythonkode}
+\pyfilenote{Starten av samme kodecelle som i \href{\pyrepobase/Kap2_MatematiskeVerktoyViTrenger/K2_algebra_beregning.ipynb}{\texttt{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_algebra\_beregning.ipynb}}.}
 
 De vanlige regneoperasjonene er:
 
@@ -59,6 +60,7 @@ E_k = 0.5 * m * v**2
 print(f"Kinetisk energi: {E_k} J")
 # Skriver ut:  Kinetisk energi: 25.0 J
 \end{pythonkode}
+\pyfilenote{Resten av samme kodecelle som i \href{\pyrepobase/Kap2_MatematiskeVerktoyViTrenger/K2_algebra_beregning.ipynb}{\texttt{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_algebra\_beregning.ipynb}}.}
 
 Formatet \texttt{\{E\_k:.2f\}} begrenser til to desimaler. \texttt{\{theta:.1f\}} gir én desimal.
 
@@ -69,6 +71,7 @@ Formatet \texttt{\{E\_k:.2f\}} begrenser til to desimaler. \texttt{\{theta:.1f\}
 \begin{pythonkode}
 import numpy as np
 \end{pythonkode}
+\pyfilenote{Denne importlinjen står øverst i de fleste notebook-filene i \href{https://github.com/kosmoben/TRES0312/tree/main/TRES0312\%20Python/Kap2_MatematiskeVerktoyViTrenger}{\texttt{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger}}.}
 
 Nyttige funksjoner:
 
@@ -109,6 +112,7 @@ plt.title('Graf av y = x^2')
 plt.grid(True, alpha=0.3)
 plt.show()
 \end{pythonkode}
+\pyfilenote{Dette er et generelt eksempel og finnes ikke som egen fil i \texttt{TRES0312 Python} — prøv gjerne å skrive det inn selv i en ny notebook.}
 
 Det er alt du trenger for å kjøre eksemplene i kapittel~1. Lykke til!
 

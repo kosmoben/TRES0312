@@ -16,6 +16,7 @@
 \RequirePackage{tkz-tab}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{arrows.meta}
 \RequirePackage{varwidth}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{colortbl}
@@ -904,6 +905,23 @@
     },
 }
 
+%--------------------------------------------------------------------------
+%  \graabox{Innhold} — grå boks for å utheve formler/resultater.
+%  Brukes i STEDET FOR \boxed{} når noe skal fremheves.
+%--------------------------------------------------------------------------
+\NewDocumentCommand{\graabox}{+m}{%
+  \begin{center}
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=black!8!white, colback=black!8!white,
+    top=7pt, bottom=7pt, left=12pt, right=12pt,
+    before skip=6pt, after skip=6pt,
+  ]
+  \centering\color{black} #1
+  \end{tcolorbox}
+  \end{center}%
+}
+
 \newtcblisting{pythonkode}{
     enhanced,
     breakable,
@@ -915,4 +933,19 @@
     before skip=10pt, after skip=10pt,
     listing only,
     listing options={style=pythonstyle},
+}
+
+% Henvisning til den tilsvarende filen i mappen "TRES0312 Python" på GitHub,
+% satt rett under en pythonkode/pythonoutput-blokk.
+\newcommand{\pyrepobase}{https://github.com/kosmoben/TRES0312/blob/main/TRES0312\%20Python}
+\newcommand{\pyfolderlink}{\href{https://github.com/kosmoben/TRES0312/tree/main/TRES0312\%20Python}{\texttt{TRES0312 Python}}}
+\newcommand{\pyfile}[2]{%
+\begin{flushright}
+\footnotesize\textit{Kodefil: \href{\pyrepobase/#2}{\texttt{#1}}}
+\end{flushright}%
+}
+\newcommand{\pyfilenote}[1]{%
+\begin{flushright}
+\footnotesize\textit{#1}
+\end{flushright}%
 }
