@@ -1,5 +1,6 @@
 % !TEX root = ../main.tex
 \chapter{Matematiske verktøy vi trenger}
+\label{Chapter:matematikk}
 \intro{I fysikk bruker vi matematikken som et presist språk for å beskrive verden rundt oss. Her ser vi på de viktigste matematiske verktøyene du trenger i dette kurset. Det betyr ikke at vi går nøye gjennom alt, men kapitlet gir en oversikt over de grunnleggende konseptene og reglene du bør være komfortabel med.}
 \tanke{}{%
 Hvorfor kan naturen beskrives med matematikk?}
@@ -18,7 +19,7 @@ Her er $v$, $s$ og $t$ \emph{variabler} — altså symboler som kan ta ulike tal
 
 Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent". Da må vi følge gitte logiske regler. Disse reglene kalles algebra-regler, eller bare algebra.
 
-\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper han en strekning $s_2 = \SI{4}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
+\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper en strekning $s_2 = \SI{4}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
 
 \paragraph{Løsning:} Gjennomsnittsfart $\bar{v}$ er også et begrep vi ikke har lært ennå, men det er rett fram, og de fleste kjenner det intuitivt igjen fra erfaring:
 \[\hat{v} = \frac{\text{total strekning}}{\text{total tid}}.\]
@@ -35,7 +36,7 @@ Gjennomsnittsfarten er da:
 \[
 \bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{\SI{9}{\kilo\metre}}{\SI{38}{\minute}} = \doubleunderline{\SI{0.237}{\kilo\metre\per\minute}} = 0.237\cdot\frac{\SI{1\,000}{\metre}}{\SI{60}{\second}} = \doubleunderline{\SI{3.95}{\metre\per\second}}.
 \]
-Greier du å gjøre dette om til km/t.
+Greier du å gjøre dette om til km/t?
 
 }
 Et annet eksempel kan være Newtons 2. lov, som gir sammenhengen mellom det vi kaller for kraft $F$, masse $m$ og akselerasjon $a$. 
@@ -49,7 +50,7 @@ a = \frac{F}{m} = \frac{\SI{4\,800}{\newton}}{\SI{1\,200}{\kilo\gram}} = \double
 \]
 }
 
-\paragraph{Python som kalkulator: } I dette faget er ikke Python obligatorisk på noe som helst vis, men dere kommer sikkert borti det i mange andre fag, så det er greit å bli vant med det først som sist. La oss starte med å se et eksempe hvor vi enkelt og greit bruker Python til å utføre noe vi kunne gjort på en gammeldags kalkulator. 
+\paragraph{Python som kalkulator: } I dette faget er ikke Python obligatorisk, men dere kommer nok til å trenge det i mange andre fag, så det er greit å bli vant med det først som sist. La oss starte med å se et eksempe hvor vi enkelt og greit bruker Python til å utføre noe vi kunne gjort på en gammeldags kalkulator. 
 \exm{Kinetisk energi}{%
 Beregn den kinetiske energien $E_K=\frac{1}{2}mv^2$ til en gjenstand med masse $m = \SI{2.0}{\kilo\gram}$ som beveger seg med fart $v = \SI{5.0}{\metre\per\second}$.
 \paragraph{Løsning:} Vi bruker Python som kalkulator og definerer variablene $m$ og $v$, som vist i koden under.
@@ -81,7 +82,7 @@ Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \pyfolderlink. Se 
 \begin{mymerk*}{}
 Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_K = \frac{1}{2}mv^2$ og $E_p = mgh$, så er det ikke noe problem. Vi kommer tilbake til det i senere kapitler. Det viktigste akkurat nå er at du har kontroll på algebaraen.
 \end{mymerk*}
-
+Det aller viktiste så langt er at du forstår at fysikkens språk er matematikk, og at vi derfor skriver ned likninger som beskriver sammenhenger mellom størrelser. Vi kan da løse for en ukjent ved å bruke algebra-regler.
 \begin{myoppsum*}{Algebraregler}
     \begin{itemize}
         \item Det du gjør på ett ledd i en likningmå du gjøre på alle ledd.

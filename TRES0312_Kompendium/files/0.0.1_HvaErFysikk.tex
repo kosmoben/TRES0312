@@ -1,12 +1,13 @@
 % !TEX root = ../main.tex
 \chapter{Hva er fysikk?}
-\intro{Verden består av så mye forskjellig. Her har vi natur, med skoger og fjell, elver og vann. Her lever alle mulige biologiske vesener. Her finner vi også mennesket, som bygger hus, skyskrapere og teknologiske dupeditter som mobiltelefoner. Der oppe på kuleskallet ser vi stjerner og kométer, supernovaer og nordlys. Felles for alle disse svært forskjellige delene av verden er at det lar seg beskrive av matematikk. Dette er jo på en måte helt spinnvilt. Pionerene innen vitenskap, slik som Johannes Kepler, som oppdaget at planetene går i ellipser, og Isaac Newton, som oppdaget at det finnes en kraft som trekker planetene mot solen, var nok ganske forbløffet over at de kunne finne ut av dette ved hjelp av matematikk. Som Galileo Galilei sa det:
+\label{Chapter:hvaerfysikk}
+\intro{Verden består av så mye forskjellig. Her har vi natur, med skoger og fjell, elver og vann. Her lever alle mulige biologiske vesener. Her finner vi også mennesket, som bygger hus, skyskrapere og teknologiske dupeditter som mobiltelefoner. Der oppe på kuleskallet ser vi stjerner og kométer, supernovaer og nordlys. Felles for alle disse svært forskjellige delene av verden er at det lar seg beskrive av matematikk. Dette er jo på en måte helt spinnvilt. Pionerene innen vitenskap, slik som Johannes Kepler, som oppdaget at planetene går i ellipsebaner, og Isaac Newton, som oppdaget at det finnes en kraft som trekker planetene mot solen, var alle forbløffet over at de kunne finne ut av dette ved hjelp av matematikk. Som Galileo Galilei sa det:
 \begin{center}
-    \textit{``Philosophy is written in this grand book, the Universe. But the book cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics, and its characters are triangles, circles, and other geometrical figures, without which it is humanly impossible to understand a single word of it. Without these, one is wandering about in a dark labyrinth.''}\cite{galilei1957assayer}
+    \textit{«Filosofien er skrevet i denne store boken, universet. Men boken kan ikke forstås før man først lærer å forstå språket og tyde tegnene den er skrevet med. Den er skrevet i matematikkens språk, og tegnene er trekanter, sirkler og andre geometriske figurer, uten hvilke det er menneskelig umulig å forstå et eneste ord av den. Uten disse vandrer man omkring i en mørk labyrint.»}\cite{galilei1957assayer}
 \end{center}
 
 \tanke{}{%
-    Kan alt i verden beskrives i matematikk? Hva med \textit{kjærlighet} eller \textit{bevissthet}? Slike vanskelige, filosofiske spørsmål skal vi ikke vsare på i dette kompendiet, men de er verdt å merke seg.}
+    Kan alt i verden beskrives i matematikk? Hva med \textit{kjærlighet} eller \textit{bevissthet}? Slike vanskelige, filosofiske spørsmål skal vi ikke svare på i dette kompendiet, men de er verdt å merke seg.}
 
 \paragraph{I dette kapitlet} introduserer vi begrepet \textit{fysiske størrelser}, ser på SI-enheter og enkle regler for enhetsregning, og går gjennom signifikante siffer og standardform.}
 
@@ -16,10 +17,14 @@
 
 \section[Hva er fysikk?]{Hva er fysikk?}
 
-\begin{wrapfigure}[5]{r}[1.5cm]{3.6cm}
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
 \vspace{-\baselineskip}%
-\rotatebox{-15}{\href{https://youtu.be/Zt_dt0fndx0?si=x2ppZwB2C8sUg3MR}{\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_HvaErFysikk.png}}}\\[-1.0cm]%
-\hspace{0.4cm}\rotatebox{-15}{\href{https://youtu.be/Zt_dt0fndx0?si=x2ppZwB2C8sUg3MR}{\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}}}%
+\rotatebox{-15}{\href{https://youtu.be/Zt_dt0fndx0?si=x2ppZwB2C8sUg3MR}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_HvaErFysikk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
 \end{wrapfigure}
 
 Fysikken er vitenskapen som studerer naturen, helt fra det minste (beskrevet av kvantefysikk) og helt opp til universet som helhet (kosmologi). Fysikken kan deles i flere grupper, slik som mekanikk, termofysikk, bølgefysikk, fluidmekanikk, elektromagnetisme, kvantemekanikk, relativitetsteori osv. I TRES0312 blir det fokus på følgende områder:
@@ -32,13 +37,23 @@ Fysikken er vitenskapen som studerer naturen, helt fra det minste (beskrevet av 
     \vspace{-0.75em}
     \item Elektrisitetslære
 \end{itemize}
-Det er spesielt det første temaet; mekanikk, det vil bli lagt vekt på. Omtrent halvparten av kurset går med til emner fra dette temaet.
+
+\begin{wrapfigure}[6]{l}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{15}{\href{https://youtu.be/f5J60Vaof0M?si=TFLGw8hxY2QpciV1}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_HvaErMekanikk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Det er spesielt mekanikk, altså det første temaet, vi kommer til å legge vekt på i dette kurset. Omtrent halvparten av kurset går med til emner fra dette temaet. Grunnen til det, er at mekanikk gir oss et generelt begrepsaparat som vi siden kan benytte til å analysere problemstillinger også fra andre tema, slik som elektrisitetslære, termofysikk eller væsker og gasser.
 
 \section{Fysiske størrelser}
 Når vi anvender matematikk for å beskrive naturen, kommer vi frem til noe vi kan kalle \textit{fysiske størrelser}. La oss se litt på dette.
 
 En fysisk størrelse har et tall knyttet til seg, men også en énhet. Ta forelesers vekt og høyde som eksempel. Vi kan tenke oss at foreleser veier $m=\SI{75}{\kilo\gram}$ og har en høyde på $h=\SI{1.75}{\metre}$. Både \textit{vekt} og \textit{høyde} er fysiske størrelser, og vi gir gjerne disse størrelsene en variabel som navn (i dette tilfellet $m$ for masse og $h$ for høyde). Tallet i hver av disse fysiske størrelsene indikerer noe om \textit{mengde} eller \textit{omfang}. La oss kalle det \textit{verdi}.  Tallet sier noe om verdi.
-Det er ikke tilstrekkelig å spesifisere verdien. For $m=75$ sier lite. 75 \textit{hva da}?? Vi må spesifiserer hva målestokken er. Dette kaller vi å spesifisere \textit{målenhet}, også kalt bare \textit{enhet}. Alle objekter som har samme enhet kan sammenliknes. For eksempel kan jeg si at $h=\SI{1.74}{\metre}$ er mindre enn høyden $H=\SI{1.84}{\metre}$. Men jeg kan ikke si at $h=\SI{1.74}{\metre}$ er mindre enn $m=\SI{75}{\kilo\gram}$. Hva i huleste skulle et slikt utsagn bety? Vi ser altså at i fysikken er både verdi og enhet viktig.
+Det er ikke tilstrekkelig å spesifisere verdien. For $m=75$ sier lite. 75 \textit{hva da}?? Vi må spesifiserer hva målestokken er. Dette kaller vi å spesifisere \textit{målenheten}, også kalt bare \textit{enheten} til størrelsen. Alle objekter som har samme enhet kan sammenliknes. For eksempel kan jeg si at $h=\SI{1.74}{\metre}$ er mindre enn høyden $H=\SI{1.84}{\metre}$. Men jeg kan ikke si at $h=\SI{1.74}{\metre}$ er mindre enn $m=\SI{75}{\kilo\gram}$. Hva i huleste skulle et slikt utsagn bety? Vi ser altså at i fysikken er både verdi og enhet viktig.
 
 \defnr{Fysisk størrelse}{fys-storrelse}{En \textit{fysisk størrelse} har både \textit{verdi} og \textit{enhet}:
 \begin{align*}
@@ -50,7 +65,7 @@ Det er ikke tilstrekkelig å spesifisere verdien. For $m=75$ sier lite. 75 \text
 Et enkelt eksempel er avstanden $L$ fra Oslo til Trondheim:
 \[L = 500 \cdot \textrm{kilometer}\]
 }
-
+Merk at vi multipliserer inn enheten i verdien. Dette er en viktig detalj, som vi kommer tilbake til senere: Vi kan regne på enheter, med helt vanlige algebra-regler.
 \tanke{}{Hvor mange forskjellige enheter trenger man for å beskrive \textit{alt} i naturen?}
 I tabellen under ser vi noen av de mest sentrale fysiske størrelsene i mekanikk-delen av pensum, sammen med målenheten for disse størrelsene.
 \begin{table}[H]
@@ -74,7 +89,17 @@ Energi & J & Potensiale for vekselvirkning.\\
 \end{table}
 I det følgende skal vi se på et standardisert system for enheter, og hvordan vi kan regne med enheter.
 \subsection{SI-enheter}
-Man kunne jo tenkt at det trengs veldig mange enheter for å beskrive alt i naturen, ettersom naturen består av veldig mye forskjellig. Men det viser seg at man ikke trenger flere enn 7 forskjellige enheter. Det finnes mange forskjellige systemer for enheter. Felles for dem er at de koker ned til 7 unike enheter. I dette faget skal vi benytte SI-enheter, som er det internasjonale enhetssystemet sitt system, og benyttet i mange land. Figur \ref{fig:SI_enheter} viser en illustrasjon av SI-enhetene, og i dette faget skal vi benytte alle, så nær som \textit{candela}, som er måleenhet for \textit{opplevd lysstyrke}.
+
+\begin{wrapfigure}[6]{l}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{15}{\href{https://youtu.be/N2us1vvGqfY?si=i9MuYOUraGrT2lxI}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_EnheterIFysikk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Man kunne jo tenkt at det trengs veldig mange enheter for å beskrive alt i naturen, ettersom naturen består av veldig mye forskjellig. Men det viser seg at man ikke trenger flere enn 7 forskjellige enheter. Disse 7 enhetene utgjør grunnlaget i det vi kaller for det internasjonale enhetssystemet (SI). Det finnes andre enhetssystem også, men i dette faget skal vi benytte SI-enheter, som er systemet benyttet i mange land. Figur \ref{fig:SI_enheter} viser en illustrasjon av SI-enhetene, og i dette faget skal vi benytte alle, så nær som \textit{candela}, som er måleenhet for \textit{opplevd lysstyrke}.
 
 \begin{figure}[ht!]
 \centering
@@ -107,7 +132,14 @@ Candela   & cd  & Lys-intensitet  & Luminøs effektivitet                       
 \hline
 \end{tabular}
 \end{table}
-I 2018 vedtok Generalkonferansen for mål og vekt at SI-systemet ikke lenger skal definires ut ifra menneskeskapte prototyper, slik som gullstandarden for 1\,kg i Paris og den slags. I stedet skal enhetene definieres ut ifra fysiske konstanter, som vist i høyre del av Tabell~\ref{tab:SI_enheter}. En skjematisk oppsummering av sammenhengen er gitt i Figur~\ref{fig:SI_enheter2}.
+Enhetene er én sak. Men hvem bestemmer nøyaktig hvor mye 1 kilogram er? Frem til 2018 var dette bestemt av en godt bevoktet prototype; en kilogram-standard innelåst i et hvelv i Paris. Å basere seg på slike prototyper blir selvsagt både sårbart og til syvende og sist noe vilkårlig. Generalforsamlingen for mål og vekt vedtok derfor at SI-systemet ikke lenger skal definires ut ifra menneskeskapte prototyper, slik som gullstandarden for 1\,kg i Paris. Fra 20.mai 2019 har enhetene i stedet vært definert ut ifra naturkonstanter, som vist i høyre del av Tabell~\ref{tab:SI_enheter}. En skjematisk oppsummering av sammenhengen er gitt i Figur~\ref{fig:SI_enheter2}. Naturkonstanter er størrelser vi mener er universelle, og som vi kan anta er de samme overalt i universet. Dette gjør at SI-enhetene er universelle, og ikke avhengig av menneskeskapte prototyper. Disse naturkonstantene har nå {textit{definerte} verdier! Lyshastigheten er for eksempel nå definert til å være $c = 299\,792\,458\ \text{m/s}$, og dette er en eksakt verdi. Ved å benytte denne naturkonstanten, og et standardisert eksperiment som (i prinsippet) kan gjentas av alle, overalt og til enhver tid så kan man regne seg fram til lengden på en meter. Dermed forsvinner problemet med at en meter kan være forskjellig fra sted til sted, og fra tid til tid. Alle er enige om hvordan man regner ut hvor lang en meter er.}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\linewidth]{Images/Kapittel1:introduksjon/Urkilo.png}
+\caption{Urkiloen (``Le Grand K''), den offisielle prototypen for 1\,kg som frem til 2019 lå oppbevart i et hvelv utenfor Paris. [Kilde: BIPM, Wikimedia Commons, CC BY-SA 3.0 IGO]}
+\label{fig:urkilo}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -127,15 +159,16 @@ Oppgi SI-enheten og enhetssymbolet for følgende fysiske størrelser:
     \item Lengde
 \end{enumerate}
 }
+Dersom du har tømrer-bakgrunn er du kanskje vant med enheten \textit{tomme} (inch). Dette er ikke en SI-enhet, men det er greit å vite at 1 tomme = 2.54 cm. Enheten \textit{fot} (foot) er også mye brukt, og 1 fot = 12 tommer = 30.48 cm. For de med nautikk-bakgrunn så er enheten \textit{nautisk mil} mye brukt, og 1 nautisk mil = 1852 m.
 
 \section{Å regne med enheter}
-Grunnen til at det ikke finnes mer enn 7 enheter er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives ved å bruke kombinasjoner av andre, mer fundamentale enheter. La oss ta \textit{fart} som eksempel.
+Grunnen til at det ikke finnes mer enn 7 enheter i SI-systemet er at det finnes lover mellom de forskjellige delene av fysikken som gjør at enkelte enheter kan skrives ved å bruke kombinasjoner av andre, mer fundamentale enheter. Vi trenger ikke en egen enhet for pære, for eksempel. Nei, i stedet sier vi at pære, i likhet med appelsiner, biler og maurslukere, har det vi kaller \textit{masse}. Og masse er en grunnleggende egenskap i universet, som vi da gir en enhet. Et annet eksempel er \textit{fart}. Det har heller ikke en egen enhet. I stedet skriver vi ned en matematisk sammenheng for fart, som gjør det mulig å \textit{beregne} hvilke SI-enheter som trengs for å beskrive fart. 
 \exm{Enhet for fart}{%
 Når vi skal gi et variabel-navn til \textit{fart} bruker vi ofte bokstaven $v$ (forkortelse for det engelske \textit{velocity}). La oss si at faren til en bil er
-\[v=\SI{50}{\kilo\metre\per\hour}.\]
-Her ser vi at enheten for fart, nemlig $\si{\kilo\metre\per\hour}$ kan skrives ved hjelp av enhetene for strekning (km) og tid (h, for engelske \textit{hour}\footnote{Både $t$ for \textit{time} og  $h$ for \textit{hour} er mye brukte forkortelser. Du står derfor fritt til å velge selv hvilken forkortelse du vil benytte.}). Vi trenger altså ikke en egen enhet for fart.
+\[v=\SI{50}{\kilo\metre\per\hour}=\SI{50}{\kilo\metre / \hour}.\]
+Her ser vi at enheten for fart, nemlig $\si{\kilo\metre\per\hour}$ kan skrives ved hjelp av enhetene for strekning (km) og tid (h, for engelske \textit{hour}\footnote{Både $t$ for \textit{time} og  $h$ for \textit{hour} er mye brukte forkortelser. Du står derfor fritt til å velge selv hvilken forkortelse du vil benytte. Merk også at h$^{-1}$ er det samme som $1/$h}). Vi trenger altså ikke en egen enhet for fart.
 }
-Her har vi, uten å si det, brukt sammenhengen $v=s/t$ for å finne enhetene for farten $v$. Det faktum at det finnes sammenhenger og lover mellom forskjellige deler av fysikken, medfører at vi kan regne på enheter, slik som vi regner med tall. Da betrakter vi enhetene som algebraiske størrelser som kan legges sammen, ganges og deles på samme måte som tall. Det er viktig å huske at alle ledd i et uttrykk må ha samme enhet. Her er noen eksempler.
+Det vi egentlig gjorde for å finne enheten for fart, er altså at vi brukte en matematisk sammenheng mellom fart, strekning og tid: $v=s/t$. Det faktum at det finnes sammenhenger og lover mellom forskjellige deler av fysikken, medfører at vi kan regne på enheter, slik som vi regner med tall. Da betrakter vi enhetene som algebraiske størrelser som kan legges sammen, ganges og deles på samme måte som tall. Det er viktig å huske at alle ledd i et uttrykk må ha samme enhet. Her er noen eksempler.
 
 \exm{Sykkel på tog}{%
 I forbindelse med en filminnspilling kjører Tom Cruise en motorsykkel ombord et cruisskip. Det er generelt en veldig dårlig idé. Men han gjør det likevel, og crus-skipet har en fart $v_\textrm{skip}=\SI{30}{\kilo\metre\per\hour}$. Tom har en fart $v_\textrm{T}=\SI{70}{\kilo\metre\per\hour}$ relativ til båten. Både Tom Cruise og cruisskipet kjører rett mot ei kai. Hvor stor fart har Tom i forhold til kaia?
@@ -189,7 +222,26 @@ En bil kjører med fart $v = \SI{90}{\kilo\metre\per\hour}$.
 }
 
 \section{Signifikante siffer}
-Fysikk handler altså om å anvende matematikk på naturen. Dette kan vi gjøre fordi naturen er målbar. I fysikken er vi derfor helt avhengig av å \textit{måle}, altså å gjøre forsøk. Disse forsøkene gir aldri 100\% nøyaktige svar. Derfor er det viktig å ha kontroll på usikkerhet når man gjør fysikk. I dette kurset skal vi ikke se så mye på dette, men vi skal få med oss det mest grunnleggende, nemlig \textit{Signifikante siffer}. Signifikante siffer handler om å bruke riktig antall siffer i en utregning. La oss starte med å se på hvordan vi skal finne antall signifikante siffer. Tallet 459 har tre signifikante siffer, ettersom det består av tre siffer. Tallet 12\,001.\,03700 har 10 signifikante siffer, etter som det består av 10 siffer.
+
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/EwD-_OH2gLo?si=HKMYO4KwwaHtnsMC}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_SignifikanteSifferAvrunding.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Fysikk handler altså om å anvende matematikk på naturen. Dette kan vi gjøre fordi naturen er målbar. I fysikken er vi derfor helt avhengig av å \textit{måle}, altså å gjøre forsøk. Disse forsøkene gir aldri 100\% nøyaktige svar. Derfor er det viktig å ha kontroll på usikkerhet når man gjør fysikk. La oss si du ønsker å måle lengden på en sau. Hvor nøyaktig er svaret? For å kunne svare presist på det så er det viktig å ha kontroll på feilmarginer og usikkerhet.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{Images/Kapittel1:introduksjon/sau_maling.png}
+\caption{Hvor lang er egentlig sauen?}
+\label{fig:sau_maling}
+\end{figure}
+
+I dette kurset skal vi ikke se så mye på dette, men vi skal få med oss det mest grunnleggende, nemlig \textit{Signifikante siffer}. Signifikante siffer handler om å bruke riktig antall siffer i en utregning. La oss starte med å se på hvordan vi skal finne antall signifikante siffer. Tallet 459 har tre signifikante siffer, ettersom det består av tre siffer. Tallet 12\,001.\,03700 har 10 signifikante siffer, etter som det består av 10 siffer.
 Men merk at tallet 0.00059400 kun har 5 signifikante siffer (nemlig 59400). Antall signifikante siffer telles nemlig fra \textit{første siffer som er forskjellig fra null.}
 
 \begin{myoppsum*}{Signifikante siffer}
@@ -237,6 +289,16 @@ Vi minner om følgende regler for avrunding:
 }
 
 \section{Tall på standardform}
+
+\begin{wrapfigure}[6]{l}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{15}{\href{https://youtu.be/UP4GI5vN_-A?si=LR5A78vfE0ZDc6d6}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_DekadiskePrefikserStandardform.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Standardform er en måte å skrive tall på som tydeliggjør både antall siffer og størrelsesorden. Et tall $T$ skrevet på standardform har følgende form:
 \[
 \label{eq:standardform}
@@ -338,7 +400,7 @@ En viruspartikkel har diameter $d = \SI{90}{\nano\metre}$.
 }
 
 \section{Eksempel på beregning}
-Vi har nå sett på fysiske størrelser, enheter og hvordan vi regner med tall i fysikken. La oss avslutte kapittelet med en liten smakebit på hvordan disse verktøyene brukes i praksis --- både når det gjelder \textit{kinematikk} (bevegelseslære, som vi skal se mye mer av i et senere kapittel) og når det gjelder \textit{Python}, som vi også skal bli mye bedre kjent med i neste kapittel.
+Vi har nå sett på fysiske størrelser, enheter og hvordan vi regner med tall i fysikken. La oss avslutte kapittelet med en liten smakebit på hvordan disse verktøyene brukes i praksis --- både når det gjelder \textit{kinematikk} (bevegelseslære, som vi skal se mye mer av i et senere kapittel) og når det gjelder \textit{Python}, som vi skal bruke som regneverktøy i faget.
 
 Tenk deg at posisjonen til en gjenstand er målt med jevne mellomrom, for eksempel hvert sekund. Slike diskrete målepunkter er akkurat det man ofte sitter igjen med fra ekte sensorer og måleinstrumenter. Tabell~\ref{tab:posisjonsmaling} viser et eksempel på slike målinger.
 
@@ -416,10 +478,6 @@ Akselerasjon: [1. 1. 1. 1.] m/s^2
 \end{figure}
 
 Legg merke til at akselerasjonen her er helt konstant, lik $\bar a = \SI{1.0}{\metre\per\second\squared}$. Det er ingen tilfeldighet --- måledataene i Tabell~\ref{tab:posisjonsmaling} er konstruert nettopp for å gi konstant akselerasjon. Slik bevegelse, med konstant akselerasjon, skal vi se mye mer av snart.
-
-\begin{mymerk*}{Bare en liten smakebit}
-Dette eksempelet er ment som en liten forsmak --- både på Python, som vi skal bli mye bedre kjent med i neste kapittel, og på kinematikk (bevegelseslære), som vi skal gå grundig gjennom i kapittelet etter det.
-\end{mymerk*}
 
 \section{Flere oppgaver}
 

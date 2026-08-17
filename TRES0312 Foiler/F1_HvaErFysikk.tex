@@ -64,7 +64,7 @@
   \vspace{-3mm}
   \pause
   \begin{columns}[t]
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.42\textwidth}
       \oppsum{Struktur}{
         \begin{itemize}[itemsep=0pt,topsep=1pt]
           \item 2 forelesninger per uke
@@ -73,13 +73,23 @@
       }
     \end{column}
     \pause
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.42\textwidth}
+      \tikz[remember picture,overlay]\node[inner sep=0pt] (kravstart) {};%
       \oppsum{Krav}{
         \begin{enumerate}[1.,itemsep=0pt,topsep=1pt]
           \item Levere øvinger på Canvas
           \item Motta veiledning fra studentassistenter.
         \end{enumerate}
       }
+      \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=1.3cm, yshift=-2.0cm] at (kravstart.north west) {%
+          \ifdarkmode
+            \includegraphics[width=3.2cm]{Images/person_undrende_mork.png}
+          \else
+            \includegraphics[width=3.2cm]{Images/person_undrende_lys.png}
+          \fi
+        };
+      \end{tikzpicture}
     \end{column}
   \end{columns}
   \vspace{-3.5mm}
