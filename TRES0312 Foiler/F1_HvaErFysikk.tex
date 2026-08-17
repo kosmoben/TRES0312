@@ -36,6 +36,18 @@
 %--------------------------------------------------------------------------
 \begin{frame}[plain]
   \titlepage
+  \begin{tikzpicture}[remember picture, overlay]
+    % QR-kode til spørreundersøkelse, plassert i hjørnet nede til høyre
+    % slik at den ikke overlapper forfatter/dato-teksten i midten.
+    \node[anchor=south east, xshift=-0.9cm, yshift=0.5cm]
+      at (current page.south east) {
+        \begin{minipage}{4.4cm}
+          \centering
+          \includegraphics[width=4.2cm]{Images/QR_sporreundersokelse1.png}\\[3pt]
+          {\tiny\color{textcolor} Spørre-\\undersøkelse}
+        \end{minipage}
+      };
+  \end{tikzpicture}
 \end{frame}
 
 %--------------------------------------------------------------------------
@@ -65,7 +77,7 @@
       \oppsum{Krav}{
         \begin{enumerate}[1.,itemsep=0pt,topsep=1pt]
           \item Levere øvinger på Canvas
-          \item Møte opp på øvingstime
+          \item Motta veiledning fra studentassistenter.
         \end{enumerate}
       }
     \end{column}
