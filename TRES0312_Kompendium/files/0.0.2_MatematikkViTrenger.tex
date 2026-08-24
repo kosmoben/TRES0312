@@ -487,10 +487,17 @@ I $xy$-planet finnes det to enhetsvektorer:
 \end{align}
 
 Her peker $\hat{\mathbf{x}}$ i positiv $x$-retning, mens $\hat{\mathbf{y}}$ peker i positiv $y$-retning. Sammen danner disse enhetsvektorene grunnlaget for koordinatsystemet.
-Merk at $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ er ortogonale, det vil si at de står vinkelrett på hverandre, og at de begge har lengde 1.
+Merk at $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ er ortonormale, det vil si at de står vinkelrett på hverandre, og at de begge har lengde 1.
 \begin{mymerk*}{Alternativ notasjon for enhetsvektorer}
 I mange lærebøker brukes symbolene $\mathbf{i}$, $\mathbf{j}$ (og  $\mathbf{k}$ i tre dimensjoner) for de samme enhetsvektorene. I dette kompendiet bruker vi $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ (og $\hat{z}$ i tre dimensjoner), da denne notasjonen gjør det umiddelbart tydelig hvilken retning enhetsvektoren peker i.
 \end{mymerk*}
+
+Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvektorene. Det finnes to ekvivalente skrivemåter:
+\begin{align}
+\vec{v} = [v_x, v_y] = v_x \hat{\mathbf{x}} + v_y \hat{\mathbf{y}}.
+\end{align}
+
+Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter i henholdsvis $x$- og $y$-retning. Prosessen med å finne komponentene til en vektor kalles \emph{dekomponering}, og er tema for neste avsnitt.
 
 \oppgave{Vektorer som en lineærkombinasjon av enhetsvektorer}{%
 \begin{enumerate}[a)]
@@ -499,15 +506,8 @@ I mange lærebøker brukes symbolene $\mathbf{i}$, $\mathbf{j}$ (og  $\mathbf{k}
 \end{enumerate}
 }
 
-Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvektorene. Det finnes to ekvivalente skrivemåter:
-\begin{align}
-\vec{v} = [v_x, v_y] = v_x \hat{\mathbf{x}} + v_y \hat{\mathbf{y}}.
-\end{align}
-
-Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter i henholdsvis $x$- og $y$-retning. 
-
 \subsection{Dekomponering av vektorer i koordinatsystem}
-Dekomponering er en generell teknikk i fysikk som innebærer å dele opp en vektor i dens komponenter langs de enkelte koordinataksene. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er helt essensielt i alle deler av fysikken som omhandler vektorer. For eksempel, når vi studerer bevegelse i to dimensjoner, som for eksempel en prosjektilbevegelse, slik som vist i Figur~\ref{fig:Prosjektilbevegelse}, så er det veldig nyttig å dekomponere bevegelsen i horisontal og vertikal retning. Da kan vi bruke de enklere bevegelsesligningene for hver retning, og deretter kombinere resultatene for å få en fullstendig beskrivelse av bevegelsen.
+Dekomponering er en generell teknikk i fysikk som innebærer å dele opp en vektor i dens komponenter langs de enkelte koordinataksene\footnote{Eller mer presist langs basisvektorene. Men vi velger disse identisk med koordinataksene, så i praksis blir det ikke noen forskjell. Faktisk kan man si at det å velge et sett med basisvektorer \textit{er} å velge et koordinatsystem. }. Ved å dekomponere en vektor, kan vi forstå hvordan den virker i hver retning separat, noe som gjør komplekse problemer enklere å håndtere. Dette er helt essensielt i alle deler av fysikken som omhandler vektorer. For eksempel, når vi studerer bevegelse i to dimensjoner, som for eksempel en prosjektilbevegelse, slik som vist i Figur~\ref{fig:Prosjektilbevegelse}, så er det veldig nyttig å dekomponere bevegelsen i horisontal og vertikal retning. Da kan vi bruke de enklere bevegelsesligningene for hver retning, og deretter kombinere resultatene for å få en fullstendig beskrivelse av bevegelsen.
 \begin{figure}[ht!]
 \centering
 \begin{tikzpicture}
@@ -625,7 +625,7 @@ En ball kastes med startfart $v_0 = \SI{20}{\metre\per\second}$ i en vinkel $\th
 
 Vi har sett at vi kan skrive ut vektorkomponentene i et koordinatsystem. En annen måte å angi en vektor på, er å angi dens \emph{lengde} og \emph{retning} i forhold til en gitt akse (dette er egentlig det samme som å angi vektoren i polarkoordinater, for den som har lært om det). Lengden til en vektor med komponenter i $xy$-planet kan finnes ved hjelp av Pytagoras' setning.
 
-\defn{Vektorlengde}{Lengden til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
+\defnr{Vektorlengde}{vektorlengde}{Lengden til en vektor $\vec{v} = [v_x, v_y]$ er gitt ved
 \begin{align}
 v=|\vec{v}| = \sqrt{v_x^2 + v_y^2}
 \end{align}
@@ -776,6 +776,7 @@ Gitt vektorene $\vec{a} = [3,\,-1]$ og $\vec{b} = [-1,\,4]$.
 \end{enumerate}
 }
 
+\subsection*{Multiplikasjon av vektorer: skalarproduktet}
 Skalarproduktet, også kalt prikkproduktet (engelsk: \textit{dot product}), er en operasjon mellom to vektorer som gir et tall (en skalar). Det uttrykker i hvilken grad to vektorer peker i samme retning.
 
 \defn{Skalarprodukt}{Skalarproduktet av to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ er definert som
@@ -852,6 +853,20 @@ Størrelsen til vektorene er $|\vec{u}| = \sqrt{3^2+4^2} = 5$ og $|\vec{v}| = \s
 altså $\theta = \arccos\!\left(-\dfrac{1}{\sqrt{5}}\right) \approx \doubleunderline{116.6^\circ}$.
 }
 
+Skalarproduktet gir oss også en alternativ måte å uttrykke lengden til en vektor på. Dersom vi tar skalarproduktet av en vektor $\vec{u}$ med seg selv, er vinkelen mellom vektorene $\theta = 0^\circ$, slik at $\cos\theta = 1$:
+\[
+\vec{u}\cdot\vec{u} = |\vec{u}|\,|\vec{u}|\,\cos 0^\circ = |\vec{u}|^2.
+\]
+Dette gir oss en alternativ definisjon av vektorlengden, som vi allerede møtte i Definisjon~\ref{defn:vektorlengde}:
+
+\defnr{Vektorlengde via skalarproduktet}{vektorlengde-skalarprodukt}{Lengden til en vektor $\vec{u} = [u_x,\,u_y]$ kan uttrykkes ved skalarproduktet av vektoren med seg selv:
+\begin{align}
+u = |\vec{u}| = \sqrt{\vec{u}\cdot\vec{u}} = \sqrt{u_x^2 + u_y^2}.
+\end{align}
+}
+
+Vi ser at dette stemmer overens med Definisjon~\ref{defn:vektorlengde}: siden $\vec{u}\cdot\vec{u} = u_x^2+u_y^2$, gir de to definisjonene nøyaktig samme resultat --- skalarproduktet av en vektor med seg selv er rett og slett lengden i annen.
+
 \subsection*{Python: skalarprodukt og vinkel}
 
 \begin{pythonkode}
@@ -881,6 +896,8 @@ Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.
 \end{enumerate}
 }
 
+
+\subsection*{Multiplikasjon av vektorer: kryssproduktet}
 Kryssprodukt (engelsk: \textit{cross product}) er en operasjon mellom to vektorer som gir en ny vektor vinkelrett på begge. I to dimensjoner reduseres kryssproduktet til et enkelt tall — z-komponenten — som blant annet brukes til å beregne dreiemoment og areal av parallelogrammer.
 
 \defn{Kryssprodukt i 2D}{For to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ i $xy$-planet er kryssproduktets z-komponent
@@ -953,17 +970,28 @@ Gitt $\vec{u} = [2,\,1]$ og $\vec{v} = [1,\,3]$.
 }
 
 \section{Matematisk modellering}
-tamed noe om at det er en essensiell del av fysikken, og at dette er en viktig egenskap. te med det diagrammet i masteroppgaven?
+Matematisk modellering er selve kunsten å oversette et fysisk problem til matematikkens språk, slik at vi kan resonnere oss fram til svaret ved hjelp av likninger i stedet for gjetning. Verktøyene vi nettopp har gått gjennom --- vektorer, komponenter og koordinatsystemer --- er selve grunnmuren i denne prosessen: de gir oss et presist språk for å beskrive posisjoner, krefter og bevegelser, uavhengig av hvordan vi velger å orientere oss i rommet.
 
 \begin{myoppsum*}{Matematisk modellering}
-  En matematsk modell av virkeligheten vil for oss inneholde følgende 
+  En matematisk modell av virkeligheten vil for oss inneholde følgende:
   \begin{enumerate}
-    \item Representasjon av objektene  involvert.
-    \item Representasjon av påvirkningen mellom objektene involvert (kreftene)
-    \item Effektivt valg av koordinatsystem
+    \item Representasjon av objektene involvert, f.eks.\ som punkter eller enkle geometriske former med en posisjon i rommet.
+    \item Representasjon av påvirkningen mellom objektene involvert (kreftene), typisk som piler --- altså vektorer --- som virker på objektene.
+    \item Effektivt valg av koordinatsystem, slik at likningene som beskriver problemet blir så enkle som mulig å sette opp og løse.
   \end{enumerate}
 \end{myoppsum*}
-For å svare på dette er det veldig lurt å tegne en tegning. Tegninger er ofte fysikernes beste venn, og det er ikke uten grunn at Feynmann utarbeidet de såkalte Feynmann-diagrammene, som rett og slett er tegninger som representerer beregninger dypt inne i fundamentalfysikk: kvantefeltteori.
+
+For å få oversikt over disse tre punktene er det veldig lurt å tegne en tegning. Tegninger er ofte fysikernes beste venn, og det er ikke uten grunn at Richard Feynman utarbeidet de såkalte Feynman-diagrammene, som rett og slett er tegninger som representerer beregninger dypt inne i fundamentalfysikk: kvantefeltteori.
+
+En typisk arbeidsgang når vi skal modellere et fysisk system, er:
+\begin{enumerate}
+  \item Tegn en skisse av situasjonen, og merk av alle objekter, krefter og bevegelser du kjenner til.
+  \item Velg et koordinatsystem --- helst ett som gjør problemet så enkelt som mulig.
+  \item Sett opp likninger som beskriver sammenhengen mellom de fysiske størrelsene, gjerne ved å dekomponere vektorer i komponenter.
+  \item Løs likningene for den ukjente størrelsen du er ute etter.
+  \item Tolk svaret: gir det mening fysisk (riktig enhet, rimelig størrelsesorden, riktig fortegn)?
+\end{enumerate}
+Vi kommer til å bruke nøyaktig denne fremgangsmåten gjennom resten av kompendiet.
 
 \clearpage
 \section{Flere oppgaver}

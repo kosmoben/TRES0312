@@ -1,0 +1,79 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}   % for "visible on=<->" i enkelte tikz-figurer
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Kinematikk}
+\subtitle{TRES0312 --- Posisjon, fart og akselerasjon}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%  Bruk gjerne \setcounter{section}{N} rett før en frame der du bytter
+%  seksjon, i stedet for én gang globalt.
+%--------------------------------------------------------------------------
+\setcounter{section}{3}   % Kapittel 3: "Kinematikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+
+  \vspace{2.6cm}
+  \begin{center}
+  {\bfseries\color{repcol} NB! I dag har vi kun 50 minutter forelesning (14:10--15:00).}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Fem kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Fem kjappe fra forrige gang}{%
+    \begin{enumerate}[1.,itemsep=10pt]
+      \item Hvordan dekomponerer vi en vektor $\vec{r}$ i $x$- og $y$-komponenter?
+      \item Hvorfor er lengden og retningen til en vektor uavhengig av valg av koordinatsystem?
+      \item Hvordan beregner vi skalarproduktet til to vektorer, og hva forteller det oss geometrisk?
+      \item Hvordan kan vi uttrykke lengden til en vektor ved hjelp av skalarproduktet?
+      \item Hva er kryssproduktet av to vektorer i planet, og hva representerer det geometrisk?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: spørsmålene vi jobber med i dette kapitlet
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+    \begin{enumerate}[1.,itemsep=10pt]
+      \item Hva er sammenhengen mellom posisjon, hastighet og akselerasjon?
+      \item Hvordan beskriver vi bevegelse med matematikk?
+      \item Hva er forskjellen på beskrivelse av bevegelse i 1 dimensjon og flere dimensjoner?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+\end{document}
