@@ -519,13 +519,108 @@ plt.show()
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 26 — Neste gang
+%  SLIDE 26 — Definisjon: vektor
+%--------------------------------------------------------------------------
+\begin{frame}{Vektorer}
+
+  \defn{Vektor}{
+  En \textit{vektor} er et matematisk objekt med både størrelse og retning. Vi bruker en pil for å vise at noe er en vektor: $\vec{A}$.
+  }
+  \pause
+  \merk{Skalarer}{
+  Det vi tidligere kalte tall, kaller vi nå gjerne \textit{skalarer}. Skalarer har kun størrelse, ikke retning.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 27 — Vektoraddisjon: intuisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Å legge sammen vektorer}
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    % Frie vektorer A og B (ingen koordinatsystem)
+    \draw[->, thick, vecAcol] (0,0.7) -- (2.4,1.5);
+    \node[above=2pt, font=\small, vecAcol] at (1.2,1.1) {$\vec{A}$};
+    \node[font=\large, textcolor] at (2.85,1.1) {$+$};
+    \draw[->, thick, vecBcol] (3.3,0.35) -- (4.0,1.75);
+    \node[right=3pt, font=\small, vecBcol] at (3.65,1.05) {$\vec{B}$};
+  \end{tikzpicture}
+  \hspace{1.5cm}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    % Hale-til-spiss-addisjon: C = A + B
+    \draw[->, thick, vecAcol] (0,0) -- (2.4,0.8);
+    \node[below=3pt, font=\small, vecAcol] at (1.2,0.4) {$\vec{A}$};
+    \draw[->, thick, vecBcol] (2.4,0.8) -- (3.1,2.2);
+    \node[right=3pt, font=\small, vecBcol] at (2.75,1.5) {$\vec{B}$};
+    \draw[->, very thick, vecCcol] (0,0) -- (3.1,2.2);
+    \node[left=4pt, font=\small, vecCcol] at (1.55,1.1) {$\vec{C}$};
+  \end{tikzpicture}
+  \end{center}
+  \tanke{}{%
+  $\vec{B}$ plasseres ved spissen av $\vec{A}$. Resultantvektoren $\vec{C} = \vec{A} + \vec{B}$ går fra start av $\vec{A}$ til slutten av $\vec{B}$ --- den såkalte hale-til-spiss-metoden.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 28 — Aktivitet: skalarer og vektorer
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Skalarer og vektorer}{%
+  Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
+    \begin{enumerate}[a)]
+      \item Temperatur
+      \item Posisjon
+      \item Fart
+      \item Hastighet
+      \item Akselerasjon
+      \item Masse
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 29 — Koordinatsystem
+%--------------------------------------------------------------------------
+\begin{frame}{Koordinatsystem}
+
+  Et koordinatsystem er et verktøy vi bruker for å beskrive posisjon. I et todimensjonalt koordinatsystem beskrives en posisjon ved et ordnet par $(x,y)$.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.95, baseline=(current bounding box.center)]
+    \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+    \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+    \foreach \x in {1,2,3,4} {
+      \draw (\x,0.08) -- (\x,-0.08);
+      \node[below=3pt, font=\small] at (\x,0) {$\x$};
+    }
+    \foreach \y in {1,2,3} {
+      \draw (0.08,\y) -- (-0.08,\y);
+      \node[left=3pt, font=\small] at (0,\y) {$\y$};
+    }
+    \draw[dashed, gray!60] (3,0) -- (3,2) -- (0,2);
+    \fill[pointCol] (3,2) circle (2.5pt);
+    \node[above right=2pt, font=\small, pointCol] at (3,2) {$P = (3,\,2)$};
+    \pause
+    \draw[->, very thick, pointCol] (0,0) -- (3,2);
+    \node[above left=1pt, font=\small, pointCol] at (1.55,1.1) {$\vec{r}$};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 30 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
-  \Huge{Neste gang: Vektorer!}
+  \Huge{Neste gang: Dekomponering av vektorer!}
   \begin{itemize}
-    \item Vektoraddisjon og koordinatsystem
+    \item Enhetsvektorer og dekomponering
     \item Skalarprodukt og kryssprodukt
     \item Matematisk modellering
   \end{itemize}
