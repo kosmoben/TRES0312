@@ -94,12 +94,12 @@ Det kan også være verdt å repetere følgende regler for notasjon:
     \item \textbf{Potenser:} $x^a \cdot x^b = x^{a+b}$, \quad $\dfrac{x^a}{x^b} = x^{a-b}$, \quad $(x^a)^b = x^{ab}$.
     \item \textbf{Kvadratrot:} $\sqrt{x} = x^{1/2}$.
 \end{itemize}
-I tillegg har vi kvadratsetningene:
+\graabox{I tillegg har vi kvadratsetningene:
 \begin{align*}
     &(a+b)^2 = a^2 + 2ab + b^2, \\
     &(a-b)^2 = a^2 - 2ab + b^2, \\
     &(a+b)(a-b) = a^2 - b^2.
-\end{align*}
+\end{align*}}
 Disse bør også sitte i fingrene.
 
 \section{Funksjoner og plotting}
@@ -110,7 +110,7 @@ En \emph{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt u
 Den enkleste funksjonen er den lineære:
 \graabox{$\displaystyle f(x) = b + ax$}
 der $a$ er \emph{stigningstallet} (hvor bratt grafen er) og $b$ er \emph{konstantleddet} (der grafen skjærer $y$-aksen). Et slikt eksempel er farten $v(t)$ når akselerasjonen er konstant: \[v(t) = v_0 + at.\]
-Som du ser så bruker vi forskjellige variabelnavn, avhengig av hva vi prater om. Det er viktig å forstå at variabelnavnene i seg selv ikke er viktige. Vi kunne i prinsippet godt ha kalt fartsfunksjonen for $f(t)$, uten at det hadde endret noesom helst. Det er bare ikek så hensiktsmessig. 
+Som du ser så bruker vi forskjellige variabelnavn, avhengig av hva vi prater om. Det er viktig å forstå at variabelnavnene i seg selv ikke er viktige. Vi kunne i prinsippet godt ha kalt fartsfunksjonen for $f(t)$, uten at det hadde endret noe som helst. Det er bare ikke så hensiktsmessig. 
 
 \subsection*{Kvadratisk funksjon}
 En kvadratisk funksjon har formen
@@ -168,7 +168,7 @@ plt.show()
 \oppgave{Funksjoner og plotting}{%
 \begin{enumerate}[a)]
     \item Bruk Python (eller et annet verktøy du måtte foretrekke) til å plotte funksjonen $f(x) = 2x^2 - 3x + 1$ for $x \in [-2,\, 4]$.
-    \item Modifiser koden over slik at startfarten er $v_0 = \SI{3.0}{\metre\per\second}$. Hva forandrer seg i grafene?
+    \item Modifiser Python-koden gitt i teksten over slik at startfarten er $v_0 = \SI{3.0}{\metre\per\second}$. Hva forandrer seg i grafene? Grafen du plotter i oppgave a) kan være til hjelp for å se svaret.
 \end{enumerate}
 }
 
@@ -477,7 +477,7 @@ Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posi
 
 \subsection{Enhetsvektorer}
 
-For å arbeide systematisk med vektorer er det nyttig å innføre et sett med faste referansevektorer. Disse kalles \emph{enhetsvektorer} eller \emph{basisvektorer} og definerer retningene i koordinatsystemet. Det som er spesielt med enhetsvektorene, er at alle andre vektorer kan uttrykkes som en lineær kombinasjon av disse.
+For å arbeide systematisk med vektorer er det nyttig å innføre et sett med faste referansevektorer. Disse kalles \emph{basisvektorer}. Dersom basisvektorene har lengde 1, kaller vi de \emph{enhetsvektorer}. Alle andre vektorer kan uttrykkes som en lineær kombinasjon av basisvektorene. Vi lar gjerne enhetsvektorene peke i retningene til koordinataksene, og kaller de $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$ i $xy$-planet. I tre dimensjoner har vi også en enhetsvektor $\hat{\mathbf{z}}$ som peker i $z$-retning.
 
 \defn{Enhetsvektor}{En enhetsvektor er en vektor med lengde 1 som angir en bestemt retning i rommet.}
 

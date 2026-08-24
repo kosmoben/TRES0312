@@ -10,6 +10,7 @@
 \documentclass[aspectratio=169, 12pt]{beamer}
 
 \usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}   % for "visible on=<->" i enkelte tikz-figurer
 
 %--------------------------------------------------------------------------
 %  DOKUMENTINFO
@@ -89,27 +90,136 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Dekomponering av vektorer
+%  SLIDE 5 — Dekomponering av vektorer i koordinatsystem
 %--------------------------------------------------------------------------
-\begin{frame}{Dekomponering av vektorer}
+\begin{frame}[t]{Dekomponering av vektorer}
 
-  Fysikkens lover formuleres med vektorer, uavhengig av koordinatsystem. Når vi skal regne, \textit{dekomponerer} vi vektorlikningen i hver retning:
+  \vspace{0.5cm}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.8, baseline=(current bounding box.center)]
+        \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+        \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+        \foreach \x in {1,2,3,4} {
+          \draw (\x,0.08) -- (\x,-0.08);
+          \node[below=3pt, font=\small] at (\x,0) {$\x$};
+        }
+        \foreach \y in {1,2,3} {
+          \draw (0.08,\y) -- (-0.08,\y);
+          \node[left=3pt, font=\small] at (0,\y) {$\y$};
+        }
+        \draw[->, very thick, pointCol] (0,0) -- (3,2);
+        \node[above left=1pt, font=\small, pointCol] at (1.55,1.1) {$\vec{r}$};
+        \draw[->, thick, accGraphColor, visible on=<2->] (0,0) -- (3,0)
+              node[midway, below=3pt, font=\small, accGraphColor] {$r_x$};
+        \draw[->, thick, accGraphColor, visible on=<2->] (3,0) -- (3,2)
+              node[midway, right=3pt, font=\small, accGraphColor] {$r_y$};
+        \draw[dashed, gray!50, visible on=<2->] (3,2) -- (0,2);
+        \fill[pointCol, visible on=<2->] (3,2) circle (2.2pt);
+        \draw[textcolor, visible on=<2->] (0.7,0) arc (0:33.7:0.7);
+        \node[font=\small, textcolor, visible on=<2->] at (1.05,0.22) {$\theta$};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \vspace{0.3cm}
+      \onslide<2->{%
+      Vinkelen $\theta$ er vinkelen mellom vektoren $\vec r$ og positiv $x$-akse.
 
-  \graabox{%
-    $\vec{v}(t) = \vec{v}_0 + \vec{a}t$
-    \quad$\Longrightarrow$\quad
-    $v_x(t) = v_{0x} + a_x t, \;\; v_y(t) = v_{0y} + a_y t$
-  }
+      \[
+        r = |\vec r| = \sqrt{r_x^2 + r_y^2}
+      \]
 
-  \pause
-  \merk{Fysikkens lover er uavhengig av koordinatsystem}{%
-  Lengden til et hus er den samme enten du måler det med en tommestokk i meter eller i tommer.
+      \[
+        \theta = \arctan\!\left(\frac{r_y}{r_x}\right)
+      \]
+      }%
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Vektoren er uavhengig av koordinatsystemet
+%--------------------------------------------------------------------------
+\begin{frame}[t]{Vektoren er uavhengig av koordinatsystemet}
+
+  \vspace{0.5cm}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.8, baseline=(current bounding box.center)]
+        % Usynlig kopi av aksene fra forrige slide, kun for å låse samme "bounding box"
+        % (og dermed samme posisjon for $\vec r$) --- selve aksene tegnes ikke her.
+        \begin{scope}[opacity=0]
+          \draw[->] (-0.5,0) -- (4.6,0) node[right, font=\small] {$x$};
+          \draw[->] (0,-0.5) -- (0,3.4) node[above, font=\small] {$y$};
+          \foreach \x in {1,2,3,4} {
+            \draw (\x,0.08) -- (\x,-0.08);
+            \node[below=3pt, font=\small] at (\x,0) {$\x$};
+          }
+          \foreach \y in {1,2,3} {
+            \draw (0.08,\y) -- (-0.08,\y);
+            \node[left=3pt, font=\small] at (0,\y) {$\y$};
+          }
+        \end{scope}
+        % Lås "bounding box" til akkurat det de usynlige aksene over spenner over,
+        % slik at det roterte koordinatsystemet under ikke forskyver plasseringen.
+        \path[use as bounding box] (current bounding box.south west) rectangle (current bounding box.north east);
+        \begin{scope}[visible on=<2->, rotate=20]
+          \draw[->, textcolor!55] (-0.4,0) -- (4.0,0) node[right, font=\small, textcolor!70] {$x'$};
+          \draw[->, textcolor!55] (0,-0.4) -- (0,2.2) node[above, font=\small, textcolor!70] {$y'$};
+          \draw[dashed, gray!55] (3.503,0) -- (3.503,0.853) -- (0,0.853);
+          \draw[->, thick, accGraphColor] (0,0) -- (3.503,0)
+                node[midway, below=3pt, font=\small, accGraphColor] {$r_x'$};
+          \draw[->, thick, accGraphColor] (3.503,0) -- (3.503,0.853)
+                node[midway, right=3pt, font=\small, accGraphColor] {$r_y'$};
+        \end{scope}
+        \draw[->, very thick, pointCol] (0,0) -- (3,2);
+        \node[above left=1pt, font=\small, pointCol] at (1.55,1.1) {$\vec{r}$};
+        \node[above right=1pt, font=\small, pointCol, visible on=<2->] at (3,2) {$(r_x',\,r_y')$};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \vspace{0.3cm}
+      \onslide<2->{%
+      Vinkelen $\theta'$ er vinkelen mellom vektoren $\vec r$ og positiv $x'$-akse.
+
+      \[
+        r = |\vec r| = \sqrt{(r_x')^2 + (r_y')^2}
+      \]
+
+      \[
+        \theta' = \arctan\!\left(\frac{r_y'}{r_x'}\right)
+      \]
+      }%
+    \end{column}
+  \end{columns}
+
+  \vspace{-0.5cm}
+  \onslide<2->{%
+  {\small
+  \merk{Vektoren er uavhengig av koordinatsystem}{%
+  Komponentene endrer seg --- men $\vec r$ og lengden $r$ er uendret.
+  }}%
+  }%
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Dekomponering av vektorer
+%--------------------------------------------------------------------------
+\begin{frame}{Fysikk og koordinatsystem...}
+  \tanke{}{%
+  Er fysikken avhengig av koordinatvalg?
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Aktivitet: dekomponering av hastighet
+%  SLIDE 8 — Aktivitet: dekomponering av hastighet
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -124,7 +234,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 7 — Aktivitet: trigonometri og vektorkomponenter
+%  SLIDE 9 — Aktivitet: trigonometri og vektorkomponenter
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -134,8 +244,20 @@
 
 \end{frame}
 
+
 %--------------------------------------------------------------------------
-%  SLIDE 8 — Eksempel: posisjonsvektor i prosjektilbevegelse
+%  SLIDE 10 — Aktivitet: størrelse og retning
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Størrelse og retning}{%
+  Finn lengde og vinkel til vektoren $\vec{v} = [3,\,4]$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Eksempel: posisjonsvektor i prosjektilbevegelse
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: Kule saker}
 
@@ -171,7 +293,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 9 — Eksempel: hastighetsvektor i prosjektilbevegelse
+%  SLIDE 12 — Eksempel: hastighetsvektor i prosjektilbevegelse
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: Kule saker}
 
@@ -218,39 +340,59 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 10 — Vektorlengde og -vinkel
+%  SLIDE 13 — Eksempel: dekomponering av hastighet i prosjektilbevegelse
 %--------------------------------------------------------------------------
-\begin{frame}{Størrelse og retning til en vektor}
+\begin{frame}{Eksempel: Kule saker}
 
-  \defn{Vektorlengde}{
-  Lengden til en vektor $\vec{v} = [v_x,v_y]$ er gitt ved
-  \[
-    v = |\vec{v}| = \sqrt{v_x^2 + v_y^2}.
-  \]
-  }
-  \pause
-  \defn{Vektorvinkel}{
-  Vinkelen til en vektor $\vec{v} = [v_x,v_y]$, målt fra positiv $x$-retning, er gitt ved
-  \[
-    \theta = \arctan\!\left(\frac{v_y}{v_x}\right).
-  \]
-  }
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \vspace{0.4cm}
+      \begin{center}
+      \begin{tikzpicture}
+      \node[anchor=south west, inner sep=0] (img) at (0,0)
+        {\includegraphics[width=\linewidth]{Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_\ifdarkmode dark\else clean\fi.png}};
+      \begin{scope}[x={(img.south east)-(img.south west)}, y={(img.north west)-(img.south west)}]
+      % Posisjonsvektorer
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.3443,0.7188);
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.5632,0.6313);
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.6891,0.4577);
+      \node[font=\footnotesize, posGraphColor] at (0.3727,0.5094) {$\vec{S}(t_1)$};
+      \node[font=\footnotesize, posGraphColor] at (0.5044,0.4033) {$\vec{S}(t_2)$};
+      \node[font=\footnotesize, posGraphColor] at (0.5588,0.2963) {$\vec{S}(t_3)$};
+      % Hastighetsvektorer (samme horisontalkomponent $v_x$ hele veien, tangent til banen)
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.3443,0.7188) -- (0.4181,0.7109);
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.5632,0.6313) -- (0.6369,0.5663);
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.6891,0.4577) -- (0.7629,0.3072);
+      \node[font=\footnotesize, velGraphColor] at (0.3835,0.7629) {$\vec{v}(t_1)$};
+      \node[font=\footnotesize, velGraphColor] at (0.6162,0.6405) {$\vec{v}(t_2)$};
+      \node[font=\footnotesize, velGraphColor] at (0.7517,0.4113) {$\vec{v}(t_3)$};
+      % Hastighetsvektor for kula til venstre (samme høyde som $S(t_3)$, kun vertikal fart)
+      \draw[-{Stealth[length=4mm,width=3mm]}, very thick, velGraphColor] (0.0627,0.4597) -- (0.0627,0.3092);
+      \node[font=\footnotesize, velGraphColor] at (0.0898,0.3845) {$\vec{v}$};
+      \end{scope}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \vspace{0.4cm}
+      Når vi skal regne, \textit{dekomponerer} vi vektorlikningen i hver retning:
+
+      \graabox{%
+        $\vec{v}(t) = \vec{v}_0 + \vec{a}t$
+        \\[5pt]
+        $\Longrightarrow$
+        \\[5pt]
+        $v_x(t) = v_{0x} + a_x t$
+        \\[3pt]
+        $v_y(t) = v_{0y} + a_y t$
+      }
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 11 — Aktivitet: størrelse og retning
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Størrelse og retning}{%
-  Finn lengde og vinkel til vektoren $\vec{v} = [3,\,4]$.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 12 — Pause
+%  SLIDE 14 — Pause
 %--------------------------------------------------------------------------
 \begin{frame}{}
 \begin{center}
@@ -259,7 +401,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — Definisjon: vektoraddisjon
+%  SLIDE 15 — Definisjon: vektoraddisjon
 %--------------------------------------------------------------------------
 \begin{frame}{Operasjoner med vektorer}
 
@@ -273,7 +415,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Aktivitet: vektoraddisjon
+%  SLIDE 16 — Aktivitet: vektoraddisjon
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -284,7 +426,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Definisjon: skalarprodukt
+%  SLIDE 17 — Definisjon: skalarprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Skalarprodukt}
 
@@ -299,7 +441,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 16 — Geometrisk tolkning
+%  SLIDE 18 — Geometrisk tolkning
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -330,7 +472,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Aktivitet: skalarprodukt og vinkel
+%  SLIDE 19 — Aktivitet: skalarprodukt og vinkel
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -338,10 +480,34 @@
   Finn skalarproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$, og bestem vinkelen mellom dem.
   }
 
+  \pause
+  \aktivitet{Skalarprodukt med seg selv}{%
+  Finn skalarproduktet til vektoren $\vec{u} = [5,\,3]$ med seg selv. Sammenlikn dette med lengden av vektoren. Ser du noen likheter?
+  }
+
+  \pause
+  \aktivitet{Skalarprodukt med enhetsvektorer}{%
+  Beregn skalarproduktene mellom enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$. Hva forteller dette om vinkelen mellom dem?
+  }
+
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 18 — Definisjon: kryssprodukt
+%  SLIDE 20 — Definisjon: vektorlengde via prikkprodukt
+%--------------------------------------------------------------------------
+\begin{frame}{Vektorlengde via prikkprodukt}
+
+  \defn{Vektorens lengde}{
+  For en vektor $\vec{u}=[u_x,u_y]$ er lengden gitt ved prikkproduktet av vektoren med seg selv:
+  \[
+    |\vec{u}| = \sqrt{\vec{u}\cdot\vec{u}} = \sqrt{u_x^2 + u_y^2}.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 21 — Definisjon: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Kryssprodukt}
 
@@ -377,10 +543,17 @@
     \end{column}
   \end{columns}
 
+  \vspace{-0.3cm}
+  \pause
+  {\footnotesize
+  \merk{Kraftmoment}{%
+  Dette produktet trengs f.eks. til å beskrive kraftmoment.
+  }}
+
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 19 — Aktivitet: kryssprodukt
+%  SLIDE 22 — Aktivitet: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -391,7 +564,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 20 — Matematisk modellering
+%  SLIDE 23 — Matematisk modellering
 %--------------------------------------------------------------------------
 \begin{frame}{Matematisk modellering}
 
@@ -411,16 +584,17 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 21 — Neste gang
+%  SLIDE 24 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
-  \Huge{Neste gang: Kapittel 3 --- Kinematikk!}
+  \Huge{Neste gang: Kapittel 3.1-3.4}
   \begin{itemize}
+    \item \textbf{Kun 1 forelesning: 14:10-15:00!}
     \item Hva er kinematikk?
     \item Strekning og hastighet
     \item Akselerasjon
-    \item Bevegelseslikningene
+    \item Bevegelseslikningene for konstant akselerasjon
   \end{itemize}
 \end{center}
 \end{frame}
