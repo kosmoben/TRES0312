@@ -20,7 +20,7 @@ Dersom all bevegelse er langs samme, rette linje så kallder vi bevegelsen \text
 \begin{itemize}
     \item $s$ er strekning, altså størrelsen på \textbf{avstandsvektoren} $\vec{s}$. Vi kommer nok til å bruke begrep som \textit{posisjon} og \textit{forflytning} i tillegg til strekning og avstand. Poenget er at vi må gjøre forsljell på $s$ \textit{uten} vektortegn og \textit{med} vektortegn.
     \item $v$ kalles \textbf{fart} og er størrelsen på \textbf{hastighetsvektoren} $\vec{v}$.
-    \item $a$ er størrelsen på akselerasjonsvektoren $\vec{a}$.
+    \item $a$ er størrelsen på \textbf{akselerasjonsvektoren} $\vec{a}$.
 \end{itemize}
 
 En bil som kjører på en rett strekning vekk fra en lyktestolpe tilbakelegger større og større strekning (målt fra lyktestolpen). Vi sier gjerne at strekningen er en funksjon av tid, og skriver $s(t)$:
@@ -131,14 +131,14 @@ Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal 
 \defn{Gjennomsnittsfart og gjennomsnittshastighet}{
     Matematisk kan gjennomsnittshastigheten uttrykkes som:
     \begin{align}
-        \bar{\vec{v}}= \frac{\vec{\Delta s}}{\Delta t}= \frac{s(t+\Delta t) - s(t)}{\Delta t}
+        \bar{\vec{v}}= \frac{\vec{\Delta s}}{\Delta t}= \frac{\vec{s}(t+\Delta t) - \vec{s}(t)}{\Delta t}
     \end{align}
     hvor \( \Delta \vec{s} \) er den totale forflytningen, og \( \Delta t \) er den totale tiden. Lengden av denne vektoren kalles for gjennomsnittsfarten, og er gitt ved:
     \begin{align}
         \bar{v} = |\bar{\vec{v}}| = \frac{|\vec{\Delta s}|}{\Delta t}
     \end{align}
 }
-Gjennomsnitts\textit{fart}beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
+Gjennomsnitts\textit{fart} beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
 
 \exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $\SI{60}{\kilo\metre}$ på $\SI{1.5}{\hour}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
 }
@@ -158,7 +158,7 @@ En bil kjører $\SI{120}{\kilo\metre}$ på $\SI{1.5}{\hour}$.
 \end{enumerate}
 }
 
-\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom forflytningen $\Delta \vec{s}$ endrer retning. Se for deg en kurve gjennom rommet — la oss si det er banen som Erling Braut Haaland følger i en spurt. For. ethvert par med tidspunkt så kan vi tegne opp en forskjellsvektor $\Delta\vec{s}$ som viser avstanden mellom posisjonen til Haaland ved de to tidspunktene. Denne vektoren kan vi bruke til å beregne gjennomsnittsfarten til Haaland mellom de to tidspunktene. Kanskje ser du nå også at dersom vi lar $\Delta t$ gå mot null, så vil $\Delta\vec{s}$ også gå mot null, og vi vil kunne finne den momentane hastigheten til Haaland på et gitt tidspunkt. Denne hastigheten vil for et hvert tidspunkt være tangent til kurva som Haaland løper. Det er som en buss som er ute og kjører. Bussen sin lengde peker alltid i fartsretningen, og hadde vi tegnet en linje gjennom bussen så ville den linja til enhvert tid vært tangent til veien (mer presist til bussens bane). 
+\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom forflytningen $\Delta \vec{s}$ endrer retning. Se for deg en kurve gjennom rommet — la oss si det er banen som Erling Braut Haaland følger i en spurt. For. ethvert par med tidspunkt så kan vi tegne opp en forskjellsvektor $\Delta\vec{s}$ som viser avstanden mellom posisjonen til Haaland ved de to tidspunktene. Denne vektoren kan vi bruke til å beregne gjennomsnittsfarten til Haaland mellom de to tidspunktene. Kanskje ser du nå også at dersom vi lar $\Delta t$ gå mot null, så vil $\Delta\vec{s}$ også gå mot null, og vi vil kunne finne den momentane hastigheten til Haaland på et gitt tidspunkt. Denne hastigheten vil for et hvert tidspunkt være tangent til kurva som Haaland løper. Det er som en buss som er ute og kjører. Bussen sin lengde peker alltid i fartsretningen, og hadde vi tegnet en linje gjennom bussen så ville den linja til enhvert tid vært tangent til bussens bane.
 
 %--- To figurer side om side: posisjonsvektorer (venstre) og hastighetsvektorer (høyre)
 % Bezier: P0=(1.5,2.5), P1=(2.8,3.3), P2=(4.2,1.8), P3=(5.8,2.4)
@@ -286,7 +286,7 @@ La oss se på et par eksempler.
           \[\bar{v}_{PQ}=\SI{3}{\kilo\metre\per\hour},\quad\bar{v}_{QR}=\SI{4}{\kilo\metre\per\hour}\]
           Total gjennomsnittsfart for båt 2 (forflytning $=\SI{5}{\kilo\metre}$, tid $=\SI{2}{\hour}$):
           \[\doubleunderline{\bar{v}_2=\frac{\SI{5}{\kilo\metre}}{\SI{2}{\hour}}=\SI{2{,}5}{\kilo\metre\per\hour}}\]
-    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $\SI{4}{\kilo\metre\per\hour}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis.
+    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $\SI{4}{\kilo\metre\per\hour}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis. Dette viser at begrepet gjennomsnittsfart er av begrenset interesse. Gjennomsnittsfarten til en sprinter som løper 100 meter én vei og så 100 meter tilbake er med den samme logikken lik 0! Frem og tilbake er like langt...
   \end{enumerate}
 \end{minipage}%
 \hfill

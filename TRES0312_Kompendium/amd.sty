@@ -909,13 +909,16 @@
 %  \graabox{Innhold} — grå boks for å utheve formler/resultater.
 %  Brukes i STEDET FOR \boxed{} når noe skal fremheves.
 %--------------------------------------------------------------------------
+\newsavebox{\graaboxsavebox}
 \NewDocumentCommand{\graabox}{+m}{%
+  \sbox{\graaboxsavebox}{\begin{varwidth}{\dimexpr0.92\linewidth-24pt\relax}\centering\color{black}#1\end{varwidth}}%
   \begin{center}
   \begin{tcolorbox}[
     enhanced, arc=2mm, boxrule=0pt,
     colframe=black!8!white, colback=black!8!white,
     top=7pt, bottom=7pt, left=12pt, right=12pt,
     before skip=6pt, after skip=6pt,
+    width=\dimexpr\wd\graaboxsavebox+24pt\relax,
   ]
   \centering\color{black} #1
   \end{tcolorbox}

@@ -102,6 +102,48 @@ Det kan også være verdt å repetere følgende regler for notasjon:
 \end{align*}}
 Disse bør også sitte i fingrene.
 
+\subsection{Likningssystem}
+I fysikken må vi ofte sette opp flere likninger for å beskrive en situasjon riktig. For å finne det vi er ute etter, må vi da gjerne løse et \emph{likningssystem} — altså flere likninger med flere ukjente. Vi kommer tilbake til dette i senere kapitler, men her er et eksempel på hvordan man kan løse et slikt system.
+
+\exm{Redningsbil drar en bil}{%
+En redningsbil drar en bil som i utgangspunktet står i ro, med en konstant kraft $F = \SI{3000}{\newton}$ i horisontal retning. Massen til bilen er $m = \SI{1200}{\kilo\gram}$. Hva er farten $v$ til bilen etter $t = \SI{5}{\second}$?
+}
+
+\svar{%
+\noindent
+Vi kjenner to sammenhenger som begge må være oppfylt samtidig — et likningssystem med to likninger og to ukjente ($a$ og $v$):
+\[
+\begin{cases}
+F = ma \\
+v = v_0 + at
+\end{cases}
+\]
+Vi løser systemet med innsettingsmetoden. Fra den første likningen finner vi et \emph{uttrykk} for akselerasjonen — vi setter ikke inn tall ennå:
+\[
+a = \frac{F}{m}.
+\]
+Vi setter dette uttrykket for $a$ inn i den andre likningen, og løser for $v$. Vi finner
+\[
+v = v_0 + at = v_0+\frac{F}{m}t.
+\]
+Først nå, når vi har uttrykket klart, setter vi inn tallverdiene: Siden bilen starter i ro er $v_0 = 0$. Videre er både massen $m$ og kraften $F$ oppgitt. Vi finner
+\[
+v = \frac{\SI{3000}{\newton}}{\SI{1200}{\kilo\gram}} \cdot \SI{5}{\second} = \doubleunderline{\SI{12{,}5}{\metre\per\second}}.
+\]
+}
+
+\begin{mymerk*}{}
+Legg merke til fremgangsmåten: vi satte opp \emph{to} likninger — én fra kraft og masse, én fra kinematikken — og kombinerte dem til ett generelt \emph{uttrykk} for $v$, \emph{før} vi satte inn tallverdier. Det lønner seg å venne seg til denne rekkefølgen: finn uttrykket for det du er ute etter først, og regn ut svaret med tall helt til slutt.
+\end{mymerk*}
+
+\oppgave{Per og Kari}{%
+Per er dobbelt så gammel som Kari, som er 6 år yngre enn Per.
+\begin{enumerate}[a)]
+    \item Sett opp et likningssystem med to likninger og to ukjente som beskriver situasjonen.
+    \item Løs likningssystemet med innsettingsmetoden. Hvor gamle er Per og Kari?
+\end{enumerate}
+}
+
 \section{Funksjoner og plotting}
 
 En \emph{funksjon} er en regel som til enhver innverdi $x$ knytter én bestemt utverdi $f(x)$. I fysikk er funksjoner et sentralt verktøy — for eksempel er posisjonen $s$ til et objekt i bevegelse en funksjon av tid $t$. Da skriver vi gjerne $s(t)$ som funksjonsnavn. 
@@ -898,19 +940,19 @@ Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.
 
 
 \subsection*{Multiplikasjon av vektorer: kryssproduktet}
-Kryssprodukt (engelsk: \textit{cross product}) er en operasjon mellom to vektorer som gir en ny vektor vinkelrett på begge. I to dimensjoner reduseres kryssproduktet til et enkelt tall — z-komponenten — som blant annet brukes til å beregne dreiemoment og areal av parallelogrammer.
+Kryssprodukt (engelsk: \textit{cross product}) er en operasjon mellom to vektorer som gir en ny vektor vinkelrett på begge. I to dimensjoner reduseres kryssproduktet til et enkelt tall — z-komponenten — som blant annet brukes til å beregne dreiemoment og areal av parallelogrammer. Egentlig defineres kryssproduktet kun i tre dimensjoner, men vi kan bruke det i to dimensjoner ved å anta at vektorene ligger i xy-planet, og at kryssproduktet peker i z-retning.
 
-\defn{Kryssprodukt i 2D}{For to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ i $xy$-planet er kryssproduktets z-komponent
+\defn{Kryssprodukt i 2D}{For to vektorer $\vec{u} = [u_x,\, u_y]$ og $\vec{v} = [v_x,\, v_y]$ i $xy$-planet peker kryssproduktet i $z$-retning, med størrelse 
 \begin{align}
-    (\vec{u}\times\vec{v})_z = u_x\,v_y - u_y\,v_x.
+    |\vec{u}\times\vec{v}| = u_x\,v_y - u_y\,v_x.
 \end{align}
-Størrelsen til kryssproduktet er
+En ekvivalent definisjon av størrelsen til kryssproduktet er
 \begin{align}
     |\vec{u}\times\vec{v}| = |\vec{u}|\,|\vec{v}|\,\sin\theta,
 \end{align}
 der $\theta$ er vinkelen mellom vektorene.}
 
-Noen viktige egenskaper:
+Fra definisjonen over kan vi observere noen viktige egenskaper:
 \begin{itemize}
     \item Dersom $\theta = 0^\circ$ (parallelle vektorer) er kryssproduktet \textbf{null}.
     \item Dersom $\theta = 90^\circ$ (vinkelrette vektorer) er størrelsen \textbf{maksimal}: $|\vec{u}\times\vec{v}|=|\vec{u}|\,|\vec{v}|$.
@@ -992,6 +1034,11 @@ En typisk arbeidsgang når vi skal modellere et fysisk system, er:
   \item Tolk svaret: gir det mening fysisk (riktig enhet, rimelig størrelsesorden, riktig fortegn)?
 \end{enumerate}
 Vi kommer til å bruke nøyaktig denne fremgangsmåten gjennom resten av kompendiet.
+
+\tanke{}{%
+Hva bør man gjøre dersom svaret ikke gir mening fysisk?}
+
+Da har man sannsynligvis gjort en feil i modelleringen, eller en feil i utregningene. Naturen lar seg beskrive matematisk, men vi vet ikke på forhånd hvilke likninger som gjelder --- det er nettopp det vi prøver å finne ut av. I dette faget lærer du en del grunnleggende konsepter. Målet er at det vil gi deg en verktøykasse til senere, når du som ingeniør eller i andre settinger selv må modellere en situasjon. Da vet du ikke lenger på forhånd hva som er den beste modellen, og må finne ut av dette ved hjelp av å kjøre prosessen over itterativt.
 
 \clearpage
 \section{Flere oppgaver}
