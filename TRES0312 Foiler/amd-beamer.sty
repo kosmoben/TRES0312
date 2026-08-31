@@ -290,7 +290,7 @@
 %  \defn{Tittel}{Innhold}
 %--------------------------------------------------------------------------
 \NewDocumentCommand{\defn}{m+m}{%
-  \refstepcounter{defncounter}%
+  \only<1>{\refstepcounter{defncounter}}%
   \begin{tcolorbox}[
     enhanced, frame hidden,
     titlerule=0mm, toptitle=1mm, bottomtitle=1mm,
@@ -413,7 +413,7 @@
 
 %  \defnr{Tittel}{label}{Innhold} — med \label for xr-kryssreferanse
 \NewDocumentCommand{\defnr}{mm+m}{%
-  \refstepcounter{defncounter}%
+  \only<1>{\refstepcounter{defncounter}}%
   \label{defn:#2}%
   \begin{tcolorbox}[
     enhanced, frame hidden,
@@ -434,7 +434,7 @@
 %  \exm{Tittel}{Innhold}
 %--------------------------------------------------------------------------
 \NewDocumentCommand{\exm}{m+m}{%
-  \refstepcounter{exmcounter}%
+  \only<1>{\refstepcounter{exmcounter}}%
   \begin{tcolorbox}[
     blanker, left=5mm, parbox=false,
     before skip=5pt, after skip=5pt,
@@ -471,7 +471,7 @@
 %  \oppgave{Tittel}{Innhold}
 %--------------------------------------------------------------------------
 \NewDocumentCommand{\oppgave}{m+m}{%
-  \refstepcounter{oppgcounter}%
+  \only<1>{\refstepcounter{oppgcounter}}%
   \begin{tcolorbox}[
     enhanced, arc=1mm, boxrule=0pt,
     colframe=oppgtitle,

@@ -17,7 +17,7 @@ Disse begrepene er alle sammen beskrevet som vektorer (derfor har de piler), ett
 
 \section{Strekning ($\vec{s}$) og hastighet ($\vec{v}$)}
 Dersom all bevegelse er langs samme, rette linje så kallder vi bevegelsen \textit{rettlinjet}. I dette tilfellet kan vi beskrive strekning og fart som skalarer, altså uten vektornotasjon. Dersom bevegelsen er krum, må vi bruke vektorer. Dette refererer vi til som \textit{krumlinjet} bevegelse. Vi skal se på begge deler. Merk derfor følgende notasjon:
-\begin{itemize}
+\begin{itemize}[itemsep=2pt, topsep=4pt, parsep=0pt]
     \item $s$ er strekning, altså størrelsen på \textbf{avstandsvektoren} $\vec{s}$. Vi kommer nok til å bruke begrep som \textit{posisjon} og \textit{forflytning} i tillegg til strekning og avstand. Poenget er at vi må gjøre forsljell på $s$ \textit{uten} vektortegn og \textit{med} vektortegn.
     \item $v$ kalles \textbf{fart} og er størrelsen på \textbf{hastighetsvektoren} $\vec{v}$.
     \item $a$ er størrelsen på \textbf{akselerasjonsvektoren} $\vec{a}$.
@@ -138,13 +138,13 @@ Hvilken strekning er det snakk om i formelen over? Og hvilken tid? Når vi skal 
         \bar{v} = |\bar{\vec{v}}| = \frac{|\vec{\Delta s}|}{\Delta t}
     \end{align}
 }
-Gjennomsnitts\textit{fart} beskriver altså den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. Det er viktig å merke seg at gjennomsnittsfart og gjennomsnittshastighet ikke nødvendigvis er det samme. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningen være null, og dermed vil gjennomsnittshastigheten være null, mens gjennomsnittsfarten vil være positiv, siden den totale tilbakelagte strekningen er omkretsen til sirkelen, og altså større enn null.
+Gjennomsnitts\textit{fart} beskriver altså størrelsen på den totale forflytningen til et objekt delt på den totale tiden som har gått. Ettersom forflytning er en vektor, så er gjennomsnitts\textit{hastighet} en vektor. Gjennomsnittsfart er derimot en skalar, siden det er lengden av gjennomsnittshastighetsvektoren. 
 
 \exm{Gjennomsnittsfart i rettlinjet bevegelse}{En bil kjører $\SI{60}{\kilo\metre}$ på $\SI{1.5}{\hour}$. Finn gjennomsnittsfarten i km/t. Gjør om til m/s
 }
 \svar{%
 Vi bruker definisjonen $\bar{v} = \dfrac{\Delta s}{\Delta t}$:
-\[\bar{v} = \frac{\SI{60}{\kilo\metre}}{\SI{1{,}5}{\hour}} = \doubleunderline{\SI{40}{\kilo\metre\per\hour}}\]
+\[\bar{v} = \frac{\SI{60}{\kilo\metre}}{\SI{1.5}{\hour}} = \doubleunderline{\SI{40}{\kilo\metre\per\hour}}\]
 Vi bruker omregningsfaktoren $\SI{1}{\kilo\metre\per\hour} = \frac{\SI{1\,000}{\metre}}{\SI{3\,600}{\second}}$:
 \[\bar{v} = 40\;\si{\kilo\metre\per\hour} \cdot \frac{\SI{1\,000}{\metre}}{\SI{3\,600}{\second}} = \frac{40\,000}{3\,600}\,\si{\metre\per\second} \approx \doubleunderline{\SI{11}{\metre\per\second}}\]
 }
@@ -158,7 +158,8 @@ En bil kjører $\SI{120}{\kilo\metre}$ på $\SI{1.5}{\hour}$.
 \end{enumerate}
 }
 
-\paragraph{Krumlinjet bevegelse.} Når et objekt beveger seg krumlinjet, så blir det hele litt mer komplisert, ettersom forflytningen $\Delta \vec{s}$ endrer retning. Se for deg en kurve gjennom rommet — la oss si det er banen som Erling Braut Haaland følger i en spurt. For. ethvert par med tidspunkt så kan vi tegne opp en forskjellsvektor $\Delta\vec{s}$ som viser avstanden mellom posisjonen til Haaland ved de to tidspunktene. Denne vektoren kan vi bruke til å beregne gjennomsnittsfarten til Haaland mellom de to tidspunktene. Kanskje ser du nå også at dersom vi lar $\Delta t$ gå mot null, så vil $\Delta\vec{s}$ også gå mot null, og vi vil kunne finne den momentane hastigheten til Haaland på et gitt tidspunkt. Denne hastigheten vil for et hvert tidspunkt være tangent til kurva som Haaland løper. Det er som en buss som er ute og kjører. Bussen sin lengde peker alltid i fartsretningen, og hadde vi tegnet en linje gjennom bussen så ville den linja til enhvert tid vært tangent til bussens bane.
+\subsection*{Hastighet og fart i krumlinjet bevegelse} 
+Når et objekt beveger seg krumlinjet, så kommer blir det hele litt mer komplisert enn ved rettlinjet bevegelse. Nå må vi nemlig ta høyde for at forflytningen $\Delta \vec{s}$ endrer retning. Se for deg en kurve gjennom rommet — la oss si det er banen som Erling Braut Haaland følger i en spurt. For ethvert par med tidspunkt så kan vi tegne opp en forskjellsvektor $\Delta\vec{s}$ som viser avstanden mellom posisjonen til Haaland ved de to tidspunktene. Denne vektoren kan vi bruke til å beregne gjennomsnittshastigheten til Haaland mellom de to tidspunktene. Kanskje ser du nå også at dersom vi lar $\Delta t$ gå mot null, så vil $\Delta\vec{s}$ også gå mot null, og vi vil kunne finne den momentane hastigheten til Haaland på et gitt tidspunkt. Denne hastigheten vil for et hvert tidspunkt være tangent til kurva som Haaland løper. Det er som en buss som er ute og kjører. Bussen sin lengde peker alltid i fartsretningen, og hadde vi tegnet en linje gjennom bussen så ville den linja til enhvert tid vært tangent til bussens bane.
 
 %--- To figurer side om side: posisjonsvektorer (venstre) og hastighetsvektorer (høyre)
 % Bezier: P0=(1.5,2.5), P1=(2.8,3.3), P2=(4.2,1.8), P3=(5.8,2.4)
@@ -260,39 +261,23 @@ En bil kjører $\SI{120}{\kilo\metre}$ på $\SI{1.5}{\hour}$.
 \end{figure}
 
 
-La oss se på et par eksempler.
+I krumlinjet bevegelse er ikke nødvendigvis gjennomsnittsfart lenger et så nyttig begrep, da det ikke nødvendigvis gir et riktig inntrykk av hvor fort et legeme faktisk har beveget seg. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningsvektoren være null (prøv å tegne opp $\Delta s$ mellom start og slutt!) --- og dermed er både gjennomsnittshastigheten \emph{og} gjennomsnittsfarten null. Men jeg er ganske sikker på at Karsten Warholm har løpt ganske fort rundt friidrettsbanen selv om gjennomsnittsfarten hans er null... Problemet oppstår fordi hastighet er definert ut ifra forflytningsvektoren $\vec{Delta s}$. Dermed får også farten, som er størrelsen på hastighetsvektoren, det samme problemet. Det er derfor nyttig å innføre et begrep til, kalt \textit{banefart}. Dette er farten som et legeme har til enhver tid langs den buen, eller banen, det går.
+
+\defn{Banefart}{
+    Banefarten $v$ er strekning tilbakelagt i en bane, dividert med tiden brukt på strekningen.
+}
+Her ser vi altså ikke på netto forflytning, men summativ forflytning. Merk at vi bruker samme synbol som ellers (for fart). Så får vi heller la sammenhengen gjøre det klart hvilket begrep som er hensiktsmessig å bruke. La oss ta et par eksempler som illustrerer forskjellen.
 
 \exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$ og bruker 2 timer på seilasen. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord.\\
 \textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{QR}$ og $\vec{\Delta s}_\text{PR}$ som beskriver de relevante forflytningene.\\
-\textbf{b)} Hva er gjennomsnittsfarten til båt 1?\\
-\textbf{c)} Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
-\textbf{d)} Hva sier disse utregningene om begrepet gjennomsnittsfart?
+\textbf{b)} Bruk svarene fra a) til å skrive ned tilhørende hastighetsvektorer $\vec{v}_\text{PQ}$, $\vec{v}_\text{QR}$ og $\vec{v}_\text{PR}$. \\
+\textbf{c)} Hva er gjennomsnittsfarten til båt 1 (lengden av hastighetsvektoren)?\\
+\textbf{d)} Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
+\textbf{e)} Hva er banefarten til båt 2 på hele strekningen?
 }
 
 \svar{%
-\noindent
-\begin{minipage}[t]{0.55\linewidth}
-  \vspace{0pt}
-  \begin{enumerate}[\textbf{a)}]
-    \item Forflytningsvektorene (se figur):
-          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\si{\kilo\metre},\quad
-            \vec{\Delta s}_{QR}=[0,\;4]\,\si{\kilo\metre}\]
-          \[\vec{\Delta s}_{PR}=[3,\;4]\,\si{\kilo\metre}\]
-    \item Båt 1 seiler direkte. Forflytningens størrelse:
-          \[|\vec{\Delta s}_{PR}|=\sqrt{3^2+4^2}=\doubleunderline{\SI{5}{\kilo\metre}}\]
-          Gjennomsnittsfart (2 timer totalt):
-          \[\doubleunderline{\bar{v}_1=\frac{\SI{5}{\kilo\metre}}{\SI{2}{\hour}}=\SI{2{,}5}{\kilo\metre\per\hour}}\]
-    \item Gjennomsnittsfart per etappe for båt 2:
-          \[\bar{v}_{PQ}=\SI{3}{\kilo\metre\per\hour},\quad\bar{v}_{QR}=\SI{4}{\kilo\metre\per\hour}\]
-          Total gjennomsnittsfart for båt 2 (forflytning $=\SI{5}{\kilo\metre}$, tid $=\SI{2}{\hour}$):
-          \[\doubleunderline{\bar{v}_2=\frac{\SI{5}{\kilo\metre}}{\SI{2}{\hour}}=\SI{2{,}5}{\kilo\metre\per\hour}}\]
-    \item Selv om båt 2 hadde ulik fart på de to etappene (3 og $\SI{4}{\kilo\metre\per\hour}$), er den totale gjennomsnittsfarten identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid – ikke av hvordan farten varierte underveis. Dette viser at begrepet gjennomsnittsfart er av begrenset interesse. Gjennomsnittsfarten til en sprinter som løper 100 meter én vei og så 100 meter tilbake er med den samme logikken lik 0! Frem og tilbake er like langt...
-  \end{enumerate}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.40\linewidth}
-  \vspace{0pt}
-  \centering
+\begin{center}
   \begin{tikzpicture}
     % Kompassindikator
     \draw[->,thin,gray!60](0.2,4.2)--(0.2,4.8)
@@ -315,37 +300,40 @@ La oss se på et par eksempler.
     \fill(3,0) circle(2pt) node[below right=2pt,font=\small]{$Q$};
     \fill[oppsumcol](3,4) circle(2pt) node[above right=1pt,font=\small]{$R$};
   \end{tikzpicture}
-\end{minipage}
+\end{center}
+
+\begin{enumerate}[\textbf{\alph*)}]
+    \item Forflytningsvektorene (se figur):
+          \[\vec{\Delta s}_{PQ}=[3,\;0]\,\si{\kilo\metre},\quad
+            \vec{\Delta s}_{QR}=[0,\;4]\,\si{\kilo\metre},\quad
+            \vec{\Delta s}_{PR}=[3,\;4]\,\si{\kilo\metre}\]
+    \item Hastighetsvektorene finner vi ved å dele hver forflytning på tiden som ble brukt på den etappen:
+          \[\vec{v}_{PQ}=\frac{\vec{\Delta s}_{PQ}}{\SI{1}{\hour}}=[3,\;0]\,\si{\kilo\metre\per\hour},\quad
+            \vec{v}_{QR}=\frac{\vec{\Delta s}_{QR}}{\SI{1}{\hour}}=[0,\;4]\,\si{\kilo\metre\per\hour}\]
+          \[\vec{v}_{PR}=\frac{\vec{\Delta s}_{PR}}{\SI{2}{\hour}}=[1.5,\;2]\,\si{\kilo\metre\per\hour}\]
+    \item Båt 1 seiler direkte fra $P$ til $R$, så gjennomsnittsfarten er nettopp lengden av $\vec{v}_{PR}$ fra b):
+          \[\bar{v}_1=|\vec{v}_{PR}|=\sqrt{1.5^2+2^2}= \doubleunderline{\SI{2.5}{\kilo\metre\per\hour}}\]
+    \item Gjennomsnittsfart per etappe for båt 2 er lengden av de tilhørende hastighetsvektorene fra b):
+          \[\bar{v}_{PQ}=|\vec{v}_{PQ}|=\SI{3}{\kilo\metre\per\hour},\quad\bar{v}_{QR}=|\vec{v}_{QR}|=\SI{4}{\kilo\metre\per\hour}\]
+          Den \emph{totale} gjennomsnittsfarten regnes derimot fra totalforflytningen over hele tiden --- altså igjen lengden av $\vec{v}_{PR}$:
+          \[\bar{v}_2=|\vec{v}_{PR}|= \doubleunderline{\SI{2.5}{\kilo\metre\per\hour}}\]
+          Selv om båt 2 hadde ulik fart på de to etappene, er den totale gjennomsnittsfarten altså identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid --- ikke av hvordan farten varierte underveis. Vi ser at det er ikke denne farten vi er interessert i. Det egentlig interessante fartsbegrepet i akkurat denne sammenheng, er banefarten, som vi ser på i neste deloppgave.
+    \item Den gjennomsnittlige banefarten ser i stedet på hvor langt båt 2 faktisk har seilt, uavhengig av retning:
+          \[
+          v_{\text{bane},2}=\frac{\SI{3}{\kilo\metre}+\SI{4}{\kilo\metre}}{\SI{2}{\hour}}= \doubleunderline{\SI{3.5}{\kilo\metre\per\hour}},
+          \]
+          altså høyere enn gjennomsnittsfarten på $\SI{2.5}{\kilo\metre\per\hour}$ --- nettopp fordi båt 2 seilte en lengre vei enn den rette linja fra $P$ til $R$. 
+\end{enumerate}
 }
 
+Fra eksemplet over, med båtene, ser vi at når vi ikke lenger har en rettlinjet bevegelse, så er det nødvendig med en presisering. Vi må skille mellom total forflytning og strekning. Forflytning er en vektor som beskriver endring i posisjon, mens strekning er en skalar som beskriver hvor langt et objekt faktisk har beveget seg, om vi summerer forflytninger langs banen.  Dette er spesielt viktig når vi skal regne ut gjennomsnittsfart, da den avhenger av forflytningen, mens gjennomsnittlig banefart avhenger av strekningen.
 
 \exm{Karsten Warholm}{Se for deg at Karsten Warholm løper med konstant fart gjennom en sving. Etter 7 sekunder har han løpt fra inngangen av svingen (punkt $P$) til midten (punkt $Q$). Radiusen i svingen er 36 meter.\\
-\textbf{a)} Finn $\Delta s$ mellom punktene $P$ og $Q$. Hvordan kan vi beskrive Karstens posisjon og fart i dette tilfellet?\\
-\textbf{b)} Hva er gjennomsnittsfarten på strekningen?}
+\textbf{a)} Finn $\vec{\Delta s}$ mellom punktene $P$ og $Q$ og beregn gjennomsnittshastigheten og gjennomsnittsfarten på forflytningen $PQ$.\\
+\textbf{b)} Beregn banefarten til Karsten gjennom svingen, når du vet at han egentlig løper en kvart sirkelbane.}
 
 \svar{%
-\noindent
-\begin{minipage}[t]{0.55\linewidth}
-  \vspace{0pt}
-  \begin{enumerate}[\textbf{a)}]
-    \item Buelengden fra $P$ til $Q$ (en kvart sirkel):
-          \[\Delta s=\tfrac{1}{4}\cdot 2\pi r
-            =\tfrac{\pi\cdot 36}{2}=18\pi\approx \doubleunderline{\SI{56{,}5}{\metre}}\]
-          Forflytningens størrelse (korde $PQ$):
-          \[|\vec{\Delta s}|=\sqrt{36^2+36^2}
-            =36\sqrt{2}\approx \SI{50{,}9}{\metre}\]
-          Merk at farten $|\vec{v}|$ er konstant, men \emph{retningen} endrer seg kontinuerlig (jf.\ pilene i figuren) – hastigheten er derfor \emph{ikke} konstant.
-    \item Dersom vi \textit{vet} at Karsten løper i en bue, bruker vi buelengden:
-          \[\doubleunderline{\bar{v}=\frac{18\pi\,\si{\metre}}{\SI{7}{\second}}\approx \SI{8{,}1}{\metre\per\second}}\]
-          Dersom vi \textit{ikke vet} det og kun kjenner posisjonene $P$ og $Q$, bruker vi korden:
-          \[\bar{v}=\frac{36\sqrt{2}\,\si{\metre}}{\SI{7}{\second}}\approx \SI{7{,}3}{\metre\per\second}\]
-          Gjennomsnittsfarten avhenger altså av hvilken informasjon vi har om banen.
-  \end{enumerate}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.40\linewidth}
-  \vspace{0pt}
-  \centering
+\begin{center}
   \begin{tikzpicture}[scale=0.9]
     % Bane: kvartssirkel fra P=(2.5,0) til Q=(0,2.5)
     \draw[headCol,thick](2.5,0) arc(0:90:2.5);
@@ -370,10 +358,27 @@ La oss se på et par eksempler.
           node[above left=1pt,font=\small]{$Q$};
     \fill(0,0) circle(1.5pt);
   \end{tikzpicture}
-\end{minipage}
+\end{center}
+
+\begin{enumerate}[\textbf{\alph*)}]
+  \item Vi legger origo i sentrum av svingen, med $P$ på $x$-aksen og $Q$ på $y$-aksen, slik at $P=(36,\,0)\,\si{\metre}$ og $Q=(0,\,36)\,\si{\metre}$. Forflytningsvektoren fra $P$ til $Q$ blir da:
+        \[\vec{\Delta s}_{PQ}=Q-P=\doubleunderline{[-36,\;36]\,\si{\metre}}\]
+        med størrelse
+        \[|\vec{\Delta s}_{PQ}|=\sqrt{36^2+36^2}=36\sqrt{2}\approx \underline{\SI{50.9}{\metre}}.\]
+        Gjennomsnittshastigheten er forflytningen delt på tiden:
+        \[\vec{\bar{v}}=\frac{\vec{\Delta s}_{PQ}}{\SI{7}{\second}}\approx \doubleunderline{[-5.14,\;5.14]\,\si{\metre\per\second}}\]
+        og gjennomsnittsfarten er størrelsen på denne vektoren:
+        \[\bar{v}=|\vec{\bar{v}}|=\frac{|\vec{\Delta s}_{PQ}|}{\SI{7}{\second}}\approx \doubleunderline{\SI{7.3}{\metre\per\second}}\]
+        Dette virker påfallende lavt til å beskrive en toppidrettsutøver som spurter gjennom en sving --- vi undersøker hvorfor i b).
+  \item Farten $|\vec{v}|$ til Karsten er konstant hele veien, men siden banen er krum, er strekningen han faktisk løper lengre enn forflytningen $|\vec{\Delta s}_{PQ}|$ fra a). Buelengden langs en kvart sirkel er:
+        \[\Delta s=\tfrac{1}{4}\cdot 2\pi r=\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{\SI{56.5}{\metre}}\]
+        Banefarten bruker denne strekningen --- altså hvor langt Karsten faktisk har løpt --- i stedet for forflytningen:
+        \[v_{\text{bane}}=\frac{18\pi\,\si{\metre}}{\SI{7}{\second}}\approx \doubleunderline{\SI{8.1}{\metre\per\second}}\]
+        Banefarten på $\SI{8.1}{\metre\per\second}$ er altså høyere enn gjennomsnittsfarten på $\SI{7.3}{\metre\per\second}$ fra a) --- nettopp fordi gjennomsnittsfarten kun ser på nettoforflytningen $PQ$, og ikke fanger opp at Karsten faktisk løper en lengre, krum bane. Gjennomsnittsfarten er derfor et dårlig mål på farten hans når tidsintervallet vi tar gjennomsnittet over, blir for stort.
+\end{enumerate}
 }
-La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal finne komponentene.
-\exm{Dekomponering av hastighet}{En fugl flyr med fart $v = \SI{15}{\metre\per\second}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0{,}80$, $\sin 37° \approx 0{,}60$).\\
+La oss tilslutt ta med et eksempel der vi vet retningen til en hastighetsvektor og skal finne komponentene. Denne type beregning så vi også på i forrige kapittel. 
+\exm{Dekomponering av hastighet}{En fugl flyr med fart $v = \SI{15}{\metre\per\second}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0.80$, $\sin 37° \approx 0.60$).\\
 \textbf{a)} Finn den horisontale komponenten $v_x$ og den vertikale komponenten $v_y$ av hastigheten.\\
 \textbf{b)} Verifiser at $|\vec{v}| = \sqrt{v_x^2 + v_y^2} = \SI{15}{\metre\per\second}$.}
 
@@ -381,12 +386,12 @@ La oss se på et eksempel der vi vet retningen til en hastighetsvektor og skal f
 \noindent
 \begin{minipage}[t]{0.55\linewidth}
   \vspace{0pt}
-  \begin{enumerate}[\textbf{a)}]
+  \begin{enumerate}[\textbf{\alph*)}]
     \item Vi dekomponerer langs de to aksene (se figur):
-          \[v_x = v\cos\theta = 15\cdot 0{,}80 = \doubleunderline{\SI{12}{\metre\per\second}}\]
-          \[v_y = v\sin\theta = 15\cdot 0{,}60 = \doubleunderline{\SI{9}{\metre\per\second}}\]
+          \[v_x = v\cos\theta = 15\cdot 0.80 = \doubleunderline{\SI{12}{\metre\per\second}}\]
+          \[v_y = v\sin\theta = 15\cdot 0.60 = \doubleunderline{\SI{9}{\metre\per\second}}\]
     \item Pythagoras bekrefter:
-          \[\sqrt{v_x^2+v_y^2}=\sqrt{12^2+9^2}=\sqrt{144+81}=\sqrt{225}=\doubleunderline{\SI{15}{\metre\per\second}}\;\checkmark\]
+          \[\sqrt{v_x^2+v_y^2}=\sqrt{12^2+9^2}=\sqrt{144+81}=\sqrt{225}= \doubleunderline{\SI{15}{\metre\per\second}}\;\checkmark\]
   \end{enumerate}
   Merk at dette er det samme $9$-$12$-$15$-trekantforholdet (skalert $3$-$4$-$5$) som dukket opp i eksempel 3.2, men nå brukt til å gå fra totalfart til komponenter.
 \end{minipage}%
@@ -435,15 +440,14 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
 % P ved t₀=2.0  →  s=0.8,  tangentslope = 0.80
 % Q ved t =4.5  →  s=4.05, sekant PQ slope = 1.30  (stiplet)
 % R ved t =3.2  →  s=2.048, sekant PR slope = 1.04  (hel)
-% Linjeetiketter: «sekant PQ» over PQ ved x=3.8;
-%                 «sekant PR» under PR ved x=3.8;
-%                 «tangentlinje» under tangent ved x=4.5.
-% «Δt→0»: label øverst ved x=3.6, pil ned-venstre til (2.8, 2.6).
+% Linjeetiketter: alle tre er plassert til høyre for kurvens slutt (x>4.65),
+%                 i åpent felt, slik at de ikke skriver seg over tegningen.
+% «Δt→0»: label øverst ved x=3.1, pil ned-venstre til (2.75, 2.75).
 \begin{center}
-\begin{tikzpicture}[font=\small]
+\begin{tikzpicture}[scale=1.4, font=\small]
   %--- Akser ---
-  \draw[->, thick] (-0.3, 0) -- (5.7, 0) node[right] {$t$};
-  \draw[->, thick] (0, -0.3) -- (0, 4.8) node[above] {$s(t)$};
+  \draw[->, thick] (-0.3, 0) -- (6.6, 0) node[right] {$t$};
+  \draw[->, thick] (0, -0.3) -- (0, 4.9) node[above] {$s(t)$};
   %--- Posisjonskurve: s = 0.2t² ---
   \draw[headCol, thick, domain=0:4.65, samples=80]
     plot (\x, {0.2*\x*\x});
@@ -452,7 +456,7 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
   \node[left=3pt] at (2.0, 0.8) {$P$};
   %--- Sekantlinje PQ (stor Δt) – stiplet, mørkere ---
   \draw[black!55, semithick, dashed]
-    (1.4, {1.30*1.4-1.80}) -- (4.7, {1.30*4.7-1.80});
+    (1.4, {1.30*1.4-1.80}) -- (4.9, {1.30*4.9-1.80});
   \fill[black!55] (4.5, 4.05) circle(2pt);
   \node[above left=2pt, black!60, font=\scriptsize] at (4.5, 4.05) {$Q$};
   %--- Sekantlinje PR (liten Δt) – hel linje, lysere ---
@@ -462,7 +466,7 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
   \node[right=3pt, black!42, font=\scriptsize] at (3.2, 2.048) {$R$};
   %--- Tangentlinje ved P – oransje, tykk ---
   \draw[oppsumcol, thick]
-    (1.1, {0.8*1.1-0.8}) -- (4.9, {0.8*4.9-0.8});
+    (1.1, {0.8*1.1-0.8}) -- (5.3, {0.8*5.3-0.8});
   %--- Δt/Δs-trekant (prikket, svak) ---
   \draw[dotted, gray!65, thin] (2.0, 0.8) -- (4.5, 0.8)
         node[midway, below=2pt, gray!80, font=\scriptsize] {$\Delta t$};
@@ -473,20 +477,17 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
   \node[below=2pt, font=\scriptsize] at (2.0, 0) {$t_0$};
   \draw[thin] (4.5, 2.5pt) -- (4.5, -2.5pt);
   \node[below=2pt, font=\scriptsize] at (4.5, 0) {$t_0{+}\Delta t$};
-  %--- Linjeetiketter spredt for å unngå overlapp ---
-  % «sekant PQ»: OVER PQ-linjen ved x=3.8 (PQ=3.14, over kurven=2.89)
-  \node[above=2pt, black!60, font=\scriptsize]
-        at (3.8, {1.30*3.8-1.80}) {sekant $PQ$};
-  % «sekant PR»: UNDER PR-linjen ved x=3.8 (PR=2.67, tangent=2.24 nedenfor)
-  \node[below=2pt, black!42, font=\scriptsize]
-        at (3.8, {1.04*3.8-1.28}) {sekant $PR$};
-  % «tangentlinje»: under tangentlinjen, høyre side
-  \node[below right=1pt, oppsumcol, font=\scriptsize]
-        at (4.5, {0.8*4.5-0.8}) {tangentlinje};
+  %--- Linjeetiketter: hver plassert forbi kurvens slutt, i åpent felt til høyre ---
+  \node[right=3pt, black!60, font=\scriptsize]
+        at (4.9, {1.30*4.9-1.80}) {sekant $PQ$};
+  \node[right=3pt, black!42, font=\scriptsize]
+        at (4.8, {1.04*4.8-1.28}) {sekant $PR$};
+  \node[right=3pt, oppsumcol, font=\scriptsize]
+        at (4.7, {0.8*4.7-0.8}) {tangentlinje};
   %--- Δt→0: label øverst, pil kurver ned-venstre til klart rom ---
   \draw[->, thin, black!45]
-        (3.6, 4.5) to[out=245, in=85] (2.8, 2.6);
-  \node[right=1pt, black!50, font=\scriptsize] at (3.6, 4.5)
+        (3.1, 4.7) to[out=245, in=95] (2.75, 2.75);
+  \node[right=1pt, black!50, font=\scriptsize] at (3.1, 4.7)
         {$\Delta t \to 0$};
 \end{tikzpicture}
 \end{center}
@@ -540,7 +541,7 @@ Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og se
     \[
       6t + 2 = 20
       \implies 6t = 18
-      \implies \doubleunderline{t = \SI{3}{\second}}
+      \implies t = \doubleunderline{\SI{3}{\second}}
     \]
 \end{enumerate}
 }
@@ -560,7 +561,7 @@ En syklist kjører med konstant hastighet $v = \SI{8}{\metre\per\second}$.
 }
 
 \oppgave{En oppgave til}{%
-Noe om dekomponering av fart i to dimensjoner.
+En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning. Finn farta i nordlig retning ($v_\text{N}$) og farta i østlig retning (($v_\text{Ø}$))
 }
 
 
@@ -944,6 +945,10 @@ Selv om vi nå har utledet formlene over ved hjelp av de skalare størrelsene, s
     \end{align}
 \end{myoppsum*}
 
+I spesialtilfellet med rettlinjet bevegelse (bevegelse langs én akse) trenger vi selvsagt ikke vektortegnene, siden retningen uttrykkes fullt ut ved fortegnet til de skalare størrelsene. Da er det de opprinnelige, skalare likningene --- slik vi utledet dem tidligere i dette avsnittet --- som gjelder.
+
+Vi setter dessuten ofte $s_0 = 0$ i praksis, ettersom $s_0$ bare er startposisjonen --- og vi kan alltid velge koordinatsystemet slik at bevegelsen starter i origo.
+
 \tips{Alternativ utledning med integrasjon}{%
 Likning 1 og 2 kan også utledes ved integrasjon. Siden $a$ er konstant, integrerer vi over tid:
 \[
@@ -973,7 +978,7 @@ Bruk hastighet-posisjonslikningen \( v^2 = v_0^2 + 2a(s - s_0) \). Her er \( v =
 \SI{10}{\metre\per\second\squared} \cdot (s - s_0) = \SI{900}{\metre\squared\per\second\squared}
 \]
 \[
-\doubleunderline{s - s_0 = 90 \, \si{\metre}}
+s - s_0 = \doubleunderline{90 \, \si{\metre}}
 \]
 Bilen beveger seg $\SI{90}{\metre}$ før den stopper.
 }
@@ -992,8 +997,14 @@ Du syklet $\SI{100}{\metre}$ i løpet av denne perioden.
 
 
 \subsection{Fritt fall som eksempel}
-Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Gravitasjonen på jorden er omtrent lik overalt, og er en akselerasjon på ca. $\textrm{g} = \SI{9.81}{\metre\per\second\squared}$. 
-% {\color{blue} CHECK: Si litt om g osv...} 
+Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Det som kanskje er litt overraskende, er at alle legemer vil ha samme akselerasjon ned mot bakken (når vi ser bort ifra luftmotstand). Denne akselerasjonen er konstant og kalles $\text{g}$. Størrelsen er
+\graabox{$\displaystyle \text{Tyngdens akselerasjon:}\quad\text{g} = \SI{9.81}{\metre\per\second\squared}$}
+
+Legemer som kun er under påvirkning av tyngdekraften, sies å være i \textbf{fritt fall}. En bergknaus som faller fra fjellet og nedover mot fjorden er for eksempel i fritt fall. Eller — ikke helt; vi må jo huske luftmotstanden, som også påvirker knausens bevegelse gjennom lufta. Noen ganger simulerer man vektløshet i fly. Dette er å simulere fritt fall. Inne i flyet så fallre jo lufta sammen med deg, og du påvirkes derfor ikke av luftmotstand heller. Dermed får man til fritt fall, som altså er det samme som vektløshet. Hadde du tatt med en baderomsvekt opp i flyet, ville du sett at vekten viste 0 kg under fritt fall! Fin (men kortvarig) jubel over vektnedgang ;)
+
+\tanke{}{
+Dersom alle legemer faller med lik akselerasjon under fritt fall, hvorfor faller da et papirark saktere enn en stein mot bakken?
+}
 
 \exm{Hastighetsendring}{
 Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \si{\metre\per\second}\). Tyngdekraften gir ballen en konstant akselerasjon på \(-9.81 \, \si{\metre\per\second\squared}\). Hvor raskt beveger ballen seg etter \(2\) sekunder? \\
@@ -1001,9 +1012,9 @@ Tenk deg at du kaster en ball rett opp i luften med en startfart på \(10 \, \si
 \textit{Metode:}
 Bruk hastighetslikningen \( v = v_0 + at \). Her er \( v_0 = 10 \, \si{\metre\per\second} \), \( a = -9.81 \, \si{\metre\per\second\squared} \), og \( t = 2 \, \si{\second} \). Sett inn verdiene:
 \[
-\doubleunderline{v = 10 \, \si{\metre\per\second} + (-9.81 \, \si{\metre\per\second\squared}) \cdot 2 \, \si{\second} = -9{,}62 \, \si{\metre\per\second}}
+v = 10 \, \si{\metre\per\second} + (-9.81 \, \si{\metre\per\second\squared}) \cdot 2 \, \si{\second} = \doubleunderline{-9.62 \, \si{\metre\per\second}}
 \]
-Ballens hastighet etter $2$ sekunder er $\SI{-9{,}62}{\metre\per\second}$, noe som indikerer at ballen nå beveger seg nedover.
+Ballens hastighet etter $2$ sekunder er $\SI{-9.62}{\metre\per\second}$, noe som indikerer at ballen nå beveger seg nedover.
 }
 
 \exm{Fallende objekt}{
@@ -1013,17 +1024,24 @@ En stein blir sluppet fra en bro \(20 \, \si{\metre}\) over bakken. Hva er stein
 Bruk posisjonslikningen \( s = s_0 + v_0t + \frac{1}{2}at^2 \). Her er \( s_0 = 20 \, \si{\metre} \), \( v_0 = 0 \, \si{\metre\per\second} \), \( a = 9.81 \, \si{\metre\per\second\squared} \), og \( t = 2 \, \si{\second} \):
 \[
 s = 20 \, \si{\metre} + \SI{0}{\metre\per\second} \cdot 2 \, \si{\second} + \frac{1}{2} \cdot 9.81 \, \si{\metre\per\second\squared} \cdot (2 \, \si{\second})^2
-  = \SI{20}{\metre} + \SI{19{,}62}{\metre}.
+  = \SI{20}{\metre} + \SI{19.62}{\metre}.
 \]
 \[
-\doubleunderline{s = 39{,}6 \, \si{\metre}}
+s = \doubleunderline{39.6 \, \si{\metre}}
 \]
-Steinen er $\SI{39{,}6}{\metre}$ fra utgangspunktet etter $2$ sekunder.
+Steinen er $\SI{39.6}{\metre}$ fra utgangspunktet etter $2$ sekunder.
 }
 
 
+\oppgave{Sten i fritt fall}{%
+\begin{enumerate}[a)]
+    \item En sten faller utfor preikestolen. Hva er akselerasjonen til steinen (se bort ifra luftmotstand)
+    \item En sten kastes rett oppover, og faller rett ned igjen. Hva er akselerasjonen til steinen (i) på vei opp, (ii) på toppen og (ii) på vei ned? Tegn figur og forklar kort med ord. 
+\end{enumerate}
+}
+
 \oppgave{Fritt fall}{%
-En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
+En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Husk at $\text{g} = \SI{9.81}{\metre\per\second\squared}$.
 \begin{enumerate}[a)]
     \item Finn tiden det tar før ballen treffer bakken.
     \item Finn farten rett før ballen treffer bakken.
@@ -1069,45 +1087,33 @@ Vi kunne gjort tilsvarende dekomponeringer av de to andre likningene — og hvil
 }
 La oss nå se på eksempler for å lære dette med dekomponering ordentlig.
 
-\exm{Fjærkanon og beregning av sluttposisjon}{
-En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h \) og gravitasjonskonstanten \( g \). Målet er å finne hvor kula lander. Vi skal først beregne utgangshastigheten \( v_0 \), deretter bruke posisjonslikningen i y-retning for å finne hvor lenge kula er i lufta, og til slutt bruke tiden \( t \) til å finne sluttposisjonen i x-retning.\\
+\exm{Prosjektil og beregning av sluttposisjon}{
+Et prosjektil skytes ut med en kjent utgangshastighet \( v_0 \), i en vinkel \( \theta \) over horisontalen. Vi ser bort fra luftmotstand. Målet er å finne hvor prosjektilet lander, altså sluttposisjonen. Vi skal først bruke posisjonslikningen i y-retning for å finne hvor lenge prosjektilet er i lufta, og deretter bruke tiden \( t \) til å finne sluttposisjonen i x-retning.\\
 
-    \textbf{Del a: Beregn utgangshastigheten} \\
-    
-    \textit{Metode:}
-    For å beregne utgangshastigheten \( v_0 \), bruker vi energikonservering, som sier at den kinetiske energien er lik den potensielle energien i fjæra. Dette gir:
-    \[
-    v_0^2 = 2gh,
-    \]
-    hvor \( g = 9.81 \, \si{\metre\per\second\squared} \) og \( h \) er høyden kula skytes ut fra. Utgangshastigheten \( v_0 \) er da:
-    \[
-    \doubleunderline{v_0 = \sqrt{2gh}}
-    \]
-
-    \textbf{Del b: Beregn tiden kula er i lufta} \\
+    \textbf{Del a: Beregn tiden prosjektilet er i lufta} \\
 
     \textit{Metode:}
-    For å finne hvor lenge kula er i lufta, bruker vi posisjonslikningen i y-retning. Siden kula returnerer til bakken (y-posisjon = 0) på slutten av sin bevegelse, kan vi bruke følgende likning:
+    For å finne hvor lenge prosjektilet er i lufta, bruker vi posisjonslikningen i y-retning. Siden prosjektilet returnerer til utgangshøyden (y-posisjon = 0) på slutten av sin bevegelse, kan vi bruke følgende likning:
     \[
     y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
     \]
-    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \si{\metre\per\second\squared} \). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
+    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \si{\metre\per\second\squared} \) (tyngdeakselerasjonen, siden vi ser bort fra luftmotstand). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
     \[
     0 = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2.
     \]
-    Vi løser denne kvadratiske likningen for \( t \) (tiden kula er i lufta):
+    Vi løser denne kvadratiske likningen for \( t \) (tiden prosjektilet er i lufta):
     \[
-    \doubleunderline{t = \frac{2 v_0 \sin \theta}{g}}
+    t = \doubleunderline{\frac{2 v_0 \sin \theta}{g}}
     \]
 
-    \textbf{Del c: Beregn sluttposisjonen i x-retning} \\
+    \textbf{Del b: Beregn sluttposisjonen i x-retning} \\
 
     \textit{Metode:}
-    Nå som vi vet hvor lenge kula er i lufta, kan vi bruke tiden \( t \) til å beregne hvor langt kula beveger seg i x-retning. Vi bruker posisjonslikningen i x-retning:
+    Nå som vi vet hvor lenge prosjektilet er i lufta, kan vi bruke tiden \( t \) til å beregne hvor langt prosjektilet beveger seg i x-retning. Vi bruker posisjonslikningen i x-retning:
     \[
     x = v_{0x} t + \frac{1}{2} a_x t^2.
     \]
-    Siden det ikke er noen akselerasjon i x-retning (\( a_x = 0 \)), blir likningen:
+    Siden det ikke er noen akselerasjon i x-retning (\( a_x = 0 \), fordi vi ser bort fra luftmotstand), blir likningen:
     \[
     x = v_{0x} t,
     \]
@@ -1117,22 +1123,14 @@ En fjærkanon skyter ut en kule med en utgangshastighet basert på høyden \( h 
     \]
     Vi setter inn tiden \( t = \frac{2 v_0 \sin \theta}{g} \) fra forrige del:
     \[
-    x = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g} = \frac{2 v_0^2 \sin \theta \cos \theta}{g}.
-    \]
-    Til slutt kan vi sette inn utgangshastigheten \( v_0^2 = 2gh \) fra del a:
-    \[
-    x = \frac{4gh \sin \theta \cos \theta}{g}.
-    \]
-    Ved å forenkle uttrykket får vi:
-    \[
-    \doubleunderline{x = 4h \sin \theta \cos \theta}
+    x = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g} = \doubleunderline{\frac{2 v_0^2 \sin \theta \cos \theta}{g}}.
     \]
 
-    Siden sluttposisjonen i y-retning er \( y = 0 \) når kula lander, kan vi skrive sluttposisjonen som en vektor:
+    Siden sluttposisjonen i y-retning er \( y = 0 \) når prosjektilet lander, kan vi skrive sluttposisjonen som en vektor:
    \[
-    [x, y] = [4h \sin \theta \cos \theta, 0].
+    [x, y] = \left[\frac{2 v_0^2 \sin \theta \cos \theta}{g},\ 0\right].
     \]
-    Dermed er sluttposisjonen gitt som vektor, der x-komponenten er \( 4h \sin \theta \cos \theta \) og y-komponenten er \( 0 \).
+    Dermed er sluttposisjonen gitt som vektor, der x-komponenten er \( \dfrac{2 v_0^2 \sin \theta \cos \theta}{g} \) og y-komponenten er \( 0 \).
 }
 
    \begin{figure}[ht!]
@@ -1165,7 +1163,7 @@ som gir:
 t^2 = \frac{2 \cdot 0.8}{9.81},
 \]
 \[
-\doubleunderline{t = \sqrt{\frac{1.6}{9.81}} \approx 0{,}4 \, \si{\second}}
+t = \sqrt{\frac{1.6}{9.81}} \approx \doubleunderline{0.4 \, \si{\second}}
 \]
 
 Nå som vi har funnet tiden \(t = 0.4 \, \si{\second}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
@@ -1182,7 +1180,7 @@ Vi setter inn \(x = 0.85 \, \si{\metre}\) og \(t = 0.4 \, \si{\second}\):
 \]
 Løs for \(v_{0x}\):
 \[
-\doubleunderline{v_0 = v_{0x} = \frac{0{,}85}{0{,}4} \approx 2{,}125 \, \si{\metre\per\second}}
+v_0 = v_{0x} = \frac{0.85}{0.4} \approx \doubleunderline{2.125 \, \si{\metre\per\second}}
 \]
 
 \textbf{Del b: Beregn sluttfarten rett før ballen treffer bakken} \\
@@ -1206,7 +1204,7 @@ Den totale hastigheten \(v_1\) rett før ballen treffer bakken er summen av komp
 v_1 = \sqrt{v_{1x}^2 + v_{1y}^2} = \sqrt{(2.125)^2 + (-3.924)^2} \approx \sqrt{4.515 + 15.4} \approx \sqrt{19.915} \approx 4.46 \, \si{\metre\per\second}.
 \]
 
-Dermed er sluttfarten rett før ballen treffer bakken \(\doubleunderline{v_1 \approx 4.46 \, \si{\metre\per\second}}\).
+Dermed er sluttfarten rett før ballen treffer bakken \(v_1 \approx \doubleunderline{4.46 \, \si{\metre\per\second}}\).
 }
 
    \begin{figure}[ht!]
@@ -1389,7 +1387,7 @@ Akselerasjonen peker hele tiden inn mot sentrum av rundkjøringen, selv om bilen
 }
 
 \oppgave{Sykkel i sving}{%
-En syklist kjører gjennom en sirkulær sving med radius $r = \SI{12}{\metre}$ og konstant fart $v = \SI{5{,}4}{\kilo\metre\per\hour}$.
+En syklist kjører gjennom en sirkulær sving med radius $r = \SI{12}{\metre}$ og konstant fart $v = \SI{5.4}{\kilo\metre\per\hour}$.
 \begin{enumerate}[a)]
     \item Gjør om farten til \si{\metre\per\second}.
     \item Finn sentripetalakselerasjonen til syklisten.
@@ -1410,7 +1408,7 @@ Ved å sette dette uttrykket for $v$ inn i formelen for sentripetalakselerasjon,
 
 
 \exm{Jorda rundt sola}{%
-Jorda beveger seg i en tilnærmet sirkulær bane rundt sola med gjennomsnittlig radius $r = \SI{1{,}496e11}{\metre}$ og omløpstid $T = \SI{365{,}25}{\day}$.
+Jorda beveger seg i en tilnærmet sirkulær bane rundt sola med gjennomsnittlig radius $r = \SI{1.496e11}{\metre}$ og omløpstid $T = \SI{365.25}{\day}$.
 Hva er den gjennomsnittlige sentripetalakselerasjonen jorda opplever?
 }
 
@@ -1418,16 +1416,16 @@ Hva er den gjennomsnittlige sentripetalakselerasjonen jorda opplever?
 \noindent
 Vi starter med å gjøre om omløpstiden til sekunder:
 \[
-    T = \SI{365{,}25}{\day} \cdot \frac{\SI{24}{\hour}}{\SI{1}{\day}} \cdot \frac{\SI{3600}{\second}}{\SI{1}{\hour}}
-    = \SI{3{,}156e7}{\second}
+    T = \SI{365.25}{\day} \cdot \frac{\SI{24}{\hour}}{\SI{1}{\day}} \cdot \frac{\SI{3600}{\second}}{\SI{1}{\hour}}
+    = \SI{3.156e7}{\second}
 \]
 Deretter setter vi inn i formelen for sentripetalakselerasjon:
 \[
     a_\perp = \frac{4\pi^2 r}{T^2}
-    = \frac{4\pi^2 \cdot \SI{1{,}496e11}{\metre}}{\left(\SI{3{,}156e7}{\second}\right)^2}
-    = \doubleunderline{\SI{5{,}93e-3}{\metre\per\second\squared}}
+    = \frac{4\pi^2 \cdot \SI{1.496e11}{\metre}}{\left(\SI{3.156e7}{\second}\right)^2}
+    = \doubleunderline{\SI{5.93e-3}{\metre\per\second\squared}}
 \]
-Dette er omtrent $6{,}1\cdot10^{-3}$ ganger tyngdeakselerasjonen $g$. Selv om akselerasjonen er svært liten, er det nok til å holde jorda i bane rundt sola — fordi tyngdekraften virker over en enorm avstand.
+Dette er omtrent $6.1\cdot10^{-3}$ ganger tyngdeakselerasjonen $g$. Selv om akselerasjonen er svært liten, er det nok til å holde jorda i bane rundt sola — fordi tyngdekraften virker over en enorm avstand.
 }
 
 \oppgave{Sirkelbevegelse og omløpstid}{%

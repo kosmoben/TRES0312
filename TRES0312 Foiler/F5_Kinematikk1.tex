@@ -52,6 +52,12 @@
   \end{tcolorbox}%
 }
 
+%--------------------------------------------------------------------------
+%  \vecO{x} — vektorpil i pointCol-oransje over grunnsymbolet, brukt for å
+%  fremheve at en størrelse "blir" en vektor (se slide 3).
+%--------------------------------------------------------------------------
+\newcommand{\vecO}[1]{\overset{\textcolor{orange}{\rightarrow}}{#1}}
+
 \begin{document}
 
 %--------------------------------------------------------------------------
@@ -78,8 +84,8 @@
       \begin{enumerate}[1.,itemsep=7pt]
         \item Dekomponering: Skriv ned uttrykk for komponentene $r_x$ og $r_y$ til vektoren $\vec{r}$ (se figur).
         \item Hvorfor er lengden og retningen til en vektor uavhengig av valg av koordinatsystem?
-        \item Hva er skalarproduktet mellom vektorene $\vec{x}=[1, 0]$ og $\vec{y}=[0, 1]$, og hva er den geometriske tolkningen?
-        \item beregn størrelsen til kryssproduktet mellom $\vec{x}$ og $\vec{y}$. Hva blir retningen? Hva er den geometriske tolkningen av et kryssprodukt?
+        \item Hva er skalarproduktet mellom vektorene $\hat{x}=[1, 0]$ og $\hat{y}=[0, 1]$, og hva er den geometriske tolkningen?
+        \item beregn størrelsen til kryssproduktet mellom $\hat{x}$ og $\hat{y}$. Hva blir retningen? Hva er den geometriske tolkningen av et kryssprodukt?
       \end{enumerate}
       }
       \end{column}
@@ -110,13 +116,141 @@
     {\small
     \begin{enumerate}[1.,itemsep=1pt]
       \item Hva er sammenhengen mellom posisjon, hastighet og akselerasjon?
-      \onslide<2->{\svarcompact{\footnotesize $a=\frac{\Delta v}{\Delta t}\quad,\quad v=\frac{\Delta s}{\Delta t}$}}
+      \onslide<2->{\svarcompact{\footnotesize \alt<4->{$\vecO{a}=\dfrac{\Delta \vecO{v}}{\Delta t}\quad,\quad \vecO{v}=\dfrac{\Delta \vecO{s}}{\Delta t}$}{$a=\frac{\Delta v}{\Delta t}\quad,\quad v=\frac{\Delta s}{\Delta t}$}}}
       \item Hvordan beskriver vi bevegelse med matematikk?
-      \onslide<3->{\svarcompact{\footnotesize Posisjon: $s(t)$.}}
+      \onslide<3->{\svarcompact{\footnotesize \alt<4->{Posisjon: $\vecO{s}(t)$.}{Posisjon: $s(t)$.}}}
       \item Hva er forskjellen på beskrivelse av bevegelse i 1 dimensjon og flere dimensjoner?
-      \onslide<4->{\svarcompact{\footnotesize 1D: $s(t)\leftarrow$skalar. \quad 2D/3D: $\vec{s}(t)\leftarrow$vektor.}}
+      \onslide<4->{\svarcompact{\footnotesize 1D: $s(t)\leftarrow$skalar. \quad 2D/3D: $\vec{s}(t)\leftarrow$\textcolor{orange}{vektor}.}}
     \end{enumerate}
     }
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Aktivitet: akselerasjon
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Akselerasjon}{%
+  En motorsykkel øker farten fra $v_0 = 10\,\mathrm{m/s}$ til $v = 25\,\mathrm{m/s}$ på $\Delta t = 5\,\mathrm{s}$.
+  \begin{enumerate}[a)]
+    \item Finn gjennomsnittsakselerasjonen.
+    \item Er akselerasjonen positiv eller negativ? Hva betyr det?
+    \item Dersom akselerasjonen er konstant, hva er farten etter ytterligere $4\,\mathrm{s}$?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — a = konst.: de fire bevegelseslikningene
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \begin{columns}[c]
+    \begin{column}{0.32\textwidth}
+      \centering
+      {\Huge $\vec{a} = \text{konst.}$}
+    \end{column}
+    \begin{column}{0.68\textwidth}
+      \only<2>{%
+        \centering $\displaystyle
+        \Longrightarrow \; \left\{\begin{array}{l}
+          \vec{v} = \vec{v}_0 + \vec{a}\,t
+        \end{array}\right.$
+      }
+      \only<3>{%
+        \centering $\displaystyle
+        \Longrightarrow \; \left\{\begin{array}{l}
+          \vec{v} = \vec{v}_0 + \vec{a}\,t \\[14pt]
+          \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2
+        \end{array}\right.$
+      }
+      \only<4->{%
+        \centering $\displaystyle
+        \Longrightarrow \; \left\{\begin{array}{l}
+          \vec{v} = \vec{v}_0 + \vec{a}\,t \\[14pt]
+          \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2 \\[14pt]
+          |\vec{v}|^2 = |\vec{v}_0|^2 + 2\,\vec{a}\cdot(\vec{s}-\vec{s}_0) \\[14pt]
+          \vec{s}-\vec{s}_0 = \dfrac{\vec{v}_0+\vec{v}}{2}\,t
+        \end{array}\right.$
+      }
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Til ettertanke: eksempel på a = konst.
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Noen som kjenner til et eksempel på $\vec{a} = \text{konst.}$?\\[6pt]
+  \onslide<2->{\svarcompact{Gravitasjonens akselerasjon!\\[4pt] $\text{g} = 9.81\,\mathrm{m/s^2}$}}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: gravitasjon
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \aktivitet{Gravitasjon}{%
+      En ball kastes rett opp med startfart $v_0 = 12\,\mathrm{m/s}$.
+      \begin{enumerate}[a)]
+        \item Finn farten til ballen etter $t = 1\,\mathrm{s}$.
+        \item Hvor høyt har ballen steget etter $t = 1\,\mathrm{s}$?
+        \item Hvor lang tid tar det før ballen er tilbake på utgangshøyden?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      $\displaystyle \left\{\begin{array}{l}
+        \vec{v} = \vec{v}_0 + \vec{a}\,t \\[10pt]
+        \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2 \\[10pt]
+        |\vec{v}|^2 = |\vec{v}_0|^2 + 2\,\vec{a}\cdot(\vec{s}-\vec{s}_0) \\[10pt]
+        \vec{s}-\vec{s}_0 = \dfrac{\vec{v}_0+\vec{v}}{2}\,t
+      \end{array}\right.$
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: fritt fall
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fritt fall}{%
+  \begin{enumerate}[a)]
+    \item
+    \begin{enumerate}[i)]
+      \item En sten faller utfor preikestolen. Hva er akselerasjonen til steinen (se bort ifra luftmotstand)?
+      \item En sten kastes rett oppover, og faller rett ned igjen. Hva er akselerasjonen til steinen (i) på vei opp, (ii) på toppen og (iii) på vei ned? Tegn figur og forklar kort med ord.
+    \end{enumerate}
+    \item Tegn grafene $a(t)$, $v(t)$ og $s(t)$ for bevegelsen i a)ii) (steinen som kastes rett oppover).
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Aktivitet: fart-strekning-likningen
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fart-strekning-likningen}{%
+  En bil øker farten fra $v_0 = 5\,\mathrm{m/s}$ til $v = 25\,\mathrm{m/s}$ i løpet av $t = 4\,\mathrm{s}$.
+  \begin{enumerate}[a)]
+    \item Finn akselerasjonen $a$.
+    \item Bruk sammenhengen $2as = v^2 - v_0^2$ til å finne strekningen $s$ bilen har tilbakelagt.
+  \end{enumerate}
   }
 
 \end{frame}

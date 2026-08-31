@@ -128,7 +128,7 @@
   \]
   Finn et uttrykk for $v$, sett inn tall til slutt:
   \[
-  a = \frac{F}{m} \;\Rightarrow\; v = v_0 + \frac{F}{m}t = \frac{3\,000\,\mathrm{N}}{1\,200\,\mathrm{kg}}\cdot 5\,\mathrm{s} = \doubleunderline{12{,}5\ \mathrm{m/s}}
+  a = \frac{F}{m} \;\Rightarrow\; v = v_0 + \frac{F}{m}t = \frac{3\,000\,\mathrm{N}}{1\,200\,\mathrm{kg}}\cdot 5\,\mathrm{s} = \doubleunderline{12.5\ \mathrm{m/s}}
   \]
   }
 
@@ -554,37 +554,6 @@ plt.show()
   \pause
   \merk{Skalarer}{
   Det vi tidligere kalte tall, kaller vi nå gjerne \textit{skalarer}. Skalarer har kun størrelse, ikke retning.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 28 — Vektoraddisjon: intuisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Å legge sammen vektorer}
-
-  \begin{center}
-  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
-    % Frie vektorer A og B (ingen koordinatsystem)
-    \draw[->, thick, vecAcol] (0,0.7) -- (2.4,1.5);
-    \node[above=2pt, font=\small, vecAcol] at (1.2,1.1) {$\vec{A}$};
-    \node[font=\large, textcolor] at (2.85,1.1) {$+$};
-    \draw[->, thick, vecBcol] (3.3,0.35) -- (4.0,1.75);
-    \node[right=3pt, font=\small, vecBcol] at (3.65,1.05) {$\vec{B}$};
-  \end{tikzpicture}
-  \hspace{1.5cm}
-  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
-    % Hale-til-spiss-addisjon: C = A + B
-    \draw[->, thick, vecAcol] (0,0) -- (2.4,0.8);
-    \node[below=3pt, font=\small, vecAcol] at (1.2,0.4) {$\vec{A}$};
-    \draw[->, thick, vecBcol] (2.4,0.8) -- (3.1,2.2);
-    \node[right=3pt, font=\small, vecBcol] at (2.75,1.5) {$\vec{B}$};
-    \draw[->, very thick, vecCcol] (0,0) -- (3.1,2.2);
-    \node[left=4pt, font=\small, vecCcol] at (1.55,1.1) {$\vec{C}$};
-  \end{tikzpicture}
-  \end{center}
-  \tanke{}{%
-  $\vec{B}$ plasseres ved spissen av $\vec{A}$. Resultantvektoren $\vec{C} = \vec{A} + \vec{B}$ går fra start av $\vec{A}$ til slutten av $\vec{B}$ --- den såkalte hale-til-spiss-metoden.
   }
 
 \end{frame}

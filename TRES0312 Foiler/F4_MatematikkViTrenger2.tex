@@ -83,16 +83,84 @@
   \aktivitet{Vektorer som lineærkombinasjon av enhetsvektorer}{%
     \begin{enumerate}[a)]
       \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
-      \item Regn ut summen $\vec{u}+\vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$.
+      \item er vektoren $[3,0]$ en enhetsvektor? 
     \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Dekomponering av vektorer i koordinatsystem
+%  SLIDE 5 — Vektoraddisjon: intuisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Å legge sammen vektorer}
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    % Frie vektorer A og B (ingen koordinatsystem)
+    \draw[->, thick, vecAcol] (0,0.7) -- (2.4,1.5);
+    \node[above=2pt, font=\small, vecAcol] at (1.2,1.1) {$\vec{A}$};
+    \node[font=\large, textcolor] at (2.85,1.1) {$+$};
+    \draw[->, thick, vecBcol] (3.3,0.35) -- (4.0,1.75);
+    \node[right=3pt, font=\small, vecBcol] at (3.65,1.05) {$\vec{B}$};
+  \end{tikzpicture}
+  \hspace{1.5cm}
+  \begin{tikzpicture}[scale=1.0, baseline=(current bounding box.center)]
+    % Hale-til-spiss-addisjon: C = A + B
+    \draw[->, thick, vecAcol] (0,0) -- (2.4,0.8);
+    \node[below=3pt, font=\small, vecAcol] at (1.2,0.4) {$\vec{A}$};
+    \draw[->, thick, vecBcol] (2.4,0.8) -- (3.1,2.2);
+    \node[right=3pt, font=\small, vecBcol] at (2.75,1.5) {$\vec{B}$};
+    \draw[->, very thick, vecCcol] (0,0) -- (3.1,2.2);
+    \node[left=4pt, font=\small, vecCcol] at (1.55,1.1) {$\vec{C}$};
+  \end{tikzpicture}
+  \end{center}
+  \begin{tcolorbox}[
+    enhanced, arc=2mm, boxrule=0pt,
+    colframe=tankeback, colback=tankeback,
+    top=8pt, bottom=8pt, left=10pt, right=10pt,
+    before skip=8pt, after skip=8pt,
+  ]
+  \ifdarkmode\color{white!80!gray}\fi
+  $\vec{B}$ plasseres ved spissen av $\vec{A}$. Resultantvektoren $\vec{C} = \vec{A} + \vec{B}$ går fra start av $\vec{A}$ til slutten av $\vec{B}$ --- den såkalte hale-til-spiss-metoden.
+  \end{tcolorbox}
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon og aktivitet: vektoraddisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Addisjon med vektorer}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \defn{Vektoraddisjon}{
+      Addisjon av vektorer gjøres grafisk med hale-til-spiss-metoden. Algebraisk legges komponentene sammen retningsvis:
+      \[
+        \vec{v} + \vec{u} = [v_x+u_x, \; v_y+u_y].
+      \]
+      }
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \pause
+      \aktivitet{Vektoraddisjon}{%
+      \begin{enumerate}[a)]
+        \item Regn ut summen $\vec{u}+\vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = \hat{\mathbf{x}} + 5\hat{\mathbf{y}}$.
+        \item Gitt vektorene $\vec{B} = [3,\,1]$ og $\vec{C} = [1,\,2]$. Finn resultantvektoren $\vec{A} = \vec{B}+\vec{C}$ og beregn lengden $|\vec{A}|$.
+      \end{enumerate}
+      }
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Dekomponering av vektorer i koordinatsystem
 %--------------------------------------------------------------------------
 \begin{frame}[t]{Dekomponering av vektorer}
+
+  \colorlet{rCompCol}{pointCol!75!yellow}%
 
   \vspace{0.5cm}
   \begin{columns}[T]
@@ -111,15 +179,21 @@
         }
         \draw[->, very thick, pointCol] (0,0) -- (3,2);
         \node[above left=1pt, font=\small, pointCol] at (1.55,1.1) {$\vec{r}$};
-        \draw[->, thick, accGraphColor, visible on=<2->] (0,0) -- (3,0)
-              node[midway, below=3pt, font=\small, accGraphColor] {$r_x$};
-        \draw[->, thick, accGraphColor, visible on=<2->] (3,0) -- (3,2)
-              node[midway, right=3pt, font=\small, accGraphColor] {$r_y$};
+        \draw[->, thick, rCompCol, visible on=<2->] (0,0) -- (3,0)
+              node[midway, below=3pt, font=\small, rCompCol] {$r_x$};
+        \draw[->, thick, rCompCol, visible on=<2->] (3,0) -- (3,2)
+              node[midway, right=3pt, font=\small, rCompCol] {$r_y$};
         \draw[dashed, gray!50, visible on=<2->] (3,2) -- (0,2);
         \fill[pointCol, visible on=<2->] (3,2) circle (2.2pt);
         \draw[textcolor, visible on=<2->] (0.7,0) arc (0:33.7:0.7);
         \node[font=\small, textcolor, visible on=<2->] at (1.05,0.22) {$\theta$};
       \end{tikzpicture}
+
+      \onslide<2->{%
+      \[
+        {\color{rCompCol} r_x = r\cos\theta, \qquad r_y = r\sin\theta}
+      \]
+      }%
       \end{center}
     \end{column}
     \begin{column}{0.46\textwidth}
@@ -141,7 +215,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Vektoren er uavhengig av koordinatsystemet
+%  SLIDE 8 — Vektoren er uavhengig av koordinatsystemet
 %--------------------------------------------------------------------------
 \begin{frame}[t]{Vektoren er uavhengig av koordinatsystemet}
 
@@ -209,7 +283,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 7 — Dekomponering av vektorer
+%  SLIDE 9 — Dekomponering av vektorer
 %--------------------------------------------------------------------------
 \begin{frame}{Fysikk og koordinatsystem...}
   \tanke{}{%
@@ -219,12 +293,12 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 8 — Aktivitet: dekomponering av hastighet
+%  SLIDE 10 — Aktivitet: dekomponering av hastighet
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
   \aktivitet{Dekomponering av hastighet}{%
-  En ball kastes med fart $v = 20\,\mathrm{m/s}$ i en vinkel $\theta = 37^\circ$ over horisonten ($\cos 37^\circ \approx 0.80$, $\sin 37^\circ \approx 0.60$).
+  En ball kastes med fart $v = 20\,\mathrm{m/s}$ i en vinkel $\theta = 30^\circ$ over horisonten.
     \begin{enumerate}[a)]
       \item Finn komponentene $v_x$ og $v_y$.
       \item Verifiser at $|\vec{v}| = \sqrt{v_x^2+v_y^2} = 20\,\mathrm{m/s}$.
@@ -234,30 +308,18 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 9 — Aktivitet: trigonometri og vektorkomponenter
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Trigonometri og vektorkomponenter}{%
-  En fugl flyr $10\,\mathrm{km}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn nord- og østkomponentene til forskyvningsvektoren. \textit{Hint: } vinkelen måles fra nordaksen, ikke østaksen.
-  }
-
-\end{frame}
-
-
-%--------------------------------------------------------------------------
-%  SLIDE 10 — Aktivitet: størrelse og retning
+%  SLIDE 11 — Aktivitet: størrelse og retning
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
   \aktivitet{Størrelse og retning}{%
-  Finn lengde og vinkel til vektoren $\vec{v} = [3,\,4]$.
+  Finn lengden til vektoren $\vec{v} = [3,\,4]$, samt vinkelen vektoren danner med den positive $x$-aksen.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 11 — Eksempel: posisjonsvektor i prosjektilbevegelse
+%  SLIDE 12 — Eksempel: posisjonsvektor i prosjektilbevegelse
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: Kule saker}
 
@@ -293,7 +355,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Eksempel: hastighetsvektor i prosjektilbevegelse
+%  SLIDE 13 — Eksempel: hastighetsvektor i prosjektilbevegelse
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: Kule saker}
 
@@ -340,17 +402,17 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — Eksempel: dekomponering av hastighet i prosjektilbevegelse
+%  SLIDE 14 — Eksempel: dekomponering av hastighet i prosjektilbevegelse
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: Kule saker}
 
   \begin{columns}[t]
     \begin{column}{0.52\textwidth}
-      \vspace{0.4cm}
+      \vspace{0.15cm}
       \begin{center}
       \begin{tikzpicture}
       \node[anchor=south west, inner sep=0] (img) at (0,0)
-        {\includegraphics[width=\linewidth]{Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_\ifdarkmode dark\else clean\fi.png}};
+        {\includegraphics[width=0.88\linewidth]{Kapittel2:Kinematikk/Prosjektilbevegelse_malingsbombe_\ifdarkmode dark\else clean\fi.png}};
       \begin{scope}[x={(img.south east)-(img.south west)}, y={(img.north west)-(img.south west)}]
       % Posisjonsvektorer
       \draw[-{Stealth[length=4mm,width=3mm]}, very thick, posGraphColor] (0.2646,0.1728) -- (0.3443,0.7188);
@@ -374,13 +436,13 @@
       \end{center}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \vspace{0.4cm}
+      \vspace{0.15cm}
       Når vi skal regne, \textit{dekomponerer} vi vektorlikningen i hver retning:
 
       \graabox{%
         $\vec{v}(t) = \vec{v}_0 + \vec{a}t$
         \\[5pt]
-        $\Longrightarrow$
+        $\Downarrow$
         \\[5pt]
         $v_x(t) = v_{0x} + a_x t$
         \\[3pt]
@@ -389,10 +451,16 @@
     \end{column}
   \end{columns}
 
+  {\small
+  \tanke{}{%
+  Hva er verdien til (komponentene av) starthastigheten $\vec{v}_0$, og til akselerasjonsvektoren $\vec a$, i dette eksempelet?
+  }
+  }
+
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Pause
+%  SLIDE 15 — Pause
 %--------------------------------------------------------------------------
 \begin{frame}{}
 \begin{center}
@@ -401,32 +469,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Definisjon: vektoraddisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Operasjoner med vektorer}
-
-  \defn{Vektoraddisjon}{
-  Addisjon av vektorer gjøres grafisk med hale-til-spiss-metoden. Algebraisk legges komponentene sammen retningsvis:
-  \[
-    \vec{v} + \vec{u} = [v_x+u_x, \; v_y+u_y].
-  \]
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 16 — Aktivitet: vektoraddisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Vektoraddisjon}{%
-  Gitt vektorene $\vec{B} = [3,\,1]$ og $\vec{C} = [1,\,2]$. Finn resultantvektoren $\vec{A} = \vec{B}+\vec{C}$ og beregn lengden $|\vec{A}|$.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 17 — Definisjon: skalarprodukt
+%  SLIDE 16 — Skalarprodukt: definisjon og geometrisk tolkning
 %--------------------------------------------------------------------------
 \begin{frame}{Skalarprodukt}
 
@@ -438,23 +481,16 @@
   der $\theta$ er vinkelen mellom vektorene.
   }
 
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 18 — Geometrisk tolkning
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
   \begin{columns}[t]
     \begin{column}{0.52\textwidth}
       \merk{Geometrisk tolkning}{
-      Skalarproduktet er et mål på hvor mye to vektorer peker i samme retning. Er $\theta=0^\circ$ er produktet maksimalt positivt, er $\theta=90^\circ$ er produktet null, og er $\theta=180^\circ$ er produktet maksimalt negativt.
+      Skalarproduktet måler hvor mye to vektorer peker i samme retning: maks.\ positivt ved $\theta=0^\circ$, null ved $\theta=90^\circ$, maks.\ negativt ved $\theta=180^\circ$.
       }
     \end{column}
     \begin{column}{0.46\textwidth}
-      \vspace{0.3cm}
+      \vspace{0.02cm}
       \begin{center}
-      \begin{tikzpicture}[scale=0.95]
+      \begin{tikzpicture}[scale=0.85]
         \draw[->, very thick, vecBcol] (0,0) -- (4.3,0) node[right, font=\small, vecBcol] {$\vec{B}$};
         \draw[->, very thick, vecAcol] (0,0) -- (2.4,1.7) node[above right, font=\small, vecAcol] {$\vec{A}$};
         \node[above left=1pt, font=\small, vecAcol] at (1.2,0.85) {$|\vec{A}|$};
@@ -472,7 +508,25 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 19 — Aktivitet: skalarprodukt og vinkel
+%  SLIDE 17 — Skalarmultiplikasjon i koordinatbasis
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \merk{Skalarmultiplikasjon i koordinatbasis}{
+  Kjenner vi komponentene til vektorene, kan skalarproduktet regnes ut direkte fra disse --- uten å vite vinkelen $\theta$. Gitt $\vec{u}=[u_x,\,u_y]$ og $\vec{v}=[v_x,\,v_y]$:
+  \[
+    \vec{u}\cdot\vec{v} = u_x v_x + u_y v_y.
+  \]
+  \textit{Eksempel:} Med $\vec{u}=[3,\,2]$ og $\vec{v}=[-1,\,4]$:
+  \[
+    \vec{u}\cdot\vec{v} = 3\cdot(-1) + 2\cdot 4 = -3+8 = \doubleunderline{5}.
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Aktivitet: skalarprodukt og vinkel
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -493,7 +547,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 20 — Definisjon: vektorlengde via prikkprodukt
+%  SLIDE 19 — Definisjon: vektorlengde via prikkprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Vektorlengde via prikkprodukt}
 
@@ -507,7 +561,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 21 — Definisjon: kryssprodukt
+%  SLIDE 20 — Definisjon: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Kryssprodukt}
 
@@ -553,7 +607,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 22 — Aktivitet: kryssprodukt
+%  SLIDE 21 — Aktivitet: kryssprodukt
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -564,7 +618,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 23 — Matematisk modellering
+%  SLIDE 22 — Matematisk modellering
 %--------------------------------------------------------------------------
 \begin{frame}{Matematisk modellering}
 
@@ -584,13 +638,12 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 24 — Neste gang
+%  SLIDE 23 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
-  \Huge{Neste gang: Kapittel 3.1-3.4}
+  \Huge{Neste gang: Kapittel 3.1-3.4.1}
   \begin{itemize}
-    \item \textbf{Kun 1 forelesning: 14:10-15:00!}
     \item Hva er kinematikk?
     \item Strekning og hastighet
     \item Akselerasjon

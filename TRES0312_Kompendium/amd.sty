@@ -18,6 +18,7 @@
 \usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary{arrows.meta}
 \RequirePackage{varwidth}
+\RequirePackage{needspace}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{colortbl}
 \tcbuselibrary{listings}
@@ -719,7 +720,7 @@
 % Svar — venstrestrek i spmcol, tittel "Svar" i hvitt
 % ============================
 
-\NewDocumentCommand{\svar}{+m}{
+\NewDocumentCommand{\svar}{O{}+m}{
     \begin{tcolorbox}[
         enhanced,
         breakable,
@@ -734,8 +735,9 @@
         borderline west={1mm}{0pt}{spmcol},
         left=5mm,
         before skip=10pt, after skip=10pt,
+        #1,
     ]
-        #1
+        #2
     \end{tcolorbox}
 }
 
