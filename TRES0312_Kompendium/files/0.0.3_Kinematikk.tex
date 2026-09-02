@@ -16,6 +16,15 @@ Kinematikk er studiet av hvordan objekter beveger seg, uten å vurdere (den meka
 Disse begrepene er alle sammen beskrevet som vektorer (derfor har de piler), ettersom de innbefatter konsepter som har både størrelse og retning. Sammen utgjør de verktøyene vi trenger for å kunne beskrive alt fra enkle scenario, slik som en ball som ruller ned en bakke og til mer kompliserte systemer, som planetenes bevegelse rundt solen. For å beskrive slike sammenhenger effektivt er det viktig å forstå relasjonene mellom strekning, fart og tid.
 
 \section{Strekning ($\vec{s}$) og hastighet ($\vec{v}$)}
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/nQ7h4B4D5ig?si=aB6griX7nAPx8UIF}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_FartIFysikk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Dersom all bevegelse er langs samme, rette linje så kallder vi bevegelsen \textit{rettlinjet}. I dette tilfellet kan vi beskrive strekning og fart som skalarer, altså uten vektornotasjon. Dersom bevegelsen er krum, må vi bruke vektorer. Dette refererer vi til som \textit{krumlinjet} bevegelse. Vi skal se på begge deler. Merk derfor følgende notasjon:
 \begin{itemize}[itemsep=2pt, topsep=4pt, parsep=0pt]
     \item $s$ er strekning, altså størrelsen på \textbf{avstandsvektoren} $\vec{s}$. Vi kommer nok til å bruke begrep som \textit{posisjon} og \textit{forflytning} i tillegg til strekning og avstand. Poenget er at vi må gjøre forsljell på $s$ \textit{uten} vektortegn og \textit{med} vektortegn.
@@ -115,6 +124,15 @@ Vi kan illustrere beveglesen til bilen med grafer for fart og strekning. La oss 
 \label{fig:fart- og strekningsgrafer}
 \end{figure}
 
+\begin{wrapfigure}[6]{l}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{15}{\href{https://youtu.be/giCcfGv-uTc?si=0qJ3O-1g52nv1P7s}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_PosisjonsOgFartsgraf.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Stigningstallet til strekningsgrafen kan vi regne ut momentant ved derivasjon, eller som gjennomsnittet av endring i posisjon over en periode:
 \begin{align*}
     \textrm{v} = \frac{\Delta\textrm{s}}{\Delta\textrm{t}} = \frac{\SI{10}{\metre}}{\SI{1}{\second}} = \SI{10}{\metre\per\second}
@@ -568,6 +586,15 @@ En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning. Finn farta i 
 
 
 \section{Akselerasjon}
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/Q4S15FxYehk?si=moOmoKIu3yFgQlFl}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Akselerasjon.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Vi har så langt sett at endringen i strekning kalles fart. Men hva kalles endring i fart? Jo, det kalles \textit{akselerasjon}. Eller mer presist, så er akselerasjon et mål på endring i hastighet. Og hastighet har både størrelse og retning (er en vektor). Derfor handler akselerasjon om endring både av fartens størrelse og retning. Hvis akselerasjonen er positiv, øker objektets hastighet, mens en negativ akselerasjon (ofte kalt retardasjon, deselerasjon eller bare bremsing) betyr at hastigheten minker.
 \tanke{}{%
 Hva tenker du om størrelse og retning på akselerasjonen i følgende to tilfeller?\\
@@ -808,6 +835,15 @@ En bil øker farten fra $v_0 = \SI{20}{\metre\per\second}$ til $v = \SI{30}{\met
 
 \section{Bevegelseslikningene for konstant akselerasjon}
 \label{sec:bevegelseslikninger}
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/1rukKt6DYr0?si=_VYs_IJjoUBEMODn}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_KonstantAkselerasjon.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Noen ganger er akselerasjonen konstant, $a = \mathrm{konst.}$ Dette er en god antakelse i mange situasjoner, slik som fritt fall eller jevn bremsing.Bevegelseslikningene kan da utledes geometrisk ved hjelp av \textit{arealet under grafen}: arealet under $a(t)$-grafen gir endring i fart, og arealet under $v(t)$-grafen gir forflytning.
 
 %--- Figur: a(t)-rektangel og v(t)-trapes side om side --------------------
@@ -1087,132 +1123,158 @@ Vi kunne gjort tilsvarende dekomponeringer av de to andre likningene — og hvil
 }
 La oss nå se på eksempler for å lære dette med dekomponering ordentlig.
 
-\exm{Prosjektil og beregning av sluttposisjon}{
-Et prosjektil skytes ut med en kjent utgangshastighet \( v_0 \), i en vinkel \( \theta \) over horisontalen. Vi ser bort fra luftmotstand. Målet er å finne hvor prosjektilet lander, altså sluttposisjonen. Vi skal først bruke posisjonslikningen i y-retning for å finne hvor lenge prosjektilet er i lufta, og deretter bruke tiden \( t \) til å finne sluttposisjonen i x-retning.\\
+\exm{Straffespark}{
+Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $18^\circ$ i forhold til bakken, se figur~\ref{fig:straffespark}. Straffemerket ligger $\SI{11}{\metre}$ fra mållinjen. Et fotballmål er internasjonalt standardisert til å være $\SI{2.44}{\metre}$ høyt (avstanden fra bakken til undersiden av tverrliggeren). Ballen har imidlertid selv en viss utstrekning, så det holder at \textit{senteret} av ballen befinner seg i høyden $\SI{2.30}{\metre}$ for at ballen så vidt skal passere under tverrliggeren. Håland ønsker å skyte ballen slik at den passerer rett under tverrliggeren, akkurat idet den når mållinjen. Vi ser bort fra luftmotstand. Hvor stor må utgangsfarten $v_0$ være?\\
 
-    \textbf{Del a: Beregn tiden prosjektilet er i lufta} \\
-
-    \textit{Metode:}
-    For å finne hvor lenge prosjektilet er i lufta, bruker vi posisjonslikningen i y-retning. Siden prosjektilet returnerer til utgangshøyden (y-posisjon = 0) på slutten av sin bevegelse, kan vi bruke følgende likning:
-    \[
-    y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
-    \]
-    Vi vet at sluttposisjonen \( y = 0 \), startposisjonen \( y_0 = 0 \), og akselerasjonen \( a_y = -9.81 \, \si{\metre\per\second\squared} \) (tyngdeakselerasjonen, siden vi ser bort fra luftmotstand). Den vertikale komponenten av utgangshastigheten \( v_{0y} \) er gitt som \( v_{0y} = v_0 \sin \theta \). Dermed får vi:
-    \[
-    0 = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2.
-    \]
-    Vi løser denne kvadratiske likningen for \( t \) (tiden prosjektilet er i lufta):
-    \[
-    t = \doubleunderline{\frac{2 v_0 \sin \theta}{g}}
-    \]
-
-    \textbf{Del b: Beregn sluttposisjonen i x-retning} \\
+    \textbf{Del a: Sett opp posisjonslikningene} \\
 
     \textit{Metode:}
-    Nå som vi vet hvor lenge prosjektilet er i lufta, kan vi bruke tiden \( t \) til å beregne hvor langt prosjektilet beveger seg i x-retning. Vi bruker posisjonslikningen i x-retning:
+    Vi lar $x$ være den horisontale avstanden fra straffemerket, og $y$ være høyden over bakken. Startposisjonen er $x_0 = 0$ og $y_0 = 0$, og komponentene av utgangsfarten er $v_{0x} = v_0\cos\theta$ og $v_{0y} = v_0\sin\theta$, hvor $\theta = 18^\circ$. Det er ingen akselerasjon i $x$-retning, mens akselerasjonen i $y$-retning er tyngdeakselerasjonen $a_y = -g$. Posisjonslikningene blir dermed:
     \[
-    x = v_{0x} t + \frac{1}{2} a_x t^2.
-    \]
-    Siden det ikke er noen akselerasjon i x-retning (\( a_x = 0 \), fordi vi ser bort fra luftmotstand), blir likningen:
-    \[
-    x = v_{0x} t,
-    \]
-    hvor \( v_{0x} = v_0 \cos \theta \). Dermed får vi:
-    \[
-    x = v_0 \cos \theta \cdot t.
-    \]
-    Vi setter inn tiden \( t = \frac{2 v_0 \sin \theta}{g} \) fra forrige del:
-    \[
-    x = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g} = \doubleunderline{\frac{2 v_0^2 \sin \theta \cos \theta}{g}}.
+    x(t) = v_0 \cos\theta \cdot t, \qquad y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
     \]
 
-    Siden sluttposisjonen i y-retning er \( y = 0 \) når prosjektilet lander, kan vi skrive sluttposisjonen som en vektor:
-   \[
-    [x, y] = \left[\frac{2 v_0^2 \sin \theta \cos \theta}{g},\ 0\right].
+    \textbf{Del b: Finn tiden $t^\ast$ ballen bruker til mållinjen} \\
+
+    \textit{Metode:}
+    Ballen når mållinjen når $x(t^\ast) = \SI{11}{\metre}$. Fra uttrykket for $x(t)$ i Del a løser vi for $t^\ast$:
+    \[
+    t^\ast = \frac{11}{v_0 \cos\theta}.
     \]
-    Dermed er sluttposisjonen gitt som vektor, der x-komponenten er \( \dfrac{2 v_0^2 \sin \theta \cos \theta}{g} \) og y-komponenten er \( 0 \).
+
+    \textbf{Del c: Finn utgangsfarten $v_0$} \\
+
+    \textit{Metode:}
+    Idet ballen når mållinjen skal ballens senter befinne seg i høyden $y(t^\ast) = \SI{2.30}{\metre}$ (rett under tverrliggeren, når vi tar hensyn til ballens egen utstrekning). Vi setter $t^\ast$ fra Del b inn i uttrykket for $y(t)$:
+    \[
+    2.30 = v_0 \sin\theta \cdot \frac{11}{v_0 \cos\theta} - \frac{1}{2} g \left( \frac{11}{v_0 \cos\theta} \right)^2 = 11 \tan\theta - \frac{121\, g}{2 v_0^2 \cos^2\theta}.
+    \]
+    Legg merke til at $v_0$ forsvinner fra det første leddet, siden $\sin\theta / \cos\theta = \tan\theta$. Vi løser likningen for $v_0^2$:
+    \[
+    v_0^2 = \frac{121\, g}{2\cos^2\theta \left( 11\tan\theta - 2.30 \right)}.
+    \]
+    Setter vi inn tallverdiene $g = \SI{9.81}{\metre\per\second\squared}$ og $\theta = 18^\circ$, får vi
+    \[
+    v_0 = \doubleunderline{\SI{22.7}{\metre\per\second}} \approx \SI{81.7}{\kilo\metre\per\hour}.
+    \]
+    Dette er en realistisk fart for et hardt skutt straffespark.
 }
 
    \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Prosjektile bevegelse 2.png}
-    \caption{Prosjektilbevegelse}
-    \label{fig:prosjektilbevegelse}
+    \usetikzlibrary{calc}
+    \begin{tikzpicture}
+    \node[anchor=south west, inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Straffespark_Haaland.png}};
+    \newcommand{\imgpt}[3]{%
+        \coordinate (#1tmpx) at ($(img.south west)!#2!(img.south east)$);%
+        \coordinate (#1tmpy) at ($(img.south west)!#3!(img.north west)$);%
+        \coordinate (#1) at (#1tmpx |- #1tmpy);%
+    }
+    \imgpt{Foot}{0.213}{0.278}
+    \imgpt{Ball}{0.757}{0.653}
+    \imgpt{FootGround}{0.213}{0.2175}
+    \imgpt{PostGround}{0.798}{0.2175}
+    \imgpt{Hleft}{0.213}{0.16}
+    \imgpt{Hright}{0.798}{0.16}
+    \imgpt{Vbottom}{0.68}{0.2175}
+    \imgpt{Vtop}{0.68}{0.653}
+    \imgpt{Hlabel}{0.5055}{0.13}
+    \imgpt{Vlabel}{0.625}{0.435}
+    % Punkter langs parabelbanen (kun krumning mot horisontal, tangent til v0 i Foot)
+    \imgpt{Traj0}{0.2130}{0.2780}
+    \imgpt{Traj1}{0.2493}{0.3408}
+    \imgpt{Traj2}{0.2855}{0.3982}
+    \imgpt{Traj3}{0.3218}{0.4502}
+    \imgpt{Traj4}{0.3581}{0.4968}
+    \imgpt{Traj5}{0.3943}{0.5380}
+    \imgpt{Traj6}{0.4306}{0.5739}
+    \imgpt{Traj7}{0.4669}{0.6043}
+    \imgpt{Traj8}{0.5031}{0.6293}
+    \imgpt{Traj9}{0.5394}{0.6489}
+    \imgpt{Traj10}{0.5757}{0.6630}
+    \imgpt{Traj11}{0.6119}{0.6718}
+    \imgpt{Traj12}{0.6482}{0.6752}
+    \imgpt{Traj13}{0.6845}{0.6732}
+    \imgpt{Traj14}{0.7207}{0.6658}
+    % Parabelbane fra Hålands fot til ballen
+    \draw[dashed, very thick, exmscol]
+      (Traj0) -- (Traj1) -- (Traj2) -- (Traj3) -- (Traj4) -- (Traj5) -- (Traj6) -- (Traj7)
+      -- (Traj8) -- (Traj9) -- (Traj10) -- (Traj11) -- (Traj12) -- (Traj13) -- (Traj14) -- (Ball);
+    % Fartsvektoren v0, tangent til banen ved avspark
+    \draw[dotted, black!50] (Foot) -- ($(Foot)+(1.6,0)$);
+    \draw[->, very thick, exmscol] (Foot) -- ++(40:1.6) node[above right=1pt, exmscol] {\large $\vec{v}_0$};
+    \draw[black!60] ($(Foot)+(0.7,0)$) arc (0:40:0.7);
+    \node[font=\small, black!60] at ($(Foot)+({0.95*cos(20)},{0.95*sin(20)})$) {$\theta$};
+    % 11 m -- horisontal avstand fra Håland til stolpen
+    \draw[<->, thick, mycolor] (Hleft) -- (Hright);
+    \draw[dotted, mycolor!50] (FootGround) -- (Hleft);
+    \draw[dotted, mycolor!50] (PostGround) -- (Hright);
+    \node[below=2pt, mycolor] at (Hlabel) {\large $11\,\text{m}$};
+    % 2.30 m -- vertikal høyde fra bakken opp til ballen, plassert utenfor målet
+    \draw[<->, thick, mycolor] (Vbottom) -- (Vtop);
+    \draw[dotted, mycolor!50] (Vtop) -- (Ball);
+    \node[left=2pt, mycolor] at (Vlabel) {\large $2.30\,\text{m}$};
+    \end{tikzpicture}
+    \caption{Straffespark. Ballens bane er vist med stiplet linje, med utgangsfarten $\vec{v}_0$ tegnet inn som tangent til banen ved avspark.}
+    \label{fig:straffespark}
     \end{figure}
 
-\exm{Ball som faller fra en klippe}{
-En ball faller ut fra en klippe som er \(0.8 \, \si{\metre}\) høy og lander \(0.85 \, \si{\metre}\) unna foten av klippen. Vi skal beregne:
+\exm{Rallybil kjører utfor}{
+En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\metre\per\hour}$. Fordi den kjører over et jorde og gjennom noen busker, bremses farten, slik at den til slutt er $v_1 = \SI{30}{\kilo\metre\per\hour}$. Vi antar at denne oppbremsingen skjer med konstant akselerasjon over en strekning på $\SI{50}{\metre}$. Deretter kjører bilen utfor en klippe og lander $\SI{5}{\metre}$ lenger nede, se figur~\ref{fig:rallybil}.
 \begin{itemize}
-    \item a) Startfarten \(v_0\)
-    \item b) Sluttfarten \(v_1\), som er hastigheten rett før ballen treffer bakken.
+    \item a) Bestem akselerasjonen på strekningen.
+    \item b) Finn ut hvor langt bort den beveger seg i horisontal retning før den treffer bakken.
+    \item c) Finn fartsvektoren i det bilen treffer bakken.
 \end{itemize}
 
-\textbf{Del a: Beregn startfarten} \\
+    \textbf{Del a: Beregn akselerasjonen} \\
 
-\textit{Metode:}
-Vi bruker først posisjonslikningen i y-retning for å finne tiden \(t\) det tar før ballen treffer bakken. Siden ballen faller vertikalt uten startfart i y-retning (\(v_{0y} = 0\)), er posisjonslikningen i y-retning:
-\[
-y = y_0 + v_{0y} t + \frac{1}{2} a_y t^2.
-\]
-Vi vet at sluttposisjonen \(y = 0\), startposisjonen \(y_0 = 0.8 \, \si{\metre}\), og akselerasjonen \(a_y = -9.81 \, \si{\metre\per\second\squared}\). Dette gir:
-\[
-0 = 0.8 + 0 \cdot t - \frac{1}{2} \cdot 9.81 \cdot t^2,
-\]
-som gir:
-\[
-t^2 = \frac{2 \cdot 0.8}{9.81},
-\]
-\[
-t = \sqrt{\frac{1.6}{9.81}} \approx \doubleunderline{0.4 \, \si{\second}}
-\]
+    \textit{Metode:}
+    Vi regner om fartene til SI-enheter:
+    \[
+    v_0 = \SI{80}{\kilo\metre\per\hour} = \SI{22.2}{\metre\per\second}, \qquad v_1 = \SI{30}{\kilo\metre\per\hour} = \SI{8.33}{\metre\per\second}.
+    \]
+    Siden akselerasjonen er konstant, og vi kjenner start- og sluttfart samt strekningen $\Delta s = \SI{50}{\metre}$, bruker vi likningen $v_1^2 = v_0^2 + 2a\,\Delta s$. Vi løser for $a$:
+    \[
+    a = \frac{v_1^2 - v_0^2}{2\,\Delta s} = \frac{(8.33)^2 - (22.2)^2}{2\cdot 50} \approx \doubleunderline{-4.24 \, \si{\metre\per\second\squared}}.
+    \]
+    Akselerasjonen er negativ, altså en oppbremsing (retardasjon), som vi forventer.
 
-Nå som vi har funnet tiden \(t = 0.4 \, \si{\second}\), kan vi bruke posisjonslikningen i x-retning til å finne startfarten \(v_0\). Siden \(v_0 = v_{0x}\) og \(v_{0y} = 0\), er likningen i x-retning:
-\[
-x = v_{0x} t + \frac{1}{2} a_x t^2.
-\]
-Siden akselerasjonen i x-retning \(a_x = 0\), forenkles likningen til:
-\[
-x = v_{0x} t.
-\]
-Vi setter inn \(x = 0.85 \, \si{\metre}\) og \(t = 0.4 \, \si{\second}\):
-\[
-0.85 = v_{0x} \cdot 0.4.
-\]
-Løs for \(v_{0x}\):
-\[
-v_0 = v_{0x} = \frac{0.85}{0.4} \approx \doubleunderline{2.125 \, \si{\metre\per\second}}
-\]
+    \textbf{Del b: Finn horisontal avstand $x$} \\
 
-\textbf{Del b: Beregn sluttfarten rett før ballen treffer bakken} \\
+    \textit{Metode:}
+    Idet bilen kjører utfor klippen har den kun horisontal fart, $v_{0x} = v_1 = \SI{8.33}{\metre\per\second}$, og ingen vertikal fart, $v_{0y} = 0$. Vi lar $y_0 = \SI{5}{\metre}$ være klippens høyde, med $y = 0$ ved bakken. Posisjonslikningen i $y$-retning gir tiden $t$ bilen er i lufta:
+    \[
+    y = y_0 + v_{0y} t - \frac{1}{2} g t^2 \quad \Rightarrow \quad 0 = 5 - \frac{1}{2}(9.81) t^2 \quad \Rightarrow \quad t = \sqrt{\frac{2\cdot 5}{9.81}} \approx \SI{1.01}{\second}.
+    \]
+    Horisontal avstand følger av $x = v_{0x} t$ (ingen akselerasjon i $x$-retning):
+    \[
+    x = 8.33 \cdot 1.01 \approx \doubleunderline{\SI{8.41}{\metre}}.
+    \]
 
-\textit{Metode:}
-For å finne sluttfarten \(v_1\) rett før ballen treffer bakken, må vi beregne både hastigheten i x- og y-retning ved \(t = 0.4 \, \si{\second}\). Siden akselerasjonen i x-retning er null, forblir hastigheten i x-retning uendret:
-\[
-v_{1x} = v_{0x} = 2.125 \, \si{\metre\per\second}.
-\]
-For y-retningen bruker vi hastighetslikningen i y-retning:
-\[
-v_{1y} = v_{0y} + a_y t.
-\]
-Siden \(v_{0y} = 0\) og \(a_y = -9.81 \, \si{\metre\per\second\squared}\), får vi:
-\[
-v_{1y} = 0 + (-9.81) \cdot 0.4 \approx -3.924 \, \si{\metre\per\second}.
-\]
+    \textbf{Del c: Finn fartsvektoren idet bilen treffer bakken} \\
 
-Den totale hastigheten \(v_1\) rett før ballen treffer bakken er summen av komponentene i x- og y-retning, og kan finnes ved Pythagoras' setning:
-\[
-v_1 = \sqrt{v_{1x}^2 + v_{1y}^2} = \sqrt{(2.125)^2 + (-3.924)^2} \approx \sqrt{4.515 + 15.4} \approx \sqrt{19.915} \approx 4.46 \, \si{\metre\per\second}.
-\]
-
-Dermed er sluttfarten rett før ballen treffer bakken \(v_1 \approx \doubleunderline{4.46 \, \si{\metre\per\second}}\).
+    \textit{Metode:}
+    Den horisontale hastighetskomponenten er uendret, $v_x = v_{0x} = \SI{8.33}{\metre\per\second}$. Den vertikale komponenten finner vi fra hastighetslikningen:
+    \[
+    v_y = v_{0y} - g t = 0 - 9.81 \cdot 1.01 \approx \SI{-9.90}{\metre\per\second}.
+    \]
+    Fartsvektoren er dermed $\vec{v} = [\SI{8.33}{\metre\per\second},\, \SI{-9.90}{\metre\per\second}]$, med størrelse
+    \[
+    v = \sqrt{v_x^2 + v_y^2} = \sqrt{8.33^2 + 9.90^2} \approx \doubleunderline{\SI{12.9}{\metre\per\second}},
+    \]
+    og retning
+    \[
+    \theta = \arctan\left(\frac{|v_y|}{v_x}\right) = \arctan\left(\frac{9.90}{8.33}\right) \approx \doubleunderline{50^\circ} \text{ under horisontalen}.
+    \]
 }
 
    \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Ball ut av klippe.png}
-    \caption{Ballen rett før den faller ut av klippen}
-    \label{fig:Ball i klippen}
-    \end{figure}
+    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/RallybilKlippe.png}
+    \caption{Rallybilen kjører utfor klippen}
+    \label{fig:rallybil}
+\end{figure}
 
 \oppgave{Ballkast}{%
 En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med startfart $v_0 = \SI{10}{\metre\per\second}$. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
@@ -1223,18 +1285,16 @@ En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med st
 \end{enumerate}
 }
 
-\oppgave{Straffespark}{%
-Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $18^\circ$ i forhold til bakken. Straffemerket ligger $\SI{11}{\metre}$ fra mållinjen. Et fotballmål er internasjonalt standardisert til å være $\SI{2.44}{\metre}$ høyt (avstanden fra bakken til undersiden av tverrliggeren). Håland ønsker å skyte ballen slik at den passerer rett under tverrliggeren, akkurat idet den når mållinjen. Se bort ifra luftmotstand.
+\oppgave{Prosjektilbevegelse}{%
+Et prosjektil skytes ut fra bakken ($y_0 = 0$) med en kjent utgangshastighet $v_0$, i en vinkel $\theta$ over horisontalen. Se bort fra luftmotstand.
 \begin{enumerate}[a)]
-    \item Tegn en ryddig figur med relevante størrelser innmerket.
-    \item Sett opp uttrykk for posisjonen til ballen i $x$- og $y$-retning som funksjon av tiden $t$.
-    \item Bruk uttrykket for $x(t)$ til å finne et uttrykk for tiden $t^\ast$ det tar før ballen når mållinjen (uttrykt ved utgangsfarten $v_0$).
+    \item Sett opp uttrykk for posisjonen til prosjektilet i $x$- og $y$-retning som funksjon av tiden $t$.
+    \item Finn et uttrykk for tiden $t$ prosjektilet er i lufta, uttrykt ved $v_0$, $\theta$ og $g$.
 
-    \textit{Hint:} Bruk at $x(t^\ast) = \SI{11}{\metre}$, og at $v_{0x} = v_0\cos 18^\circ$.
+    \textit{Hint:} Bruk at prosjektilet returnerer til utgangshøyden når det lander, altså $y(t) = 0$.
 
-    \item Sett uttrykket for $t^\ast$ inn i likningen for $y(t)$, og bruk at $y(t^\ast) = \SI{2.44}{\metre}$ til å finne utgangsfarten $v_0$.
-
-    \textit{Hint:} Dette gir én likning med kun $v_0$ som ukjent --- løs den med hensyn på $v_0$.
+    \item Bruk uttrykket for $t$ fra forrige punkt til å finne et uttrykk for hvor langt prosjektilet lander fra utgangspunktet (sluttposisjonen i $x$-retning).
+    \item Skriv sluttposisjonen som en vektor $[x,\,y]$.
 \end{enumerate}
 }
 
@@ -1374,6 +1434,15 @@ hvor vi har brukt at $v=\Delta s/\Delta t$. Dette er formelen for sentripetalaks
     \end{align}
     hvor \( v \) er banehastigheten til objektet og \( r \) er radiusen til sirkelen. 
 }
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/fVp15sFO1sE?si=cGrJY9_MPcEvKFLk}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Sentripetalakselerasjon.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Sentripetalakselerasjonen peker alltid mot sentrum av sirkelen, selv om objektet hele tiden beveger seg langs kanten av sirkelen. Dette er en viktig idé å forstå når vi ser på bevegelse i sirkulære baner. Men... hva om bilen også øker farten sin langs sirkelbanen, og ikke bare endrer retning? I det tilfelel vil bilen både ha en akselerasjon inn mot sentrum (sentripetalakselerasjonen) og en akselerasjon i kjøreretningen (tangentialakselerasjonen). Den totale akselerasjonsvektoren kan da skrives som en sum av disse to komponentene:
 \[
 \vec{a} = \vec{a}_\perp + \vec{a}_\parallel,

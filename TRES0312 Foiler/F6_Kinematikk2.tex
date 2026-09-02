@@ -1,0 +1,438 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}   % for "visible on=<->" i enkelte tikz-figurer
+\usetikzlibrary{calc}   % for tikz-overlayet på Håland-figuren (forside)
+
+%--------------------------------------------------------------------------
+%  Farger hentet fra kompendiets amd.sty (ikke definert i amd-beamer.sty),
+%  brukt av tikz-overlayet på straffespark-figuren (forsiden).
+%--------------------------------------------------------------------------
+\definecolor{mycolor}{RGB}{38,168,148}
+\definecolor{exmscol}{HTML}{e04b52}
+
+%--------------------------------------------------------------------------
+%  \imgpt{navn}{xfrac}{yfrac} -- definert HER (utenfor enhver frame), siden
+%  beamer fanger opp hele frame-innholdet for overlay-avspilling; en
+%  \newcommand med #1/#2/#3 inne i en frame gir "Illegal parameter number".
+%--------------------------------------------------------------------------
+\newcommand{\imgpt}[3]{%
+    \coordinate (#1tmpx) at ($(img.south west)!#2!(img.south east)$);%
+    \coordinate (#1tmpy) at ($(img.south west)!#3!(img.north west)$);%
+    \coordinate (#1) at (#1tmpx |- #1tmpy);%
+}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Kinematikk}
+\subtitle{TRES0312 --- Prosjektilbevegelse og sirkelbevegelse}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%--------------------------------------------------------------------------
+\setcounter{section}{3}   % Kapittel 3: "Kinematikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+
+  % Håland-figuren (med tikz-overlay fra kompendiets Figur 3.7) som ren
+  % illustrasjon nederst på forsiden -- ingen figurtekst.
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north, inner sep=0pt] at ($(current page.north)+(0,-4.1cm)$) {%
+      \scalebox{0.65}{%
+      \begin{tikzpicture}
+      \node[anchor=south west, inner sep=0pt] (img) at (0,0) {%
+        \ifdarkmode
+          \includegraphics[width=10cm]{Images/Straffespark_Haaland_transp_mork.png}
+        \else
+          \includegraphics[width=10cm]{Images/Straffespark_Haaland_transp_lys.png}
+        \fi
+      };
+      \imgpt{Foot}{0.213}{0.278}
+      \imgpt{Ball}{0.757}{0.653}
+      \imgpt{FootGround}{0.213}{0.2175}
+      \imgpt{PostGround}{0.798}{0.2175}
+      \imgpt{Hleft}{0.213}{0.16}
+      \imgpt{Hright}{0.798}{0.16}
+      \imgpt{Vbottom}{0.68}{0.2175}
+      \imgpt{Vtop}{0.68}{0.653}
+      \imgpt{Hlabel}{0.5055}{0.13}
+      \imgpt{Vlabel}{0.625}{0.435}
+      \imgpt{Traj0}{0.2130}{0.2780}
+      \imgpt{Traj1}{0.2493}{0.3408}
+      \imgpt{Traj2}{0.2855}{0.3982}
+      \imgpt{Traj3}{0.3218}{0.4502}
+      \imgpt{Traj4}{0.3581}{0.4968}
+      \imgpt{Traj5}{0.3943}{0.5380}
+      \imgpt{Traj6}{0.4306}{0.5739}
+      \imgpt{Traj7}{0.4669}{0.6043}
+      \imgpt{Traj8}{0.5031}{0.6293}
+      \imgpt{Traj9}{0.5394}{0.6489}
+      \imgpt{Traj10}{0.5757}{0.6630}
+      \imgpt{Traj11}{0.6119}{0.6718}
+      \imgpt{Traj12}{0.6482}{0.6752}
+      \imgpt{Traj13}{0.6845}{0.6732}
+      \imgpt{Traj14}{0.7207}{0.6658}
+      \draw[dashed, very thick, exmscol]
+        (Traj0) -- (Traj1) -- (Traj2) -- (Traj3) -- (Traj4) -- (Traj5) -- (Traj6) -- (Traj7)
+        -- (Traj8) -- (Traj9) -- (Traj10) -- (Traj11) -- (Traj12) -- (Traj13) -- (Traj14) -- (Ball);
+      \draw[dotted, textcolor!60] (Foot) -- ($(Foot)+(1.6,0)$);
+      \draw[->, very thick, exmscol] (Foot) -- ++(40:1.6) node[above right=1pt, exmscol] {\large $\vec{v}_0$};
+      \draw[textcolor!70] ($(Foot)+(0.7,0)$) arc (0:40:0.7);
+      \node[font=\small, textcolor!70] at ($(Foot)+({0.95*cos(20)},{0.95*sin(20)})$) {$\theta$};
+      \draw[<->, thick, mycolor] (Hleft) -- (Hright);
+      \draw[dotted, mycolor!50] (FootGround) -- (Hleft);
+      \draw[dotted, mycolor!50] (PostGround) -- (Hright);
+      \node[below=2pt, mycolor] at (Hlabel) {\large $11\,\text{m}$};
+      \draw[<->, thick, mycolor] (Vbottom) -- (Vtop);
+      \draw[dotted, mycolor!50] (Vtop) -- (Ball);
+      \node[left=2pt, mycolor] at (Vlabel) {\large $2.30\,\text{m}$};
+      \end{tikzpicture}%
+      }%
+    };
+  \end{tikzpicture}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  BOLK 1
+%--------------------------------------------------------------------------
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Aktivitet fra forrige gang: Fart-strekning-likningen
+%  (Slide 9 i F5 — vi rakk den ikke.)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fart-strekning-likningen}{%
+  En bil øker farten fra $v_0 = 5\,\mathrm{m/s}$ til $v = 25\,\mathrm{m/s}$ i løpet av $t = 4\,\mathrm{s}$.
+  Bestem strekningen $s$ bilen har tilbakelagt.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Aktivitet fra forrige gang: Fritt fall
+%  (Slide 8 i F5 — vi rakk den ikke.)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fritt fall}{%
+  \begin{enumerate}[a)]
+      \item En sten kastes rett oppover, og faller rett ned igjen. Hva er akselerasjonen til steinen (i) på vei opp, (ii) på toppen og (iii) på vei ned? Tegn figur og forklar kort med ord.
+    \item Tegn (kvalitativt) grafene $a(t)$, $v(t)$ og $s(t)$ for bevegelsen i a)ii) (steinen som kastes rett oppover).
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Repetisjon: a = konst., og dekomponering i x- og y-retning
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \begin{columns}[T]
+    %--- Venstre: de fire likningene (samlet, som i F5 slide 5) ---
+    \begin{column}{0.30\textwidth}
+      \centering
+      {\Large $\vec{a} = \text{konst.}$}\\[10pt]
+      \footnotesize
+      $\displaystyle
+      \left\{\begin{array}{l}
+        \vec{v} = \vec{v}_0 + \vec{a}\,t \\[10pt]
+        \vec{s} = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2 \\[10pt]
+        |\vec{v}|^2 = |\vec{v}_0|^2 + 2\,\vec{a}\cdot(\vec{s}-\vec{s}_0) \\[10pt]
+        \vec{s}-\vec{s}_0 = \dfrac{\vec{v}_0+\vec{v}}{2}\,t
+      \end{array}\right.$
+    \end{column}
+    \pause
+    %--- Skillelinje 1 ---
+    \begin{column}{0.02\textwidth}
+      \centering
+      \ifdarkmode\color{white!25!gray}\else\color{black!20}\fi
+      \rule{0.4pt}{4.3cm}
+    \end{column}
+    %--- Midten: dekomponering i x-retning ---
+    \begin{column}{0.32\textwidth}
+      \centering
+      {\large\bfseries $x$-retning}\\[10pt]
+      \footnotesize
+      $\displaystyle
+      \left\{\begin{array}{l}
+        v_x = v_{0x} + a_x\,t \\[14pt]
+        s_x = s_{0x} + v_{0x}\,t + \tfrac{1}{2}a_x\,t^2
+      \end{array}\right.$
+    \end{column}
+    \pause
+    %--- Skillelinje 2 ---
+    \begin{column}{0.02\textwidth}
+      \centering
+      \ifdarkmode\color{white!25!gray}\else\color{black!20}\fi
+      \rule{0.4pt}{4.3cm}
+    \end{column}
+    %--- Høyre: dekomponering i y-retning ---
+    \begin{column}{0.32\textwidth}
+      \centering
+      {\large\bfseries $y$-retning}\\[10pt]
+      \footnotesize
+      $\displaystyle
+      \left\{\begin{array}{l}
+        v_y = v_{0y} + a_y\,t \\[14pt]
+        s_y = s_{0y} + v_{0y}\,t + \tfrac{1}{2}a_y\,t^2
+      \end{array}\right.$
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: Kanon (prosjektilbevegelse)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.40\textwidth}
+      \aktivitet{Kanonen}{%
+      En kanon skyter en kule fra en høyde $y_0 = 0.25\,\mathrm{m}$ over bakken, med en vinkel på $60^\circ$ i forhold til horisontalen. Utgangsfarten til kula er $v_0 = 4.84\,\mathrm{m/s}$.
+      \begin{enumerate}[a)]
+        \item Finn startfarten dekomponert i $x$- og $y$-retning.
+        \item Bestem hvor lang tid kula er i lufta før den lander.
+        \item Bestem hvor langt bort kula lander (horisontal avstand).
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.56\textwidth}
+      \centering
+      \ifdarkmode
+        \includegraphics[width=\linewidth]{Images/Prosjektilbevegelse_skisse_mork.png}
+      \else
+        \includegraphics[width=\linewidth]{Images/Prosjektilbevegelse_skisse_lys.png}
+      \fi
+      \vspace{4pt}
+      {\tiny Python: \texttt{TRES0312 Python/Kap3\_Kinematikk/K3\_prosjektilbevegelse\_kanon.ipynb}}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  BOLK 2 — Sirkelbevegelse
+%--------------------------------------------------------------------------
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Til ettertanke: retningen til akselerasjonen i sirkelbevegelse
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Hvilken retning peker akselerasjonen i sirkelbevegelse?
+  }
+
+  \pause
+  \begin{figure}[h]
+  \centering
+  % LEFT: position diagram
+  \begin{minipage}[t]{0.50\textwidth}
+  \centering
+  \begin{tikzpicture}[font=\small, scale=0.95, >=stealth]
+    % Centre O
+    \fill (0,0) circle (2pt);
+    \node[below left=2pt] at (0,0) {$O$};
+
+    % Partial circle arc (40° – 140°)
+    \draw[headCol, thick]
+      ({2*cos(40)},{2*sin(40)}) arc[start angle=40, end angle=140, radius=2];
+
+    % Points P1 (110°) and P2 (70°)
+    \coordinate (P1) at ({2*cos(110)},{2*sin(110)});
+    \coordinate (P2) at ({2*cos(70)},{2*sin(70)});
+
+    % Radii
+    \draw[black!40, semithick] (0,0) -- (P1);
+    \draw[black!40, semithick] (0,0) -- (P2);
+
+    % r labels at midpoints of radii
+    \node[left=2pt,  black!55, font=\footnotesize] at ({cos(110)},{sin(110)}) {$r$};
+    \node[right=2pt, black!55, font=\footnotesize] at ({cos(70)}, {sin(70)})  {$r$};
+
+    % Angle Δθ arc at O
+    \draw ({0.52*cos(110)},{0.52*sin(110)})
+          arc[start angle=110, end angle=70, radius=0.52];
+    \node[above=1pt, font=\footnotesize] at (0, 0.62) {$\Delta\theta$};
+
+    % Points
+    \fill[defscol] (P1) circle (2.5pt);
+    \node[defscol, above left=2pt] at (P1) {$P_1$};
+    \fill[defscol] (P2) circle (2.5pt);
+    \node[defscol, above right=2pt] at (P2) {$P_2$};
+
+    % Chord Δs (P1 → P2, horizontal since symmetric about 90°)
+    \draw[->, oppsumcol, thick, dashed] (P1) -- (P2)
+          node[midway, below=5pt] {$\Delta s$};
+
+    % Velocity v1 at P1 (tangent = 110° − 90° = 20°)
+    \draw[->, very thick, defscol]
+          (P1) -- ++({cos(20)},{sin(20)})
+          node[above right=-1pt] {$\vec{v}_1$};
+
+    % Velocity v2 at P2 (tangent = 70° − 90° = −20°)
+    \draw[->, very thick, defscol]
+          (P2) -- ++({cos(-20)},{sin(-20)})
+          node[right=2pt] {$\vec{v}_2$};
+  \end{tikzpicture}
+  \end{minipage}%
+  \hfill
+  % RIGHT: velocity triangle
+  \begin{minipage}[t]{0.46\textwidth}
+  \centering
+  \begin{tikzpicture}[font=\small, scale=0.95, >=stealth]
+    % Tails at origin, v_len = 1.5
+    \coordinate (tail) at (0,0);
+    \coordinate (tip1) at ({1.5*cos(20)}, { 1.5*sin(20)});
+    \coordinate (tip2) at ({1.5*cos(20)}, {-1.5*sin(20)});
+
+    % v1 and v2
+    \draw[->, very thick, defscol] (tail) -- (tip1);
+    \draw[->, very thick, defscol] (tail) -- (tip2);
+
+    % v labels along the arrows
+    \node[defscol, above left=1pt, font=\footnotesize]
+          at ({0.75*cos(20)},{ 0.75*sin(20)}) {$v$};
+    \node[defscol, below left=1pt, font=\footnotesize]
+          at ({0.75*cos(20)},{-0.75*sin(20)}) {$v$};
+
+    % Arrow-head labels (v1, v2)
+    \node[defscol, above=2pt]  at (tip1) {$\vec{v}_1$};
+    \node[defscol, below=2pt]  at (tip2) {$\vec{v}_2$};
+
+    % Δv from tip1 to tip2 (straight down)
+    \draw[->, very thick, oppsumcol] (tip1) -- (tip2)
+          node[right=3pt, midway] {$\Delta\vec{v}$};
+
+    % Tail point
+    \fill (tail) circle (1.5pt);
+
+    % Angle Δθ at tail
+    \draw ({0.52*cos(20)},{0.52*sin(20)})
+          arc[start angle=20, end angle=-20, radius=0.52];
+    \node[right=3pt, font=\footnotesize] at (0.60, 0) {$\Delta\theta$};
+
+    % Bounding-box adjustment (match height of left panel)
+    \path (0,0); \node[opacity=0] at (0,2.5) {$x$};
+    \path (0,-1.7);
+  \end{tikzpicture}
+  \end{minipage}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Definisjon: Sentripetalakselerasjon
+%--------------------------------------------------------------------------
+\begin{frame}{Sentripetalakselerasjon}
+
+  \defnat{3.6}{Sentripetalakselerasjon}{
+    Sentripetalakselerasjonen er akselerasjonen inn mot sentrum i ren sirkelbevegelse med konstant fart. Uttrykket for størrelsen på denne akselerasjonen kan vises å være
+    \[
+      a_\perp = \frac{v^2}{r}
+    \]
+    hvor $v$ er banehastigheten til objektet og $r$ er radiusen til sirkelen.
+  }
+
+  \pause
+  \merk{Retning}{
+  Sentripetalakselerasjonen peker \emph{alltid} mot sentrum av sirkelen --- selv om objektet hele tiden beveger seg langs kanten av sirkelen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Aktivitet: Bil i rundkjøring
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Bil i rundkjøring}{%
+  En bil kjører gjennom en rundkjøring med konstant fart $v = 36\,\mathrm{km/h}$ og radius $r = 20\,\mathrm{m}$.
+  Hva er sentripetalakselerasjonen til bilen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Aktivitet: Månen i bane rundt jorda
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Sirkelbevegelse og omløpstid}{%
+  Månens gjennomsnittlige avstand fra jorda er $r = 3.84\cdot10^8\,\mathrm{m}$, og omløpstiden er $T = 27.3\,\text{dager}$.
+  \begin{enumerate}[a)]
+    \item Gjør om omløpstiden til sekunder.
+    \item Finn sentripetalakselerasjonen månen opplever ved hjelp av formelen $a_\perp = 4\pi^2 r / T^2$.
+    \item Beregn månens banehastighet $v = 2\pi r / T$ og verifiser svaret ved å bruke $a_\perp = v^2/r$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Oppsummering: Omløpstid
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Omløpstid}{%
+  Farten i sirkelbevegelse kan skrives ved hjelp av omløpstiden $T$ (tiden det tar å fullføre ett omløp):
+  \[
+    v = \frac{2\pi r}{T}.
+  \]
+  Setter vi dette inn i uttrykket for sentripetalakselerasjon, $a_\perp = v^2/r$, får vi et alternativt uttrykk for akselerasjonen (likning 3.16 i kompendiet):
+  }
+
+  \graabox{$\displaystyle a_\perp = \frac{4\pi^2 r}{T^2}$}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Dynamikk --- \textit{``Hvorfor bevegelse!''}}
+  \begin{itemize}
+    \item Newtons lover
+    \item Kraft-begrepet
+    \item Krefter i dagliglivet (tyngdekraft, normalkraft, friksjon)
+  \end{itemize}
+  \vspace{6mm}
+  {\normalsize\itshape May the force be with you\ldots}
+\end{center}
+\end{frame}
+
+\end{document}
