@@ -35,7 +35,7 @@
 %  DOKUMENTINFO
 %--------------------------------------------------------------------------
 \title{Kinematikk}
-\subtitle{TRES0312 --- Prosjektilbevegelse og sirkelbevegelse}
+\subtitle{TRES0312 --- Prosjektilbevegelse}
 \author{Ben David Normann}
 \date{\today}
 
@@ -112,10 +112,6 @@
     };
   \end{tikzpicture}
 \end{frame}
-
-%--------------------------------------------------------------------------
-%  BOLK 1
-%--------------------------------------------------------------------------
 
 %--------------------------------------------------------------------------
 %  SLIDE 2 — Aktivitet fra forrige gang: Fart-strekning-likningen
@@ -235,203 +231,15 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Pause
-%--------------------------------------------------------------------------
-\begin{frame}{}
-\begin{center}
-\Huge{Pause!}
-\end{center}
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  BOLK 2 — Sirkelbevegelse
-%--------------------------------------------------------------------------
-
-%--------------------------------------------------------------------------
-%  SLIDE 7 — Til ettertanke: retningen til akselerasjonen i sirkelbevegelse
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \tanke{}{%
-  Hvilken retning peker akselerasjonen i sirkelbevegelse?
-  }
-
-  \pause
-  \begin{figure}[h]
-  \centering
-  % LEFT: position diagram
-  \begin{minipage}[t]{0.50\textwidth}
-  \centering
-  \begin{tikzpicture}[font=\small, scale=0.95, >=stealth]
-    % Centre O
-    \fill (0,0) circle (2pt);
-    \node[below left=2pt] at (0,0) {$O$};
-
-    % Partial circle arc (40° – 140°)
-    \draw[headCol, thick]
-      ({2*cos(40)},{2*sin(40)}) arc[start angle=40, end angle=140, radius=2];
-
-    % Points P1 (110°) and P2 (70°)
-    \coordinate (P1) at ({2*cos(110)},{2*sin(110)});
-    \coordinate (P2) at ({2*cos(70)},{2*sin(70)});
-
-    % Radii
-    \draw[black!40, semithick] (0,0) -- (P1);
-    \draw[black!40, semithick] (0,0) -- (P2);
-
-    % r labels at midpoints of radii
-    \node[left=2pt,  black!55, font=\footnotesize] at ({cos(110)},{sin(110)}) {$r$};
-    \node[right=2pt, black!55, font=\footnotesize] at ({cos(70)}, {sin(70)})  {$r$};
-
-    % Angle Δθ arc at O
-    \draw ({0.52*cos(110)},{0.52*sin(110)})
-          arc[start angle=110, end angle=70, radius=0.52];
-    \node[above=1pt, font=\footnotesize] at (0, 0.62) {$\Delta\theta$};
-
-    % Points
-    \fill[defscol] (P1) circle (2.5pt);
-    \node[defscol, above left=2pt] at (P1) {$P_1$};
-    \fill[defscol] (P2) circle (2.5pt);
-    \node[defscol, above right=2pt] at (P2) {$P_2$};
-
-    % Chord Δs (P1 → P2, horizontal since symmetric about 90°)
-    \draw[->, oppsumcol, thick, dashed] (P1) -- (P2)
-          node[midway, below=5pt] {$\Delta s$};
-
-    % Velocity v1 at P1 (tangent = 110° − 90° = 20°)
-    \draw[->, very thick, defscol]
-          (P1) -- ++({cos(20)},{sin(20)})
-          node[above right=-1pt] {$\vec{v}_1$};
-
-    % Velocity v2 at P2 (tangent = 70° − 90° = −20°)
-    \draw[->, very thick, defscol]
-          (P2) -- ++({cos(-20)},{sin(-20)})
-          node[right=2pt] {$\vec{v}_2$};
-  \end{tikzpicture}
-  \end{minipage}%
-  \hfill
-  % RIGHT: velocity triangle
-  \begin{minipage}[t]{0.46\textwidth}
-  \centering
-  \begin{tikzpicture}[font=\small, scale=0.95, >=stealth]
-    % Tails at origin, v_len = 1.5
-    \coordinate (tail) at (0,0);
-    \coordinate (tip1) at ({1.5*cos(20)}, { 1.5*sin(20)});
-    \coordinate (tip2) at ({1.5*cos(20)}, {-1.5*sin(20)});
-
-    % v1 and v2
-    \draw[->, very thick, defscol] (tail) -- (tip1);
-    \draw[->, very thick, defscol] (tail) -- (tip2);
-
-    % v labels along the arrows
-    \node[defscol, above left=1pt, font=\footnotesize]
-          at ({0.75*cos(20)},{ 0.75*sin(20)}) {$v$};
-    \node[defscol, below left=1pt, font=\footnotesize]
-          at ({0.75*cos(20)},{-0.75*sin(20)}) {$v$};
-
-    % Arrow-head labels (v1, v2)
-    \node[defscol, above=2pt]  at (tip1) {$\vec{v}_1$};
-    \node[defscol, below=2pt]  at (tip2) {$\vec{v}_2$};
-
-    % Δv from tip1 to tip2 (straight down)
-    \draw[->, very thick, oppsumcol] (tip1) -- (tip2)
-          node[right=3pt, midway] {$\Delta\vec{v}$};
-
-    % Tail point
-    \fill (tail) circle (1.5pt);
-
-    % Angle Δθ at tail
-    \draw ({0.52*cos(20)},{0.52*sin(20)})
-          arc[start angle=20, end angle=-20, radius=0.52];
-    \node[right=3pt, font=\footnotesize] at (0.60, 0) {$\Delta\theta$};
-
-    % Bounding-box adjustment (match height of left panel)
-    \path (0,0); \node[opacity=0] at (0,2.5) {$x$};
-    \path (0,-1.7);
-  \end{tikzpicture}
-  \end{minipage}
-  \end{figure}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 8 — Definisjon: Sentripetalakselerasjon
-%--------------------------------------------------------------------------
-\begin{frame}{Sentripetalakselerasjon}
-
-  \defnat{3.6}{Sentripetalakselerasjon}{
-    Sentripetalakselerasjonen er akselerasjonen inn mot sentrum i ren sirkelbevegelse med konstant fart. Uttrykket for størrelsen på denne akselerasjonen kan vises å være
-    \[
-      a_\perp = \frac{v^2}{r}
-    \]
-    hvor $v$ er banehastigheten til objektet og $r$ er radiusen til sirkelen.
-  }
-
-  \pause
-  \merk{Retning}{
-  Sentripetalakselerasjonen peker \emph{alltid} mot sentrum av sirkelen --- selv om objektet hele tiden beveger seg langs kanten av sirkelen.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 9 — Aktivitet: Bil i rundkjøring
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Bil i rundkjøring}{%
-  En bil kjører gjennom en rundkjøring med konstant fart $v = 36\,\mathrm{km/h}$ og radius $r = 20\,\mathrm{m}$.
-  Hva er sentripetalakselerasjonen til bilen?
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 10 — Aktivitet: Månen i bane rundt jorda
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Sirkelbevegelse og omløpstid}{%
-  Månens gjennomsnittlige avstand fra jorda er $r = 3.84\cdot10^8\,\mathrm{m}$, og omløpstiden er $T = 27.3\,\text{dager}$.
-  \begin{enumerate}[a)]
-    \item Gjør om omløpstiden til sekunder.
-    \item Finn sentripetalakselerasjonen månen opplever ved hjelp av formelen $a_\perp = 4\pi^2 r / T^2$.
-    \item Beregn månens banehastighet $v = 2\pi r / T$ og verifiser svaret ved å bruke $a_\perp = v^2/r$.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 11 — Oppsummering: Omløpstid
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \oppsum{Omløpstid}{%
-  Farten i sirkelbevegelse kan skrives ved hjelp av omløpstiden $T$ (tiden det tar å fullføre ett omløp):
-  \[
-    v = \frac{2\pi r}{T}.
-  \]
-  Setter vi dette inn i uttrykket for sentripetalakselerasjon, $a_\perp = v^2/r$, får vi et alternativt uttrykk for akselerasjonen (likning 3.16 i kompendiet):
-  }
-
-  \graabox{$\displaystyle a_\perp = \frac{4\pi^2 r}{T^2}$}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 12 — Neste gang
+%  SLIDE 6 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
-  \Huge{Neste gang: Dynamikk --- \textit{``Hvorfor bevegelse!''}}
+  \Huge{Neste gang: Plenumsregning}
   \begin{itemize}
-    \item Newtons lover
-    \item Kraft-begrepet
-    \item Krefter i dagliglivet (tyngdekraft, normalkraft, friksjon)
+    \item Vi går sammen gjennom flere oppgaver i kinematikk
+    \item Både 1D-bevegelse og 2D-bevegelse (prosjektilbevegelse)
   \end{itemize}
-  \vspace{6mm}
-  {\normalsize\itshape May the force be with you\ldots}
 \end{center}
 \end{frame}
 

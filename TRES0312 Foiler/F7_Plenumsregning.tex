@@ -1,0 +1,148 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}   % for "visible on=<->" i enkelte tikz-figurer
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Kinematikk}
+\subtitle{TRES0312 --- Plenumsregning}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%  \setcounter{section}{N} setter gjeldende seksjonsnummer til N, slik at
+%  \defn, \exm og \oppgave får samme nummerering som i kompendiet.
+%  Tellerne nullstilles automatisk ved hvert \setcounter{section}{...}.
+%--------------------------------------------------------------------------
+\setcounter{section}{3}   % Kapittel 3: "Kinematikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Plan for økta
+%--------------------------------------------------------------------------
+\begin{frame}{Plenumsregning}
+
+  \oppsum{I dag}{%
+  Vi går sammen gjennom flere oppgaver i kinematikk --- to i 1D og to i 2D --- som repetisjon før vi går videre til sirkelbevegelse.
+  \begin{itemize}
+    \item[1D] Bremsing, og fritt fall
+    \item[2D] Kast fra bakkenivå, og kast fra en høyde
+  \end{itemize}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Aktivitet: Bremsing (1D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (1D)}
+
+  \aktivitet{Bremsing}{%
+  En bil kjører med fart $v_0 = 20\,\mathrm{m/s}$ og bremser med konstant akselerasjon $a = -5\,\mathrm{m/s^2}$ helt til den stopper.
+  \begin{enumerate}[a)]
+    \item Hvor lang tid bruker bilen på å stoppe?
+    \item Hvor langt kjører bilen i løpet av oppbremsingen?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Aktivitet: Fritt fall fra bro (1D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (1D)}
+
+  \aktivitet{Fritt fall fra en bro}{%
+  En stein slippes (uten starthastighet) fra en bro $20\,\mathrm{m}$ over vannflaten.
+  \begin{enumerate}[a)]
+    \item Hvor lang tid tar det før steinen treffer vannet?
+    \item Hvor fort beveger steinen seg i det den treffer vannet?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: Ball kastet fra bakkenivå (2D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (2D)}
+
+  \aktivitet{Ball kastet fra bakkenivå}{%
+  En ball kastes med utgangsfart $v_0 = 15\,\mathrm{m/s}$ i en vinkel på $40^\circ$ over et flatt, horisontalt underlag ($y_0 = 0$).
+  \begin{enumerate}[a)]
+    \item Finn $v_0$ dekomponert i $x$- og $y$-retning.
+    \item Bestem hvor lang tid ballen er i lufta.
+    \item Bestem hvor langt unna ballen lander, og hvor høyt den når på det høyeste.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: Ball ruller av et bord (2D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (2D)}
+
+  \aktivitet{Ball ruller av et bord}{%
+  En ball ruller av kanten på et bord med høyde $h = 1.20\,\mathrm{m}$, med horisontal fart $v_0 = 2.5\,\mathrm{m/s}$ i det den forlater bordkanten.
+  \begin{enumerate}[a)]
+    \item Hvor lang tid bruker ballen på å falle ned til gulvet?
+    \item Hvor langt fra bordkanten treffer ballen gulvet?
+    \item Hva er farten (størrelsen) til ballen i det den treffer gulvet?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Ekstra: for de som blir tidlig ferdig
+%--------------------------------------------------------------------------
+\begin{frame}{Ekstra (for de som blir tidlig ferdig)}
+
+  \aktivitet{To biler møtes (1D)}{%
+  Bil A starter i ro ved $x=0$ og akselererer med $a = 2\,\mathrm{m/s^2}$. Samtidig kjører bil B med konstant fart $v = 15\,\mathrm{m/s}$ fra $x = 300\,\mathrm{m}$, i retning mot bil A.
+  Når og hvor møtes bilene?
+  }
+
+  \pause
+  \aktivitet{Finn utgangsfarten (2D)}{%
+  En pil skytes i en vinkel på $45^\circ$ over et flatt, horisontalt underlag, og lander $30\,\mathrm{m}$ unna --- på samme høyde den ble skutt fra ($y_0 = 0$).
+  Hva var utgangsfarten til pilen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Sirkelbevegelse}
+  \begin{itemize}
+    \item Sentripetalakselerasjon
+    \item Sirkelbevegelse og omløpstid
+  \end{itemize}
+\end{center}
+\end{frame}
+
+\end{document}
