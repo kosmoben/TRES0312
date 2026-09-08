@@ -38,22 +38,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 2 — Plan for økta
-%--------------------------------------------------------------------------
-\begin{frame}{Plenumsregning}
-
-  \oppsum{I dag}{%
-  Vi går sammen gjennom flere oppgaver i kinematikk --- to i 1D og to i 2D --- som repetisjon før vi går videre til sirkelbevegelse.
-  \begin{itemize}
-    \item[1D] Bremsing, og fritt fall
-    \item[2D] Kast fra bakkenivå, og kast fra en høyde
-  \end{itemize}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 3 — Aktivitet: Bremsing (1D)
+%  SLIDE 2 — Aktivitet: Bremsing (1D)
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet (1D)}
 
@@ -62,28 +47,111 @@
   \begin{enumerate}[a)]
     \item Hvor lang tid bruker bilen på å stoppe?
     \item Hvor langt kjører bilen i løpet av oppbremsingen?
+    \item Tegn akselerasjons- , farts- og strekningsgrafen til bilen
   \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 4 — Aktivitet: Fritt fall fra bro (1D)
+%  SLIDE 3 — Aktivitet: Bremsing, grafer (1D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (1D) --- grafer}
+
+  \begin{center}
+  \ifdarkmode
+    \includegraphics[width=0.95\linewidth]{Images/Bremsing_grafer_mork.png}
+  \else
+    \includegraphics[width=0.95\linewidth]{Images/Bremsing_grafer_lys.png}
+  \fi
+
+  \vspace{4pt}
+  {\tiny Python: \texttt{TRES0312 Python/Kap3\_Kinematikk/K3\_bremsing\_grafer.ipynb}}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Aktivitet: Steinen fra broen (video)
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet (1D)}
 
-  \aktivitet{Fritt fall fra en bro}{%
-  En stein slippes (uten starthastighet) fra en bro $20\,\mathrm{m}$ over vannflaten.
-  \begin{enumerate}[a)]
-    \item Hvor lang tid tar det før steinen treffer vannet?
-    \item Hvor fort beveger steinen seg i det den treffer vannet?
-  \end{enumerate}
-  }
+  \begin{columns}[T]
+    \begin{column}{0.42\textwidth}
+      \centering
+      \href{https://youtu.be/WxmJxCtOBOM?si=Yga6Pbs2UgeSTidM}{%
+        \includegraphics[height=5.0cm]{Images/YT_MaleHoydeMedStein.png}}
+      \\[4pt]
+      {\tiny \url{https://youtu.be/WxmJxCtOBOM}}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \pause
+      \aktivitet{Steinen fra broen}{%
+      I videoen slipper han en stein fra en bro, og den bruker $2.4\,\mathrm{s}$ på å nå vannoverflaten.
+      \begin{enumerate}[a)]
+        \item Beregn broens høyde dersom du antar null luftmotstand og at steinen falt i $2.4\,\mathrm{s}$.
+        \item Hvor mye tror du luftmotstanden hadde å si?
+      \end{enumerate}
+      }
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Aktivitet: Ball kastet fra bakkenivå (2D)
+%  SLIDE 5 — Aktivitet: Steinen fra broen, numerisk med luftmotstand (1D)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (1D) --- luftmotstand}
+
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{pycode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+g, h0 = 9.81, 28.25     # m/s^2, m
+m, k = 0.670, 0.00145   # kg, kg/m (se notatbok)
+
+def simuler(k, dt=1e-4):
+    t = v = h = 0.0
+    ts, hs = [0.0], [0.0]
+    while h < h0:
+        a = g - (k/m)*v*abs(v)
+        v += a*dt
+        h += v*dt
+        t += dt
+        ts.append(t)
+        hs.append(h)
+    return np.array(ts), np.array(hs)
+
+t_u, h_u = simuler(k=0)   # uten luftmotstand
+t_m, h_m = simuler(k=k)   # med luftmotstand
+
+plt.plot(t_u, h_u, "--", label="Uten luftmotstand")
+plt.plot(t_m, h_m, "-", label="Med luftmotstand")
+plt.xlabel("Tid [s]")
+plt.ylabel("Fallhøyde [m]")
+plt.legend()
+plt.show()
+      \end{pycode}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \ifdarkmode
+        \includegraphics[height=7.6cm]{Images/Steinkast_luftmotstand_mork.png}
+      \else
+        \includegraphics[height=7.6cm]{Images/Steinkast_luftmotstand_lys.png}
+      \fi
+    \end{column}
+  \end{columns}
+
+  \vspace{2pt}
+  {\tiny Python: \texttt{TRES0312 Python/Kap3\_Kinematikk/K3\_steinkast\_luftmotstand.ipynb}}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: Ball kastet fra bakkenivå (2D)
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet (2D)}
 
@@ -99,7 +167,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Aktivitet: Ball ruller av et bord (2D)
+%  SLIDE 7 — Aktivitet: Ball ruller av et bord (2D)
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet (2D)}
 
@@ -110,24 +178,6 @@
     \item Hvor langt fra bordkanten treffer ballen gulvet?
     \item Hva er farten (størrelsen) til ballen i det den treffer gulvet?
   \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 7 — Ekstra: for de som blir tidlig ferdig
-%--------------------------------------------------------------------------
-\begin{frame}{Ekstra (for de som blir tidlig ferdig)}
-
-  \aktivitet{To biler møtes (1D)}{%
-  Bil A starter i ro ved $x=0$ og akselererer med $a = 2\,\mathrm{m/s^2}$. Samtidig kjører bil B med konstant fart $v = 15\,\mathrm{m/s}$ fra $x = 300\,\mathrm{m}$, i retning mot bil A.
-  Når og hvor møtes bilene?
-  }
-
-  \pause
-  \aktivitet{Finn utgangsfarten (2D)}{%
-  En pil skytes i en vinkel på $45^\circ$ over et flatt, horisontalt underlag, og lander $30\,\mathrm{m}$ unna --- på samme høyde den ble skutt fra ($y_0 = 0$).
-  Hva var utgangsfarten til pilen?
   }
 
 \end{frame}
