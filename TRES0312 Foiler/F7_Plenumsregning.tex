@@ -90,7 +90,7 @@
       I videoen slipper han en stein fra en bro, og den bruker $2.4\,\mathrm{s}$ på å nå vannoverflaten.
       \begin{enumerate}[a)]
         \item Beregn broens høyde dersom du antar null luftmotstand og at steinen falt i $2.4\,\mathrm{s}$.
-        \item Hvor mye tror du luftmotstanden hadde å si?
+        \item Hvor mye tror du luftmotstanden hadde å si? Ville denne metoden for å måle høyde fungert for å måle høyden fra Preikestolen og ned til Lysefjorden (ca. 600m rett ned)?
       \end{enumerate}
       }
     \end{column}
@@ -104,49 +104,47 @@
 \begin{frame}{Aktivitet (1D) --- luftmotstand}
 
   \begin{columns}[T]
-    \begin{column}{0.52\textwidth}
-      \begin{pycode}
-import numpy as np
-import matplotlib.pyplot as plt
-
-g, h0 = 9.81, 28.25     # m/s^2, m
-m, k = 0.670, 0.00145   # kg, kg/m (se notatbok)
-
-def simuler(k, dt=1e-4):
-    t = v = h = 0.0
-    ts, hs = [0.0], [0.0]
-    while h < h0:
-        a = g - (k/m)*v*abs(v)
-        v += a*dt
-        h += v*dt
-        t += dt
-        ts.append(t)
-        hs.append(h)
-    return np.array(ts), np.array(hs)
-
-t_u, h_u = simuler(k=0)   # uten luftmotstand
-t_m, h_m = simuler(k=k)   # med luftmotstand
-
-plt.plot(t_u, h_u, "--", label="Uten luftmotstand")
-plt.plot(t_m, h_m, "-", label="Med luftmotstand")
-plt.xlabel("Tid [s]")
-plt.ylabel("Fallhøyde [m]")
-plt.legend()
-plt.show()
-      \end{pycode}
-    \end{column}
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.48\textwidth}
       \centering
       \ifdarkmode
-        \includegraphics[height=7.6cm]{Images/Steinkast_luftmotstand_mork.png}
+        \includegraphics[height=7.6cm]{Images/Steinkast_oppgave_mork.png}
       \else
-        \includegraphics[height=7.6cm]{Images/Steinkast_luftmotstand_lys.png}
+        \includegraphics[height=7.6cm]{Images/Steinkast_oppgave_lys.png}
+      \fi
+    \end{column}
+    \pause
+    \begin{column}{0.48\textwidth}
+      \centering
+      \ifdarkmode
+        \includegraphics[height=7.6cm]{Images/Steinkast_preikestolen_mork.png}
+      \else
+        \includegraphics[height=7.6cm]{Images/Steinkast_preikestolen_lys.png}
       \fi
     \end{column}
   \end{columns}
 
   \vspace{2pt}
   {\tiny Python: \texttt{TRES0312 Python/Kap3\_Kinematikk/K3\_steinkast\_luftmotstand.ipynb}}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5b --- Paaminnelse: usikkerhet i tidtaking er stoerste feilkilde
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet (1D) --- usikkerhet i tidtaking}
+
+  \begin{center}
+    \ifdarkmode
+      \includegraphics[height=6.3cm]{Images/Steinkast_usikkerhet_mork.png}
+    \else
+      \includegraphics[height=6.3cm]{Images/Steinkast_usikkerhet_lys.png}
+    \fi
+  \end{center}
+
+  \vspace{4pt}
+  \begin{center}
+  \small Usikkerheten i \emph{tidtakingen} (de fargede feltene) er nok den største feilkilden her --- større enn selve luftmotstanden.
+  \end{center}
 
 \end{frame}
 

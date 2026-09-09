@@ -262,7 +262,7 @@ Når et objekt beveger seg krumlinjet, så kommer blir det hele litt mer komplis
   \fill[defscol] (3.538, 2.525) circle(3pt);
   \node[below=3pt, font=\scriptsize] at (3.538, 2.525) {$t_2$};
   \draw[->, very thick, defscol] (3.538, 2.525) -- (4.405, 2.282)
-        node[right=2pt] {$\vec{v}(t_2)$};
+        node[above right=2pt] {$\vec{v}(t_2)$};
 
   %--- v(t₃): pos=(4.636,2.275), dir=(0.994,-0.115), l=1.10 ---------------
   % endpoint: (5.729, 2.148)
@@ -579,7 +579,11 @@ En syklist kjører med konstant hastighet $v = \SI{8}{\metre\per\second}$.
 }
 
 \oppgave{En oppgave til}{%
-En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning. Finn farta i nordlig retning ($v_\text{N}$) og farta i østlig retning (($v_\text{Ø}$))
+En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning.
+\begin{enumerate}[a)]
+    \item Finn farta i nordlig retning ($v_\text{N}$) og farta i østlig retning ($v_\text{Ø}$).
+    \item Oppgi farten $v$ i km/h. (Én knop er definert som $1.852$ km/h.)
+\end{enumerate}
 }
 
 
@@ -1033,8 +1037,20 @@ Du syklet $\SI{100}{\metre}$ i løpet av denne perioden.
 
 
 \subsection{Fritt fall som eksempel}
+\begin{wrapfigure}[8]{r}[0.3cm]{2.2cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/WxmJxCtOBOM?si=Yga6Pbs2UgeSTidM}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=2.2cm]{Images/YouTubeLenker/YT_MaleHoydeMedStein.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Det som kanskje er litt overraskende, er at alle legemer vil ha samme akselerasjon ned mot bakken (når vi ser bort ifra luftmotstand). Denne akselerasjonen er konstant og kalles $\text{g}$. Størrelsen er
-\graabox{$\displaystyle \text{Tyngdens akselerasjon:}\quad\text{g} = \SI{9.81}{\metre\per\second\squared}$}
+{\setlength{\linewidth}{9cm}\graabox{$\displaystyle \text{Tyngdens akselerasjon:}\quad\text{g} = \SI{9.81}{\metre\per\second\squared}$}}
+
+I videoen slippes en stein fra en bro for å måle brohøyden --- akkurat dette scenarioet går vi gjennom numerisk (med og uten luftmotstand) i notatboken det er lenket til under.
+\pyfile{TRES0312 Python/Kap3\_Kinematikk/K3\_steinkast\_luftmotstand.ipynb}{Kap3_Kinematikk/K3_steinkast_luftmotstand.ipynb}
 
 Legemer som kun er under påvirkning av tyngdekraften, sies å være i \textbf{fritt fall}. En bergknaus som faller fra fjellet og nedover mot fjorden er for eksempel i fritt fall. Eller — ikke helt; vi må jo huske luftmotstanden, som også påvirker knausens bevegelse gjennom lufta. Noen ganger simulerer man vektløshet i fly. Dette er å simulere fritt fall. Inne i flyet så fallre jo lufta sammen med deg, og du påvirkes derfor ikke av luftmotstand heller. Dermed får man til fritt fall, som altså er det samme som vektløshet. Hadde du tatt med en baderomsvekt opp i flyet, ville du sett at vekten viste 0 kg under fritt fall! Fin (men kortvarig) jubel over vektnedgang ;)
 
@@ -1081,7 +1097,6 @@ En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Husk at 
 \begin{enumerate}[a)]
     \item Finn tiden det tar før ballen treffer bakken.
     \item Finn farten rett før ballen treffer bakken.
-    \item Hva ville farten blitt om ballen var sluppet fra $h = \SI{80}{\metre}$? Legg merke til sammenhengen.
 \end{enumerate}
 }
 
@@ -1126,45 +1141,11 @@ La oss nå se på eksempler for å lære dette med dekomponering ordentlig.
 \exm{Straffespark}{
 Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $18^\circ$ i forhold til bakken, se figur~\ref{fig:straffespark}. Straffemerket ligger $\SI{11}{\metre}$ fra mållinjen. Et fotballmål er internasjonalt standardisert til å være $\SI{2.44}{\metre}$ høyt (avstanden fra bakken til undersiden av tverrliggeren). Ballen har imidlertid selv en viss utstrekning, så det holder at \textit{senteret} av ballen befinner seg i høyden $\SI{2.30}{\metre}$ for at ballen så vidt skal passere under tverrliggeren. Håland ønsker å skyte ballen slik at den passerer rett under tverrliggeren, akkurat idet den når mållinjen. Vi ser bort fra luftmotstand. Hvor stor må utgangsfarten $v_0$ være?\\
 
-    \textbf{Del a: Sett opp posisjonslikningene} \\
 
-    \textit{Metode:}
-    Vi lar $x$ være den horisontale avstanden fra straffemerket, og $y$ være høyden over bakken. Startposisjonen er $x_0 = 0$ og $y_0 = 0$, og komponentene av utgangsfarten er $v_{0x} = v_0\cos\theta$ og $v_{0y} = v_0\sin\theta$, hvor $\theta = 18^\circ$. Det er ingen akselerasjon i $x$-retning, mens akselerasjonen i $y$-retning er tyngdeakselerasjonen $a_y = -g$. Posisjonslikningene blir dermed:
-    \[
-    x(t) = v_0 \cos\theta \cdot t, \qquad y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
-    \]
-
-    \textbf{Del b: Finn tiden $t^\ast$ ballen bruker til mållinjen} \\
-
-    \textit{Metode:}
-    Ballen når mållinjen når $x(t^\ast) = \SI{11}{\metre}$. Fra uttrykket for $x(t)$ i Del a løser vi for $t^\ast$:
-    \[
-    t^\ast = \frac{11}{v_0 \cos\theta}.
-    \]
-
-    \textbf{Del c: Finn utgangsfarten $v_0$} \\
-
-    \textit{Metode:}
-    Idet ballen når mållinjen skal ballens senter befinne seg i høyden $y(t^\ast) = \SI{2.30}{\metre}$ (rett under tverrliggeren, når vi tar hensyn til ballens egen utstrekning). Vi setter $t^\ast$ fra Del b inn i uttrykket for $y(t)$:
-    \[
-    2.30 = v_0 \sin\theta \cdot \frac{11}{v_0 \cos\theta} - \frac{1}{2} g \left( \frac{11}{v_0 \cos\theta} \right)^2 = 11 \tan\theta - \frac{121\, g}{2 v_0^2 \cos^2\theta}.
-    \]
-    Legg merke til at $v_0$ forsvinner fra det første leddet, siden $\sin\theta / \cos\theta = \tan\theta$. Vi løser likningen for $v_0^2$:
-    \[
-    v_0^2 = \frac{121\, g}{2\cos^2\theta \left( 11\tan\theta - 2.30 \right)}.
-    \]
-    Setter vi inn tallverdiene $g = \SI{9.81}{\metre\per\second\squared}$ og $\theta = 18^\circ$, får vi
-    \[
-    v_0 = \doubleunderline{\SI{22.7}{\metre\per\second}} \approx \SI{81.7}{\kilo\metre\per\hour}.
-    \]
-    Dette er en realistisk fart for et hardt skutt straffespark.
-}
-
-   \begin{figure}[ht!]
-    \centering
-    \usetikzlibrary{calc}
+   \begin{center}
+        \usetikzlibrary{calc}
     \begin{tikzpicture}
-    \node[anchor=south west, inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/Straffespark_Haaland.png}};
+    \node[anchor=south west, inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.78\linewidth]{Images/Kapittel2:Kinematikk/Straffespark_Haaland.png}};
     \newcommand{\imgpt}[3]{%
         \coordinate (#1tmpx) at ($(img.south west)!#2!(img.south east)$);%
         \coordinate (#1tmpy) at ($(img.south west)!#3!(img.north west)$);%
@@ -1215,9 +1196,71 @@ Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $1
     \draw[dotted, mycolor!50] (Vtop) -- (Ball);
     \node[left=2pt, mycolor] at (Vlabel) {\large $2.30\,\text{m}$};
     \end{tikzpicture}
-    \caption{Straffespark. Ballens bane er vist med stiplet linje, med utgangsfarten $\vec{v}_0$ tegnet inn som tangent til banen ved avspark.}
+    \captionof{figure}{Straffespark. Ballens bane er vist med stiplet linje, med utgangsfarten $\vec{v}_0$ tegnet inn som tangent til banen ved avspark.}
     \label{fig:straffespark}
-    \end{figure}
+    \end{center}
+
+    \textbf{Del a: Sett opp posisjonslikningene} \\
+
+    \textit{Metode:}
+    Ballens bane er krumlinjet, så vi dekomponerer bevegelsen i en horisontal ($x$) og en vertikal ($y$) retning, og analyserer hver retning for seg. Vi lar $x$ være den horisontale avstanden fra straffemerket, og $y$ være høyden over bakken, slik at posisjonsvektoren er $\vec{s}(t) = [x(t), y(t)]$. Ballen starter i origo, altså $\vec{s}_0 = [x_0, y_0] = [0, 0]$. Utgangsfarten $v_0$ peker i vinkelen $\theta = 18^\circ$ over bakken, og dekomponeres som
+    \[
+    \vec{v}_0 = [v_{0x}, v_{0y}] = [v_0\cos\theta,\ v_0\sin\theta].
+    \]
+    Ballen påvirkes kun av tyngdekraften (vi ser bort fra luftmotstand), så det er ingen akselerasjon i $x$-retning, mens akselerasjonen i $y$-retning er tyngdeakselerasjonen. Akselerasjonsvektoren er dermed
+    \[
+    \vec{a} = [a_x, a_y] = [0,\ -g].
+    \]
+    Den generelle (vektorielle) posisjonslikningen for konstant akselerasjon er
+    \[
+    \vec{s}(t) = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2.
+    \]
+    Dette er en vektorlikning, og den gjelder derfor komponent for komponent. I $x$-retning gir den
+    \[
+    x(t) = x_0 + v_{0x}\,t + \tfrac{1}{2}a_x\,t^2,
+    \]
+    og setter vi inn $x_0 = 0$, $v_{0x} = v_0\cos\theta$ og $a_x = 0$ fra vektorene over, får vi
+    \[
+    x(t) = v_0 \cos\theta \cdot t.
+    \]
+    På samme måte, i $y$-retning:
+    \[
+    y(t) = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y\,t^2,
+    \]
+    og setter vi inn $y_0 = 0$, $v_{0y} = v_0\sin\theta$ og $a_y = -g$, får vi
+    \[
+    y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
+    \]
+    Posisjonslikningene blir altså:
+    \[
+    x(t) = v_0 \cos\theta \cdot t, \qquad y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
+    \]
+
+    \textbf{Del b: Finn tiden $t^\ast$ ballen bruker til mållinjen} \\
+
+    \textit{Metode:}
+    Ballen når mållinjen når $x(t^\ast) = \SI{11}{\metre}$. Fra uttrykket for $x(t)$ i Del a løser vi for $t^\ast$:
+    \[
+    t^\ast = \frac{11}{v_0 \cos\theta}.
+    \]
+
+    \textbf{Del c: Finn utgangsfarten $v_0$} \\
+
+    \textit{Metode:}
+    Idet ballen når mållinjen skal ballens senter befinne seg i høyden $y(t^\ast) = \SI{2.30}{\metre}$ (rett under tverrliggeren, når vi tar hensyn til ballens egen utstrekning). Vi setter $t^\ast$ fra Del b inn i uttrykket for $y(t)$:
+    \[
+    2.30 = v_0 \sin\theta \cdot \frac{11}{v_0 \cos\theta} - \frac{1}{2} g \left( \frac{11}{v_0 \cos\theta} \right)^2 = 11 \tan\theta - \frac{121\, g}{2 v_0^2 \cos^2\theta}.
+    \]
+    Legg merke til at $v_0$ forsvinner fra det første leddet, siden $\sin\theta / \cos\theta = \tan\theta$. Vi løser likningen for $v_0^2$:
+    \[
+    v_0^2 = \frac{121\, g}{2\cos^2\theta \left( 11\tan\theta - 2.30 \right)}.
+    \]
+    Setter vi inn tallverdiene $g = \SI{9.81}{\metre\per\second\squared}$ og $\theta = 18^\circ$, får vi
+    \[
+    v_0 = \doubleunderline{\SI{22.7}{\metre\per\second}} \approx \SI{81.7}{\kilo\metre\per\hour}.
+    \]
+    Dette er en realistisk fart for et hardt skutt straffespark.
+}
 
 \exm{Rallybil kjører utfor}{
 En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\metre\per\hour}$. Fordi den kjører over et jorde og gjennom noen busker, bremses farten, slik at den til slutt er $v_1 = \SI{30}{\kilo\metre\per\hour}$. Vi antar at denne oppbremsingen skjer med konstant akselerasjon over en strekning på $\SI{50}{\metre}$. Deretter kjører bilen utfor en klippe og lander $\SI{5}{\metre}$ lenger nede, se figur~\ref{fig:rallybil}.
@@ -1226,6 +1269,13 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \item b) Finn ut hvor langt bort den beveger seg i horisontal retning før den treffer bakken.
     \item c) Finn fartsvektoren i det bilen treffer bakken.
 \end{itemize}
+
+    
+    \begin{center}
+    \includegraphics[width=0.55\linewidth]{Images/Kapittel2:Kinematikk/RallybilKlippe.png}
+    \captionof{figure}{Rallybilen kjører utfor klippen}
+    \label{fig:rallybil}
+    \end{center}
 
     \textbf{Del a: Beregn akselerasjonen} \\
 
@@ -1243,11 +1293,21 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \textbf{Del b: Finn horisontal avstand $x$} \\
 
     \textit{Metode:}
-    Idet bilen kjører utfor klippen har den kun horisontal fart, $v_{0x} = v_1 = \SI{8.33}{\metre\per\second}$, og ingen vertikal fart, $v_{0y} = 0$. Vi lar $y_0 = \SI{5}{\metre}$ være klippens høyde, med $y = 0$ ved bakken. Posisjonslikningen i $y$-retning gir tiden $t$ bilen er i lufta:
+    Idet bilen kjører utfor klippen blir bevegelsen krumlinjet, og vi dekomponerer den igjen i en horisontal ($x$) og en vertikal ($y$) retning, med posisjonsvektor $\vec{s}(t) = [x(t), y(t)]$. I dette øyeblikket har bilen kun horisontal fart (den faller ikke ennå), så utgangsfarten dekomponeres som
     \[
-    y = y_0 + v_{0y} t - \frac{1}{2} g t^2 \quad \Rightarrow \quad 0 = 5 - \frac{1}{2}(9.81) t^2 \quad \Rightarrow \quad t = \sqrt{\frac{2\cdot 5}{9.81}} \approx \SI{1.01}{\second}.
+    \vec{v}_0 = [v_{0x}, v_{0y}] = [v_1,\ 0] = [\SI{8.33}{\metre\per\second},\ 0],
     \]
-    Horisontal avstand følger av $x = v_{0x} t$ (ingen akselerasjon i $x$-retning):
+    og akselerasjonen er igjen kun tyngdeakselerasjonen, $\vec{a} = [a_x, a_y] = [0,\ -g]$. Vi lar $x_0 = 0$ ved klippekanten, og $y_0 = \SI{5}{\metre}$ være klippens høyde over bakken der bilen lander ($y=0$). Fra den generelle vektorlikningen $\vec{s}(t) = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2$ får vi, komponent for komponent:
+    \[
+    x(t) = x_0 + v_{0x}\,t + \tfrac{1}{2}a_x t^2 = v_1 t,
+    \qquad
+    y(t) = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y t^2 = y_0 - \tfrac{1}{2} g t^2,
+    \]
+    der vi har satt inn $x_0 = 0$, $a_x = 0$ og $v_{0y} = 0$ fra vektorene over. Bilen treffer bakken når $y(t) = 0$, som gir tiden $t$ den er i lufta:
+    \[
+    0 = y_0 - \frac{1}{2} g t^2 \quad \Rightarrow \quad 0 = 5 - \frac{1}{2}(9.81) t^2 \quad \Rightarrow \quad t = \sqrt{\frac{2\cdot 5}{9.81}} \approx \SI{1.01}{\second}.
+    \]
+    Horisontal avstand følger da av $x(t) = v_1 t$:
     \[
     x = 8.33 \cdot 1.01 \approx \doubleunderline{\SI{8.41}{\metre}}.
     \]
@@ -1255,9 +1315,13 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \textbf{Del c: Finn fartsvektoren idet bilen treffer bakken} \\
 
     \textit{Metode:}
-    Den horisontale hastighetskomponenten er uendret, $v_x = v_{0x} = \SI{8.33}{\metre\per\second}$. Den vertikale komponenten finner vi fra hastighetslikningen:
+    Hastighetsvektoren følger på samme måte fra den generelle vektorlikningen $\vec{v}(t) = \vec{v}_0 + \vec{a}\,t$, som komponent for komponent gir
     \[
-    v_y = v_{0y} - g t = 0 - 9.81 \cdot 1.01 \approx \SI{-9.90}{\metre\per\second}.
+    v_x(t) = v_{0x} + a_x t, \qquad v_y(t) = v_{0y} + a_y t.
+    \]
+    Setter vi inn $v_{0x} = 8.33\,\si{\metre\per\second}$, $a_x = 0$, $v_{0y}=0$ og $a_y=-g$ fra vektorene i Del b, ser vi at den horisontale hastighetskomponenten er uendret, $v_x = v_{0x} = \SI{8.33}{\metre\per\second}$, mens den vertikale komponenten blir
+    \[
+    v_y = -g t = -9.81 \cdot 1.01 \approx \SI{-9.90}{\metre\per\second}.
     \]
     Fartsvektoren er dermed $\vec{v} = [\SI{8.33}{\metre\per\second},\, \SI{-9.90}{\metre\per\second}]$, med størrelse
     \[
@@ -1268,13 +1332,6 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \theta = \arctan\left(\frac{|v_y|}{v_x}\right) = \arctan\left(\frac{9.90}{8.33}\right) \approx \doubleunderline{50^\circ} \text{ under horisontalen}.
     \]
 }
-
-   \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel2:Kinematikk/RallybilKlippe.png}
-    \caption{Rallybilen kjører utfor klippen}
-    \label{fig:rallybil}
-\end{figure}
 
 \oppgave{Ballkast}{%
 En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med startfart $v_0 = \SI{10}{\metre\per\second}$. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
