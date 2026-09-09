@@ -246,6 +246,57 @@
 }
 
 %--------------------------------------------------------------------------
+%  DEKKER-NOTAT (referanse til kompendiet, delkapittel-nivå)
+%  Legges til på første slide (etter \titlepage) for å vise hvilke
+%  delkapittel/avsnitt i kompendiet forelesningen dekker.
+%
+%  \dekkerdelkap{tekst}
+%    Normalvariant: sentrert i midtfeltet under toppfeltet. Brukes når
+%    slide 1 ellers ikke har annet innhold der (evt. stables over annet
+%    sentrert innhold, som i F5).
+%
+%  \dekkerdelkaphjorne{tekst}
+%    Venstrejustert i øvre venstre hjørne av midtfeltet. Brukes når
+%    slide 1 har annet innhold plassert til høyre (se F1, QR-koden).
+%
+%  \dekkerdelkapoverlay{tekst}
+%    Kompakt variant i øvre venstre hjørne, plassert lavt (rett under
+%    toppfeltet). Brukes når slide 1 har en stor figur midt i midtfeltet
+%    (se F6).
+%--------------------------------------------------------------------------
+\newcommand{\dekkerdelkap}[1]{%
+  \vspace{2.6cm}%
+  \begin{center}
+  \begin{tikzpicture}
+    \node[draw=yellow, dashed, rounded corners=3pt, inner sep=6pt,
+          text=\ifdarkmode defscol!60!white\else defscol\fi,
+          font=\small]
+      {Dekker #1};
+  \end{tikzpicture}
+  \end{center}%
+}
+
+\newcommand{\dekkerdelkaphjorne}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west,
+          font=\small, text=\ifdarkmode defscol!60!white\else defscol\fi,
+          draw=yellow, dashed, rounded corners=3pt, inner sep=6pt]
+      at ([xshift=0.8cm, yshift=-4.3cm]current page.north west)
+      {Dekker #1};
+  \end{tikzpicture}%
+}
+
+\newcommand{\dekkerdelkapoverlay}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west,
+          font=\scriptsize, text=\ifdarkmode defscol!60!white\else defscol\fi,
+          draw=yellow, dashed, rounded corners=3pt, inner sep=4pt]
+      at ([xshift=0.7cm, yshift=0.5cm]current page.west)
+      {Dekker #1};
+  \end{tikzpicture}%
+}
+
+%--------------------------------------------------------------------------
 %  FRAMETITLE
 %--------------------------------------------------------------------------
 \setbeamertemplate{frametitle}{%

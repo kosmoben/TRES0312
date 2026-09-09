@@ -255,21 +255,21 @@ Når et objekt beveger seg krumlinjet, så kommer blir det hele litt mer komplis
   \fill[defscol] (2.293, 2.739) circle(3pt);
   \node[below=3pt, font=\scriptsize] at (2.293, 2.739) {$t_1$};
   \draw[->, very thick, defscol] (2.293, 2.739) -- (2.892, 2.764)
-        node[right=2pt] {$\vec{v}(t_1)$};
+        node[above=2pt] {$\vec{v}(t_1)$};
 
   %--- v(t₂): pos=(3.538,2.525), dir=(0.963,-0.270), l=0.90 ---------------
   % endpoint: (4.405, 2.282)
   \fill[defscol] (3.538, 2.525) circle(3pt);
   \node[below=3pt, font=\scriptsize] at (3.538, 2.525) {$t_2$};
   \draw[->, very thick, defscol] (3.538, 2.525) -- (4.405, 2.282)
-        node[above right=2pt] {$\vec{v}(t_2)$};
+        node[above=2pt] {$\vec{v}(t_2)$};
 
   %--- v(t₃): pos=(4.636,2.275), dir=(0.994,-0.115), l=1.10 ---------------
   % endpoint: (5.729, 2.148)
   \fill[defscol] (4.636, 2.275) circle(3pt);
   \node[below=3pt, font=\scriptsize] at (4.636, 2.275) {$t_3$};
   \draw[->, very thick, defscol] (4.636, 2.275) -- (5.729, 2.148)
-        node[right=2pt] {$\vec{v}(t_3)$};
+        node[below=2pt] {$\vec{v}(t_3)$};
 
 \end{tikzpicture}
 \caption{Hastighetsvektorene $\vec{v}(t_1)$, $\vec{v}(t_2)$ og $\vec{v}(t_3)$ er tangenter til Haalands løpebane ved tre tidspunkter. Lengre piler indikerer at farten øker gjennom spurten.}
@@ -279,19 +279,19 @@ Når et objekt beveger seg krumlinjet, så kommer blir det hele litt mer komplis
 \end{figure}
 
 
-I krumlinjet bevegelse er ikke nødvendigvis gjennomsnittsfart lenger et så nyttig begrep, da det ikke nødvendigvis gir et riktig inntrykk av hvor fort et legeme faktisk har beveget seg. For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningsvektoren være null (prøv å tegne opp $\Delta s$ mellom start og slutt!) --- og dermed er både gjennomsnittshastigheten \emph{og} gjennomsnittsfarten null. Men jeg er ganske sikker på at Karsten Warholm har løpt ganske fort rundt friidrettsbanen selv om gjennomsnittsfarten hans er null... Problemet oppstår fordi hastighet er definert ut ifra forflytningsvektoren $\vec{Delta s}$. Dermed får også farten, som er størrelsen på hastighetsvektoren, det samme problemet. Det er derfor nyttig å innføre et begrep til, kalt \textit{banefart}. Dette er farten som et legeme har til enhver tid langs den buen, eller banen, det går.
+I krumlinjet bevegelse er ikke gjennomsnittsfart lenger et like nyttig begrep, dersom vi forstår det som størrelsen på hastighetsvektoren mellom to punkt. Størrelsen på den totale forflytningen dividert med den totale tiden gir nemlig ikke nødvendigvis et riktig inntrykk av hvor fort et legeme faktisk har beveget seg (med mindre tidsintervallet er veldig kort). For eksempel, hvis et objekt beveger seg i en sirkel og returnerer til utgangspunktet, vil den totale forflytningsvektoren være null (prøv å tegne opp $\vec{\Delta s}$ mellom start og slutt!) --- og dermed er både gjennomsnittshastigheten \emph{og} gjennomsnittsfarten null, om vi måler over én runde. Men jeg er ganske sikker på at Karsten Warholm har løpt veldig fort rundt friidrettsbanen selv om gjennomsnittsfarten hans er null, målt over hver runde... Problemet oppstår fordi hastighet er definert ut ifra forflytningsvektoren $\vec{\Delta s}$. Dermed får også farten, som er størrelsen på hastighetsvektoren, det samme problemet. Det er derfor nyttig å innføre et begrep til, kalt \textit{banefart}. Dette er farten som et legeme har til enhver tid langs den buen, eller banen, det beveger seg. 
 
 \defn{Banefart}{
     Banefarten $v$ er strekning tilbakelagt i en bane, dividert med tiden brukt på strekningen.
 }
-Her ser vi altså ikke på netto forflytning, men summativ forflytning. Merk at vi bruker samme synbol som ellers (for fart). Så får vi heller la sammenhengen gjøre det klart hvilket begrep som er hensiktsmessig å bruke. La oss ta et par eksempler som illustrerer forskjellen.
+Her ser vi altså ikke på netto forflytning, men summativ forflytning. Merk at vi bruker samme symbol som ellers (for fart). Så får vi heller la sammenhengen gjøre det klart hvilket begrep som er hensiktsmessig å bruke. La oss ta et par eksempler som illustrerer forskjellen.
 
 \exm{Båt på havet}{To båter skal seile fra punkt $P$ til punkt $R$. Båt 1 seiler i en rett linje fra $P$ til $R$ og bruker 2 timer på seilasen. Båt 2 seiler først 3 km øst til punktet $Q$ og deretter 4 km nord fra $Q$ til $R$. Den bruker 1 time på seilasen øst og 1 time på seilasen nord.\\
 \textbf{a)} Skriv ned avstandsvektorene $\vec{\Delta s}_\text{PQ}$, $\vec{\Delta s}_\text{QR}$ og $\vec{\Delta s}_\text{PR}$ som beskriver de relevante forflytningene.\\
 \textbf{b)} Bruk svarene fra a) til å skrive ned tilhørende hastighetsvektorer $\vec{v}_\text{PQ}$, $\vec{v}_\text{QR}$ og $\vec{v}_\text{PR}$. \\
 \textbf{c)} Hva er gjennomsnittsfarten til båt 1 (lengden av hastighetsvektoren)?\\
 \textbf{d)} Hva er gjennomsnittsfarten til båt 2 på hver av de to delstrekningene? Hva er den totale gjennomsnittsfarten til båt 2?\\
-\textbf{e)} Hva er banefarten til båt 2 på hele strekningen?
+\textbf{e)} Hva er gjennomsnittlig banefart til båt 2 på hele strekningen?
 }
 
 \svar{%
@@ -335,7 +335,7 @@ Her ser vi altså ikke på netto forflytning, men summativ forflytning. Merk at 
           \[\bar{v}_{PQ}=|\vec{v}_{PQ}|=\SI{3}{\kilo\metre\per\hour},\quad\bar{v}_{QR}=|\vec{v}_{QR}|=\SI{4}{\kilo\metre\per\hour}\]
           Den \emph{totale} gjennomsnittsfarten regnes derimot fra totalforflytningen over hele tiden --- altså igjen lengden av $\vec{v}_{PR}$:
           \[\bar{v}_2=|\vec{v}_{PR}|= \doubleunderline{\SI{2.5}{\kilo\metre\per\hour}}\]
-          Selv om båt 2 hadde ulik fart på de to etappene, er den totale gjennomsnittsfarten altså identisk med båt 1. Gjennomsnittsfart avhenger kun av total forflytning og total tid --- ikke av hvordan farten varierte underveis. Vi ser at det er ikke denne farten vi er interessert i. Det egentlig interessante fartsbegrepet i akkurat denne sammenheng, er banefarten, som vi ser på i neste deloppgave.
+          Selv om båt 2 hadde ulik fart på de to etappene, er den totale gjennomsnittsfarten altså identisk med båt 1. Gjennomsnittsfart (forstått som lengden på hastighetsvektoren) avhenger kun av total forflytning og total tid --- ikke av hvordan hastighetsvektoren kan ha endret størrelse og retning underveis. Vi ser at det er ikke denne farten vi er interessert i. Det egentlig interessante fartsbegrepet i akkurat denne sammenheng, er banefarten, som vi ser på i neste deloppgave.
     \item Den gjennomsnittlige banefarten ser i stedet på hvor langt båt 2 faktisk har seilt, uavhengig av retning:
           \[
           v_{\text{bane},2}=\frac{\SI{3}{\kilo\metre}+\SI{4}{\kilo\metre}}{\SI{2}{\hour}}= \doubleunderline{\SI{3.5}{\kilo\metre\per\hour}},
@@ -344,7 +344,7 @@ Her ser vi altså ikke på netto forflytning, men summativ forflytning. Merk at 
 \end{enumerate}
 }
 
-Fra eksemplet over, med båtene, ser vi at når vi ikke lenger har en rettlinjet bevegelse, så er det nødvendig med en presisering. Vi må skille mellom total forflytning og strekning. Forflytning er en vektor som beskriver endring i posisjon, mens strekning er en skalar som beskriver hvor langt et objekt faktisk har beveget seg, om vi summerer forflytninger langs banen.  Dette er spesielt viktig når vi skal regne ut gjennomsnittsfart, da den avhenger av forflytningen, mens gjennomsnittlig banefart avhenger av strekningen.
+Fra eksemplet over, med båtene, ser vi at når vi ikke lenger har en rettlinjet bevegelse, så er det nødvendig med en presisering. \textbf{Vi må skille mellom total forflytning og strekning}. Forflytning er en vektor som beskriver endring i posisjon, mens strekning er en skalar som beskriver hvor langt et objekt faktisk har beveget seg, om vi summerer forflytninger langs banen.
 
 \exm{Karsten Warholm}{Se for deg at Karsten Warholm løper med konstant fart gjennom en sving. Etter 7 sekunder har han løpt fra inngangen av svingen (punkt $P$) til midten (punkt $Q$). Radiusen i svingen er 36 meter.\\
 \textbf{a)} Finn $\vec{\Delta s}$ mellom punktene $P$ og $Q$ og beregn gjennomsnittshastigheten og gjennomsnittsfarten på forflytningen $PQ$.\\
@@ -392,9 +392,13 @@ Fra eksemplet over, med båtene, ser vi at når vi ikke lenger har en rettlinjet
         \[\Delta s=\tfrac{1}{4}\cdot 2\pi r=\tfrac{\pi\cdot 36}{2}=18\pi\approx \underline{\SI{56.5}{\metre}}\]
         Banefarten bruker denne strekningen --- altså hvor langt Karsten faktisk har løpt --- i stedet for forflytningen:
         \[v_{\text{bane}}=\frac{18\pi\,\si{\metre}}{\SI{7}{\second}}\approx \doubleunderline{\SI{8.1}{\metre\per\second}}\]
-        Banefarten på $\SI{8.1}{\metre\per\second}$ er altså høyere enn gjennomsnittsfarten på $\SI{7.3}{\metre\per\second}$ fra a) --- nettopp fordi gjennomsnittsfarten kun ser på nettoforflytningen $PQ$, og ikke fanger opp at Karsten faktisk løper en lengre, krum bane. Gjennomsnittsfarten er derfor et dårlig mål på farten hans når tidsintervallet vi tar gjennomsnittet over, blir for stort.
+        Banefarten på $\SI{8.1}{\metre\per\second}$ er altså høyere enn gjennomsnittsfarten på $\SI{7.3}{\metre\per\second}$ fra a) --- nettopp fordi gjennomsnittsfarten kun ser på nettoforflytningen $PQ$, og ikke fanger opp at Karsten faktisk løper en lengre, krum bane. Gjennomsnittsfarten, forstått som lengden av hastighetsvektoren,er derfor et dårlig mål på farten hans når tidsintervallet vi tar gjennomsnittet over, blir for stort.
 \end{enumerate}
 }
+\merk{Hva mener vi med \enquote{gjennomsnittsfart}?}{%
+Begrepet \enquote{gjennomsnittsfart} er altså et generisk, litt utydelig begrep. Ut ifra sammenhengen må vi forstå om det er snakk om størrelsen til hastighetsvektoren, eller banefarten.
+}
+
 La oss tilslutt ta med et eksempel der vi vet retningen til en hastighetsvektor og skal finne komponentene. Denne type beregning så vi også på i forrige kapittel. 
 \exm{Dekomponering av hastighet}{En fugl flyr med fart $v = \SI{15}{\metre\per\second}$ i en retning som utgjør $\theta = 37°$ over horisontalplanet ($\cos 37° \approx 0.80$, $\sin 37° \approx 0.60$).\\
 \textbf{a)} Finn den horisontale komponenten $v_x$ og den vertikale komponenten $v_y$ av hastigheten.\\
@@ -442,7 +446,7 @@ La oss tilslutt ta med et eksempel der vi vet retningen til en hastighetsvektor 
 }
 
 \subsubsection{Momentanfart}
-Fra eksemplet med de to båtene, samt Karsten Warholm, så ser vi at hva gjennomsnittsfarten beregner til å være, er veldig avhengig av hvor ofte vi måler. Desto kortere tidsintervall vi måler på, desto mer nøyaktig blir resultatet. I praksis kan vi ofte måle posisjonen til et legeme veldig ofte, og dermed kan vi finne ut hva farten er på et gitt tidspunkt. Dette kaller vi for \textit{momentanhastighet}. 
+Fra eksemplet med de to båtene, samt Karsten Warholm, så ser vi at hva gjennomsnittsfarten er (forstått som lengden av hastighetsvektoren) er veldig avhengig av hvor ofte vi måler. Desto kortere tidsintervall vi måler på, desto mer interessant blir resultatet. I praksis kan vi ofte måle posisjonen til et legeme veldig ofte, og dermed kan vi finne ut hva farten er på et gitt tidspunkt. Dette kaller vi for \textit{momentanhastighet}. Lengden av momentanhastigheten kaller vi \textit{momentanfart}. Dette er et veldefinert og nyttig begrep.
 
 Momentanhastighet er hastigheten til et objekt på et spesifikt tidspunkt. Det beskriver hvor raskt et objekt beveger seg i akkurat det øyeblikket, og er derfor den ``øyeblikkelige'' hastigheten.
 
@@ -519,15 +523,12 @@ Geometrisk kan vi forstå dette ved å betrakte posisjonskurven $s(t)$: gjennoms
 }
 
 \exm{Speedometer}{
-Tenk deg at du kjører bil og ser på speedometeret. Hastigheten som vises på speedometeret er momentanhastigheten din. Den kan endre seg fra ett sekund til et annet hvis du akselererer eller bremser. \\
-
-\textit{Metode:}
-Momentanhastighet er hastigheten til et objekt på et spesifikt tidspunkt. I dette tilfellet viser speedometeret bilens hastighet i sanntid, som kan variere hvis du akselererer eller bremser. Speedometeret gir dermed en direkte måling av bilens momentanhastighet, som er et uttrykk for hvor raskt bilen beveger seg i akkurat det øyeblikket.
+Tenk deg at du kjører bil og ser på speedometeret. Hastigheten som vises på speedometeret er (så godt som) momentanhastigheten din. Den kan endre seg fra ett sekund til et annet hvis du akselererer eller bremser.
 }
 
-Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfart ser på hastigheten i et spesifikt øyeblikk, mens gjennomsnittsfart ser på den totale bevegelsen over tid. Momentanfarten kan variere kraftig under en bevegelse, mens gjennomsnittsfarten gir en enkel verdi som representerer hele perioden.
+Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfart ser på hastigheten i et spesifikt øyeblikk, mens gjennomsnittsfart ser på den totale bevegelsen over tid. Momentanfarten kan variere kraftig under en bevegelse, mens gjennomsnittsfarten gir en enkel verdi som representerer hele bevegelsen.
 
-\exm{Momentanhastighet}{Posisjonen til en firhjuling på et jorde er gitt ved $vec{s}(t) = (2t^2, 3t)$ i meter og sekunder.\\
+\exm{Momentanhastighet}{Posisjonen til en firhjuling på et jorde er gitt ved $\vec{s}(t) = (2t^2, 3t)$ i meter og sekunder.\\
 \textbf{a)} Vis at uttrykket for momentanhastigheten $\vec{v}(t)$ til firhjulingen er gitt ved $\vec{v}(t) = (4t, 3)$.\\
 \textbf{b)} Hva er momentanhastigheten ved $t = \SI{2}{\second}$?\\
 \textbf{c)} Ved hvilken tid er momentanhastigheten $\vec{v} = (16, 12)\,\si{\metre\per\second}$?
@@ -566,11 +567,10 @@ Et legeme beveger seg etter posisjonslikningen $s(t) = 3t^2 + 2t$ (i meter og se
 
 
 \subsubsection{Konstant fart}
- Vi kan tilslutt merke oss at desom farten ikke endrer seg, men er konstant, da er \textit{momentanfarten} til enhver tid den samme som \textit{gjennomsnittsfarten}. Ved konstant hastighet vil den tilbakelagte distansen være proporsjonal med tiden som har gått.
-
+ Vi kan tilslutt merke oss at desom farten ikke endrer seg, men er konstant, da er \textit{momentanfarten} til enhver tid den samme som \textit{gjennomsnittlig banefart}. 
 
 \oppgave{Konstant hastighet}{%
-En syklist kjører med konstant hastighet $v = \SI{8}{\metre\per\second}$.
+En syklist kjører med konstant fart $v = \SI{8}{\metre\per\second}$ i rettlinjet bevegelse.
 \begin{enumerate}[a)]
     \item Hvor langt har syklisten kjørt etter $t = \SI{10}{\second}$?
     \item Hvor langt har syklisten kjørt etter $t = \SI{2}{\minute}$?
@@ -579,10 +579,10 @@ En syklist kjører med konstant hastighet $v = \SI{8}{\metre\per\second}$.
 }
 
 \oppgave{En oppgave til}{%
-En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning.
+En båt beveger seg med fart $v=5.0$ knopp i Nord-Østlig retning. Én knop er definert som $1.852$ km/h.
 \begin{enumerate}[a)]
     \item Finn farta i nordlig retning ($v_\text{N}$) og farta i østlig retning ($v_\text{Ø}$).
-    \item Oppgi farten $v$ i km/h. (Én knop er definert som $1.852$ km/h.)
+    \item Oppgi farten $v$ i km/h. 
 \end{enumerate}
 }
 
@@ -1574,6 +1574,48 @@ Månens gjennomsnittlige avstand fra jorda er $r = 3.84 \cdot 10^8\,\si{\metre}$
 \begin{enumerate}[a)]
     \item Gjør om omløpstiden til sekunder.
     \item Finn sentripetalakselerasjonen månen opplever ved hjelp av formelen $a_\perp = 4\pi^2 r / T^2$.
-    \item Beregn månens banehastighet $v = 2\pi r / T$ og verifiser svaret ved å bruke $a_\perp = v^2/r$.
+    \item Beregn månens banehastighet $v = 2\pi r / T$ og verifiser svaret ved å bruke $a_\perp = v^2/r$ og sammenlikne med svaret du fikk i b).
 \end{enumerate}
 }
+
+\clearpage
+\section{Ekstraoppgaver}
+
+Her er flere oppgaver fra temaene vi har behandlet i dette kapitlet.
+
+\oppgave{Gjennomsnittsfart og gjennomsnittsakselerasjon}{%
+En løper springer $\SI{400}{\metre}$ på $\SI{52}{\second}$.
+\begin{enumerate}[a)]
+    \item Hva er løperens gjennomsnittsfart, i $\si{\metre\per\second}$?
+    \item Dersom løperen starter fra ro og oppnår toppfart $\SI{9.0}{\metre\per\second}$ etter de første $\SI{6.0}{\second}$, hva er gjennomsnittsakselerasjonen i denne perioden?
+\end{enumerate}
+}
+
+\oppgave{Konstant akselerasjon -- oppbremsing}{%
+En bil kjører med fart $v_0 = \SI{25}{\metre\per\second}$ og bremser med konstant akselerasjon $a = -\SI{4.0}{\metre\per\second\squared}$.
+\begin{enumerate}[a)]
+    \item Hvor lang tid tar det før bilen stopper?
+    \item Hvor langt kjører bilen i løpet av oppbremsingen?
+    \item Skisser fartsgrafen $v(t)$ for bilen fra den begynner å bremse til den stopper.
+\end{enumerate}
+}
+
+\oppgave{Stein kastet fra et stup}{%
+En stein kastes fra toppen av et stup med utgangsfart $v_0 = \SI{15}{\metre\per\second}$ i en vinkel $30^\circ$ over horisontalen. Stupet er $h = \SI{40}{\metre}$ over vannet. Se bort fra luftmotstand.
+\begin{enumerate}[a)]
+    \item Finn de horisontale og vertikale komponentene av $\vec{v}_0$.
+    \item Finn hvor lang tid steinen er i luften før den treffer vannet.
+    \item Finn hvor langt fra stupkanten steinen treffer vannet.
+    \item Finn farten (størrelsen på hastigheten) steinen har i det den treffer vannet.
+\end{enumerate}
+}
+
+\oppgave{Sirkelbevegelse -- pariserhjul}{%
+Et pariserhjul har radius $r = \SI{15}{\metre}$ og roterer med konstant fart slik at det tar $\SI{40}{\second}$ å fullføre én runde.
+\begin{enumerate}[a)]
+    \item Finn farten $v$ til en passasjer ved kanten av hjulet.
+    \item Finn sentripetalakselerasjonen til passasjeren.
+    \item Sammenlikn denne akselerasjonen med tyngdens akselerasjon $g$. Er den stor eller liten i forhold?
+\end{enumerate}
+}
+

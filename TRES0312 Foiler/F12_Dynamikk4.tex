@@ -1,0 +1,282 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Dynamikk}
+\subtitle{TRES0312 --- Krefter i sirkelbevegelse}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{4}   % Kapittel 4: "Dynamikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 4.4.2}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: sentripetalkraft. Etter pausen: dosert veibane.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang (skråplan)
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva blir normalkraften $N$ på en kloss på et skråplan med helningsvinkel $\theta$, uttrykt ved $m$, $\mathrm{g}$ og $\theta$?
+      \item Skriv opp algoritmens fem steg for å løse sammensatte kraftoppgaver.
+      \item Hva er formelen for kritisk vinkel $\theta_c$, og hva betyr den fysisk?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Definisjon: Sentripetalkraft
+%--------------------------------------------------------------------------
+\begin{frame}{Sentripetalkraft}
+
+  Fra kinematikken vet vi at sentripetalakselerasjonen i sirkelbevegelse med konstant fart er $a_\perp = v^2/r$. Newtons 2. lov, $\sum\vec{F}=m\vec{a}$, gir da et uttrykk for kraftsummen inn mot sentrum.
+
+  \pause
+  \defnat{4.8}{Sentripetalkraft}{
+  Kraftsummen for sirkelbevegelse med radius $r$ og konstant banefart $v$ er gitt ved
+  \[\sum F = m\cdot\frac{v^2}{r},\]
+  og er rettet inn mot sentrum av sirkelbevegelsen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Figur: Ball i sirkelbane
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \begin{figure}[ht!]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \draw[dashed, gray!60, line width=0.8pt] (0,0) circle (1.5);
+    \fill[black!60] (0,0) circle (2pt);
+    \node[font=\scriptsize, below left=2pt] at (0,0) {sentrum};
+    \draw[headCol!70!black, line width=1.4pt] (0,0) -- (1.5,0);
+    \fill[headCol!40] (1.5,0) circle (0.18);
+    \draw[headCol!70!black, line width=1pt] (1.5,0) circle (0.18);
+    \node[font=\scriptsize, right=3pt] at (1.68,0) {$m$};
+    \draw[-{Stealth[length=10pt,width=6pt]}, line width=2pt, defscol]
+      (1.32,0) -- (0.35,0);
+    \node[defscol, font=\small\bfseries, below=3pt] at (0.84,0) {$\vec{S}$};
+    \draw[-{Stealth[length=10pt,width=6pt]}, line width=2pt, oppsumcol]
+      (1.5,0.18) -- (1.5,1.10);
+    \node[oppsumcol, font=\small\bfseries, right=3pt] at (1.5,0.64) {$\vec{v}$};
+    \draw[<->, gray!70, thin] (0,-0.35) -- (1.5,-0.35);
+    \node[font=\scriptsize, gray!70, below] at (0.75,-0.35) {$r$};
+  \end{tikzpicture}
+  \caption{\footnotesize Sett ovenfra: ball i sirkelbane. Snorkraften $\vec{S}$ er alltid rettet inn mot sentrum.}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: Ball i sirkelbane
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Ball i sirkelbane}{%
+  En ball med masse $m = 0.30\,\mathrm{kg}$ er festet til en snor og glir rundt i en sirkelbane på en friksjonsfri bordflate. Snoras lengde er $r = 0.80\,\mathrm{m}$, og ballen holder konstant fart $v = 3.0\,\mathrm{m/s}$.
+
+  Finn kraften i snora.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: Karusell
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Karusell}{%
+  Et barn med masse $m = 25\,\mathrm{kg}$ sitter $r = 3.0\,\mathrm{m}$ fra sentrum av en karusell. Karusellen snurrer med konstant fart $v = 4.0\,\mathrm{m/s}$.
+
+  Hva er den resulterende sentripetalkraften på barnet?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: Bil i kurve
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Bil i kurve}{%
+  En bil med masse $m = 1200\,\mathrm{kg}$ kjører gjennom en horisontal kurve med radius $r = 50\,\mathrm{m}$ og konstant fart $v = 12\,\mathrm{m/s}$.
+  \begin{enumerate}[a)]
+      \item Finn den nødvendige sentripetalkraften.
+      \item Hvilken kraft er det i praksis som gir denne sentripetalkraften på en flat, horisontal vei?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: dosert veibane}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Dosert veibane: intro og figur
+%--------------------------------------------------------------------------
+\begin{frame}{Dosert veibane}
+
+  \tanke{}{%
+  Kan en bil kjøre gjennom en sirkelformet sving \textit{uten friksjon} mellom dekk og vei?
+  }
+
+  \pause
+  Ja --- hvis veibanen er dosert (hellet innover) med riktig vinkel $\alpha$. Da gir normalkraftens horisontale komponent sentripetalakselerasjonen.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Figur: dosert veibane
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \begin{figure}[ht!]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \fill[black!12] (0.3,0.0) -- (3.5,1.29) -- (3.5,0.0) -- cycle;
+    \draw[very thick] (0.3,0.0) -- (3.5,1.29);
+    \draw[black!30,thin] (0.3,0.0) -- (3.5,0.0);
+    \draw[black!30,thin] (3.5,0.0) -- (3.5,1.29);
+    \draw[black!55,thin] (0.90,0) arc (0:22:0.60);
+    \node[font=\scriptsize,black!70] at (1.04,0.13) {$\alpha$};
+    \begin{scope}[rotate=22]
+      \fill[headCol!20] (1.50,0.0) rectangle (2.40,0.50);
+      \draw[headCol!65!black,thick] (1.50,0.0) rectangle (2.40,0.50);
+      \node[font=\scriptsize] at (1.95,0.25) {$m$};
+    \end{scope}
+    \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, defscol]
+      (1.808,0.731) -- (1.302,1.982);
+    \node[left=4pt,defscol,font=\small\bfseries,fill=white,draw=defscol,
+          line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+      at (1.555,1.357) {$\vec{N}$};
+    \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.5pt, black!65]
+      (1.714,0.963) -- (1.714,-0.22);
+    \node[right=4pt,black!65,font=\small\bfseries,fill=white,draw=black!50,
+          line width=0.3pt,inner sep=2pt,rounded corners=1pt]
+      at (1.714,0.37) {$\vec{G}$};
+    \draw[dashed,black!45,semithick] (1.808,0.731) -- (1.808,1.982);
+    \draw[dashed,black!45,semithick] (1.808,1.982) -- (1.302,1.982);
+    \node[right=2pt,black!55,font=\scriptsize] at (1.808,1.357) {$N_V$};
+    \node[above=2pt,black!55,font=\scriptsize] at (1.555,1.982) {$N_H$};
+    \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+      (3.2,0.08) -- (3.2,0.95);
+    \node[right=2pt,black!70,font=\scriptsize] at (3.2,0.95) {$V$};
+    \draw[-{Stealth[length=8pt,width=5pt]},black!70,semithick]
+      (3.2,0.08) -- (2.40,0.08);
+    \node[below=2pt,black!70,font=\scriptsize] at (2.40,0.08) {$H$};
+    \fill[black!70] (3.2,0.08) circle (1.5pt);
+    \fill[defscol] (1.808,0.731) circle (2pt);
+    \fill[black!55] (1.714,0.963) circle (2pt);
+  \end{tikzpicture}
+  \caption{\footnotesize Dosert veibane i tverrsnitt. $\vec{N}$ dekomponeres i $N_V$ (opp) og $N_H$ (inn mot sentrum).}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Eksempel: Dosering av veibane
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: dosering av veibane}
+
+  \exmat{4.13}{Dosering av veibane}{%
+  Er det mulig for en bil med konstant fart $v$ å kjøre gjennom en sirkelformet sving med radius $r$ uten friksjon mellom dekk og vei? Bestem nødvendig dosering (helningsvinkel) $\alpha$. Bruk $v = 90\,\mathrm{km/h}$ og $r = 200\,\mathrm{m}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Løsning: dosering av veibane
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  Dekomponering ($V$ vertikalt, $H$ inn mot sentrum), ingen friksjon:
+  \[
+    N_V = mg, \qquad N_H = m\frac{v^2}{r}
+  \]
+
+  \pause
+  Fra geometrien er $\tan\alpha = N_H/N_V$:
+  \[
+    \tan\alpha = \frac{v^2}{r\,\mathrm{g}}
+  \]
+
+  \pause
+  \graabox{$\displaystyle \alpha = \arctan\!\left(\frac{v^2}{r\,\mathrm{g}}\right) = \arctan(0.318) = \underline{\underline{17.7^\circ}}$}
+
+  \pause
+  \merk{Uavhengig av masse}{
+  Massen faller ut av likningen --- doseringen er uavhengig av kjøretøyets masse.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Oppsummering
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Krefter i sirkelbevegelse}{%
+  \begin{enumerate}[1.]
+    \item[] Sentripetalkraft: $\sum F = m v^2/r$, rettet inn mot sentrum.
+    \item[] Dosert veibane (uten friksjon): $\tan\alpha = v^2/(r\,\mathrm{g})$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Bevaring av bevegelsesmengde}
+  \begin{itemize}
+    \item Isolerte systemer
+    \item Rekyl og støt
+  \end{itemize}
+  \vspace{6mm}
+  {\normalsize\itshape Det som går inn, må komme ut\ldots}
+\end{center}
+\end{frame}
+
+\end{document}
