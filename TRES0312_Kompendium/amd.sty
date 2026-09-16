@@ -178,9 +178,10 @@
 % %--------------------------------------------------------------------------
 % % 		Chapters and sections
 % %--------------------------------------------------------------------------
-\renewcommand\thesubsubsection{\arabic{subsection}.\roman{subsubsection}}
+\renewcommand\thesection{\thechapter.\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\setcounter{secnumdepth}{3} % nummerer også under-under-overskrifter (subsubsection) med full kapittel-sti
 
 \makeatletter
 \@addtoreset{chapter}{part} % for numberring
