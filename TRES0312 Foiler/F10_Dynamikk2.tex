@@ -51,6 +51,88 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
+%  SLIDE 7 — Tyngdekraft
+%--------------------------------------------------------------------------
+\begin{frame}{Tyngdekraft}
+  \tanke{}{%
+  Hva er tyngdekraft?
+  }
+  \pause
+
+  \definecolor{dashblue}{RGB}{50,110,235}
+  \definecolor{dashgold}{RGB}{205,145,20}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \vspace{-20pt}
+      \defnat{4.7}{Tyngdekraft}{
+      \footnotesize
+      Tyngdekraften $\vec{G}$ er kraften jorda trekker et legeme med masse $m$ mot sitt sentrum med:
+      \[
+        \vec{G} = m\vec{\mathrm{g}}, \qquad \mathrm{g} \approx 9.81\,\mathrm{m/s^2}.
+      \]
+      }
+
+      \pause
+      \merk{Fritt fall}{
+      \footnotesize
+      Newtons 2. lov gir $m\mathrm{g}=ma \Rightarrow a=\mathrm{g}$. Tyngdekraften trekker derfor alle legemer mot bakken med \textit{samme} akselerasjon, uavhengig av masse.
+      }
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+          \ifdarkmode\includegraphics[width=4.4cm]{Images/Dashman_DashLine_tyngdekraft_mork.png}\else\includegraphics[width=4.4cm]{Kapittel4:Dynamikk/Dashman_DashLine_tyngdekraft.png}\fi%
+        };
+        \begin{scope}[x={(image.south east)}, y={(image.north west)}]
+          \node[anchor=north, font=\bfseries, text=\ifdarkmode dashgold\else dashblue\fi] at (0.710, 0.035) {$\vec{G} = m\vec{\mathrm{g}}$};
+        \end{scope}
+      \end{tikzpicture}
+
+      {\footnotesize Dash-Line påvirkes av en kraft med størrelse $\vec{G}=m\vec{\mathrm{g}}$ fra jorda.}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: Tyngdekraft på jord og måne
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Tyngdekraft på jord og måne}{%
+  Ola har masse $m = 75\,\mathrm{kg}$.
+  \begin{enumerate}[a)]
+      \item Finn tyngdekraften på Ola ved jordoverflaten ($\mathrm{g} = 9.81\,\mathrm{m/s^2}$).
+      \item Finn tyngdekraften på Ola ved månens overflate ($\mathrm{g}_\text{måne} = 1.62\,\mathrm{m/s^2}$).
+      \item Hva er Olas masse på månen? Forklar svaret.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Til ettertanke: hva er masse?
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Hva er masse?
+  }
+
+  \pause
+  \svar{%
+  Massen til et legeme er ganske enkelt \textit{tregheten} til legemet.
+  \begin{align*}
+    a=\frac{\sum F}{m}
+  \end{align*}
+
+  }
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------
 %  SLIDE 3 — Til ettertanke: hvordan måler vi krefter?
 %--------------------------------------------------------------------------
 \begin{frame}{}
@@ -60,8 +142,9 @@
   }
 
   \pause
+  \svar{%
   For å måle og sammenlikne krefter bruker vi et \textit{Newtonmeter} --- en fjær i et rør. Jo mer fjæra presses sammen, jo større er krafta som virker på den.
-
+  }
 \end{frame}
 
 %--------------------------------------------------------------------------
@@ -110,78 +193,6 @@
 
 \end{frame}
 
-%--------------------------------------------------------------------------
-%  SLIDE 7 — Tyngdekraft
-%--------------------------------------------------------------------------
-\begin{frame}{Tyngdekraft}
-
-  \definecolor{dashblue}{RGB}{50,110,235}
-  \definecolor{dashgold}{RGB}{205,145,20}
-  \begin{columns}[T]
-    \begin{column}{0.52\textwidth}
-      \vspace{-20pt}
-      \defnat{4.7}{Tyngdekraft}{
-      \footnotesize
-      Tyngdekraften $\vec{G}$ er kraften jorda trekker et legeme med masse $m$ mot sitt sentrum med:
-      \[
-        \vec{G} = m\vec{\mathrm{g}}, \qquad \mathrm{g} \approx 9.81\,\mathrm{m/s^2}.
-      \]
-      }
-
-      \pause
-      \merk{Fritt fall}{
-      \footnotesize
-      Newtons 2. lov gir $m\mathrm{g}=ma \Rightarrow a=\mathrm{g}$. Tyngdekraften trekker derfor alle legemer mot bakken med \textit{samme} akselerasjon, uavhengig av masse.
-      }
-    \end{column}
-    \begin{column}{0.44\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
-          \ifdarkmode\includegraphics[width=4.4cm]{Images/Dashman_DashLine_tyngdekraft_mork.png}\else\includegraphics[width=4.4cm]{Kapittel4:Dynamikk/Dashman_DashLine_tyngdekraft.png}\fi%
-        };
-        \begin{scope}[x={(image.south east)}, y={(image.north west)}]
-          \node[anchor=north, font=\bfseries, text=\ifdarkmode dashgold\else dashblue\fi] at (0.710, 0.035) {$\vec{G} = m\vec{\mathrm{g}}$};
-        \end{scope}
-      \end{tikzpicture}
-
-      {\footnotesize Dash-Line påvirkes av en kraft med størrelse $\vec{G}=m\vec{\mathrm{g}}$ fra jorda.}
-    \end{column}
-  \end{columns}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 8 — Aktivitet: Tyngdekraft på jord og måne
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Tyngdekraft på jord og måne}{%
-  Ola har masse $m = 75\,\mathrm{kg}$.
-  \begin{enumerate}[a)]
-      \item Finn tyngdekraften på Ola på jordoverflaten ($\mathrm{g} = 9.81\,\mathrm{m/s^2}$).
-      \item Finn tyngdekraften på Ola på månens overflate ($\mathrm{g}_\text{måne} = 1.62\,\mathrm{m/s^2}$).
-      \item Hva er Olas masse på månen? Forklar svaret.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 9 — Til ettertanke: hva er masse?
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \tanke{}{%
-  Hva er masse?
-  }
-
-  \pause
-  \svar{%
-  Massen til et legeme er ganske enkelt \textit{tregheten} til legemet.
-  }
-
-\end{frame}
 
 %--------------------------------------------------------------------------
 %  SLIDE 10 — Pause
