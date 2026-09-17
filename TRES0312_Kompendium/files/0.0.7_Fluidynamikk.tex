@@ -153,7 +153,7 @@ Når vi beveger oss nedover i væsken, øker trykket på grunn av vekten av væs
 \defn{Hydrostatisk Trykk}{
     Trykket \( p \) i en væske i ro på grunn av vekten av væsken over et punkt er gitt som:
     \begin{align}
-        p = \rho g h
+        p = \rho \mathrm{g} h
     \end{align}
     hvor \( \rho \) er væskens tetthet (\( \text{kg/m}^3 \)), \( g \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden (\( \text{m} \)).
 }
@@ -167,7 +167,7 @@ I et vertikalt væskeelement virker vekten av væsken, som gir opphav til det hy
 \defn{Trykkdifferanse i vertikalt væskeelement}{
     For et væskeelement i ro gjelder:
     \begin{align}
-        p_2 - p_1 = \rho g h
+        p_2 - p_1 = \rho \mathrm{g} h
     \end{align}
     hvor \( p_2 \) er trykket ved bunnen av elementet, \( p_1 \) er trykket ved toppen, og \( h \) er høyden til væskeelementet.
 }
@@ -177,7 +177,7 @@ I en væske som er i ro, vil trykket øke med dybden på grunn av vekten av væs
 \defn{Trykk i et vertikalt væskeelement}{
     Trykket \( p(h) \) i en væske som er i ro er gitt som:
     \begin{align}
-        p(h) = p_0 + \rho g h
+        p(h) = p_0 + \rho \mathrm{g} h
     \end{align}
     Her er \( p_0 \) det ytre trykket ved væskeoverflaten, \( \rho \) er tettheten til væsken (\( \text{kg/m}^3 \)), \( g \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden i væsken (\( \text{m} \)).
 
@@ -203,7 +203,7 @@ En dykker er under vann med tetthet \( \rho = 1000 \, \text{kg/m}^3 \), og det a
 \textit{Metode:}
 Bruk formelen for trykk i væsken:
 \[
-p(h) = p_0 + \rho g h
+p(h) = p_0 + \rho \mathrm{g} h
 \]
 hvor \( p_0 = 101325 \, \text{Pa} \), \( \rho = 1000 \, \text{kg/m}^3 \), og \( g = 9.81 \, \text{m/s}^2 \). Vi setter inn de tre ulike dybdene én etter én. \\
 
@@ -318,14 +318,14 @@ Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. De
 \subsection{Oppdriftskraft}
 Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir en netto oppdriftskraft \( O \), som kan uttrykkes som:
 \[
-O = \rho_B g V_q
+O = \rho_B \mathrm{g} V_q
 \]
 hvor \( \rho_B \) er tettheten til væsken, \( g \) er tyngdeakselerasjonen, og \( V_q \) er volumet av væsken som fortrenges av legemet.
 
 \defn{Oppdriftskraft}{
     Oppdriftskraften \( O \) på et legeme omgitt av en væske i ro kan uttrykkes som:
     \begin{align}
-        O = \rho_B g V_q
+        O = \rho_B \mathrm{g} V_q
     \end{align}
     Her er \( \rho_B \) tettheten til væsken, \( g \) er tyngdeakselerasjonen, og \( V_q \) er volumet av væsken som fortrenges av legemet.
 }
@@ -365,14 +365,14 @@ Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket til 
 \end{tikzpicture}
 \end{center}
 
-Trykkkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v g h_1)\,A$,
-og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v g h_2)\,A$.
+Trykkkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
+og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$.
 Nettokraften oppover er:
 \[
   O = F_{\text{bunn}} - F_{\text{topp}}
-    = \rho_v g A (h_2 - h_1)
-    = \rho_v g A h_s
-    = \rho_v g V_{\text{fortrengt}}
+    = \rho_v \mathrm{g} A (h_2 - h_1)
+    = \rho_v \mathrm{g} A h_s
+    = \rho_v \mathrm{g} V_{\text{fortrengt}}
 \]
 Dette er Arkimedes' lov, utledet fra hydrostatikk.
 
@@ -380,7 +380,7 @@ Dette er Arkimedes' lov, utledet fra hydrostatikk.
 
 Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ i en væske med tetthet $\rho_v$ er:
 \[
-  F_{\text{netto}} = O - G = \rho_v g V - \rho_L g V = (\rho_v - \rho_L)\,g V
+  F_{\text{netto}} = O - G = \rho_v \mathrm{g} V - \rho_L \mathrm{g} V = (\rho_v - \rho_L)\,\mathrm{g} V
 \]
 
 \begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
@@ -401,7 +401,7 @@ Det er den totale massen delt på det totale volumet som avgjør.}
 \subsection{Gravitasjonskraft på et legeme}
 Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( g \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:
 \[
-G = m g = \rho_L V g.
+G = m \mathrm{g} = \rho_L V \mathrm{g}.
 \]
 
 \subsection{Arkimedes' lov}
@@ -428,7 +428,7 @@ V_q = 0.12 \cdot V = 0.12 \cdot 9.0 = 1.08 \, \text{m}^3.
 \]
 Oppdriftskraften beregnes ved å bruke formelen for oppdrift:
 \[
-O = \rho_B g V_q = 1000 \cdot 9.81 \cdot 1.08 = 10594.8 \, \text{N}.
+O = \rho_B \mathrm{g} V_q = 1000 \cdot 9.81 \cdot 1.08 = 10594.8 \, \text{N}.
 \]
 Rundt av til:
 \[
@@ -440,11 +440,11 @@ O \approx 11 \, \text{kN}.
 \textit{Metode:}  
 Når båten flyter, er oppdriftskraften lik tyngdekraften på båten. Tyngdekraften på båten kan skrives som:
 \[
-G = m g = \rho_L V g.
+G = m \mathrm{g} = \rho_L V \mathrm{g}.
 \]
 Løs for massen \( m \):
 \[
-m = \frac{O}{g} = \frac{10594.8}{9.81} \approx 1080 \, \text{kg}.
+m = \frac{O}{\mathrm{g}} = \frac{10594.8}{9.81} \approx 1080 \, \text{kg}.
 \]
 
 \textit{Svar:}  

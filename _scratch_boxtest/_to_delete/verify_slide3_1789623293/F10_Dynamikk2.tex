@@ -1,0 +1,349 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Dynamikk}
+\subtitle{TRES0312 --- Krefter i dagliglivet}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{4}   % Kapittel 4: "Dynamikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 4.3}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang (Newtons lover)
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Skriv opp Newtons 1., 2. og 3. lov.
+      \item Hva er bevegelsesmengde, og hvordan er den definert?
+      \item To legemer $A$ og $B$ vekselvirker med krefter $\vec{F}$ og $\vec{F}'$. Hva vet du om sammenhengen mellom disse to kreftene?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Tyngdekraft
+%--------------------------------------------------------------------------
+\begin{frame}{Tyngdekraft}
+  \tanke{}{%
+  Hva er tyngdekraft?
+  }
+  \pause
+
+  \definecolor{dashblue}{RGB}{50,110,235}
+  \definecolor{dashgold}{RGB}{205,145,20}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \vspace{-8pt}
+      \footnotesize
+      \[
+        \sum\vec{F} = m\vec{a} \qquad \textbf{(Newtons 2. lov)}
+      \]
+
+      \pause
+      \vspace{-6pt}
+      \merk{Fritt fall}{
+      \footnotesize
+      Fra observasjon vet vi at et legeme i fritt fall (uten luftmotstand) har akselerasjon $a = \mathrm{g}$, uavhengig av masse.
+      }
+
+      \pause
+      \vspace{-6pt}
+      \defnat{4.7}{Tyngdekraft}{
+      \footnotesize
+      Kraften som gir denne akselerasjonen kalles tyngdekraften $\vec{G}$. Newtons 2. lov gir da:
+      \[
+        \vec{G} = m\vec{\mathrm{g}}, \qquad \mathrm{g} \approx 9.81\,\mathrm{m/s^2}.
+      \]
+      }
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+          \ifdarkmode\includegraphics[width=4.4cm]{Images/Dashman_DashLine_tyngdekraft_mork.png}\else\includegraphics[width=4.4cm]{Kapittel4:Dynamikk/Dashman_DashLine_tyngdekraft.png}\fi%
+        };
+        \begin{scope}[x={(image.south east)}, y={(image.north west)}]
+          \node[anchor=north, font=\bfseries, text=\ifdarkmode dashgold\else dashblue\fi] at (0.710, 0.035) {$\vec{G} = m\vec{\mathrm{g}}$};
+        \end{scope}
+      \end{tikzpicture}
+
+      {\footnotesize Dash-Line påvirkes av en kraft med størrelse $\vec{G}=m\vec{\mathrm{g}}$ fra jorda.}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Aktivitet: Tyngdekraft på jord og måne
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Tyngdekraft på jord og måne}{%
+  Ola har masse $m = 75\,\mathrm{kg}$.
+  \begin{enumerate}[a)]
+      \item Finn tyngdekraften på Ola ved jordoverflaten ($\mathrm{g} = 9.81\,\mathrm{m/s^2}$).
+      \item Finn tyngdekraften på Ola ved månens overflate ($\mathrm{g}_\text{måne} = 1.62\,\mathrm{m/s^2}$).
+      \item Hva er Olas masse på månen? Forklar svaret.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Til ettertanke: hva er masse?
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Hva er masse?
+  }
+
+  \pause
+  \svar{%
+  Massen til et legeme er ganske enkelt \textit{tregheten} til legemet.
+  \begin{align*}
+    a=\frac{\sum F}{m}
+  \end{align*}
+
+  }
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Til ettertanke: hvordan måler vi krefter?
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Hvordan måler vi krefter?
+  }
+
+  \pause
+  \svar{%
+  For å måle og sammenlikne krefter bruker vi et \textit{Newtonmeter} --- en fjær i et rør. Jo mer fjæra presses sammen, jo større er krafta som virker på den.
+  }
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Definisjon: Hookes lov
+%--------------------------------------------------------------------------
+\begin{frame}{Kraft fra spiralfjær}
+
+  \defnat{4.6}{Hookes lov}{
+  Kraften fra en fjær på det den er festet til er proporsjonal med avviket $\vec{x}$ fra likevektsposisjonen:
+  \[
+    \vec{F} = -k\vec{x}
+  \]
+  Her er $k>0$ \textit{fjærkonstanten} (enhet: $\mathrm{N/m}$), og $\vec{x}$ er forflytningen fra likevekt. Minustegnet viser at kraften alltid peker \textit{mot} likevekt.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: Finn fjærkonstanten
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Finn fjærkonstanten}{%
+  Du fester et lodd til en vertikal fjær og måler at fjæra strekkes $12\,\mathrm{cm}$ når loddet har masse $m = 250\,\mathrm{g}$.
+  \begin{enumerate}[a)]
+      \item Hva er fjærkonstanten $k$?
+      \item Hvor mye strekkes fjæra om du bytter til et lodd med masse $m = 400\,\mathrm{g}$?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Aktivitet: Geværkule i fjærdrevet løp
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Geværkule i fjærdrevet løp}{%
+  En geværkule med masse $m = 10\,\mathrm{g}$ skytes flatt og friksjonsfritt ut av et fjærdrevet løp. Fjæra har fjærkonstant $k = 200\,\mathrm{N/m}$ og er i utgangspunktet trykt sammen $x = 5\,\mathrm{cm}$ i forhold til likevekt.
+  \begin{enumerate}[a)]
+      \item Tegn kreftene som virker på geværkula i løpet, i det øyeblikket fjæra utløses.
+      \item Beregn akselerasjonen i det øyeblikket fjæra utløses.
+      \item Er akselerasjonen til patronen konstant i løpet av tiden den har kontakt med fjæra?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Underlagskrefter: normalkraft og friksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Underlagskrefter}
+
+  Når et objekt står på et underlag, dekomponerer vi underlagskraften $\vec{U}$ i normalkraft $\vec{N}$ (vinkelrett på underlaget) og friksjonskraft $\vec{R}$ (parallelt med underlaget):
+  \[
+    \vec{U} = \vec{N} + \vec{R}
+  \]
+
+  \pause
+  \begin{figure}[ht!]
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+      \ifdarkmode\includegraphics[width=4.6cm]{Images/fot_underlag_ny_mork.png}\else\includegraphics[width=4.6cm]{Kapittel4:Dynamikk/fot_underlag_ny.png}\fi%
+    };
+    \begin{scope}[x={(image.south east)}, y={(image.north west)}]
+      \coordinate (P) at (0.65, 0.181);
+      \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.2pt, defscol]
+        (P) -- ($(P)+(0,0.32)$);
+      \node[right=3pt, defscol, font=\small\bfseries] at ($(P)+(0,0.30)$) {$\vec{N}$};
+      \draw[-{Stealth[length=11pt,width=7pt]}, line width=2.2pt, oppsumcol]
+        (P) -- ($(P)+(0.19,0)$);
+      \node[below=3pt, oppsumcol, font=\small\bfseries] at ($(P)+(0.095,0)$) {$\vec{R}$};
+    \end{scope}
+  \end{tikzpicture}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Aktivitet: Normalkraft i heis
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Normalkraft i heis}{%
+  Kari har masse $m = 70\,\mathrm{kg}$ og står i en heis.
+  \begin{enumerate}[a)]
+      \item Finn normalkraften $N$ når heisen står i ro.
+      \item Finn normalkraften $N$ når heisen akselererer oppover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Finn normalkraften $N$ når heisen akselererer nedover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Kari står på en vekt inne i heisen. Hva tror du den viser i de tre tilfellene over?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Definisjon: Kinetisk friksjonskoeffisient
+%--------------------------------------------------------------------------
+\begin{frame}{Friksjon}
+
+  \defnat{4.8}{Kinetisk friksjonskoeffisient}{
+  Den \textbf{kinetiske} friksjonskoeffisienten $\mu_k$ bestemmer glidefriksjonen:
+  \[R_k = \mu_k N.\]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Aktivitet: Boks som sklir (glidefriksjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Boks som sklir}{%
+  En boks med masse $m = 10\,\mathrm{kg}$ glir på et gulv med kinetisk friksjonskoeffisient $\mu_k = 0.30$.
+  \begin{enumerate}[a)]
+      \item Finn friksjonskraften $R_k$ som virker på boksen.
+      \item Friksjonskraften er den eneste horisontale kraften. Finn boksens akselerasjon.
+      \item Er akselerasjonen konstant?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Definisjon: Statisk friksjonskoeffisient
+%--------------------------------------------------------------------------
+\begin{frame}{Friksjon}
+
+  \defnat{4.9}{Statisk friksjonskoeffisient}{
+  Den \textbf{statiske} friksjonskoeffisienten $\mu_s$ bestemmer maksimal hvilefriksjon:
+  \[R_s \leq \mu_s N.\]
+  }
+
+  \merk{}{Som regel er $\mu_k < \mu_s$.}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Aktivitet: Kasse på gulv (hvilefriksjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kasse på gulv}{%
+  En kasse med masse $m = 15\,\mathrm{kg}$ står på et gulv med statisk friksjonskoeffisient $\mu_s = 0.40$. Du skyver horisontalt med kraft $F = 40\,\mathrm{N}$.
+
+  Begynner kassen å bevege seg?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Oppsummering: krefter i dagliglivet
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Krefter i dagliglivet}{%
+  \begin{enumerate}[1.]
+    \item[] Fjærkraft: $\vec{F} = -k\vec{x}$ \quad (Hookes lov)
+    \item[] Tyngdekraft: $\vec{G} = m\vec{\mathrm{g}}$
+    \item[] Normalkraft: $\vec{N}$ vinkelrett på underlaget
+    \item[] Friksjon: $R_s \leq \mu_s N$ (hvile), $R_k = \mu_k N$ (glid)
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Krefter i planet}
+  \begin{itemize}
+    \item Dekomponering av Newtons lover
+    \item Algoritme for sammensatte kraftoppgaver
+    \item Skråplan
+  \end{itemize}
+  \vspace{6mm}
+  {\normalsize\itshape Tid for å dekomponere\ldots}
+\end{center}
+\end{frame}
+
+\end{document}

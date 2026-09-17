@@ -88,127 +88,80 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Eksempel: Slede i skråplan holdt av fjær
-%--------------------------------------------------------------------------
-\begin{frame}{Eksempel: algoritmen i bruk}
-
-  \exmat{4.9}{Slede i skråplan holdt av fjær}{%
-  En slede med Dashman, samlet masse $m$, ligger i ro på et friksjonsfritt skråplan med helningsvinkel $\theta = 30^\circ$. Sleden er festet til en fjær med fjærkonstant $k = 180\,\mathrm{N/m}$, strukket $x = 12\,\mathrm{cm}$ fra likevekt.
-  \begin{enumerate}[a)]
-    \item Tegn inn kreftene som virker på sleden.
-    \item Regn ut fjærkrafta $F_k$.
-    \item Finn massen $m$ til sleden.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 6 — Figur + løsning: krefter på sleden
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \begin{columns}[T]
-    \begin{column}{0.46\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
-          \ifdarkmode\includegraphics[width=5.6cm]{Images/Dashman_slede_fjaer_skraplan_mork.png}\else\includegraphics[width=5.6cm]{Kapittel4:Dynamikk/Dashman_slede_fjaer_skraplan.png}\fi%
-        };
-        \begin{scope}[x={(image.south east)}, y={(image.north west)}]
-          \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, defscol]
-            (0.419,0.357) -- (0.3481,0.5562);
-          \node[left=2pt, defscol, font=\scriptsize\bfseries] at (0.3481,0.5562) {$\vec{N}$};
-          \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, \ifdarkmode white!75!gray\else black!65\fi]
-            (0.452,0.426) -- (0.452,0.1964);
-          \node[below=2pt, \ifdarkmode white!75!gray\else black!65\fi, font=\scriptsize\bfseries] at (0.452,0.1964) {$\vec{G}$};
-          \draw[-{Stealth[length=9pt,width=6pt]}, line width=2pt, oppsumcol]
-            (0.530,0.525) -- (0.6539,0.6391);
-          \node[above=2pt, oppsumcol, font=\scriptsize\bfseries] at (0.6539,0.6391) {$\vec{F}_k$};
-        \end{scope}
-      \end{tikzpicture}
-    \end{column}
-    \begin{column}{0.50\textwidth}
-      \footnotesize
-      Sleden er i ro: $\sum\vec{F}=0$. Med $x$-akse langs planet (opp positiv):
-      \[
-        F_k - m\mathrm{g}\sin\theta = 0
-      \]
-      \pause
-      \[
-        F_k = kx = 180\,\mathrm{N/m}\cdot 0.12\,\mathrm{m} = \underline{\underline{21.6\,\mathrm{N}}}
-      \]
-      \pause
-      \[
-        m = \frac{F_k}{\mathrm{g}\sin\theta} = \frac{21.6\,\mathrm{N}}{9.81\,\mathrm{m/s^2}\cdot\sin 30^\circ} = \underline{\underline{4.4\,\mathrm{kg}}}
-      \]
-    \end{column}
-  \end{columns}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 7 — Skråplan: krefter og friksjon
-%--------------------------------------------------------------------------
-\begin{frame}{Skråplan}
-
-  \begin{columns}[T]
-    \begin{column}{0.42\textwidth}
-      \centering
-      \includegraphics[width=4.6cm]{Kapittel3:Arbeid&Energi/Krefter i skråplan1.PNG}
-    \end{column}
-    \begin{column}{0.54\textwidth}
-      \footnotesize
-      En kloss som sklir nedover et skråplan med helningsvinkel $\theta$ og friksjon. Dekomponering langs ($x'$) og normalt på ($y'$) planet gir
-      \[
-        N = m\mathrm{g}\cos\theta,\qquad m\mathrm{g}\sin\theta - R_k = ma
-      \]
-    \end{column}
-  \end{columns}
-
-  \pause
-  \graabox{$\displaystyle a = \mathrm{g}(\sin\theta - \mu_k\cos\theta)$}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 8 — Kritisk vinkel
-%--------------------------------------------------------------------------
-\begin{frame}{Kritisk vinkel}
-
-  Klossen er akkurat på grensen til å skli når tyngdekraftens komponent langs planet er lik maksimal hvilefriksjon ($R_s=\mu_s N$):
-  \[
-    m\mathrm{g}\sin\theta_c - \mu_s m\mathrm{g}\cos\theta_c = 0 \quad\Longrightarrow\quad \tan\theta_c = \mu_s
-  \]
-
-  \pause
-  \graabox{$\displaystyle \theta_c = \arctan(\mu_s)$}
-
-  \pause
-  \merk{Retning}{
-  For $\theta<\theta_c$ holder friksjonen klossen i ro. For $\theta>\theta_c$ begynner den å skli.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 9 — Aktivitet: Kjelke med skrå trekkraft
+%  SLIDE 5 — Aktivitet: Normalkraft i heis
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
-  \aktivitet{Kjelke med skrå trekkraft}{%
-  En kjelke med masse $m = 15\,\mathrm{kg}$ dras langs et flatt, snødekket underlag. Trekkraften $\vec{F} = 50\,\mathrm{N}$ er rettet i vinkel $\theta = 30^\circ$ over horisontal. Den kinetiske friksjonskoeffisienten er $\mu_k = 0.20$.
+  \aktivitet{Normalkraft i heis}{%
+  Kari har masse $m = 70\,\mathrm{kg}$ og står i en heis.
   \begin{enumerate}[a)]
-      \item Finn normalkraften $N$. (Husk at $\vec{F}$ har en vertikal komponent som påvirker $N$.)
-      \item Finn friksjonskraften $R_k$.
-      \item Finn kjelkens akselerasjon.
+      \item Finn normalkraften $N$ når heisen står i ro.
+      \item Finn normalkraften $N$ når heisen akselererer oppover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Finn normalkraften $N$ når heisen akselererer nedover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Kari står på en vekt inne i heisen. Hva tror du den viser i de tre tilfellene over?
   \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 10 — Aktivitet: Buss på glatt vei
+
+%  SLIDE 6 — Aktivitet: Boks som sklir, horisontalt udnerlag (glidefriksjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Boks som sklir på horisontalt underlag}{%
+  En boks med masse $m = 10\,\mathrm{kg}$ glir på et gulv med kinetisk friksjonskoeffisient $\mu_k = 0.30$.
+  \begin{enumerate}[a)]
+      \item Finn friksjonskraften $R$ som virker på boksen.
+      \item Friksjonskraften er den eneste horisontale kraften. Finn boksens akselerasjon.
+      \item Er akselerasjonen konstant?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 7 — Aktivitet: Slede i skråplan holdt av fjær
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \aktivitet{Slede i skråplan holdt av fjær}{%
+      En slede med Dashman, samlet masse $m$, ligger i ro på et friksjonsfritt skråplan med helningsvinkel $\theta = 30^\circ$. Sleden er festet til en fjær med fjærkonstant $k = 180\,\mathrm{N/m}$, strukket $x = 12\,\mathrm{cm}$ fra likevekt.
+      \begin{enumerate}[a)]
+        \item Tegn inn kreftene som virker på sleden.
+        \item Regn ut fjærkrafta $F_k$.
+        \item Finn massen $m$ til sleden.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+          \ifdarkmode\includegraphics[width=5.2cm]{Images/Dashman_slede_fjaer_skraplan_mork.png}\else\includegraphics[width=5.2cm]{Kapittel4:Dynamikk/Dashman_slede_fjaer_skraplan.png}\fi%
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 9 — Aktivitet: Buss på glatt vei
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -223,7 +176,42 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 11 — Neste gang
+%  SLIDE 10 — Oppsummering: Skråplan med friksjon
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Skråplan med friksjon}{%
+  Akselerasjon ned et skråplan med friksjon:
+  \[
+    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta)
+  \]
+  Kritisk vinkel --- grensen for at klossen begynner å skli:
+  \[
+    \theta_c = \arctan(\mu_s)
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 11 — Aktivitet: Kjelke med skrå trekkraft
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kjelke med skrå trekkraft}{%
+  En kjelke med masse $m = 15\,\mathrm{kg}$ dras langs et flatt, snødekket underlag. Trekkraften $\vec{F} = 50\,\mathrm{N}$ er rettet i vinkel $\theta = 30^\circ$ over horisontal. Den kinetiske friksjonskoeffisienten er $\mu_k = 0.20$.
+  \begin{enumerate}[a)]
+      \item Finn normalkraften $N$. (Husk at $\vec{F}$ har en vertikal komponent som påvirker $N$.)
+      \item Finn friksjonskraften $R$.
+      \item Finn kjelkens akselerasjon.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}

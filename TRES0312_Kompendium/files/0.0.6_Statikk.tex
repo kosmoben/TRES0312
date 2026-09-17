@@ -118,13 +118,13 @@ Et trafikklys med masse $m = \SI{50}{\kilo\gram}$ henger i to like lange snorer 
 \textbf{4. Dekomponér:}
 \begin{align*}
     \sum F_x = 0&:\quad -S\cos\alpha + S\cos\alpha = 0 \quad \checkmark \quad \text{(automatisk oppfylt)}\\
-    \sum F_y = 0&:\quad S\sin\alpha + S\sin\alpha - G = 0 \implies 2S\sin\alpha = mg
+    \sum F_y = 0&:\quad S\sin\alpha + S\sin\alpha - G = 0 \implies 2S\sin\alpha = m\mathrm{g}
 \end{align*}
 
 \smallskip\noindent
 \textbf{5. Løs for $S$:}
 \[
-    S = \frac{mg}{2\sin\alpha}
+    S = \frac{m\mathrm{g}}{2\sin\alpha}
     = \frac{\SI{50}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{2\cdot\sin 30°}
     = \frac{\SI{490.5}{\newton}}{1.0}
     = \doubleunderline{\SI{490.5}{\newton}}
@@ -261,7 +261,7 @@ En ensartet bjelke med masse $M = \SI{20}{\kilo\gram}$ og lengde $L = \SI{4.0}{\
 
   % Tyngdekraft ned fra massesenter
   \draw[->, line width=2.5pt, black!65]
-      (\xMid, 0.28) -- (\xMid, 1.3) node[above, font=\small] {$Mg$};
+      (\xMid, 0.28) -- (\xMid, 1.3) node[above, font=\small] {$M\mathrm{g}$};
 
   % Lengdemål
   \draw[<->, thin, gray!70] (0,-1.7) -- (8.0,-1.7)
@@ -291,26 +291,26 @@ Massesenteret er midt på bjelken ($L/2 = \SI{2.0}{\metre}$ fra venstre).
 
 \textbf{Avstander fra A:}
 \begin{itemize}
-  \item Massesenter: $d_{Mg} = 2.0 - 0.5 = \SI{1.5}{\metre}$
+  \item Massesenter: $d_{M\mathrm{g}} = 2.0 - 0.5 = \SI{1.5}{\metre}$
   \item Søyle B: $d_B = (4.0 - 1.0) - 0.5 = \SI{2.5}{\metre}$
 \end{itemize}
 
 \textbf{Kraftligning ($\sum F_y = 0$):}
 \[
-  N_A + N_B = Mg = \SI{20}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{196.2}{\newton}
+  N_A + N_B = M\mathrm{g} = \SI{20}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{196.2}{\newton}
 \]
 
 \textbf{Momentligning om A ($\sum\tau_A = 0$, positivt mot klokken):}
 \[
-  N_B \cdot d_B - Mg \cdot d_{Mg} = 0
-  \implies N_B = \frac{Mg\cdot d_{Mg}}{d_B}
+  N_B \cdot d_B - M\mathrm{g} \cdot d_{M\mathrm{g}} = 0
+  \implies N_B = \frac{M\mathrm{g}\cdot d_{M\mathrm{g}}}{d_B}
   = \frac{\SI{196.2}{\newton}\cdot\SI{1.5}{\metre}}{\SI{2.5}{\metre}}
   = \doubleunderline{\SI{117.7}{\newton}}
 \]
 
 \textbf{Fra kraftligningen:}
 \[
-  N_A = Mg - N_B = 196.2 - 117.7 = \doubleunderline{\SI{78.5}{\newton}}
+  N_A = M\mathrm{g} - N_B = 196.2 - 117.7 = \doubleunderline{\SI{78.5}{\newton}}
 \]
 }
 
@@ -349,7 +349,7 @@ En \SI{60}{\centi\metre} lang, masselos hylle er festet til veggen i venstre end
 
   % Vekt på enden
   \draw[->, line width=2.5pt, black!65]
-      (3.0, -0.05) -- (3.0, -0.90) node[right, font=\small] {$mg$};
+      (3.0, -0.05) -- (3.0, -0.90) node[right, font=\small] {$m\mathrm{g}$};
   \fill[headCol!30] (2.75,-0.05) rectangle (3.25,0.20);
   \draw[headCol!60!black] (2.75,-0.05) rectangle (3.25,0.20);
 
@@ -374,10 +374,10 @@ Stagvinkelen med horisontal: $\beta = \arctan\!\bigl(\tfrac{0.40}{0.60}\bigr) \a
 
 \textbf{Momentligning om hengselet} ($\sum\tau = 0$, positiv mot klokken):
 
-Tyngdekraften $mg$ lager et negativt (medurs) moment, den vertikale komponenten av stagkraften $T_y = T\sin\beta$ lager et positivt moment:
+Tyngdekraften $m\mathrm{g}$ lager et negativt (medurs) moment, den vertikale komponenten av stagkraften $T_y = T\sin\beta$ lager et positivt moment:
 \[
-  T\sin\beta\cdot L - mg\cdot L = 0
-  \implies T = \frac{mg}{\sin\beta}
+  T\sin\beta\cdot L - m\mathrm{g}\cdot L = 0
+  \implies T = \frac{m\mathrm{g}}{\sin\beta}
   = \frac{\SI{3.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\sin 33.7°}
   = \doubleunderline{\SI{53.0}{\newton}}
 \]
@@ -385,9 +385,9 @@ Tyngdekraften $mg$ lager et negativt (medurs) moment, den vertikale komponenten 
 \textbf{Kraftligninger:}
 \begin{align*}
   \sum F_x = 0&:\quad H_x - T\cos\beta = 0 \implies H_x = T\cos\beta = 53.0\cdot\cos 33.7° \approx \SI{44.1}{\newton}\\
-  \sum F_y = 0&:\quad H_y + T\sin\beta - mg = 0 \implies H_y = mg - T\sin\beta \approx \SI{0}{\newton}
+  \sum F_y = 0&:\quad H_y + T\sin\beta - m\mathrm{g} = 0 \implies H_y = m\mathrm{g} - T\sin\beta \approx \SI{0}{\newton}
 \end{align*}
-(Som forventet: momentligningen om hengselet sa nettopp at $T\sin\beta = mg$, så $H_y = 0$.)
+(Som forventet: momentligningen om hengselet sa nettopp at $T\sin\beta = m\mathrm{g}$, så $H_y = 0$.)
 }
 
 \oppgave{Stige mot vegg}{%
@@ -400,24 +400,24 @@ En ensartet stige med masse $m = \SI{15}{\kilo\gram}$ og lengde $L = \SI{4.0}{\m
 }
 
 \svar{%
-\textbf{Krefter:} normalkraft fra vegg $N_v$ (horisontal), normalkraft fra gulv $N_g$ (vertikal), friksjon fra gulv $f$ (horisontal), tyngdekraft på stige $mg$ (ned fra midten), tyngdekraft på person $Mg$ (ned fra \SI{2.5}{\metre} langs stigen).
+\textbf{Krefter:} normalkraft fra vegg $N_v$ (horisontal), normalkraft fra gulv $N_g$ (vertikal), friksjon fra gulv $f$ (horisontal), tyngdekraft på stige $m\mathrm{g}$ (ned fra midten), tyngdekraft på person $M\mathrm{g}$ (ned fra \SI{2.5}{\metre} langs stigen).
 
 \textbf{Momentligning om bunnen:} (positiv mot klokken)
 \begin{align*}
   &N_v\cdot L\sin\theta
-  - mg\cdot\tfrac{L}{2}\cos\theta
-  - Mg\cdot d\cos\theta = 0
+  - m\mathrm{g}\cdot\tfrac{L}{2}\cos\theta
+  - M\mathrm{g}\cdot d\cos\theta = 0
 \end{align*}
 der $d = \SI{2.5}{\metre}$. Løser for $N_v$:
 \[
-  N_v = \frac{(m/2 + Md/L)\,g\cos\theta}{\sin\theta}
+  N_v = \frac{(m/2 + Md/L)\,\mathrm{g}\cos\theta}{\sin\theta}
   = \frac{(\SI{7.5}{} + \SI{43.75}{})\cdot\SI{9.81}{}\cdot\cos 65°}{\sin 65°}
   \approx \doubleunderline{\SI{238}{\newton}}
 \]
 
 \textbf{Kraftligninger:}
 \[
-  N_g = (m+M)g = \SI{85}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}
+  N_g = (m+M)\mathrm{g} = \SI{85}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}
       = \doubleunderline{\SI{834}{\newton}}
 \]
 \[
@@ -456,12 +456,12 @@ To barn sitter på en \SI{3.0}{\metre} lang, masselos huske festet i midten ($x 
   % Barn 1
   \fill[defscol!60] (-1.5,0) circle (0.18);
   \node[above=2pt, font=\footnotesize] at (-1.5,0.18) {$m_1$};
-  \draw[->, line width=1.8pt, black!65] (-1.5,0) -- (-1.5,-0.80) node[below, font=\footnotesize] {$m_1 g$};
+  \draw[->, line width=1.8pt, black!65] (-1.5,0) -- (-1.5,-0.80) node[below, font=\footnotesize] {$m_1 \mathrm{g}$};
   \node[below=2pt, font=\footnotesize, gray!70] at (-1.5,-0.05) {$x_1$};
   % Barn 2 (ukjent posisjon, vis som spørsmål)
   \fill[defscol!60] (1.0,0) circle (0.18);
   \node[above=2pt, font=\footnotesize] at (1.0,0.18) {$m_2$};
-  \draw[->, line width=1.8pt, black!65] (1.0,0) -- (1.0,-0.80) node[below, font=\footnotesize] {$m_2 g$};
+  \draw[->, line width=1.8pt, black!65] (1.0,0) -- (1.0,-0.80) node[below, font=\footnotesize] {$m_2 \mathrm{g}$};
   \node[below=2pt, font=\footnotesize, gray!70] at (1.0,-0.05) {$x_2=?$};
   % x-akse
   \draw[->, thin, black!40] (-2.2,0) -- (2.3,0) node[right, font=\footnotesize] {$x$};

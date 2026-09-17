@@ -1,0 +1,82 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}, group-separator={\,}}
+
+
+% %--------------------------------------------------------------------------
+% %         General Setting
+% %--------------------------------------------------------------------------
+
+\graphicspath{{Images/}{../Images/}} %Path of figures
+\setkeys{Gin}{width=0.85\textwidth} %Size of figures
+\setlength{\cftbeforechapskip}{3pt} %space between items in toc
+\setlength{\parindent}{0.5cm} % Idk
+
+\setlist[itemize]{itemsep=5pt} % Adjust the length as needed
+\setlist[enumerate]{itemsep=5pt} % Adjust the length as needed
+
+% Undertittel for kapitler
+\newcommand{\chaptersubtitle}[1]{%
+    {\centering\large\itshape #1\par}\medskip%
+}
+
+% Profesjonelle pilspisser og koordinatregning for TikZ-figurer
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing}
+
+
+
+% Font — Comic Neue (Comic Sans-inspirert, penere variant)
+\usepackage[default]{comicneue}
+% Alternativ: kommenter ut linja over og prøv en av disse i stedet:
+% \usepackage[sfdefault]{noto}          % Noto Sans (ryddig, uformell)
+% \usepackage[default]{iwona}           % Iwona (rund, sans-serif)
+% \usepackage[default]{kurier}          % Kurier (litt mer kompakt)
+
+
+
+
+
+\begin{document}
+
+% %--------------------------------------------------------------------------
+% %         First pages78
+% %--------------------------------------------------------------------------
+\newgeometry{top=8cm,bottom=.5in,left=2cm,right=2cm}
+\subfile{files/0.0.0.titlepage}
+\restoregeometry
+\subfile{files/0.Preface}
+\subfile{files/0.zommaire}
+
+% %--------------------------------------------------------------------------
+% %         Core of the document 
+% %--------------------------------------------------------------------------
+%\part{First part}
+%Her legger man til kapitler
+\subfile{files/0.0.1_HvaErFysikk}
+\subfile{files/0.0.2_MatematikkViTrenger}
+\subfile{files/0.0.3_Kinematikk}
+\subfile{files/0.0.4_Krefter}
+\subfile{files/0.0.5_Energi}
+\subfile{files/0.0.6_Statikk}
+\subfile{files/0.0.7_Fluidynamikk}
+\subfile{files/0.0.8_Termofysikk}
+\subfile{files/0.0.9_Elektrisitet}
+
+
+
+
+
+
+% %--------------------------------------------------------------------------
+% %         Appendiks
+% %--------------------------------------------------------------------------
+\appendix
+\subfile{files/0.A_Python_appendiks}
+
+% %--------------------------------------------------------------------------
+% %         Bibliographie
+% %--------------------------------------------------------------------------
+
+{\small\bibliography{References}}
+\end{document}

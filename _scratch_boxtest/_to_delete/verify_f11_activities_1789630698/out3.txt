@@ -1,0 +1,198 @@
+                    TRES0312 Fysikk
+
+                  Dynamikk
+TRES0312  Krefter i planet: dekomponering og skråplan
+
+                 Dekker kapittel 4.44.4.1
+
+
+
+
+                   Ben David Normann
+                   September 17, 2026
+Repetisjon: Tre kjappe fra forrige gang
+
+ 1. Skriv opp Hookes lov. Hva betyr minustegnet?
+ 2. Hva er sammenhengen mellom normalkraft N , friksjonskraft R og un-
+    derlagskraft U
+                 ⃗?
+ 3. Hva er forskjellen mellom statisk og kinetisk friksjonskoesient, µs og
+    µk ?
+
+
+
+
+                                                                              2 / 12
+Oppsummering: Dekomponering av Newtons lover
+
+Når vi løser oppgaver med krefter i planet, er det viktig å innføre et koordi-
+natsystem, og deretter dekomponere Newtons lover. Med koordinater x og
+y i planet:
+                                        (P
+                  X                           Fx = max
+                      ⃗ = m⃗a =⇒
+                      F                   P
+                                              Fy = may
+
+
+Helt tilsvarende for Newtons første lov, eller andre lover på vektorform.
+
+
+
+
+                                                                                 3 / 12
+Oppsummering: Algoritme for løsing av sammensatte kraftopp-
+gaver
+
+ 1. Tegn gur av problemet, med relevante krefter.
+ 2. Skriv ned de relevante lovene.
+ 3. Gjør et hensiktsmessig valg av koordinatsystem.
+ 4. Dekomponer vektorlovene i koordinatsystemet.
+ 5. Løs settet med skalare likninger for de ukjente.
+
+
+
+
+                                                              4 / 12
+Aktivitet
+
+   Normalkraft i heis
+
+   Kari har masse m = 70 kg og står i en heis.
+    a) Finn normalkraften N når heisen står i ro.
+    b) Finn normalkraften N når heisen akselererer oppover med a = 2.0 m/s2 .
+    c) Finn normalkraften N når heisen akselererer nedover med a = 2.0 m/s2 .
+    d) Kari står på en vekt inne i heisen. Hva tror du den viser i de tre tilfellene
+        over?
+
+
+
+
+                                                                                       5 / 12
+Aktivitet
+
+   Boks som sklir på horisontalt underlag
+
+   En boks med masse m = 10 kg glir på et gulv med kinetisk friksjonskoesient
+   µk = 0.30.
+    a) Finn friksjonskraften Rk som virker på boksen.
+    b) Friksjonskraften er den eneste horisontale kraften. Finn boksens aksel-
+       erasjon.
+    c) Er akselerasjonen konstant?
+
+
+
+
+                                                                                 6 / 12
+Aktivitet
+
+   Slede i skråplan holdt av fjær
+
+   En slede med Dashman, samlet masse
+   m , ligger i ro på et friksjonsfritt skrå-
+
+   plan med helningsvinkel θ = 30◦ . Sle-
+   den er festet til en fjær med fjærkon-
+   stant k = 180 N/m, strukket x =
+   12 cm fra likevekt.
+     a) Tegn inn kreftene som virker på
+         sleden.
+     b) Regn ut fjærkrafta Fk .
+     c) Finn massen m til sleden.
+                                                7 / 12
+Aktivitet
+
+   Buss i bakke (glidefriksjon)
+
+   En buss sklir med låste hjul ned en bakke.
+    a) Finn akselerasjonen til bussen som funksjon av bakkens helningsvinkel
+       θ og friksjonstallet µ mellom dekk og underlag.
+    b) Finn kritisk vinkel som funksjon av friksjonstallet µ. Det vil si: bestem
+       vinkelen bussen vil gli ved, for et gitt friksjonstall µ = 0.2.
+
+
+
+
+                                                                                   8 / 12
+Kritisk vinkel
+ Klossen er akkurat på grensen til å skli når tyngdekraftens komponent langs
+ planet er lik maksimal hvilefriksjon (Rs = µs N ):
+
+                 m   g sin θc − µs g cos θc = 0
+                                 m                =⇒   tan θc = µs
+
+
+
+
+                                                                               9 / 12
+Kritisk vinkel
+ Klossen er akkurat på grensen til å skli når tyngdekraftens komponent langs
+ planet er lik maksimal hvilefriksjon (Rs = µs N ):
+
+                 m   g sin θc − µs g cos θc = 0
+                                 m                 =⇒   tan θc = µs
+
+                                     θc = arctan(µs )
+
+
+
+
+                                                                               9 / 12
+Kritisk vinkel
+ Klossen er akkurat på grensen til å skli når tyngdekraftens komponent langs
+ planet er lik maksimal hvilefriksjon (Rs = µs N ):
+
+                 m   g sin θc − µs g cos θc = 0
+                                 m                 =⇒   tan θc = µs
+
+                                     θc = arctan(µs )
+
+
+    Merk: Retning
+
+    For θ < θc holder friksjonen klossen i ro. For θ > θc begynner den å skli.
+
+
+
+                                                                                 9 / 12
+Aktivitet
+
+   Kjelke med skrå trekkraft
+
+   En kjelke med masse m = 15 kg dras langs et att, snødekket underlag.
+   Trekkraften F ⃗ = 50 N er rettet i vinkel θ = 30◦ over horisontal. Den
+   kinetiske friksjonskoesienten er µk = 0.20.
+     a) Finn normalkraften N . (Husk at F  ⃗ har en vertikal komponent som
+        påvirker N .)
+    b) Finn friksjonskraften Rk .
+     c) Finn kjelkens akselerasjon.
+
+
+
+                                                                             10 / 12
+Aktivitet
+
+   Buss på glatt vei
+
+   En buss parkerer på en bakke. Friksjonskoesientene mellom dekk og vei er
+   µs = 0.70 (statisk) og µk = 0.50 (kinetisk).
+    a) Ved hvilken helningsvinkel θc begynner bussen å skli nedover?
+    b) Dersom helningen er større enn θc slik at bussen begynner å skli, hva
+       blir akselerasjonen nedover bakken?
+
+
+
+
+                                                                               11 / 12
+  Neste gang: Krefter i sirkelbevegelse
+
+▶ Sentripetalkraft
+▶ Dosert veibane
+
+              Rundt og rundt det går. . .
+
+
+
+
+                                            12 / 12
+

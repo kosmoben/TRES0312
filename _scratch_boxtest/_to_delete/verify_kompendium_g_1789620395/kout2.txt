@@ -1,0 +1,1566 @@
+2
+                                   CHAPTER 1
+                                     DYNAMIKK
+                                      årsaken til bevegelse
+   1.1   Bevegelsesmengde . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         3
+   1.2   Newtons lover og kraft-begrepet . . . . . . . . . . . . . . . . . . . . . . . . .          4
+   1.3   Krefter i dagliglivet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      7
+   1.4   Krefter i planet  dekomponering . . . . . . . . . . . . . . . . . . . . . . . .          15
+   1.5   Bevaring av bevegelsesmengde . . . . . . . . . . . . . . . . . . . . . . . . . .          25
+
+
+  Så langt har vi tatt bevegelse for gitt, og studert hvordan legemer beveger seg. Vi har
+ikke spurt oss hvorfor de beveger seg, eller hva som er årsaken til bevegelsen. I dette kapitlet
+skal vi jobbe med den      mekaniske årsaken til bevegelse.   Da blir begrep som   bevegelsesmengde
+og ikke minst   kraft   viktige.
+
+
+
+  Spørsmål vi jobber med i dette kapitlet
+     1. May the force be with you!´´ Takk, men... hva er egentlig en kraft (force på
+         engelsk)?
+
+
+     2. Hvorfor er det verre å krasje med en buss som kjører i 5 km/t enn en ue som yr
+         i 5 km/t?
+
+
+
+
+1.1 Bevegelsesmengde
+Når man gjennom middelalderen studerte bevegelse, kom man fram til at produktet av
+legemets masse og dets fart er en viktig størrelse.
+
+
+                                              p=m·v
+
+I dag kaller vi denne størrelsen for   bevegelsesmengde   , og det er rett og slett det det er: et mål
+på mengden bevegelse. Begrepet tar sikte på å forklare to aspekter ved bevegelse. For det
+første så er det mye bevegelse når farten er stor. For det andre er det mer bevegelse når massen
+er stor. En bøel som løper på savannen har bevegelse. Men 100 bøer som løper i samme
+
+
+                                                  3
+4                                                                                  Dynamikk
+
+
+
+retning utgjør mer bevegelse. Og intuisjonen viser seg å være riktig: Det er hensiktsmessig
+å ta med både masse og fart i denisjonen av det vi skal kalle bevegelsesmengde.
+
+    I tillegg har bevegelse retning, så i den formelle denisjonen av bevegelsesmengde er det
+viktig å huske på at det er en vektor, og ikke en skalar størrelse. Det betyr at bevegelses-
+mengde har både størrelse og retning.
+
+
+    Denisjon 1.1.1: Bevegelsesmengde
+    Bevegelsesmengde,   p, er denert som produktet av et legemes masse, m, og dets
+    hastighet, v :
+                                            p⃗ = m · ⃗v
+    Enheten for bevegelsesmengde er kg·m/s.
+
+
+
+    Bevegelsesmengde er et viktig konsept i fysikken, spesielt i mekanikk og partikkelfysikk,
+fordi den er bevart i isolerte systemer. Vi kommer tilbake til dette om litt, etter at vi har
+denert krefter ordentlig.
+
+    Eksempel 1.1: Ishockey-puck
+    En ishockey-puck har masse m = 170 g og slås slik at den oppnår farten v = 40 m/s. Hva
+    er bevegelsesmengden til pucken?                                                       ■
+
+    Svar
+    Vi gjør om massen til kilogram:
+
+
+                                       m = 170 g = 0.170 kg
+
+    Deretter bruker vi denisjonen av bevegelsesmengde:
+
+
+                             p = m · v = 0.170 kg · 40 m/s = 6.8 kgm/s
+
+
+
+    Oppgave 1.1: Geværkule og bil
+    En typisk geværkule har masse mk = 10 g og forlater løpet med fart vk = 900 m/s. En
+    bil har masse mb = 1500 kg.
+
+
+      a) Finn bevegelsesmengden til geværkula.
+
+
+      b) Hvor fort må bilen kjøre for å ha nøyaktig samme bevegelsesmengde som kula?
+          Gi svaret i både m/s og km/h.
+
+
+
+
+1.2 Newtons lover og kraft-begrepet
+Dynamikk                                                                                                5
+
+
+
+Se for deg en ishockey-puck ute på isen. Hva skal til for å endre bevegelsen til
+pucken?     Jo, da må pucken interagere med et annet legeme.           Så langt har vi
+brukt begrep som   legeme objekt
+                           og          om hverandre. La oss være litt mer presise:
+
+
+   Denisjon 1.2.1: Legeme
+   Et legeme er et objekt med masse og posisjon.            Massen m måles i kg
+   (kilogram), og posisjonen ⃗
+                             r måles i meter (m).
+
+
+   Dette kan være alt fra en liten partikkel til en stor planet.            Alle legemer
+kan derfor erverve bevegelsesmengde, så lenge de kan interagere med andre
+legemer.    Legemer er brikkene i spillet vi kaller   dynamikk     .   Dette spillet har videre noen
+regler for hvordan brikkene, altså legemene, kan interagere.            Interaksjon mellom legemer
+kalles i fysikken for krefter. Vi sier at   krefter vekselvirkning mellom legemer
+                                                   er                                        . Og som i all
+interaksjon så er den ikke ensidig. Dersom legeme A virker på legeme B, så virker legeme
+B på legeme A. Det som kanskje ikke er like opplagt, er at legemene virker like mye på
+hverandre. Det vil si at kraften som legeme A utøver på legeme B, er like stor som kraften
+som legeme B utøver på legeme A, bare i motsatt retning. Dette kalles Newtons tredje lov,
+og vi skal tenke på den som en av tre krav som totalt sett gjør            kraft   -begrepet veldenert si
+fysikken.
+
+
+   Denisjon 1.2.2: Kraft som vekselvirkning
+   En kraft er en vekselvirkning mellom legemer. Krefter opptrer derfor alltid i par, slik
+   at dersom legeme A virker på legeme B med en kraft F    ⃗ , så virker legeme B på legeme
+   A med en kraft F⃗ . Videre er disse to kreftene like store, men motsatt rettet;
+                    ′
+
+
+                                 F⃗ = −F⃗ ′     (Newtons 3. lov).
+   Enheten for kraft er Newton (N), til ære for Isaac Newton, som var den første til å
+   formulere en systematisk teori for krefter og bevegelse.
+
+
+
+   Videre kan vi spørre hva som skjer når legemer vekselvirker, altså når det
+virker krefter mellom legemene. Pucken i interaksjon med hockeykøllen er et
+eksempel, og her ser vi tydelig hva som kan skje: pucken på isen får sin beveg-
+else endret; altså endret bevegelsesmengde. La oss bruke begrepet bevegelses-
+mengde for å beskrive denne endringen.          La oss si at pucken først hadde en
+bevegelsesmengde p
+                 ⃗1 = m⃗v1 . Så dytter du den med hockey-køllen en tid ∆t,
+slik at pucken endrer retning og fart. Da virker det krefter mellom hockeykøllen og pucken i
+dette tidsrommet. Etter interaksjonen har pucken bevegelsesmengde p
+                                                                  ⃗2 = m⃗v2 . Det er ikke
+sikkert du dytter like hardt på pucken hele tiden gjennom interaksjonen, og det begrepet som
+viser seg å ha størst nytte er derfor endringen av bevegelsesmengde                per tid
+                                                                                         . Først nner vi
+at ∆⃗
+    p:
+
+                                ∆⃗p = p⃗2 − p⃗1 = m(⃗v2 − ⃗v1 ) = m∆⃗v .
+6                                                                                        Dynamikk
+
+
+
+
+Figure 1.1:    Kraft er vekselvirkning mellom to legemer, og krefter opptrer derfor alltid i
+par: kraft og motkraft, som virker på hvert sitt legeme. Disse kreftene er alltid like store og
+motsatt rettet.
+
+
+
+Gjennomsnittsendrignen    per tid     må derfor være
+
+                                         ∆⃗p    ∆⃗v
+                                             =m     = m⃗a.
+                                         ∆t     ∆t
+Denne endringen skyldes vekselvirkning mellom legemene (kølla dytter pucken, og pucken
+dytter tilbake mot kølla), altså   krefter . Summen av krefter som har virket på pucken i løpet
+av tidsrommet ∆t må nå være gitt ved
+
+                                         X        ∆⃗p
+                                             F⃗ =     = m⃗a.
+                                                  ∆t
+Kraft som årsak til hastighetsendring er oppsumert i det som er kjent som Newtons 2. lov.
+
+    Denisjon 1.2.3: Kraft som endring av bevegelse
+    Dersom et legeme blir påvirket av én eller ere krefter vil legemet aksel-
+                                             P⃗
+    erere i retning av resultant-kraften      F;
+
+                      ΣF⃗ = m · ⃗a        (Newtons 2. lov).                  (1.1)
+
+
+    Fra denne sammenhengen ser vi at enheten for kraft, Newton (N) kan
+    uttrykkes som
+                                                 m
+                                      N = kg ·
+                                                 s2
+
+
+    Matematisk sett så beskrives altså krefter som vektorer. Derfor bruker vi pil over symbolet
+           ⃗ , mens sylbolet
+for kraft; F                   uten   vektortegn, altså i dette tilfellet F , betegner størrelsen på
+kraften.
+Dynamikk                                                                                                  7
+
+
+
+  Tilslutt er det verdt å skrive ned en lovmessighet som gjelder et legeme hvor summen av
+krefter som virker på legemet er null. Et eksempel kan være en stige mot en vegg, eller en
+person som sitter og ser ut vinduet på et tog som suser avsted med konstant fart. Summen
+av påvirkning på stigen er slik at stigen står i ro. Personen i toget påvirkes også av krefter,
+men på en slik måte at det ikke er noen hastigehtsendring. Men går det an å ha akselerasjon
+      P⃗                                                        P⃗
+dersom    F = 0? Vel, fra Newtons 2. lov ser vi at dersom         F = 0 så må vi enten ha
+m → 0 eller ⃗a → 0. Så dersom vi krever ⃗a ̸= 0 så står vi igjen med m → 0. Kan det hende
+at massen forsvinner når kreftene forsvinner?
+  Hvordan sammenhengen mellom bevegelse og vekselvirkning egentlig er, tok
+det lang tid å foredle.     Aristoteles trodde for eksempel at et legeme hadde
+en slags indre drivkraft.     En stein som kastes og forlater hånden ville derfor
+fortsette i en rett linje oppover, før den plutselig falt mot bakken.            Legemer
+hadde altså en iboende slags kraft. Det var midt imot slikt gammelt tankegods
+at Newton formulerte sine lover. Nei, sa Newton, bevegelse er ikke forårsaket
+av en iboende kraft i materien. Snarere er det slik at alle legemer vil beholde den bevegelsen
+de har såfremt det virker ytre krefter som forstyrrer bevegelsen. Legemers evne til å beholde
+bevegelsen sin, kaller vi   treghet   . Og dette er det vi i dagligtale kaller   masse   . I motsetning til
+kraft, så er tregheten (altså massen) en iboende egenskap ved materie. Newton sier altså at
+m → 0 ikke er en gyldig løsning. Legemer beholder sin treghet, eller masse. La oss formulere
+dette som en egen lov. Dersom summen av krefter er null, må det derfor være slik at også
+akselerasjonen blir null, slik det beskrives i Newtons 1. lov:
+
+   Denisjon 1.2.4: Krefter og treghet
+   Alle legemer har en iboende treghet, kalt         masse  , som gjør at bevegelsen beholdes så
+   lenge det ikke virker krefter på legemet:
+
+
+                        ΣF⃗ = 0 ⇔ v = konst.             (Newtons 1. lov).                        (1.2)
+
+
+
+  Konstant bevegelse krever derfor ingen mekanisk årsak (krefter).Endring i bevegelse må
+derimot forklares. Forklaringen er alltid at det har virket krefter. Mekanikk handler derfor i
+stor grad om å nne ut hvilke krefter som virker på et system, for deretter å analysere hva
+slags bevegelse disse kreftene eventuelt vil forårsake.
+
+
+
+
+1.3 Krefter i dagliglivet
+I dette avsnittet viser vi noen eksempler på krefter som du møter i hverdagen.
+
+
+
+  Til ettertanke
+  Hvordan måler vi krefter?
+
+
+  For å måle og sammenlikne krefter med hverandre bruker vi noe som kalles et               Newtonmeter       .
+Det er rett og slett en fjær som presses sammen i et rør.            Jo mer den presses sammen, jo
+større er krafta som trykker på fjæra. Så... la oss starte med å studere nettopp kraften fra
+en spiralfjær.
+8                                                                                        Dynamikk
+
+
+
+1.3.1 Kraft fra spiralfjær
+Tenk på en spiralfjær. Når den er uspennt, hviler den i sin naturlige lengde  vi kaller dette
+likevektsposisjonen   . Presser du fjæra sammen (eller drar den ut), vil den forsøke å sprette
+tilbake. Jo mer du presser, jo sterkere er kraften som prøver å rette den ut igjen.
+
+    La   ⃗x betegne forytningen til den ene enden av fjæra fra likevektsposisjonen.              Da er
+fjærkraften gitt ved Hookes lov:
+
+
+
+    Denisjon 1.3.1: Hookes lov
+    Kraften fra en fjær på det den er festet til er proporsjonal med avviket ⃗
+                                                                             x fra likevekt-
+    sposisjonen:
+                                             F⃗ = −k⃗x
+    Her er k   > 0   fjærkonstanten   (enhet: N/m), og ⃗
+                                                       x er forytningen fra likevekt.            Mi-
+    nustegnet viser at kraften alltid peker    mot   likevekt  uansett om fjæra er presset
+    sammen eller strukket ut.
+
+
+
+
+Figur 1.2 viser en fjær som er presset sam-                                       likevekt
+men. Vi denerer positiv x-retning mot høyre.
+Fjæra presses slik at avviket fra likevekt er                                 m              F⃗
+⃗x (peker mot venstre, altså x < 0).        Da er
+fjærkraften                                                                       ⃗
+                                                                                  x
+                     F⃗ = −k⃗x,
+som peker mot høyre  tilbake mot likevekt.
+                                                     Figure 1.2:       Fjær   trykket        sammen.
+                                                     Avviket ⃗
+                                                             x peker mot venstre (fra likevekt
+Stivheten til fjæra bestemmes av fjærkonstan-                                     ⃗
+                                                     til klossen), og fjærkraften F   = −k⃗x peker
+ten k : en stiv fjær (stor k ) gir stor kraft selv
+                                                     mot høyre  tilbake mot likevekt.
+ved lite avvik, mens en myk fjær (liten k ) gir
+liten kraft.
+
+
+
+
+    Eksempel 1.2: Komprimert fjær
+    En spiralfjær har fjærkonstant k = 250 N/m. Den trykkes 6.0 cm sammen fra likevektspo-
+    sisjonen. Hva er størrelsen på fjærkraften?                                                         ■
+
+    Svar
+    Avviket fra likevekt er x = 6.0 cm = 0.060 m. Hookes lov gir størrelsen på kraften:
+
+
+                              F = k · |x| = 250 N/m · 0.060 m = 15 N
+
+    Kraften peker vekk fra veggen  tilbake mot likevektsposisjonen.
+Dynamikk                                                                                       9
+
+
+
+
+   Oppgave 1.2: Finn fjærkonstanten
+   Du fester et lodd til en vertikal fjær og måler at fjæra strekkes 12 cm når loddet har
+   masse m = 250 g.
+
+
+     a) Hva er fjærkonstanten k ? (Hint: når fjæra er i ro, er fjærkraften lik tyngdekraften
+         på loddet.)
+
+
+     b) Hvor mye strekkes fjæra om du bytter til et lodd med masse m = 400 g?
+
+
+
+
+1.3.2 Tyngdekraft
+Tyngdekraften   ⃗ er kraften jorda trekker et legeme mot sitt sentrum med. Størrelsen
+                G
+avhenger av legemets masse m og hvor langt unna jordas sentrum vi er. Men på jordoveraten
+viser det seg at tyngdekraften er
+
+                                           ⃗ = m⃗g,
+                                           G
+
+                 2
+hvor g ≈ 9.81 m/s .      Vi ser altså at tyngdekraften er proporsjonal med massen m.     Dette
+er spesielt.   For se nå for deg et legeme som faller mot jorda, kun under påvirkning av
+tyngdekraften. Da gir Newtons andre lov at
+
+
+                                   X
+                                       F = ma    → mg = ma
+                                           a = g = 9.81 m/s2 .
+
+
+
+fritt fall.
+Tyngdekraften trekker altså alle legemer mot bakken med samme akselerasjon. Dette kalles
+
+
+
+
+  På overaten av månen ville tyngdens akselerasjon vært en annen. Der har vi nemlig
+gmåne ≈ 1.62 m/s2  omtrent 16 av jordas. Merk at     massen
+                                                        m er den samme uansett hvor du
+benner deg, mens      tyngdekraften
+                                 G varierer med stedet.
+   Eksempel 1.3: Tyngdekraft på jordoveraten
+   Soe har masse m = 60 kg. Hva er tyngdekraften som virker på henne på jordoveraten?
+                                                                                               ■
+
+    Svar
+                                                         2
+    Vi bruker denisjonen av tyngdekraft med g = 9.81 m/s :
+
+
+                             G = m · g = 60 kg · 9.81 m/s2 = 588.6 N
+10                                                                               Dynamikk
+
+
+
+
+                                                            G = mg
+Figure 1.3:    Dash-Line påvirkes av en kraft med størrelse G = mg fra jorda. Dashman ser
+ut til å være påvirket av helt andre former for tiltrekningskrefter... ;)
+
+
+
+
+     Oppgave 1.3: Tyngdekraft på jord og måne
+     Ola har masse m = 75 kg.
+
+                                                                  2
+       a) Finn tyngdekraften på Ola på jordoveraten (g = 9.81 m/s ).
+
+                                                                        2
+       b) Finn tyngdekraften på Ola på månens overate (gmåne = 1.62 m/s ).
+
+
+       c) Hva er Olas masse på månen? Forklar svaret.
+
+
+
+
+     Oppgave 1.4: Fritt fall
+     En hammer og en fjær slippes samtidig fra samme høyde.
+
+
+       a) Hva tror du skjer  hvilket objekt når bakken først?
+
+
+       b) Hva skjer om vi pumper vekk all lufta i rommet?        Bruk det du har lært om
+          tyngdekraft til å forklare svaret.
+Dynamikk                                                                                               11
+
+
+
+1.3.3 Underlagskrefter
+Når et objekt står på et underlag så virker det
+krefter fra underlaget, som sørger for at objektet
+ikke faller gjennom. Vi dekomponerer gjerne slike
+underlagskrefter U⃗                            ⃗ ) og
+                      i to deler: normalkraft (N
+                ⃗ ), slik at
+friksjonskraft (R                                                                       ⃗
+                                                                                        N       ⃗
+                                                                                                U
+
+                      ⃗ =N
+                      U  ⃗ + R.
+                             ⃗
+
+              ⃗ virker
+Normalkraften N            vinkelrett   på underlaget,
+                                                                                        ⃗
+                                                                                        R
+mens friksjonskraften    ⃗
+                         R        parallelt
+                               virker         med un-
+                                                         Figure 1.4:       En     fot   som     står   på
+derlaget. Figur 1.4 viser en fot som står på bakken
+                                                         bakken.      Underlagskraften      ⃗
+                                                                                            U   dekom-
+ underlagskraften      ⃗ kan da dekomponeres i
+                        U                                                        ⃗ (vinkelrett)
+                                                         poneres i normalkraften N
+begge disse retningene.
+                                                                             ⃗ (parallelt med un-
+                                                         og friksjonskraften R
+                                                         derlaget).
+
+   La oss se nærmere på hver av disse.
+
+
+
+1.3.3.1 Normalkraft
+              ⃗ er den delen av underlagskraften som virker
+Normalkraften N                                                    vinkelrett   på underlaget (/nor-
+malt på underlaget, derav navnet). Som vi skal se i de følgende eksemplene så kan vi i mange
+
+
+   Eksempel 1.4: Person i ro på att underlag
+tilfeller bruke Newtons 1. eller 2. lov til å nne størrelsen på normalkraften.
+
+
+   Ola har masse m = 80 kg og står i ro på et att gulv. Hva er normalkraften som gulvet
+   utøver på Ola?                                                                                       ■
+
+    Svar
+    Siden Ola er i ro, er summen av krefter i vertikal retning null (Newtons 2. lov med
+    a = 0):                    X
+                                   Fy = N − G = 0 =⇒ N = G = m · g
+
+                                    N = 80 kg · 9.81 m/s2 = 784.8 N
+    Gulvet skyver Ola opp med nøyaktig like stor kraft som tyngdekraften trekker Ola ned
+     dette er et eksempel på Newtons 3. lov i praksis.
+
+
+   Som vi så i eksemplet over så er Normalkraften like stor og motsatt rettet i forhold til
+tyngdekraften når et legeme står i ro på et gulv. Slik må det nesten være, ettersom det da
+kun er G og N som virker. Likevel er ikke N motkraften til G.
+
+
+
+  Til ettertanke
+  Hvorfor er ikke N og G et kraft-motkraft par slik som det er denert i Newtons 3. lov?
+12                                                                                      Dynamikk
+
+
+
+     Grunnen er enkel: Både N og G virker på samme legeme. Newtons 3. lov handler om
+vekselvirkning     mellom legemer, og kraft-motkraftpar virker derfor alltid på to forskjellige
+legemer. Det er liksom hele poenget. Derfor må vi stille oss et viktig spørsmål til.
+
+
+
+  Til ettertanke
+  Hva er motkreftene til N og G i eksemplet over? På hvilke legemer virker de?
+
+
+
+
+     Eksempel 1.5: Normalkraft i akselererende heis                                        2
+     Kari har masse m = 70 kg og står i en heis. Heisen akselererer oppover med a = 2.0 m/s .
+     Hva er normalkraften N som gulvet utøver på Kari?                                           ■
+
+     Svar
+     Vi tegner inn kreftene på Kari: tyngdekraften G peker ned og normalkraften N peker
+     opp. Kari akselererer oppover, så vi velger oppover som positiv retning. Newtons 2.
+     lov gir
+                                        X
+                                            Fy = N − G = ma
+
+                 N = G + ma = m(g + a) = 70 kg · (9.81 m/s2 + 2.0 m/s2 ) = 827 N
+     Til sammenligning er tyngdekraften på Kari G         = 70 kg · 9.81 m/s2 ≈ 687 N.    Nor-
+     malkraften er altså større enn tyngdekraften når heisen akselererer oppover  Kari
+     føler seg tyngre enn til vanlig.
+
+
+
+
+     Oppgave 1.5: Normalkraft i heis  ulike situasjoner
+     Ola har masse m = 80 kg og er i en heis. Finn normalkraften N i følgende tilfeller:
+
+                                                                                 2
+         a) Heisen bremser ned mens den beveger seg oppover, slik at a = −3.0 m/s .
+
+
+         b) Heisen er i fritt fall (tau røk!). Hva er N da, og hva ville Ola oppleve?
+
+
+
+     M
+Dynamikk                                                                                                  13
+
+
+
+1.3.3.2 Friksjonskraft
+               ⃗ er den delen av underlagskraften
+Friksjonskraft R                                                              ⃗
+                parallelt
+                                                                              N
+som virker                  med kontaktaten. Den mot-
+                                                                                      m              F⃗
+står alltid relativ bevegelse mellom to overater 
+eller tendensen til slik bevegelse. Figur 1.5 viser                                       ⃗
+                                                                                          G
+                                                ⃗                                 ⃗
+                                                                                  R
+et objekt som skyves horisontalt: normalkraften N
+peker opp, tyngdekraften G
+         ⃗
+                          ⃗ peker ned, den påførte
+kraften F peker til høyre, og friksjonskraften R ⃗              Figure 1.5:   Krefter på et objekt som
+                                                                                                           ⃗
+                                                                skyves horisontalt.       Friksjonskraften R
+peker til venstre  motsatt av bevegelsesretnin-
+                                                                virker alltid motsatt av bevegelsesret-
+gen.
+                                                                ningen.
+Størrelsen på friksjonskraften avhenger av to ting:
+normalkraften       N og et tall som beskriver hvor
+glatt eller ru kontakten mellom overatene
+er. Dette tallet kalles      friksjonskoesienten   , og det
+nnes én for hvert av de to tilfellene vi nå skal
+studere.
+
+
+
+
+   Denisjon 1.3.2: Friksjonskoesienter
+   Den     statiske friksjonskoesienten µ           s bestemmer maksimal hvilefriksjon.          Når et
+   objekt er     i ro, tilpasser friksjonskraften seg automatisk og kan ta alle verdier opp til
+
+
+                                               Rs ≤ µs N.
+
+   Den     kinetiske friksjonskoesienten µ            k bestemmer glidefriksjonen. Når et objekt
+   glir   langs underlaget, er friksjonskraften tilnærmet konstant:
+
+
+                                               Rk = µk N.
+
+   Begge koesientene er dimensjonsløse tall (µ                > 0) som avhenger av materialene i
+   kontakt. Som regel er µk < µs .
+
+
+
+   Verdiene til µs og µk avhenger sterkt av overatene. Is mot stål gir lave verdier (µk ≈ 0.03),
+gummi mot asfalt gir høye (µs ≈ 0.8). Legg merke til at µk < µs : det kreves alltid mer kraft
+for å   sette   noe i bevegelse enn for å   holde     det i bevegelse  noe alle som noen gang har
+prøvd å ytte et tungt møbel, kjenner godt til.
+
+
+
+
+Hvilefriksjon Eksempel 1.6: Kasse på gulv
+   En kasse med masse m = 15 kg står på et gulv med statisk friksjonskoesient µs = 0.40.
+   Du skyver horisontalt med kraft F = 40 N. Begynner kassen å bevege seg?                                 ■
+14                                                                                      Dynamikk
+
+
+
+     Svar
+                                                     2
+     Normalkraften er N = mg = 15 kg · 9.81 m/s          = 147.2 N. Maksimal hvilefriksjon er
+
+                             Rs,maks = µs · N = 0.40 · 147.2 N = 58.9 N
+
+     Siden F     = 40 N < Rs,maks = 58.9 N, holder hvilefriksjonen kassen i ro. Den beveger
+     seg ikke.
+
+
+
+
+     Oppgave 1.6: Flytte et skap
+     Et skap har masse m = 80 kg og står på et tregulv med µs = 0.35.
+
+
+       a) Hva er den minste horisontale kraften som trengs for å sette skapet i bevegelse?
+
+
+       b) To personer skyver med en samlet kraft på F = 260 N. Begynner skapet å bevege
+           seg? Forklar.
+
+
+
+Glidefriksjon        Et nyttig resultat: hva er akselerasjonen til et objekt som glir langs et att
+underlag uten noen annen horisontal kraft enn friksjon? Newtons 2. lov i vertikal retning gir
+N = mg (ingen vertikal akselerasjon). I horisontal retning er eneste kraft friksjonskraften:
+            X
+                Fx = −Rk = ma ⇒ −µk N = ma ⇒ −µk mg = ma
+
+                                               a = −µk g
+Akselerasjonen (retardasjonen) avhenger altså      ikke   av massen  kun av friksjonskoesienten
+
+
+     Eksempel 1.7: Boks som sklir
+og tyngdeakselerasjonen. En tung og en lett gjenstand med samme µk bremser like raskt.
+
+
+     En boks med masse m = 10 kg glir langs et gulv med kinetisk friksjonskoesient µk = 0.30.
+     Ingen andre horisontale krefter virker.
+
+       a) Hva er friksjonskraften på boksen?
+
+
+       b) Hva er boksens akselerasjon?
+
+
+                                                                                                 ■
+
+     Svar
+     a)                                             2
+          Normalkraften er N = mg = 10 kg · 9.81 m/s = 98.1 N.
+
+                                Rk = µk · N = 0.30 · 98.1 N = 29.4 N
+     b)   Friksjonskraften er eneste horisontale kraft, og den peker motsatt av bevegelsesret-
+     ningen. Newtons 2. lov gir
+                    X                                Rk    29.4 N
+                        F = −Rk = ma =⇒ a = −           =−        = −2.94 m/s2
+                                                     m     10 kg
+Dynamikk                                                                                 15
+
+
+
+
+   Minustegnet betyr at boksen bremser ned.
+
+
+
+
+  Oppgave 1.7: Hockeypuck på is
+  En hockeypuck har masse m = 170 g og glir på is med µk = 0.03.
+
+
+     a) Hva er friksjonskraften på pucken?
+
+
+     b) Hva er puckens akselerasjon?
+
+
+     c) Pucken skyves avgårde med startfart v0 = 15 m/s. Bruk kinematikk til å beregne
+        hvor lang strekning den glir før den stopper.
+
+
+
+
+  Oppgave 1.8: Bremselengde for bildekk
+  Et kjøretøy bremser hardt på att underlag slik at hjulene låser seg og bildekket sklir.
+  Startfarten er v0 = 80 km/h.
+
+
+     a) Vis ved hjelp av Newtons 2. lov og kinematikk at bremselengden er gitt ved
+
+
+                                                    v02
+                                             s=          .
+                                                  2 µk g
+
+     b) Beregn bremselengden for tørr asfalt (µk       = 0.70), våt vei (µk = 0.40) og is
+        (µk = 0.10).
+
+
+     c) Hva skjer med bremselengden om farten dobles? Forklar med formelen.
+
+
+
+
+1.4 Krefter i planet  dekomponering
+I dette avsnittet skal vi studere anvendelser av det vi har lært så langt.    Vi skal se på
+noen eksempler som demonstrerer hvordan vi bør tenke og jobbe når mange krefter opptrer
+samtidig, og når vi må dekomponere i forhold til et koordinatsystem. La oss derfor starte
+med å repetere viktigheten av koordinatsystem.
+16                                                                                        Dynamikk
+
+
+
+     Oppsummering: Dekomponering av Newtons lover
+     Når du skal løse oppgaver med krefter i planet, er det viktig å innføre et koordinatsys-
+     tem, og deretter dekomponere Newtons lover. La oss velge koordinater x og y i planet.
+     Da har vi
+
+     Newtons 2. lov:                               P
+                                                    Fx = max
+                             X
+                                 F⃗ = m⃗a   =⇒      P
+                                                    Fy = may
+
+     Og selvsagt helt tilsvarende for Newtons første lov, eller andre lover skrevet på vektor-
+     form.
+
+
+
+     Med dette i bakhodet kan vi skrive ned algoritmen som vi skal lære å følge når vi løser
+sammensatte oppgaver med krefter.
+
+
+     Oppsummering: Algoritme for løsing av sammensatte kraftopp-
+                   gaver
+        1. Tegn gur av problemet, med relevante krefter.
+
+
+        2. Skriv ned de relevante lovene.
+
+
+        3. Gjør et hensiktsmessig valg av koordinatsystem.
+
+
+        4. Dekomponer vektorlovene i koordinatsystemet.
+
+
+        5. Løs settet med skalare likninger for de ukjente.
+
+
+
+
+Følgende eksempel viser algoritmen i bruk for et
+enkelt likevektsproblem i én dimensjon.
+
+                                                                                      x
+                                                                      y          F⃗
+
+                                                                             m
+                                                                                 ⃗
+                                                                                 G
+
+                                                        Figure 1.6:   Kloss i ro i en vertikal fjær.
+                                                        x er fjærforlenging fra likevekt, y peker
+                                                        oppover.
+
+
+
+     Eksempel 1.8: Kloss hengende i fjær
+     En kloss med masse m = 500 g festes til en vertikal spiralfjær som er festet i taket. I ro
+     strekkes fjæra x = 4.0 cm ut fra likevektsposisjonen. Bestem fjærkonstanten k .             ■
+Dynamikk                                                                                        17
+
+
+
+   Svar
+   1. Figur:                               ⃗ (fjærkraft, opp) og G
+                Se gur over  kreftene er F                     ⃗ (tyngdekraft, ned).
+   2. Lov:                                             P⃗
+                                                        F = 0.
+   3. Koordinatsystem: y
+              Klossen er i ro, så Newtons 1. lov gir
+
+
+
+   4. Dekomponér i y-retning:
+                               -akse peker oppover (se gur).
+
+
+
+                              X
+                                  Fy = F − G = 0 =⇒ kx = mg
+
+   5. Løs for k:               mg   0.500 kg · 9.81 m/s2
+                          k=      =                      = 123 N/m
+                               x          0.040 m
+
+Det neste eksemplet viser algoritmen i bruk når et legeme er i ro på et   friksjonsfritt   skråplan,
+og holdes tilbake av en fjær i stedet for å skli nedover.
+
+
+
+
+Figure 1.7:    En slede (med Dashman) holdes i ro på et friksjonsfritt skråplan (θ = 30) av
+en fjær festet til en stolpe på toppen av planet.
+
+
+  Eksempel 1.9: Slede i skråplan holdt av fjær
+  En slede med Dashman, med samlet masse m, ligger i ro på et friksjonsfritt skråplan
+  med helningsvinkel θ = 30 (se gur 1.7).      Sleden er festet til en fjær med fjærkonstant
+  k = 180 N/m, som er strukket en lengde x = 12 cm fra likevekt.
+     a) Tegn inn kreftene som virker på sleden.
+
+
+     b) Regn ut fjærkrafta Fk .
+18                                                                                      Dynamikk
+
+
+      c) Finn massen m til sleden (med Dashman).
+
+
+                                                                                                ■
+
+     Svar
+     a) Figur og krefter:                                                 ⃗ (vinkelrett på
+                              Tre krefter virker på sleden: normalkraften N
+                                   ⃗ = m⃗g (rett ned) og fjærkrafta F⃗k (langs skråplanet,
+     skråplanet), tyngdekraften    G
+     oppover). Se gur 1.8.
+
+
+
+
+                                                           F⃗k
+
+                                     ⃗
+                                     N
+
+
+
+
+                                              ⃗
+                                              G
+
+
+
+
+       Figure 1.8:                           N⃗
+                      Krefter på sleden: normalkraft                    ⃗ og fjærkraft F⃗k .
+                                                          , tyngdekraft G
+
+     Lov og koordinatsystem:        Sleden er i ro, så Newtons 1. lov gir
+                                                                            P⃗
+                                                                             F = 0. Vi velger
+     x                                    y
+     Dekomponér langs skråplanet (x-retning):
+      -akse langs skråplanet (positiv oppover) og     -akse vinkelrett på skråplanet.
+
+
+
+                                    X
+                                         Fx = Fk − mg sin θ = 0
+
+     b) Fjærkrafta:
+                              Fk = kx = 180 N/m · 0.12 m = 21.6 N
+     c) Massen:   Fra dekomponeringen over har vi Fk = mg sin θ , slik at
+
+
+                                     Fk           21.6 N
+                              m=           =                    = 4.4 kg
+                                   g sin θ   9.81 m/s2 · sin 30
+Dynamikk                                                                                    19
+
+
+
+
+  Oppgave 1.9: Kjelke med skrå
+               trekkraft
+                                                                   ⃗
+                                                                   N
+                                                                                       F⃗
+                                                                           m       θ
+
+  En kjelke med masse m = 15 kg dras langs
+                                                                               ⃗
+                                                                               G
+                                                                       ⃗
+                                                                       R
+  et att, snødekket underlag.     Trekkraften
+  F⃗ = 50 N er rettet i vinkel θ = 30 over
+  horisontal (se gur).   Den kinetiske frik-
+                                                   Figure 1.9:                           ⃗ i
+                                                                  Kjelke dradd med kraft F
+                                                   vinkel θ   = 30 over horisontal.    Friksjon-
+  sjonskoesienten er µk = 0.20.                            ⃗ og normalkraften N
+                                                                               ⃗ angriper
+                                                   skraften R
+                                                   ved kontaktaten.
+     a) Finn normalkraften    N.      (Husk at
+        F⃗   har en vertikal komponent som
+        påvirker N .)
+
+
+     b) Finn friksjonskraften Rk .
+
+
+     c) Finn kjelkens akselerasjon.
+
+
+
+
+1.4.1 Skråplan
+Et legeme på skråplan er et mye brukt eksempel som gir oss anledning til å øve
+                                                        ⃗ N
+på å anvende tre av kreftene vi har pratet om så langt (G, ⃗ og R
+                                                                ⃗ ) samtidig. I
+tillegg gir det god øvelse i dekomponering, som vi skal se. La oss se for oss en
+bil i en isete bakke. Vi ønsker å kunne besvare spørsmål som
+
+
+    Ved hvilken vinkel begynner bilen å skli?
+
+    Hvor fort akselererer den nedover bakken når den først sklir?
+
+La oss nå besvare disse to spørsmålene systematisk ved å bruke Newtons 2. lov. Figur 1.10
+viser kreftene som virker på en kloss som sklir nedover et skråplan med helningsvinkel θ .
+
+
+
+
+Figure 1.10:                                                                     ⃗ peker
+                Krefter på en kloss som sklir nedover et skråplan. Normalkraften N
+                                     ⃗ peker rett ned, og friksjonskraften R
+                                                                           ⃗ k peker opp langs
+normalt ut fra planet, tyngdekraften G
+planet siden klossen beveger seg ned.
+  20                                                                                            Dynamikk
+
+
+
+Utledning av akselerasjon ned et skråplan med friksjon. 1. Figur:                     Se gur 1.10.
+
+  2. Lov:                                          ⃗a
+              Klossen akselererer nedover langs planet med             ned bakken.   Friksjonskraften er
+                     opp
+  glidefriksjon og peker                                    R =µ N
+                                langs planet (den motvirker bevegelsen):                    .
+
+  3. Koordinatsystem:
+                                                                                 k     k
+                                            ′                                                            ′
+                               x      nedover langs planet (positiv retning ned bakken) og y
+                              Vi velger
+                                                            ′
+                                                     x  a =0
+  normalt ut fra overaten. Klossen beveger seg bare langs    , så y ′   .
+
+  4. Dekomponér:
+                         X
+                              Fy ′ = 0 :        N − mg cos θ = 0 =⇒ N = mg cos θ
+                       X
+                            Fx′ = ma :          mg sin θ − Rk = ma
+
+
+  5. Løs:    Setter inn Rk = µk N = µk mg cos θ :
+
+
+                                      mg sin θ − µk mg cos θ = ma
+                                         g(sin θ − µk cos θ) = a
+
+
+
+                                           a = g(sin θ − µk cos θ)
+
+  Legg merke til at massen m falt ut av ligningen. Akselerasjonen ned et skråplan er uavhengig
+  av massen  en tung buss og en lett sykkel akselererer like fort nedover den samme bakken.
+
+
+
+
+  Kritisk vinkel  ved hvilken helning begynner klossen å skli?                            Klossen er net-
+  topp på grensen til å begynne å skli når tyngdekraftens komponent langs planet er lik den
+                                                               P
+  maksimale hvilefriksjonen.      I dette grensetilfelle er         Fx′ = 0 med Rs = µs N (maksimal
+  hvilefriksjon):
+
+                           mg sin θc − µs mg cos θc = 0        =⇒      tan θc = µs
+
+
+                                                 θc = arctan(µs )
+
+  Er θ < θc holder friksjonskraften klossen i ro. Er θ > θc begynner klossen å skli.
+
+
+
+       Oppgave 1.10: Buss på glatt vei
+       En buss parkerer på en bakke. Friksjonskoesientene mellom dekk og vei er µs = 0.70
+       (statisk) og µk = 0.50 (kinetisk).
+
+
+         a) Ved hvilken helningsvinkel θc begynner bussen å skli nedover?
+
+
+         b) Hva blir akselerasjonen til bussen idet den begynner å skli?
+Dynamikk                                                                                     21
+
+
+
+
+I neste eksempel kombinerer vi fjærkraft og frik-                    y′
+sjon på et skråplan.   Koordinatsystemet velges                                         x′
+      ′                                                                   N F⃗
+                                                                          ⃗ m
+med x -aksen langs planet (positiv retning opp
+            ′
+bakken) og y -aksen normalt ut fra overaten. Fig-
+                                                                                 ⃗⃗ s
+                                                                                 R
+                                                                          θ      G
+uren viser en kloss som er på grensen til å gli ne-
+dover, slik at Rs = µs N (maks hvilefriksjon).         Figure 1.11:       Kloss på skråplan (θ =
+                                                       30) holdt av fjær F⃗ og friksjon R
+                                                                                        ⃗ s . Ko-
+                                                                         ′                      ′
+                                                       ordinatsystem: x opp langs planet, y
+                                                       normalt ut.
+
+
+
+
+  Eksempel 1.10: Kloss på skråplan  fjær og friksjon
+  En kloss med masse m = 2.0 kg ligger på et skråplan med helningsvinkel θ = 30. En fjær
+  langs planet er festet mellom klossen og en vegg i bunnen av bakken, og er komprimert
+  x = 3.0 cm. Klossen er akkurat på grensen til å gli nedover, og den statiske friksjonskoe-
+  isienten er µs = 0.20. Finn fjærkonstanten k .                                           ■
+
+   Svar
+   1. Figur:
+   2. Lov:
+               Se gur over.
+                                        P⃗
+                                           F = 0. Maks hvilefriksjon gjelder: Rs = µs N .
+   3. Koordinatsystem: x
+             Klossen er (nesten) i ro:
+                               ′                    ′
+                                 opp langs planet, y normalt ut fra planet.
+
+   4. Dekomponér:
+                      X
+                          Fy ′ = 0 :   N − G cos θ = 0 =⇒ N = mg cos θ
+                      X
+                          F x′ = 0 :   kx + Rs − G sin θ = 0
+
+   5. Løs:   Sett inn Rs = µs N = µs mg cos θ :
+
+
+                       kx = mg sin θ − µs mg cos θ = mg(sin θ − µs cos θ)
+
+             mg(sin θ − µs cos θ)   2.0 kg · 9.81 m/s2 (sin 30 − 0.20 · cos 30)
+       k=                         =                                             = 214 N/m
+                      x                              0.030 m
+
+
+  Eksempel 1.11: Kloss på skråplan
+  En kloss med masse m = 3.0 kg beveger seg nedover et skråplan med helningsvinkel θ = 25,
+                              2
+  med akselerasjon a = 3.0 m/s (se gur 1.12).
+
+     a) Finn friksjonskrafta R som virker på klossen.
+
+
+     b) Finn normalkraften N .
+
+
+                                                                                               ■
+22                                                                                       Dynamikk
+
+
+
+     Svar
+     1. Figur: ⃗     Se gur 1.12.                                                    ⃗ , nor-
+                                      Kreftene som virker på klossen er tyngdekraften G
+                                           ⃗.
+               N       og friksjonskraften R
+
+     2. Lov:
+     malkraften
+                                                                            P⃗
+                                                                             F = m⃗a.
+     3. Koordinatsystem: x
+                  Klossen akselererer langs planet, så Newtons 2. lov gir
+
+                                     -akse langs skråplanet (positiv nedover, i bevegelsesretnin-
+          y
+     4. Dekomponér:
+     gen),      -akse normalt på skråplanet.
+
+
+
+                                  X
+                                      Fx = ma :      G sin θ − R = ma
+                                      X
+                                        Fy = 0 :     N − G cos θ = 0
+
+     5. Løs:
+     a) x Fra    -likningen:
+
+
+       R = G sin θ − ma = m(g sin θ − a) = 3.0 kg 9.81 m/s2 · sin 25 − 3.0 m/s2 = 3.4 N
+                                                                               
+
+
+     Positivt fortegn betyr at friksjonen peker oppover langs planet (motsatt av bevegelses-
+
+
+
+     b)
+     retningen), som forventet.
+
+          Fra y -likningen:
+
+
+                     N = G cos θ = mg cos θ = 3.0 kg · 9.81 m/s2 · cos 25 = 26.7 N
+
+
+
+
+                                     Figure 1.12:   Krefter i skråplan
+Dynamikk                                                                                          23
+
+
+
+1.4.2 Krefter i sirkelbevegelse
+For sirkelbevegelse med konstant fart har vi sett at akselerasjonens størrelse er gitt ved
+
+
+
+                                                  v2
+                                             a=      ,
+                                                  r
+
+                                                                                      P⃗
+hvor r er sirkelens radius. Om vi nå samstiller dette med Newtons 2. lov,              F = m⃗a så
+nner vi et uttrykk for kraftsummen inn mot sentrum.
+
+
+
+   Denisjon 1.4.1: Sentripetalkraft
+   Kraftsummen for sirkelbevegelse med radius r og konstant banefart v er gitt ved
+
+                                         X               v2
+                                             F =m·          ,
+                                                         r
+   og rettet inn mot sentrum av sirkelbevegelsen.
+
+
+
+
+Som et første eksempel ser vi på en ball som
+glir rundt i en sirkelbane på en friksjonsfri ho-
+                                                                                        ⃗v
+risontal overate, festet til et senter med en snor.
+            ⃗ peker hele tiden inn mot sentrum                                           m
+Snorkraften S                                                        sentrum
+                                                                                  ⃗
+                                                                                 rS
+ det er denne kraften som gir ballen sentripeta-
+lakselerasjonen.
+
+
+                                                           Figure 1.13:   Sett ovenfra: ball i sirkel-
+                                                                             ⃗ er alltid rettet inn
+                                                           bane. Snorkraften S
+                                                           mot sentrum.
+
+
+
+
+  Eksempel 1.12: Ball i sirkelbane
+  En ball med masse        m = 0.30 kg er festet til en snor og glir rundt i en sirkelbane på
+  en friksjonsfri bordate.    Snoras lengde er r = 0.80 m og ballen holder konstant fart
+  v = 3.0 m/s.
+     Finn kraften i snora.                                                                         ■
+
+   Svar
+   Snorkraften S er den eneste horisontale kraften, og den peker alltid inn mot sentrum.
+   Den sørger for sentripetalakselerasjonen:
+
+          X         mv 2                 mv 2   0.30 kg · (3.0 m/s)2   2.7 Nm
+              F =            =⇒     S=        =                      =        = 3.4 N
+                     r                    r           0.80 m           0.80 m
+24                                                                                                Dynamikk
+
+
+
+
+     Oppgave 1.11: Karusell
+     Et barn med masse m = 25 kg sitter r = 3.0 m fra sentrum av en karusell. Karusellen
+     snurrer med konstant fart v = 4.0 m/s.
+     Hva er den resulterende sentripetalkraften på barnet?
+
+
+Kan en bil kjøre gjennom en sirkelformet sving                                  NH
+uten friksjon mellom dekk og vei? Ja  hvis veiba-
+nen er dosert (hellet innover) med riktig vinkel α.                         ⃗
+                                                                            N    α NV
+                                                                                 m            V
+Da gir normalkraftens horisontale komponent sen-
+tripetalakselerasjonen.    Koordinatsystemet velges                                  ⃗
+                                                                                     G
+                                                                            α
+med V -akse (vertikalt opp) og H -akse (horisontalt                                      H
+inn mot sentrum), se gur.
+                                                              Figure 1.14:
+                                                                      ⃗
+                                                                                     Dosert       veibane   i
+                                                              tverrsnitt. N dekomponeres i NV (opp)
+                                                              og   NH (inn mot sentrum).           H -aksen
+                                                              peker inn mot svingsentrummet.
+
+     Eksempel 1.13: Dosering av veibane
+     Er det mulig for en bil med konstant fart v å kjøre gjennom en sirkelformet sving med
+     radius r uten friksjon mellom dekk og vei? Bestem nødvendig dosering (helningsvinkel)
+     α. Bruk v = 90 km/h og r = 200 m.                                                                      ■
+
+     Svar
+     1. Figur:     Se gur over. To krefter virker på bilen:       ⃗ (normalt på veidekket) og G
+                                                                   N                           ⃗
+
+     2. Lov:
+     (rett ned). Ingen friksjon.
+
+                 Newtons 2.     lov.   Sentripetalakselerasjon      a = v 2 /r i H -retningen; null
+
+     3. Koordinatsystem: V
+                V
+     akselerasjon i    -retningen.
+
+
+
+     4. Dekomponér: X
+                                   -akse vertikalt opp, H -akse horisontalt inn mot sentrum.
+
+
+
+
+                                   FV = 0 :     NV − G = 0 =⇒ NV = mg                                 (⋆)
+
+                          X             v2               v2
+                              FH = m       :    NH = m                                               (⋆⋆)
+                                        r                r
+     5. Løs:   Fra geometrien (se gur) er tan α = NH /NV . Del (⋆⋆) på (⋆):
+
+                                               NH   m v 2 /r   v2
+                                     tan α =      =          =
+                                               NV    mg        rg
+     Massen faller ut  doseringa er uavhengig av kjøretøyets masse. Med tall (v = 25 m/s,
+     r = 200 m):
+                            (25 m/s)2
+                tan α =                   = 0.318 =⇒ α = arctan(0.318) = 17.7
+                        200 m · 9.81 m/s2
+Dynamikk                                                                                                   25
+
+
+
+1.5 Bevaring av bevegelsesmengde
+Tidligere i dette kapitlet denerte vi bevegelsesmengde som p
+                                                            ⃗ = m⃗v , og vi nevnte at beveg-
+elsesmengde er bevart i isolerte systemer.           Nå skal vi se nøye på hva dette betyr, og vise
+hvorfor det er sant.
+
+
+
+
+Interne og ytre krefter.            Tenk deg to biljardkuler som kolliderer (gur 1.15). De utøver
+krefter på   hverandre   i kollisjonsøyeblikket  dette er           interne   krefter i systemet av to kuler.
+Dersom vi ser bort fra friksjon mot bordet og luftmotstand, er summen av                      ytre   krefter på
+systemet lik 0. Et slikt system kaller vi        isolert   .
+
+
+
+
+                             Før:              Kollisjon:                 Etter:
+                                              ⃗BA
+                                              F
+                                                                                         ′
+                                                                                       ⃗vB
+                             ⃗vA
+                         A            B        A    B              A               B
+                                      i ro                         i ro
+                                                    ⃗AB
+                                                    F
+
+
+Figure 1.15:     Biljardkollisjon.               ⃗BA og F⃗AB er interne og like store (Newtons 3.
+                                        Kreftene F
+lov). Ved elastisk støt mellom like kuler stopper A og B overtar hele farten.
+
+
+
+
+Utledning fra Newtons lover.                 Vi ser på to legemer A og B som vekselvirker. Newtons
+3. lov sier at kreftene de utøver på hverandre er like store og motsatt rettet:
+
+
+
+                                                F⃗AB = −F⃗BA ,
+
+    ⃗BA er kraften B utøver på A og F⃗AB er kraften A utøver på B.
+der F
+
+  Fra Newtons 2. lov er kraft lik endring i bevegelsesmengde per tidsenhet:
+
+
+                                            ∆⃗pA                      ∆⃗pB
+                                     F⃗BA =      ,             F⃗AB =      .
+                                            ∆t                        ∆t
+
+Legger vi disse to uttrykkene sammen og bruker Newtons 3. lov:
+
+
+                                     ∆⃗pA ∆⃗pB
+                                         +     = F⃗BA + F⃗AB = ⃗0.
+                                     ∆t    ∆t
+
+Det betyr at:
+
+                       ∆(⃗pA + p⃗B ) ⃗
+                                    =0         =⇒         p⃗tot = p⃗A + p⃗B = konstant.
+                           ∆t
+Den totale bevegelsesmengden endrer seg ikke. Dette følger direkte av Newtons 2. og 3. lov
+ ingen ny antagelse er nødvendig.
+26                                                                                        Dynamikk
+
+
+
+     Denisjon 1.5.1: Bevaring av bevegelsesmengde
+     Dersom summen av ytre krefter på et system er null,
+
+                                              X
+                                                  F⃗ytre = ⃗0,
+
+     er den totale bevegelsesmengden til systemet bevart:
+
+
+                                             p⃗tot = konstant.
+
+     For to legemer med masser m1 og m2 skrives dette som:
+
+
+                                     m1⃗v1 + m2⃗v2 = m1⃗v1 ′ + m2⃗v2 ′
+                     ′
+     der primtegnet ( ) betegner hastighetene      etter   kollisjonen eller hendelsen.
+
+
+
+
+     Tips! 1: For deg som kjenner derivasjon
+     Newtons 2. lov kan skrives i sin mest generelle form ved hjelp av derivasjon:
+
+                                               X        d⃗p
+                                                   F⃗ =
+                                                        dt
+            d⃗
+             p
+     Her er    den deriverte av bevegelsesmengden med hensyn på tid  altså hvor raskt p
+                                                                                       ⃗
+            dt
+     endrer seg.
+                                                  P⃗
+     Dersom summen av ytre krefter er null,        Fytre = ⃗0, gir dette direkte:
+
+                                                d⃗ptot ⃗
+                                                      =0
+                                                  dt
+     En funksjon med derivert lik null er konstant. Dermed følger bevaringsloven umiddel-
+     bart:   p⃗tot = konstant. Ingen nye antagelser trengs  loven er en direkte konsekvens
+     av Newtons 2. lov.
+
+
+
+
+Impuls:       Vi har altså sett at
+
+
+
+
+                              ∆⃗p
+                                  = F⃗      som medfører         ∆⃗p = F⃗ ∆t.
+                              ∆t
+Dynamikk                                                                                                  27
+
+
+
+
+Dette viser at kraft virket over tid gir endring i                  F (t)
+bevegelsesmengde. I virkeligheten varierer kraften
+under et kraftstøt  tenk på hockeykøllens slag
+mot pucken: kraften stiger raskt og faller igjen.
+                                        Rt
+For dem som kjenner integraler: ∆⃗p = t12 F⃗ dt,
+altså arealet under
+                 F (t)     -kurven
+                              (gur 1.16). I det
+                                                                                 = areal
+                                                                                  ∆p
+enklere tilfellet med konstant kraft er dette arealet
+                                                                                                    t
+nøyaktig rektangelet F · ∆t.                                        0       t1              t2
+Endringen i bevegelsesmengde forårsaket av et
+slikt kraftstøt kalles   impuls   . I dette faget skal vi   Figure 1.16:          Arealet   under       F (t)-
+ikke bruke dette begrepet noe videre.                       kurven er lik endringen i bevegelses-
+                                                            mengde ∆p. Kraften varierer typisk un-
+                                                            der et støt.
+
+
+
+
+   Oppsummering: Algoritme for løsning
+   Fremgangsmåten i slike oppgaver er alltid den samme:
+
+
+      1. Identiser systemet og sjekk at ytre krefter er null (eller neglisjerbare).
+
+
+      2. Velg en positiv retning.
+
+
+      3. Skriv opp bevaringsligningen: p
+                                       ⃗tot, før = p⃗tot, etter .
+
+      4. Løs for den ukjente.
+
+
+
+
+Rekyl.     Et klassisk eksempel er rekyl fra et gevær. Før avfyringen er kula og geværet i ro
+ den totale bevegelsesmengden er null. Etter avfyringen beveger kula seg raskt fremover
+og geværet sakte bakover, men de to bidragene kansellerer nøyaktig, slik at totalen fortsatt
+er null.
+
+
+
+   Eksempel 1.14: Rekyl fra gevær
+   Et gevær med masse M      = 3.0 kg avfyres horisontalt. En kule med masse m = 10 g =
+   0.010 kg forlater løpet med fart v = 800 m/s fremover. Både geværet og kula er i ro før
+   avfyringen.
+      Finn rekylhastigheten til geværet.                                                                   ■
+28                                                                                             Dynamikk
+
+
+
+     Svar
+                                                                        Før:
+                                                                               m
+                                                                    M
+                                                                      i ro
+                                                                     Etter:
+                                                                                   m
+                                                                    M
+
+                                                               V                   v
+     Vi velger fremover som positiv retning (+x).
+     Siden alt er i ro før avfyringen:
+
+
+                           ptot, før = 0
+
+     Det virker ingen ytre horisontale krefter i av-
+     fyringsøyeblikket, så bevegelsesmengden er be-
+     vart:
+
+
+                    ptot, etter = ptot, før = 0
+                 mv + M V = 0
+                                      mv
+                             V =−
+                                      M
+     Setter inn tallene:
+
+                  0.010 kg · 800 m/s
+          V =−                       = −2.7 m/s
+                        3.0 kg
+     Minustegnet    viser     at   geværet   beveger   seg
+     bakover    det er det vi kjenner som rekyl.
+
+
+
+
+Støt mellom legemer.               Det vanligste bruksområdet for bevaring av bevegelsesmengde er
+kollisjoner.   Vi skiller mellom to typer:        ved et   fullstendig uelastisk støt   henger legemene
+fast i hverandre etter kollisjonen og beveger seg som ett objekt, mens de ved et                   elastisk
+støt   spretter fra hverandre og bevarer i tillegg den kinetiske energien.             I begge tilfeller er
+bevegelsesmengden bevart. Vi skal komme tilbake til dette i neste kapittel,
+
+
+
+     Eksempel 1.15: Uelastisk støt: vogner som kolliderer og henger fast
+     En vogn med masse m1 = 2.0 kg ruller med fart v1 = 3.0 m/s og støter inn i en vogn med
+     masse m2 = 1.0 kg som er i ro. Vognene henger seg fast i hverandre etter støtet.
+       Finn farten vf til de sammenkoblede vognene.                                                      ■
+Dynamikk                                                                              29
+
+
+
+  Svar
+                                                            Før:
+                                                              v1
+
+                                                       m1             m2
+
+                                                                      i ro
+                                                            Etter:   vf
+
+                                                       m1 + m2
+  Vi velger +x langs bevegelsesretningen til vogn
+  1.
+  Bevaringsligningen:
+
+
+           m1 v1 + m2 · 0 = (m1 + m2 ) vf
+                              m1 v1
+                      vf =
+                            m1 + m2
+  Setter inn tallene:
+
+                  2.0 kg · 3.0 m/s
+           vf =                    = 2.0 m/s
+                       3.0 kg
+  De sammenkoblede vognene beveger seg med
+  2.0 m/s i samme retning som vogn 1.
+
+
+  Oppgave 1.12: To skøyteløpere
+  Oda (mO = 55 kg) og Per (mP = 80 kg) står i ro på isen og skyver fra hverandre. Etter
+  skyvingen beveger Oda seg med fart 4.0 m/s i én retning.
+
+
+    a) Hva er Pers hastighet etter skyvingen?
+
+
+    b) Hva er bevegelsesmengden til hvert av dem etter skyvingen? Kommenter svaret.
+
+
+
+
+  Oppgave 1.13: Bilkollisjon
+  En bil med masse m1 = 1200 kg kjører med fart 20 m/s mot en bil med masse
+  m2 = 1000 kg som kjører i      motsatt
+                                retning med fart 15 m/s. Bilene henger fast et-
+  ter kollisjonen.
+
+
+    a) Hva er den totale bevegelsesmengden til systemet      før   kollisjonen?
+
+
+    b) Finn farten og retningen til bilene etter kollisjonen.
+

@@ -1,0 +1,353 @@
+        TRES0312 Fysikk
+       Dynamikk
+TRES0312  Krefter i dagliglivet
+
+        Dekker kapittel 4.3
+
+
+
+
+       Ben David Normann
+        September 17, 2026
+Repetisjon: Tre kjappe fra forrige gang
+ 1. Skriv opp Newtons 1., 2. og 3. lov.
+ 2. Hva er bevegelsesmengde, og hvordan er den denert?
+ 3. To legemer og vekselvirker med krefter ⃗ og ⃗ . Hva vet du om
+                                                    ′
+
+    sammenhengen mellom disse to kreftene?
+              A    B                       F    F
+
+
+
+
+                                                                    2 / 18
+Tyngdekraft
+   Til ettertanke
+   Hva er tyngdekraft?
+
+
+
+
+                         3 / 18
+Tyngdekraft
+   Til ettertanke
+   HvaXer ⃗tyngdekraft?
+         F = m⃗a   (Newtons 2. lov)
+
+
+
+
+                                      3 / 18
+Tyngdekraft
+   Til ettertanke
+   HvaXer ⃗tyngdekraft?
+             F = m⃗a       (Newtons 2. lov)
+
+
+   Merk: Fritt fall
+   Fra observasjon vet vi at et legeme i fritt fall (uten
+   luftmotstand) har akselerasjon    a= g, uavhengig
+   av masse.
+
+
+
+
+                                                            3 / 18
+Tyngdekraft
+   Til ettertanke
+   HvaXer ⃗tyngdekraft?
+             F = m⃗a       (Newtons 2. lov)
+
+
+   Merk: Fritt fall
+   Fra observasjon vet vi at et legeme i fritt fall (uten
+   luftmotstand) har akselerasjon    a= g, uavhengig
+   av masse.
+
+
+
+   Denisjon 4.7: Tyngdekraft                                                 ⃗ = m⃗g
+                                                                              G
+
+
+   Kraften som gir denne akselerasjonen kalles tyn-         Dash-Line påvirkes av en kraft med
+               G
+   gdekraften ⃗ . Newtons 2. lov gir da:
+                                                                        G = m⃗g fra jorda.
+                                                               størrelse ⃗
+
+              G⃗ = m⃗g,      g ≈ 9.81 m/s2 .
+                                                                                                 3 / 18
+Aktivitet
+
+
+   Tyngdekraft på jord og måne
+   Ola har masse = 75 kg.
+                m
+
+    a) Finn tyngdekraften på Ola ved jordoveraten (g = 9.81 m/s ).
+                                                            2
+
+    b) Finn tyngdekraften på Ola ved månens overate (g = 1.62 m/s ).
+                                                                  2
+
+    c) Hva er Olas masse på månen? Forklar svaret.
+                                                    måne
+
+
+
+
+                                                                        4 / 18
+Til ettertanke
+Hva er masse?
+
+
+
+
+                 5 / 18
+Til ettertanke
+Hva er masse?
+ Svar
+ Massen til et legeme er ganske enkelt   tregheten   til legemet.
+                                         P
+                                             F
+                                 a   =
+                                         m
+
+
+
+
+                                                                    5 / 18
+Til ettertanke
+Hvordan måler vi krefter?
+
+
+
+
+                            6 / 18
+Til ettertanke
+Hvordan måler vi krefter?
+ Svar
+ For å måle og sammenlikne krefter bruker vi et                  en fjær i
+ et rør. Jo mer fjæra presses sammen, jo større er krafta som virker på den.
+                                                 Newtonmeter
+
+
+
+
+                                                                               6 / 18
+Kraft fra spiralfjær
+
+    Denisjon 4.6: Hookes lov
+    Kraften fra en fjær på det den er festet til er proporsjonal med avviket ⃗ fra
+    likevektsposisjonen:
+                                                                             x
+
+
+                                     ⃗F   = −k ⃗x
+    Her er > 0                  (enhet: N/m), og ⃗ er forytningen fra likevekt.
+    Minustegnet viser at kraften alltid peker likevekt.
+          k      fjærkonstanten                      x
+
+                                               mot
+
+
+
+
+                                                                                     7 / 18
+Aktivitet
+
+
+   Finn fjærkonstanten
+   Du fester et lodd til en vertikal fjær og måler at fjæra strekkes 12 cm når
+   loddet har masse = 250 g.
+                    m
+
+     a) Hva er fjærkonstanten ?
+                              k
+
+     b) Hvor mye strekkes fjæra om du bytter til et lodd med masse = 400 g?
+                                                                  m
+
+
+
+
+                                                                                 8 / 18
+Aktivitet
+
+   Geværkule i fjærdrevet løp
+   En geværkule med masse = 10 g skytes att og friksjonsfritt ut av et
+   fjærdrevet løp. Fjæra har fjærkonstant = 200 N/m og er i utgangspunktet
+                              m
+
+
+
+   trykt sammen = 5 cm i forhold til likevekt.
+                                          k
+
+                 x
+
+     a) Tegn kreftene som virker på geværkula i løpet, i det øyeblikket fjæra
+        utløses.
+     b) Beregn akselerasjonen i det øyeblikket fjæra utløses.
+     c) Er akselerasjonen til patronen konstant i løpet av tiden den har kontakt
+        med fjæra?
+                                                                                   9 / 18
+Pause!
+
+
+
+
+         10 / 18
+Underlagskrefter
+ Når et objekt⃗ står på et underlag, dekomponerer vi underlagskraften ⃗ i
+ normalkraft (vinkelrett på underlaget) og friksjonskraft ⃗ (parallelt med
+                                                                    U
+
+
+
+ underlaget):
+             N                                           R
+
+
+
+                                   ⃗ =N
+                                   U  ⃗ +R
+                                         ⃗
+
+
+
+
+                                                                             11 / 18
+Underlagskrefter
+ Når et objekt⃗ står på et underlag, dekomponerer vi underlagskraften ⃗ i
+ normalkraft (vinkelrett på underlaget) og friksjonskraft ⃗ (parallelt med
+                                                                    U
+
+
+
+ underlaget):
+             N                                           R
+
+
+
+                                   ⃗ =N
+                                   U  ⃗ +R
+                                         ⃗
+
+
+
+
+                                              N⃗
+
+                                              R⃗
+
+                                                                             11 / 18
+Aktivitet
+
+   Normalkraft i heis
+   Kari har masse = 70 kg og står i en heis.
+                   m
+
+    a) Finn normalkraften når heisen står i ro.
+                             N
+
+    b) Finn normalkraften når heisen akselererer oppover med = 2.0 m/s .
+                             N                                       a
+                                                                                  2
+
+    c) Finn normalkraften når heisen akselererer nedover med = 2.0 m/s .
+                             N                                       a
+                                                                                  2
+
+    d) Kari står på en vekt inne i heisen. Hva tror du den viser i de tre tilfellene
+        over?
+
+                                                                                       12 / 18
+Friksjon
+
+
+    Denisjon 4.8: Kinetisk friksjonskoesient
+    Den kinetiske friksjonskoesienten µk bestemmer glidefriksjonen:
+                                  R   k = µk N .
+
+
+
+
+                                                                       13 / 18
+Aktivitet
+
+   Boks som sklir
+   En boks med masse = 10 kg glir på et gulv med kinetisk friksjonskoesient
+   µk = 0.30.
+                      m
+
+
+
+    a) Finn friksjonskraften k som virker på boksen.
+                            R
+
+    b) Friksjonskraften er den eneste horisontale kraften. Finn boksens aksel-
+       erasjon.
+    c) Er akselerasjonen konstant?
+
+                                                                                 14 / 18
+Friksjon
+
+    Denisjon 4.9: Statisk friksjonskoesient
+    Den statiske friksjonskoesienten µs bestemmer maksimal hvilefriksjon:
+                                  R   s ≤ µs N .
+
+    Merk:
+    Som regel er µk < µs .
+
+                                                                             15 / 18
+Aktivitet
+
+
+   Kasse på gulv
+   En kasse med masse = 15 kg står på et gulv med statisk friksjonskoesient
+   µs = 0.40. Du skyver horisontalt med kraft = 40 N.
+                      m
+
+
+
+   Begynner kassen å bevege seg?
+                                             F
+
+
+
+
+                                                                               16 / 18
+Oppsummering: Krefter i dagliglivet
+    Fjærkraft: ⃗ = − ⃗ (Hookes lov)
+             F       kx
+
+    Tyngdekraft: ⃗ = ⃗g
+                 G   m
+
+    Normalkraft: ⃗ vinkelrett på underlaget
+                 N
+
+    Friksjon: s ≤ µs (hvile), k = µk (glid)
+            R        N      R      N
+
+
+
+
+                                              17 / 18
+      Neste gang: Krefter i planet
+
+▶ Dekomponering av Newtons lover
+▶ Algoritme for sammensatte
+  kraftoppgaver
+
+▶ Skråplan
+
+             Tid for å dekomponere. . .
+
+
+
+                                          18 / 18
+

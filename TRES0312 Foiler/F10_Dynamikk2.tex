@@ -51,35 +51,45 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 7 — Tyngdekraft
+%  SLIDE 3 — Tyngdekraft
 %--------------------------------------------------------------------------
 \begin{frame}{Tyngdekraft}
-  \tanke{}{%
-  Hva er tyngdekraft?
-  }
-  \pause
-
   \definecolor{dashblue}{RGB}{50,110,235}
   \definecolor{dashgold}{RGB}{205,145,20}
   \begin{columns}[T]
     \begin{column}{0.52\textwidth}
-      \vspace{-20pt}
+      \tanke{}{%
+      Hva er tyngdekraft?
+      }
+      \vspace{-6pt}
+
+      \onslide<2->{%
+      \merk{Fritt fall}{
+      \scriptsize
+      Fra observasjon vet vi at et legeme i fritt fall (uten luftmotstand) har akselerasjon $a = \mathrm{g}$, uavhengig av masse.
+      }
+      }%
+      \vspace{-8pt}
+
+      \onslide<3->{%
       \defnat{4.7}{Tyngdekraft}{
-      \footnotesize
-      Tyngdekraften $\vec{G}$ er kraften jorda trekker et legeme med masse $m$ mot sitt sentrum med:
+      \scriptsize
+      Kraften som gir alle legemer akselerasjon $\mathrm{g}$ mot jordas sentrum kalles tyngdekraften $\vec{G}$. Vi finner
       \[
         \vec{G} = m\vec{\mathrm{g}}, \qquad \mathrm{g} \approx 9.81\,\mathrm{m/s^2}.
       \]
       }
-
-      \pause
-      \merk{Fritt fall}{
-      \footnotesize
-      Newtons 2. lov gir $m\mathrm{g}=ma \Rightarrow a=\mathrm{g}$. Tyngdekraften trekker derfor alle legemer mot bakken med \textit{samme} akselerasjon, uavhengig av masse.
-      }
+      }%
     \end{column}
     \begin{column}{0.44\textwidth}
       \centering
+      \footnotesize
+      \[
+        \sum\vec{F} = m\vec{a} \quad \textbf{(Newtons 2. lov)}
+      \]
+      \vspace{-2pt}
+
+      \onslide<3->{%
       \begin{tikzpicture}
         \node[anchor=south west, inner sep=0] (image) at (0,0) {%
           \ifdarkmode\includegraphics[width=4.4cm]{Images/Dashman_DashLine_tyngdekraft_mork.png}\else\includegraphics[width=4.4cm]{Kapittel4:Dynamikk/Dashman_DashLine_tyngdekraft.png}\fi%
@@ -90,13 +100,14 @@
       \end{tikzpicture}
 
       {\footnotesize Dash-Line påvirkes av en kraft med størrelse $\vec{G}=m\vec{\mathrm{g}}$ fra jorda.}
+      }%
     \end{column}
   \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 8 — Aktivitet: Tyngdekraft på jord og måne
+%  SLIDE 4 — Aktivitet: Tyngdekraft på jord og måne
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -112,7 +123,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 9 — Til ettertanke: hva er masse?
+%  SLIDE 5 — Til ettertanke: hva er masse?
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -133,7 +144,7 @@
 
 
 %--------------------------------------------------------------------------
-%  SLIDE 3 — Til ettertanke: hvordan måler vi krefter?
+%  SLIDE 6 — Til ettertanke: hvordan måler vi krefter?
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -148,7 +159,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 4 — Definisjon: Hookes lov
+%  SLIDE 7 — Definisjon: Hookes lov
 %--------------------------------------------------------------------------
 \begin{frame}{Kraft fra spiralfjær}
 
@@ -163,7 +174,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Aktivitet: Finn fjærkonstanten
+%  SLIDE 8 — Aktivitet: Finn fjærkonstanten
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -178,7 +189,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Aktivitet: Geværkule i fjærdrevet løp
+%  SLIDE 9 — Aktivitet: Geværkule i fjærdrevet løp
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -252,22 +263,49 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — Definisjon: Friksjonskoeffisienter
+%  SLIDE 13 — Definisjon: Kinetisk friksjonskoeffisient
 %--------------------------------------------------------------------------
 \begin{frame}{Friksjon}
 
-  \defnat{4.8}{Friksjonskoeffisienter}{
-  Den \textbf{statiske} friksjonskoeffisienten $\mu_s$ bestemmer maksimal hvilefriksjon:
-  \[R_s \leq \mu_s N.\]
+  \defnat{4.8}{Kinetisk friksjonskoeffisient}{
   Den \textbf{kinetiske} friksjonskoeffisienten $\mu_k$ bestemmer glidefriksjonen:
-  \[R_k = \mu_k N.\]
-  Som regel er $\mu_k < \mu_s$.
+  \[R = \mu_k N.\]
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Aktivitet: Kasse på gulv (hvilefriksjon)
+%  SLIDE 14 — Aktivitet: Boks som sklir (glidefriksjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Boks som sklir}{%
+  En boks med masse $m = 10\,\mathrm{kg}$ glir på et gulv med kinetisk friksjonskoeffisient $\mu_k = 0.30$.
+  \begin{enumerate}[a)]
+      \item Finn friksjonskraften $R$ som virker på boksen.
+      \item Friksjonskraften er den eneste horisontale kraften. Finn boksens akselerasjon.
+      \item Er akselerasjonen konstant?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Definisjon: Statisk friksjonskoeffisient
+%--------------------------------------------------------------------------
+\begin{frame}{Friksjon}
+
+  \defnat{4.9}{Statisk friksjonskoeffisient}{
+  Den \textbf{statiske} friksjonskoeffisienten $\mu_s$ bestemmer maksimal hvilefriksjon:
+  \[R_s \leq \mu_s N.\]
+  }
+
+  \merk{}{Som regel er $\mu_k < \mu_s$.}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Aktivitet: Kasse på gulv (hvilefriksjon)
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
@@ -280,23 +318,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Aktivitet: Boks som sklir (glidefriksjon)
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Boks som sklir}{%
-  En boks med masse $m = 10\,\mathrm{kg}$ glir på et gulv med kinetisk friksjonskoeffisient $\mu_k = 0.30$.
-  \begin{enumerate}[a)]
-      \item Finn friksjonskraften $R_k$ som virker på boksen.
-      \item Friksjonskraften er den eneste horisontale kraften. Finn boksens akselerasjon.
-      \item Er akselerasjonen konstant?
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 16 — Oppsummering: krefter i dagliglivet
+%  SLIDE 17 — Oppsummering: krefter i dagliglivet
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -305,14 +327,14 @@
     \item[] Fjærkraft: $\vec{F} = -k\vec{x}$ \quad (Hookes lov)
     \item[] Tyngdekraft: $\vec{G} = m\vec{\mathrm{g}}$
     \item[] Normalkraft: $\vec{N}$ vinkelrett på underlaget
-    \item[] Friksjon: $R_s \leq \mu_s N$ (hvile), $R_k = \mu_k N$ (glid)
+    \item[] Friksjon: $R_s \leq \mu_s N$ (hvile), $R = \mu_k N$ (glid)
   \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Neste gang
+%  SLIDE 18 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}

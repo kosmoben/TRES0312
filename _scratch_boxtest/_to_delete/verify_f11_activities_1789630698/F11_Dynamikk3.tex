@@ -1,0 +1,228 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Dynamikk}
+\subtitle{TRES0312 --- Krefter i planet: dekomponering og skråplan}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{4}   % Kapittel 4: "Dynamikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 4.4--4.4.1}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang (krefter i dagliglivet)
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Skriv opp Hookes lov. Hva betyr minustegnet?
+      \item Hva er sammenhengen mellom normalkraft $N$, friksjonskraft $R$ og underlagskraft $\vec{U}$?
+      \item Hva er forskjellen mellom statisk og kinetisk friksjonskoeffisient, $\mu_s$ og $\mu_k$?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Oppsummering: Dekomponering av Newtons lover
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Dekomponering av Newtons lover}{%
+  Når vi løser oppgaver med krefter i planet, er det viktig å innføre et koordinatsystem, og deretter dekomponere Newtons lover. Med koordinater $x$ og $y$ i planet:
+  \[
+    \sum\vec{F} = m\vec{a}\quad\Longrightarrow\quad
+    \begin{cases}
+      \sum F_x = ma_x\\[4pt]
+      \sum F_y = ma_y
+    \end{cases}
+  \]
+  Helt tilsvarende for Newtons første lov, eller andre lover på vektorform.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Oppsummering: Algoritme
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Algoritme for løsing av sammensatte kraftoppgaver}{%
+  \begin{enumerate}[1.]
+    \item Tegn figur av problemet, med relevante krefter.
+    \item Skriv ned de relevante lovene.
+    \item Gjør et hensiktsmessig valg av koordinatsystem.
+    \item Dekomponer vektorlovene i koordinatsystemet.
+    \item Løs settet med skalare likninger for de ukjente.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: Normalkraft i heis
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Normalkraft i heis}{%
+  Kari har masse $m = 70\,\mathrm{kg}$ og står i en heis.
+  \begin{enumerate}[a)]
+      \item Finn normalkraften $N$ når heisen står i ro.
+      \item Finn normalkraften $N$ når heisen akselererer oppover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Finn normalkraften $N$ når heisen akselererer nedover med $a = 2.0\,\mathrm{m/s^2}$.
+      \item Kari står på en vekt inne i heisen. Hva tror du den viser i de tre tilfellene over?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 6 — Aktivitet: Boks som sklir, horisontalt udnerlag (glidefriksjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Boks som sklir på horisontalt underlag}{%
+  En boks med masse $m = 10\,\mathrm{kg}$ glir på et gulv med kinetisk friksjonskoeffisient $\mu_k = 0.30$.
+  \begin{enumerate}[a)]
+      \item Finn friksjonskraften $R_k$ som virker på boksen.
+      \item Friksjonskraften er den eneste horisontale kraften. Finn boksens akselerasjon.
+      \item Er akselerasjonen konstant?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 7 — Aktivitet: Slede i skråplan holdt av fjær
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \aktivitet{Slede i skråplan holdt av fjær}{%
+      En slede med Dashman, samlet masse $m$, ligger i ro på et friksjonsfritt skråplan med helningsvinkel $\theta = 30^\circ$. Sleden er festet til en fjær med fjærkonstant $k = 180\,\mathrm{N/m}$, strukket $x = 12\,\mathrm{cm}$ fra likevekt.
+      \begin{enumerate}[a)]
+        \item Tegn inn kreftene som virker på sleden.
+        \item Regn ut fjærkrafta $F_k$.
+        \item Finn massen $m$ til sleden.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (image) at (0,0) {%
+          \ifdarkmode\includegraphics[width=5.2cm]{Images/Dashman_slede_fjaer_skraplan_mork.png}\else\includegraphics[width=5.2cm]{Kapittel4:Dynamikk/Dashman_slede_fjaer_skraplan.png}\fi%
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Pause
+%--------------------------------------------------------------------------
+\begin{frame}{}
+\begin{center}
+\Huge{Pause!}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 9 — Aktivitet: Buss på glatt vei
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Buss på glatt vei}{%
+  En buss parkerer på en bakke. Friksjonskoeffisientene mellom dekk og vei er $\mu_s = 0.70$ (statisk) og $\mu_k = 0.50$ (kinetisk).
+  \begin{enumerate}[a)]
+      \item Ved hvilken helningsvinkel $\theta_c$ begynner bussen å skli nedover?
+      \item Dersom helningen er større enn $\theta_c$ slik at bussen begynner å skli, hva blir akselerasjonen nedover bakken?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Oppsummering: Skråplan med friksjon
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Skråplan med friksjon}{%
+  Akselerasjon ned et skråplan med friksjon:
+  \[
+    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta)
+  \]
+  Kritisk vinkel --- grensen for at klossen begynner å skli:
+  \[
+    \theta_c = \arctan(\mu_s)
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+
+%  SLIDE 11 — Aktivitet: Kjelke med skrå trekkraft
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kjelke med skrå trekkraft}{%
+  En kjelke med masse $m = 15\,\mathrm{kg}$ dras langs et flatt, snødekket underlag. Trekkraften $\vec{F} = 50\,\mathrm{N}$ er rettet i vinkel $\theta = 30^\circ$ over horisontal. Den kinetiske friksjonskoeffisienten er $\mu_k = 0.20$.
+  \begin{enumerate}[a)]
+      \item Finn normalkraften $N$. (Husk at $\vec{F}$ har en vertikal komponent som påvirker $N$.)
+      \item Finn friksjonskraften $R_k$.
+      \item Finn kjelkens akselerasjon.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Krefter i sirkelbevegelse}
+  \begin{itemize}
+    \item Sentripetalkraft
+    \item Dosert veibane
+  \end{itemize}
+  \vspace{6mm}
+  {\normalsize\itshape Rundt og rundt det går\ldots}
+\end{center}
+\end{frame}
+
+\end{document}

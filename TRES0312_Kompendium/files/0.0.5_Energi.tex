@@ -227,9 +227,9 @@ Dette er kjernen i begrepet potensiell energi — \textit{arbeid lagret mot en k
 \noindent
 \begin{minipage}[t]{0.54\linewidth}
 \vspace{0pt}
-For å løfte en masse $m$ en høyde $h$ i tyngdefeltet uten akselerasjon, må løftekraften nøyaktig oppheve tyngdekraften: $F_\text{løft} = mg$. Arbeidet denne kraften gjør er:
+For å løfte en masse $m$ en høyde $h$ i tyngdefeltet uten akselerasjon, må løftekraften nøyaktig oppheve tyngdekraften: $F_\text{løft} = m\mathrm{g}$. Arbeidet denne kraften gjør er:
 \[
-W_\text{løft} = F_\text{løft} \cdot h = mgh
+W_\text{løft} = F_\text{løft} \cdot h = m\mathrm{g}h
 \]
 Siden tyngdekraften er konservativ, er dette arbeidet ikke tapt — det er lagret som gravitasjonspotensiell energi $E_p$. Slippes massen, gjør tyngdekraften nøyaktig det samme arbeidet tilbake på massen, og all potensiell energi omdannes til kinetisk energi.
 \end{minipage}%
@@ -266,9 +266,9 @@ Siden tyngdekraften er konservativ, er dette arbeidet ikke tapt — det er lagre
   % Ep-etikett
   \node[headCol!80!black, font=\scriptsize\bfseries,
         fill=headCol!10, draw=headCol!40, rounded corners=2pt,
-        inner sep=3pt] at (0.50, 4.70) {$E_p = mgh$};
+        inner sep=3pt] at (0.50, 4.70) {$E_p = m\mathrm{g}h$};
 \end{tikzpicture}
-\captionof{figure}{Masse $m$ løftes mot tyngdekraften til høyde $h$. Arbeidet $W=mgh$ lagres som potensiell energi.}
+\captionof{figure}{Masse $m$ løftes mot tyngdekraften til høyde $h$. Arbeidet $W=m\mathrm{g}h$ lagres som potensiell energi.}
 \label{fig:gravitasjon_ep}
 \end{minipage}
 
@@ -277,7 +277,7 @@ Siden tyngdekraften er konservativ, er dette arbeidet ikke tapt — det er lagre
 \defn{Gravitasjonspotensiell energi}{%
 Gravitasjonspotensiell energi for en masse $m$ i høyde $h$ over et valgt nullnivå er:
 \[
-E_p = mgh
+E_p = m\mathrm{g}h
 \]
 $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$ er tyngdeakselerasjonen, og $h$ måles fra et fritt valgt nullnivå.
 }
@@ -358,7 +358,7 @@ En ball med masse \( 0.5 \, \text{kg} \) slippes fra en høyde på \( 10 \, \tex
 \textbf{Del 1: Potensiell energi på toppen} \\
 Den potensielle energien ballen har på toppen, før den slippes, kan beregnes med formelen:
 \[
-E_p = mgh
+E_p = m\mathrm{g}h
 \]
 hvor \( m = 0.5 \, \text{kg} \), \( g = 9.81 \, \text{m/s}^2 \), og \( h = 10 \, \text{m} \):
 \[
@@ -405,7 +405,7 @@ Når det oppstår friksjon eller andre energitap, vil den mekaniske energien ikk
     \end{align}
     hvor den totale mekaniske energien \( E \) er summen av gravitasjonspotensiell energi, kinetisk energi og elastisk potensiell energi. Dette kan skrives som:
     \begin{align}
-        E = mgh + \frac{1}{2} m v^2 + \frac{1}{2} k x^2
+        E = m\mathrm{g}h + \frac{1}{2} m v^2 + \frac{1}{2} k x^2
     \end{align}
     Her er \( m \) massen til objektet, \( g \) tyngdeakselerasjonen, \( h \) høyden over et nullnivå, \( v \) hastigheten, \( k \) fjærkonstanten, og \( x \) forlengelsen eller kompresjonen av en fjær. 
 }
@@ -422,15 +422,15 @@ E_{\text{før}} = E_{\text{etter}}
 \]
 I starten har steinen potensiell energi, men ingen kinetisk energi. Den totale energien i starten kan skrives som:
 \[
-mgh_1 + \frac{1}{2} m v_1^2 = mgh_2 + \frac{1}{2} m v_2^2
+m\mathrm{g}h_1 + \frac{1}{2} m v_1^2 = m\mathrm{g}h_2 + \frac{1}{2} m v_2^2
 \]
 Siden steinen slippes uten startfart, er hastigheten ved starten \( v_1 = 0 \), og dermed er det ingen kinetisk energi i starten:
 \[
-mgh_1 + \frac{1}{2} m \cdot 0^2 = mgh_2 + \frac{1}{2} m v_2^2
+m\mathrm{g}h_1 + \frac{1}{2} m \cdot 0^2 = m\mathrm{g}h_2 + \frac{1}{2} m v_2^2
 \]
 Rett før steinen treffer bakken, er høyden \( h_2 = 0 \), og dermed er det ingen potensiell energi på dette tidspunktet:
 \[
-mgh_1 + 0 = 0 + \frac{1}{2} m v_2^2
+m\mathrm{g}h_1 + 0 = 0 + \frac{1}{2} m v_2^2
 \]
 Vi kan nå stryke massen \( m \) fra begge sider av likningen:
 \[
@@ -465,15 +465,15 @@ E_{\text{fjær}} = \frac{1}{2} k x^2
 \]
 Den potensielle energien kanonkulen har på toppen er:
 \[
-E_p = mgh
+E_p = m\mathrm{g}h
 \]
 Siden \( E_{\text{fjær}} = E_p \), kan vi sette opp likningen:
 \[
-\frac{1}{2} k x^2 = mgh
+\frac{1}{2} k x^2 = m\mathrm{g}h
 \]
 Vi løser for fjærkonstanten \( k \):
 \[
-k = \frac{2mgh}{x^2}
+k = \frac{2m\mathrm{g}h}{x^2}
 \]
 Nå setter vi inn verdiene \( m = 0.2 \, \text{kg} \), \( g = 9.8 \, \text{m/s}^2 \), \( h = 5.0 \, \text{m} \), og \( x = 0.15 \, \text{m} \):
 \[
@@ -501,7 +501,7 @@ E_p = E_k
 \]
 Ved bevaring av energi får vi:
 \[
-mgh = \frac{1}{2} m v^2
+m\mathrm{g}h = \frac{1}{2} m v^2
 \]
 Vi stryker massen \( m \) fra begge sider av likningen:
 \[
@@ -628,7 +628,7 @@ Beregn normalkraften på ballen i de tre markerte posisjonene:
 
 Energibevaring fra start ($v_0 = 0$, høyde $H$) til høyde $h$:
 \[
-  mgH = \tfrac{1}{2}mv^2 + mgh \implies v^2 = 2\mathrm{g}(H - h)
+  m\mathrm{g}H = \tfrac{1}{2}mv^2 + m\mathrm{g}h \implies v^2 = 2\mathrm{g}(H - h)
 \]
 
 \medskip

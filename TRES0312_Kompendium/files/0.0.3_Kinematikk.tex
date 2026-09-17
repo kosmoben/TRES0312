@@ -1046,8 +1046,8 @@ Du syklet $\SI{100}{\metre}$ i løpet av denne perioden.
 \end{tikzpicture}%
 }}%
 \end{wrapfigure}
-Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Det som kanskje er litt overraskende, er at alle legemer vil ha samme akselerasjon ned mot bakken (når vi ser bort ifra luftmotstand). Denne akselerasjonen er konstant og kalles $\text{g}$. Størrelsen er
-{\setlength{\linewidth}{9cm}\graabox{$\displaystyle \text{Tyngdens akselerasjon:}\quad\text{g} = \SI{9.81}{\metre\per\second\squared}$}}
+Her på jorden blir vi påvirket av en tyngdekraft, som gjør at alt blir dratt mot senter av jorden. Det som kanskje er litt overraskende, er at alle legemer vil ha samme akselerasjon ned mot bakken (når vi ser bort ifra luftmotstand). Denne akselerasjonen er konstant og kalles $\mathrm{g}$. Størrelsen er
+{\setlength{\linewidth}{9cm}\graabox{$\displaystyle \text{Tyngdens akselerasjon:}\quad\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$}}
 
 I videoen slippes en stein fra en bro for å måle brohøyden --- akkurat dette scenarioet går vi gjennom numerisk (med og uten luftmotstand) i notatboken det er lenket til under.
 \pyfile{TRES0312 Python/Kap3\_Kinematikk/K3\_steinkast\_luftmotstand.ipynb}{Kap3_Kinematikk/K3_steinkast_luftmotstand.ipynb}
@@ -1093,7 +1093,7 @@ Steinen er $\SI{39.6}{\metre}$ fra utgangspunktet etter $2$ sekunder.
 }
 
 \oppgave{Fritt fall}{%
-En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Husk at $\text{g} = \SI{9.81}{\metre\per\second\squared}$.
+En ball slippes fra ro fra en høyde $h = \SI{45}{\metre}$ over bakken. Husk at $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$.
 \begin{enumerate}[a)]
     \item Finn tiden det tar før ballen treffer bakken.
     \item Finn farten rett før ballen treffer bakken.
@@ -1105,7 +1105,7 @@ Vi har tidligere utledet formler for
 $$a=\text{konst},$$
 og brukt vektorer i oppsummeringen, fordi disse formlene gjelder for krumlinjet bevegelse også. Men hvordan regner vi egentlig med konstant akselerasjon i krumlinjet bevegelse i praksis? I denne seksjonen skal vi se på nettopp det, gjennom eksempler og oppgaver.
 
-\paragraph{Dekomponering.} Se for deg en stein som kastes utfor en klippe. Steinen vil falle nedover på grunn av tyngdekraftens konstante akselerasjon på $\text{g}=\SI{9.81}{\metre\per\second\squared}$. Men i horisontal retning så vil steinen bare fortsette rett fram uten å akselerere. Vi må \textit{dekomponere} likningene og analysere hver retning for seg. 
+\paragraph{Dekomponering.} Se for deg en stein som kastes utfor en klippe. Steinen vil falle nedover på grunn av tyngdekraftens konstante akselerasjon på $\mathrm{g}=\SI{9.81}{\metre\per\second\squared}$. Men i horisontal retning så vil steinen bare fortsette rett fram uten å akselerere. Vi må \textit{dekomponere} likningene og analysere hver retning for seg. 
 
 \begin{myoppsum*}{Dekomponering av hastighets- og posisjonslikningene}
 Krumlinjet bevegelse med konstant akselerasjon analyseres ved å dekomponere vektorlikningene i x- og y-komponenter:
@@ -1134,7 +1134,7 @@ Krumlinjet bevegelse med konstant akselerasjon analyseres ved å dekomponere vek
 \end{myoppsum*}
 Vi kunne gjort tilsvarende dekomponeringer av de to andre likningene — og hvilke som helst andre vektorlikninger.
 
-\tips{Fortegn ved dekomponering}{Husk at når du dekomponerer så er alle fortegn avhengig av hva du har valt som positiv retning for hver koordinat-akse. For eksempel, hvis du velger oppover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være negativ, altså $a_y = -g$. Hvis du velger nedover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være positiv, altså $a_y = g$. Dette er bare et valg av koordinatsystem, og har ingen innvirkning på fysikken.
+\tips{Fortegn ved dekomponering}{Husk at når du dekomponerer så er alle fortegn avhengig av hva du har valt som positiv retning for hver koordinat-akse. For eksempel, hvis du velger oppover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være negativ, altså $a_y = -\mathrm{g}$. Hvis du velger nedover som positiv y-retning, så vil tyngdekraftens akselerasjon i y-retning være positiv, altså $a_y = \mathrm{g}$. Dette er bare et valg av koordinatsystem, og har ingen innvirkning på fysikken.
 }
 La oss nå se på eksempler for å lære dette med dekomponering ordentlig.
 
@@ -1209,7 +1209,7 @@ Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $1
     \]
     Ballen påvirkes kun av tyngdekraften (vi ser bort fra luftmotstand), så det er ingen akselerasjon i $x$-retning, mens akselerasjonen i $y$-retning er tyngdeakselerasjonen. Akselerasjonsvektoren er dermed
     \[
-    \vec{a} = [a_x, a_y] = [0,\ -g].
+    \vec{a} = [a_x, a_y] = [0,\ -\mathrm{g}].
     \]
     Den generelle (vektorielle) posisjonslikningen for konstant akselerasjon er
     \[
@@ -1227,13 +1227,13 @@ Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $1
     \[
     y(t) = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y\,t^2,
     \]
-    og setter vi inn $y_0 = 0$, $v_{0y} = v_0\sin\theta$ og $a_y = -g$, får vi
+    og setter vi inn $y_0 = 0$, $v_{0y} = v_0\sin\theta$ og $a_y = -\mathrm{g}$, får vi
     \[
-    y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
+    y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} \mathrm{g} t^2.
     \]
     Posisjonslikningene blir altså:
     \[
-    x(t) = v_0 \cos\theta \cdot t, \qquad y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2.
+    x(t) = v_0 \cos\theta \cdot t, \qquad y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} \mathrm{g} t^2.
     \]
 
     \textbf{Del b: Finn tiden $t^\ast$ ballen bruker til mållinjen} \\
@@ -1249,13 +1249,13 @@ Håland skal skyte et straffespark, og skyter ballen med en utgangsvinkel på $1
     \textit{Metode:}
     Idet ballen når mållinjen skal ballens senter befinne seg i høyden $y(t^\ast) = \SI{2.30}{\metre}$ (rett under tverrliggeren, når vi tar hensyn til ballens egen utstrekning). Vi setter $t^\ast$ fra Del b inn i uttrykket for $y(t)$:
     \[
-    2.30 = v_0 \sin\theta \cdot \frac{11}{v_0 \cos\theta} - \frac{1}{2} g \left( \frac{11}{v_0 \cos\theta} \right)^2 = 11 \tan\theta - \frac{121\, g}{2 v_0^2 \cos^2\theta}.
+    2.30 = v_0 \sin\theta \cdot \frac{11}{v_0 \cos\theta} - \frac{1}{2} \mathrm{g} \left( \frac{11}{v_0 \cos\theta} \right)^2 = 11 \tan\theta - \frac{121\, \mathrm{g}}{2 v_0^2 \cos^2\theta}.
     \]
     Legg merke til at $v_0$ forsvinner fra det første leddet, siden $\sin\theta / \cos\theta = \tan\theta$. Vi løser likningen for $v_0^2$:
     \[
-    v_0^2 = \frac{121\, g}{2\cos^2\theta \left( 11\tan\theta - 2.30 \right)}.
+    v_0^2 = \frac{121\, \mathrm{g}}{2\cos^2\theta \left( 11\tan\theta - 2.30 \right)}.
     \]
-    Setter vi inn tallverdiene $g = \SI{9.81}{\metre\per\second\squared}$ og $\theta = 18^\circ$, får vi
+    Setter vi inn tallverdiene $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$ og $\theta = 18^\circ$, får vi
     \[
     v_0 = \doubleunderline{\SI{22.7}{\metre\per\second}} \approx \SI{81.7}{\kilo\metre\per\hour}.
     \]
@@ -1297,15 +1297,15 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \[
     \vec{v}_0 = [v_{0x}, v_{0y}] = [v_1,\ 0] = [\SI{8.33}{\metre\per\second},\ 0],
     \]
-    og akselerasjonen er igjen kun tyngdeakselerasjonen, $\vec{a} = [a_x, a_y] = [0,\ -g]$. Vi lar $x_0 = 0$ ved klippekanten, og $y_0 = \SI{5}{\metre}$ være klippens høyde over bakken der bilen lander ($y=0$). Fra den generelle vektorlikningen $\vec{s}(t) = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2$ får vi, komponent for komponent:
+    og akselerasjonen er igjen kun tyngdeakselerasjonen, $\vec{a} = [a_x, a_y] = [0,\ -\mathrm{g}]$. Vi lar $x_0 = 0$ ved klippekanten, og $y_0 = \SI{5}{\metre}$ være klippens høyde over bakken der bilen lander ($y=0$). Fra den generelle vektorlikningen $\vec{s}(t) = \vec{s}_0 + \vec{v}_0\,t + \tfrac{1}{2}\vec{a}\,t^2$ får vi, komponent for komponent:
     \[
     x(t) = x_0 + v_{0x}\,t + \tfrac{1}{2}a_x t^2 = v_1 t,
     \qquad
-    y(t) = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y t^2 = y_0 - \tfrac{1}{2} g t^2,
+    y(t) = y_0 + v_{0y}\,t + \tfrac{1}{2}a_y t^2 = y_0 - \tfrac{1}{2} \mathrm{g} t^2,
     \]
     der vi har satt inn $x_0 = 0$, $a_x = 0$ og $v_{0y} = 0$ fra vektorene over. Bilen treffer bakken når $y(t) = 0$, som gir tiden $t$ den er i lufta:
     \[
-    0 = y_0 - \frac{1}{2} g t^2 \quad \Rightarrow \quad 0 = 5 - \frac{1}{2}(9.81) t^2 \quad \Rightarrow \quad t = \sqrt{\frac{2\cdot 5}{9.81}} \approx \SI{1.01}{\second}.
+    0 = y_0 - \frac{1}{2} \mathrm{g} t^2 \quad \Rightarrow \quad 0 = 5 - \frac{1}{2}(9.81) t^2 \quad \Rightarrow \quad t = \sqrt{\frac{2\cdot 5}{9.81}} \approx \SI{1.01}{\second}.
     \]
     Horisontal avstand følger da av $x(t) = v_1 t$:
     \[
@@ -1319,9 +1319,9 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
     \[
     v_x(t) = v_{0x} + a_x t, \qquad v_y(t) = v_{0y} + a_y t.
     \]
-    Setter vi inn $v_{0x} = 8.33\,\si{\metre\per\second}$, $a_x = 0$, $v_{0y}=0$ og $a_y=-g$ fra vektorene i Del b, ser vi at den horisontale hastighetskomponenten er uendret, $v_x = v_{0x} = \SI{8.33}{\metre\per\second}$, mens den vertikale komponenten blir
+    Setter vi inn $v_{0x} = 8.33\,\si{\metre\per\second}$, $a_x = 0$, $v_{0y}=0$ og $a_y=-\mathrm{g}$ fra vektorene i Del b, ser vi at den horisontale hastighetskomponenten er uendret, $v_x = v_{0x} = \SI{8.33}{\metre\per\second}$, mens den vertikale komponenten blir
     \[
-    v_y = -g t = -9.81 \cdot 1.01 \approx \SI{-9.90}{\metre\per\second}.
+    v_y = -\mathrm{g} t = -9.81 \cdot 1.01 \approx \SI{-9.90}{\metre\per\second}.
     \]
     Fartsvektoren er dermed $\vec{v} = [\SI{8.33}{\metre\per\second},\, \SI{-9.90}{\metre\per\second}]$, med størrelse
     \[
@@ -1334,7 +1334,7 @@ En rallybil kjører utfor banen. Den starter med farten $v_0 = \SI{80}{\kilo\met
 }
 
 \oppgave{Ballkast}{%
-En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med startfart $v_0 = \SI{10}{\metre\per\second}$. Bruk $g = \SI{9.81}{\metre\per\second\squared}$.
+En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med startfart $v_0 = \SI{10}{\metre\per\second}$. Bruk $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$.
 \begin{enumerate}[a)]
     \item Finn tiden ballen bruker på å treffe bakken.
     \item Finn den horisontale avstanden fra klippen til der ballen lander.
@@ -1346,7 +1346,7 @@ En ball kastes horisontalt fra en klippe $h = \SI{5}{\metre}$ over bakken med st
 Et prosjektil skytes ut fra bakken ($y_0 = 0$) med en kjent utgangshastighet $v_0$, i en vinkel $\theta$ over horisontalen. Se bort fra luftmotstand.
 \begin{enumerate}[a)]
     \item Sett opp uttrykk for posisjonen til prosjektilet i $x$- og $y$-retning som funksjon av tiden $t$.
-    \item Finn et uttrykk for tiden $t$ prosjektilet er i lufta, uttrykt ved $v_0$, $\theta$ og $g$.
+    \item Finn et uttrykk for tiden $t$ prosjektilet er i lufta, uttrykt ved $v_0$, $\theta$ og $\mathrm{g}$.
 
     \textit{Hint:} Bruk at prosjektilet returnerer til utgangshøyden når det lander, altså $y(t) = 0$.
 
@@ -1566,7 +1566,7 @@ Deretter setter vi inn i formelen for sentripetalakselerasjon:
     = \frac{4\pi^2 \cdot \SI{1.496e11}{\metre}}{\left(\SI{3.156e7}{\second}\right)^2}
     = \doubleunderline{\SI{5.93e-3}{\metre\per\second\squared}}
 \]
-Dette er omtrent $6.1\cdot10^{-3}$ ganger tyngdeakselerasjonen $g$. Selv om akselerasjonen er svært liten, er det nok til å holde jorda i bane rundt sola — fordi tyngdekraften virker over en enorm avstand.
+Dette er omtrent $6.1\cdot10^{-3}$ ganger tyngdeakselerasjonen $\mathrm{g}$. Selv om akselerasjonen er svært liten, er det nok til å holde jorda i bane rundt sola — fordi tyngdekraften virker over en enorm avstand.
 }
 
 \oppgave{Sirkelbevegelse og omløpstid}{%
@@ -1615,7 +1615,7 @@ Et pariserhjul har radius $r = \SI{15}{\metre}$ og roterer med konstant fart sli
 \begin{enumerate}[a)]
     \item Finn farten $v$ til en passasjer ved kanten av hjulet.
     \item Finn sentripetalakselerasjonen til passasjeren.
-    \item Sammenlikn denne akselerasjonen med tyngdens akselerasjon $g$. Er den stor eller liten i forhold?
+    \item Sammenlikn denne akselerasjonen med tyngdens akselerasjon $\mathrm{g}$. Er den stor eller liten i forhold?
 \end{enumerate}
 }
 
