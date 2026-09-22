@@ -366,19 +366,19 @@ Gulvet skyver Ola opp med nøyaktig like stor kraft som tyngdekraften trekker Ol
 }
 Som vi så i eksemplet over så er Normalkraften like stor og motsatt rettet i forhold til tyngdekraften når et legeme står i ro på et gulv. Slik må det nesten være, ettersom det da kun er $G$ og $N$ som virker. Likevel er ikke $N$ motkraften til $G$. 
 \tanke{}{%
-Hvorfor er ikke $N$ og $G$ et kraft-motkraft par slik som det er definert i Newtons 3. lov?}
-Grunnen er enkel: Både $N$ og $G$ virker på samme legeme. Newtons 3. lov handler om \textit{vekselvirkning} mellom legemer, og kraft-motkraftpar virker derfor alltid på to forskjellige legemer. Det er liksom hele poenget. Derfor må vi stille oss et viktig spørsmål til.
+Hvorfor er ikke $\vec{N}$ og $\vec{G}$ et kraft-motkraft par slik som det er definert i Newtons 3. lov?}
+Grunnen er enkel: Både $\vec{N}$ og $\vec{G}$ virker på samme legeme. Newtons 3. lov handler om \textit{vekselvirkning} mellom legemer, og kraft-motkraftpar virker derfor alltid på to forskjellige legemer. Det er liksom hele poenget. Derfor må vi stille oss et viktig spørsmål til.
 \tanke{}{%
-Hva er motkreftene til $N$ og $G$ i eksemplet over? På hvilke legemer virker de?}
+Hva er motkreftene til $\vec{N}$ og $\vec{G}$ i eksemplet over? På hvilke legemer virker de?}
 
 \exm{Normalkraft i akselererende heis}{%
 Kari har masse $m = \SI{70}{\kilo\gram}$ og står i en heis. Heisen akselererer oppover med $a = \SI{2.0}{\metre\per\second\squared}$.
-Hva er normalkraften $N$ som gulvet utøver på Kari?
+Hva er normalkraften $\vec{N}$ som gulvet utøver på Kari?
 }
 
 \svar{%
 \noindent
-Vi tegner inn kreftene på Kari: tyngdekraften $G$ peker ned og normalkraften $N$ peker opp. Kari akselererer oppover, så vi velger oppover som positiv retning. Newtons 2. lov gir
+Vi tegner inn kreftene på Kari: tyngdekraften $\vec{G}$ peker ned og normalkraften $\vec{N}$ peker opp. Kari akselererer oppover, så vi velger oppover som positiv retning. Newtons 2. lov gir
 \[
     \sum F_y = N - G = ma
 \]
@@ -396,7 +396,7 @@ Ola har masse $m = \SI{80}{\kilo\gram}$ og er i en heis. Finn normalkraften $N$ 
     \item Heisen bremser ned mens den beveger seg oppover, slik at $a = \SI{-3.0}{\metre\per\second\squared}$.
     \item Heisen er i fritt fall (tau røk!). Hva er $N$ da, og hva ville Ola oppleve?
 \end{enumerate}
-}M
+}
 
 \subsubsection{Friksjonskraft}
 
@@ -458,7 +458,7 @@ Størrelsen på friksjonskraften avhenger av to ting: normalkraften $N$ og et ta
 
 \medskip
 
-\defn{Friksjonskoeffisienter}{%
+\defn{Friksjonskrefter}{%
 Den \textbf{statiske friksjonskoeffisienten} $\mu_s$ bestemmer maksimal hvilefriksjon. Når et objekt er \textit{i ro}, tilpasser friksjonskraften seg automatisk og kan ta alle verdier opp til
 \[
     R_s \leq \mu_s N.
@@ -471,6 +471,23 @@ Begge koeffisientene er dimensjonsløse tall ($\mu > 0$) som avhenger av materia
 }
 
 Verdiene til $\mu_s$ og $\mu_k$ avhenger sterkt av overflatene. Is mot stål gir lave verdier ($\mu_k \approx 0.03$), gummi mot asfalt gir høye ($\mu_s \approx 0.8$). Legg merke til at $\mu_k < \mu_s$: det kreves alltid mer kraft for å \textit{sette} noe i bevegelse enn for å \textit{holde} det i bevegelse — noe alle som noen gang har prøvd å flytte et tungt møbel, kjenner godt til.
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+        \hline
+        & \shortstack{Gummidekk,\\tørr asfalt} & \shortstack{Gummidekk,\\våt asfalt} & \shortstack{Gummidekk\\mot is} & \shortstack{Skøyte\\mot is} & \shortstack{Jern mot\\jern} & \shortstack{Kneledd i\\kroppen} & \shortstack{Tre mot\\metall} \\
+        \hline
+        $\mu_s$ (statisk) & 1.0 & 0.3 & 0.15 & 0.03 & 0.7 & 0.01 & 0.5 \\
+        \hline
+        $\mu_k$ (kinetisk) & 0.8 & 0.25 & 0.1 & 0.01 & 0.6 & 0.003 & 0.4 \\
+        \hline
+    \end{tabular}
+    \caption{Typiske verdier for statisk ($\mu_s$) og kinetisk ($\mu_k$) friksjonskoeffisient for noen kjente kontaktflater. Verdiene er tilnærmede og varierer med overflatetilstand, temperatur og fuktighet.}
+    \label{tab:friksjonskoeffisienter}
+\end{table}
+
 
 \paragraph*{Hvilefriksjon}
 
