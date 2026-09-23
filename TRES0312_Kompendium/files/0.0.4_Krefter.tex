@@ -1198,11 +1198,11 @@ og rettet inn mot sentrum av sirkelbevegelsen.
 }
 
 
-% ---- Eksempel: Ball i sirkelbane ----
+% ---- Eksempel: Slegge ----
 \noindent
 \begin{minipage}[t]{0.54\linewidth}
 \vspace{0pt}
-Som et første eksempel ser vi på en ball som glir rundt i en sirkelbane på en friksjonsfri horisontal overflate, festet til et senter med en snor. Snorkraften $\vec{S}$ peker hele tiden inn mot sentrum — det er denne kraften som gir ballen sentripetalakselerasjonen.
+Som et første eksempel ser vi på en sleggekaster som svinger slegga rundt seg. Slegga er en metallkule festet til en wire, og sleggekasteren holder i håndtaket i den andre enden. Sett ovenfra går kula i en sirkelbane rundt sleggekasterens hånd. Snorkraften $\vec{S}$ fra wiren peker hele tiden inn mot sentrum — det er denne kraften som gir kula sentripetalakselerasjonen. (Vi forenkler ved å se bort fra tyngdekraften, og ser bare på kreftene i sirkelens plan.)
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.43\linewidth}
@@ -1213,8 +1213,8 @@ Som et første eksempel ser vi på en ball som glir rundt i en sirkelbane på en
   \draw[dashed, gray!60, line width=0.8pt] (0,0) circle (1.5);
   % Sentrum
   \fill[black!60] (0,0) circle (2pt);
-  \node[font=\scriptsize, below left=2pt] at (0,0) {sentrum};
-  % Snor
+  \node[font=\scriptsize, below left=2pt] at (0,0) {hånd};
+  % Wire
   \draw[headCol!70!black, line width=1.4pt] (0,0) -- (1.5,0);
   % Ball
   \fill[headCol!40] (1.5,0) circle (0.18);
@@ -1228,36 +1228,127 @@ Som et første eksempel ser vi på en ball som glir rundt i en sirkelbane på en
   \draw[-{Stealth[length=10pt,width=6pt]}, line width=2pt, oppsumcol]
     (1.5,0.18) -- (1.5,1.10);
   \node[oppsumcol, font=\small\bfseries, right=3pt] at (1.5,0.64) {$\vec{v}$};
-  % Radius r
-  \draw[<->, gray!70, thin] (0,-0.35) -- (1.5,-0.35);
-  \node[font=\scriptsize, gray!70, below] at (0.75,-0.35) {$r$};
+  % Radius r (enveis pil fra sentrum)
+  \draw[-{Stealth[length=5pt,width=4pt]}, black, thin] (0,0) -- (135:1.5);
+  \node[font=\scriptsize, black, above right=0pt] at (135:0.75) {$r$};
 \end{tikzpicture}
-\captionof{figure}{Sett ovenfra: ball i sirkelbane. Snorkraften $\vec{S}$ er alltid rettet inn mot sentrum.}
+\captionof{figure}{Sett ovenfra: slegge i en sleggekasters hånd. Snorkraften $\vec{S}$ fra wiren er alltid rettet inn mot sentrum.}
 \label{fig:ball_sirkelbane}
 \end{minipage}
 
 \medskip
 
-\exm{Ball i sirkelbane}{%
-En ball med masse $m = \SI{0.30}{\kilo\gram}$ er festet til en snor og glir rundt i en sirkelbane på en friksjonsfri bordflate. Snoras lengde er $r = \SI{0.80}{\metre}$ og ballen holder konstant fart $v = \SI{3.0}{\metre\per\second}$.
+\exm{Slegge}{%
+En sleggekaster svinger en slegge med masse $m = \SI{4.0}{\kilo\gram}$ rundt seg. Avstanden fra hånda til kula er $r = \SI{1.2}{\metre}$, og kula holder konstant fart $v = \SI{15}{\metre\per\second}$. Vi ser bort fra tyngdekraften.
 
-Finn kraften i snora.
+Finn kraften i wiren.
 }
 
 \svar{%
-Snorkraften $S$ er den eneste horisontale kraften, og den peker alltid inn mot sentrum. Den sørger for sentripetalakselerasjonen:
+Snorkraften $S$ fra wiren er den eneste kraften vi tar med, og den peker alltid inn mot sentrum (hånda). Den sørger for sentripetalakselerasjonen:
 \[
     \sum F = \frac{mv^2}{r}
     \quad\implies\quad
     S = \frac{mv^2}{r}
-    = \frac{\SI{0.30}{\kilo\gram} \cdot (\SI{3.0}{\metre\per\second})^2}{\SI{0.80}{\metre}}
-    = \frac{\SI{2.7}{\newton\metre}}{\SI{0.80}{\metre}}
-    = \doubleunderline{\SI{3.4}{\newton}}
+    = \frac{\SI{4.0}{\kilo\gram} \cdot (\SI{15}{\metre\per\second})^2}{\SI{1.2}{\metre}}
+    = \frac{\SI{900}{\newton\metre}}{\SI{1.2}{\metre}}
+    = \doubleunderline{\SI{750}{\newton}}
 \]
+Det tilsvarer omtrent tyngden av en person på \SI{75}{\kilo\gram}, så sleggekasteren må holde godt fast!
 }
 
 \oppgaver{Karusell}{k4oppg11}{%
 \input{Oppgaver/k4_oppg11.tex}%
+}
+
+% ---- Eksempel: Vogn i loop på tivoli ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+I en loop på tivoli beveger vogna seg i en \emph{vertikal} sirkel. Da virker tyngdekraften delvis langs bevegelsesretningen, slik at farten endrer seg underveis: vogna går fortere i bunnen enn på toppen. Likevel gjelder sammenhengen for sentripetalkraft i hvert eneste punkt: kraftsummen inn mot sentrum må være $mv^2/r$, der $v$ er farten akkurat der vogna er.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[font=\small, scale=1]
+  % Loopen (skinnegang)
+  \draw[gray!70, line width=1.6pt] (0,0) circle (1.6);
+  % Sentrum
+  \fill[gray!70] (0,0) circle (1.8pt);
+  % Radius r (enveis pil fra sentrum)
+  \draw[-{Stealth[length=5pt,width=4pt]}, gray!70, thin] (0,0) -- (135:1.6);
+  \node[font=\scriptsize, gray!70, above right=0pt] at (135:0.8) {$r$};
+  % Vogna i A (bunn), B (halvveis opp), C (topp), D (halvveis ned)
+  \foreach \ang/\pos in {270/A, 0/B, 90/C, 180/D}{
+    \begin{scope}[shift={(\ang:1.6)}, rotate=\ang+90]
+      % Lokal y-akse peker inn mot sentrum, lokal x-akse langs fartsretningen
+      \fill[headCol!40] (-0.26,0.07) rectangle (0.26,0.34);
+      \draw[headCol!70!black, line width=0.8pt] (-0.26,0.07) rectangle (0.26,0.34);
+      \fill[headCol!70!black] (-0.15,0.05) circle (0.05);
+      \fill[headCol!70!black] ( 0.15,0.05) circle (0.05);
+      % Fart (tangentielt, på utsiden av loopen)
+      \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.6pt, oppsumcol]
+        (-0.1,-0.16) -- (0.85,-0.16);
+      \node[oppsumcol, font=\small] at (0.45,-0.45) {$v_\text{\pos}$};
+      % Posisjonsnavn (inne i loopen)
+      \node[font=\small\bfseries] at (0,0.72) {\pos};
+    \end{scope}
+  }
+\end{tikzpicture}
+
+\captionof{figure}{Vogn i en vertikal loop på tivoli, sett fra siden. Farten $v$ er tangentiell til sirkelen i alle fire posisjonene.}
+\label{fig:loop_tivoli}
+\end{minipage}
+
+\medskip
+
+\exm{Vogn i loop på tivoli}{%
+På tivoli går en vogn i en vertikal, helt sirkulær loop. Figuren viser fart i bunnen av loopen (A), halvveis opp loopen (B), på toppen av loopen (C) og halvveis ned igjen (D).
+\begin{enumerate}[a)]
+    \item Finn uttrykk for normalkraften i alle tilfeller.
+    \item Hvor stor må $v_\text{C}$ være for at vogna ikke skal falle av på toppen?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} To krefter virker på vogna: tyngdekraften $G = m\mathrm{g}$ (alltid rett ned) og normalkraften $\vec{N}$ fra skinnene. Vogna kjører på innsiden av loopen, så $\vec{N}$ peker alltid inn mot sentrum. Vi velger positiv retning \emph{inn mot sentrum} og bruker at $\sum F = mv^2/r$ i hver posisjon.
+
+\smallskip\noindent
+\textbf{A (bunnen):} $\vec{N}$ peker opp (inn mot sentrum), $\vec{G}$ peker ned (ut fra sentrum):
+\[
+    N_\text{A} - m\mathrm{g} = m\frac{v_\text{A}^2}{r}
+    \quad\implies\quad
+    N_\text{A} = m\frac{v_\text{A}^2}{r} + m\mathrm{g}
+\]
+
+\noindent
+\textbf{B og D (halvveis opp og halvveis ned):} $\vec{N}$ er vannrett og peker inn mot sentrum. $\vec{G}$ står vinkelrett på denne retningen og bidrar ikke til kraftsummen inn mot sentrum (den endrer bare hvor fort vogna går):
+\[
+    N_\text{B} = m\frac{v_\text{B}^2}{r},
+    \qquad
+    N_\text{D} = m\frac{v_\text{D}^2}{r}
+\]
+
+\noindent
+\textbf{C (toppen):} Både $\vec{N}$ og $\vec{G}$ peker ned, altså inn mot sentrum:
+\[
+    N_\text{C} + m\mathrm{g} = m\frac{v_\text{C}^2}{r}
+    \quad\implies\quad
+    N_\text{C} = m\frac{v_\text{C}^2}{r} - m\mathrm{g}
+\]
+
+\noindent
+\textbf{b)} Skinnene kan bare \emph{skyve} på vogna, ikke trekke i den. Normalkraften kan derfor ikke bli negativ. Hvis vi får $N_\text{C} < 0$ i uttrykket over, betyr det at vogna ikke klarer å holde kontakten med skinnene --- den faller av. Kravet er altså
+\[
+    N_\text{C} \geq 0
+    \quad\implies\quad
+    m\frac{v_\text{C}^2}{r} - m\mathrm{g} \geq 0
+    \quad\implies\quad
+    \doubleunderline{v_\text{C} \geq \sqrt{\mathrm{g}\,r}}
+\]
+Massen faller ut: minstefarten på toppen er den samme for en tom og en full vogn.
 }
 
 % ---- Eksempel: Dosering av veibane ----
