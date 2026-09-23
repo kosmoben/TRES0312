@@ -1,0 +1,330 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Bevaring av mekanisk energi}
+\subtitle{TRES0312 --- kapittel 5.4}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{5}   % Kapittel 5: "Arbeid og energi"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 5.4}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: eksempler på bevaring av mekanisk energi. Etter pausen: loop-the-loop.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er den mekaniske energien til et legeme, $E_{\text{mekanisk}} = \ldots$?
+      \item Under hvilken betingelse er den mekaniske energien bevart?
+      \item Hva sier bevaringsloven, $E_{\text{før}} = \ldots$?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Repetisjon av definisjonen
+%--------------------------------------------------------------------------
+\begin{frame}{Bevaring av mekanisk energi}
+
+  \defnat{5.6}{Bevaring av mekanisk energi}{
+  Når et legeme kun påvirkes av tyngdekraft og/eller fjærkraft:
+  \[
+    E_{\text{før}} = E_{\text{etter}}, \qquad E = m\mathrm{g}h + \frac{1}{2}mv^2 + \frac{1}{2}kx^2
+  \]
+  }
+
+  \pause
+  \oppsum{Algoritme for løsning}{%
+  \begin{enumerate}[1.]
+    \item[] Velg nullnivå for høyden $h$.
+    \item[] Skriv opp $E_{\text{før}} = E_{\text{etter}}$ med alle energiledd på hver side.
+    \item[] Stryk fellesledd (ofte $m$), og løs for den ukjente.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Eksempel: Fallende stein
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: fallende stein}
+
+  \exmat{5.4}{Fallende stein}{%
+  En person holder en stein $1.60\,\mathrm{m}$ over bakken og slipper den. Luftmotstand neglisjeres.
+
+  Finn steinens fart rett før den treffer bakken.
+  }
+
+  \pause
+  Med $h=0$ ved bakken, $v_1=0$ ved start:
+  \[
+    m\mathrm{g}h_1 = \frac{1}{2}mv_2^2 \quad\Longrightarrow\quad v_2=\sqrt{2\mathrm{g}h_1}
+  \]
+  \[
+    v_2 = \sqrt{2\cdot 9.8\cdot 1.60} = \doubleunderline{5.6\,\mathrm{m/s}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Eksempel: Fjærkanon
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: fjærkanon}
+
+  \exmat{5.5}{Fjærkanon i tyngdefeltet}{%
+  En fjærkanon skyter en kanonkule ($m=0.2\,\mathrm{kg}$) rett opp etter at fjæren er komprimert $x=0.15\,\mathrm{m}$. Kula når $h=5.0\,\mathrm{m}$.
+
+  Finn fjærkonstanten $k$.
+  }
+
+  \pause
+  All elastisk potensiell energi blir gravitasjonspotensiell energi på toppen:
+  \[
+    \frac{1}{2}kx^2 = m\mathrm{g}h \quad\Longrightarrow\quad k = \frac{2m\mathrm{g}h}{x^2} = \doubleunderline{871\,\mathrm{N/m}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Eksempel: kollisjon mellom legeme og fjær
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: legeme kolliderer med fjær}
+
+  \exmat{5.6}{Kollisjon mellom legeme og fjær}{%
+  Et legeme ($m=100\,\mathrm{g}$) glir friksjonsfritt fra ro, $60\,\mathrm{cm}$ over en fjær med $k=300\,\mathrm{N/m}$.
+  \begin{enumerate}[a)]
+    \item Finn farten idet legemet treffer fjæren.
+    \item Finn maksimal kompresjon av fjæren.
+  \end{enumerate}
+  }
+
+  \pause
+  a) $m\mathrm{g}h=\tfrac{1}{2}mv^2 \Rightarrow v=\sqrt{2\mathrm{g}h}=\doubleunderline{3.43\,\mathrm{m/s}}$
+
+  \pause
+  b) $\tfrac{1}{2}mv^2=\tfrac{1}{2}kx^2 \Rightarrow x=\sqrt{\dfrac{mv^2}{k}}=\doubleunderline{0.063\,\mathrm{m}}$
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Pendel}{%
+  En pendel med lengde $L=1.2\,\mathrm{m}$ slippes fra ro med snora horisontal.
+
+  Bruk bevaring av mekanisk energi til å finne farten til pendellodet når snora er loddrett (i det laveste punktet).
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Oppsummering
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Bevaring av mekanisk energi}{%
+  \begin{enumerate}[1.]
+    \item[] $E_{\text{før}}=E_{\text{etter}}$, der $E=m\mathrm{g}h+\tfrac{1}{2}mv^2+\tfrac{1}{2}kx^2$.
+    \item[] Gjelder kun når friksjon og luftmotstand er neglisjerbare.
+    \item[] Velg nullnivå for $h$ med omhu --- det forenkler ofte regningen.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: loop-the-loop}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Til ettertanke: loop-the-loop
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  En ball ruller ned en bane og inn i en sirkulær loop.\\[4pt]
+  Er normalkraften på ballen like stor i bunnen av loopen som på toppen? Hva avgjør om ballen holder kontakt med skinna hele veien rundt?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Eksempel: Loop-the-loop, oppsett
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: loop-the-loop}
+
+  \exmat{5.7}{Loop-the-loop}{%
+  En ball med masse $m=1.0\,\mathrm{kg}$ slippes fra ro fra høyde $H=10.0\,\mathrm{m}$ over bunnen av en friksjonsfri sirkulær loop med radius $R=2.0\,\mathrm{m}$.
+
+  Finn normalkraften i bunnen ($h=0$), på siden ($h=R$) og på toppen ($h=2R$).
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Figur: loop-the-loop
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \begin{figure}[ht!]
+  \centering
+  \resizebox{0.85\textwidth}{!}{%
+  \begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
+    \pgfmathsetmacro{\R}{1.6}
+    \draw[gray!50, thick] (-3.6, 0) -- (2.9, 0);
+    \draw[thick] (-2.8, 4*\R) -- (0.02, 0.02);
+    \draw[thick] (0, \R) circle (\R);
+    \filldraw[headCol!50!white] (-2.8, 4*\R) circle (0.13);
+    \node[right=2pt, font=\footnotesize] at (-2.65, 4*\R) {start, $v_0 = 0$};
+    \draw[<->, thin, gray!70] (-3.4, 0) -- (-3.4, 4*\R)
+        node[midway, left, font=\footnotesize] {$H$};
+    \draw[dashed, thin, gray!40] (-2.8, 4*\R) -- (-3.4, 4*\R);
+    \draw[dashed, thin, gray!40] (0, 0) -- (-3.4, 0);
+    \draw[<->, thin, gray!70] (2.4, 0) -- (2.4, 2*\R)
+        node[midway, right, font=\footnotesize] {$2R$};
+    \draw[dashed, thin, gray!40] (0, 2*\R) -- (2.4, 2*\R);
+    \fill[gray!50] (0, \R) circle (0.055);
+    \draw[<->, thin, gray!70] (0.06, \R) -- (\R, \R)
+        node[midway, above, font=\footnotesize] {$R$};
+    \filldraw[headCol] (0, 0) circle (0.13);
+    \node[below right=1pt, font=\small, headCol!60!black] at (0.1, -0.08) {\textbf{1}};
+    \draw[->, very thick, defscol]
+        (0.18, 0) -- (0.18, 1.1) node[right, font=\footnotesize] {$N_1$};
+    \draw[->, very thick, red!70!black]
+        (-0.18, 0) -- (-0.18, -0.85) node[left, font=\footnotesize] {$m\mathrm{g}$};
+    \filldraw[headCol] (\R, \R) circle (0.13);
+    \node[right=3pt, font=\small, headCol!60!black] at (\R+0.13, \R+0.25) {\textbf{2}};
+    \draw[->, very thick, defscol]
+        (\R, \R+0.30) -- (\R-1.1, \R+0.30) node[above, font=\footnotesize] {$N_2$};
+    \draw[->, very thick, red!70!black]
+        (\R, \R) -- (\R, \R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+    \filldraw[headCol] (0, 2*\R) circle (0.13);
+    \node[above=3pt, font=\small, headCol!60!black] at (0, 2*\R+0.13) {\textbf{3}};
+    \draw[->, very thick, defscol]
+        (-0.22, 2*\R) -- (-0.22, 2*\R-0.85) node[left, font=\footnotesize] {$N_3$};
+    \draw[->, very thick, red!70!black]
+        (0.22, 2*\R) -- (0.22, 2*\R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+  \end{tikzpicture}%
+  }
+  \caption{\footnotesize Fart i høyde $h$: $v^2=2\mathrm{g}(H-h)$ (energibevaring fra start).}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Løsning: fart i hver posisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Løsning: fart og normalkraft}
+
+  Energibevaring fra start ($v_0=0$, høyde $H$) til høyde $h$:
+  \[
+    m\mathrm{g}H = \tfrac{1}{2}mv^2 + m\mathrm{g}h \quad\Longrightarrow\quad v^2 = 2\mathrm{g}(H-h)
+  \]
+
+  \pause
+  Newtons 2. lov, sentripetalt (mot sentrum):
+  \[
+    \sum F_{\text{sentripetal}} = \frac{mv^2}{R}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Løsning: de tre posisjonene
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \textbf{1 --- bunn} ($N_1$ opp, $m\mathrm{g}$ ned, begge mot/fra sentrum):
+  \[
+    N_1 - m\mathrm{g} = \frac{mv_1^2}{R} \quad\Longrightarrow\quad N_1 = m\mathrm{g}\!\left(1+\frac{2H}{R}\right) = \doubleunderline{108\,\mathrm{N}}
+  \]
+
+  \pause
+  \textbf{2 --- siden} ($m\mathrm{g}$ bidrar ikke til sentripetalkraften):
+  \[
+    N_2 = \frac{mv_2^2}{R} = \frac{2m\mathrm{g}(H-R)}{R} = \doubleunderline{78.5\,\mathrm{N}}
+  \]
+
+  \pause
+  \textbf{3 --- topp} ($N_3$ og $m\mathrm{g}$ peker begge mot sentrum, nedover):
+  \[
+    N_3 + m\mathrm{g} = \frac{mv_3^2}{R} \quad\Longrightarrow\quad N_3 = \doubleunderline{49.1\,\mathrm{N}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Merk: minste starthøyde
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  Normalkraften er størst i bunnen og minst på toppen.
+
+  \pause
+  \merk{Kritisk starthøyde}{
+  For at ballen skal holde kontakt med skinna på toppen, må $N_3\geq 0$:
+  \[
+    \frac{2(H-2R)}{R}\geq 1 \quad\Longrightarrow\quad H \geq \frac{5R}{2}
+  \]
+  Med $R=2.0\,\mathrm{m}$ er minste tillatte starthøyde $H_{\min}=5.0\,\mathrm{m}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: effekt og støt}
+  \begin{itemize}
+    \item Effekt --- arbeid per tidsenhet
+    \item Elastisk støt: kollisjon mellom vogner
+  \end{itemize}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

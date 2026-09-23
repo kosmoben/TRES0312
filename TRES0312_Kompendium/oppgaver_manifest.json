@@ -1,0 +1,542 @@
+[
+  {
+    "chapter": 1,
+    "number": 1,
+    "kind": "oppgaver",
+    "title": "SI-enheter",
+    "label": "si-enheter",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg01.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 2,
+    "kind": "oppgaver",
+    "title": "Enhetsregning",
+    "label": "enhetsregning",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg02.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 3,
+    "kind": "oppgaver",
+    "title": "Enhetsregning",
+    "label": "enhetsregning",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg03.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 4,
+    "kind": "oppgaver",
+    "title": "Signifikante siffer",
+    "label": "signsiff",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg04.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 5,
+    "kind": "oppgaver",
+    "title": "Standardform",
+    "label": "standardform",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg05.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 6,
+    "kind": "oppgaver",
+    "title": "Dekadiske prefikser",
+    "label": "dekpref",
+    "was_labeled": true,
+    "bodyfile": "Oppgaver/k1_oppg06.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Fysisk størrelse",
+    "label": "k1oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k1_oppg07.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Dekadiske prefikser -- matching",
+    "label": "k1oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k1_oppg08.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Standardform",
+    "label": "k1oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k1_oppg09.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 1,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Signifikante siffer",
+    "label": "k1oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k1_oppg10.tex",
+    "sourcefile": "0.0.1_HvaErFysikk.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Algebra og Python",
+    "label": "k2oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg01.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Per og Kari",
+    "label": "k2oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg02.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Funksjoner og plotting",
+    "label": "k2oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg03.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Trigonometri",
+    "label": "k2oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg04.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Skalarer og vektorer",
+    "label": "k2oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg05.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Koordinatsystem",
+    "label": "k2oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg06.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Vektorer som en lineærkombinasjon av enhetsvektorer",
+    "label": "k2oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg07.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Dekomponering av vektorer",
+    "label": "k2oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg08.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Størrelse og retning",
+    "label": "k2oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg09.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Vektoraddisjon",
+    "label": "k2oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg10.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Skalarprodukt",
+    "label": "k2oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg11.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Kryssprodukt",
+    "label": "k2oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg12.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Trigonometri og vektorkomponenter",
+    "label": "k2oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg13.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Vektorer og skalarprodukt",
+    "label": "k2oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg14.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Parallell og vinkelrett",
+    "label": "k2oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg15.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 2,
+    "number": 16,
+    "kind": "oppgave",
+    "title": "Areal med kryssprodukt",
+    "label": "k2oppg16",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k2_oppg16.tex",
+    "sourcefile": "0.0.2_MatematikkViTrenger.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Gjennomsnittsfart i rettlinjet bevegelse",
+    "label": "k3oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg01.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Momentanhastighet",
+    "label": "k3oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg02.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Konstant hastighet",
+    "label": "k3oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg03.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "En oppgave til",
+    "label": "k3oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg04.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Akselerasjon",
+    "label": "k3oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg05.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Sten i fritt fall",
+    "label": "k3oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg06.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Fritt fall",
+    "label": "k3oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg07.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Ballkast",
+    "label": "k3oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg08.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Prosjektilbevegelse",
+    "label": "k3oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg09.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Sykkel i sving",
+    "label": "k3oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg10.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Sirkelbevegelse og omløpstid",
+    "label": "k3oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg11.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Gjennomsnittsfart og gjennomsnittsakselerasjon",
+    "label": "k3oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg12.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Konstant akselerasjon -- oppbremsing",
+    "label": "k3oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg13.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Stein kastet fra et stup",
+    "label": "k3oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg14.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 3,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Sirkelbevegelse -- pariserhjul",
+    "label": "k3oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k3_oppg15.tex",
+    "sourcefile": "0.0.3_Kinematikk.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Geværkule og bil",
+    "label": "k4oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg01.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Finn fjærkonstanten",
+    "label": "k4oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg02.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Tyngdekraft på jord og måne",
+    "label": "k4oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg03.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Fritt fall",
+    "label": "k4oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg04.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Normalkraft i heis — ulike situasjoner",
+    "label": "k4oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg05.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Flytte et skap",
+    "label": "k4oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg06.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Hockeypuck på is",
+    "label": "k4oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg07.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Bremselengde for bildekk",
+    "label": "k4oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg08.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Kjelke med skrå trekkraft",
+    "label": "k4oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg09.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Buss på glatt vei",
+    "label": "k4oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg10.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Karusell",
+    "label": "k4oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg11.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "To skøyteløpere",
+    "label": "k4oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg12.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Bilkollisjon",
+    "label": "k4oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg13.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  }
+]

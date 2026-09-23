@@ -73,11 +73,8 @@ Kinetisk energi: 25.0 J
 Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \pyfolderlink. Se Appendiks~\ref{app:python} for hvordan du åpner og kjører dem.
 \end{mymerk*}
 
-\oppgave{Algebra og Python}{%
-\begin{enumerate}[a)]
-    \item Beregn $\dfrac{15 + 3^2}{6 - 2}$ for hånd, og sjekk svaret med Python, eller kalkulator.
-    \item Bruk Python (eller en kalkulator) til å beregne potensiell energi $E_p = m \cdot \mathrm{g} \cdot h$ for $m = \SI{5.0}{\kilo\gram}$, $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$ og $h = \SI{10.0}{\metre}$.
-\end{enumerate}
+\oppgaver{Algebra og Python}{k2oppg1}{%
+\input{Oppgaver/k2_oppg01.tex}%
 }
 \begin{mymerk*}{}
 Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_K = \frac{1}{2}mv^2$ og $E_p = m\mathrm{g}h$, så er det ikke noe problem. Vi kommer tilbake til det i senere kapitler. Det viktigste akkurat nå er at du har kontroll på algebaraen.
@@ -136,12 +133,8 @@ v = \frac{\SI{3000}{\newton}}{\SI{1200}{\kilo\gram}} \cdot \SI{5}{\second} = \do
 Legg merke til fremgangsmåten: vi satte opp \emph{to} likninger — én fra kraft og masse, én fra kinematikken — og kombinerte dem til ett generelt \emph{uttrykk} for $v$, \emph{før} vi satte inn tallverdier. Det lønner seg å venne seg til denne rekkefølgen: finn uttrykket for det du er ute etter først, og regn ut svaret med tall helt til slutt.
 \end{mymerk*}
 
-\oppgave{Per og Kari}{%
-Per er dobbelt så gammel som Kari, som er 6 år yngre enn Per.
-\begin{enumerate}[a)]
-    \item Sett opp et likningssystem med to likninger og to ukjente som beskriver situasjonen.
-    \item Løs likningssystemet med innsettingsmetoden. Hvor gamle er Per og Kari?
-\end{enumerate}
+\oppgaver{Per og Kari}{k2oppg2}{%
+\input{Oppgaver/k2_oppg02.tex}%
 }
 
 \section{Funksjoner og plotting}
@@ -207,11 +200,8 @@ plt.show()
 \caption{Posisjon og fart som funksjon av tid for konstant akselerasjon $a=\SI{2.0}{\metre\per\second\squared}$, $v_0 = 0$.}
 \end{figure}
 
-\oppgave{Funksjoner og plotting}{%
-\begin{enumerate}[a)]
-    \item Bruk Python (eller et annet verktøy du måtte foretrekke) til å plotte funksjonen $f(x) = 2x^2 - 3x + 1$ for $x \in [-2,\, 4]$.
-    \item Modifiser Python-koden gitt i teksten over slik at startfarten er $v_0 = \SI{3.0}{\metre\per\second}$. Hva forandrer seg i grafene? Grafen du plotter i oppgave a) kan være til hjelp for å se svaret.
-\end{enumerate}
+\oppgaver{Funksjoner og plotting}{k2oppg3}{%
+\input{Oppgaver/k2_oppg03.tex}%
 }
 
 \section{Trigonometri}
@@ -357,13 +347,8 @@ I hvilken kvadrant er både $\sin\theta$ og $\cos\theta$ positive? I hvilken kva
 Begge er positive i \doubleunderline{første kvadrant} ($0^\circ < \theta < 90^\circ$), og begge er negative i \doubleunderline{tredje kvadrant} ($180^\circ < \theta < 270^\circ$).
 }
 
-\oppgave{Trigonometri}{%
-\begin{enumerate}[a)]
-    \item Les av $\sin 30^\circ$, $\cos 45^\circ$ og $\tan 60^\circ$ fra Tabell~\ref{tab:trig}.
-    \item En trekant har hypotenus $c = \SI{10}{\metre}$ og vinkel $\theta = 53^\circ$. Finn lengden av den motstående kateten $b$ og den hosliggende kateten $a$.
-    \item Vis at $\sin^2 30^\circ + \cos^2 30^\circ = 1$.
-    \item Hva blir $(\sin\theta+1)(\sin\theta-1)$? Hint: Bruk en av kvadratsetningene.
-\end{enumerate}
+\oppgaver{Trigonometri}{k2oppg4}{%
+\input{Oppgaver/k2_oppg04.tex}%
 }
 
 \section{Vektorer}
@@ -416,16 +401,8 @@ Det vi tidligere kalte tall, refererer vi nå gjerne til som \textit{skalarer}, 
 \end{minipage}
 Multiplikasjon skal vi komme tilbake til litt senere.
 
-\oppgave{Skalarer og vektorer}{%
-Er følgende fysiske størrelser skalarer eller vektorer? Begrunn svaret.
-\begin{enumerate}[a)]
-    \item Temperatur
-    \item Posisjon
-    \item Fart
-    \item Hastighet
-    \item Akselerasjon
-    \item Masse
-\end{enumerate}
+\oppgaver{Skalarer og vektorer}{k2oppg5}{%
+\input{Oppgaver/k2_oppg05.tex}%
 }
 La oss nå gå over til å introdusere koordinatsystem, som er et viktig verktøy for å kunne regne med vektorer på en effektiv måte i fysikken.
 \subsection{Koordinatsystem}
@@ -518,12 +495,8 @@ I et todimensjonalt koordinatsystem, som $xy$-planet, beskrives en posisjon ved 
 
 Punktet $(0,0)$ kalles origo, og fungerer som referansepunkt for alle andre posisjoner i koordinatsystemet.
 
-\oppgave{Koordinatsystem}{%
-\begin{enumerate}[a)]
-    \item Tegn punktene $A = (2,\,3)$, $B = (-1,\,4)$ og $C = (0,\,-2)$ i et koordinatsystem.
-    \item Hvilket kvadrant befinner hvert punkt seg i?
-    \item Finn midtpunktet $M$ mellom $A$ og $B$. \textit{Hint: } $M = \left(\frac{x_A + x_B}{2},\, \frac{y_A + y_B}{2}\right)$.
-\end{enumerate}
+\oppgaver{Koordinatsystem}{k2oppg6}{%
+\input{Oppgaver/k2_oppg06.tex}%
 }
 
 \subsection{Enhetsvektorer}
@@ -550,11 +523,8 @@ Enhver vektor i $xy$-planet kan skrives som en lineær-kombinasjon av enhetsvekt
 
 Begge disse skrivemåtene tydeliggjør hvordan vektoren er bygget opp av bidrag i hver retning. Tallene $v_x$ og $v_y$ kalles vektorens komponenter i henholdsvis $x$- og $y$-retning. Prosessen med å finne komponentene til en vektor kalles \emph{dekomponering}, og er tema for neste avsnitt.
 
-\oppgave{Vektorer som en lineærkombinasjon av enhetsvektorer}{%
-\begin{enumerate}[a)]
-    \item Skriv vektoren $\vec{A} = [4,\,-3]$ som en lineær kombinasjon av enhetsvektorene $\hat{\mathbf{x}}$ og $\hat{\mathbf{y}}$.
-    \item Regn ut summen $\vec{u} + \vec{v}$ der $\vec{u} = 3\hat{\mathbf{x}} - 2\hat{\mathbf{y}}$ og $\vec{v} = -\hat{\mathbf{x}} + 5\hat{\mathbf{y}}$. Skriv svaret på komponentform.
-\end{enumerate}
+\oppgaver{Vektorer som en lineærkombinasjon av enhetsvektorer}{k2oppg7}{%
+\input{Oppgaver/k2_oppg07.tex}%
 }
 
 \subsection{Dekomponering av vektorer i koordinatsystem}
@@ -662,13 +632,8 @@ Vi har en vektor $\vec{A} = [3,\;4]$ med komponenter $A_x = 3$ og $A_y = 4$.\\
 \end{minipage}
 }
 
-\oppgave{Dekomponering av vektorer}{%
-En ball kastes med startfart $v_0 = \SI{20}{\metre\per\second}$ i en vinkel $\theta = 30°$ over horisonten.
-\begin{enumerate}[a)]
-    \item Finn den horisontale startfarten $v_{0x}$.
-    \item Finn den vertikale startfarten $v_{0y}$.
-    \item Verifiser at $|\vec{v}_0| = \sqrt{v_{0x}^2 + v_{0y}^2} = \SI{20}{\metre\per\second}$.
-\end{enumerate}
+\oppgaver{Dekomponering av vektorer}{k2oppg8}{%
+\input{Oppgaver/k2_oppg08.tex}%
 }
 
 
@@ -726,14 +691,8 @@ Vinkel:  53.1 grader
 \texttt{np.arctan2(vy, vx)} er bedre enn \texttt{np.arctan(vy/vx)} fordi den håndterer alle fire kvadranter riktig — også når $v_x = 0$ eller $v_x < 0$.
 \end{mymerk*}
 
-\oppgave{Størrelse og retning}{%
-\begin{enumerate}[a)]
-    \item Finn lengden til $\vec{v} = [5,\,12]$.
-    \item Finn lengden til $\vec{u} = [-3,\,4]$.
-    \item En fugl flyr $\SI{6}{\kilo\metre}$ østover og $\SI{8}{\kilo\metre}$ nordover. Hva er luftlinjeavstanden, og hvilken vinkel fra østaksen flyr den?
-    \item Finn vinkelen $\vec{u} = [1,\,\sqrt{3}]$ danner med positiv $x$-akse.
-    \item En kraft $\vec{F}$ har størrelse $F = \SI{10}{\newton}$ og danner vinkel $\theta = 40°$ med horisonten. Finn de horisontale og vertikale komponentene.
-\end{enumerate}
+\oppgaver{Størrelse og retning}{k2oppg9}{%
+\input{Oppgaver/k2_oppg09.tex}%
 }
 
 \section{Operasjoner med vektorer}
@@ -818,13 +777,8 @@ a + b   = [2. 3.]
 \end{pythonoutput}
 \pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_vektoraddisjon.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_vektoraddisjon.ipynb}
 
-\oppgave{Vektoraddisjon}{%
-Gitt vektorene $\vec{a} = [3,\,-1]$ og $\vec{b} = [-1,\,4]$.
-\begin{enumerate}[a)]
-    \item Regn ut $\vec{c}=\vec{a} + \vec{b}$ og $\vec{d}=\vec{a} - \vec{b}$.
-    \item Finn lengden av $\vec{d}$ og finn en enhetsvektor $\hat{d}$.
-    \item Hva slags vektor blir $\vec{d}=3\vec{a}$? Tegn opp begge vektorene. 
-\end{enumerate}
+\oppgaver{Vektoraddisjon}{k2oppg10}{%
+\input{Oppgaver/k2_oppg10.tex}%
 }
 
 \subsection*{Multiplikasjon av vektorer: skalarproduktet}
@@ -941,12 +895,8 @@ Vinkel = 116.6 grader
 \end{pythonoutput}
 \pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_skalarprodukt.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_skalarprodukt.ipynb}
 
-\oppgave{Skalarprodukt}{%
-Gitt $\vec{u} = [4,\,3]$ og $\vec{v} = [2,\,-1]$.
-\begin{enumerate}[a)]
-    \item Beregn skalarproduktet $\vec{u} \cdot \vec{v}$.
-    \item Finn vinkelen mellom $\vec{u}$ og $\vec{v}$.
-\end{enumerate}
+\oppgaver{Skalarprodukt}{k2oppg11}{%
+\input{Oppgaver/k2_oppg11.tex}%
 }
 
 
@@ -1014,12 +964,8 @@ Finn kryssproduktet av $\vec{u} = [3,\,4]$ og $\vec{v} = [1,\,-2]$.
 Negativt fortegn betyr at den resulterende vektoren peker i negativ z-retning (inn i siden av arket).
 }
 
-\oppgave{Kryssprodukt}{%
-Gitt $\vec{u} = [2,\,1]$ og $\vec{v} = [1,\,3]$.
-\begin{enumerate}[a)]
-    \item Finn $(\vec{u} \times \vec{v})_z$.
-    \item Finn $(\vec{v} \times \vec{u})_z$.
-\end{enumerate}
+\oppgaver{Kryssprodukt}{k2oppg12}{%
+\input{Oppgaver/k2_oppg12.tex}%
 }
 
 \section{Matematisk modellering}
@@ -1056,37 +1002,18 @@ Da har man sannsynligvis gjort en feil i modelleringen, eller en feil i utregnin
 
 Her er flere oppgaver fra temaene vi har behandlet i dette kapitlet.
 
-\oppgave{Trigonometri og vektorkomponenter}{%
-\begin{enumerate}[a)]
-    \item En vektor $\vec{v}$ har størrelse $|\vec{v}| = 20$ og danner vinkel $\theta = 30^\circ$ med positiv $x$-akse. Finn komponentene $v_x$ og $v_y$.
-    \item En fugl flyr $\SI{10}{\kilo\metre}$ i retning N$60^\circ$Ø (det vil si $60^\circ$ øst for nord). Finn de nord- og østkomponentene til forskyvningsvektoren. \textit{Hint:} Vinkelen er målt fra nordaksen, ikke fra østaksen.
-    \item Gitt $\vec{v} = [5,\,-12]$. Finn lengden $|\vec{v}|$ og vinkelen $\theta$ vektoren danner med positiv $x$-akse.
-\end{enumerate}
+\oppgaver{Trigonometri og vektorkomponenter}{k2oppg13}{%
+\input{Oppgaver/k2_oppg13.tex}%
 }
 
-\oppgave{Vektorer og skalarprodukt}{%
-Gitt vektorene $\vec{p} = [2,\,5]$ og $\vec{q} = [-3,\,1]$.
-\begin{enumerate}[a)]
-    \item Beregn $\vec{p} + \vec{q}$, $\vec{p} - \vec{q}$ og $2\vec{p} - 3\vec{q}$.
-    \item Finn lengden til vektoren $\vec{p} - \vec{q}$.
-    \item Finn en enhetsvektor $\hat{p}$ i retningen til $\vec{p}$.
-    \item Beregn skalarproduktet $\vec{p}\cdot\vec{q}$ og bestem vinkelen mellom $\vec{p}$ og $\vec{q}$.
-\end{enumerate}
+\oppgaver{Vektorer og skalarprodukt}{k2oppg14}{%
+\input{Oppgaver/k2_oppg14.tex}%
 }
 
-\oppgave{Parallell og vinkelrett}{%
-To vektorer er $\vec{a} = [3,\,k]$ og $\vec{b} = [2,\,-1]$.
-\begin{enumerate}[a)]
-    \item For hvilken verdi av $k$ er $\vec{a}$ og $\vec{b}$ vinkelrette (ortogonale)? \textit{Hint:} Bruk skalarproduktet.
-    \item For hvilken verdi av $k$ er $\vec{a}$ og $\vec{b}$ parallelle? \textit{Hint:} Bruk kryssproduktet.
-\end{enumerate}
+\oppgaver{Parallell og vinkelrett}{k2oppg15}{%
+\input{Oppgaver/k2_oppg15.tex}%
 }
 
-\oppgave{Areal med kryssprodukt}{%
-To vektorer er $\vec{u} = [4,\,1]$ og $\vec{v} = [2,\,3]$.
-\begin{enumerate}[a)]
-    \item Beregn $(\vec{u}\times\vec{v})_z$.
-    \item Hva er arealet av parallellogrammet som dannes av $\vec{u}$ og $\vec{v}$?
-    \item Hva er arealet av trekanten med $\vec{u}$ og $\vec{v}$ som to sider?
-\end{enumerate}
+\oppgaver{Areal med kryssprodukt}{k2oppg16}{%
+\input{Oppgaver/k2_oppg16.tex}%
 }

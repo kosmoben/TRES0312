@@ -4,7 +4,7 @@
 \intro{Arbeid og energi er to grunnleggende begreper i fysikk som hjelper oss å forstå hvordan krefter påvirker objekter, og hvordan energi overføres eller omdannes i ulike systemer. Når en kraft virker på et objekt og forårsaker en forflytning, sier vi at det er utført et arbeid. Dette arbeidet resulterer ofte i en endring av objektets energi, enten som bevegelsesenergi (kinetisk energi) eller som lagret energi (potensiell energi). Energi kan ikke forsvinne; den kan bare overføres eller omdannes fra én form til en annen. Dette er kjent som energiens bevaringslov, som er en av de mest fundamentale prinsippene i fysikk.}
 
 \spm{}{%
-\item Hva er arbeid i fysisk forstand?
+\item Hva er arbeid i fysikken?
 \item Hva er energi, og i hvilke former finnes den?
 \item Hva sier energibevaringsloven?}
 \newpage
@@ -14,7 +14,7 @@
  \[\Delta\vec{p}=\vec{F}\Delta t.\]
 Arealet under en $F(t)$-graf tilsvarer altså (endring i) bevegelsesmengde. Men... da er det saktens fristende å prøve noe annet også: Hva blir arealet under en $F(s)$-graf? 
 \[??=\vec{F}\cdot \Delta\vec{s}.\]
-La oss si at Eva er på Hyrox-trening og dytter en kasse bortover et humpete gulv, slik at kraften hun virker på kassen med varierer med posisjonen; $F(s)$. Hvordan skal vi da tolke arealet under F$F(s)$-grafen? Jo, dette arealet er et mål på det vi i fysikken kaller \textit{arbeid};
+La oss si at Eva er på Hyrox-trening og dytter en kasse bortover et humpete gulv, slik at kraften hun virker på kassen med varierer med posisjonen; $F(s)$. Hvordan skal vi da tolke arealet under $F(s)$-grafen? Jo, dette arealet er et mål på det vi i fysikken kaller \textit{arbeid};
 
 I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. Men i fysikk tilsvarer det impuls, eller endring i bevegelsesmengde. Begrepet arbeid er i fysikken reservert for kraft anvendt over strekning.
 \defn{Arbeid}{
@@ -24,7 +24,7 @@ I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. Men i 
     \end{align}
     Her er \( \theta \) vinkelen mellom kraftretningen og forflytningsretningen. Arbeid er en skalar og måles i joule \( (\si{\joule}) \), der \( \SI{1}{\joule} = \SI{1}{\newton\metre} \).
 }
-Legg merke til at vi tar skalarproduktet mellom kraft og forflytning. Det sikrer at kun den delen av $F$ som peker i samme retning som $s$ blir med i definisjonen av arbeid. Det er altså ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid i fysisk forstand, selv om muskler spenner og fyren blir sliten. Dette ser vi av vinkelen \( \cos\theta \) som kommer inn i definisjonen via skalarproduktet. Når \( \theta = 0^\circ \) virker kraften i samme retning som bevegelsen, og arbeidet er maksimalt. Når \( \theta = 90^\circ \) virker kraften vinkelrett på bevegelsen, og \( W = 0 \). Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
+Legg merke til at vi tar skalarproduktet mellom kraft og forflytning. Det sikrer at kun den delen av $F$ som peker i samme retning som $s$ blir med i definisjonen av arbeid. Det er altså ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid, slik det er definert i fysikken, selv om muskler spennes og fyren blir sliten. Dette ser vi av vinkelen \( \cos\theta \) som kommer inn i definisjonen via skalarproduktet. Når \( \theta = 0^\circ \) virker kraften i samme retning som bevegelsen, og arbeidet er maksimalt. Når \( \theta = 90^\circ \) virker kraften vinkelrett på bevegelsen, og \( W = 0 \). Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
 
 \exm{Dytte en boks}{
     En boks dyttes langs et gulv med en kraft \( F = \SI{10}{\newton} \) over en avstand \( s = \SI{5}{\metre} \). Kraften virker i samme retning som bevegelsen (\( \theta = 0^\circ \)):
@@ -36,7 +36,7 @@ Legg merke til at vi tar skalarproduktet mellom kraft og forflytning. Det sikrer
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Kapittel3:Arbeid&Energi/Arbeidbokseksempel.png}
-    \caption{Konstant kraft \( F \) dytter en boks en avstand \( s \). Arbeidet er \( W = F \cdot s \).}
+    \caption{En mann dytter en eske med konstant kraft \( F \) i bevegelsesretningen, en avstand \( s \). Arbeidet er \( W = F \cdot s \).}
     \label{fig:Dytte_en_boks}
     \end{figure}
 
@@ -99,7 +99,7 @@ Figurene nedenfor illustrerer de to tilfellene grafisk: i begge tilfeller er arb
     \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$x$};
     \node[below left=1pt, black!55, font=\scriptsize] at (0,0) {$0$};
     % F = kx-etikett langs linjen
-    \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.08) {$F = kx$};
+    \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.32) {$F = kx$};
     % Areal-etikett
     \node[headCol!80!black, font=\small\bfseries] at (2.65, 0.62) {$W = \tfrac{1}{2}kx^2$};
     \node[headCol!65!black, font=\scriptsize] at (2.65, 0.18) {$=$ areal av trekant};
@@ -112,23 +112,23 @@ Figurene nedenfor illustrerer de to tilfellene grafisk: i begge tilfeller er arb
 
 I fysikk beskriver energi et legemes evne til å påvirke omgivelsene, enten ved å utføre arbeid eller overføre varme. Når en kraft virker på et objekt og forårsaker en forflytning, blir energi overført til objektet gjennom arbeidet som utføres. Derfor kan arbeid sees som en måte å overføre energi på mellom objekter eller systemer. 
 
-Det finnes mange ulike former for energi, som kinetisk energi (bevegelsesenergi) og potensiell energi (lagret energi). Disse formene gir objekter mulighet til å påvirke andre objekter eller endre deres tilstand, for eksempel ved å flytte dem, deformere dem, eller varme dem opp. Arbeid og energi måles begge i joule (J), som er standardenheten for energi i fysikk.
+I mekanikken opererer vi med det vi kaller mekanisk energi, som vi igjen deler inn i to typer: kinetisk energi (bevegelsesenergi) og potensiell energi (stillingsenergi). Besittelse av mekanisk energi gir et objekt evne til å påvirke sine omgivelser, som vi skal se. I likhet med \textit{arbeid} så måles også energi i joule (J), som er standardenheten for energi i fysikk.
 
 Ifølge energibevaringsloven kan energi verken skapes eller ødelegges, kun omformes fra en form til en annen. 
 
 \subsection{Kinetisk energi}
 
-Tenk deg at en bil kjører nedover en vei. Bilen har kinetisk energi på grunn av sin bevegelse. Kinetisk energi er den energien et objekt har fordi det er i bevegelse. Jo raskere objektet beveger seg, desto mer kinetisk energi har det. For en bil vil både massen \( m \) og hastigheten \( v \) påvirke hvor mye kinetisk energi den har.
+Tenk deg at en bil kjører nedover en vei. Bilen har kinetisk energi på grunn av sin bevegelse. Kinetisk energi er den energien et objekt har fordi det er i bevegelse. Jo raskere objektet beveger seg, desto mer kinetisk energi har det. For en bil vil både massen \( m \) og farten \( v \) påvirke hvor mye kinetisk energi den har.
 
 \defn{Kinetisk Energi}{
     Matematisk kan den kinetiske energien \( E_k \) uttrykkes som:
     \begin{align}
         E_k = \frac{1}{2} m v^2
     \end{align}
-    hvor \( m \) er massen til objektet og \( v \) er hastigheten.
+    hvor \( m \) er massen til objektet og \( v \) er farten.
 }
 
-Kinetisk energi er en viktig form for energi, som spiller en sentral rolle i mange fysiske prosesser som kollisjoner, bevegelse og energioverføringer. Når bilen bremser ned og stopper, reduseres dens kinetiske energi til null fordi hastigheten \( v \) også blir null.
+Kinetisk energi er en viktig form for energi, som spiller en sentral rolle i mange fysiske prosesser som kollisjoner, bevegelse og energioverføringer. Når bilen bremser ned og stopper, reduseres dens kinetiske energi til null fordi farten \( v \) også blir null.
 
 \begin{figure}[ht!]
     \centering
@@ -330,7 +330,7 @@ Fjærkraften er konservativ, så dette arbeidet lagres som elastisk potensiell e
   % Ep-etikett
   \node[headCol!80!black, font=\scriptsize\bfseries,
         fill=headCol!10, draw=headCol!40, rounded corners=2pt,
-        inner sep=3pt] at (1.20, 0.75) {$E_p = \tfrac{1}{2}kx^2$};
+        inner sep=3pt] at (1.20, 1.05) {$E_p = \tfrac{1}{2}kx^2$};
 \end{tikzpicture}
 \captionof{figure}{Komprimert fjær med kompresjon $x$. Fjærkraften $F=kx$ skyver klossen vekk. Arbeidet $W=\frac{1}{2}kx^2$ er lagret som elastisk potensiell energi.}
 \label{fig:elastisk_ep}
@@ -716,7 +716,7 @@ Effekt kan også uttrykkes i sammenheng med kraft og hastighet. Hvis en konstant
 Denne formelen viser at jo større kraft eller hastighet, desto mer arbeid utføres per tidsenhet, og dermed større effekt.
 
 
-\section{Elastiske støt}
+\section{Støt}
 I lukkede systemer, der ingen ytre krefter virker, er bevegelsesmengden bevart. Dette prinsippet, kalt bevaringsloven, er grunnen til at en rakett kan bevege seg i rommet. Når raketten skyver gassen ut bakover, får gassen en bevegelsesmengde i én retning, og raketten får en like stor, men motsatt bevegelsesmengde, som fører til at raketten beveger seg fremover.
 
 \defn{Bevaring av bevegelsesmengde}{
@@ -861,57 +861,5 @@ Etter kollisjonen står vogn 1 stille (\( v_2 = 0 \)), og vogn 2 beveger seg med
 
 \subsection{Uelastisk Støt}
 
-I et uelastisk støt er ikke den kinetiske energien bevart. Dette betyr at noe av den kinetiske energien blir omformet til andre energiformer, som varme, lyd eller deformasjon. Bevegelsesmengden er fortsatt bevart, men den totale kinetiske energien før og etter kollisjonen vil ikke være den samme.
-
-Et eksempel på et uelastisk støt er når to biler kolliderer og "henger sammen" etter kollisjonen. I slike tilfeller mister systemet en del av sin kinetiske energi, som går over til deformasjon av bilene, lyd og varme.
-
-
-\defn{Bevaring av bevegelsesmengde ved uelastisk støt}{
-    I et uelastisk støt, der to objekter henger sammen etter kollisjonen, uttrykkes bevaringen av bevegelsesmengde som:
-    \begin{align}
-        m_1 v_{1, \text{før}} + m_2 v_{2, \text{før}} = (m_1 + m_2) v_{\text{etter}}
-    \end{align}
-    hvor \( m_1 \) og \( m_2 \) er massene til objektene, \( v_{1, \text{før}} \) og \( v_{2, \text{før}} \) er hastighetene før kollisjonen, og \( v_{\text{etter}} \) er den felles hastigheten etter kollisjonen dersom objektene henger sammen.
-}
-
-
-I et uelastisk støt er kinetisk energi tapt, men bevegelsesmengden er alltid bevart.
-\\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/Kapittel3:Arbeid&Energi/Uleastisk1.png}
-    \caption{Uelastisk støt}
-    \label{fig:Eks: Uelastisk støt}
-    \end{figure}
-
-\exm{Uelastisk kollisjon mellom en ball og en vogn}{
-En ball med masse \( m_{\text{ball}} = 0.5 \, \text{kg} \) kastes rett inn i en stillestående vogn med masse \( m_{\text{vogn}} = 2.0 \, \text{kg} \). Ballen har en hastighet på \( v_{\text{ball}} = 20 \, \text{m/s} \) idet den treffer vognen. Etter sammenstøtet beveger ballen og vognen seg sammen med samme hastighet. Vi skal finne denne felles hastigheten \( v_{\text{etter}} \) for ball + vogn etter kollisjonen.
-
-\textit{Løsning:} \\
-Dette er et eksempel på et uelastisk støt, der ballen og vognen henger sammen etter kollisjonen. Selv om den kinetiske energien ikke er bevart, er bevegelsesmengden bevart, siden det ikke er noen ytre krefter som virker på systemet.
-
-\textbf{Bevaring av Bevegelsesmengde:} \\
-Før kollisjonen har vi bare bevegelsesmengden til ballen, siden vognen står stille:
-\[
-p_{\text{før}} = m_{\text{ball}} \cdot v_{\text{ball}} + m_{\text{vogn}} \cdot 0 = m_{\text{ball}} \cdot v_{\text{ball}}
-\]
-Etter kollisjonen beveger ballen og vognen seg sammen med hastigheten \( v_{\text{etter}} \):
-\[
-p_{\text{etter}} = (m_{\text{ball}} + m_{\text{vogn}}) \cdot v_{\text{etter}}
-\]
-Siden bevegelsesmengden er bevart, har vi:
-\[
-m_{\text{ball}} \cdot v_{\text{ball}} = (m_{\text{ball}} + m_{\text{vogn}}) \cdot v_{\text{etter}}
-\]
-Løs for \( v_{\text{etter}} \):
-\[
-v_{\text{etter}} = \frac{m_{\text{ball}} \cdot v_{\text{ball}}}{m_{\text{ball}} + m_{\text{vogn}}}
-\]
-Sett inn verdiene \( m_{\text{ball}} = 0.5 \, \text{kg} \), \( v_{\text{ball}} = 20 \, \text{m/s} \), og \( m_{\text{vogn}} = 2.0 \, \text{kg} \):
-\[
-v_{\text{etter}} = \frac{0.5 \cdot 20}{0.5 + 2.0} = \frac{10}{2.5} = 4 \, \text{m/s}
-\]
-Etter kollisjonen beveger ballen og vognen seg sammen med en felles hastighet på \( v_{\text{etter}} = 4 \, \text{m/s} \).
-}
+Uelastisk støt ble behandlet i seksjon~\ref{sec:bevaring}, der vi så at bevegelsesmengden er bevart også når to legemer henger fast i hverandre etter en kollisjon — i motsetning til ved elastisk støt (ovenfor) er da ikke den kinetiske energien bevart.
 

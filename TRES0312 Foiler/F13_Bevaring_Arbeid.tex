@@ -1,0 +1,406 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Bevaring av bevegelsesmengde}
+\subtitle{TRES0312 --- kapittel 4.5, samt arbeid (5.1)}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{4}   % Kapittel 4 (4.5), deretter kapittel 5 (5.1)
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 4.5}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: bevaring av bevegelsesmengde. Etter pausen: arbeid (5.1).}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er formelen for sentripetalkraft, og i hvilken retning peker den?
+      \item Hva er betingelsen for at en bil skal kunne kjøre gjennom en dosert kurve \textit{uten} friksjon?
+      \item Hvorfor er doseringsvinkelen $\alpha$ uavhengig av bilens masse?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: biljardkollisjon
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  To biljardkuler kolliderer. Vi vet ikke nøyaktig hvordan kraften mellom dem varierer i løpet av det korte støtet.\\[4pt]
+  Er det likevel noe som er \textit{bevart} gjennom kollisjonen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Figur: biljardkollisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Biljardkollisjon}
+
+  \begin{figure}[ht!]
+  \centering
+  \resizebox{0.95\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small, scale=0.92]
+    %────── FØR ──────
+    \node[font=\small\bfseries] at (0.30, 2.00) {Før:};
+    \fill[white] (-0.58, 0.80) circle (0.42);
+    \draw[gray!55, line width=0.9pt] (-0.58, 0.80) circle (0.42);
+    \fill[gray!20, opacity=0.80] (-0.74, 1.00) circle (0.12);
+    \node[gray!65, font=\scriptsize\bfseries] at (-0.58, 0.74) {A};
+    \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
+      (-0.16, 0.80) -- (0.72, 0.80);
+    \node[defscol, font=\scriptsize, above=1pt] at (0.28, 0.80) {$\vec{v}_A$};
+    \fill[red!72!black] (1.60, 0.80) circle (0.42);
+    \draw[red!45!black, line width=0.9pt] (1.60, 0.80) circle (0.42);
+    \fill[red!15!white, opacity=0.55] (1.44, 1.00) circle (0.12);
+    \node[white, font=\scriptsize\bfseries] at (1.60, 0.74) {B};
+    \node[gray!60, font=\scriptsize] at (1.60, 0.22) {i ro};
+    \draw[gray!40, dashed, thin] (-1.10, 0.18) -- (2.00, 0.18);
+    \draw[-{Stealth[length=8pt,width=5pt]}, gray!55, line width=1.0pt]
+      (2.10, 0.80) -- (3.50, 0.80);
+
+    %────── KOLLISJON ──────
+    \node[font=\small\bfseries] at (4.80, 2.00) {Kollisjon:};
+    \fill[white] (4.00, 0.80) circle (0.42);
+    \draw[gray!55, line width=0.9pt] (4.00, 0.80) circle (0.42);
+    \fill[gray!20, opacity=0.80] (3.84, 1.00) circle (0.12);
+    \node[gray!65, font=\scriptsize\bfseries] at (4.00, 0.74) {A};
+    \fill[red!72!black] (4.84, 0.80) circle (0.42);
+    \draw[red!45!black, line width=0.9pt] (4.84, 0.80) circle (0.42);
+    \fill[red!15!white, opacity=0.55] (4.68, 1.00) circle (0.12);
+    \node[white, font=\scriptsize\bfseries] at (4.84, 0.74) {B};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, red!65!black]
+      (4.42, 1.42) -- (3.58, 1.42);
+    \node[red!65!black, font=\scriptsize] at (4.00, 1.64) {$\vec{F}_{BA}$};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, red!65!black]
+      (4.42, -0.02) -- (5.26, -0.02);
+    \node[red!65!black, font=\scriptsize] at (4.84, -0.24) {$\vec{F}_{AB}$};
+    \draw[gray!40, dashed, thin] (3.40, 0.18) -- (5.60, 0.18);
+    \draw[-{Stealth[length=8pt,width=5pt]}, gray!55, line width=1.0pt]
+      (5.70, 0.80) -- (7.10, 0.80);
+
+    %────── ETTER ──────
+    \node[font=\small\bfseries] at (9.00, 2.00) {Etter:};
+    \fill[white] (7.80, 0.80) circle (0.42);
+    \draw[gray!55, line width=0.9pt] (7.80, 0.80) circle (0.42);
+    \fill[gray!20, opacity=0.80] (7.64, 1.00) circle (0.12);
+    \node[gray!65, font=\scriptsize\bfseries] at (7.80, 0.74) {A};
+    \node[gray!60, font=\scriptsize] at (7.80, 0.22) {i ro};
+    \fill[red!72!black] (10.20, 0.80) circle (0.42);
+    \draw[red!45!black, line width=0.9pt] (10.20, 0.80) circle (0.42);
+    \fill[red!15!white, opacity=0.55] (10.04, 1.00) circle (0.12);
+    \node[white, font=\scriptsize\bfseries] at (10.20, 0.74) {B};
+    \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
+      (10.62, 0.80) -- (11.50, 0.80);
+    \node[defscol, font=\scriptsize, above=1pt] at (11.06, 0.80) {$\vec{u}_B$};
+    \draw[gray!40, dashed, thin] (7.20, 0.18) -- (11.60, 0.18);
+  \end{tikzpicture}%
+  }
+  \caption{\footnotesize Kreftene $\vec{F}_{BA}$ og $\vec{F}_{AB}$ er interne og like store (Newtons 3. lov).}
+  \end{figure}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Utledning fra Newtons lover
+%--------------------------------------------------------------------------
+\begin{frame}{Utledning fra Newtons lover}
+
+  Newtons 3. lov: $\vec{F}_{AB} = -\vec{F}_{BA}$.
+
+  \pause
+  Newtons 2. lov på hvert legeme: $\vec{F}_{BA} = \dfrac{\Delta\vec{p}_A}{\Delta t}$, \quad $\vec{F}_{AB} = \dfrac{\Delta\vec{p}_B}{\Delta t}$.
+
+  \pause
+  Legger vi disse sammen:
+  \[
+    \frac{\Delta\vec{p}_A}{\Delta t} + \frac{\Delta\vec{p}_B}{\Delta t} = \vec{F}_{BA} + \vec{F}_{AB} = \vec{0}
+  \]
+
+  \pause
+  \graabox{$\displaystyle \vec{p}_{tot} = \vec{p}_A + \vec{p}_B = \text{konstant}$}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon: Bevaring av bevegelsesmengde
+%--------------------------------------------------------------------------
+\begin{frame}{Bevaring av bevegelsesmengde}
+
+  \defnat{4.11}{Bevaring av bevegelsesmengde}{
+  Dersom summen av ytre krefter på et system er null, $\sum\vec{F}_{ytre} = \vec{0}$, er den totale bevegelsesmengden bevart. For to legemer med masser $m_1$ og $m_2$:
+  \[
+    m_1\vec{v}_1 + m_2\vec{v}_2 = m_1\vec{u}_1 + m_2\vec{u}_2
+  \]
+  }
+
+  \pause
+  \merk{Notasjon}{
+  $v$ betegner farten \textit{før} kollisjonen eller hendelsen, og $u$ betegner farten \textit{etter}.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Algoritme for løsning
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Algoritme for løsning}{%
+  \begin{enumerate}[1.]
+    \item[] Identifiser systemet, og sjekk at ytre krefter er null (eller neglisjerbare).
+    \item[] Velg en positiv retning.
+    \item[] Skriv opp bevaringsligningen: $\vec{p}_{tot,\,\text{før}} = \vec{p}_{tot,\,\text{etter}}$.
+    \item[] Løs for den ukjente.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Eksempel: Rekyl fra gevær
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: rekyl}
+
+  \exmat{4.14}{Rekyl fra gevær}{%
+  Et gevær med masse $M = 3.0\,\mathrm{kg}$ avfyres horisontalt. En kule med masse $m = 0.010\,\mathrm{kg}$ forlater løpet med fart $v = 800\,\mathrm{m/s}$ fremover. Både geværet og kula er i ro før avfyringen.
+
+  Finn rekylhastigheten $V$ til geværet.
+  }
+
+  \pause
+  Med fremover som positiv retning: $p_{tot,\,\text{før}} = 0$, så
+  \[
+    mv + MV = 0 \quad\Longrightarrow\quad V = -\frac{mv}{M} = \doubleunderline{-2.7\,\mathrm{m/s}}
+  \]
+  Minustegnet viser at geværet beveger seg \textit{bakover}.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Eksempel: Uelastisk støt mellom vogner
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: vogner som kolliderer}
+
+  \exmat{4.15}{Uelastisk støt: vogner som kolliderer og henger fast}{%
+  En vogn med masse $m_1 = 2.0\,\mathrm{kg}$ ruller med fart $v_1 = 3.0\,\mathrm{m/s}$ og støter inn i en vogn med masse $m_2 = 1.0\,\mathrm{kg}$ som er i ro. Vognene henger seg fast i hverandre.
+
+  Finn farten $v_f$ til de sammenkoblede vognene.
+  }
+
+  \pause
+  \[
+    m_1 v_1 = (m_1 + m_2)\,v_f \quad\Longrightarrow\quad v_f = \frac{m_1 v_1}{m_1 + m_2} = \doubleunderline{2.0\,\mathrm{m/s}}
+  \]
+
+  \pause
+  \merk{To typer støt}{
+  Ved \textit{uelastisk} støt henger legemene fast i hverandre etterpå. Ved \textit{elastisk} støt spretter de fra hverandre, og kinetisk energi er også bevart. Bevegelsesmengden er bevart i begge tilfeller --- mer om dette i kapittel 5.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Aktivitet: To skøyteløpere
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{To skøyteløpere}{%
+  Oda ($m_O = 55\,\mathrm{kg}$) og Per ($m_P = 80\,\mathrm{kg}$) står i ro på isen og skyver fra hverandre. Etter skyvingen beveger Oda seg med fart $4.0\,\mathrm{m/s}$ i én retning.
+  \begin{enumerate}[a)]
+    \item Hva er Pers hastighet etter skyvingen?
+    \item Hva er bevegelsesmengden til hver av dem etter skyvingen? Kommenter svaret.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Aktivitet: Bilkollisjon
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Bilkollisjon}{%
+  En bil med masse $m_1 = 1200\,\mathrm{kg}$ kjører med fart $20\,\mathrm{m/s}$ mot en bil med masse $m_2 = 1000\,\mathrm{kg}$ som kjører i \textit{motsatt} retning med fart $15\,\mathrm{m/s}$. Bilene henger fast etter kollisjonen.
+  \begin{enumerate}[a)]
+    \item Hva er den totale bevegelsesmengden til systemet \textit{før} kollisjonen?
+    \item Finn farten og retningen til bilene etter kollisjonen.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Oppsummering: bevaring av bevegelsesmengde
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Bevaring av bevegelsesmengde}{%
+  \begin{enumerate}[1.]
+    \item[] Isolert system ($\sum\vec{F}_{ytre}=\vec{0}$) $\Rightarrow$ $\vec{p}_{tot}$ er konstant.
+    \item[] $m_1\vec{v}_1 + m_2\vec{v}_2 = m_1\vec{u}_1 + m_2\vec{u}_2$.
+    \item[] Gjelder ved \textit{både} elastisk og uelastisk støt.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: arbeid}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Til ettertanke: arbeid
+%--------------------------------------------------------------------------
+\begin{frame}{Arbeid}
+
+  I forrige kapittel så vi at kraft anvendt over \textit{tid} gir endring i bevegelsesmengde: $\Delta\vec{p} = \vec{F}\Delta t$.
+
+  \pause
+  \tanke{}{%
+  Hva blir arealet under en $F(s)$-graf --- altså kraft anvendt over \textit{strekning} i stedet for tid?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Definisjon: Arbeid
+%--------------------------------------------------------------------------
+\begin{frame}{Definisjon: arbeid}
+
+  \defnat{5.1}{Arbeid}{
+  Arbeidet $W$ som utføres av en kraft $\vec{F}$ over en forflytning $\vec{s}$ er gitt ved prikkproduktet:
+  \[
+    W = \vec{F}\cdot\vec{s} = F\cdot s\cdot\cos\theta
+  \]
+  Arbeid er en skalar og måles i joule ($\mathrm{J}$), der $1\,\mathrm{J} = 1\,\mathrm{Nm}$.
+  }
+
+  \pause
+  \merk{Vinkelen $\theta$ er avgjørende}{
+  Kraft vinkelrett på bevegelsen ($\theta=90^\circ$) gir $W=0$. Kraft mot bevegelsen (som friksjon) gir negativt arbeid.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Eksempel: Dytte en boks
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: dytte en boks}
+
+  \exmat{5.1}{Dytte en boks}{%
+  En boks dyttes langs et gulv med kraft $F = 10\,\mathrm{N}$ over en avstand $s = 5.0\,\mathrm{m}$, i samme retning som bevegelsen ($\theta=0^\circ$).
+
+  Finn arbeidet som utføres.
+  }
+
+  \pause
+  \[
+    W = F\cdot s\cdot\cos(0^\circ) = 10\,\mathrm{N}\cdot 5.0\,\mathrm{m}\cdot 1 = \doubleunderline{50\,\mathrm{J}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Arbeid som areal: konstant kraft vs. fjærkraft
+%--------------------------------------------------------------------------
+\begin{frame}{Arbeid som areal under $F$-kurven}
+
+  \begin{columns}
+  \begin{column}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.72, font=\small]
+    \fill[headCol!22] (0,0) rectangle (3.6, 2.0);
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$s$};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
+    \draw[headCol!80!black, line width=2.2pt] (0, 2.0) -- (3.6, 2.0);
+    \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.0);
+    \node[left=3pt, black!65, font=\scriptsize] at (0, 2.0) {$F_0$};
+    \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$s$};
+    \node[headCol!80!black, font=\small\bfseries] at (1.80, 1.10) {$W = F_0\cdot s$};
+  \end{tikzpicture}
+  \captionof{figure}{\footnotesize Konstant kraft: arealet er et rektangel.}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.72, font=\small]
+    \fill[headCol!22] (0,0) -- (3.6, 2.52) -- (3.6, 0) -- cycle;
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$x$};
+    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
+      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
+    \draw[headCol!80!black, line width=2.2pt] (0, 0) -- (3.6, 2.52);
+    \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.52);
+    \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.32) {$F=kx$};
+    \node[headCol!80!black, font=\small\bfseries] at (2.65, 0.62) {$W=\tfrac{1}{2}kx^2$};
+  \end{tikzpicture}
+  \captionof{figure}{\footnotesize Fjærkraft $F=kx$: arealet er en trekant.}
+  \end{column}
+  \end{columns}
+
+  \pause
+  \merk{Elastisk potensiell energi}{
+  Arbeidet $W=\tfrac{1}{2}kx^2$ mot fjæren lagres som elastisk potensiell energi --- mer om dette i seksjon 5.2.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Energi}
+  \begin{itemize}
+    \item Kinetisk og potensiell energi
+    \item Arbeid-energi-setningen
+    \item Energitap
+  \end{itemize}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

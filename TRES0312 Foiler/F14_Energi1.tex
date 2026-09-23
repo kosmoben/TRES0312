@@ -1,0 +1,345 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Energi}
+\subtitle{TRES0312 --- kapittel 5.2 og 5.3}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{5}   % Kapittel 5: "Arbeid og energi"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 5.2--5.3}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: kinetisk og potensiell energi. Etter pausen: energitap.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er definisjonen av arbeid, $W = \ldots$?
+      \item Når er arbeidet utført av en kraft lik null, selv om kraften er stor?
+      \item Hva er arbeidet utført av en fjærkraft $F=kx$ når fjæra komprimeres en lengde $x$?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: kinetisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  En bil som kjører raskt er vanskeligere å stoppe enn en bil som kjører sakte --- selv om massen er den samme.\\[4pt]
+  Hva er det ved \textit{bevegelsen selv} som gjør bilen i stand til å ``gjøre skade'', eller mer generelt: å utføre arbeid på omgivelsene?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: Kinetisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{Kinetisk energi}
+
+  Kinetisk energi er energien et objekt har på grunn av at det er i bevegelse.
+
+  \pause
+  \defnat{5.2}{Kinetisk energi}{
+  \[
+    E_k = \frac{1}{2}mv^2
+  \]
+  hvor $m$ er massen og $v$ er farten til objektet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Arbeid-energi-setningen: utledning
+%--------------------------------------------------------------------------
+\begin{frame}{Arbeid-energi-setningen}
+
+  Vi tar utgangspunkt i arbeid og bruker $\Delta\vec{p}=\vec{F}\Delta t$:
+  \[
+    W = \vec{F}\cdot\Delta\vec{s} = \frac{\Delta\vec{p}}{\Delta t}\cdot\Delta\vec{s} = \Delta\vec{p}\cdot\bar{v}
+  \]
+
+  \pause
+  For konstant akselerasjon er $\bar{v}=\tfrac{v_0+v}{2}$ og $\Delta p = m(v-v_0)$, som gir
+  \[
+    W = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2
+  \]
+
+  \pause
+  \graabox{$\displaystyle W_{\text{total}} = \Delta E_k$}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon: Arbeid-energi-setningen
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \defnat{5.3}{Arbeid-energi-setningen}{
+  Arbeidet som summen av ytre krefter gjør på et legeme, er lik endringen i legemets kinetiske energi:
+  \[
+    W_{\text{total}} = \Delta E_k
+  \]
+  }
+
+  \pause
+  \merk{Generell setning}{
+  Setningen gjelder generelt, også når kraften varierer --- utledningen over forutsetter bare konstant kraft for enkelhets skyld.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Eksempel: horisontal bevegelse med friksjon
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: arbeid-energi med friksjon}
+
+  \exmat{5.2}{Horisontal bevegelse med friksjon}{%
+  En kloss med masse $0.8\,\mathrm{kg}$ har startfart $2.0\,\mathrm{m/s}$ og flyttes med en horisontal kraft $8.0\,\mathrm{N}$. Friksjonskraften er $5.6\,\mathrm{N}$. Etter en forflytning på $2.0\,\mathrm{m}$ er farten $4.0\,\mathrm{m/s}$.
+
+  Vis at $\Delta E_k = W_{\text{total}}$.
+  }
+
+  \pause
+  \[
+    \Delta E_k = \tfrac{1}{2}(0.8)(4.0)^2 - \tfrac{1}{2}(0.8)(2.0)^2 = 6.4-1.6 = 4.8\,\mathrm{J}
+  \]
+  \[
+    W_{\text{total}} = (8.0 - 5.6)\,\mathrm{N}\cdot 2.0\,\mathrm{m} = \doubleunderline{4.8\,\mathrm{J}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Potensiell energi: intro
+%--------------------------------------------------------------------------
+\begin{frame}{Potensiell energi}
+
+  Du løfter en stein opp på en hylle --- du utfører et arbeid mot tyngdekraften. Energien er ikke borte: den er lagret som \textit{potensiell energi}, klar til å bli kinetisk energi når steinen slippes.
+
+  \pause
+  \merk{Konservative krefter}{
+  Tyngdekraft og fjærkraft er \textit{konservative}: arbeidet mot dem er ikke tapt, men lagret. Friksjon er \textit{ikke}-konservativ --- det arbeidet blir varme, og hentes ikke tilbake.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Definisjon: Gravitasjonspotensiell energi
+%--------------------------------------------------------------------------
+\begin{frame}{Gravitasjonspotensiell energi}
+
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+  \defnat{5.4}{Gravitasjonspotensiell energi}{
+  \[
+    E_p = m\mathrm{g}h
+  \]
+  $h$ måles fra et fritt valgt nullnivå.
+  }
+  \end{column}
+  \begin{column}{0.46\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.72, font=\small]
+    \fill[black!12] (-0.9,-0.28) rectangle (1.9, 0);
+    \draw[line width=1.2pt, black!65] (-0.9,0) -- (1.9,0);
+    \fill[gray!25] (0.50,0.38) circle (0.34);
+    \node[gray!55, font=\scriptsize] at (0.50,0.38) {$m$};
+    \draw[<->, gray!60, thin] (1.35, 0.38) -- (1.35, 3.12);
+    \node[right=2pt, black!65, font=\scriptsize] at (1.35, 1.75) {$h$};
+    \fill[headCol!35] (0.50, 3.12) circle (0.34);
+    \draw[headCol!70!black, line width=1pt] (0.50, 3.12) circle (0.34);
+    \node[black!70, font=\scriptsize] at (0.50, 3.12) {$m$};
+    \node[headCol!80!black, font=\scriptsize\bfseries,
+          fill=headCol!10, draw=headCol!40, rounded corners=2pt,
+          inner sep=3pt] at (0.50, 4.20) {$E_p = m\mathrm{g}h$};
+  \end{tikzpicture}
+  \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Definisjon: Elastisk potensiell energi
+%--------------------------------------------------------------------------
+\begin{frame}{Elastisk potensiell energi}
+
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+  \defnat{5.5}{Elastisk potensiell energi}{
+  \[
+    E_p = \frac{1}{2}kx^2
+  \]
+  $k$ er fjærkonstanten og $x$ er kompresjonen/forlengelsen.
+  }
+  \end{column}
+  \begin{column}{0.46\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.72, font=\small]
+    \fill[black!18] (-0.55,-0.55) rectangle (0, 0.55);
+    \draw[line width=1.2pt, black!65] (0,-0.55) -- (0, 0.55);
+    \draw[line width=1.5pt, headCol!70!black]
+      (0,0) -- (0.18, 0)
+      -- (0.29, 0.18) -- (0.41,-0.18)
+      -- (0.53, 0.18) -- (0.65,-0.18)
+      -- (0.77, 0.18) -- (0.89,-0.18)
+      -- (1.01, 0.18) -- (1.13,-0.18)
+      -- (1.25, 0) -- (1.43, 0);
+    \fill[headCol!25] (1.43,-0.28) rectangle (1.97, 0.28);
+    \draw[headCol!65!black, line width=1pt] (1.43,-0.28) rectangle (1.97, 0.28);
+    \node[font=\scriptsize] at (1.70, 0) {$m$};
+    \draw[<->, gray!65, thin] (0, -0.52) -- (1.43, -0.52);
+    \node[below=2pt, black!65, font=\scriptsize] at (0.72, -0.52) {$x$};
+    \node[headCol!80!black, font=\scriptsize\bfseries,
+          fill=headCol!10, draw=headCol!40, rounded corners=2pt,
+          inner sep=3pt] at (1.20, 0.85) {$E_p = \tfrac{1}{2}kx^2$};
+  \end{tikzpicture}
+  \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Oppsummering: energi
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Energi}{%
+  \begin{enumerate}[1.]
+    \item[] $E_k = \tfrac{1}{2}mv^2$, \quad $W_{\text{total}} = \Delta E_k$.
+    \item[] $E_p = m\mathrm{g}h$ (gravitasjon), \quad $E_p = \tfrac{1}{2}kx^2$ (fjær).
+    \item[] Konservative krefter lagrer arbeid som potensiell energi; friksjon gjør ikke det.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: energitap}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Energitap: intro
+%--------------------------------------------------------------------------
+\begin{frame}{Energitap}
+
+  Energitap skjer når energi omdannes fra en nyttig form (kinetisk eller potensiell) til varme eller lyd --- typisk på grunn av friksjon eller luftmotstand.
+
+  \pause
+  \merk{Den totale energien er fortsatt bevart}{
+  Energi forsvinner ikke --- men mindre av den er tilgjengelig til å utføre nyttig arbeid.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Eksempel: energitap i et fall
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: energitap}
+
+  \exmat{5.3}{Energiforskjell og energitap i et fall}{%
+  En ball med masse $0.5\,\mathrm{kg}$ slippes fra en høyde på $10\,\mathrm{m}$. Rett før den treffer bakken har den fart $12\,\mathrm{m/s}$. Beregn energitapet på grunn av luftmotstand.
+  }
+
+  \pause
+  \[
+    E_p = m\mathrm{g}h = 0.5\cdot 9.81\cdot 10 = 49.05\,\mathrm{J}
+  \]
+  \[
+    E_k = \tfrac{1}{2}mv^2 = \tfrac{1}{2}(0.5)(12)^2 = 36\,\mathrm{J}
+  \]
+  \[
+    \Delta E = E_p - E_k = \doubleunderline{13.05\,\mathrm{J}}
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Bevaring av mekanisk energi: intro
+%--------------------------------------------------------------------------
+\begin{frame}{Bevaring av mekanisk energi}
+
+  I et lukket system uten energitap til friksjon eller andre motstandskrefter, er den mekaniske energien bevart. Mekanisk energi er summen av kinetisk og potensiell energi:
+  \[
+    E_{\text{mekanisk}} = E_k + E_p
+  \]
+
+  \pause
+  Når et legeme mister potensiell energi, omformes den til kinetisk energi --- og omvendt.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Definisjon: Bevaring av mekanisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \defnat{5.6}{Bevaring av mekanisk energi}{
+  Når et legeme beveger seg under påvirkning av \textit{kun} tyngdekraft og/eller fjærkraft, er den mekaniske energien bevart:
+  \[
+    E_{\text{før}} = E_{\text{etter}}
+  \]
+  Den totale mekaniske energien er summen av gravitasjonspotensiell energi, kinetisk energi og elastisk potensiell energi:
+  \[
+    E = m\mathrm{g}h + \frac{1}{2}mv^2 + \frac{1}{2}kx^2
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: bevaring av mekanisk energi}
+  \begin{itemize}
+    \item Eksempler: fallende stein, fjærkanon, kollisjon med fjær
+    \item Loop-the-loop
+  \end{itemize}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

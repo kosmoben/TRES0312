@@ -1,0 +1,19 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}, group-separator={\,}}
+\graphicspath{{Images/}{../Images/}}
+\setkeys{Gin}{width=0.85\textwidth}
+\setlength{\cftbeforechapskip}{3pt}
+\setlength{\parindent}{0.5cm}
+\setlist[itemize]{itemsep=5pt}
+\setlist[enumerate]{itemsep=5pt}
+\newcommand{\chaptersubtitle}[1]{{\centering\large\itshape #1\par}\medskip}
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing}
+\usepackage[default]{comicneue}
+\begin{document}
+\subfile{files/0.0.1_HvaErFysikk}
+\subfile{files/0.0.2_MatematikkViTrenger}
+\subfile{files/0.0.3_Kinematikk}
+\subfile{files/0.0.4_Krefter}
+\end{document}

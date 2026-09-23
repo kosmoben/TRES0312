@@ -1,0 +1,303 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Effekt og elastisk støt}
+\subtitle{TRES0312 --- kapittel 5.5, samt elastisk støt (5.6)}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{5}   % Kapittel 5: "Arbeid og energi"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 5.5}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: effekt. Etter pausen: elastisk støt --- kollisjon mellom vogner.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Skriv opp bevaringsloven for mekanisk energi, $E_{\text{før}} = \ldots$
+      \item Hvorfor er normalkraften minst på toppen av en loop?
+      \item Hva er betingelsen for at et objekt skal holde kontakt med skinna på toppen av en loop?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: effekt
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  To like biler skal begge løftes opp en fjellside --- de trenger nøyaktig samme arbeid. Den ene bruker to minutter, den andre bruker to sekunder.\\[4pt]
+  Er det noe fysisk størrelse som fanger opp \textit{denne} forskjellen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: Effekt
+%--------------------------------------------------------------------------
+\begin{frame}{Effekt}
+
+  Effekt $P$ er et mål på hvor raskt energi omformes, eller hvor raskt arbeid utføres.
+
+  \pause
+  \defnat{5.7}{Effekt som arbeid per tidsenhet}{
+  \[
+    P = \frac{W}{t}
+  \]
+  Enheten for effekt er watt ($\mathrm{W}$), der $1\,\mathrm{W} = 1\,\mathrm{J/s}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Definisjon: Effekt som kraft ganger fart
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  Effekt kan også uttrykkes ved kraft og fart. Hvis en konstant kraft $F$ virker på et objekt som beveger seg med fart $v$:
+
+  \pause
+  \defnat{5.8}{Effekt som kraft ganger fart}{
+  \[
+    P = F\cdot v
+  \]
+  }
+
+  \pause
+  \merk{Praktisk tolkning}{
+  Jo større kraft eller fart, desto mer arbeid utføres per tidsenhet --- og desto større effekt.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: heis
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Heis}{%
+  En heismotor løfter en heis med total masse $800\,\mathrm{kg}$ med konstant fart $1.5\,\mathrm{m/s}$.
+  \begin{enumerate}[a)]
+    \item Hvor stor kraft må motoren minst utøve (konstant fart, ingen friksjon)?
+    \item Hva er effekten til motoren?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: sykkelrytter
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Sykkelrytter}{%
+  En sykkelrytter holder en jevn fart $8.0\,\mathrm{m/s}$ på flatt underlag, og motstandskreftene (luft og rulling) er totalt $18\,\mathrm{N}$.
+
+  Hvor stor effekt må rytteren yte for å holde farten?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Oppsummering: effekt
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Effekt}{%
+  \begin{enumerate}[1.]
+    \item[] $P = W/t$ --- arbeid (eller energi overført) per tidsenhet.
+    \item[] $P = F\cdot v$ --- for konstant kraft og fart.
+    \item[] Enhet: watt ($\mathrm{W}$), $1\,\mathrm{W}=1\,\mathrm{J/s}$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: elastisk støt}
+\end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Til ettertanke: elastisk støt
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \tanke{}{%
+  Ved et støt er bevegelsesmengden alltid bevart --- det har vi allerede sett (kapittel 4.5).\\[4pt]
+  Men er den kinetiske energien \textit{også} bevart? Det avhenger av støttypen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Definisjon: Elastisk støt
+%--------------------------------------------------------------------------
+\begin{frame}{Elastisk støt}
+
+  Et elastisk støt er en kollisjon der \textit{både} bevegelsesmengden og den kinetiske energien er bevart. Objektene spretter fra hverandre uten å tape energi til deformasjon eller varme.
+
+  \pause
+  \defnat{5.9}{Bevaring av bevegelsesmengde (elastisk støt)}{
+  \[
+    m_1 v_{1,\text{før}} + m_2 v_{2,\text{før}} = m_1 v_{1,\text{etter}} + m_2 v_{2,\text{etter}}
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Definisjon: Bevaring av kinetisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \defnat{5.10}{Bevaring av kinetisk energi (elastisk støt)}{
+  \[
+    \frac{1}{2}m_1 v_{1,\text{før}}^2 + \frac{1}{2}m_2 v_{2,\text{før}}^2
+    = \frac{1}{2}m_1 v_{1,\text{etter}}^2 + \frac{1}{2}m_2 v_{2,\text{etter}}^2
+  \]
+  }
+
+  \pause
+  \merk{Newtons pendel}{
+  Et klassisk eksempel: kulene i Newtons pendel overfører bevegelsesmengde og kinetisk energi gjennom hele rekken --- den siste kula ``skytes'' opp med (omtrent) samme fart som den første ble sluppet med.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Eksempel: kollisjon mellom to like vogner (oppsett)
+%--------------------------------------------------------------------------
+\begin{frame}{Eksempel: kollisjon mellom vogner}
+
+  \exmat{5.8}{Elastisk kollisjon mellom to like vogner}{%
+  En vogn med masse $m=2.0\,\mathrm{kg}$ og fart $v_1=3.0\,\mathrm{m/s}$ krasjer inn i en identisk vogn ($m=2.0\,\mathrm{kg}$) som står i ro, på et friksjonsfritt underlag.
+
+  Finn farten til begge vognene etter kollisjonen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Løsning: bevaring av bevegelsesmengde
+%--------------------------------------------------------------------------
+\begin{frame}{Løsning}
+
+  La vogn 1 ha fart $v_2$ og vogn 2 ha fart $u$ etter kollisjonen.
+
+  \pause
+  \textbf{Bevegelsesmengde:}
+  \[
+    mv_1 = mv_2 + mu \quad\Longrightarrow\quad v_1 = v_2 + u
+  \]
+
+  \pause
+  \textbf{Kinetisk energi:}
+  \[
+    \tfrac{1}{2}mv_1^2 = \tfrac{1}{2}mv_2^2 + \tfrac{1}{2}mu^2 \quad\Longrightarrow\quad v_1^2 = v_2^2 + u^2
+  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Løsning: kombinasjon av likningene
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  Setter $u = v_1 - v_2$ inn i energilikningen:
+  \[
+    v_1^2 = v_2^2 + (v_1-v_2)^2 \quad\Longrightarrow\quad 0 = v_2(v_2-v_1)
+  \]
+
+  \pause
+  To løsninger: $v_2=0$ eller $v_2=v_1$. Siden vogn 1 overfører all sin bevegelse til vogn 2, må $v_2=0$:
+
+  \pause
+  \graabox{$\displaystyle v_2 = 0, \qquad u = v_1 = \doubleunderline{3.0\,\mathrm{m/s}}$}
+
+  \pause
+  \merk{Tolkning}{
+  Vogn 1 stopper helt, og vogn 2 overtar hele farten --- et typisk trekk ved elastisk kollisjon mellom \textit{like} masser.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Aktivitet: to biljardkuler
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{To biljardkuler}{%
+  En biljardkule ($m=0.17\,\mathrm{kg}$) med fart $v_1=2.0\,\mathrm{m/s}$ treffer en identisk kule i ro, midt i sentrum (rett front-mot-front).
+
+  Bruk resultatet fra forrige eksempel til å beskrive hva som skjer med de to kulene etter støtet, uten å regne.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Oppsummering
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Elastisk støt}{%
+  \begin{enumerate}[1.]
+    \item[] Bevegelsesmengde \textit{og} kinetisk energi er bevart.
+    \item[] To likninger, to ukjente --- løses samtidig.
+    \item[] Ved kollisjon mellom \textit{like} masser, der én er i ro: farten overføres fullstendig.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: statikk}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}
