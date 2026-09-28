@@ -538,5 +538,245 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k4_oppg13.tex",
     "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Arbeid med konstant kraft",
+    "label": "k5oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg01.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Arbeid på en fjær",
+    "label": "k5oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg02.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Kinetisk energi",
+    "label": "k5oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg03.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Kasse som sklir til ro",
+    "label": "k5oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg04.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Potensiell energi og nullnivå",
+    "label": "k5oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg05.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Energi i en fjær",
+    "label": "k5oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg06.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Syklist ned en bakke",
+    "label": "k5oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg07.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Friksjon gir varme",
+    "label": "k5oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg08.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Stein kastet rett opp",
+    "label": "k5oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg09.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Huske",
+    "label": "k5oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg10.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Løpe opp trappene",
+    "label": "k5oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg11.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Bil i konstant fart",
+    "label": "k5oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg12.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Sjekk av elastisk støt",
+    "label": "k5oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg13.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Energitap i et uelastisk støt",
+    "label": "k5oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg14.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Arbeid eller ikke?",
+    "label": "k5oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg15.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 16,
+    "kind": "oppgave",
+    "title": "Fjærkanon",
+    "label": "k5oppg16",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg16.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 17,
+    "kind": "oppgave",
+    "title": "Aking med friksjon",
+    "label": "k5oppg17",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg17.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 18,
+    "kind": "oppgave",
+    "title": "Heis",
+    "label": "k5oppg18",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg18.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 5,
+    "number": 19,
+    "kind": "oppgave",
+    "title": "Ballistisk pendel",
+    "label": "k5oppg19",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k5_oppg19.tex",
+    "sourcefile": "0.0.5_Energi.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Kraft og motkraft",
+    "label": "k4oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg14.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Kloss på skråplan med friksjon",
+    "label": "k4oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg15.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 16,
+    "kind": "oppgave",
+    "title": "Bil over en bakketopp",
+    "label": "k4oppg16",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg16.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 17,
+    "kind": "oppgave",
+    "title": "Spark på en fotball",
+    "label": "k4oppg17",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg17.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 4,
+    "number": 18,
+    "kind": "oppgave",
+    "title": "Astronaut i rommet",
+    "label": "k4oppg18",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k4_oppg18.tex",
+    "sourcefile": "0.0.4_Krefter.tex"
   }
 ]
