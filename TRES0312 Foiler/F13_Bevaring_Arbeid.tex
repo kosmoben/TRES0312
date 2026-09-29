@@ -56,25 +56,20 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 3 — Til ettertanke: biljardkollisjon
+%  SLIDE 3 — Til ettertanke og figur: biljardkollisjon
 %--------------------------------------------------------------------------
-\begin{frame}{}
+\begin{frame}{Biljardkollisjon}
 
   \tanke{}{%
   To biljardkuler kolliderer. Vi vet ikke nøyaktig hvordan kraften mellom dem varierer i løpet av det korte støtet.\\[4pt]
   Er det likevel noe som er \textit{bevart} gjennom kollisjonen?
   }
 
-\end{frame}
 
-%--------------------------------------------------------------------------
-%  SLIDE 4 — Figur: biljardkollisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Biljardkollisjon}
-
+  \vspace{-6pt}
   \begin{figure}[ht!]
   \centering
-  \resizebox{0.95\textwidth}{!}{%
+  \resizebox{0.82\textwidth}{!}{%
   \begin{tikzpicture}[font=\small, scale=0.92]
     %────── FØR ──────
     \node[font=\small\bfseries] at (0.30, 2.00) {Før:};
@@ -137,28 +132,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Utledning fra Newtons lover
-%--------------------------------------------------------------------------
-\begin{frame}{Utledning fra Newtons lover}
-
-  Newtons 3. lov: $\vec{F}_{AB} = -\vec{F}_{BA}$.
-
-  \pause
-  Newtons 2. lov på hvert legeme: $\vec{F}_{BA} = \dfrac{\Delta\vec{p}_A}{\Delta t}$, \quad $\vec{F}_{AB} = \dfrac{\Delta\vec{p}_B}{\Delta t}$.
-
-  \pause
-  Legger vi disse sammen:
-  \[
-    \frac{\Delta\vec{p}_A}{\Delta t} + \frac{\Delta\vec{p}_B}{\Delta t} = \vec{F}_{BA} + \vec{F}_{AB} = \vec{0}
-  \]
-
-  \pause
-  \graabox{$\displaystyle \vec{p}_{tot} = \vec{p}_A + \vec{p}_B = \text{konstant}$}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 6 — Definisjon: Bevaring av bevegelsesmengde
+%  SLIDE 4 — Definisjon: Bevaring av bevegelsesmengde
 %--------------------------------------------------------------------------
 \begin{frame}{Bevaring av bevegelsesmengde}
 
@@ -177,7 +151,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 7 — Algoritme for løsning
+%  SLIDE 5 — Algoritme for løsning
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -193,40 +167,28 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 8 — Eksempel: Rekyl fra gevær
+%  SLIDE 6 — Aktivitet: Rekyl fra gevær
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: rekyl}
+\begin{frame}{Aktivitet}
 
-  \exmat{4.14}{Rekyl fra gevær}{%
+  \aktivitet{Rekyl fra gevær}{%
   Et gevær med masse $M = 3.0\,\mathrm{kg}$ avfyres horisontalt. En kule med masse $m = 0.010\,\mathrm{kg}$ forlater løpet med fart $v = 800\,\mathrm{m/s}$ fremover. Både geværet og kula er i ro før avfyringen.
 
   Finn rekylhastigheten $V$ til geværet.
   }
 
-  \pause
-  Med fremover som positiv retning: $p_{tot,\,\text{før}} = 0$, så
-  \[
-    mv + MV = 0 \quad\Longrightarrow\quad V = -\frac{mv}{M} = \doubleunderline{-2.7\,\mathrm{m/s}}
-  \]
-  Minustegnet viser at geværet beveger seg \textit{bakover}.
-
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 9 — Eksempel: Uelastisk støt mellom vogner
+%  SLIDE 7 — Aktivitet: Uelastisk støt mellom vogner
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: vogner som kolliderer}
+\begin{frame}{Aktivitet}
 
-  \exmat{4.15}{Uelastisk støt: vogner som kolliderer og henger fast}{%
+  \aktivitet{Vogner som kolliderer og henger fast}{%
   En vogn med masse $m_1 = 2.0\,\mathrm{kg}$ ruller med fart $v_1 = 3.0\,\mathrm{m/s}$ og støter inn i en vogn med masse $m_2 = 1.0\,\mathrm{kg}$ som er i ro. Vognene henger seg fast i hverandre.
 
   Finn farten $v_f$ til de sammenkoblede vognene.
   }
-
-  \pause
-  \[
-    m_1 v_1 = (m_1 + m_2)\,v_f \quad\Longrightarrow\quad v_f = \frac{m_1 v_1}{m_1 + m_2} = \doubleunderline{2.0\,\mathrm{m/s}}
-  \]
 
   \pause
   \merk{To typer støt}{
@@ -236,37 +198,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 10 — Aktivitet: To skøyteløpere
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{To skøyteløpere}{%
-  Oda ($m_O = 55\,\mathrm{kg}$) og Per ($m_P = 80\,\mathrm{kg}$) står i ro på isen og skyver fra hverandre. Etter skyvingen beveger Oda seg med fart $4.0\,\mathrm{m/s}$ i én retning.
-  \begin{enumerate}[a)]
-    \item Hva er Pers hastighet etter skyvingen?
-    \item Hva er bevegelsesmengden til hver av dem etter skyvingen? Kommenter svaret.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 11 — Aktivitet: Bilkollisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Bilkollisjon}{%
-  En bil med masse $m_1 = 1200\,\mathrm{kg}$ kjører med fart $20\,\mathrm{m/s}$ mot en bil med masse $m_2 = 1000\,\mathrm{kg}$ som kjører i \textit{motsatt} retning med fart $15\,\mathrm{m/s}$. Bilene henger fast etter kollisjonen.
-  \begin{enumerate}[a)]
-    \item Hva er den totale bevegelsesmengden til systemet \textit{før} kollisjonen?
-    \item Finn farten og retningen til bilene etter kollisjonen.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 12 — Oppsummering: bevaring av bevegelsesmengde
+%  SLIDE 8 — Oppsummering: bevaring av bevegelsesmengde
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -281,7 +213,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — PAUSE
+%  SLIDE 9 — PAUSE
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
@@ -291,7 +223,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Til ettertanke: arbeid
+%  SLIDE 10 — Til ettertanke: arbeid
 %--------------------------------------------------------------------------
 \begin{frame}{Arbeid}
 
@@ -305,7 +237,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 15 — Definisjon: Arbeid
+%  SLIDE 11 — Definisjon: Arbeid
 %--------------------------------------------------------------------------
 \begin{frame}{Definisjon: arbeid}
 
@@ -325,7 +257,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 16 — Eksempel: Dytte en boks
+%  SLIDE 12 — Eksempel: Dytte en boks
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: dytte en boks}
 
@@ -343,7 +275,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Arbeid som areal: konstant kraft vs. fjærkraft
+%  SLIDE 13 — Arbeid som areal: konstant kraft vs. fjærkraft
 %--------------------------------------------------------------------------
 \begin{frame}{Arbeid som areal under $F$-kurven}
 
@@ -362,7 +294,8 @@
     \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$s$};
     \node[headCol!80!black, font=\small\bfseries] at (1.80, 1.10) {$W = F_0\cdot s$};
   \end{tikzpicture}
-  \captionof{figure}{\footnotesize Konstant kraft: arealet er et rektangel.}
+
+  \smallskip{\footnotesize Konstant kraft: arealet er et rektangel.\par}
   \end{column}
   \begin{column}{0.48\textwidth}
   \centering
@@ -375,9 +308,10 @@
     \draw[headCol!80!black, line width=2.2pt] (0, 0) -- (3.6, 2.52);
     \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.52);
     \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.32) {$F=kx$};
-    \node[headCol!80!black, font=\small\bfseries] at (2.65, 0.62) {$W=\tfrac{1}{2}kx^2$};
+    \node[headCol!80!black, font=\small\bfseries] at (2.30, 0.50) {$W=\tfrac{1}{2}kx^2$};
   \end{tikzpicture}
-  \captionof{figure}{\footnotesize Fjærkraft $F=kx$: arealet er en trekant.}
+
+  \smallskip{\footnotesize Fjærkraft $F=kx$: arealet er en trekant.\par}
   \end{column}
   \end{columns}
 
@@ -389,7 +323,48 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 18 — Neste gang
+%  SLIDE 14 — Aktivitet: Heisekran
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Heisekran}{%
+  En heisekran heiser en bil med masse $m = 1200\,\mathrm{kg}$ opp en høyde $h = 10\,\mathrm{m}$, med konstant fart.
+
+  Hvor stort arbeid har heisekranen gjort på bilen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Aktivitet: Fjær
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fjær}{%
+  En fjær med fjærkonstant $k = 800\,\mathrm{N/m}$ presses sammen til $x = 5.0\,\mathrm{cm}$ fra likevektsstillingen.
+  \begin{enumerate}[a)]
+      \item Hvor stort arbeid er gjort på fjæra?
+      \item Hva om fjæra i stedet strekkes ut like langt?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Aktivitet: Knebøy
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Knebøy}{%
+  Arnold tar knebøy med en vektstang på skuldrene.
+
+  Hvor stort arbeid har han gjort på vektstanga etter én repetisjon? (Han starter på toppen, går ned, og kommer så tilbake dit han startet.)
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
