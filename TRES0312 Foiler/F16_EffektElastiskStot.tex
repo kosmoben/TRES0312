@@ -55,20 +55,10 @@
 
 \end{frame}
 
-%--------------------------------------------------------------------------
-%  SLIDE 3 — Til ettertanke: effekt
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \tanke{}{%
-  To like biler skal begge løftes opp en fjellside --- de trenger nøyaktig samme arbeid. Den ene bruker to minutter, den andre bruker to sekunder.\\[4pt]
-  Er det noe fysisk størrelse som fanger opp \textit{denne} forskjellen?
-  }
-
-\end{frame}
+%--------------------------------------------------------------------
 
 %--------------------------------------------------------------------------
-%  SLIDE 4 — Definisjon: Effekt
+%  SLIDE 3 — Definisjon: Effekt
 %--------------------------------------------------------------------------
 \begin{frame}{Effekt}
 
@@ -80,6 +70,24 @@
     P = \frac{W}{t}
   \]
   Enheten for effekt er watt ($\mathrm{W}$), der $1\,\mathrm{W} = 1\,\mathrm{J/s}$.
+  }
+
+\end{frame}
+
+%  SLIDE 4 — Definisjon: Effekt
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Ovn}{%
+  En 1200 Watts ovn står på i en time. Hvor mye energi har den trukket?
+  }
+  \aktivitet{Bil}{%
+  En bil med masse $m=1200\,\mathrm{kg}$ akselererer fra $0$ til $100\,\mathrm{km/t}$ på $10.0\,\mathrm{s}$.
+
+  Hvor stor effekt må motoren yte for å oppnå denne akselerasjonen?
+  }
+  \aktivitet{Mann}{%
+  En voksen person forbrenner rundt 2000 kcal per dag. Hvor stor effekt tilsvarer dette? Hvor mange 1000-watts varmeovner utgjør dere som er i forelesning totalt sett nå?
   }
 
 \end{frame}
@@ -164,8 +172,11 @@
 \begin{frame}{}
 
   \tanke{}{%
-  Ved et støt er bevegelsesmengden alltid bevart --- det har vi allerede sett (kapittel 4.5).\\[4pt]
-  Men er den kinetiske energien \textit{også} bevart? Det avhenger av støttypen.
+  Er den kinetiske energien alltid bevart i en støt-prosess?
+  }
+  \pause
+  \svar{
+  Nei. I et \textit{elastisk støt} er både bevegelsesmengde og kinetisk energi bevart. I et \textit{uelastisk støt} er bare bevegelsesmengden bevart, mens noe av den kinetiske energien omformes til varme, lyd eller deformasjon.
   }
 
 \end{frame}
@@ -175,30 +186,25 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Elastisk støt}
 
-  Et elastisk støt er en kollisjon der \textit{både} bevegelsesmengden og den kinetiske energien er bevart. Objektene spretter fra hverandre uten å tape energi til deformasjon eller varme.
-
-  \pause
-  \defnat{5.9}{Bevaring av bevegelsesmengde (elastisk støt)}{
+  \defnat{5.9}{Elastisk støt}{
+  Et elastisk støt er en kollisjon der \textit{både} bevegelsesmengden og den kinetiske energien er bevart:
   \[
     m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2
   \]
+  \[
+    \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2
+    = \frac{1}{2}m_1 u_1^2 + \frac{1}{2}m_2 u_2^2
+  \]
+  Her er $v_1$ og $v_2$ hastighetene før støtet, og $u_1$ og $u_2$ hastighetene etter.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Definisjon: Bevaring av kinetisk energi
+%  SLIDE 12 — Merk: Newtons pendel
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
-  \defnat{5.10}{Bevaring av kinetisk energi (elastisk støt)}{
-  \[
-    \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2
-    = \frac{1}{2}m_1 u_1^2 + \frac{1}{2}m_2 u_2^2
-  \]
-  }
-
-  \pause
   \merk{Newtons pendel}{
   Et klassisk eksempel: kulene i Newtons pendel overfører bevegelsesmengde og kinetisk energi gjennom hele rekken --- den siste kula ``skytes'' opp med (omtrent) samme fart som den første ble sluppet med.
   }
@@ -206,77 +212,34 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 13 — Eksempel: kollisjon mellom to like vogner (oppsett)
+%  SLIDE 13 — Aktivitet: elastisk kollisjon mellom vogner med ulik masse
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: kollisjon mellom vogner}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.11}{Elastisk kollisjon mellom to like vogner}{%
-  En vogn med masse $m=2.0\,\mathrm{kg}$ og fart $v_1=3.0\,\mathrm{m/s}$ krasjer inn i en identisk vogn ($m=2.0\,\mathrm{kg}$) som står i ro ($v_2 = 0$), på et friksjonsfritt underlag.
+  \aktivitet{Elastisk kollisjon mellom to vogner}{%
+  En vogn med masse $m_1=2.0\,\mathrm{kg}$ og fart $v_1=3.0\,\mathrm{m/s}$ krasjer inn i en vogn med masse $m_2=1.0\,\mathrm{kg}$ som står i ro ($v_2 = 0$), på et friksjonsfritt underlag. Kollisjonen er elastisk.
 
-  Finn farten til begge vognene etter kollisjonen.
+  Finn hastighetene $u_1$ og $u_2$ til de to vognene etter kollisjonen.
   }
+  \textit{Tips:} Sett opp bevaring av bevegelsesmengde og bevaring av kinetisk energi. Da har du to likninger med to ukjente.
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Løsning: bevaring av bevegelsesmengde
-%--------------------------------------------------------------------------
-\begin{frame}{Løsning}
-
-  La vogn 1 ha fart $u_1$ og vogn 2 ha fart $u_2$ etter kollisjonen.
-
-  \pause
-  \textbf{Bevegelsesmengde:}
-  \[
-    mv_1 = mu_1 + mu_2 \quad\Longrightarrow\quad v_1 = u_1 + u_2
-  \]
-
-  \pause
-  \textbf{Kinetisk energi:}
-  \[
-    \tfrac{1}{2}mv_1^2 = \tfrac{1}{2}mu_1^2 + \tfrac{1}{2}mu_2^2 \quad\Longrightarrow\quad v_1^2 = u_1^2 + u_2^2
-  \]
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 15 — Løsning: kombinasjon av likningene
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  Setter $u_2 = v_1 - u_1$ inn i energilikningen:
-  \[
-    v_1^2 = u_1^2 + (v_1-u_1)^2 \quad\Longrightarrow\quad 0 = u_1(u_1-v_1)
-  \]
-
-  \pause
-  To løsninger: $u_1=0$ eller $u_1=v_1$. Løsningen $u_1=v_1$ betyr at vognene aldri traff hverandre, så den fysiske løsningen er $u_1=0$:
-
-  \pause
-  \graabox{$\displaystyle u_1 = 0, \qquad u_2 = v_1 = \doubleunderline{3.0\,\mathrm{m/s}}$}
-
-  \pause
-  \merk{Tolkning}{
-  Vogn 1 stopper helt, og vogn 2 overtar hele farten --- et typisk trekk ved elastisk kollisjon mellom \textit{like} masser.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 16 — Aktivitet: to biljardkuler
+%  SLIDE 14 — Aktivitet: to biljardkuler
 %--------------------------------------------------------------------------
 \begin{frame}{Aktivitet}
 
   \aktivitet{To biljardkuler}{%
   En biljardkule ($m=0.17\,\mathrm{kg}$) med fart $v_1=2.0\,\mathrm{m/s}$ treffer en identisk kule i ro, midt i sentrum (rett front-mot-front).
 
-  Bruk resultatet fra forrige eksempel til å beskrive hva som skjer med de to kulene etter støtet, uten å regne.
+  Hva skjer med de to kulene etter støtet? Løs på samme måte som i forrige aktivitet, men nå med like masser.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 17 — Oppsummering
+%  SLIDE 15 — Oppsummering
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
@@ -291,7 +254,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 18 — Neste gang
+%  SLIDE 16 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
