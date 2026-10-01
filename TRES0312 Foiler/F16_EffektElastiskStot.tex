@@ -180,7 +180,7 @@
   \pause
   \defnat{5.9}{Bevaring av bevegelsesmengde (elastisk støt)}{
   \[
-    m_1 v_{1,\text{før}} + m_2 v_{2,\text{før}} = m_1 v_{1,\text{etter}} + m_2 v_{2,\text{etter}}
+    m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2
   \]
   }
 
@@ -193,8 +193,8 @@
 
   \defnat{5.10}{Bevaring av kinetisk energi (elastisk støt)}{
   \[
-    \frac{1}{2}m_1 v_{1,\text{før}}^2 + \frac{1}{2}m_2 v_{2,\text{før}}^2
-    = \frac{1}{2}m_1 v_{1,\text{etter}}^2 + \frac{1}{2}m_2 v_{2,\text{etter}}^2
+    \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2
+    = \frac{1}{2}m_1 u_1^2 + \frac{1}{2}m_2 u_2^2
   \]
   }
 
@@ -210,8 +210,8 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Eksempel: kollisjon mellom vogner}
 
-  \exmat{5.8}{Elastisk kollisjon mellom to like vogner}{%
-  En vogn med masse $m=2.0\,\mathrm{kg}$ og fart $v_1=3.0\,\mathrm{m/s}$ krasjer inn i en identisk vogn ($m=2.0\,\mathrm{kg}$) som står i ro, på et friksjonsfritt underlag.
+  \exmat{5.11}{Elastisk kollisjon mellom to like vogner}{%
+  En vogn med masse $m=2.0\,\mathrm{kg}$ og fart $v_1=3.0\,\mathrm{m/s}$ krasjer inn i en identisk vogn ($m=2.0\,\mathrm{kg}$) som står i ro ($v_2 = 0$), på et friksjonsfritt underlag.
 
   Finn farten til begge vognene etter kollisjonen.
   }
@@ -223,18 +223,18 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Løsning}
 
-  La vogn 1 ha fart $v_2$ og vogn 2 ha fart $u$ etter kollisjonen.
+  La vogn 1 ha fart $u_1$ og vogn 2 ha fart $u_2$ etter kollisjonen.
 
   \pause
   \textbf{Bevegelsesmengde:}
   \[
-    mv_1 = mv_2 + mu \quad\Longrightarrow\quad v_1 = v_2 + u
+    mv_1 = mu_1 + mu_2 \quad\Longrightarrow\quad v_1 = u_1 + u_2
   \]
 
   \pause
   \textbf{Kinetisk energi:}
   \[
-    \tfrac{1}{2}mv_1^2 = \tfrac{1}{2}mv_2^2 + \tfrac{1}{2}mu^2 \quad\Longrightarrow\quad v_1^2 = v_2^2 + u^2
+    \tfrac{1}{2}mv_1^2 = \tfrac{1}{2}mu_1^2 + \tfrac{1}{2}mu_2^2 \quad\Longrightarrow\quad v_1^2 = u_1^2 + u_2^2
   \]
 
 \end{frame}
@@ -244,16 +244,16 @@
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
-  Setter $u = v_1 - v_2$ inn i energilikningen:
+  Setter $u_2 = v_1 - u_1$ inn i energilikningen:
   \[
-    v_1^2 = v_2^2 + (v_1-v_2)^2 \quad\Longrightarrow\quad 0 = v_2(v_2-v_1)
+    v_1^2 = u_1^2 + (v_1-u_1)^2 \quad\Longrightarrow\quad 0 = u_1(u_1-v_1)
   \]
 
   \pause
-  To løsninger: $v_2=0$ eller $v_2=v_1$. Siden vogn 1 overfører all sin bevegelse til vogn 2, må $v_2=0$:
+  To løsninger: $u_1=0$ eller $u_1=v_1$. Løsningen $u_1=v_1$ betyr at vognene aldri traff hverandre, så den fysiske løsningen er $u_1=0$:
 
   \pause
-  \graabox{$\displaystyle v_2 = 0, \qquad u = v_1 = \doubleunderline{3.0\,\mathrm{m/s}}$}
+  \graabox{$\displaystyle u_1 = 0, \qquad u_2 = v_1 = \doubleunderline{3.0\,\mathrm{m/s}}$}
 
   \pause
   \merk{Tolkning}{

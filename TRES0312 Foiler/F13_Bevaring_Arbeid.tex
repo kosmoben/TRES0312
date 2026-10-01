@@ -172,9 +172,9 @@
 \begin{frame}{Aktivitet}
 
   \aktivitet{Rekyl fra gevær}{%
-  Et gevær med masse $M = 3.0\,\mathrm{kg}$ avfyres horisontalt. En kule med masse $m = 0.010\,\mathrm{kg}$ forlater løpet med fart $v = 800\,\mathrm{m/s}$ fremover. Både geværet og kula er i ro før avfyringen.
+  Et gevær med masse $M = 3.0\,\mathrm{kg}$ avfyres horisontalt. En kule med masse $m = 0.010\,\mathrm{kg}$ forlater løpet med fart $u = 800\,\mathrm{m/s}$ fremover. Både geværet og kula er i ro før avfyringen.
 
-  Finn rekylhastigheten $V$ til geværet.
+  Finn rekylhastigheten $U$ til geværet.
   }
 
 \end{frame}
@@ -187,7 +187,7 @@
   \aktivitet{Vogner som kolliderer og henger fast}{%
   En vogn med masse $m_1 = 2.0\,\mathrm{kg}$ ruller med fart $v_1 = 3.0\,\mathrm{m/s}$ og støter inn i en vogn med masse $m_2 = 1.0\,\mathrm{kg}$ som er i ro. Vognene henger seg fast i hverandre.
 
-  Finn farten $v_f$ til de sammenkoblede vognene.
+  Finn den felles farten $u$ til de sammenkoblede vognene.
   }
 
   \pause
@@ -257,20 +257,17 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Eksempel: Dytte en boks
+%  SLIDE 12 — Aktivitet: Slede på Hyrox-trening
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: dytte en boks}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.1}{Dytte en boks}{%
-  En boks dyttes langs et gulv med kraft $F = 10\,\mathrm{N}$ over en avstand $s = 5.0\,\mathrm{m}$, i samme retning som bevegelsen ($\theta=0^\circ$).
-
-  Finn arbeidet som utføres.
+  \aktivitet{Slede på Hyrox-trening}{%
+  I en Hyrox-treningstime dyttes en slede $s = 10\,\mathrm{m}$ horisontalt med en kraft $F = 2.0\,\mathrm{kN}$. Sleden har konstant fart.
+  \begin{enumerate}[a)]
+      \item Beregn arbeidet kraften $\vec{F}$ utfører.
+      \item Beregn arbeidet som normalkraften $\vec{N}$, tyngdekraften $\vec{G}$ og friksjonskraften $\vec{R}$ utfører.
+  \end{enumerate}
   }
-
-  \pause
-  \[
-    W = F\cdot s\cdot\cos(0^\circ) = 10\,\mathrm{N}\cdot 5.0\,\mathrm{m}\cdot 1 = \doubleunderline{50\,\mathrm{J}}
-  \]
 
 \end{frame}
 
@@ -279,46 +276,101 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Arbeid som areal under $F$-kurven}
 
-  \begin{columns}
-  \begin{column}{0.48\textwidth}
+  \begin{columns}[T]
+  %------------------------- VENSTRE: konstant kraft -------------------------
+  \begin{column}{0.46\textwidth}
   \centering
-  \begin{tikzpicture}[scale=0.72, font=\small]
+  {\small\bfseries Konstant kraft\par}
+  \medskip
+  \begin{tikzpicture}[scale=0.55, font=\small]
     \fill[headCol!22] (0,0) rectangle (3.6, 2.0);
-    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
-      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$s$};
-    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
-      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
-    \draw[headCol!80!black, line width=2.2pt] (0, 2.0) -- (3.6, 2.0);
+    \draw[-{Stealth[length=6pt,width=4pt]}, line width=1.0pt, gray!70]
+      (-0.2, 0) -- (4.4, 0) node[right, gray!80] {$s$};
+    \draw[-{Stealth[length=6pt,width=4pt]}, line width=1.0pt, gray!70]
+      (0, -0.2) -- (0, 2.9) node[above, gray!80] {$F$};
+    \draw[headCol!80!black, line width=2.0pt] (0, 2.0) -- (3.6, 2.0);
     \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.0);
-    \node[left=3pt, black!65, font=\scriptsize] at (0, 2.0) {$F_0$};
-    \node[below=3pt, black!65, font=\scriptsize] at (3.6, 0) {$s$};
-    \node[headCol!80!black, font=\small\bfseries] at (1.80, 1.10) {$W = F_0\cdot s$};
+    \node[left=2pt, gray!80, font=\scriptsize] at (0, 2.0) {$G$};
+    \node[below=2pt, gray!80, font=\scriptsize] at (3.6, 0) {$s$};
+    \node[headCol!80!black, font=\small\bfseries] at (1.80, 1.00) {$W = G\cdot s$};
   \end{tikzpicture}
 
-  \smallskip{\footnotesize Konstant kraft: arealet er et rektangel.\par}
+  \medskip
+  \begin{tikzpicture}[scale=0.8, font=\small]
+    % Underlag
+    \draw[gray!70, line width=1pt] (-1.3, 0) -- (1.3, 0);
+    \foreach \x in {-1.2,-0.9,...,1.2} {
+      \draw[gray!45, thin] (\x, 0) -- (\x-0.15, -0.15);
+    }
+    % Kula før (stiplet) og etter løftet
+    \draw[gray!60, dashed, line width=0.8pt] (0, 0.25) circle (0.25);
+    \fill[headCol!40] (0, 1.85) circle (0.25);
+    \draw[headCol!70!black, line width=1pt] (0, 1.85) circle (0.25);
+    % Forflytning s (rett opp)
+    \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.6pt, oppsumcol]
+      (-0.65, 0.25) -- (-0.65, 1.85);
+    \node[oppsumcol, left=2pt] at (-0.65, 1.05) {$\vec{s}$};
+    % Tyngdekraft G (ned)
+    \fill[defscol] (0, 1.85) circle (1.5pt);
+    \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.6pt, defscol]
+      (0, 1.85) -- (0, 0.95);
+    \node[defscol, right=3pt] at (0, 1.20) {$\vec{G}$};
+  \end{tikzpicture}
+
+  {\footnotesize Kula løftes $s$ med konstant fart. Arealet er et rektangel.\par}
   \end{column}
-  \begin{column}{0.48\textwidth}
+  %------------------------- skillelinje -------------------------
+  \begin{column}{0.02\textwidth}
   \centering
-  \begin{tikzpicture}[scale=0.72, font=\small]
+  \begin{tikzpicture}
+    \draw[dashed, gray!60, line width=0.8pt] (0,0) -- (0,6.4);
+  \end{tikzpicture}
+  \end{column}
+  %------------------------- HØYRE: fjærkraft -------------------------
+  \begin{column}{0.46\textwidth}
+  \centering
+  {\small\bfseries Fjærkraft\par}
+  \medskip
+  \begin{tikzpicture}[scale=0.55, font=\small]
     \fill[headCol!22] (0,0) -- (3.6, 2.52) -- (3.6, 0) -- cycle;
-    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
-      (-0.2, 0) -- (4.4, 0) node[right, black!75] {$x$};
-    \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.1pt, black!70]
-      (0, -0.2) -- (0, 2.9) node[above, black!75] {$F$};
-    \draw[headCol!80!black, line width=2.2pt] (0, 0) -- (3.6, 2.52);
+    \draw[-{Stealth[length=6pt,width=4pt]}, line width=1.0pt, gray!70]
+      (-0.2, 0) -- (4.4, 0) node[right, gray!80] {$x$};
+    \draw[-{Stealth[length=6pt,width=4pt]}, line width=1.0pt, gray!70]
+      (0, -0.2) -- (0, 2.9) node[above, gray!80] {$F$};
+    \draw[headCol!80!black, line width=2.0pt] (0, 0) -- (3.6, 2.52);
     \draw[dashed, gray!55, thin] (3.6, 0) -- (3.6, 2.52);
-    \node[headCol!75!black, font=\scriptsize, rotate=34] at (1.30, 1.32) {$F=kx$};
-    \node[headCol!80!black, font=\small\bfseries] at (2.30, 0.50) {$W=\tfrac{1}{2}kx^2$};
+    \node[gray!80, font=\scriptsize, anchor=south east] at (2.0, 1.45) {$F=kx$};
+    \node[headCol!80!black, font=\footnotesize\bfseries] at (2.50, 0.42) {$W=\tfrac{1}{2}kx^2$};
   \end{tikzpicture}
 
-  \smallskip{\footnotesize Fjærkraft $F=kx$: arealet er en trekant.\par}
+  \medskip
+  \begin{tikzpicture}[scale=0.8, font=\small]
+    % Vegg
+    \fill[gray!25] (-0.35,-0.45) rectangle (0, 0.45);
+    \draw[line width=1.2pt, gray!70] (0,-0.45) -- (0, 0.45);
+    % Fjær (strukket)
+    \draw[line width=1.4pt, gray!75]
+      (0,0) -- (0.15,0) -- (0.230,0.16) -- (0.390,-0.16) -- (0.550,0.16) -- (0.710,-0.16) -- (0.870,0.16) -- (1.030,-0.16) -- (1.190,0.16) -- (1.350,-0.16) -- (1.510,0.16) -- (1.670,-0.16) -- (1.75,0) -- (1.90,0);
+    % Kloss
+    \fill[headCol!40] (1.90,-0.27) rectangle (2.44, 0.27);
+    \draw[headCol!70!black, line width=1pt] (1.90,-0.27) rectangle (2.44, 0.27);
+    % Likevektsstilling
+    \draw[dashed, gray!60, thin] (1.10,-0.75) -- (1.10, 0.75);
+    \node[gray!80, font=\scriptsize, above] at (1.10, 0.75) {likevekt};
+    % Utstrekning x (fra likevekt og ut)
+    \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.6pt, oppsumcol]
+      (1.10,-0.60) -- (1.90,-0.60);
+    \node[oppsumcol, below=1pt] at (1.50,-0.60) {$\vec{x}$};
+    % Fjærkraft på klossen (mot utstrekningen)
+    \fill[defscol] (1.90, 0) circle (1.5pt);
+    \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.6pt, defscol]
+      (1.90, 0) -- (1.08, 0);
+    \node[defscol, right=2pt] at (2.44, 0.35) {$\vec{F}=-k\vec{x}$};
+  \end{tikzpicture}
+
+  {\footnotesize Fjæra strekkes ut $x$ fra likevekt. Arealet er en trekant.\par}
   \end{column}
   \end{columns}
-
-  \pause
-  \merk{Elastisk potensiell energi}{
-  Arbeidet $W=\tfrac{1}{2}kx^2$ mot fjæren lagres som elastisk potensiell energi --- mer om dette i seksjon 5.2.
-  }
 
 \end{frame}
 
@@ -351,20 +403,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 16 — Aktivitet: Knebøy
-%--------------------------------------------------------------------------
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Knebøy}{%
-  Arnold tar knebøy med en vektstang på skuldrene.
-
-  Hvor stort arbeid har han gjort på vektstanga etter én repetisjon? (Han starter på toppen, går ned, og kommer så tilbake dit han startet.)
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 17 — Neste gang
+%  SLIDE 16 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}

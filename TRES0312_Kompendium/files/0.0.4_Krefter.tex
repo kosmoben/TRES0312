@@ -1665,9 +1665,9 @@ Fremgangsmåten i slike oppgaver er alltid den samme:
 Et klassisk eksempel er rekyl fra et gevær. Før avfyringen er kula og geværet i ro — den totale bevegelsesmengden er null. Etter avfyringen beveger kula seg raskt fremover og geværet sakte bakover, men de to bidragene kansellerer nøyaktig, slik at totalen fortsatt er null.
 
 \exm{Rekyl fra gevær}{%
-Et gevær med masse $M = \SI{3.0}{\kilo\gram}$ avfyres horisontalt. En kule med masse $m = \SI{10}{\gram} = \SI{0.010}{\kilo\gram}$ forlater løpet med fart $v = \SI{800}{\metre\per\second}$ fremover. Både geværet og kula er i ro før avfyringen.
+Et gevær med masse $M = \SI{3.0}{\kilo\gram}$ avfyres horisontalt. En kule med masse $m = \SI{10}{\gram} = \SI{0.010}{\kilo\gram}$ forlater løpet med fart $u = \SI{800}{\metre\per\second}$ fremover. Både geværet og kula er i ro før avfyringen.
 
-Finn rekylhastigheten til geværet.
+Finn rekylhastigheten $U$ til geværet.
 }
 
 \svar{%
@@ -1680,12 +1680,12 @@ p_{tot,\,\text{før}} = 0
 Det virker ingen ytre horisontale krefter i avfyringsøyeblikket, så bevegelsesmengden er bevart:
 \begin{align*}
 p_{tot,\,\text{etter}} &= p_{tot,\,\text{før}} = 0\\[4pt]
-mv + MV &= 0\\[4pt]
-V &= -\frac{mv}{M}
+mu + MU &= 0\\[4pt]
+U &= -\frac{mu}{M}
 \end{align*}
 Setter inn tallene:
 \[
-V = -\frac{\SI{0.010}{\kilo\gram}\cdot\SI{800}{\metre\per\second}}{\SI{3.0}{\kilo\gram}}
+U = -\frac{\SI{0.010}{\kilo\gram}\cdot\SI{800}{\metre\per\second}}{\SI{3.0}{\kilo\gram}}
   = \doubleunderline{\SI{-2.7}{\metre\per\second}}
 \]
 Minustegnet viser at geværet beveger seg \textit{bakover} — det er det vi kjenner som rekyl.
@@ -1719,14 +1719,14 @@ Minustegnet viser at geværet beveger seg \textit{bakover} — det er det vi kje
   % Kule (langt til høyre)
   \fill[gray!60] (3.6, -0.35) circle (0.18);
   \node[font=\scriptsize, above] at (3.6, -0.17) {\scriptsize$m$};
-  % Pil gevær (V, venstre)
+  % Pil gevær (U, venstre)
   \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, red!70!black]
     (0.6, -0.9) -- (-0.4, -0.9);
-  \node[font=\scriptsize, below] at (0.1, -0.9) {$V$};
-  % Pil kule (v, høyre)
+  \node[font=\scriptsize, below] at (0.1, -0.9) {$U$};
+  % Pil kule (u, høyre)
   \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, defscol]
     (3.3, -0.9) -- (4.3, -0.9);
-  \node[font=\scriptsize, below] at (3.8, -0.9) {$v$};
+  \node[font=\scriptsize, below] at (3.8, -0.9) {$u$};
 \end{tikzpicture}
 \end{minipage}
 }
@@ -1739,7 +1739,7 @@ Det vanligste bruksområdet for bevaring av bevegelsesmengde er kollisjoner. Vi 
 \exm{Uelastisk støt: vogner som kolliderer og henger fast}{%
 En vogn med masse $m_1 = \SI{2.0}{\kilo\gram}$ ruller med fart $v_1 = \SI{3.0}{\metre\per\second}$ og støter inn i en vogn med masse $m_2 = \SI{1.0}{\kilo\gram}$ som er i ro. Vognene henger seg fast i hverandre etter støtet.
 
-Finn farten $v_f$ til de sammenkoblede vognene.
+Finn den felles farten $u$ til de sammenkoblede vognene.
 }
 
 \svar{%
@@ -1749,12 +1749,12 @@ Vi velger $+x$ langs bevegelsesretningen til vogn 1.
 
 Bevaringsligningen:
 \begin{align*}
-m_1 v_1 + m_2 \cdot 0 &= (m_1 + m_2)\,v_f\\[4pt]
-v_f &= \frac{m_1 v_1}{m_1 + m_2}
+m_1 v_1 + m_2 \cdot 0 &= (m_1 + m_2)\,u\\[4pt]
+u &= \frac{m_1 v_1}{m_1 + m_2}
 \end{align*}
 Setter inn tallene:
 \[
-v_f = \frac{\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{3.0}{\kilo\gram}}
+u = \frac{\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{3.0}{\kilo\gram}}
     = \doubleunderline{\SI{2.0}{\metre\per\second}}
 \]
 De sammenkoblede vognene beveger seg med $\SI{2.0}{\metre\per\second}$ i samme retning som vogn 1.
@@ -1784,10 +1784,10 @@ De sammenkoblede vognene beveger seg med $\SI{2.0}{\metre\per\second}$ i samme r
   \fill[headCol!30] (0.0, -0.6) rectangle (2.4, 0.0);
   \draw[line width=1pt, headCol!70!black] (0.0, -0.6) rectangle (2.4, 0.0);
   \node[font=\scriptsize] at (1.2, -0.3) {$m_1 + m_2$};
-  % Pil vf
+  % Pil u
   \draw[-{Stealth[length=7pt,width=4pt]}, line width=1.5pt, defscol]
     (2.4, 0.2) -- (3.3, 0.2);
-  \node[font=\scriptsize, above] at (2.85, 0.2) {$v_f$};
+  \node[font=\scriptsize, above] at (2.85, 0.2) {$u$};
 \end{tikzpicture}
 \end{minipage}
 }

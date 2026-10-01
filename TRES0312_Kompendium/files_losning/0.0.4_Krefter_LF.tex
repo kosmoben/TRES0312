@@ -1,0 +1,466 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Dynamikk}
+\label{LF:Chapter:dynamikk}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:dynamikk}, \textit{Dynamikk}, i kompendiet.
+
+\oppgaver{Geværkule og bil}{k4oppg1}{%
+\input{Oppgaver/k4_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Bevegelsesmengden er $p=m\cdot v$ (se \textit{Bevegelsesmengde} i Kapittel~\ref{komp-Chapter:dynamikk}). Vi gjør om massen til kg, $m_k=\SI{10}{\gram}=\SI{0.010}{\kilo\gram}$:
+\[
+    p = m_k v_k = \SI{0.010}{\kilo\gram}\cdot\SI{900}{\metre\per\second} = \doubleunderline{\SI{9.0}{\kilo\gram\metre\per\second}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Bilen skal ha samme bevegelsesmengde, $p = m_b v_b$. Vi løser for $v_b$:
+\[
+    v_b = \frac{p}{m_b} = \frac{\SI{9.0}{\kilo\gram\metre\per\second}}{\SI{1500}{\kilo\gram}} = \doubleunderline{\SI{0.0060}{\metre\per\second}} = \doubleunderline{\SI{0.0216}{\kilo\metre\per\hour}}
+\]
+Bilen trenger altså bare å kjøre med en helt ubetydelig fart (under 2.2 cm/s!) for å ha samme bevegelsesmengde som den raske, men svært lette, geværkula. Dette illustrerer hvor mye massen betyr for bevegelsesmengden.
+}
+
+\oppgaver{Finn fjærkonstanten}{k4oppg2}{%
+\input{Oppgaver/k4_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Loddet henger i ro, så fjærkraften er like stor som tyngdekraften på loddet (se \textit{Hookes lov} i Kapittel~\ref{komp-Chapter:dynamikk}): $F=kx=m\mathrm{g}$. Vi løser for $k$:
+\[
+    k = \frac{m\mathrm{g}}{x} = \frac{\SI{0.250}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{0.12}{\metre}} = \doubleunderline{\SI{20.4}{\newton\per\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Med det nye loddet, $m=\SI{0.400}{\kilo\gram}$, løser vi $kx=m\mathrm{g}$ for $x$:
+\[
+    x = \frac{m\mathrm{g}}{k} = \frac{\SI{0.400}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{20.4}{\newton\per\metre}} = \doubleunderline{\SI{0.192}{\metre}} = \doubleunderline{\SI{19.2}{\centi\metre}}
+\]
+}
+
+\oppgaver{Tyngdekraft på jord og måne}{k4oppg3}{%
+\input{Oppgaver/k4_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi bruker $G=m\mathrm{g}$ (se \textit{Tyngdekraft} i Kapittel~\ref{komp-Chapter:dynamikk}).
+
+\smallskip\noindent
+\textbf{a)} På jorda:
+\[
+    G = m\mathrm{g} = \SI{75}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{736}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} På månen:
+\[
+    G_\text{måne} = m\,\mathrm{g}_\text{måne} = \SI{75}{\kilo\gram}\cdot\SI{1.62}{\metre\per\second\squared} = \doubleunderline{\SI{122}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Olas masse er fortsatt $\doubleunderline{m=\SI{75}{\kilo\gram}}$ -- helt uendret. Massen er et mål på hvor mye \textit{treghet} (stoffmengde) Ola har, og det avhenger ikke av hvor han befinner seg. Det er \textit{tyngdekraften} $G$ som endrer seg mellom jorda og månen (fordi $\mathrm{g}$ er forskjellig), ikke massen $m$.
+}
+
+\oppgaver{Fritt fall}{k4oppg4}{%
+\input{Oppgaver/k4_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} De fleste vil tro at hammeren treffer bakken først. Dette stemmer faktisk i virkeligheten (med luft til stede): fjæra har stort overflateareal i forhold til massen sin, så luftmotstanden bremser fjæra mye mer enn den bremser hammeren. Hammeren faller dermed tilnærmet i fritt fall, mens fjæra daler sakte ned.
+
+\smallskip\noindent
+\textbf{b)} Dersom vi pumper vekk all lufta (fullstendig vakuum), er luftmotstanden borte, og begge objektene er i \textit{fritt fall} -- de påvirkes kun av tyngdekraften. Fra Newtons 2. lov (se \textit{Tyngdekraft} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    \sum F = ma \quad\Rightarrow\quad m\mathrm{g} = ma \quad\Rightarrow\quad a = \mathrm{g},
+\]
+og massen $m$ forsvinner fullstendig fra likningen. Akselerasjonen er dermed $\mathrm{g}$ for \textit{alle} legemer, uavhengig av masse og form. I vakuum vil derfor hammeren og fjæra \doubleunderline{treffe bakken samtidig} -- noe som faktisk ble demonstrert på Månen av astronaut David Scott under Apollo 15-ferden, nettopp fordi Månen ikke har noen atmosfære.
+}
+
+\oppgaver{Normalkraft i heis — ulike situasjoner}{k4oppg5}{%
+\input{Oppgaver/k4_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi velger oppover som positiv retning og bruker Newtons 2. lov i vertikal retning, akkurat som i eksempelet \textit{Normalkraft i akselererende heis} i Kapittel~\ref{komp-Chapter:dynamikk}: $\sum F_y = N - G = ma \implies N = m(\mathrm{g}+a)$.
+
+\smallskip\noindent
+\textbf{a)} Her er $a=\SI{-3.0}{\metre\per\second\squared}$ (akselerasjonen peker nedover, siden heisen bremser mens den beveger seg oppover):
+\[
+    N = m(\mathrm{g}+a) = \SI{80}{\kilo\gram}\cdot(\SI{9.81}{\metre\per\second\squared}-\SI{3.0}{\metre\per\second\squared}) = \doubleunderline{\SI{545}{\newton}}
+\]
+Dette er mindre enn tyngdekraften ($G=\SI{785}{\newton}$) -- Ola føler seg lettere enn vanlig.
+
+\smallskip\noindent
+\textbf{b)} I fritt fall er $a=-\mathrm{g}$:
+\[
+    N = m(\mathrm{g}-\mathrm{g}) = \doubleunderline{\SI{0}{\newton}}
+\]
+Normalkraften er null -- Ola ville oppleve \doubleunderline{vektløshet}. Dette er nøyaktig samme situasjon som å simulere vektløshet i fly ved fritt fall (se \textit{Fritt fall som eksempel} i Kapittel~\ref{komp-Chapter:kinematikk}).
+}
+
+\oppgaver{Flytte et skap}{k4oppg6}{%
+\input{Oppgaver/k4_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Normalkraften er $N=m\mathrm{g}=\SI{80}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}=\SI{784.8}{\newton}$.
+
+\smallskip\noindent
+\textbf{a)} Den minste kraften som trengs for å sette skapet i bevegelse må akkurat overvinne maksimal hvilefriksjon (se \textit{Friksjonskrefter} i Kapittel~\ref{komp-Chapter:dynamikk}), $R_{s,\text{maks}}=\mu_s N$:
+\[
+    F_\text{min} = \mu_s N = 0.35\cdot\SI{784.8}{\newton} = \doubleunderline{\SI{275}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} De to personene skyver med $F=\SI{260}{\newton}$, som er \textit{mindre} enn $R_{s,\text{maks}}=\SI{275}{\newton}$. Hvilefriksjonen tilpasser seg og motvirker hele den påførte kraften ($R_s=F=\SI{260}{\newton} < R_{s,\text{maks}}$), så skapet \doubleunderline{begynner ikke å bevege seg}.
+}
+
+\oppgaver{Hockeypuck på is}{k4oppg7}{%
+\input{Oppgaver/k4_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Normalkraften er $N=m\mathrm{g}$, med $m=\SI{170}{\gram}=\SI{0.170}{\kilo\gram}$. Friksjonskraften er (se \textit{Glidefriksjon} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    R = \mu_k N = \mu_k m\mathrm{g} = 0.03\cdot\SI{0.170}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{0.0500}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Friksjonen er eneste horisontale kraft, så akselerasjonen er (uavhengig av massen):
+\[
+    a = -\mu_k \mathrm{g} = -0.03\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{-0.294}{\metre\per\second\squared}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Vi bruker fart-strekning-likningen (Likning 3 i avsnitt~\ref{komp-sec:bevegelseslikninger}), $v^2=v_0^2+2a\,\Delta s$, med $v=0$ (pucken stopper):
+\[
+    0 = v_0^2 + 2a\,s \quad\Rightarrow\quad s = \frac{-v_0^2}{2a} = \frac{v_0^2}{2\mu_k \mathrm{g}} = \frac{(\SI{15}{\metre\per\second})^2}{2\cdot 0.03\cdot\SI{9.81}{\metre\per\second\squared}} = \doubleunderline{\SI{382}{\metre}}
+\]
+Pucken glir svært langt, nettopp fordi friksjonskoeffisienten mellom puck og is er så liten.
+}
+
+\oppgaver{Bremselengde for bildekk}{k4oppg8}{%
+\input{Oppgaver/k4_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Når hjulene låser seg, glir dekket mot veien, og glidefriksjonen er eneste horisontale kraft. Newtons 2. lov i horisontal retning gir ($x$ i bevegelsesretningen, $N=m\mathrm{g}$ fra vertikal likevekt):
+\[
+    \sum F_x = -R = ma \quad\Rightarrow\quad -\mu_k m\mathrm{g} = ma \quad\Rightarrow\quad a = -\mu_k\mathrm{g}
+\]
+(dette er samme resultat som i \textit{Glidefriksjon}, Kapittel~\ref{komp-Chapter:dynamikk}). Deretter bruker vi fart-strekning-likningen (Likning 3 i avsnitt~\ref{komp-sec:bevegelseslikninger}), $v^2=v_0^2+2a\,s$, med $v=0$ når bilen har stoppet:
+\[
+    0 = v_0^2 - 2\mu_k\mathrm{g}\,s \quad\Longrightarrow\quad \doubleunderline{s = \frac{v_0^2}{2\,\mu_k\,\mathrm{g}}} \qquad\checkmark
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi regner om $v_0=\SI{80}{\kilo\metre\per\hour}=\SI{22.2}{\metre\per\second}$, og setter inn for hver verdi av $\mu_k$:
+\[
+    \mu_k=0.70:\quad s = \frac{22.2^2}{2\cdot0.70\cdot9.81} = \doubleunderline{\SI{36.0}{\metre}} \quad\text{(tørr asfalt)}
+\]
+\[
+    \mu_k=0.40:\quad s = \frac{22.2^2}{2\cdot0.40\cdot9.81} = \doubleunderline{\SI{62.9}{\metre}} \quad\text{(våt vei)}
+\]
+\[
+    \mu_k=0.10:\quad s = \frac{22.2^2}{2\cdot0.10\cdot9.81} = \doubleunderline{\SI{252}{\metre}} \quad\text{(is)}
+\]
+
+\smallskip\noindent
+\textbf{c)} Siden $s \propto v_0^2$, vil en dobling av farten ($v_0 \to 2v_0$) gi
+\[
+    s' = \frac{(2v_0)^2}{2\mu_k\mathrm{g}} = 4\cdot\frac{v_0^2}{2\mu_k\mathrm{g}} = 4s,
+\]
+altså \doubleunderline{firedobles} bremselengden. Dette er grunnen til at det er så mye farligere å kjøre fort -- bremselengden øker med \textit{kvadratet} av farten.
+}
+
+\oppgaver{Kjelke med skrå trekkraft}{k4oppg9}{%
+\input{Oppgaver/k4_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{1. Figur:} Kjelken påvirkes av fire krefter: tyngdekraften $\vec G$ (ned), normalkraften $\vec N$ (opp), trekkraften $\vec F$ (i vinkel $\theta=30^\circ$ over horisontalen) og friksjonskraften $\vec R$ (mot bevegelsesretningen), akkurat som i figur~\ref{komp-fig:kjelke}.
+
+\smallskip\noindent
+\textbf{2. Lov:} Newtons 2. lov, $\sum\vec F = m\vec a$. Friksjonen er glidefriksjon: $R=\mu_k N$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $x$ horisontalt (i bevegelsesretningen), $y$ vertikalt oppover. Kjelken beveger seg bare langs bakken, så $a_y=0$.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:} Trekkraften har komponenter $F_x=F\cos\theta$ og $F_y=F\sin\theta$. I $y$-retning:
+\[
+    \sum F_y = N + F\sin\theta - m\mathrm{g} = 0 \quad\Rightarrow\quad N = m\mathrm{g} - F\sin\theta
+\]
+I $x$-retning:
+\[
+    \sum F_x = F\cos\theta - R = ma
+\]
+
+\smallskip\noindent
+\textbf{5. Løs:}
+
+\textbf{a)} Normalkraften:
+\[
+    N = m\mathrm{g} - F\sin\theta = \SI{15}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} - \SI{50}{\newton}\cdot\sin(30^\circ) = \doubleunderline{\SI{122}{\newton}}
+\]
+Legg merke til at $N$ er \textit{mindre} enn tyngdekraften, siden trekkraftens vertikale komponent bidrar til å løfte kjelken litt.
+
+\textbf{b)} Friksjonskraften:
+\[
+    R = \mu_k N = 0.20\cdot\SI{122}{\newton} = \doubleunderline{\SI{24.4}{\newton}}
+\]
+
+\textbf{c)} Akselerasjonen, fra $x$-likningen:
+\[
+    a = \frac{F\cos\theta - R}{m} = \frac{\SI{50}{\newton}\cdot\cos(30^\circ) - \SI{24.4}{\newton}}{\SI{15}{\kilo\gram}} = \doubleunderline{\SI{1.26}{\metre\per\second\squared}}
+\]
+}
+
+\oppgaver{Buss på glatt vei}{k4oppg10}{%
+\input{Oppgaver/k4_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Bussen begynner å skli idet tyngdekraftens komponent langs bakken akkurat overgår maksimal hvilefriksjon -- dette er den kritiske vinkelen utledet i \textit{Kritisk vinkel} (avsnittet \textit{Skråplan} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    \theta_c = \arctan(\mu_s) = \arctan(0.70) = \doubleunderline{35.0^\circ}
+\]
+
+\smallskip\noindent
+\textbf{b)} Idet bussen begynner å skli, glir den, så vi bruker \textit{kinetisk} friksjon $\mu_k$ i formelen for akselerasjon ned et skråplan (utledet i samme avsnitt):
+\[
+    a = \mathrm{g}(\sin\theta_c - \mu_k\cos\theta_c) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(35.0^\circ) - 0.50\cdot\cos(35.0^\circ)\right) = \doubleunderline{\SI{1.61}{\metre\per\second\squared}}
+\]
+Akselerasjonen er rettet nedover bakken.
+}
+
+\oppgaver{Karusell}{k4oppg11}{%
+\input{Oppgaver/k4_oppg11.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Den resulterende kraftsummen på barnet må peke inn mot sentrum og ha størrelse $\sum F = mv^2/r$ (se \textit{Sentripetalkraft} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    \sum F = \frac{mv^2}{r} = \frac{\SI{25}{\kilo\gram}\cdot(\SI{4.0}{\metre\per\second})^2}{\SI{3.0}{\metre}} = \doubleunderline{\SI{133}{\newton}}
+\]
+Denne kraften må komme fra noe som faktisk trekker eller skyver barnet inn mot sentrum -- for eksempel et sikkerhetsbelte eller friksjon mot setet.
+}
+
+\oppgaver{To skøyteløpere}{k4oppg12}{%
+\input{Oppgaver/k4_oppg12.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Oda og Per utgjør et isolert system (vi ser bort fra friksjon mot isen), så bevegelsesmengden er bevart (se avsnitt~\ref{komp-sec:bevaring}), akkurat som i eksempelet \textit{Rekyl fra gevær}. Før skyvingen er alt i ro, $p_{tot,\,\text{før}}=0$. Vi velger Odas bevegelsesretning som positiv.
+
+\smallskip\noindent
+\textbf{a)} Bevaringslikningen gir
+\[
+    0 = m_O u_O + m_P u_P \quad\Rightarrow\quad u_P = -\frac{m_O u_O}{m_P} = -\frac{\SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second}}{\SI{80}{\kilo\gram}} = \doubleunderline{\SI{-2.75}{\metre\per\second}}
+\]
+Per beveger seg altså med $\SI{2.75}{\metre\per\second}$ i \textit{motsatt} retning av Oda.
+
+\smallskip\noindent
+\textbf{b)} Bevegelsesmengden til hver av dem:
+\[
+    p_O = m_O u_O = \SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second} = \doubleunderline{\SI{220}{\kilo\gram\metre\per\second}}
+\]
+\[
+    p_P = m_P u_P = \SI{80}{\kilo\gram}\cdot(\SI{-2.75}{\metre\per\second}) = \doubleunderline{\SI{-220}{\kilo\gram\metre\per\second}}
+\]
+Bevegelsesmengdene er like store og motsatt rettet, slik at summen fortsatt er null -- akkurat som før skyvingen. Dette er nøyaktig det bevaringsloven sier skal skje.
+}
+
+\oppgaver{Bilkollisjon}{k4oppg13}{%
+\input{Oppgaver/k4_oppg13.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi velger bil 1 sin bevegelsesretning som positiv, slik at $v_1=\SI{20}{\metre\per\second}$ og $v_2=\SI{-15}{\metre\per\second}$ (motsatt retning). Dette er et fullstendig uelastisk støt (bilene henger fast), analogt med eksempelet \textit{Uelastisk støt: vogner som kolliderer} i avsnitt~\ref{komp-sec:bevaring}.
+
+\smallskip\noindent
+\textbf{a)} Total bevegelsesmengde før kollisjonen:
+\[
+    p_{tot,\,\text{før}} = m_1 v_1 + m_2 v_2 = \SI{1200}{\kilo\gram}\cdot\SI{20}{\metre\per\second} + \SI{1000}{\kilo\gram}\cdot(\SI{-15}{\metre\per\second}) = \doubleunderline{\SI{9000}{\kilo\gram\metre\per\second}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Siden bevegelsesmengden er bevart, og bilene beveger seg som én masse $m_1+m_2$ etter kollisjonen:
+\[
+    p_{tot,\,\text{før}} = (m_1+m_2)\,u \quad\Rightarrow\quad u = \frac{p_{tot,\,\text{før}}}{m_1+m_2} = \frac{\SI{9000}{\kilo\gram\metre\per\second}}{\SI{2200}{\kilo\gram}} = \doubleunderline{\SI{4.09}{\metre\per\second}}
+\]
+Farten er positiv, så bilvraket beveger seg videre i \doubleunderline{samme retning som bil 1} (den tyngste og raskeste av de to) etter sammenstøtet.
+}
+
+\oppgaver{Kraft og motkraft}{k4oppg14}{%
+\input{Oppgaver/k4_oppg14.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} To krefter virker på boka: tyngdekraften $\vec G$ (ned) og normalkraften $\vec N$ fra bordet (opp):
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=1]
+    \draw[black!30, thin] (-1.3,0) -- (1.3,0);
+    \fill[headCol!20] (-0.7,0) rectangle (0.7,0.35);
+    \draw[headCol!65!black, thick] (-0.7,0) rectangle (0.7,0.35);
+    \node[font=\small] at (0,0.175) {bok};
+    \draw[->, thick, defscol] (0,0.35) -- (0,1.3) node[above, font=\small] {$\vec N$};
+    \draw[->, thick, black!65] (0,0) -- (0,-0.95) node[below, font=\small] {$\vec G$};
+\end{tikzpicture}
+\end{center}
+
+\smallskip\noindent
+\textbf{b)} Nei. Selv om $\vec G$ og $\vec N$ er like store og motsatt rettet, er de \doubleunderline{ikke} et kraft-motkraft-par. Grunnen er at et kraft-motkraft-par (Newtons 3. lov) alltid virker på \textit{to forskjellige} legemer, mens $\vec G$ og $\vec N$ begge virker på \textit{samme} legeme -- boka (se \textit{Normalkraft}, tankeboksen i Kapittel~\ref{komp-Chapter:dynamikk}).
+
+\smallskip\noindent
+\textbf{c)} Motkraften til tyngdekraften $\vec G$ (jordas tiltrekning på boka) er boka sin tiltrekning på jorda -- en kraft med samme størrelse $G$, rettet oppover, som virker \textit{på jorda}. Motkraften til normalkraften $\vec N$ (bordets kraft på boka) er boka sin kraft \textit{på bordet} -- en kraft med samme størrelse $N$, rettet nedover, som virker \textit{på bordet} (boka presser ned på bordet med samme kraft som bordet presser opp på boka).
+}
+
+\oppgaver{Kloss på skråplan med friksjon}{k4oppg15}{%
+\input{Oppgaver/k4_oppg15.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{1. Figur:} Kreftene på klossen er akkurat som i figur~\ref{komp-fig:skråplankrefter1}: normalkraften $\vec N$ (vinkelrett ut fra planet), tyngdekraften $\vec G=m\vec{\mathrm g}$ (rett ned) og friksjonskraften $\vec R$ (langs planet, oppover siden klossen glir nedover).
+
+\smallskip\noindent
+\textbf{a)} Vi dekomponerer tyngdekraften langs planet og vinkelrett på planet:
+\[
+    G_x = m\mathrm{g}\sin\theta \quad\text{(langs planet, nedover)}, \qquad G_y = m\mathrm{g}\cos\theta \quad\text{(vinkelrett på planet)}
+\]
+
+\smallskip\noindent
+\textbf{2. Lov:} Newtons 2. lov, $\sum\vec F=m\vec a$. Glidefriksjon: $R=\mu_k N$.
+
+\smallskip\noindent
+\textbf{3. Koordinatsystem:} $x$ langs planet (positiv nedover), $y$ vinkelrett ut fra planet. Klossen beveger seg bare langs $x$, så $a_y=0$.
+
+\smallskip\noindent
+\textbf{4. Dekomponér:}
+\[
+    \sum F_y = N - m\mathrm{g}\cos\theta = 0, \qquad \sum F_x = m\mathrm{g}\sin\theta - R = ma
+\]
+
+\smallskip\noindent
+\textbf{5. Løs:}
+
+\textbf{b)} Normalkraften:
+\[
+    N = m\mathrm{g}\cos\theta = \SI{5.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\cos(30^\circ) = \doubleunderline{\SI{42.5}{\newton}}
+\]
+
+\textbf{c)} Friksjonskraften:
+\[
+    R = \mu_k N = 0.20\cdot\SI{42.5}{\newton} = \doubleunderline{\SI{8.50}{\newton}}
+\]
+
+\textbf{d)} Akselerasjonen (se også \textit{Utledning av akselerasjon ned et skråplan med friksjon} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(30^\circ) - 0.20\cos(30^\circ)\right) = \doubleunderline{\SI{3.21}{\metre\per\second\squared}}
+\]
+rettet nedover langs planet.
+}
+
+\oppgaver{Bil over en bakketopp}{k4oppg16}{%
+\input{Oppgaver/k4_oppg16.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{1. Figur:} Bilen befinner seg på \textit{utsiden} av den sirkulære bakketoppen (motsatt av vogna på \textit{innsiden} av loopen i Kapittel~\ref{komp-Chapter:dynamikk}, figur~\ref{komp-fig:loop_tivoli}). Sentrum av sirkelbuen ligger rett under bilen, så ``inn mot sentrum'' betyr her \textit{nedover}. To krefter virker: tyngdekraften $\vec G=m\vec{\mathrm g}$ (ned, altså inn mot sentrum) og normalkraften $\vec N$ fra veien (opp, altså \textit{ut} fra sentrum -- veien kan bare skyve bilen opp, ikke trekke den ned):
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=1]
+    \draw[gray!60, thick] (-1.6,0) arc (200:340:1.7 and 0.55);
+    \fill[headCol!20] (-0.45,0.42) rectangle (0.45,0.72);
+    \draw[headCol!65!black, thick] (-0.45,0.42) rectangle (0.45,0.72);
+    \node[font=\small] at (0,0.57) {$m$};
+    \draw[->, thick, defscol] (0,0.72) -- (0,1.55) node[above, font=\small] {$\vec N$};
+    \draw[->, thick, black!65] (0,0.42) -- (0,-0.45) node[below, font=\small] {$\vec G$};
+    \node[font=\scriptsize, black!55, below] at (0,-0.5) {(mot sentrum)};
+\end{tikzpicture}
+\end{center}
+Siden bilen følger en sirkelbane, må kraftsummen inn mot sentrum (nedover) være $mv^2/r$.
+
+\smallskip\noindent
+\textbf{2.--4. Lov, koordinatsystem og dekomponering:} Vi velger positiv retning nedover (inn mot sentrum). Newtons 2. lov gir
+\[
+    \sum F = m\mathrm{g} - N = \frac{mv^2}{r}
+\]
+(motsatt fortegn på $N$ sammenliknet med toppen av loopen i figur~\ref{komp-fig:loop_tivoli}, fordi normalkraften her peker \textit{bort} fra sentrum i stedet for \textit{inn} mot det).
+
+\smallskip\noindent
+\textbf{5. Løs:}
+
+\textbf{b)} Normalkraften:
+\[
+    N = m\left(\mathrm{g} - \frac{v^2}{r}\right) = \SI{1000}{\kilo\gram}\cdot\left(\SI{9.81}{\metre\per\second\squared} - \frac{(\SI{15}{\metre\per\second})^2}{\SI{40}{\metre}}\right) = \doubleunderline{\SI{4190}{\newton}}
+\]
+
+\textbf{c)} Bilen mister kontakten med veien når $N=0$:
+\[
+    m\mathrm{g} = \frac{mv_\text{maks}^2}{r} \quad\Rightarrow\quad \doubleunderline{v_\text{maks} = \sqrt{\mathrm{g}r} = \sqrt{\SI{9.81}{\metre\per\second\squared}\cdot\SI{40}{\metre}} = \SI{19.8}{\metre\per\second}}
+\]
+Kjører bilen fortere enn dette, letter den fra veibanen akkurat på toppen av bakken.
+}
+
+\oppgaver{Spark på en fotball}{k4oppg17}{%
+\input{Oppgaver/k4_oppg17.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Ballen er i ro før sparket, så endringen i bevegelsesmengde er (se \textit{Impuls} i Kapittel~\ref{komp-Chapter:dynamikk}):
+\[
+    \Delta p = m v - m\cdot 0 = \SI{0.45}{\kilo\gram}\cdot\SI{25}{\metre\per\second} = \doubleunderline{\SI{11.25}{\kilo\gram\metre\per\second}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Siden $\Delta p = F\,\Delta t$, finner vi den gjennomsnittlige kraften:
+\[
+    F = \frac{\Delta p}{\Delta t} = \frac{\SI{11.25}{\kilo\gram\metre\per\second}}{\SI{8.0e-3}{\second}} = \doubleunderline{\SI{1410}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Tyngdekraften på ballen er $G=m\mathrm{g}=\SI{0.45}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}=\SI{4.41}{\newton}$. Forholdet mellom kraftene er
+\[
+    \frac{F}{G} = \frac{\SI{1410}{\newton}}{\SI{4.41}{\newton}} \approx \doubleunderline{320}
+\]
+Kraften fra foten er altså omtrent 320 ganger så stor som tyngdekraften på ballen -- et godt eksempel på hvor store krefter som kan oppstå i et kort støt.
+}
+
+\oppgaver{Astronaut i rommet}{k4oppg18}{%
+\input{Oppgaver/k4_oppg18.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Astronauten og verktøykassa utgjør et isolert system (ingen ytre krefter i verdensrommet), så bevegelsesmengden er bevart (se avsnitt~\ref{komp-sec:bevaring}) -- akkurat som i eksempelet \textit{Rekyl fra gevær}. Før kastet er begge i ro, $p_{tot,\,\text{før}}=0$. Vi velger retningen bort fra romstasjonen (kasteretningen) som positiv.
+
+\smallskip\noindent
+\textbf{a)} Bevaringslikningen gir
+\[
+    0 = M\,U + m_\text{kasse}\,v_\text{kasse} \quad\Rightarrow\quad U = -\frac{m_\text{kasse}\,v_\text{kasse}}{M} = -\frac{\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{90}{\kilo\gram}} = \doubleunderline{\SI{-0.0667}{\metre\per\second}}
+\]
+Astronauten får altså en fart på $\SI{0.0667}{\metre\per\second}$ i \textit{motsatt} retning av kasteretningen, altså tilbake mot romstasjonen.
+
+\smallskip\noindent
+\textbf{b)} Hun beveger seg med konstant fart $|U|$ tilbake mot stasjonen, en avstand $d=\SI{20}{\metre}$ unna:
+\[
+    t = \frac{d}{|U|} = \frac{\SI{20}{\metre}}{\SI{0.0667}{\metre\per\second}} = \doubleunderline{\SI{300}{\second}} = \SI{5.0}{\minute}
+\]
+}

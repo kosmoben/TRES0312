@@ -530,6 +530,21 @@ Den store forskjellen mellom momentanfart og gjennomsnittsfart er at momentanfar
 
 }
 
+\svar{%
+\begin{enumerate}[a)]
+  \item Vi deriverer hver komponent for seg med potensregelen $\frac{d}{dt}(t^n) = nt^{n-1}$:
+    \[
+      \vec{v}(t) = \left(\frac{d}{dt}(2t^2),\ \frac{d}{dt}(3t)\right) = (4t,\ 3)
+      \quad\checkmark
+    \]
+  \item Vi setter inn $t = \SI{2}{\second}$:
+    \[
+      \vec{v}(2) = (4\cdot 2,\ 3) = \doubleunderline{(8,\ 3)\,\si{\metre\per\second}}
+    \]
+  \item $x$-komponenten gir $4t = 16$, altså $t = \SI{4}{\second}$. Men $y$-komponenten er alltid $\SI{3}{\metre\per\second}$, og blir aldri $\SI{12}{\metre\per\second}$. Firhjulingen har derfor \doubleunderline{aldri} hastigheten $(16, 12)\,\si{\metre\per\second}$.
+\end{enumerate}
+}
+
 \oppgaver{Momentanhastighet}{k3oppg2}{%
 \input{Oppgaver/k3_oppg02.tex}%
 }

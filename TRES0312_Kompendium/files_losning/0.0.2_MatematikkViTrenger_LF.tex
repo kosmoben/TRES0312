@@ -1,0 +1,396 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Matematiske verktøy vi trenger}
+\label{LF:Chapter:matematikk}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:matematikk}, \textit{Matematiske verktøy vi trenger}, i kompendiet.
+
+\oppgaver{Algebra og Python}{k2oppg1}{%
+\input{Oppgaver/k2_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi følger regnerekkefølgen (potenser før addisjon/subtraksjon, og telleren/nevneren regnes ut hver for seg før divisjonen):
+\[
+    \frac{15+3^2}{6-2} = \frac{15+9}{4} = \frac{24}{4} = \doubleunderline{6}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi setter inn tallverdiene i $E_p = m\cdot \mathrm{g}\cdot h$:
+\[
+    E_p = \SI{5.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{10.0}{\metre} = \doubleunderline{\SI{490.5}{\joule}}
+\]
+I Python kan dette gjøres med koden under.
+}
+\begin{pythonkode}
+m, g, h = 5.0, 9.81, 10.0
+Ep = m*g*h
+print(Ep)   # 490.5
+\end{pythonkode}
+
+\oppgaver{Per og Kari}{k2oppg2}{%
+\input{Oppgaver/k2_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} La $P$ være Pers alder og $K$ være Karis alder. ``Per er dobbelt så gammel som Kari'' gir $P=2K$. ``Kari er 6 år yngre enn Per'' gir $K = P-6$. Likningssystemet er dermed
+\[
+    \begin{cases}
+        P = 2K\\
+        K = P-6
+    \end{cases}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi setter det første uttrykket ($P=2K$) inn i det andre:
+\[
+    K = 2K - 6 \quad\Rightarrow\quad -K = -6 \quad\Rightarrow\quad K = \doubleunderline{6}
+\]
+Og dermed $P = 2K = 2\cdot 6 = \doubleunderline{12}$. Per er altså 12 år, og Kari er 6 år.
+}
+
+\oppgaver{Funksjoner og plotting}{k2oppg3}{%
+\input{Oppgaver/k2_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Funksjonen $f(x)=2x^2-3x+1$ plottes med koden under. Grafen er en oppovervendt parabel (siden koeffisienten foran $x^2$ er positiv), med bunnpunkt ved $x=-b/(2a)=3/4=0.75$ og nullpunkter ved $x=0.5$ og $x=1$ (løs $2x^2-3x+1=0$ med abc-formelen).
+
+\smallskip\noindent
+\textbf{b)} Vi endrer \texttt{v0 = 0.0} til \texttt{v0 = 3.0} i koden i teksten over. Da blir posisjonen
+\[
+    s(t) = s_0 + v_0 t + \tfrac12 a t^2 = 3.0\,t + t^2
+\]
+og farten $v(t)=v_0+at = 3.0+2.0t$. Fart-grafen er fortsatt en rett linje med samme stigningstall, men \textit{løftet opp} slik at den starter på $\SI{3.0}{\metre\per\second}$ i stedet for $0$. Posisjonsgrafen er fortsatt en oppovervendt parabel, men stigningstallet ved $t=0$ er nå $3.0$ i stedet for $0$, slik at kurven stiger brattere helt fra starten --- den ser ikke lenger flat ut ved $t=0$.
+
+Dette er akkurat den samme effekten som i oppgave a): leddet $v_0t$ i $s(t)$ spiller samme rolle som leddet $-3x$ i $f(x)=2x^2-3x+1$ --- et lineært ledd flytter bunnpunktet til parabelen bort fra origo. For $f(x)$ ligger bunnpunktet ved $x=0.75$, synlig i det plottede intervallet. For $s(t)$ med $v_0=3.0$ og $a=2.0$ ligger bunnpunktet ved $t=-v_0/a=-1.5\,\si{\second}$, altså \textit{utenfor} tidsintervallet $t\in[0,5]\,\si{\second}$ som plottes --- derfor ser vi bare den stigende delen av parabelen, uten at kurven flater ut noe sted i grafen.
+}
+\begin{pythonkode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-2, 4, 200)
+f = 2*x**2 - 3*x + 1
+
+plt.plot(x, f)
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('f(x) = 2x^2 - 3x + 1')
+plt.grid(True, alpha=0.3)
+plt.show()
+\end{pythonkode}
+
+\oppgaver{Trigonometri}{trig-opg}{%
+\input{Oppgaver/k2_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Fra Tabell~\ref{komp-tab:trig}:
+\[
+    \sin 30° = \doubleunderline{0.5}, \qquad \cos 45° = \doubleunderline{\tfrac{\sqrt2}{2}\approx 0.707}, \qquad \tan 60° = \doubleunderline{\sqrt3\approx 1.732}
+\]
+
+\smallskip\noindent
+\textbf{b)} Med hypotenus $c=\SI{10}{\metre}$ og $\theta=53°$ (se \textit{Sinus, cosinus og tangens} i Kapittel~\ref{komp-Chapter:matematikk}): den motstående kateten er $b=c\sin\theta$ og den hosliggende er $a=c\cos\theta$:
+\[
+    b = 10\sin 53° \approx \doubleunderline{\SI{8.0}{\metre}}, \qquad
+    a = 10\cos 53° \approx \doubleunderline{\SI{6.0}{\metre}}
+\]
+(Dette er for øvrig den velkjente 3--4--5-trekanten skalert med en faktor 2.)
+
+\smallskip\noindent
+\textbf{c)} Vi setter inn $\sin30°=0.5$ og $\cos30°=\tfrac{\sqrt3}{2}$:
+\[
+    \sin^2 30° + \cos^2 30° = 0.5^2 + \left(\tfrac{\sqrt3}{2}\right)^2 = 0.25 + 0.75 = \doubleunderline{1}
+\]
+som stemmer med den pytagoreiske identiteten $\sin^2\theta+\cos^2\theta=1$.
+
+\smallskip\noindent
+\textbf{d)} Vi kjenner igjen konjugatsetningen $(a+b)(a-b)=a^2-b^2$ med $a=\sin\theta$ og $b=1$:
+\[
+    (\sin\theta+1)(\sin\theta-1) = \sin^2\theta - 1
+\]
+Siden $\sin^2\theta+\cos^2\theta=1$ har vi $\sin^2\theta-1=-\cos^2\theta$, så svaret er
+\[
+    \doubleunderline{-\cos^2\theta}
+\]
+}
+
+\oppgaver{Skalarer og vektorer}{skalarer-vektorer}{%
+\input{Oppgaver/k2_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+En skalar har bare størrelse, en vektor har både størrelse og retning (se definisjonen av \textit{vektor} i Kapittel~\ref{komp-Chapter:matematikk}).
+\begin{enumerate}[a)]
+    \item Temperatur: \doubleunderline{skalar} --- temperatur har ingen retning.
+    \item Posisjon: \doubleunderline{vektor} --- posisjon er gitt relativt til et origo, med en bestemt retning.
+    \item Fart: \doubleunderline{skalar} --- fart er bare et tall (størrelsen på hastigheten), uten retning.
+    \item Hastighet: \doubleunderline{vektor} --- hastighet har både størrelse (farten) og retning.
+    \item Akselerasjon: \doubleunderline{vektor} --- akselerasjon har en retning (den peker dit farten endrer seg mot).
+    \item Masse: \doubleunderline{skalar} --- masse har ingen retning.
+\end{enumerate}
+}
+
+\oppgaver{Koordinatsystem}{koordinatsystem-opg}{%
+\input{Oppgaver/k2_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Punktene er plottet i figuren under.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-3) -- (0,5) node[above] {$y$};
+    \foreach \x in {-2,-1,1,2} \draw (\x,0.08) -- (\x,-0.08) node[below,font=\scriptsize] {\x};
+    \foreach \y in {-2,-1,1,2,3,4} \draw (0.08,\y) -- (-0.08,\y) node[left,font=\scriptsize] {\y};
+    \fill (2,3) circle (2pt) node[above right] {$A(2,3)$};
+    \fill (-1,4) circle (2pt) node[above left] {$B(-1,4)$};
+    \fill (0,-2) circle (2pt) node[below right] {$C(0,-2)$};
+\end{tikzpicture}
+\end{center}
+
+\smallskip\noindent
+\textbf{b)} $A=(2,3)$ har positiv $x$ og positiv $y$ $\Rightarrow$ \doubleunderline{1. kvadrant}. $B=(-1,4)$ har negativ $x$ og positiv $y$ $\Rightarrow$ \doubleunderline{2. kvadrant}. $C=(0,-2)$ ligger på $y$-aksen ($x=0$), altså \doubleunderline{på grensen mellom 3. og 4. kvadrant, ikke i noen av dem}.
+
+\smallskip\noindent
+\textbf{c)} Med $A=(2,3)$ og $B=(-1,4)$:
+\[
+    M = \left(\frac{2+(-1)}{2},\ \frac{3+4}{2}\right) = \doubleunderline{\left(0.5,\ 3.5\right)}
+\]
+}
+
+\oppgaver{Vektorer som en lineærkombinasjon av enhetsvektorer}{vektor-linearkomb}{%
+\input{Oppgaver/k2_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Komponentene til $\vec{A}=[4,\,-3]$ er koeffisientene foran enhetsvektorene:
+\[
+    \vec{A} = \doubleunderline{4\hat{\mathbf{x}} - 3\hat{\mathbf{y}}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi legger sammen komponentvis (se \textit{Vektoraddisjon} i Kapittel~\ref{komp-Chapter:matematikk}):
+\[
+    \vec{u}+\vec{v} = (3\hat{\mathbf{x}}-2\hat{\mathbf{y}}) + (-\hat{\mathbf{x}}+5\hat{\mathbf{y}}) = (3-1)\hat{\mathbf{x}} + (-2+5)\hat{\mathbf{y}} = \doubleunderline{[2,\,3]}
+\]
+}
+
+\oppgaver{Dekomponering av vektorer}{dekomponering-vektorer}{%
+\input{Oppgaver/k2_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $v_{0x} = v_0\cos\theta = 20\cos 30° = 20\cdot\tfrac{\sqrt3}{2} = \doubleunderline{10\sqrt3\,\si{\metre\per\second}\approx \SI{17.3}{\metre\per\second}}$
+
+\smallskip\noindent
+\textbf{b)} $v_{0y} = v_0\sin\theta = 20\sin 30° = 20\cdot 0.5 = \doubleunderline{\SI{10}{\metre\per\second}}$
+
+\smallskip\noindent
+\textbf{c)} Vi setter inn og bruker $\sin^2\theta+\cos^2\theta=1$:
+\[
+    \sqrt{v_{0x}^2+v_{0y}^2} = \sqrt{(10\sqrt3)^2+10^2} = \sqrt{300+100} = \sqrt{400} = \doubleunderline{\SI{20}{\metre\per\second}} \checkmark
+\]
+som stemmer med $|\vec{v}_0|$.
+}
+
+\oppgaver{Størrelse og retning}{storrelse-retning}{%
+\input{Oppgaver/k2_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Vi bruker $|\vec{v}|=\sqrt{v_x^2+v_y^2}$ (se Definisjon \ref{komp-defn:vektorlengde}, \textit{Vektorlengde}) og $\theta=\arctan(v_y/v_x)$ (se \textit{Vektorvinkel}).
+
+\smallskip\noindent
+\textbf{a)} $|\vec{v}| = \sqrt{5^2+12^2}=\sqrt{25+144}=\sqrt{169}=\doubleunderline{13}$
+
+\smallskip\noindent
+\textbf{b)} $|\vec{u}| = \sqrt{(-3)^2+4^2}=\sqrt{9+16}=\sqrt{25}=\doubleunderline{5}$
+
+\smallskip\noindent
+\textbf{c)} Forskyvningsvektoren er $[6,\,8]\,\si{\kilo\metre}$ (øst, nord). Luftlinjeavstanden er lengden av denne vektoren:
+\[
+    d = \sqrt{6^2+8^2} = \sqrt{36+64}=\sqrt{100} = \doubleunderline{\SI{10}{\kilo\metre}}
+\]
+Vinkelen fra østaksen er
+\[
+    \theta = \arctan\!\left(\frac{8}{6}\right) \approx \doubleunderline{53.1°}
+\]
+
+\smallskip\noindent
+\textbf{d)} For $\vec{u}=[1,\,\sqrt3]$:
+\[
+    \theta = \arctan\!\left(\frac{\sqrt3}{1}\right) = \doubleunderline{60°}
+\]
+
+\smallskip\noindent
+\textbf{e)} $F_x = F\cos\theta = 10\cos 40° \approx \doubleunderline{\SI{7.66}{\newton}}$, \quad $F_y = F\sin\theta = 10\sin 40° \approx \doubleunderline{\SI{6.43}{\newton}}$
+}
+
+\oppgaver{Vektoraddisjon}{vektoraddisjon-opg}{%
+\input{Oppgaver/k2_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Komponentvis addisjon og subtraksjon:
+\[
+    \vec{c}=\vec{a}+\vec{b} = [3+(-1),\,-1+4] = \doubleunderline{[2,\,3]}
+\]
+\[
+    \vec{d}=\vec{a}-\vec{b} = [3-(-1),\,-1-4] = \doubleunderline{[4,\,-5]}
+\]
+
+\smallskip\noindent
+\textbf{b)} $|\vec{d}| = \sqrt{4^2+(-5)^2}=\sqrt{16+25}=\sqrt{41}\approx \doubleunderline{6.40}$. Enhetsvektoren er $\vec{d}$ delt på sin egen lengde:
+\[
+    \hat{d} = \frac{\vec{d}}{|\vec{d}|} = \left[\frac{4}{\sqrt{41}},\,\frac{-5}{\sqrt{41}}\right] \approx \doubleunderline{[0.625,\,-0.781]}
+\]
+
+\smallskip\noindent
+\textbf{c)} Her ser vi på $\vec{d}=3\vec{a}=[9,\,-3]$. Å multiplisere en vektor med en positiv skalar gir en vektor som er \doubleunderline{parallell med $\vec{a}$, med samme retning, men 3 ganger så lang}. Tegningen viser $\vec{a}$ og $\vec{d}=3\vec{a}$ som to parallelle piler fra origo, der $\vec{d}$ er tre ganger så lang som $\vec{a}$ og peker samme vei.
+}
+
+\oppgaver{Skalarprodukt}{skalarprodukt-opg}{%
+\input{Oppgaver/k2_oppg11.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Skalarproduktet (se definisjonen av \textit{Skalarprodukt} i Kapittel~\ref{komp-Chapter:matematikk}) er
+\[
+    \vec{u}\cdot\vec{v} = u_xv_x+u_yv_y = 4\cdot2+3\cdot(-1) = 8-3 = \doubleunderline{5}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vinkelen mellom vektorene finner vi fra $\vec{u}\cdot\vec{v}=|\vec{u}||\vec{v}|\cos\theta$. Her er $|\vec{u}|=\sqrt{16+9}=5$ og $|\vec{v}|=\sqrt{4+1}=\sqrt5$, så
+\[
+    \cos\theta = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|} = \frac{5}{5\sqrt5} = \frac{1}{\sqrt5} \approx 0.447
+    \quad\Rightarrow\quad
+    \theta \approx \doubleunderline{63.4°}
+\]
+}
+
+\oppgaver{Kryssprodukt}{kryssprodukt-opg}{%
+\input{Oppgaver/k2_oppg12.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Vi bruker $(\vec{u}\times\vec{v})_z = u_xv_y-u_yv_x$ (se \textit{Kryssprodukt i 2D} i Kapittel~\ref{komp-Chapter:matematikk}).
+
+\smallskip\noindent
+\textbf{a)} $(\vec{u}\times\vec{v})_z = 2\cdot3-1\cdot1 = 6-1=\doubleunderline{5}$
+
+\smallskip\noindent
+\textbf{b)} $(\vec{v}\times\vec{u})_z = 1\cdot1-3\cdot2 = 1-6=\doubleunderline{-5}$
+
+Legg merke til at $(\vec{v}\times\vec{u})_z = -(\vec{u}\times\vec{v})_z$, som illustrerer at kryssproduktet \textit{ikke} er kommutativt --- rekkefølgen betyr noe.
+}
+
+\oppgaver{Trigonometri og vektorkomponenter}{trig-vektorkomp}{%
+\input{Oppgaver/k2_oppg13.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vinkelen måles fra positiv $x$-akse, så $v_x=|\vec{v}|\cos\theta$ og $v_y=|\vec{v}|\sin\theta$:
+\[
+    v_x = 20\cos 30° \approx \doubleunderline{17.3}, \qquad v_y = 20\sin 30° = \doubleunderline{10}
+\]
+
+\smallskip\noindent
+\textbf{b)} Her er vinkelen i stedet målt \textit{fra nordaksen}, så nord- og østkomponentene bytter rolle i forhold til den vanlige $\cos/\sin$-regelen: nordkomponenten er $d\cos\theta$ og østkomponenten er $d\sin\theta$:
+\[
+    d_\textrm{nord} = 10\cos 60° = \doubleunderline{\SI{5.0}{\kilo\metre}}, \qquad
+    d_\textrm{øst} = 10\sin 60° \approx \doubleunderline{\SI{8.7}{\kilo\metre}}
+\]
+
+\smallskip\noindent
+\textbf{c)} For $\vec{v}=[5,\,-12]$:
+\[
+    |\vec{v}| = \sqrt{5^2+(-12)^2} = \sqrt{25+144}=\sqrt{169}=\doubleunderline{13}
+\]
+\[
+    \theta = \arctan\!\left(\frac{-12}{5}\right) \approx \doubleunderline{-67.4°}
+\]
+Det negative fortegnet betyr at vektoren peker $67.4°$ \textit{under} positiv $x$-akse (ned og til høyre), siden $x$-komponenten er positiv og $y$-komponenten er negativ.
+}
+
+\oppgaver{Vektorer og skalarprodukt}{vektorer-skalarprodukt-opg}{%
+\input{Oppgaver/k2_oppg14.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Komponentvis:
+\[
+    \vec{p}+\vec{q} = [2-3,\,5+1] = \doubleunderline{[-1,\,6]}, \qquad
+    \vec{p}-\vec{q} = [2-(-3),\,5-1] = \doubleunderline{[5,\,4]}
+\]
+\[
+    2\vec{p}-3\vec{q} = [4,\,10]-[-9,\,3] = \doubleunderline{[13,\,7]}
+\]
+
+\smallskip\noindent
+\textbf{b)} $|\vec{p}-\vec{q}| = \sqrt{5^2+4^2} = \sqrt{41} \approx \doubleunderline{6.40}$
+
+\smallskip\noindent
+\textbf{c)} $|\vec{p}| = \sqrt{2^2+5^2}=\sqrt{29}\approx 5.385$, så
+\[
+    \hat{p} = \frac{\vec{p}}{|\vec{p}|} = \left[\frac{2}{\sqrt{29}},\,\frac{5}{\sqrt{29}}\right] \approx \doubleunderline{[0.371,\,0.928]}
+\]
+
+\smallskip\noindent
+\textbf{d)} $\vec{p}\cdot\vec{q} = 2\cdot(-3)+5\cdot1 = -6+5=\doubleunderline{-1}$. Med $|\vec{q}|=\sqrt{9+1}=\sqrt{10}\approx 3.162$:
+\[
+    \cos\theta = \frac{-1}{5.385\cdot 3.162} \approx -0.0587 \quad\Rightarrow\quad \theta \approx \doubleunderline{93.4°}
+\]
+Vinkelen er litt over $90°$, så vektorene peker nesten --- men ikke helt --- vinkelrett på hverandre.
+}
+
+\oppgaver{Parallell og vinkelrett}{parallell-vinkelrett-opg}{%
+\input{Oppgaver/k2_oppg15.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} To vektorer er ortogonale (vinkelrette) nøyaktig når skalarproduktet er null:
+\[
+    \vec{a}\cdot\vec{b} = 3\cdot2 + k\cdot(-1) = 6-k = 0 \quad\Rightarrow\quad k = \doubleunderline{6}
+\]
+
+\smallskip\noindent
+\textbf{b)} To vektorer er parallelle nøyaktig når kryssproduktet er null (de spenner ikke opp noe areal):
+\[
+    (\vec{a}\times\vec{b})_z = 3\cdot(-1) - k\cdot 2 = -3-2k = 0 \quad\Rightarrow\quad k = \doubleunderline{-\tfrac32}
+\]
+}
+
+\oppgaver{Areal med kryssprodukt}{areal-kryssprodukt-opg}{%
+\input{Oppgaver/k2_oppg16.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $(\vec{u}\times\vec{v})_z = 4\cdot3-1\cdot2 = 12-2=\doubleunderline{10}$
+
+\smallskip\noindent
+\textbf{b)} Arealet av parallellogrammet utspent av to vektorer er lik \textit{absoluttverdien} av kryssproduktet:
+\[
+    A_\textrm{parallellogram} = |(\vec{u}\times\vec{v})_z| = \doubleunderline{10}
+\]
+
+\smallskip\noindent
+\textbf{c)} Trekanten utgjør halvparten av parallellogrammet:
+\[
+    A_\textrm{trekant} = \tfrac12 A_\textrm{parallellogram} = \doubleunderline{5}
+\]
+}
+

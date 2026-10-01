@@ -56,93 +56,99 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 3 — Til ettertanke: kinetisk energi
+%  SLIDE 3 — Aktivitet: Knebøy
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Knebøy}{%
+  Arnold tar knebøy med en vektstang på skuldrene.
+
+  Hvor stort arbeid har han gjort på vektstanga etter én repetisjon? (Han starter på toppen, går ned, og kommer så tilbake dit han startet.)
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Til ettertanke: netto arbeid, med kinetisk energi og arbeid-energi-setningen
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
   \tanke{}{%
-  En bil som kjører raskt er vanskeligere å stoppe enn en bil som kjører sakte --- selv om massen er den samme.\\[4pt]
-  Hva er det ved \textit{bevegelsen selv} som gjør bilen i stand til å ``gjøre skade'', eller mer generelt: å utføre arbeid på omgivelsene?
+  Hva skjer med et legeme det utføres netto arbeid på?
+  }
+
+  \pause
+  \svar{%
+  Det endrer sin \textit{kinetiske energi}.
+  }
+
+  \pause
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \tcbset{before title=\raggedright}
+      \defnat{5.2}{Kinetisk energi}{
+      \[
+        E_k = \frac{1}{2}mv^2
+      \]
+      hvor $m$ er massen og $v$ er farten.
+      }
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \tcbset{before title=\raggedright}
+      \pause
+      \defnat{5.3}{Arbeid-energi-setningen}{
+      Netto arbeid på et legeme er lik endringen i kinetisk energi:
+      \[
+        W_{\text{total}} = \Delta E_k
+      \]
+      }
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktiviteter: Kinetisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fotball}{%
+  En fotball med masse $m = 0.45\,\mathrm{kg}$ har fart $v = 20\,\mathrm{m/s}$. Finn den kinetiske energien til ballen.
+  }
+
+  \aktivitet{Dobbel fart}{%
+  En syklist og sykkelen har til sammen masse $m = 70\,\mathrm{kg}$. Syklisten øker farten fra $5.0\,\mathrm{m/s}$ til $10\,\mathrm{m/s}$.
+  \begin{enumerate}[a)]
+      \item Finn den kinetiske energien før og etter.
+      \item Farten ble doblet. Hvor mange ganger større ble den kinetiske energien?
+  \end{enumerate}
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 4 — Definisjon: Kinetisk energi
+%  SLIDE 6 — Aktiviteter: Arbeid-energi-setningen
 %--------------------------------------------------------------------------
-\begin{frame}{Kinetisk energi}
+\begin{frame}{Aktivitet}
 
-  Kinetisk energi er energien et objekt har på grunn av at det er i bevegelse.
+  \aktivitet{Bil som akselererer}{%
+  En bil med masse $m = 1000\,\mathrm{kg}$ akselererer fra ro til $20\,\mathrm{m/s}$. Hvor stort netto arbeid er gjort på bilen?
+  }
 
-  \pause
-  \defnat{5.2}{Kinetisk energi}{
-  \[
-    E_k = \frac{1}{2}mv^2
-  \]
-  hvor $m$ er massen og $v$ er farten til objektet.
+  \aktivitet{Kasse som sklir til ro}{%
+  En kasse med masse $m = 10\,\mathrm{kg}$ sklir bortover et gulv med startfart $3.0\,\mathrm{m/s}$, og stopper etter $1.5\,\mathrm{m}$. Bruk arbeid-energi-setningen til å finne friksjonskraften på kassen.
   }
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Arbeid-energi-setningen: utledning
+%  SLIDE 7 — PAUSE
 %--------------------------------------------------------------------------
-\begin{frame}{Arbeid-energi-setningen}
-
-  Vi tar utgangspunkt i arbeid og bruker $\Delta\vec{p}=\vec{F}\Delta t$:
-  \[
-    W = \vec{F}\cdot\Delta\vec{s} = \frac{\Delta\vec{p}}{\Delta t}\cdot\Delta\vec{s} = \Delta\vec{p}\cdot\bar{v}
-  \]
-
-  \pause
-  For konstant akselerasjon er $\bar{v}=\tfrac{v_0+v}{2}$ og $\Delta p = m(v-v_0)$, som gir
-  \[
-    W = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2
-  \]
-
-  \pause
-  \graabox{$\displaystyle W_{\text{total}} = \Delta E_k$}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 6 — Definisjon: Arbeid-energi-setningen
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \defnat{5.3}{Arbeid-energi-setningen}{
-  Arbeidet som summen av ytre krefter gjør på et legeme, er lik endringen i legemets kinetiske energi:
-  \[
-    W_{\text{total}} = \Delta E_k
-  \]
-  }
-
-  \pause
-  \merk{Generell setning}{
-  Setningen gjelder generelt, også når kraften varierer --- utledningen over forutsetter bare konstant kraft for enkelhets skyld.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 7 — Eksempel: horisontal bevegelse med friksjon
-%--------------------------------------------------------------------------
-\begin{frame}{Eksempel: arbeid-energi med friksjon}
-
-  \exmat{5.2}{Horisontal bevegelse med friksjon}{%
-  En kloss med masse $0.8\,\mathrm{kg}$ har startfart $2.0\,\mathrm{m/s}$ og flyttes med en horisontal kraft $8.0\,\mathrm{N}$. Friksjonskraften er $5.6\,\mathrm{N}$. Etter en forflytning på $2.0\,\mathrm{m}$ er farten $4.0\,\mathrm{m/s}$.
-
-  Vis at $\Delta E_k = W_{\text{total}}$.
-  }
-
-  \pause
-  \[
-    \Delta E_k = \tfrac{1}{2}(0.8)(4.0)^2 - \tfrac{1}{2}(0.8)(2.0)^2 = 6.4-1.6 = 4.8\,\mathrm{J}
-  \]
-  \[
-    W_{\text{total}} = (8.0 - 5.6)\,\mathrm{N}\cdot 2.0\,\mathrm{m} = \doubleunderline{4.8\,\mathrm{J}}
-  \]
-
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: potensiell energi}
+\end{center}
 \end{frame}
 
 %--------------------------------------------------------------------------
@@ -166,6 +172,7 @@
 
   \begin{columns}
   \begin{column}{0.5\textwidth}
+  \tcbset{before title=\raggedright}
   \defnat{5.4}{Gravitasjonspotensiell energi}{
   \[
     E_p = m\mathrm{g}h
@@ -192,6 +199,11 @@
   \end{column}
   \end{columns}
 
+  \pause
+  \aktivitet{Potetsekk}{%
+  En potetsekk med masse $m = 5.0\,\mathrm{kg}$ løftes fra gulvet og opp på en benk som er $h = 0.80\,\mathrm{m}$ høy. Hvor mye øker den potensielle energien til sekken?
+  }
+
 \end{frame}
 
 %--------------------------------------------------------------------------
@@ -201,6 +213,7 @@
 
   \begin{columns}
   \begin{column}{0.5\textwidth}
+  \tcbset{before title=\raggedright}
   \defnat{5.5}{Elastisk potensiell energi}{
   \[
     E_p = \frac{1}{2}kx^2
@@ -232,6 +245,11 @@
   \end{column}
   \end{columns}
 
+  \pause
+  \aktivitet{Strikk}{%
+  En strikk kan beskrives som en fjær med fjærkonstant $k = 50\,\mathrm{N/m}$. Den strekkes $x = 30\,\mathrm{cm}$. Hvor mye elastisk potensiell energi er lagret i strikken?
+  }
+
 \end{frame}
 
 %--------------------------------------------------------------------------
@@ -250,17 +268,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — PAUSE
-%--------------------------------------------------------------------------
-\begin{frame}
-\begin{center}
-  \Huge{Pause}\\[8pt]
-  {\large Etter pausen: energitap}
-\end{center}
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 13 — Energitap: intro
+%  SLIDE 12 — Energitap: intro
 %--------------------------------------------------------------------------
 \begin{frame}{Energitap}
 
@@ -274,24 +282,33 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 14 — Eksempel: energitap i et fall
+%  SLIDE 13 — Aktiviteter: Energitap i et fall og sprettball
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: energitap}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.3}{Energiforskjell og energitap i et fall}{%
+  \aktivitet{Energitap i et fall}{%
   En ball med masse $0.5\,\mathrm{kg}$ slippes fra en høyde på $10\,\mathrm{m}$. Rett før den treffer bakken har den fart $12\,\mathrm{m/s}$. Beregn energitapet på grunn av luftmotstand.
   }
 
-  \pause
-  \[
-    E_p = m\mathrm{g}h = 0.5\cdot 9.81\cdot 10 = 49.05\,\mathrm{J}
-  \]
-  \[
-    E_k = \tfrac{1}{2}mv^2 = \tfrac{1}{2}(0.5)(12)^2 = 36\,\mathrm{J}
-  \]
-  \[
-    \Delta E = E_p - E_k = \doubleunderline{13.05\,\mathrm{J}}
-  \]
+  \aktivitet{Sprettball}{%
+  En sprettball slippes fra $1.0\,\mathrm{m}$ høyde, og spretter opp til $0.70\,\mathrm{m}$ etterpå. Hvor stor andel av energien sin tapte ballen på bevegelsen og støtet? Oppgi svaret i prosent.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Aktivitet: Energitap i et uelastisk støt
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Energitap i et uelastisk støt}{%
+  En vogn med masse $m_1 = 3.0\,\mathrm{kg}$ ruller med fart $v_1 = 4.0\,\mathrm{m/s}$ og kolliderer med en vogn med masse $m_2 = 1.0\,\mathrm{kg}$ som står i ro. Vognene henger fast i hverandre etter støtet.
+  \begin{enumerate}[a)]
+      \item Bruk bevaring av bevegelsesmengde til å finne den felles farten $u$ etter støtet.
+      \item Finn den totale kinetiske energien før og etter støtet.
+      \item Hvor mye kinetisk energi gikk tapt? Hva har den blitt omdannet til?
+  \end{enumerate}
+  }
 
 \end{frame}
 

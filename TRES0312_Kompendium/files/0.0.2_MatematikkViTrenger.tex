@@ -52,7 +52,7 @@ a = \frac{F}{m} = \frac{\SI{4\,800}{\newton}}{\SI{1\,200}{\kilo\gram}} = \double
 
 \paragraph{Python som kalkulator: } I dette faget er ikke Python obligatorisk, men dere kommer nok til å trenge det i mange andre fag, så det er greit å bli vant med det først som sist. La oss starte med å se et eksempe hvor vi enkelt og greit bruker Python til å utføre noe vi kunne gjort på en gammeldags kalkulator. 
 \exm{Kinetisk energi}{%
-Beregn den kinetiske energien $E_K=\frac{1}{2}mv^2$ til en gjenstand med masse $m = \SI{2.0}{\kilo\gram}$ som beveger seg med fart $v = \SI{5.0}{\metre\per\second}$.
+Beregn den kinetiske energien $E_\text{K}=\frac{1}{2}mv^2$ til en gjenstand med masse $m = \SI{2.0}{\kilo\gram}$ som beveger seg med fart $v = \SI{5.0}{\metre\per\second}$.
 \paragraph{Løsning:} Vi bruker Python som kalkulator og definerer variablene $m$ og $v$, som vist i koden under.
 }
 \begin{pythonkode}
@@ -67,6 +67,8 @@ print(f"Kinetisk energi: {E_k} J")
 \begin{pythonoutput}
 Kinetisk energi: 25.0 J
 \end{pythonoutput}
+Den kinetiske energien er altså $E_\text{K} = \doubleunderline{\SI{25}{\joule}}$.
+
 \pyfile{TRES0312 Python/Kap2\_MatematiskeVerktoyViTrenger/K2\_algebra\_beregning.ipynb}{Kap2_MatematiskeVerktoyViTrenger/K2_algebra_beregning.ipynb}
 
 \begin{mymerk*}{Kjøre koden selv}
@@ -77,7 +79,7 @@ Alle kodeeksempler finnes som Jupyter Notebook-filer i mappen \pyfolderlink. Se 
 \input{Oppgaver/k2_oppg01.tex}%
 }
 \begin{mymerk*}{}
-Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_K = \frac{1}{2}mv^2$ og $E_p = m\mathrm{g}h$, så er det ikke noe problem. Vi kommer tilbake til det i senere kapitler. Det viktigste akkurat nå er at du har kontroll på algebaraen.
+Om du ikke kjenner til formlene vi her har brukt, som $F=ma$, $E_\text{K} = \frac{1}{2}mv^2$ og $E_p = m\mathrm{g}h$, så er det ikke noe problem. Vi kommer tilbake til det i senere kapitler. Det viktigste akkurat nå er at du har kontroll på algebaraen.
 \end{mymerk*}
 Det aller viktiste så langt er at du forstår at fysikkens språk er matematikk, og at vi derfor skriver ned likninger som beskriver sammenhenger mellom størrelser. Vi kan da løse for en ukjent ved å bruke algebra-regler.
 \begin{myoppsum*}{Algebraregler}

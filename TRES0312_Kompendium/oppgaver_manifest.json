@@ -24,7 +24,7 @@
     "number": 3,
     "kind": "oppgaver",
     "title": "Enhetsregning",
-    "label": "enhetsregning",
+    "label": "enhetsregning-mane",
     "was_labeled": true,
     "bodyfile": "Oppgaver/k1_oppg03.tex",
     "sourcefile": "0.0.1_HvaErFysikk.tex"

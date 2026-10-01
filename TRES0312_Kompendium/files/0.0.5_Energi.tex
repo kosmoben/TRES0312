@@ -22,23 +22,48 @@ I hverdagslivet bruker vi ordet \textit{arbeid} om noe vi gjør over tid. Men i 
     \begin{align}
         W = \vec{F} \cdot \vec{s} = F \cdot s \cdot \cos\theta
     \end{align}
-    Her er \( \theta \) vinkelen mellom kraftretningen og forflytningsretningen. Arbeid er en skalar og måles i joule \( (\si{\joule}) \), der \( \SI{1}{\joule} = \SI{1}{\newton\metre} \).
+    Her er \( \theta \) vinkelen mellom kraftretningen og forflytningsretningen. Arbeid er en skalar og måles i joule \( (\si{\joule}) \), der \( \SI{1}{\joule} = \SI{1}{\newton\metre} \). For dere som kan integrere: Merk at definisjonen egentlig er \( W = \int \vec{F} \cdot d\vec{s} \), som for konstant kraft gir formelen over.
 }
 Legg merke til at vi tar skalarproduktet mellom kraft og forflytning. Det sikrer at kun den delen av $F$ som peker i samme retning som $s$ blir med i definisjonen av arbeid. Det er altså ikke nok at kraften er til stede – den må faktisk bidra til bevegelsen. En person som holder en tung sekk stille over hodet, utfører for eksempel \emph{ikke} noe arbeid, slik det er definert i fysikken, selv om muskler spennes og fyren blir sliten. Dette ser vi av vinkelen \( \cos\theta \) som kommer inn i definisjonen via skalarproduktet. Når \( \theta = 0^\circ \) virker kraften i samme retning som bevegelsen, og arbeidet er maksimalt. Når \( \theta = 90^\circ \) virker kraften vinkelrett på bevegelsen, og \( W = 0 \). Virker kraften \emph{mot} bevegelsen (som friksjon), er \( \theta = 180^\circ \) og arbeidet negativt.
 
 \exm{Dytte en boks}{
     En boks dyttes langs et gulv med en kraft \( F = \SI{10}{\newton} \) over en avstand \( s = \SI{5}{\metre} \). Kraften virker i samme retning som bevegelsen (\( \theta = 0^\circ \)):
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Images/Kapittel3:Arbeid&Energi/Arbeidbokseksempel.png}
+\captionof{figure}{En mann dytter en eske med konstant kraft \( F \) i bevegelsesretningen, en avstand \( s \). Arbeidet er \( W = F \cdot s \).}
+\label{fig:Dytte_en_boks}
+\end{center}
     \[
     W = F \cdot s \cdot \cos(0^\circ) = \SI{10}{\newton} \cdot \SI{5}{\metre} \cdot 1 = \doubleunderline{\SI{50}{\joule}}
     \]
 }
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel3:Arbeid&Energi/Arbeidbokseksempel.png}
-    \caption{En mann dytter en eske med konstant kraft \( F \) i bevegelsesretningen, en avstand \( s \). Arbeidet er \( W = F \cdot s \).}
-    \label{fig:Dytte_en_boks}
-    \end{figure}
+\exm{Slede på Hyrox-trening}{%
+I en Hyrox-treningstime dyttes en slede $s = \SI{10}{\metre}$ horisontalt med en kraft $F = \SI{2.0}{\kilo\newton}$. Sleden har konstant fart.
+\begin{enumerate}[a)]
+    \item Beregn arbeidet kraften $\vec{F}$ utfører.
+    \item Beregn arbeidet som normalkraften $\vec{N}$, tyngdekraften $\vec{G}$ og friksjonskraften $\vec{R}$ utfører.
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Kraften $\vec{F}$ virker i samme retning som bevegelsen, så $\theta = 0^\circ$ og $\cos\theta = 1$:
+\[
+    W_F = F\cdot s\cdot\cos 0^\circ = \SI{2.0e3}{\newton}\cdot\SI{10}{\metre}\cdot 1 = \doubleunderline{\SI{20}{\kilo\joule}}
+\]
+
+\noindent
+\textbf{b)} Normalkraften $\vec{N}$ peker rett opp og tyngdekraften $\vec{G}$ rett ned. Begge står vinkelrett på bevegelsen, så $\theta = 90^\circ$ og $\cos\theta = 0$:
+\[
+    \doubleunderline{W_N = 0} \qquad \text{og} \qquad \doubleunderline{W_G = 0}
+\]
+For å finne friksjonskraften bruker vi at farten er konstant. Da er akselerasjonen null, og Newtons 1. lov gir at kraftsummen langs bevegelsen er null. Friksjonskraften er derfor like stor som skyvekraften, $R = F = \SI{2.0}{\kilo\newton}$, men peker motsatt vei av bevegelsen ($\theta = 180^\circ$, $\cos\theta = -1$):
+\[
+    W_R = R\cdot s\cdot\cos 180^\circ = \SI{2.0e3}{\newton}\cdot\SI{10}{\metre}\cdot(-1) = \doubleunderline{\SI{-20}{\kilo\joule}}
+\]
+Legg merke til at det totale arbeidet på sleden blir null: $W_F + W_N + W_G + W_R = 0$. Det henger sammen med at farten til sleden ikke endrer seg --- mer om dette i seksjonen om arbeid-energi-setningen.
+}
 
 I eksemplet over var kraften konstant. Men hva om kraften varierer underveis? Et typisk eksempel er en fjær: ifølge Hookes lov øker motstanden jo mer fjæren presses sammen. Kraften som trengs er proporsjonal med forskyvningen \( x \) fra likevektsposisjonen,
 \[
@@ -122,19 +147,35 @@ I fysikk beskriver energi et legemes evne til å påvirke omgivelsene, enten ved
 
 I mekanikken opererer vi med det vi kaller mekanisk energi, som vi igjen deler inn i to typer: kinetisk energi (bevegelsesenergi) og potensiell energi (stillingsenergi). Besittelse av mekanisk energi gir et objekt evne til å påvirke sine omgivelser, som vi skal se. I likhet med \textit{arbeid} så måles også energi i joule (J), som er standardenheten for energi i fysikk.
 
-Ifølge energibevaringsloven kan energi verken skapes eller ødelegges, kun omformes fra en form til en annen. 
+\defn{Mekanisk energi}{%
+Et legemes mekaniske energi er et mål på dets evne til å påvirke omgivelsene. Vi deler den mekaniske energien $E$ i to typer:
+\[
+E = E_\text{K} + E_p,
+\]
+hvor $E_\text{K}$ er kinetisk energi og $E_p$ er potensiell energi.
+}
+
+En av de viktigste lovene i hele fysikken handler om hva som skjer med energi over tid:
+
+\defn{Energibevaringsloven}{%
+Energi kan verken oppstå eller forsvinne. Den kan bare omformes fra én energiform til en annen, eller overføres mellom legemer. I et isolert system er den totale energien derfor konstant.
+}
+
+Energibevaringsloven gjelder \emph{all} energi, ikke bare mekanisk energi. Når vi senere sier at energi «går tapt», for eksempel på grunn av friksjon, er den ikke borte. Den har bare blitt omformet til en form vi ikke kan bruke, som varme. I kapittel~\ref{Chapter:termofysikk} skal vi se at \textit{termodynamikkens 1.\ lov} er energibevaringsloven skrevet for systemer som utveksler varme og arbeid med omgivelsene.
 
 \subsection{Kinetisk energi}
 
 Tenk deg at en bil kjører nedover en vei. Bilen har kinetisk energi på grunn av sin bevegelse. Kinetisk energi er den energien et objekt har fordi det er i bevegelse. Jo raskere objektet beveger seg, desto mer kinetisk energi har det. For en bil vil både massen \( m \) og farten \( v \) påvirke hvor mye kinetisk energi den har.
 
 \defn{Kinetisk Energi}{
-    Matematisk kan den kinetiske energien \( E_k \) uttrykkes som:
+    Matematisk kan den kinetiske energien \( E_\text{K} \) uttrykkes som:
     \begin{align}
-        E_k = \frac{1}{2} m v^2
+        E_\text{K} = \frac{1}{2} m v^2
     \end{align}
     hvor \( m \) er massen til objektet og \( v \) er farten.
 }
+\tanke{}{%
+Hva er forskjellen på $\vec{p}=m\vec{v}$ og $E_\text{K}=\frac{1}{2}mv^2$?}
 
 Kinetisk energi er en viktig form for energi, som spiller en sentral rolle i mange fysiske prosesser som kollisjoner, bevegelse og energioverføringer. Når bilen bremser ned og stopper, reduseres dens kinetiske energi til null fordi farten \( v \) også blir null.
 
@@ -146,7 +187,7 @@ Kinetisk energi er en viktig form for energi, som spiller en sentral rolle i man
     \end{figure}
 
 \subsubsection{Arbeid-energi-setningen}
-La oss vende tilbake til begrepet arbeid; $W.$ Vi har 
+Vi skal nå utlede en sammenheng mellom arbeid og kinetisk energi. Vi har 
 
 \[
 W = \vec{F}\cdot \Delta\vec{s} = \frac{\Delta\vec{p}}{\Delta t}\cdot\Delta\vec{s}
@@ -167,14 +208,15 @@ Vi bruker algebraidentiteten $(a - b)(a + b) = a^2 - b^2$:
 \[
 W = \frac{m}{2}(v^2 - v_0^2) = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2
 \]
-Størrelsen $\frac{1}{2}mv^2$ er det vi kaller \textit{kinetisk energi} — energien legemet har på grunn av bevegelsen. Arbeidet er altså lik \textit{endringen} i kinetisk energi.
+Størrelsen $\frac{1}{2}mv^2$ er det vi kaller \textit{kinetisk energi} — energien legemet har på grunn av bevegelsen. Arbeidet er altså lik \textit{endringen} i kinetisk energi!
 \noindent
 
 \defn{Arbeid-energi-setningen}{%
 Arbeidet som summen av ytre krefter gjør på et legeme er lik endringen i legemets kinetiske energi:
 \[
-W_{\text{total}} = \Delta E_k
+W_{\text{total}} = \Delta E_\text{K}
 \]
+Arbeid er derfor overføring av energi i bevegelsesretningen.
 }
 
 \tips{For dem som kan integrere}{%
@@ -182,10 +224,11 @@ For varierende kraft — der akselerasjonen ikke er konstant — trenger man int
 \[
 W = \int_{v_0}^{v} mv\,dv = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2.
 \]
-Resultatet er det samme. Arbeid-energi-setningen $W = \Delta E_k$ er derfor \emph{generell} — den gjelder uansett om kraften varierer eller ikke. Det er bare utledningen her over som forutsetter konstant kraft.
+Resultatet er det samme. Arbeid-energi-setningen $W = \Delta E_\text{K}$ er derfor \emph{generell} — den gjelder uansett om kraften varierer eller ikke. Det er bare utledningen her over som forutsetter konstant kraft.
 }
 \tanke{}{%
-Merk at på samme måte som at $\Delta \vec{p}=\vec{F}\Delta t$ så er altså $\Delta E_\textrm{k}=\vec{F}\Delta \vec{s}$.}
+Merk at på samme måte som at $\Delta \vec{p}=\vec{F}\Delta t$ så er altså $\Delta E_\text{K}=\vec{F}\Delta \vec{s}$.}
+At $\Delta \vec{p}=\vec{F}\Delta t$ mens $\Delta E_\text{K}=\vec{F}\Delta \vec{s}$ synliggjør forskjellen på bevegelsesmengde og kinetisk energi: bevegelsesmengde er en vektor, kinetisk energi er en skalar. Bevegelsesmengden handler om kraft over tid, mens kinetisk energi handler om kraft over strekning. Og begge disse størrelsene inngår i egne bevaringslover. Derfor trenger vi begge to.
 
 
 \medskip
@@ -194,16 +237,16 @@ Merk at på samme måte som at $\Delta \vec{p}=\vec{F}\Delta t$ så er altså $\
 En kloss med masse \(0.8 \, \text{kg}\) har en startfart på \(2.0 \, \text{m/s}\) og blir flyttet med en horisontal kraft på \(8.0 \, \text{N}\). Friksjonskraften som virker mot bevegelsen er \(5.6 \, \text{N}\), og etter å ha blitt flyttet \(2.0 \, \text{m}\) får klossen en fart på \(4.0 \, \text{m/s}\).
 
 \textbf{Del 1: Endringen i kinetisk energi} \\
-\textit{Metode:} Kinetisk energi \(E_k\) beregnes med formelen \(E_k = \frac{1}{2} m v^2\). Endringen i kinetisk energi \( \Delta E_k \) er forskjellen mellom slutt- og startenergien:
+\textit{Metode:} Kinetisk energi \(E_\text{K}\) beregnes med formelen \(E_\text{K} = \frac{1}{2} m v^2\). Endringen i kinetisk energi \( \Delta E_\text{K} \) er forskjellen mellom slutt- og startenergien:
 \[
-E_k^{\text{start}} = \frac{1}{2} \cdot 0.8 \, \text{kg} \cdot (2.0 \, \text{m/s})^2 = \frac{1}{2} \cdot 0.8 \cdot 4 = 1.6 \, \text{J}
+E_\text{K}^{\text{start}} = \frac{1}{2} \cdot 0.8 \, \text{kg} \cdot (2.0 \, \text{m/s})^2 = \frac{1}{2} \cdot 0.8 \cdot 4 = 1.6 \, \text{J}
 \]
 \[
-E_k^{\text{slutt}} = \frac{1}{2} \cdot 0.8 \, \text{kg} \cdot (4.0 \, \text{m/s})^2 = \frac{1}{2} \cdot 0.8 \cdot 16 = 6.4 \, \text{J}
+E_\text{K}^{\text{slutt}} = \frac{1}{2} \cdot 0.8 \, \text{kg} \cdot (4.0 \, \text{m/s})^2 = \frac{1}{2} \cdot 0.8 \cdot 16 = 6.4 \, \text{J}
 \]
 Endringen i kinetisk energi er:
 \[
-\Delta E_k = E_k^{\text{slutt}} - E_k^{\text{start}} = 6.4 \, \text{J} - 1.6 \, \text{J} = 4.8 \, \text{J}
+\Delta E_\text{K} = E_\text{K}^{\text{slutt}} - E_\text{K}^{\text{start}} = 6.4 \, \text{J} - 1.6 \, \text{J} = \doubleunderline{4.8 \, \text{J}}
 \]
 
 \textbf{Del 2: Arbeid utført på klossen} \\
@@ -213,7 +256,7 @@ W_{\text{totalt}} = W_{\text{kraft}} + W_{\text{friksjon}} = F \cdot s - F_{\tex
 \]
 Her er kraften \( F = 8.0 \, \text{N} \), friksjonskraften \( F_{\text{friksjon}} = 5.6 \, \text{N} \), og forflytningen \( d = 2.0 \, \text{m} \):
 \[
-W_{\text{totalt}} = 8.0 \, \text{N} \cdot 2.0 \, \text{m} - 5.6 \, \text{N} \cdot 2.0 \, \text{m} = 16.0 \, \text{J} - 11.2 \, \text{J} = 4.8 \, \text{J}
+W_{\text{totalt}} = 8.0 \, \text{N} \cdot 2.0 \, \text{m} - 5.6 \, \text{N} \cdot 2.0 \, \text{m} = 16.0 \, \text{J} - 11.2 \, \text{J} = \doubleunderline{4.8 \, \text{J}}
 \]
 
 }
@@ -230,20 +273,20 @@ W_{\text{totalt}} = 8.0 \, \text{N} \cdot 2.0 \, \text{m} - 5.6 \, \text{N} \cdo
 \subsection{Potensiell energi}
 \label{sec:potensiell}
 
-Tenk deg at du løfter en stein opp på en hylle. Du bruker energi — du gjør et arbeid mot tyngdekraften. Men energien er ikke borte. Den er lagret i steinen som \textit{potensiell energi}: slipp steinen, og den faller ned og oppnår kinetisk energi. Den lagrede energien er omdannet.
+Tenk deg at du løfter en stein opp på en hylle. Du bruker energi — du gjør et arbeid mot tyngdekraften. Men energien er ikke borte. Den er lagret i steinen som \textit{potensiell energi}: slipp steinen, og den faller ned og oppnår kinetisk energi igjen! 
 
 Det samme skjer med en fjær: du komprimerer den mot fjærkraften og bruker energi. Slipp den, og energien frigjøres og skyver gjenstanden avgårde.
 
 Dette er kjernen i begrepet potensiell energi — \textit{arbeid lagret mot en kraft, klar til å omdannes til bevegelsesenergi}. Felles for tyngdekraft og fjærkraft er at de er \textit{konservative}: arbeidet du gjør mot dem er ikke tapt som varme, men bevart i systemet. Friksjon er derimot ikke-konservativ — det arbeidet forsvinner som varme og kan ikke hentes tilbake.
 
 % ── Gravitasjonspotensiell energi ─────────────────────────────────────────────
-
+\newpage
 \medskip
 \noindent\textbf{Gravitasjonspotensiell energi.}\par\smallskip
 \noindent
 \begin{minipage}[t]{0.54\linewidth}
 \vspace{0pt}
-For å løfte en masse $m$ en høyde $h$ i tyngdefeltet uten akselerasjon, må løftekraften nøyaktig oppheve tyngdekraften: $F_\text{løft} = m\mathrm{g}$. Arbeidet denne kraften gjør er:
+For å løfte en masse $m$ en høyde $h$ i tyngdefeltet uten akselerasjon, må løftekraften nøyaktig oppheve tyngdekraften: $F_\text{løft} = m\mathrm{g}$. Arbeidet denne kraften gjør er da:
 \[
 W_\text{løft} = F_\text{løft} \cdot h = m\mathrm{g}h
 \]
@@ -305,7 +348,7 @@ $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$ er tyngdeakselerasjonen, og 
 \noindent
 \begin{minipage}[t]{0.54\linewidth}
 \vspace{0pt}
-For å komprimere en fjær en avstand $x$ fra likevekt, må man arbeide mot fjærkraften $F = kx$. Siden kraften øker lineært med kompresjonen, er arbeidet arealet under $F(x)$-kurven — en trekant (se figur~\ref{fig:arbeid_fjaer}):
+For å komprimere (eller strekke) en fjær en avstand $x$ fra likevekt, må man arbeide mot fjærkraften $F = kx$. Arbeidet kan beregnes som arealet under $F(x)$-kurven. Siden kraften øker lineært med avstanden fra likevekt, er arbeidet arealet under en trekant med høyde $kx$ og bredde $x$(se figur~\ref{fig:arbeid_fjaer}). Altså er arbeidets størrelse
 \[
 W = \frac{1}{2}kx^2
 \]
@@ -359,6 +402,7 @@ Den elastiske potensielle energien lagret i en fjær med fjærkonstant $k$ og ko
 \[
 E_p = \frac{1}{2}kx^2
 \]
+\textbf{Merk!} Null-nivå for potensiell energi kan velges fritt. Ofte er det praktisk å velge nullnivået der fjæren er i likevekt (ikke komprimert eller strukket).
 }
 
 \oppgaver{Potensiell energi og nullnivå}{k5oppg5}{%
@@ -372,9 +416,15 @@ E_p = \frac{1}{2}kx^2
 \newpage
 
 \section{Energitap}
+Selv om energi ikke kan oppstå eller forsvinne, kan den omformes fra en form til en annen. 
+
 Energitap skjer når energi omdannes fra en nyttig form, som kinetisk eller potensiell energi, til former som varme eller lyd. Dette skjer ofte på grunn av friksjon eller motstand i systemet. For eksempel vil et objekt som beveger seg langs en overflate oppleve friksjon, som omdanner noe av den kinetiske energien til varme. 
 
 Selv om den totale energien i systemet bevares, reduserer energitap den mengden energi som kan brukes til arbeid. Energitap er derfor en viktig faktor i mange praktiske situasjoner, som ingeniørarbeid og fysikkproblemer.
+
+\defn{Energitap}{%
+Energitap i et system er energi som har forlatt systemet eller endret kvalitet til en tilstand som ikke er nyttig for oss.
+}
 
 \exm{Energiforskjell og energitap i et fall}{
 En ball med masse \( 0.5 \, \text{kg} \) slippes fra en høyde på \( 10 \, \text{m} \). Rett før ballen treffer bakken, har den en hastighet på \( 12 \, \text{m/s} \). Vi antar at noe energi har gått tapt på grunn av luftmotstand. Beregn energitapet ved å sammenligne den potensielle energien på toppen med den kinetiske energien rett før bakken. \\
@@ -384,7 +434,7 @@ Den potensielle energien ballen har på toppen, før den slippes, kan beregnes m
 \[
 E_p = m\mathrm{g}h
 \]
-hvor \( m = 0.5 \, \text{kg} \), \( g = 9.81 \, \text{m/s}^2 \), og \( h = 10 \, \text{m} \):
+hvor \( m = 0.5 \, \text{kg} \), \( \mathrm{g} = 9.81 \, \text{m/s}^2 \), og \( h = 10 \, \text{m} \):
 \[
 E_p = 0.5 \, \text{kg} \cdot 9.81 \, \text{m/s}^2 \cdot 10 \, \text{m} = 49.05 \, \text{J}
 \]
@@ -393,22 +443,99 @@ Dette er den totale potensielle energien som ballen har før fallet.
 \textbf{Del 2: Kinetisk energi rett før bakken} \\
 Når ballen nærmer seg bakken med en hastighet på \( 12 \, \text{m/s} \), kan vi beregne dens kinetiske energi:
 \[
-E_k = \frac{1}{2} m v^2
+E_\text{K} = \frac{1}{2} m v^2
 \]
 hvor \( m = 0.5 \, \text{kg} \) og \( v = 12 \, \text{m/s} \):
 \[
-E_k = \frac{1}{2} \cdot 0.5 \, \text{kg} \cdot (12 \, \text{m/s})^2 = 36 \, \text{J}
+E_\text{K} = \frac{1}{2} \cdot 0.5 \, \text{kg} \cdot (12 \, \text{m/s})^2 = 36 \, \text{J}
 \]
 Dette er den kinetiske energien ballen har rett før den treffer bakken.
 
 \textbf{Del 3: Energitap på grunn av luftmotstand} \\
 Forskjellen mellom den potensielle energien på toppen og den kinetiske energien rett før bakken gir oss energitapet som følge av luftmotstand:
 \[
-\Delta E = E_p - E_k = 49.05 \, \text{J} - 36 \, \text{J} = 13.05 \, \text{J}
+\Delta E = E_p - E_\text{K} = 49.05 \, \text{J} - 36 \, \text{J} = \doubleunderline{13.05 \, \text{J}}
 \]
 Dette betyr at \( 13.05 \, \text{J} \) av energien har blitt tapt på grunn av luftmotstanden i løpet av fallet.
 }
 
+
+% ---- Eksempel: Tapshøyde i et rør ----
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+I et vannkraftverk renner vann fra et magasin, gjennom et rør og ned til et skovlhjul. Uten tap ville all potensiell energi blitt omdannet til kinetisk energi, og vannet ville truffet skovlhjulet med farten $v = \sqrt{2\mathrm{g}h}$, der $h$ er høydeforskjellen. I virkeligheten går noe energi tapt på grunn av friksjon mellom vannet og rørveggen, så farten blir mindre. Det er vanlig å oppgi tapet som en \textit{tapshøyde}: den høyden som tilsvarer tapet av kinetisk energi.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.85, font=\small]
+  % Magasin
+  \fill[blue!15] (0,2.6) rectangle (1.3,3.4);
+  \draw[black!65, line width=1pt] (0,3.6) -- (0,2.4) -- (1.3,2.4) -- (1.3,2.55);
+  \draw[black!65, line width=1pt] (1.3,2.95) -- (1.3,3.6);
+  \draw[blue!60, thick] (0,3.4) -- (1.3,3.4);
+  % Rør
+  \draw[black!65, line width=1pt] (1.3,2.95) -- (3.2,0.75);
+  \draw[black!65, line width=1pt] (1.3,2.55) -- (2.95,0.6);
+  \fill[blue!15] (1.3,2.95) -- (3.2,0.75) -- (2.95,0.6) -- (1.3,2.55) -- cycle;
+  % Skovlhjul
+  \draw[black!65, line width=1pt] (3.45,0.35) circle (0.45);
+  \foreach \a in {0,45,...,315} {
+    \draw[black!55] (3.45,0.35) -- ++(\a:0.45);
+  }
+  % Fart ved utløpet
+  \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.5pt, oppsumcol]
+    (2.95,0.95) -- (3.45,0.38);
+  \node[oppsumcol, right=2pt] at (3.75,0.95) {$v$};
+  % Høyde h
+  \draw[<->, gray!70, thin] (-0.3,3.4) -- (-0.3,0.35);
+  \node[left=1pt, black!70] at (-0.3,1.9) {$h$};
+  \draw[dashed, gray!55, thin] (-0.4,0.35) -- (3.0,0.35);
+\end{tikzpicture}
+\captionof{figure}{Vann renner fra et magasin gjennom et rør og ned til et skovlhjul. Høydeforskjellen fra vannflaten til skovlhjulet er $h$.}
+\label{fig:tapshoyde}
+\end{minipage}
+
+\medskip
+
+\exm{Tapshøyde i et rør}{%
+Vann renner fra et magasin, gjennom et rør og ned til et skovlhjul som ligger $h = \SI{20}{\metre}$ under vannflaten i magasinet. Uten tap skulle vannet hatt farten $v_0 = \sqrt{2\mathrm{g}h}$ når det treffer skovlhjulet, men på grunn av tap i røret har det bare farten $v = \SI{18.0}{\metre\per\second}$.
+\begin{enumerate}[a)]
+    \item Hvor stor fart $v_0$ ville vannet hatt uten tap?
+    \item Hvor stor høyde tilsvarer tapet av kinetisk energi i vannet? Denne høyden kaller vi \textit{tapshøyden} $h_\text{tap}$.
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Uten tap er mekanisk energi bevart. Vi ser på en vannmengde med masse $m$ som starter i ro ved vannflaten. All potensiell energi blir omdannet til kinetisk energi:
+\[
+    m\mathrm{g}h = \frac{1}{2}mv_0^2
+    \quad\implies\quad
+    v_0 = \sqrt{2\mathrm{g}h} = \sqrt{2\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{20}{\metre}} = \doubleunderline{\SI{19.8}{\metre\per\second}}
+\]
+
+\noindent
+\textbf{b)} Tapet av kinetisk energi er forskjellen mellom den kinetiske energien vannet skulle hatt, og den det faktisk har:
+\[
+    \Delta E_\text{K} = \frac{1}{2}mv_0^2 - \frac{1}{2}mv^2
+\]
+Tapshøyden er den høyden som svarer til denne energien, altså $m\mathrm{g}h_\text{tap} = \Delta E_\text{K}$. Siden $\frac{1}{2}mv_0^2 = m\mathrm{g}h$, får vi
+\[
+    m\mathrm{g}h_\text{tap} = m\mathrm{g}h - \frac{1}{2}mv^2
+    \quad\implies\quad
+    h_\text{tap} = h - \frac{v^2}{2\mathrm{g}}
+\]
+Massen faller ut, så vi trenger ikke vite hvor mye vann det er. Med tall:
+\[
+    h_\text{tap} = \SI{20}{\metre} - \frac{(\SI{18.0}{\metre\per\second})^2}{2\cdot\SI{9.81}{\metre\per\second\squared}}
+    = \SI{20}{\metre} - \SI{16.5}{\metre}
+    = \doubleunderline{\SI{3.5}{\metre}}
+\]
+Tapet i røret tilsvarer altså at vannet hadde falt \SI{3.5}{\metre} kortere enn det faktisk gjorde.
+}
 
 \oppgaver{Syklist ned en bakke}{k5oppg7}{%
 \input{Oppgaver/k5_oppg07.tex}%
@@ -420,15 +547,13 @@ Dette betyr at \( 13.05 \, \text{J} \) av energien har blitt tapt på grunn av l
 
 \section{Bevaring av mekanisk energi}
 
-I et lukket system, der det ikke er noen energitap til friksjon eller andre motstandskrefter, er den mekaniske energien bevart. Mekanisk energi er summen av et objekts kinetiske energi \( E_k \) og potensielle energi \( E_p \). Bevaringsloven sier at den totale mekaniske energien i et system forblir konstant, så lenge det ikke er energitap på grunn av motstand som friksjon eller luftmotstand.
-
-Matematisk kan bevaring av mekanisk energi uttrykkes som:
+I et isolert system der det ikke er noe energitap til friksjon eller andre motstandskrefter, er den mekaniske energien bevart. Det vil si: Alt arbeidet som går med til å lagre energi potensielt, kan igjen utløses som kinetisk energi. Matematisk kan bevaring av mekanisk energi uttrykkes som:
 \[
-E_{\text{mekanisk}} = E_k + E_p = \text{konstant}
+E = E_\text{K} + E_\text{P} = \text{konstant}
 \]
 Dette betyr at i et system der mekanisk energi er bevart, vil all potensiell energi som et objekt mister omformes til kinetisk energi, og omvendt. For eksempel, når en ball faller fra en høyde, vil dens potensielle energi omformes til kinetisk energi når den nærmer seg bakken. I fravær av luftmotstand vil den totale energien forbli den samme gjennom hele bevegelsen.
 
-Når det oppstår friksjon eller andre energitap, vil den mekaniske energien ikke være bevart, fordi noe av energien omformes til andre former, som varme.
+Når det oppstår friksjon eller andre energitap, vil den mekaniske energien ikke være bevart, fordi noe av energien omformes til andre former, slik som varme.
 
 \defn{Bevaring av mekanisk energi}{
     Når et legme beveger seg under påvirkning av kun tyngdekraft og/ eller fjærkraft, er energien bevart og kan skrives slik:  
@@ -439,11 +564,46 @@ Når det oppstår friksjon eller andre energitap, vil den mekaniske energien ikk
     \begin{align}
         E = m\mathrm{g}h + \frac{1}{2} m v^2 + \frac{1}{2} k x^2
     \end{align}
-    Her er \( m \) massen til objektet, \( g \) tyngdeakselerasjonen, \( h \) høyden over et nullnivå, \( v \) hastigheten, \( k \) fjærkonstanten, og \( x \) forlengelsen eller kompresjonen av en fjær. 
+    Her er \( m \) massen til objektet, \( \mathrm{g} \) tyngdeakselerasjonen, \( h \) høyden over et nullnivå, \( v \) hastigheten, \( k \) fjærkonstanten, og \( x \) forlengelsen eller kompresjonen av en fjær. 
 }
 
 \exm{Fallende stein}{
 En person holder en stein på en høyde \(1.60 \, \text{m}\) over bakken og slipper den. Vi skal regne ut steinens hastighet rett før den treffer bakken. Vi antar at luftmotstanden er neglisjerbar.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, font=\small]
+  % Underlag
+  \fill[black!8] (-1.2,-0.35) rectangle (4.6,0);
+  \draw[black!65, line width=1pt] (-1.2,0) -- (4.6,0);
+  % Steiner (samme form, tre posisjoner)
+  \foreach \y/\fade in {4.0/0, 2.0/1, 0.3/1} {
+    \fill[gray!55] (0,\y) ++(-0.32,0) .. controls ++(0,0.28) and ++(-0.15,0.05) .. ++(0.3,0.3)
+      .. controls ++(0.2,-0.02) and ++(0,0.2) .. ++(0.34,-0.24)
+      .. controls ++(0,-0.25) and ++(0.2,0) .. ++(-0.3,-0.33)
+      .. controls ++(-0.25,0) and ++(0,-0.15) .. cycle;
+  }
+  % Fartsstreker
+  \foreach \y in {2.0, 0.3} {
+    \foreach \dx/\l in {-0.2/0.35, 0/0.5, 0.2/0.35} {
+      \draw[gray!60, thin] (\dx,\y+0.45) -- (\dx,\y+0.45+\l);
+    }
+  }
+  % Energietiketter
+  \node[anchor=west] at (0.55,4.05) {Kun $E_p$};
+  \node[anchor=west, align=left] at (0.55,2.05) {Halvparten $E_p$,\\ halvparten $E_\text{K}$};
+  \node[anchor=west] at (0.55,0.35) {Kun $E_\text{K}$};
+  % Høyde
+  \draw[gray!60, thin] (-0.5,4.0) -- (-1.0,4.0);
+  \draw[<->, gray!70, thin] (-0.8,0) -- (-0.8,4.0);
+  \node[left=1pt] at (-0.8,2.0) {$h$};
+  \node[anchor=west, black!75] at (3.0,4.0) {$h_1 = h$};
+  \draw[gray!50, dashed, thin] (1.75,4.0) -- (2.95,4.0);
+  \node[anchor=west, black!75] at (3.0,0.18) {$h_2 = 0$};
+\end{tikzpicture}
+\captionof{figure}{En stein slippes fra høyden $h$. Underveis omdannes potensiell energi til kinetisk energi. Halvveis ned er halvparten omdannet, og rett før bakken er all energien kinetisk.}
+\label{fig:Stein}
+\end{center}
+
 
 \textit{Metode:} \\
 Når steinen slippes, har den ingen startfart, så det er ingen kinetisk energi i systemet ved start. Den har kun potensiell energi på grunn av høyden over bakken. Vi setter nullpunktet for høyden til bakkenivå, slik at høyden \( h = 0 \) rett før steinen treffer bakken. På dette tidspunktet er den potensielle energien null, og all energien er omformet til kinetisk energi.
@@ -466,29 +626,28 @@ m\mathrm{g}h_1 + 0 = 0 + \frac{1}{2} m v_2^2
 \]
 Vi kan nå stryke massen \( m \) fra begge sider av likningen:
 \[
-gh_1 = \frac{1}{2} v_2^2
+\mathrm{g}h_1 = \frac{1}{2} v_2^2
 \]
 Løs for hastigheten \( v_2 \):
 \[
-v_2 = \sqrt{2gh_1}
+v_2 = \sqrt{2\mathrm{g}h_1}
 \]
-Ved å sette inn verdiene \( g = 9.8 \, \text{m/s}^2 \) og \( h_1 = 1.60 \, \text{m} \), får vi:
+Ved å sette inn verdiene \( \mathrm{g} = 9.8 \, \text{m/s}^2 \) og \( h_1 = 1.60 \, \text{m} \), får vi:
 \[
-v_2 = \sqrt{2 \cdot 9.8 \, \text{m/s}^2 \cdot 1.60 \, \text{m}} = \sqrt{31.36} \approx 5.6 \, \text{m/s}
+v_2 = \sqrt{2 \cdot 9.8 \, \text{m/s}^2 \cdot 1.60 \, \text{m}} = \sqrt{31.36} \approx \doubleunderline{5.6 \, \text{m/s}}
 \]
 Steinen har en hastighet på \( 5.6 \, \text{m/s} \) rett før den treffer bakken.
 }
 
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.4\textwidth]{Images/Kapittel3:Arbeid&Energi/Fallende stein.png}
-    \caption{Fallende stein}
-    \label{fig:Stein}
-    \end{figure}
-
 \exm{Fjærkanon i tyngdefeltet - Finn fjærkonstanten \( k \)}{
 En fjærkanon skyter en kanonkule med masse \(0.2 \, \text{kg}\) rett opp i luften etter at fjæren har blitt komprimert med \( x = 0.15 \, \text{m} \). Kanonkulen når en maksimal høyde på \( h = 5.0 \, \text{m} \) før den faller tilbake ned igjen. Anta at all fjærens elastiske potensielle energi omformes til kanonkulas potensielle energi på toppen. Vi skal finne fjærkonstanten \( k \) for fjæren.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/Kapittel3:Arbeid&Energi/cannonball_launcher.png}
+\captionof{figure}{Fjærkanon i tyngdefelt}
+\label{fig:Fjær_i_tyngdefelt}
+\end{center}
+
 
 \textit{Metode:} \\
 Vi bruker bevaring av mekanisk energi, som sier at all elastisk potensiell energi i fjæren omformes til gravitasjonspotensiell energi på toppen. Elastisk potensiell energi for fjæren er gitt ved:
@@ -507,29 +666,28 @@ Vi løser for fjærkonstanten \( k \):
 \[
 k = \frac{2m\mathrm{g}h}{x^2}
 \]
-Nå setter vi inn verdiene \( m = 0.2 \, \text{kg} \), \( g = 9.8 \, \text{m/s}^2 \), \( h = 5.0 \, \text{m} \), og \( x = 0.15 \, \text{m} \):
+Nå setter vi inn verdiene \( m = 0.2 \, \text{kg} \), \( \mathrm{g} = 9.8 \, \text{m/s}^2 \), \( h = 5.0 \, \text{m} \), og \( x = 0.15 \, \text{m} \):
 \[
 k = \frac{2 \cdot 0.2 \, \text{kg} \cdot 9.8 \, \text{m/s}^2 \cdot 5.0 \, \text{m}}{(0.15 \, \text{m})^2} = \frac{19.6 \, \text{N/m} \cdot \text{m}}{0.0225 \, \text{m}^2} = \doubleunderline{871.1 \, \text{N/m}}
 \]
 Fjærkonstanten \( k \) er dermed \( 871.1 \, \text{N/m} \).
 }
-
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/Kapittel3:Arbeid&Energi/cannonball_launcher.png}
-    \caption{Fjærkaon i tyngdefelt}
-    \label{fig:Fjær_i_tyngdefelt}
-    \end{figure}
     
 \exm{Kollisjon mellom legeme og fjær}{
 Et legeme med masse \(100 \, \text{g}\) glir fra ro nedover en friksjonsfri bane og kolliderer med en elastisk fjær med fjærkonstanten \(k = 300 \, \text{N/m}\). Startpunktet for legemet er \(60 \, \text{cm}\) over den horisontale delen av banen. Vi skal først finne farten til legemet idet det treffer fjæren, og deretter finne hvor langt fjæren blir maksimalt presset inn under kollisjonen.
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Images/Kapittel3:Arbeid&Energi/Boksglir.png}
+\captionof{figure}{Kollisjon mellom legeme og fjær}
+\label{fig:Kollisjon}
+\end{center}
+
 
 \textbf{Del a: Bestem farten til legemet idet det kolliderer med fjæren} \\
 \textit{Metode:} \\
 Vi bruker bevaring av mekanisk energi. I startposisjonen har legemet kun potensiell energi, og i det øyeblikket det treffer fjæren er all denne potensielle energien omformet til kinetisk energi (friksjon neglisjeres):
 \[
-E_p = E_k
+E_p = E_\text{K}
 \]
 Ved bevaring av energi får vi:
 \[
@@ -541,9 +699,9 @@ gh = \frac{1}{2} v^2
 \]
 Løser for hastigheten \( v \):
 \[
-v = \sqrt{2gh}
+v = \sqrt{2\mathrm{g}h}
 \]
-Setter inn verdiene \( g = 9.8 \, \text{m/s}^2 \) og \( h = 0.60 \, \text{m} \):
+Setter inn verdiene \( \mathrm{g} = 9.8 \, \text{m/s}^2 \) og \( h = 0.60 \, \text{m} \):
 \[
 v = \sqrt{2 \cdot 9.8 \, \text{m/s}^2 \cdot 0.60 \, \text{m}} = \sqrt{11.76} \approx \doubleunderline{ 3.43 \, \text{m/s}}
 \]
@@ -557,7 +715,7 @@ Nå overføres all den kinetiske energien fra legemet til fjæren, som blir maks
 \[
 E_{\text{fjær}} = \frac{1}{2} k x^2
 \]
-Siden all den kinetiske energien omformes til elastisk potensiell energi ved maksimal kompresjon, setter vi \( E_k = E_{\text{fjær}} \):
+Siden all den kinetiske energien omformes til elastisk potensiell energi ved maksimal kompresjon, setter vi \( E_\text{K} = E_{\text{fjær}} \):
 \[
 \frac{1}{2} m v^2 = \frac{1}{2} k x^2
 \]
@@ -575,13 +733,6 @@ x = \sqrt{\frac{0.1 \, \text{kg} \cdot (3.43 \, \text{m/s})^2}{300 \, \text{N/m}
 \]
 Fjæren blir maksimalt komprimert med \( 6.3 \, \text{cm} \) under kollisjonen.
 }
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Images/Kapittel3:Arbeid&Energi/Boksglir.png}
-    \caption{Kollisjon mellom legme og fjær}
-    \label{fig:Kollisjon}
-    \end{figure}
 
 
 \exm{Loop-the-loop}{%
@@ -722,6 +873,86 @@ Både $N_3$ og $m\mathrm{g}$ peker nedover (mot sentrum):
 \end{tcolorbox}
 }
 
+\exm{Skrått kast}{%
+En kanonkule skytes ut med fart $v_0 = \SI{20}{\metre\per\second}$ i en vinkel $\theta = 30^\circ$ over horisontalen. Se bort fra luftmotstand.
+\begin{enumerate}[a)]
+    \item Hva er kulas maksimale høyde over utskytingspunktet? Hva er farten til kula i det høyeste punktet, og i hvilken retning peker farten?
+    \item Hva er farten til kula når den treffer underlaget igjen (i samme høyde som den ble skutt ut fra)? Hva er vinkelen mellom fartsretningen og underlaget?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, font=\small]
+  % Underlag
+  \draw[black!65, line width=1pt] (-0.4,0) -- (7.3,0);
+  % Bane (parabel): x fra 0 til 6.9, topp i (3.45, 1.0)
+  \draw[dashed, gray!70, thick, domain=0:6.9, samples=60]
+    plot (\x, {1.0 - 1.0*((\x-3.45)/3.45)^2});
+  % Start: v0 med vinkel
+  \fill[black!70] (0,0) circle (2.5pt);
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, oppsumcol]
+    (0,0) -- (30:1.6);
+  \node[oppsumcol, above left=0pt] at (30:1.6) {$\vec{v}_0$};
+  \draw[black!55] (0.7,0) arc (0:30:0.7);
+  \node[black!70, font=\scriptsize] at (0.95,0.2) {$\theta$};
+  % Toppunkt: horisontal fart
+  \fill[black!70] (3.45,1.0) circle (2.5pt);
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, oppsumcol]
+    (3.45,1.0) -- (4.85,1.0);
+  \node[oppsumcol, above=1pt] at (4.15,1.0) {$\vec{v}_\text{topp}$};
+  \draw[<->, gray!70, thin] (3.45,0) -- (3.45,0.92);
+  \node[left=1pt, black!70] at (3.45,0.5) {$h_\text{maks}$};
+  % Landing
+  \fill[black!70] (6.9,0) circle (2.5pt);
+  \draw[-{Stealth[length=8pt,width=5pt]}, line width=1.6pt, oppsumcol]
+    (6.9,0) -- ++(-30:1.6);
+  \node[oppsumcol, right=2pt] at ($(6.9,0)+(-30:1.6)$) {$\vec{v}_\text{slutt}$};
+  \draw[black!55] (7.6,0) arc (0:-30:0.7);
+  \node[black!70, font=\scriptsize] at (7.85,-0.2) {$\alpha$};
+\end{tikzpicture}
+\captionof{figure}{Skrått kast uten luftmotstand. I toppunktet peker farten horisontalt.}
+\label{fig:skratt_kast}
+\end{center}
+}
+
+\svar{%
+\noindent
+Vi bruker bevaring av mekanisk energi, med utskytingspunktet som nullnivå for potensiell energi. I tillegg trenger vi én opplysning fra kapittel~\ref{Chapter:kinematikk}: Uten luftmotstand virker det ingen krefter horisontalt, så den horisontale komponenten av farten er konstant gjennom hele kastet:
+\[
+    v_x = v_0\cos\theta = \SI{20}{\metre\per\second}\cdot\cos 30^\circ = \SI{17.3}{\metre\per\second}
+\]
+
+\noindent
+\textbf{a)} I det høyeste punktet går kula verken opp eller ned, så den vertikale komponenten av farten er null. Farten er da bare den horisontale komponenten:
+\[
+    v_\text{topp} = v_x = \doubleunderline{\SI{17.3}{\metre\per\second}}, \qquad \text{\doubleunderline{rettet horisontalt}}
+\]
+Den maksimale høyden finner vi med energibevaring mellom utskytingspunktet og toppunktet:
+\[
+    \frac{1}{2}mv_0^2 = \frac{1}{2}mv_\text{topp}^2 + m\mathrm{g}h_\text{maks}
+    \quad\implies\quad
+    h_\text{maks} = \frac{v_0^2 - v_\text{topp}^2}{2\mathrm{g}}
+\]
+\[
+    h_\text{maks} = \frac{(\SI{20}{\metre\per\second})^2 - (\SI{17.3}{\metre\per\second})^2}{2\cdot\SI{9.81}{\metre\per\second\squared}}
+    = \doubleunderline{\SI{5.1}{\metre}}
+\]
+Legg merke til at kula ikke kommer like høyt som om den ble skutt rett opp. Bare en del av den kinetiske energien blir omdannet til potensiell energi, fordi kula fortsatt beveger seg horisontalt i toppunktet.
+
+\noindent
+\textbf{b)} Når kula er tilbake i samme høyde, er den potensielle energien den samme som ved start. Da må også den kinetiske energien være den samme:
+\[
+    \frac{1}{2}mv_0^2 = \frac{1}{2}mv_\text{slutt}^2
+    \quad\implies\quad
+    v_\text{slutt} = v_0 = \doubleunderline{\SI{20}{\metre\per\second}}
+\]
+At farten er uendret er altså et direkte resultat av bevaring av energi. Vinkelen $\alpha$ med underlaget finner vi fordi den horisontale komponenten fortsatt er $v_x$:
+\[
+    \cos\alpha = \frac{v_x}{v_\text{slutt}} = \frac{v_0\cos\theta}{v_0} = \cos\theta
+    \quad\implies\quad
+    \alpha = \doubleunderline{30^\circ}
+\]
+Kula treffer altså underlaget med samme fart og samme vinkel som den ble skutt ut med, men nå peker farten skrått \emph{nedover}.}
+
 \oppgaver{Stein kastet rett opp}{k5oppg9}{%
 \input{Oppgaver/k5_oppg09.tex}%
 }
@@ -731,17 +962,17 @@ Både $N_3$ og $m\mathrm{g}$ peker nedover (mot sentrum):
 }
 
 \section{Effekt}
-Effekt \( P \) er et mål på hvor raskt energi omformes eller utføres arbeid. Den defineres som mengden energi som overføres eller arbeidet som utføres per tidsenhet.
+Effekt \( P \) er et mål på hvor raskt energi omformes eller utfører arbeid. Den defineres som mengden energi som overføres per tidsenhet, eller arbeidet som utføres per tidsenhet.
 
 \defn{Effekt som arbeid per tidsenhet}{
     Effekt \( P \) kan uttrykkes som:
     \begin{align}
         P = \frac{W}{t}
     \end{align}
-    hvor \( W \) er arbeidet eller energien som overføres, og \( t \) er tiden det tar.
+    hvor \( W \) er arbeidet eller energien som overføres, og \( t \) er tiden det tar. Enheten for effekt er watt (W). For dere som kan å derivere: Den enda mer presise formuleringen av effekt er at $P=\text{d}W/\text{d}t$.
 }
 
-Enheten for effekt er watt (W), der \( 1 \, \text{W} = 1 \, \text{J/s} \). Dette betyr at én watt tilsvarer at én joule energi overføres hvert sekund.
+Enheten for effekt er watt (W). Samtidig ser vi fra formelen over at vi må ha sammenhengen \( 1 \, \text{W} = 1 \, \text{J/s} \). Dette betyr at én watt tilsvarer at én joule energi overføres hvert sekund. I senere kapittel skal vi vise at effekt i elektrisk sammenheng, er $P=U\cdot I$, der $U$ er spenning og $I$ er strømstyrke. I det tilfellet er det snakk om elektrisk energi (elektrisk arbeid) som overføres per tidsenhet. Men selve begrepet 
 
 Effekt kan også uttrykkes i sammenheng med kraft og hastighet. Hvis en konstant kraft \( F \) virker på et objekt som beveger seg med en hastighet \( v \), kan effekten skrives som:
 
@@ -785,15 +1016,15 @@ I et elastisk støt mellom to objekter, gjelder både bevaring av bevegelsesmeng
 \defn{Bevaring av bevegelsesmengde}{
     I et elastisk støt er bevegelsesmengden bevart:
     \begin{align}
-        m_1 v_{1, \text{før}} + m_2 v_{2, \text{før}} = m_1 v_{1, \text{etter}} + m_2 v_{2, \text{etter}}
+        m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2
     \end{align}
-    hvor \( m_1 \) og \( m_2 \) er massene til de to objektene, og \( v_{1, \text{før}} \), \( v_{2, \text{før}} \), \( v_{1, \text{etter}} \) og \( v_{2, \text{etter}} \) er hastighetene til objektene før og etter kollisjonen.
+    hvor \( m_1 \) og \( m_2 \) er massene til de to objektene, og \( v_1 \) og \( v_2 \) er hastighetene til objektene \emph{før} kollisjonen, mens \( u_1 \) og \( u_2 \) er hastighetene \emph{etter} kollisjonen.
 }
 
 \defn{Bevaring av kinetisk Energi}{
     I et elastisk støt er også den kinetiske energien bevart:
     \begin{align}
-        \frac{1}{2} m_1 v_{1, \text{før}}^2 + \frac{1}{2} m_2 v_{2, \text{før}}^2 = \frac{1}{2} m_1 v_{1, \text{etter}}^2 + \frac{1}{2} m_2 v_{2, \text{etter}}^2
+        \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 u_1^2 + \frac{1}{2} m_2 u_2^2
     \end{align}
     Dette betyr at den totale kinetiske energien før kollisjonen er lik den totale kinetiske energien etter kollisjonen.
 }
@@ -807,16 +1038,16 @@ Et klassisk eksempel på elastisk støt er to biljardkuler som kolliderer. Når 
     \label{fig:Eks: Elastisk støt}
     \end{figure}
 
-Et klassisk eksempel på bevaring av bevegelsesmengde og kinetisk energi finner vi i et eksperiment kjent som Newtons pendel. Dette består av flere kuler som henger på snorer og er i kontakt med hverandre. Når du løfter én av kulene fra den ene enden og slipper den, vil den kollidere med kulen ved siden av, som overfører bevegelsesmengden gjennom alle kulene. 
+Et annet eksempel på bevaring av bevegelsesmengde og kinetisk energi finner vi i et eksperiment kjent som Newtons pendel. Dette består av flere kuler som henger på snorer og er i kontakt med hverandre. Når du løfter én av kulene fra den ene enden og slipper den, vil den kollidere med kulen ved siden av, som overfører bevegelsesmengden gjennom alle kulene. 
 
 På grunn av bevaringen av bevegelsesmengde og kinetisk energi, vil den siste kulen i den andre enden ``skytes`` opp med omtrent samme hastighet som den første kulen ble sluppet. Resten av kulene forblir i ro etter kollisjonen.
 
-Dette skjer fordi i et elastisk støt mellom objektene, bevares både den totale bevegelsesmengden og den totale kinetiske energien i systemet. I Newtons pendel ser vi disse prinsippene tydelig:
+Dette skjer fordi i et elastisk støt mellom objektene, bevares både den totale bevegelsesmengden og den totale kinetiske energien i systemet. I Newtons pendel ser vi disse prinsippene tydelig. Kalles farten til den første kula rett før støtet $v$, og farten til den siste kula rett etter støtet $u$, har vi:
 \[
-m v_{\text{før}} = m v_{\text{etter}}
+m v = m u
 \]
 \[
-\frac{1}{2} m v_{\text{før}}^2 = \frac{1}{2} m v_{\text{etter}}^2
+\frac{1}{2} m v^2 = \frac{1}{2} m u^2
 \]
 Dette viser at kulene overfører bevegelsesmengde og energi fra den ene enden av pendelen til den andre uten at energi går tapt i prosessen.\\
 
@@ -831,78 +1062,175 @@ I Newtons pendel skjer det elastiske kollisjoner mellom kulene. I en elastisk ko
 
 
 \exm{Elastisk kollisjon mellom to like vogner}{
-En vogn med masse \( m = 2.0 \, \text{kg} \) og fart \( v_1 = 3.0 \, \text{m/s} \) krasjer inn i en annen vogn med samme masse \( m = 2.0 \, \text{kg} \) som står stille (\( u = 0 \)) på et friksjonsfritt underlag. Det er ingen ytre krefter som virker på systemet (vogn 1 + vogn 2), og det utføres ikke arbeid på systemet under kollisjonen. Vi skal finne hastighetene til begge vognene etter kollisjonen.
+En vogn med masse \( m = 2.0 \, \text{kg} \) og fart \( v_1 = 3.0 \, \text{m/s} \) krasjer inn i en annen vogn med samme masse \( m = 2.0 \, \text{kg} \) som står stille (\( v_2 = 0 \)) på et friksjonsfritt underlag. Det er ingen ytre krefter som virker på systemet (vogn 1 + vogn 2), og det utføres ikke arbeid på systemet under kollisjonen. Vi skal finne hastighetene \( u_1 \) og \( u_2 \) til de to vognene etter kollisjonen.
 
 \textit{Løsning:} \\
 Siden det er en elastisk kollisjon, er både bevegelsesmengden og den kinetiske energien bevart.
 
-\textbf{Bevaring av Bevegelsesmengde:} \\
+\textbf{Bevaring av bevegelsesmengde:} \\
 Før kollisjonen har bare vogn 1 bevegelsesmengde, siden vogn 2 står stille:
 \[
 p_{\text{før}} = m v_1
 \]
-Etter kollisjonen får vi at bevegelsesmengden fordeler seg mellom vogn 1 (med hastighet \( v_2 \)) og vogn 2 (med hastighet \( u \)):
+Etter kollisjonen fordeler bevegelsesmengden seg mellom vogn 1 (med hastighet \( u_1 \)) og vogn 2 (med hastighet \( u_2 \)):
 \[
-p_{\text{etter}} = m v_2 + m u
+p_{\text{etter}} = m u_1 + m u_2
 \]
 Siden bevegelsesmengden er bevart, har vi:
 \[
-m v_1 = m v_2 + m u
+m v_1 = m u_1 + m u_2
 \]
 Vi kan forkorte \( m \) fra begge sider:
-\[
-v_1 = v_2 + u
-\]
+\graabox{$\displaystyle v_1 = u_1 + u_2$}
 
-\textbf{Bevaring av kinetisk Energi:} \\
+\textbf{Bevaring av kinetisk energi:} \\
 I en elastisk kollisjon bevares også den kinetiske energien. Kinetisk energi før kollisjonen er bare fra vogn 1:
 \[
 E_{\text{før}} = \frac{1}{2} m v_1^2
 \]
 Etter kollisjonen er den kinetiske energien fordelt mellom begge vognene:
 \[
-E_{\text{etter}} = \frac{1}{2} m v_2^2 + \frac{1}{2} m u^2
+E_{\text{etter}} = \frac{1}{2} m u_1^2 + \frac{1}{2} m u_2^2
 \]
 Siden kinetisk energi er bevart, har vi:
 \[
-\frac{1}{2} m v_1^2 = \frac{1}{2} m v_2^2 + \frac{1}{2} m u^2
+\frac{1}{2} m v_1^2 = \frac{1}{2} m u_1^2 + \frac{1}{2} m u_2^2
 \]
 Igjen kan vi forkorte \( \frac{1}{2} m \) fra begge sider:
 \[
-v_1^2 = v_2^2 + u^2
+v_1^2 = u_1^2 + u_2^2
 \]
 
-\textbf{Løsning for hastighetene \( v_2 \) og \( u \):} \\
+\textbf{Løsning for hastighetene \( u_1 \) og \( u_2 \):} \\
 Vi har nå to ligninger:
-1. \( v_1 = v_2 + u \)
-2. \( v_1^2 = v_2^2 + u^2 \)
+1. \( v_1 = u_1 + u_2 \)
+2. \( v_1^2 = u_1^2 + u_2^2 \)
 
-Ved å substituere \( u = v_1 - v_2 \) fra den første ligningen inn i den andre ligningen, får vi:
+Ved å substituere \( u_2 = v_1 - u_1 \) fra den første ligningen inn i den andre ligningen, får vi:
 \[
-v_1^2 = v_2^2 + (v_1 - v_2)^2
+v_1^2 = u_1^2 + (v_1 - u_1)^2
 \]
-Utvid \( (v_1 - v_2)^2 \):
+Utvid \( (v_1 - u_1)^2 \):
 \[
-v_1^2 = v_2^2 + v_1^2 - 2 v_1 v_2 + v_2^2
+v_1^2 = u_1^2 + v_1^2 - 2 v_1 u_1 + u_1^2
 \]
 Forenkle ved å samle ledd:
 \[
-v_1^2 = 2v_2^2 - 2v_1 v_2 + v_1^2
+v_1^2 = 2u_1^2 - 2v_1 u_1 + v_1^2
 \]
 Trekk \( v_1^2 \) fra begge sider:
 \[
-0 = 2v_2^2 - 2v_1 v_2
+0 = 2u_1^2 - 2v_1 u_1
 \]
 Del begge sider på 2:
 \[
-0 = v_2(v_2 - v_1)
+0 = u_1(u_1 - v_1)
 \]
-Dette gir to mulige løsninger: enten \( v_2 = 0 \) eller \( v_2 = v_1 \). Men siden vogn 1 overfører all sin bevegelse til vogn 2 (den elastiske kollisjonen), må \( v_2 = 0 \). Dermed har vi:
+Dette gir to mulige løsninger: enten \( u_1 = 0 \) eller \( u_1 = v_1 \). Løsningen \( u_1 = v_1 \) gir \( u_2 = 0 \): da har vogn 1 samme fart som før og vogn 2 står fortsatt stille, som om vognene aldri traff hverandre. Det kan ikke skje når vogn 1 kjører inn i vogn 2. Den fysiske løsningen er derfor \( u_1 = 0 \). Dermed har vi:
 \[
-v_2 = 0 \quad \text{og} \quad u = v_1 = 3.0 \, \text{m/s}
+\doubleunderline{u_1 = 0} \quad \text{og} \quad \doubleunderline{u_2 = v_1 = 3.0 \, \text{m/s}}
 \]
 
-Etter kollisjonen står vogn 1 stille (\( v_2 = 0 \)), og vogn 2 beveger seg med en fart på \( u = 3.0 \, \text{m/s} \).
+Etter kollisjonen står vogn 1 stille (\( u_1 = 0 \)), og vogn 2 beveger seg med en fart på \( u_2 = 3.0 \, \text{m/s} \).
+}
+
+\exm{Elastisk kollisjon mellom vogner med ulik masse}{%
+To vogner ruller mot hverandre på et friksjonsfritt underlag. Vogn 1 har masse $m_1 = \SI{2.0}{\kilo\gram}$ og fart \SI{3.0}{\metre\per\second} mot høyre. Vogn 2 har masse $m_2 = \SI{1.0}{\kilo\gram}$ og fart \SI{2.0}{\metre\per\second} mot venstre. Kollisjonen er elastisk.
+\begin{enumerate}[a)]
+    \item Utled generelle formler for hastighetene $u_1$ og $u_2$ etter kollisjonen, uttrykt ved massene og hastighetene $v_1$ og $v_2$ før kollisjonen.
+    \item Finn hastighetene til vognene etter kollisjonen.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85, font=\small]
+  % FØR
+  \node[font=\small\bfseries, anchor=west] at (-0.2,2.55) {Før:};
+  \draw[black!65, line width=0.8pt] (-0.2,1.0) -- (7.2,1.0);
+  \fill[headCol!25] (0.4,1.2) rectangle (2.0,1.9);
+  \draw[headCol!70!black, line width=1pt] (0.4,1.2) rectangle (2.0,1.9);
+  \fill[black!60] (0.75,1.1) circle (0.1); \fill[black!60] (1.65,1.1) circle (0.1);
+  \node at (1.2,1.55) {$m_1$};
+  \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.5pt, oppsumcol] (2.1,1.55) -- (3.1,1.55);
+  \node[oppsumcol, above] at (2.6,1.55) {$v_1$};
+  \fill[gray!25] (5.2,1.2) rectangle (6.4,1.9);
+  \draw[gray!65, line width=1pt] (5.2,1.2) rectangle (6.4,1.9);
+  \fill[black!60] (5.45,1.1) circle (0.1); \fill[black!60] (6.15,1.1) circle (0.1);
+  \node at (5.8,1.55) {$m_2$};
+  \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.5pt, oppsumcol] (5.1,1.55) -- (4.3,1.55);
+  \node[oppsumcol, above] at (4.7,1.55) {$v_2$};
+  % ETTER
+  \node[font=\small\bfseries, anchor=west] at (-0.2,0.35) {Etter:};
+  \draw[black!65, line width=0.8pt] (-0.2,-1.2) -- (7.2,-1.2);
+  \fill[headCol!25] (1.6,-1.0) rectangle (3.2,-0.3);
+  \draw[headCol!70!black, line width=1pt] (1.6,-1.0) rectangle (3.2,-0.3);
+  \fill[black!60] (1.95,-1.1) circle (0.1); \fill[black!60] (2.85,-1.1) circle (0.1);
+  \node at (2.4,-0.65) {$m_1$};
+  \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.5pt, oppsumcol] (1.5,-0.65) -- (0.8,-0.65);
+  \node[oppsumcol, above] at (1.15,-0.65) {$u_1$};
+  \fill[gray!25] (4.0,-1.0) rectangle (5.2,-0.3);
+  \draw[gray!65, line width=1pt] (4.0,-1.0) rectangle (5.2,-0.3);
+  \fill[black!60] (4.25,-1.1) circle (0.1); \fill[black!60] (4.95,-1.1) circle (0.1);
+  \node at (4.6,-0.65) {$m_2$};
+  \draw[-{Stealth[length=7pt,width=5pt]}, line width=1.5pt, oppsumcol] (5.3,-0.65) -- (6.6,-0.65);
+  \node[oppsumcol, above] at (5.95,-0.65) {$u_2$};
+\end{tikzpicture}
+\captionof{figure}{To vogner med ulik masse kolliderer elastisk. Positiv retning er mot høyre.}
+\label{fig:elastisk_ulik_masse}
+\end{center}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Vi velger positiv retning mot høyre. Da er $v_1 > 0$ og $v_2 < 0$ i dette eksempelet, men utledningen under gjelder for alle fortegn.
+
+\smallskip\noindent
+\textit{Bevegelsesmengde.} Vi samler vogn 1 på venstre side og vogn 2 på høyre side:
+\[
+    m_1v_1 + m_2v_2 = m_1u_1 + m_2u_2
+    \quad\implies\quad
+    m_1(v_1 - u_1) = m_2(u_2 - v_2) \tag{1}
+\]
+
+\noindent
+\textit{Kinetisk energi.} Vi ganger med 2, samler på samme måte og bruker $a^2 - b^2 = (a-b)(a+b)$:
+\[
+    m_1v_1^2 + m_2v_2^2 = m_1u_1^2 + m_2u_2^2
+    \quad\implies\quad
+    m_1(v_1 - u_1)(v_1 + u_1) = m_2(u_2 - v_2)(u_2 + v_2) \tag{2}
+\]
+
+\noindent
+\textit{Del (2) på (1).} Faktorene $m_1(v_1-u_1)$ og $m_2(u_2-v_2)$ er like store og forkortes bort. Det kan vi gjøre fordi $u_1 \neq v_1$ når vognene faktisk kolliderer. Vi står igjen med en enkel lineær likning:
+\[
+    v_1 + u_1 = u_2 + v_2
+    \quad\implies\quad
+    u_2 = v_1 - v_2 + u_1 \tag{3}
+\]
+
+\noindent
+\textit{Sett (3) inn i (1)} og løs for $u_1$:
+\[
+    m_1v_1 - m_1u_1 = m_2(v_1 - v_2 + u_1) - m_2v_2
+    \quad\implies\quad
+    (m_1 + m_2)\,u_1 = (m_1 - m_2)\,v_1 + 2m_2v_2
+\]
+Til slutt finner vi $u_2$ fra (3). Resultatet er de generelle formlene for elastisk støt i én dimensjon:
+\graabox{$\displaystyle u_1 = \frac{(m_1 - m_2)\,v_1 + 2m_2v_2}{m_1 + m_2}, \qquad u_2 = \frac{(m_2 - m_1)\,v_2 + 2m_1v_1}{m_1 + m_2}$}
+
+\noindent
+Som en sjekk kan vi sette inn $m_1 = m_2$ og $v_2 = 0$. Da får vi $u_1 = 0$ og $u_2 = v_1$, akkurat som i forrige eksempel med like vogner.
+
+\medskip\noindent
+\textbf{b)} Vi setter inn $m_1 = \SI{2.0}{\kilo\gram}$, $m_2 = \SI{1.0}{\kilo\gram}$, $v_1 = \SI{3.0}{\metre\per\second}$ og $v_2 = \SI{-2.0}{\metre\per\second}$:
+\[
+    u_1 = \frac{(\SI{2.0}{\kilo\gram} - \SI{1.0}{\kilo\gram})\cdot\SI{3.0}{\metre\per\second} + 2\cdot\SI{1.0}{\kilo\gram}\cdot(\SI{-2.0}{\metre\per\second})}{\SI{3.0}{\kilo\gram}}
+    = \doubleunderline{\SI{-0.33}{\metre\per\second}}
+\]
+\[
+    u_2 = \frac{(\SI{1.0}{\kilo\gram} - \SI{2.0}{\kilo\gram})\cdot(\SI{-2.0}{\metre\per\second}) + 2\cdot\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{3.0}{\kilo\gram}}
+    = \doubleunderline{\SI{4.7}{\metre\per\second}}
+\]
+Vogn 1 snur og ruller sakte mot venstre, mens vogn 2 spretter tilbake mot høyre med stor fart. Vi kan sjekke at bevegelsesmengden er bevart: før er den $\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second} + \SI{1.0}{\kilo\gram}\cdot(\SI{-2.0}{\metre\per\second}) = \SI{4.0}{\kilo\gram\metre\per\second}$, og etter er den $\SI{2.0}{\kilo\gram}\cdot(\SI{-0.33}{\metre\per\second}) + \SI{1.0}{\kilo\gram}\cdot\SI{4.7}{\metre\per\second} \approx \SI{4.0}{\kilo\gram\metre\per\second}$.
 }
 
 \oppgaver{Sjekk av elastisk støt}{k5oppg13}{%

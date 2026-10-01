@@ -1,0 +1,186 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Hva er fysikk?}
+\label{LF:komp-Chapter:hvaerfysikk}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:hvaerfysikk}, \textit{Hva er fysikk?}, i kompendiet.
+
+\oppgaver{SI-enheter}{si-enheter}{%
+\input{Oppgaver/k1_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Hver fysisk størrelse har én bestemt SI-enhet, se Tabell~\ref{komp-tab:SI_enheter} i kompendiet.
+\begin{enumerate}[a)]
+    \item Masse: kilogram, symbol $\mathrm{kg}$.
+    \item Tid: sekund, symbol $\mathrm{s}$.
+    \item Temperatur: kelvin, symbol $\mathrm{K}$.
+    \item Elektrisk strøm: ampere, symbol $\mathrm{A}$.
+    \item Lengde: meter, symbol $\mathrm{m}$.
+\end{enumerate}
+}
+
+\oppgaver{Enhetsregning}{enhetsregning}{%
+\input{Oppgaver/k1_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi regner om ved å bruke at $\SI{1}{\kilo\metre}=10^3\,\si{\metre}$ og $\SI{1}{\hour}=\SI{3600}{\second}$:
+\[
+    v = \SI{90}{\kilo\metre\per\hour} = \frac{90\cdot 10^3\,\si{\metre}}{3600\,\si{\second}} = \doubleunderline{\SI{25}{\metre\per\second}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Tilbakelagt strekning er fart multiplisert med tid:
+\[
+    s = v\cdot t = \SI{90}{\kilo\metre\per\hour}\cdot\SI{2.5}{\hour} = \doubleunderline{\SI{225}{\kilo\metre}}
+\]
+I meter blir dette
+\[
+    s = \SI{225}{\kilo\metre}\cdot 10^3\,\frac{\si{\metre}}{\si{\kilo\metre}} = \doubleunderline{2.25\cdot 10^5\,\si{\metre}}.
+\]
+}
+
+\oppgaver{Enhetsregning}{enhetsregning-mane}{%
+\input{Oppgaver/k1_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Vi skal regne om fra $\si{\metre\per\second\squared}$ til $\si{\kilo\metre\per\minute\squared}$. Det er lurt å regne om lengdeenhet og tidsenhet hver for seg (se \textit{Å regne med enheter} i Kapittel~\ref{komp-Chapter:hvaerfysikk}).
+
+Lengde: $\SI{1}{\metre} = 10^{-3}\,\si{\kilo\metre}$.
+
+Tid: $\SI{1}{\second} = \tfrac{1}{60}\,\si{\minute}$, så $\SI{1}{\second\squared} = \tfrac{1}{3600}\,\si{\minute\squared}$, altså $\dfrac{1}{\si{\second\squared}} = 3600\,\dfrac{1}{\si{\minute\squared}}$.
+
+Vi setter inn begge omregningene:
+\[
+    \mathrm{g}_\textrm{M} = \SI{1.62}{\metre\per\second\squared} = 1.62\cdot 10^{-3}\,\si{\kilo\metre}\cdot 3600\,\si{\per\minute\squared} = \doubleunderline{\SI{5.83}{\kilo\metre\per\minute\squared}}
+\]
+}
+
+\oppgaver{Signifikante siffer}{signsiff}{%
+\input{Oppgaver/k1_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Antall signifikante siffer (se \textit{Signifikante siffer} i Kapittel~\ref{komp-Chapter:hvaerfysikk}):
+\begin{itemize}
+    \item $0.00420$: de ledende nullene teller ikke, men den etterfølgende nullen gjør det $\Rightarrow$ \doubleunderline{3 signifikante siffer}.
+    \item $3.14159$: alle sifre er signifikante $\Rightarrow$ \doubleunderline{6 signifikante siffer}.
+    \item $1\,200$: uten desimaltegn regnes de to siste nullene som ikke-signifikante $\Rightarrow$ \doubleunderline{2 signifikante siffer}.
+    \item $165.00$: desimaltegnet gjør at alle nuller teller $\Rightarrow$ \doubleunderline{5 signifikante siffer}.
+\end{itemize}
+
+\smallskip\noindent
+\textbf{b)} Begge faktorene har 3 signifikante siffer, så svaret skal også ha 3:
+\[
+    12.3 \cdot 4.56 = 56.088 \approx \doubleunderline{56.1}
+\]
+
+\smallskip\noindent
+\textbf{c)} $18.0$ har 3 signifikante siffer, $4.5$ har 2, så svaret skal ha 2:
+\[
+    18.0 / 4.5 = \doubleunderline{4.0}
+\]
+}
+
+\oppgaver{Standardform}{standardform-opg}{%
+\input{Oppgaver/k1_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Et tall på standardform skrives $T = t\cdot 10^n$ med $1\le t < 10$, se \textit{Tall på standardform} i kompendiets Kapittel~\ref{komp-Chapter:hvaerfysikk}.
+\begin{enumerate}[a)]
+    \item $0.000\,045 = \doubleunderline{4.5\cdot 10^{-5}}$ (2 signifikante siffer)
+    \item $3\,750\,000 = \doubleunderline{3.75\cdot 10^{6}}$ (3 signifikante siffer)
+    \item $0.100 = \doubleunderline{1.00\cdot 10^{-1}}$ (3 signifikante siffer, desimaltegnet gjør nullene signifikante)
+    \item $299\,792\,458 = \doubleunderline{2.99792458\cdot 10^{8}}$ (alle 9 sifrene er signifikante --- dette er for øvrig definisjonen av lyshastigheten $c$)
+\end{enumerate}
+}
+
+\oppgaver{Dekadiske prefikser}{dekpref-opg}{%
+\input{Oppgaver/k1_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $\SI{4200}{\milli\ampere\hour} = 4200\cdot 10^{-3}\,\si{\ampere\hour} = \SI{4.2}{\ampere\hour} = \doubleunderline{4.2\cdot 10^{0}\,\si{\ampere\hour}}$
+
+\smallskip\noindent
+\textbf{b)} Vi bruker at $\SI{1}{\milli\metre} = 10^3\,\si{\micro\metre} = 10^6\,\si{\nano\metre}$:
+\[
+    \SI{0.043}{\milli\metre} = 0.043\cdot 10^3\,\si{\micro\metre} = \doubleunderline{\SI{43}{\micro\metre}} = 0.043\cdot 10^6\,\si{\nano\metre} = \doubleunderline{\SI{4.3e4}{\nano\metre}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Avstanden er fart multiplisert med tid:
+\[
+    d = c\cdot t = 3.00\cdot 10^8\,\si{\metre\per\second}\cdot \SI{499}{\second} = 1.497\cdot 10^{11}\,\si{\metre} = 1.497\cdot 10^{8}\,\si{\kilo\metre} \approx \doubleunderline{1.50\cdot 10^{8}\,\si{\kilo\metre}}
+\]
+(avrundet til 3 signifikante siffer, siden $c$ og $t$ begge er oppgitt med 3 signifikante siffer).
+}
+
+\oppgaver{Fysisk størrelse}{k1oppg7}{%
+\input{Oppgaver/k1_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+På venstre side skal det stå \doubleunderline{\textrm{Fysisk størrelse}}, slik at likningen blir
+\[
+    \textrm{Fysisk størrelse} = \textrm{verdi}\cdot\textrm{enhet},
+\]
+som er selve definisjonen av en fysisk størrelse (se \textit{Fysiske størrelser} i Kapittel~\ref{komp-Chapter:hvaerfysikk}).
+}
+
+\oppgaver{Dekadiske prefikser -- matching}{k1oppg8}{%
+\input{Oppgaver/k1_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Faktorene er gitt i Tabell~\ref{komp-tab:dekPref} i kompendiet:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{blue!20!black!10}
+\textbf{Prefiks} & \textbf{Symbol} & \textbf{Faktor} \\
+\hline
+mega  & M & $10^{6}$ \\[2pt]
+nano  & n & $10^{-9}$ \\[2pt]
+milli & m & $10^{-3}$ \\[2pt]
+centi & c & $10^{-2}$ \\[2pt]
+hekto & h & $10^{2}$ \\[2pt]
+kilo  & k & $10^{3}$ \\[2pt]
+giga  & G & $10^{9}$ \\[2pt]
+\hline
+\end{tabular}
+\end{center}
+}
+
+\oppgaver{Standardform}{k1oppg9}{%
+\input{Oppgaver/k1_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Vi flytter desimaltegnet slik at det blir ett siffer foran det, og teller hvor mange plasser vi flyttet:
+\[
+    100.1 = \doubleunderline{1.001\cdot 10^{2}}
+\]
+}
+
+\oppgaver{Signifikante siffer}{k1oppg10}{%
+\input{Oppgaver/k1_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+Antallet skruer, $1523$, er et \textit{opptalt} antall og er dermed eksakt (uendelig mange signifikante siffer) --- det er ikke dette tallet som begrenser nøyaktigheten. Vekten per skrue, $\SI{10.1}{\gram}$, er derimot en \textit{målt} størrelse med 3 signifikante siffer.
+
+Totalvekten er
+\[
+    m_\textrm{tot} = 1523\cdot\SI{10.1}{\gram} = \SI{15382.3}{\gram},
+\]
+men siden den målte størrelsen bare har 3 signifikante siffer, kan ikke svaret oppgis med flere enn \doubleunderline{3 signifikante siffer}:
+\[
+    m_\textrm{tot} \approx \SI{1.54e4}{\gram} = \SI{15.4}{\kilo\gram}.
+\]
+}

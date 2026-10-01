@@ -955,3 +955,14 @@
 \footnotesize\textit{#1}
 \end{flushright}%
 }
+
+% ============================
+% \komplabel{label} -- krysshenvisning som fungerer likt i kompendiet
+% og i løsningsforslaget. I kompendiet er den identisk med \ref{}.
+% I løsningsforslaget (LosningsforslagTRES0312.tex) redefineres den til
+% \ref{komp-label} slik at den finner riktig referanse via xr-hyper,
+% selv når oppgaveteksten (som er delt mellom de to dokumentene via
+% \input{Oppgaver/...}) inneholder en henvisning til noe annet i
+% kompendiet (en tabell, figur e.l.).
+% ============================
+\providecommand{\komplabel}[1]{\ref{#1}}

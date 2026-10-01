@@ -1,0 +1,61 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}, group-separator={\,}}
+
+% %--------------------------------------------------------------------------
+% %         General Setting
+% %--------------------------------------------------------------------------
+
+\graphicspath{{Images/}{../Images/}} %Path of figures
+\setkeys{Gin}{width=0.85\textwidth} %Size of figures
+\setlength{\cftbeforechapskip}{3pt} %space between items in toc
+\setlength{\parindent}{0.5cm} % Idk
+
+\setlist[itemize]{itemsep=5pt}
+\setlist[enumerate]{itemsep=5pt}
+
+% Undertittel for kapitler
+\newcommand{\chaptersubtitle}[1]{%
+    {\centering\large\itshape #1\par}\medskip%
+}
+
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing}
+
+\usepackage[default]{comicneue}
+
+% Krysshenvisninger til kompendiet (Tabell-, Figur- og Kapittelnumre m.m.)
+% Krever at KompendiumTRES0312.aux finnes (dvs. at kompendiet er kompilert minst én gang).
+% Alle kompendium-referanser brukes med prefikset "komp-", slik at de aldri kolliderer
+% med løsningsforslagets egne \oppgaver-labels (som gjenbruker samme navn som i kompendiet).
+\usepackage{xr-hyper}
+\externaldocument[komp-]{KompendiumTRES0312}
+\renewcommand{\komplabel}[1]{\ref{komp-#1}}
+
+\begin{document}
+
+\newgeometry{top=8cm,bottom=.5in,left=2cm,right=2cm}
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries Løsningsforslag\par}
+\vspace{0.5cm}
+{\Large TRES0312 --- Fysikk\par}
+\vspace{2cm}
+{\large Følger som et eget hefte til \textit{Kompendium TRES0312}.\par}
+\vspace{0.3cm}
+{\normalsize Hver oppgave er gjengitt i sin helhet, med samme ordlyd som i kompendiet (oppgaveteksten er delt mellom de to dokumentene, slik at en endring i kompendiet automatisk følges opp her), etterfulgt av et fullstendig løsningsforslag som følger samme fremgangsmåte som eksemplene i kompendiet.\par}
+\end{titlepage}
+\restoregeometry
+
+\tableofcontents
+
+% %--------------------------------------------------------------------------
+% %         Core of the document
+% %--------------------------------------------------------------------------
+\subfile{files_losning/0.0.1_HvaErFysikk_LF}
+\subfile{files_losning/0.0.2_MatematikkViTrenger_LF}
+\subfile{files_losning/0.0.3_Kinematikk_LF}
+\subfile{files_losning/0.0.4_Krefter_LF}
+
+\end{document}

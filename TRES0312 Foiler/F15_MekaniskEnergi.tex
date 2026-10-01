@@ -36,7 +36,7 @@
   \dekkerdelkap{kapittel 5.4}
   \vspace{0.3cm}
   \begin{center}
-  {\bfseries\color{repcol} Første time: eksempler på bevaring av mekanisk energi. Etter pausen: loop-the-loop.}
+  {\bfseries\color{repcol} Første time: aktiviteter om bevaring av mekanisk energi. Etter pausen: loop-the-loop.}
   \end{center}
 \end{frame}
 
@@ -47,9 +47,10 @@
 
   \repetisjon{Tre kjappe fra forrige gang}{%
     \begin{enumerate}[1.]
-      \item Hva er den mekaniske energien til et legeme, $E_{\text{mekanisk}} = \ldots$?
-      \item Under hvilken betingelse er den mekaniske energien bevart?
-      \item Hva sier bevaringsloven, $E_{\text{før}} = \ldots$?
+      \item Hvilke to forskjellige typer deler vi den mekaniske energien $E$ til et legeme i?
+      \item Hva er formelen for kinetisk energi $E_k$?
+      \item Hva er formelen for potensiell energi $E_p$?
+      \item Hva sier arbeid-energi-setningen?
     \end{enumerate}
   }
 
@@ -79,64 +80,43 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 4 — Eksempel: Fallende stein
+%  SLIDE 4 — Aktivitet: Fallende stein
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: fallende stein}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.4}{Fallende stein}{%
+  \aktivitet{Fallende stein}{%
   En person holder en stein $1.60\,\mathrm{m}$ over bakken og slipper den. Luftmotstand neglisjeres.
 
   Finn steinens fart rett før den treffer bakken.
   }
 
-  \pause
-  Med $h=0$ ved bakken, $v_1=0$ ved start:
-  \[
-    m\mathrm{g}h_1 = \frac{1}{2}mv_2^2 \quad\Longrightarrow\quad v_2=\sqrt{2\mathrm{g}h_1}
-  \]
-  \[
-    v_2 = \sqrt{2\cdot 9.8\cdot 1.60} = \doubleunderline{5.6\,\mathrm{m/s}}
-  \]
-
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 5 — Eksempel: Fjærkanon
+%  SLIDE 5 — Aktivitet: Fjærkanon
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: fjærkanon}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.5}{Fjærkanon i tyngdefeltet}{%
+  \aktivitet{Fjærkanon i tyngdefeltet}{%
   En fjærkanon skyter en kanonkule ($m=0.2\,\mathrm{kg}$) rett opp etter at fjæren er komprimert $x=0.15\,\mathrm{m}$. Kula når $h=5.0\,\mathrm{m}$.
 
   Finn fjærkonstanten $k$.
   }
 
-  \pause
-  All elastisk potensiell energi blir gravitasjonspotensiell energi på toppen:
-  \[
-    \frac{1}{2}kx^2 = m\mathrm{g}h \quad\Longrightarrow\quad k = \frac{2m\mathrm{g}h}{x^2} = \doubleunderline{871\,\mathrm{N/m}}
-  \]
-
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Eksempel: kollisjon mellom legeme og fjær
+%  SLIDE 6 — Aktivitet: Kollisjon mellom legeme og fjær
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: legeme kolliderer med fjær}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.6}{Kollisjon mellom legeme og fjær}{%
+  \aktivitet{Legeme kolliderer med fjær}{%
   Et legeme ($m=100\,\mathrm{g}$) glir friksjonsfritt fra ro, $60\,\mathrm{cm}$ over en fjær med $k=300\,\mathrm{N/m}$.
   \begin{enumerate}[a)]
     \item Finn farten idet legemet treffer fjæren.
     \item Finn maksimal kompresjon av fjæren.
   \end{enumerate}
   }
-
-  \pause
-  a) $m\mathrm{g}h=\tfrac{1}{2}mv^2 \Rightarrow v=\sqrt{2\mathrm{g}h}=\doubleunderline{3.43\,\mathrm{m/s}}$
-
-  \pause
-  b) $\tfrac{1}{2}mv^2=\tfrac{1}{2}kx^2 \Rightarrow x=\sqrt{\dfrac{mv^2}{k}}=\doubleunderline{0.063\,\mathrm{m}}$
 
 \end{frame}
 
@@ -191,130 +171,72 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 11 — Eksempel: Loop-the-loop, oppsett
+%  SLIDE 11 — Aktivitet: Loop-the-loop (med figur)
 %--------------------------------------------------------------------------
-\begin{frame}{Eksempel: loop-the-loop}
+\begin{frame}{Aktivitet}
 
-  \exmat{5.7}{Loop-the-loop}{%
-  En ball med masse $m=1.0\,\mathrm{kg}$ slippes fra ro fra høyde $H=10.0\,\mathrm{m}$ over bunnen av en friksjonsfri sirkulær loop med radius $R=2.0\,\mathrm{m}$.
+  \vspace{-4mm}
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Loop-the-loop}{%
+      \footnotesize
+      En ball med masse $m=1.0\,\mathrm{kg}$ slippes fra ro fra høyde $H=10.0\,\mathrm{m}$ over bunnen av en friksjonsfri sirkulær loop med radius $R=2.0\,\mathrm{m}$.
+      \begin{enumerate}[a)]\setlength{\itemsep}{1pt}
+        \item Finn farten til ballen i bunnen ($h=0$), på siden ($h=R$) og på toppen ($h=2R$).
+        \item Finn normalkraften i de samme tre posisjonene.
+        \item Hva er den minste starthøyden $H$ som gjør at ballen holder kontakt med skinna på toppen?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \resizebox{!}{0.62\textheight}{%
+      \begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
+          \pgfmathsetmacro{\R}{1.6}
+          \draw[gray!50, thick] (-3.6, 0) -- (2.9, 0);
+          \draw[thick] (-2.8, 4*\R) -- (0.02, 0.02);
+          \draw[thick] (0, \R) circle (\R);
+          \filldraw[oppsumcol!50!white] (-2.8, 4*\R) circle (0.13);
+          \node[right=2pt, font=\footnotesize] at (-2.65, 4*\R) {start, $v_0 = 0$};
+          \draw[<->, thin, gray!70] (-3.4, 0) -- (-3.4, 4*\R)
+              node[midway, left, font=\footnotesize] {$H$};
+          \draw[dashed, thin, gray!40] (-2.8, 4*\R) -- (-3.4, 4*\R);
+          \draw[dashed, thin, gray!40] (0, 0) -- (-3.4, 0);
+          \draw[<->, thin, gray!70] (2.4, 0) -- (2.4, 2*\R)
+              node[midway, right, font=\footnotesize] {$2R$};
+          \draw[dashed, thin, gray!40] (0, 2*\R) -- (2.4, 2*\R);
+          \fill[gray!50] (0, \R) circle (0.055);
+          \draw[<->, thin, gray!70] (0.06, \R) -- (\R, \R)
+              node[midway, above, font=\footnotesize] {$R$};
+          \filldraw[oppsumcol] (0, 0) circle (0.13);
+          \node[below right=1pt, font=\small, oppsumcol] at (0.1, -0.08) {\textbf{1}};
+          \draw[->, very thick, defscol]
+              (0.18, 0) -- (0.18, 1.1) node[right, font=\footnotesize] {$N_1$};
+          \draw[->, very thick, red!55]
+              (-0.18, 0) -- (-0.18, -0.85) node[left, font=\footnotesize] {$m\mathrm{g}$};
+          \filldraw[oppsumcol] (\R, \R) circle (0.13);
+          \node[right=3pt, font=\small, oppsumcol] at (\R+0.13, \R+0.25) {\textbf{2}};
+          \draw[->, very thick, defscol]
+              (\R, \R+0.30) -- (\R-1.1, \R+0.30) node[above, font=\footnotesize] {$N_2$};
+          \draw[->, very thick, red!55]
+              (\R, \R) -- (\R, \R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+          \filldraw[oppsumcol] (0, 2*\R) circle (0.13);
+          \node[above=3pt, font=\small, oppsumcol] at (0, 2*\R+0.13) {\textbf{3}};
+          \draw[->, very thick, defscol]
+              (-0.22, 2*\R) -- (-0.22, 2*\R-0.85) node[left, font=\footnotesize] {$N_3$};
+          \draw[->, very thick, red!55]
+              (0.22, 2*\R) -- (0.22, 2*\R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
+        \end{tikzpicture}%
+      }
 
-  Finn normalkraften i bunnen ($h=0$), på siden ($h=R$) og på toppen ($h=2R$).
-  }
+      {\scriptsize Ballen slippes fra ro i høyden $H$. De tre markerte posisjonene er bunnen (1), siden (2) og toppen (3).\par}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Figur: loop-the-loop
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \begin{figure}[ht!]
-  \centering
-  \resizebox{0.85\textwidth}{!}{%
-  \begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
-    \pgfmathsetmacro{\R}{1.6}
-    \draw[gray!50, thick] (-3.6, 0) -- (2.9, 0);
-    \draw[thick] (-2.8, 4*\R) -- (0.02, 0.02);
-    \draw[thick] (0, \R) circle (\R);
-    \filldraw[headCol!50!white] (-2.8, 4*\R) circle (0.13);
-    \node[right=2pt, font=\footnotesize] at (-2.65, 4*\R) {start, $v_0 = 0$};
-    \draw[<->, thin, gray!70] (-3.4, 0) -- (-3.4, 4*\R)
-        node[midway, left, font=\footnotesize] {$H$};
-    \draw[dashed, thin, gray!40] (-2.8, 4*\R) -- (-3.4, 4*\R);
-    \draw[dashed, thin, gray!40] (0, 0) -- (-3.4, 0);
-    \draw[<->, thin, gray!70] (2.4, 0) -- (2.4, 2*\R)
-        node[midway, right, font=\footnotesize] {$2R$};
-    \draw[dashed, thin, gray!40] (0, 2*\R) -- (2.4, 2*\R);
-    \fill[gray!50] (0, \R) circle (0.055);
-    \draw[<->, thin, gray!70] (0.06, \R) -- (\R, \R)
-        node[midway, above, font=\footnotesize] {$R$};
-    \filldraw[headCol] (0, 0) circle (0.13);
-    \node[below right=1pt, font=\small, headCol!60!black] at (0.1, -0.08) {\textbf{1}};
-    \draw[->, very thick, defscol]
-        (0.18, 0) -- (0.18, 1.1) node[right, font=\footnotesize] {$N_1$};
-    \draw[->, very thick, red!70!black]
-        (-0.18, 0) -- (-0.18, -0.85) node[left, font=\footnotesize] {$m\mathrm{g}$};
-    \filldraw[headCol] (\R, \R) circle (0.13);
-    \node[right=3pt, font=\small, headCol!60!black] at (\R+0.13, \R+0.25) {\textbf{2}};
-    \draw[->, very thick, defscol]
-        (\R, \R+0.30) -- (\R-1.1, \R+0.30) node[above, font=\footnotesize] {$N_2$};
-    \draw[->, very thick, red!70!black]
-        (\R, \R) -- (\R, \R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
-    \filldraw[headCol] (0, 2*\R) circle (0.13);
-    \node[above=3pt, font=\small, headCol!60!black] at (0, 2*\R+0.13) {\textbf{3}};
-    \draw[->, very thick, defscol]
-        (-0.22, 2*\R) -- (-0.22, 2*\R-0.85) node[left, font=\footnotesize] {$N_3$};
-    \draw[->, very thick, red!70!black]
-        (0.22, 2*\R) -- (0.22, 2*\R-0.85) node[right, font=\footnotesize] {$m\mathrm{g}$};
-  \end{tikzpicture}%
-  }
-  \caption{\footnotesize Fart i høyde $h$: $v^2=2\mathrm{g}(H-h)$ (energibevaring fra start).}
-  \end{figure}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 13 — Løsning: fart i hver posisjon
-%--------------------------------------------------------------------------
-\begin{frame}{Løsning: fart og normalkraft}
-
-  Energibevaring fra start ($v_0=0$, høyde $H$) til høyde $h$:
-  \[
-    m\mathrm{g}H = \tfrac{1}{2}mv^2 + m\mathrm{g}h \quad\Longrightarrow\quad v^2 = 2\mathrm{g}(H-h)
-  \]
-
-  \pause
-  Newtons 2. lov, sentripetalt (mot sentrum):
-  \[
-    \sum F_{\text{sentripetal}} = \frac{mv^2}{R}
-  \]
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 14 — Løsning: de tre posisjonene
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \textbf{1 --- bunn} ($N_1$ opp, $m\mathrm{g}$ ned, begge mot/fra sentrum):
-  \[
-    N_1 - m\mathrm{g} = \frac{mv_1^2}{R} \quad\Longrightarrow\quad N_1 = m\mathrm{g}\!\left(1+\frac{2H}{R}\right) = \doubleunderline{108\,\mathrm{N}}
-  \]
-
-  \pause
-  \textbf{2 --- siden} ($m\mathrm{g}$ bidrar ikke til sentripetalkraften):
-  \[
-    N_2 = \frac{mv_2^2}{R} = \frac{2m\mathrm{g}(H-R)}{R} = \doubleunderline{78.5\,\mathrm{N}}
-  \]
-
-  \pause
-  \textbf{3 --- topp} ($N_3$ og $m\mathrm{g}$ peker begge mot sentrum, nedover):
-  \[
-    N_3 + m\mathrm{g} = \frac{mv_3^2}{R} \quad\Longrightarrow\quad N_3 = \doubleunderline{49.1\,\mathrm{N}}
-  \]
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 15 — Merk: minste starthøyde
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  Normalkraften er størst i bunnen og minst på toppen.
-
-  \pause
-  \merk{Kritisk starthøyde}{
-  For at ballen skal holde kontakt med skinna på toppen, må $N_3\geq 0$:
-  \[
-    \frac{2(H-2R)}{R}\geq 1 \quad\Longrightarrow\quad H \geq \frac{5R}{2}
-  \]
-  Med $R=2.0\,\mathrm{m}$ er minste tillatte starthøyde $H_{\min}=5.0\,\mathrm{m}$.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 16 — Neste gang
+%  SLIDE 12 — Neste gang
 %--------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
