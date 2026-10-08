@@ -186,7 +186,7 @@ Denne loven er også omtalt som \textit{Kirchoff's spenningslov}.
 
 \exm{Krets med Kirchhoffs lover}{%
 En krets har en spenningskilde $U_0 = \SI{24}{\volt}$.
-Motstand $R_1 = \SI{3}{\ohm}$ er i serie med en parallellkobling av $R_2 = \SI{6}{\ohm}$ og $R_3 = \SI{12}{\ohm}$.
+Motstand $R_1 = \SI{3.0}{\ohm}$ er i serie med en parallellkobling av $R_2 = \SI{6.0}{\ohm}$ og $R_3 = \SI{12}{\ohm}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.92, >={Stealth[length=4pt,width=3pt]},
@@ -238,27 +238,27 @@ Motstand $R_1 = \SI{3}{\ohm}$ er i serie med en parallellkobling av $R_2 = \SI{6
 \noindent\textbf{Steg 1 — Totalmotstand:}
 
 Parallellkoblingen: $\frac{1}{R_p} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$,
-så $R_p = \SI{4}{\ohm}$.
+så $R_p = \SI{4.0}{\ohm}$.
 
-Totalmotstanden: $R_{\text{tot}} = R_1 + R_p = 3 + 4 = \SI{7}{\ohm}$.
+Totalmotstanden: $R_{\text{tot}} = R_1 + R_p = \SI{3.0}{\ohm} + \SI{4.0}{\ohm} = \SI{7.0}{\ohm}$.
 
 \noindent\textbf{Steg 2 — Totalstrøm (Kirchhoffs 2.\ lov + Ohms lov):}
 \[
-  U_0 = R_{\text{tot}}\,I_0 \implies I_0 = \frac{U_0}{R_{\text{tot}}} = \frac{\SI{24}{\volt}}{\SI{7}{\ohm}}
-  \approx \doubleunderline{\SI{3.43}{\ampere}}
+  U_0 = R_{\text{tot}}\,I_0 \implies I_0 = \frac{U_0}{R_{\text{tot}}} = \frac{\SI{24}{\volt}}{\SI{7.0}{\ohm}}
+  = \SI{3.43}{\ampere} \approx \doubleunderline{\SI{3.4}{\ampere}}
 \]
 
 \noindent\textbf{Steg 3 — Spenning over parallellkoblingen:}
 \[
-  U_p = R_p\,I_0 = \SI{4}{\ohm}\cdot\SI{3.43}{\ampere} \approx \SI{13.7}{\volt}
+  U_p = R_p\,I_0 = \SI{4.0}{\ohm}\cdot\SI{3.43}{\ampere} \approx \SI{13.7}{\volt}
 \]
 
 \noindent\textbf{Steg 4 — Strøm i grenene (Kirchhoffs 1.\ lov):}
 \[
-  I_2 = \frac{U_p}{R_2} = \frac{13.7}{6} \approx \SI{2.29}{\ampere}, \qquad
-  I_3 = \frac{U_p}{R_3} = \frac{13.7}{12} \approx \SI{1.14}{\ampere}
+  I_2 = \frac{U_p}{R_2} = \frac{\SI{13.7}{\volt}}{\SI{6.0}{\ohm}} \approx \doubleunderline{\SI{2.3}{\ampere}}, \qquad
+  I_3 = \frac{U_p}{R_3} = \frac{\SI{13.7}{\volt}}{\SI{12}{\ohm}} \approx \doubleunderline{\SI{1.1}{\ampere}}
 \]
-Sjekk K1: $I_2 + I_3 \approx 2.29 + 1.14 = \SI{3.43}{\ampere} = I_0$ \checkmark
+Sjekk K1: $I_2 + I_3 \approx \SI{2.3}{\ampere} + \SI{1.1}{\ampere} = \SI{3.4}{\ampere} = I_0$ \checkmark
 }
 
 \section{Motstand}
@@ -355,7 +355,7 @@ Dermed kan effekten også skrives som:
 \end{enumerate}}
 
 
-\exm{Krets 1}{Krets 1 består av et batteri som energikilde, med en spenning på 5 V. Batteriet er seriekoblet med spenningen R$_1$. R$_1$ er koblet opp med to resistanser i seriekobling R$_2$ og R$_3$. R$_1$ er på 1 $\Omega$, R$_2$ er på 2 $\Omega$, mens R$_3$ er på 1,4 $\Omega$.
+\exm{Krets 1}{Krets 1 består av et batteri som energikilde, med en spenning på 5,0 V. Batteriet er seriekoblet med spenningen R$_1$. R$_1$ er koblet opp med to resistanser i seriekobling R$_2$ og R$_3$. R$_1$ er på 1,0 $\Omega$, R$_2$ er på 2,0 $\Omega$, mens R$_3$ er på 1,4 $\Omega$.
 
 a) Hva er den totale strømmen i kretsen?
 
@@ -381,4 +381,4 @@ Løsning:
 \[\Sigma R_{serie} = 1,82\]
 
 Strømmen finner vi ved bruk av $U=RI$:
-\[I = \frac{U}{R} = \frac{5\,\mathrm{V}}{1,82\,\Omega} \approx \doubleunderline{2,7\,\mathrm{A}}\]}
+\[I = \frac{U}{R} = \frac{5,0\,\mathrm{V}}{1,82\,\Omega} \approx \doubleunderline{2,7\,\mathrm{A}}\]}

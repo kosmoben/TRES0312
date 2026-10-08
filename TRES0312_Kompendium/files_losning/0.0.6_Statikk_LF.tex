@@ -1,0 +1,218 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Statikk}
+\label{LF:Chapter:statikk}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:statikk}, \textit{Statikk}, i kompendiet.
+
+\oppgaver{Lampe i to snorer}{k6oppg1}{%
+\input{Oppgaver/k6_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Tre krefter virker på lampa: tyngdekraften $\vec{G}$ rett ned, snorkraften $\vec{S}_1$ horisontalt inn mot veggen, og snorkraften $\vec{S}_2$ skrått oppover langs snor 2, i vinkelen $\alpha$ med horisontalen. Vi velger $x$-aksen horisontalt bort fra veggen og $y$-aksen vertikalt oppover.
+
+\smallskip\noindent
+\textbf{b)} Lampa er i ro, så $\sum F_y = 0$. Bare $S_2$ har en komponent i $y$-retning:
+\[
+    S_2\sin\alpha - m\mathrm{g} = 0
+    \quad\implies\quad
+    S_2 = \frac{m\mathrm{g}}{\sin\alpha} = \frac{\SI{4.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\sin 40^\circ} = \doubleunderline{\SI{61}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} $\sum F_x = 0$ gir at den horisontale komponenten av $S_2$ må oppveie $S_1$:
+\[
+    S_1 = S_2\cos\alpha = \SI{61.0}{\newton}\cdot\cos 40^\circ = \doubleunderline{\SI{47}{\newton}}
+\]
+}
+
+\oppgaver{Dørhengsler}{k6oppg2}{%
+\input{Oppgaver/k6_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Kraften står vinkelrett på døra, så momentarmen er avstanden fra hengslene, og $\tau = d\cdot F$ (se \textit{Kraftmoment} i Kapittel~\ref{komp-Chapter:statikk}).
+
+\smallskip\noindent
+\textbf{a)}
+\[
+    \tau = \SI{0.90}{\metre}\cdot\SI{15}{\newton} = \SI{13.5}{\newton\metre} \approx \doubleunderline{\SI{14}{\newton\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+    \tau = \SI{0.45}{\metre}\cdot\SI{15}{\newton} = \SI{6.75}{\newton\metre} \approx \doubleunderline{\SI{6.8}{\newton\metre}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Siden $\tau = d\cdot F$, må $F$ \doubleunderline{dobles} når $d$ halveres for at momentet skal bli det samme. Det er derfor det er tungt å åpne en dør ved å dytte nær hengslene.
+}
+
+\oppgaver{Stige mot vegg}{k6oppg3}{%
+\input{Oppgaver/k6_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{Krefter:} normalkraft fra veggen $N_v$ (horisontal, fordi veggen er glatt), normalkraft fra gulvet $N_g$ (vertikal), friksjon fra gulvet $f$ (horisontal), tyngdekraften på stigen $m\mathrm{g}$ (angriper midt på stigen) og tyngdekraften på personen $M\mathrm{g}$ (angriper $d = \SI{2.5}{\metre}$ opp langs stigen).
+
+\smallskip\noindent
+\textbf{a)} Vi tar momenter om bunnen av stigen, slik at $N_g$ og $f$ faller ut. Momentarmen til en vertikal kraft er den horisontale avstanden, og momentarmen til en horisontal kraft er den vertikale avstanden. Med positiv dreieretning mot klokken:
+\[
+    N_v\cdot L\sin\theta - m\mathrm{g}\cdot\frac{L}{2}\cos\theta - M\mathrm{g}\cdot d\cos\theta = 0
+\]
+Vi løser for $N_v$:
+\[
+    N_v = \left(\frac{m}{2} + \frac{Md}{L}\right)\mathrm{g}\,\frac{\cos\theta}{\sin\theta}
+    = \left(\SI{7.5}{\kilo\gram} + \SI{43.75}{\kilo\gram}\right)\cdot\SI{9.81}{\metre\per\second\squared}\cdot\frac{\cos 65^\circ}{\sin 65^\circ}
+    = \SI{234}{\newton} \approx \doubleunderline{\SI{2.3e2}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Kraftlikevekt vertikalt:
+\[
+    N_g = (m + M)\,\mathrm{g} = \SI{85}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{834}{\newton} \approx \doubleunderline{\SI{8.3e2}{\newton}}
+\]
+Kraftlikevekt horisontalt: friksjonen må oppveie normalkraften fra veggen,
+\[
+    f = N_v = \SI{234}{\newton} \approx \doubleunderline{\SI{2.3e2}{\newton}}
+\]
+}
+
+\oppgaver{Tre lodd på en stav}{k6oppg4}{%
+\input{Oppgaver/k6_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi bruker definisjonen av massesenter (se \textit{Massesenter} i Kapittel~\ref{komp-Chapter:statikk}):
+\[
+    x_\text{ms} = \frac{m_1x_1 + m_2x_2 + m_3x_3}{m_1 + m_2 + m_3}
+    = \frac{\SI{1.0}{\kilo\gram}\cdot 0 + \SI{2.0}{\kilo\gram}\cdot\SI{0.50}{\metre} + \SI{3.0}{\kilo\gram}\cdot\SI{1.20}{\metre}}{\SI{6.0}{\kilo\gram}}
+    = \doubleunderline{\SI{0.77}{\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Staven balanserer når den støttes i massesenteret. Da blir det totale kraftmomentet fra tyngdekreftene null. Du må holde staven \doubleunderline{\SI{0.77}{\metre} fra den venstre enden}.
+}
+
+\oppgaver{Bilde på vegg}{k6oppg5}{%
+\input{Oppgaver/k6_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Dette er samme situasjon som eksempelet \textit{Trafikklys} i Kapittel~\ref{komp-Chapter:statikk}. De horisontale komponentene opphever hverandre, og de vertikale komponentene må til sammen bære tyngden:
+\[
+    2S\sin\alpha = m\mathrm{g}
+    \quad\implies\quad
+    S = \frac{m\mathrm{g}}{2\sin\alpha}
+\]
+
+\smallskip\noindent
+\textbf{a)}
+\[
+    S = \frac{\SI{1.5}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{2\sin 15^\circ} = \doubleunderline{\SI{28}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+    S = \frac{\SI{1.5}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{2\sin 45^\circ} = \doubleunderline{\SI{10}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} En stram snor gir en liten vinkel $\alpha$, og da blir $\sin\alpha$ liten og snorkraften stor. Med $\alpha = 15^\circ$ er snorkraften nesten dobbelt så stor som tyngden til bildet. En for stram snor kan derfor ryke, eller rive spikeren ut av veggen.
+}
+
+\oppgaver{Vippehuske}{k6oppg6}{%
+\input{Oppgaver/k6_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi tar momenter om støttepunktet. Barnet sitter $\SI{2.0}{\metre}$ fra støttepunktet. For at vippa skal balansere, må momentene på hver side være like store:
+\[
+    m_\text{barn}\mathrm{g}\cdot d_\text{barn} = m_\text{voksen}\mathrm{g}\cdot d_\text{voksen}
+    \quad\implies\quad
+    d_\text{voksen} = \frac{\SI{25}{\kilo\gram}\cdot\SI{2.0}{\metre}}{\SI{80}{\kilo\gram}} = \doubleunderline{\SI{0.63}{\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Kraftlikevekt vertikalt: kraften fra støttepunktet må bære begge personene:
+\[
+    N = (\SI{25}{\kilo\gram} + \SI{80}{\kilo\gram})\cdot\SI{9.81}{\metre\per\second\squared} = \SI{1.03}{\kilo\newton} \approx \doubleunderline{\SI{1.0}{\kilo\newton}}
+\]
+}
+
+\oppgaver{To personer bærer en planke}{k6oppg7}{%
+\input{Oppgaver/k6_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi måler avstander fra den venstre enden, der person A holder. Tyngdekraften på planken angriper midt på, $\SI{1.5}{\metre}$ fra A. Kassen står $\SI{1.0}{\metre}$ fra A, og person B holder $\SI{3.0}{\metre} - \SI{0.50}{\metre} = \SI{2.5}{\metre}$ fra A.
+
+\smallskip\noindent
+\textbf{Momentlikning om A} (positiv dreieretning mot klokken):
+\[
+    F_B\cdot\SI{2.5}{\metre} - \SI{30}{\kilo\gram}\cdot\mathrm{g}\cdot\SI{1.5}{\metre} - \SI{20}{\kilo\gram}\cdot\mathrm{g}\cdot\SI{1.0}{\metre} = 0
+\]
+\[
+    F_B = \frac{(\SI{45}{\kilo\gram\metre} + \SI{20}{\kilo\gram\metre})\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{2.5}{\metre}} = \SI{255}{\newton} \approx \doubleunderline{\SI{2.6e2}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{Kraftlikevekt vertikalt:}
+\[
+    F_A = (\SI{30}{\kilo\gram} + \SI{20}{\kilo\gram})\cdot\mathrm{g} - F_B = \SI{490.5}{\newton} - \SI{255}{\newton} = \SI{235}{\newton} \approx \doubleunderline{\SI{2.4e2}{\newton}}
+\]
+Person B bærer litt mer enn A. B holder nærmere midten av planken enn A, men kassen står nærmest A, så forskjellen blir liten.
+}
+
+\oppgaver{Massesenteret til jorda og månen}{k6oppg8}{%
+\input{Oppgaver/k6_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi legger $x = 0$ i sentrum av jorda og $x = d = \SI{3.84e8}{\metre}$ i sentrum av månen:
+\[
+    x_\text{ms} = \frac{m_J\cdot 0 + m_M\cdot d}{m_J + m_M}
+    = \frac{\SI{7.35e22}{\kilo\gram}\cdot\SI{3.84e8}{\metre}}{\SI{5.97e24}{\kilo\gram} + \SI{7.35e22}{\kilo\gram}}
+    = \doubleunderline{\SI{4.67e6}{\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Jordas radius er $\SI{6.37e6}{\metre}$, så massesenteret ligger \doubleunderline{inne i jorda}, omtrent \SI{1700}{\kilo\metre} under overflaten. Det er rundt dette punktet både jorda og månen går i bane.
+}
+
+\oppgaver{Mutter som sitter fast}{k6oppg9}{%
+\input{Oppgaver/k6_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi bruker $\tau = r\cdot F\cdot\sin\theta$, der $\theta$ er vinkelen mellom skaftet og kraften.
+
+\smallskip\noindent
+\textbf{a)} Kraften blir minst når $\sin\theta$ er størst, altså når du drar \doubleunderline{vinkelrett på skaftet} ($\theta = 90^\circ$):
+\[
+    F = \frac{\tau}{r} = \frac{\SI{50}{\newton\metre}}{\SI{0.30}{\metre}} = \SI{167}{\newton} \approx \doubleunderline{\SI{1.7e2}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+    F = \frac{\tau}{r\sin 60^\circ} = \frac{\SI{50}{\newton\metre}}{\SI{0.30}{\metre}\cdot 0.866} = \SI{192}{\newton} \approx \doubleunderline{\SI{1.9e2}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)}
+\[
+    F = \frac{\tau}{r} = \frac{\SI{50}{\newton\metre}}{\SI{0.60}{\metre}} = \doubleunderline{\SI{83}{\newton}}
+\]
+Dobbelt så lang arm gir halvparten så stor kraft.
+}

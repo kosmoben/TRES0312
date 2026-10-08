@@ -19,22 +19,26 @@ Her er $v$, $s$ og $t$ \emph{variabler} — altså symboler som kan ta ulike tal
 
 Noe av det vi kommer til å gjøre mest i fysikken er å sette opp likninger og løse for en variabel; en såkalt "ukjent". Da må vi følge gitte logiske regler. Disse reglene kalles algebra-regler, eller bare algebra.
 
-\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper en strekning $s_2 = \SI{4}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
+\exm{Finne gjennomsnittsfart $\bar{v}$}{Jakob Ingebrigtsen er ute og løper. Han løper $s_1 = \SI{5.0}{\kilo\metre}$ på $t_1 = \SI{20}{\minute}$. Deretter skrur han opp tempo litt og løper en strekning $s_2 = \SI{4.0}{\kilo\metre}$ på $t_2 = \SI{18}{\minute}$. Hva er gjennomsnittsfarten $\bar{v}$?
 
 \paragraph{Løsning:} Gjennomsnittsfart $\bar{v}$ er også et begrep vi ikke har lært ennå, men det er rett fram, og de fleste kjenner det intuitivt igjen fra erfaring:
-\[\hat{v} = \frac{\text{total strekning}}{\text{total tid}}.\]
+\[\bar{v} = \frac{\text{total strekning}}{\text{total tid}}.\]
 Vi må derfor finne total strekning og total tid før vi kan regne ut gjennomsnittsfarten.
 
 Først finner vi total strekning og total tid:
 \[
-s_{\text{total}} = s_1 + s_2 = \SI{5}{\kilo\metre} + \SI{4}{\kilo\metre} = \SI{9}{\kilo\metre},
+s_{\text{total}} = s_1 + s_2 = \SI{5.0}{\kilo\metre} + \SI{4.0}{\kilo\metre} = \SI{9.0}{\kilo\metre},
 \]
 \[
 t_{\text{total}} = t_1 + t_2 = \SI{20}{\minute} + \SI{18}{\minute} = \SI{38}{\minute}.
 \]
 Gjennomsnittsfarten er da:
 \[
-\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{\SI{9}{\kilo\metre}}{\SI{38}{\minute}} = \doubleunderline{\SI{0.237}{\kilo\metre\per\minute}} = 0.237\cdot\frac{\SI{1\,000}{\metre}}{\SI{60}{\second}} = \doubleunderline{\SI{3.95}{\metre\per\second}}.
+\bar{v} = \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{\SI{9.0}{\kilo\metre}}{\SI{38}{\minute}} = 0.237\,\si{\kilo\metre\per\minute} \approx \doubleunderline{\SI{0.24}{\kilo\metre\per\minute}}.
+\]
+I \si{\metre\per\second} blir dette
+\[
+\bar{v} = 0.237\cdot\frac{\SI{1\,000}{\metre}}{\SI{60}{\second}} = 3.95\,\si{\metre\per\second} \approx \doubleunderline{\SI{3.9}{\metre\per\second}}.
 \]
 Greier du å gjøre dette om til km/t?
 
@@ -105,7 +109,7 @@ Disse bør også sitte i fingrene.
 I fysikken må vi ofte sette opp flere likninger for å beskrive en situasjon riktig. For å finne det vi er ute etter, må vi da gjerne løse et \emph{likningssystem} — altså flere likninger med flere ukjente. Vi kommer tilbake til dette i senere kapitler, men her er et eksempel på hvordan man kan løse et slikt system.
 
 \exm{Redningsbil drar en bil}{%
-En redningsbil drar en bil som i utgangspunktet står i ro, med en konstant kraft $F = \SI{3000}{\newton}$ i horisontal retning. Massen til bilen er $m = \SI{1200}{\kilo\gram}$. Hva er farten $v$ til bilen etter $t = \SI{5}{\second}$?
+En redningsbil drar en bil som i utgangspunktet står i ro, med en konstant kraft $F = \SI{3000}{\newton}$ i horisontal retning. Massen til bilen er $m = \SI{1200}{\kilo\gram}$. Hva er farten $v$ til bilen etter $t = \SI{5.0}{\second}$?
 }
 
 \svar{%
@@ -127,7 +131,7 @@ v = v_0 + at = v_0+\frac{F}{m}t.
 \]
 Først nå, når vi har uttrykket klart, setter vi inn tallverdiene: Siden bilen starter i ro er $v_0 = 0$. Videre er både massen $m$ og kraften $F$ oppgitt. Vi finner
 \[
-v = \frac{\SI{3000}{\newton}}{\SI{1200}{\kilo\gram}} \cdot \SI{5}{\second} = \doubleunderline{\SI{12.5}{\metre\per\second}}.
+v = \frac{\SI{3000}{\newton}}{\SI{1200}{\kilo\gram}} \cdot \SI{5.0}{\second} = \SI{12.5}{\metre\per\second} \approx \doubleunderline{\SI{13}{\metre\per\second}}.
 \]
 }
 

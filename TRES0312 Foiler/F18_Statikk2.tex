@@ -1,0 +1,404 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Rotasjonslikevekt og massesenter}
+\subtitle{TRES0312 --- kapittel 6.3--6.4}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{6}   % Kapittel 6: "Statikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 6.3--6.4}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: rotasjonslikevekt. Etter pausen: massesenter.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er betingelsen for translasjonslikevekt?
+      \item Skriv opp formelen for kraftmoment. Hva betyr $F\sin\theta$?
+      \item Hvorfor må vi alltid si \textit{hvilket punkt} vi regner kraftmomentet om?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: ROTASJONSLIKEVEKT (6.3)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: verken flytte seg eller rotere
+%--------------------------------------------------------------------------
+\begin{frame}{Rotasjonslikevekt}
+
+  \tanke{}{%
+  Sykkelhjulet viste at $\sum\vec{F} = \vec{0}$ ikke er nok til å hindre rotasjon. Hva må \textit{i tillegg} gjelde?
+  }
+  \pause
+  \svar{
+  Summen av kraftmomentene må også være null: $\sum\tau = 0$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: fullstendig statisk likevekt
+%--------------------------------------------------------------------------
+\begin{frame}{Rotasjonslikevekt}
+
+  \defnat{6.3.1}{Fullstendig statisk likevekt}{
+  Et legeme er i fullstendig statisk likevekt når
+  \[
+    \sum \vec{F} = \vec{0} \qquad \text{og} \qquad \sum \tau = 0
+  \]
+  Momentlikningen $\sum\tau = 0$ må gjelde om \textit{ethvert} valgt punkt.
+  }
+
+  \pause
+  \merk{Lurt valg av punkt i beregninger:}{%
+  Velg punktet der flest \textit{ukjente} krefter angriper. Disse kreftene har da $r = 0$, og faller ut av momentlikningen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Til ettertanke: nok til å stå i ro?
+%--------------------------------------------------------------------------
+\begin{frame}{Rotasjonslikevekt}
+
+  \tanke{}{%
+  Er fullstendig statisk likevekt nok til å sikre at et legeme står i ro uten å rotere?
+  }
+  \pause
+  \svar{
+  Nei. $\sum\vec{F} = \vec{0}$ og $\sum\tau = 0$ betyr bare at legemet ikke \textit{akselererer} --- verken framover eller i rotasjon. Et hjul som spinner med konstant fart oppfyller også begge betingelsene. For at legemet skal stå i ro, må det også være i ro fra starten av.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: bjelke på to søyler
+%--------------------------------------------------------------------------
+%  Fasit: Mg = 294 N. Moment om A: N_B = Mg*1.5/2.5 = 177 N ≈ 1.8e2 N,
+%         N_A = 118 N ≈ 1.2e2 N. Motkreftene på søylene: like store, nedover.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Ensartet bjelke på to søyler}{%
+  En ensartet bjelke med masse $M = 30\,\mathrm{kg}$ og lengde $L = 5.0\,\mathrm{m}$ hviler på to søyler. Søyle A står $1.0\,\mathrm{m}$ fra venstre ende, og søyle B står $1.5\,\mathrm{m}$ fra høyre ende.
+  \begin{enumerate}[a)]
+    \item Tegn bjelken med kreftene som virker \textit{på bjelken}.
+    \item Beregn normalkreftene $N_A$ og $N_B$ fra søylene på bjelken.
+    \item Hvilke krefter virker \textit{på søylene} fra bjelken?
+  \end{enumerate}
+  }
+
+  \vspace{-2mm}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \pgfmathsetmacro{\xA}{1.6}  % 1.0 m (1.6 enheter per meter)
+    \pgfmathsetmacro{\xB}{5.6}  % 5.0 - 1.5 = 3.5 m
+    \fill[gray!40] (-0.4,-1.0) rectangle (8.4,-1.1);
+    \foreach \x in {\xA,\xB}{
+      \fill[gray!55] (\x-0.15,-1.0) rectangle (\x+0.15,0);
+    }
+    \fill[headCol!60!white] (0,0) rectangle (8.0,0.25);
+    \node[above, font=\small\bfseries] at (\xA,0.25) {A};
+    \node[above, font=\small\bfseries] at (\xB,0.25) {B};
+    \draw[<->, thin, gray!70] (0,-1.35) -- (\xA,-1.35) node[midway, below, font=\footnotesize] {$1.0\,\mathrm{m}$};
+    \draw[<->, thin, gray!70] (\xB,-1.35) -- (8.0,-1.35) node[midway, below, font=\footnotesize] {$1.5\,\mathrm{m}$};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: vegghengt hylle med stag
+%--------------------------------------------------------------------------
+%  Fasit: tan(beta) = 45/60, sin(beta) = 0.60, cos(beta) = 0.80.
+%         Moment om hengselet: T sin(beta) * L = m g * L  =>  T = m g / sin(beta) = 65 N.
+%         H_x = T cos(beta) = 52 N (bort fra veggen), H_y = m g - T sin(beta) = 0.
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Vegghengt hylle med stag}{%
+      En $60\,\mathrm{cm}$ lang hylle med neglisjerbar masse er festet til veggen med et hengsel i venstre ende. Et stag går fra hyllas høyre ende til veggen, $45\,\mathrm{cm}$ over hyllen. En gjenstand med masse $m = 4.0\,\mathrm{kg}$ står helt ytterst på hylla.
+      \begin{enumerate}[a)]
+        \item Tegn kreftene på hylla.
+        \item Finn kraften $T$ fra staget.
+        \item Finn kraften $\vec{H}$ fra hengselet på hylla.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \vspace{6mm}
+      \begin{tikzpicture}[scale=1.25]
+        % 1 enhet = 20 cm
+        \fill[gray!45] (-0.35,-0.6) rectangle (0,2.6);
+        \fill[headCol!60!white] (0,-0.05) rectangle (3.0,0.05);
+        \draw[line width=2pt, gray!85] (3.0,0) -- (0,2.25);
+        \fill[gray!90] (0,2.25) circle (0.06);
+        \fill[gray!90] (0,0) circle (0.08);
+        \node[below right, font=\small] at (0,-0.05) {hengsel};
+        \node[font=\small] at (1.75,1.35) {stag};
+        \fill[headCol!35!white] (2.70,0.05) rectangle (3.10,0.40);
+        \draw[<->, thin, gray!70] (0,-0.75) -- (3.0,-0.75) node[midway, below, font=\footnotesize] {$60\,\mathrm{cm}$};
+        \draw[<->, thin, gray!70] (-0.55,0) -- (-0.55,2.25) node[midway, left, font=\footnotesize] {$45\,\mathrm{cm}$};
+      \end{tikzpicture}
+
+      \pause
+      \vspace{2mm}
+      {\small \textit{Tips:} Ta momenter om hengselet. Da faller den ukjente kraften $\vec{H}$ ut.}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: underarm som holder en vekt
+%--------------------------------------------------------------------------
+%  Fasit: m_a g = 14.7 N, m_v g = 39.2 N.
+%         Moment om albuen: B*0.040 = 14.7*0.15 + 39.2*0.32 = 14.8 N m  =>  B = 369 N ≈ 3.7e2 N.
+%         E = 14.7 + 39.2 - 369 = -315 N  =>  E ≈ 3.2e2 N, rettet nedover.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Underarm som holder en vekt}{%
+  Du holder en vekt med masse $m_\text{v} = 4.0\,\mathrm{kg}$ i hånda, med underarmen horisontal og i ro. Bicepsmuskelen er festet $4.0\,\mathrm{cm}$ fra albuen og drar rett opp. Underarmen har masse $m_\text{a} = 1.5\,\mathrm{kg}$ med massesenteret $15\,\mathrm{cm}$ fra albuen, og vekta er $32\,\mathrm{cm}$ fra albuen.
+  \begin{enumerate}[a)]
+    \item Tegn kreftene som virker på underarmen.
+    \item Finn kraften $B$ fra bicepsmuskelen.
+    \item Finn kraften $\vec{E}$ fra overarmen på underarmen i albuen.
+  \end{enumerate}
+  }
+
+  \vspace{-3mm}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.75]
+    % 1 enhet = 5 cm
+    \fill[headCol!60!white, rounded corners=3pt] (0,-0.18) rectangle (6.8,0.18);
+    \fill[gray!90] (0,0) circle (0.10);
+    \node[left=4pt, font=\small] at (0,0) {albue};
+    \draw[gray!80, thick] (0.8,0.18) -- (0.8,1.0);
+    \node[above, font=\small] at (0.8,1.0) {biceps-feste};
+    \fill[gray!70] (6.2,0.18) rectangle (6.6,0.7);
+    \node[above, font=\small] at (6.4,0.7) {vekt};
+    \fill[textcolor] (3.0,0) circle (0.04);
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: rotasjonslikevekt
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Rotasjonslikevekt}{%
+  \begin{enumerate}[1.]
+    \item[] Fullstendig statisk likevekt: $\sum\vec{F} = \vec{0}$ \textit{og} $\sum\tau = 0$.
+    \item[] Velg punktet du regner kraftmoment om der flest ukjente krefter angriper.
+    \item[] Får du et negativt svar for en ukjent kraft, peker den motsatt vei av det du antok.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: massesenter}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: MASSESENTER (6.4)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: hvor angriper tyngdekraften?
+%--------------------------------------------------------------------------
+\begin{frame}{Massesenter}
+
+  \tanke{}{%
+  Tyngdekraften virker på \textit{hver eneste del} av et legeme. Hvor skal vi da tegne den inn?
+  }
+  \pause
+  \svar{
+  I ett bestemt punkt: \textit{massesenteret}. Det er balansepunktet til legemet. Støtter du legemet der, blir det stående i ro uten å rotere.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Definisjon: massesenter
+%--------------------------------------------------------------------------
+\begin{frame}{Massesenter}
+
+  \defnat{6.4.1}{Massesenter}{
+  Massesenteret til et system av partikler med masser $m_1, m_2, \ldots$ og posisjoner $x_1, x_2, \ldots$ langs en akse er
+  \[
+    x_{\text{ms}} = \frac{m_1 x_1 + m_2 x_2 + \cdots + m_n x_n}{m_1 + m_2 + \cdots + m_n}
+  \]
+  I to dimensjoner finner vi $x_{\text{ms}}$ og $y_{\text{ms}}$ hver for seg med samme formel.
+  }
+
+  \pause
+  \merk{Massesenter og kraftmoment}{%
+  Om massesenteret har tyngdekraften null samlet kraftmoment. Derfor kan vi tegne hele tyngdekraften i massesenteret.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Aktivitet: to barn på en huske
+%--------------------------------------------------------------------------
+%  Fasit: x_2 = -m_1 x_1 / m_2 = 30*1.4/42 = 1.0 m til høyre for midten.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{To barn på en vippehuske}{%
+  To barn sitter på en $3.0\,\mathrm{m}$ lang vippehuske med neglisjerbar masse, med støttepunktet i midten ($x = 0$). Barn~1 har masse $m_1 = 30\,\mathrm{kg}$ og sitter i $x_1 = -1.4\,\mathrm{m}$. Barn~2 har masse $m_2 = 42\,\mathrm{kg}$.
+
+  Hvor må barn~2 sitte for at huska skal balansere?
+  }
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1.0]
+    \draw[headCol!60!white, line width=3pt] (-2.0,0) -- (2.0,0);
+    \fill[gray!70] (-0.18,-0.32) -- (0.18,-0.32) -- (0,-0.03) -- cycle;
+    \fill[defscol!80] (-1.87,0.20) circle (0.18);
+    \node[left=3pt, font=\footnotesize] at (-2.1,0.30) {$m_1$};
+    \fill[defscol!80, opacity=0.5] (1.60,0.20) circle (0.20);
+    \node[right=3pt, font=\footnotesize] at (2.05,0.30) {$m_2$};
+    % Avstander fra støttepunktet
+    \draw[gray!60, thin] (0,0.1) -- (0,1.25);
+    \draw[gray!60, thin] (-1.87,0.38) -- (-1.87,1.15);
+    \draw[gray!60, thin] (1.60,0.40) -- (1.60,0.95);
+    \draw[->, thick, textcolor!80] (0,1.15) -- (-1.87,1.15)
+        node[midway, above, font=\footnotesize] {$\vec{x}_1$};
+    \draw[->, thick, textcolor!80] (0,0.95) -- (1.60,0.95)
+        node[midway, above, font=\footnotesize] {$\vec{x}_2 = ?$};
+    \node[below, font=\footnotesize] at (0,-0.35) {$x=0$};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Aktivitet: tre kuler i et plan
+%--------------------------------------------------------------------------
+%  Fasit: x_ms = 1.0*0.60/6.0 = 0.10 m, y_ms = 3.0*0.40/6.0 = 0.20 m.
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \aktivitet{Massesenter for tre kuler}{%
+      Tre små kuler er festet på en (uendelig) lett plate:
+      \begin{itemize}
+        \item[] $m_1 = 2.0\,\mathrm{kg}$ i $(0,\ 0)$
+        \item[] $m_2 = 1.0\,\mathrm{kg}$ i $(0.60\,\mathrm{m},\ 0)$
+        \item[] $m_3 = 3.0\,\mathrm{kg}$ i $(0,\ 0.40\,\mathrm{m})$
+      \end{itemize}
+      \begin{enumerate}[a)]
+        \item Finn $x_\text{ms}$ og $y_\text{ms}$.
+        \item Hvor må du støtte platen for at den skal balansere?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \vspace{4mm}
+      \begin{tikzpicture}[scale=0.75]
+        % 1 enhet = 10 cm
+        \draw[->, thin, gray!70] (-0.5,0) -- (7.0,0) node[right, font=\small] {$x$};
+        \draw[->, thin, gray!70] (0,-0.5) -- (0,5.0) node[above, font=\small] {$y$};
+        \fill[headCol!45!white] (0,0) -- (6,0) -- (0,4) -- cycle;
+        \fill[defscol!80] (0,0) circle (0.24);
+        \fill[defscol!80] (6,0) circle (0.18);
+        \fill[defscol!80] (0,4) circle (0.30);
+        \node[font=\small, above right] at (0.15,0.15) {$m_1$};
+        \node[font=\small, above] at (6,0.2) {$m_2$};
+        \node[font=\small, right] at (0.3,4) {$m_3$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Til ettertanke: massesenter utenfor legemet
+%--------------------------------------------------------------------------
+\begin{frame}{Massesenter}
+
+  \tanke{}{%
+  Må massesenteret alltid ligge \textit{inne i} legemet?
+  }
+  \pause
+  \svar{
+  Nei. Massesenteret til en ring eller en bumerang ligger i lufta, utenfor selve materialet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Oppsummering: massesenter
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Massesenter}{%
+  \begin{enumerate}[1.]
+    \item[] $x_\text{ms} = \dfrac{\sum m_i x_i}{\sum m_i}$, og tilsvarende for $y_\text{ms}$.
+    \item[] Tyngdekraften kan tegnes inn i massesenteret.
+    \item[] Et legeme støttet i massesenteret balanserer.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: fluiddynamikk}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

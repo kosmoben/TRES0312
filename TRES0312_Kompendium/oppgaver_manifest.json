@@ -778,5 +778,95 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k4_oppg18.tex",
     "sourcefile": "0.0.4_Krefter.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Lampe i to snorer",
+    "label": "k6oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg01.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Dørhengsler",
+    "label": "k6oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg02.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Stige mot vegg",
+    "label": "k6oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg03.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Tre lodd på en stav",
+    "label": "k6oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg04.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Bilde på vegg",
+    "label": "k6oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg05.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Vippehuske",
+    "label": "k6oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg06.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "To personer bærer en planke",
+    "label": "k6oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg07.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Massesenteret til jorda og månen",
+    "label": "k6oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg08.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 6,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Mutter som sitter fast",
+    "label": "k6oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k6_oppg09.tex",
+    "sourcefile": "0.0.6_Statikk.tex"
   }
 ]

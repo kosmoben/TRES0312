@@ -17,7 +17,7 @@ Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-
 \smallskip\noindent
 \textbf{b)} Bilen skal ha samme bevegelsesmengde, $p = m_b v_b$. Vi løser for $v_b$:
 \[
-    v_b = \frac{p}{m_b} = \frac{\SI{9.0}{\kilo\gram\metre\per\second}}{\SI{1500}{\kilo\gram}} = \doubleunderline{\SI{0.0060}{\metre\per\second}} = \doubleunderline{\SI{0.0216}{\kilo\metre\per\hour}}
+    v_b = \frac{p}{m_b} = \frac{\SI{9.0}{\kilo\gram\metre\per\second}}{\SI{1500}{\kilo\gram}} = \doubleunderline{\SI{0.0060}{\metre\per\second}} = \SI{0.0216}{\kilo\metre\per\hour} \approx \doubleunderline{\SI{0.022}{\kilo\metre\per\hour}}
 \]
 Bilen trenger altså bare å kjøre med en helt ubetydelig fart (under 2.2 cm/s!) for å ha samme bevegelsesmengde som den raske, men svært lette, geværkula. Dette illustrerer hvor mye massen betyr for bevegelsesmengden.
 }
@@ -30,13 +30,13 @@ Bilen trenger altså bare å kjøre med en helt ubetydelig fart (under 2.2 cm/s!
 \noindent
 \textbf{a)} Loddet henger i ro, så fjærkraften er like stor som tyngdekraften på loddet (se \textit{Hookes lov} i Kapittel~\ref{komp-Chapter:dynamikk}): $F=kx=m\mathrm{g}$. Vi løser for $k$:
 \[
-    k = \frac{m\mathrm{g}}{x} = \frac{\SI{0.250}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{0.12}{\metre}} = \doubleunderline{\SI{20.4}{\newton\per\metre}}
+    k = \frac{m\mathrm{g}}{x} = \frac{\SI{0.250}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{0.12}{\metre}} = \SI{20.4}{\newton\per\metre} \approx \doubleunderline{\SI{20}{\newton\per\metre}}
 \]
 
 \smallskip\noindent
 \textbf{b)} Med det nye loddet, $m=\SI{0.400}{\kilo\gram}$, løser vi $kx=m\mathrm{g}$ for $x$:
 \[
-    x = \frac{m\mathrm{g}}{k} = \frac{\SI{0.400}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{20.4}{\newton\per\metre}} = \doubleunderline{\SI{0.192}{\metre}} = \doubleunderline{\SI{19.2}{\centi\metre}}
+    x = \frac{m\mathrm{g}}{k} = \frac{\SI{0.400}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{20.4}{\newton\per\metre}} = \SI{0.192}{\metre} \approx \doubleunderline{\SI{0.19}{\metre}} = \SI{19.2}{\centi\metre} \approx \doubleunderline{\SI{19}{\centi\metre}}
 \]
 }
 
@@ -51,13 +51,13 @@ Vi bruker $G=m\mathrm{g}$ (se \textit{Tyngdekraft} i Kapittel~\ref{komp-Chapter:
 \smallskip\noindent
 \textbf{a)} På jorda:
 \[
-    G = m\mathrm{g} = \SI{75}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{736}{\newton}}
+    G = m\mathrm{g} = \SI{75}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{736}{\newton} \approx \doubleunderline{\SI{7.4e2}{\newton}}
 \]
 
 \smallskip\noindent
 \textbf{b)} På månen:
 \[
-    G_\text{måne} = m\,\mathrm{g}_\text{måne} = \SI{75}{\kilo\gram}\cdot\SI{1.62}{\metre\per\second\squared} = \doubleunderline{\SI{122}{\newton}}
+    G_\text{måne} = m\,\mathrm{g}_\text{måne} = \SI{75}{\kilo\gram}\cdot\SI{1.62}{\metre\per\second\squared} = \SI{122}{\newton} \approx \doubleunderline{\SI{1.2e2}{\newton}}
 \]
 
 \smallskip\noindent
@@ -91,7 +91,7 @@ Vi velger oppover som positiv retning og bruker Newtons 2. lov i vertikal retnin
 \smallskip\noindent
 \textbf{a)} Her er $a=\SI{-3.0}{\metre\per\second\squared}$ (akselerasjonen peker nedover, siden heisen bremser mens den beveger seg oppover):
 \[
-    N = m(\mathrm{g}+a) = \SI{80}{\kilo\gram}\cdot(\SI{9.81}{\metre\per\second\squared}-\SI{3.0}{\metre\per\second\squared}) = \doubleunderline{\SI{545}{\newton}}
+    N = m(\mathrm{g}+a) = \SI{80}{\kilo\gram}\cdot(\SI{9.81}{\metre\per\second\squared}-\SI{3.0}{\metre\per\second\squared}) = \SI{545}{\newton} \approx \doubleunderline{\SI{5.4e2}{\newton}}
 \]
 Dette er mindre enn tyngdekraften ($G=\SI{785}{\newton}$) -- Ola føler seg lettere enn vanlig.
 
@@ -114,7 +114,7 @@ Normalkraften er $N=m\mathrm{g}=\SI{80}{\kilo\gram}\cdot\SI{9.81}{\metre\per\sec
 \smallskip\noindent
 \textbf{a)} Den minste kraften som trengs for å sette skapet i bevegelse må akkurat overvinne maksimal hvilefriksjon (se \textit{Friksjonskrefter} i Kapittel~\ref{komp-Chapter:dynamikk}), $R_{s,\text{maks}}=\mu_s N$:
 \[
-    F_\text{min} = \mu_s N = 0.35\cdot\SI{784.8}{\newton} = \doubleunderline{\SI{275}{\newton}}
+    F_\text{min} = \mu_s N = 0.35\cdot\SI{784.8}{\newton} = \SI{275}{\newton} \approx \doubleunderline{\SI{2.7e2}{\newton}}
 \]
 
 \smallskip\noindent
@@ -129,19 +129,19 @@ Normalkraften er $N=m\mathrm{g}=\SI{80}{\kilo\gram}\cdot\SI{9.81}{\metre\per\sec
 \noindent
 \textbf{a)} Normalkraften er $N=m\mathrm{g}$, med $m=\SI{170}{\gram}=\SI{0.170}{\kilo\gram}$. Friksjonskraften er (se \textit{Glidefriksjon} i Kapittel~\ref{komp-Chapter:dynamikk}):
 \[
-    R = \mu_k N = \mu_k m\mathrm{g} = 0.03\cdot\SI{0.170}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{0.0500}{\newton}}
+    R = \mu_k N = \mu_k m\mathrm{g} = 0.030\cdot\SI{0.170}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{0.0500}{\newton} \approx \doubleunderline{\SI{0.050}{\newton}}
 \]
 
 \smallskip\noindent
 \textbf{b)} Friksjonen er eneste horisontale kraft, så akselerasjonen er (uavhengig av massen):
 \[
-    a = -\mu_k \mathrm{g} = -0.03\cdot\SI{9.81}{\metre\per\second\squared} = \doubleunderline{\SI{-0.294}{\metre\per\second\squared}}
+    a = -\mu_k \mathrm{g} = -0.030\cdot\SI{9.81}{\metre\per\second\squared} = \SI{-0.294}{\metre\per\second\squared} \approx \doubleunderline{\SI{-0.29}{\metre\per\second\squared}}
 \]
 
 \smallskip\noindent
 \textbf{c)} Vi bruker fart-strekning-likningen (Likning 3 i avsnitt~\ref{komp-sec:bevegelseslikninger}), $v^2=v_0^2+2a\,\Delta s$, med $v=0$ (pucken stopper):
 \[
-    0 = v_0^2 + 2a\,s \quad\Rightarrow\quad s = \frac{-v_0^2}{2a} = \frac{v_0^2}{2\mu_k \mathrm{g}} = \frac{(\SI{15}{\metre\per\second})^2}{2\cdot 0.03\cdot\SI{9.81}{\metre\per\second\squared}} = \doubleunderline{\SI{382}{\metre}}
+    0 = v_0^2 + 2a\,s \quad\Rightarrow\quad s = \frac{-v_0^2}{2a} = \frac{v_0^2}{2\mu_k \mathrm{g}} = \frac{(\SI{15}{\metre\per\second})^2}{2\cdot 0.030\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{382}{\metre} \approx \doubleunderline{\SI{3.8e2}{\metre}}
 \]
 Pucken glir svært langt, nettopp fordi friksjonskoeffisienten mellom puck og is er så liten.
 }
@@ -164,13 +164,13 @@ Pucken glir svært langt, nettopp fordi friksjonskoeffisienten mellom puck og is
 \smallskip\noindent
 \textbf{b)} Vi regner om $v_0=\SI{80}{\kilo\metre\per\hour}=\SI{22.2}{\metre\per\second}$, og setter inn for hver verdi av $\mu_k$:
 \[
-    \mu_k=0.70:\quad s = \frac{22.2^2}{2\cdot0.70\cdot9.81} = \doubleunderline{\SI{36.0}{\metre}} \quad\text{(tørr asfalt)}
+    \mu_k=0.70:\quad s = \frac{22.2^2}{2\cdot0.70\cdot9.81} = \SI{36.0}{\metre} \approx \doubleunderline{\SI{36}{\metre}} \quad\text{(tørr asfalt)}
 \]
 \[
-    \mu_k=0.40:\quad s = \frac{22.2^2}{2\cdot0.40\cdot9.81} = \doubleunderline{\SI{62.9}{\metre}} \quad\text{(våt vei)}
+    \mu_k=0.40:\quad s = \frac{22.2^2}{2\cdot0.40\cdot9.81} = \SI{62.9}{\metre} \approx \doubleunderline{\SI{63}{\metre}} \quad\text{(våt vei)}
 \]
 \[
-    \mu_k=0.10:\quad s = \frac{22.2^2}{2\cdot0.10\cdot9.81} = \doubleunderline{\SI{252}{\metre}} \quad\text{(is)}
+    \mu_k=0.10:\quad s = \frac{22.2^2}{2\cdot0.10\cdot9.81} = \SI{252}{\metre} \approx \doubleunderline{\SI{2.5e2}{\metre}} \quad\text{(is)}
 \]
 
 \smallskip\noindent
@@ -210,18 +210,18 @@ I $x$-retning:
 
 \textbf{a)} Normalkraften:
 \[
-    N = m\mathrm{g} - F\sin\theta = \SI{15}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} - \SI{50}{\newton}\cdot\sin(30^\circ) = \doubleunderline{\SI{122}{\newton}}
+    N = m\mathrm{g} - F\sin\theta = \SI{15}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} - \SI{50}{\newton}\cdot\sin(30^\circ) = \SI{122}{\newton} \approx \doubleunderline{\SI{1.2e2}{\newton}}
 \]
 Legg merke til at $N$ er \textit{mindre} enn tyngdekraften, siden trekkraftens vertikale komponent bidrar til å løfte kjelken litt.
 
 \textbf{b)} Friksjonskraften:
 \[
-    R = \mu_k N = 0.20\cdot\SI{122}{\newton} = \doubleunderline{\SI{24.4}{\newton}}
+    R = \mu_k N = 0.20\cdot\SI{122}{\newton} = \SI{24.4}{\newton} \approx \doubleunderline{\SI{24}{\newton}}
 \]
 
 \textbf{c)} Akselerasjonen, fra $x$-likningen:
 \[
-    a = \frac{F\cos\theta - R}{m} = \frac{\SI{50}{\newton}\cdot\cos(30^\circ) - \SI{24.4}{\newton}}{\SI{15}{\kilo\gram}} = \doubleunderline{\SI{1.26}{\metre\per\second\squared}}
+    a = \frac{F\cos\theta - R}{m} = \frac{\SI{50}{\newton}\cdot\cos(30^\circ) - \SI{24.4}{\newton}}{\SI{15}{\kilo\gram}} = \SI{1.26}{\metre\per\second\squared} \approx \doubleunderline{\SI{1.3}{\metre\per\second\squared}}
 \]
 }
 
@@ -233,13 +233,13 @@ Legg merke til at $N$ er \textit{mindre} enn tyngdekraften, siden trekkraftens v
 \noindent
 \textbf{a)} Bussen begynner å skli idet tyngdekraftens komponent langs bakken akkurat overgår maksimal hvilefriksjon -- dette er den kritiske vinkelen utledet i \textit{Kritisk vinkel} (avsnittet \textit{Skråplan} i Kapittel~\ref{komp-Chapter:dynamikk}):
 \[
-    \theta_c = \arctan(\mu_s) = \arctan(0.70) = \doubleunderline{35.0^\circ}
+    \theta_c = \arctan(\mu_s) = \arctan(0.70) = 35.0^\circ \approx \doubleunderline{35^\circ}
 \]
 
 \smallskip\noindent
 \textbf{b)} Idet bussen begynner å skli, glir den, så vi bruker \textit{kinetisk} friksjon $\mu_k$ i formelen for akselerasjon ned et skråplan (utledet i samme avsnitt):
 \[
-    a = \mathrm{g}(\sin\theta_c - \mu_k\cos\theta_c) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(35.0^\circ) - 0.50\cdot\cos(35.0^\circ)\right) = \doubleunderline{\SI{1.61}{\metre\per\second\squared}}
+    a = \mathrm{g}(\sin\theta_c - \mu_k\cos\theta_c) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(35.0^\circ) - 0.50\cdot\cos(35.0^\circ)\right) = \SI{1.61}{\metre\per\second\squared} \approx \doubleunderline{\SI{1.6}{\metre\per\second\squared}}
 \]
 Akselerasjonen er rettet nedover bakken.
 }
@@ -252,7 +252,7 @@ Akselerasjonen er rettet nedover bakken.
 \noindent
 Den resulterende kraftsummen på barnet må peke inn mot sentrum og ha størrelse $\sum F = mv^2/r$ (se \textit{Sentripetalkraft} i Kapittel~\ref{komp-Chapter:dynamikk}):
 \[
-    \sum F = \frac{mv^2}{r} = \frac{\SI{25}{\kilo\gram}\cdot(\SI{4.0}{\metre\per\second})^2}{\SI{3.0}{\metre}} = \doubleunderline{\SI{133}{\newton}}
+    \sum F = \frac{mv^2}{r} = \frac{\SI{25}{\kilo\gram}\cdot(\SI{4.0}{\metre\per\second})^2}{\SI{3.0}{\metre}} = \SI{133}{\newton} \approx \doubleunderline{\SI{1.3e2}{\newton}}
 \]
 Denne kraften må komme fra noe som faktisk trekker eller skyver barnet inn mot sentrum -- for eksempel et sikkerhetsbelte eller friksjon mot setet.
 }
@@ -268,17 +268,17 @@ Oda og Per utgjør et isolert system (vi ser bort fra friksjon mot isen), så be
 \smallskip\noindent
 \textbf{a)} Bevaringslikningen gir
 \[
-    0 = m_O u_O + m_P u_P \quad\Rightarrow\quad u_P = -\frac{m_O u_O}{m_P} = -\frac{\SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second}}{\SI{80}{\kilo\gram}} = \doubleunderline{\SI{-2.75}{\metre\per\second}}
+    0 = m_O u_O + m_P u_P \quad\Rightarrow\quad u_P = -\frac{m_O u_O}{m_P} = -\frac{\SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second}}{\SI{80}{\kilo\gram}} = \SI{-2.75}{\metre\per\second} \approx \doubleunderline{\SI{-2.8}{\metre\per\second}}
 \]
 Per beveger seg altså med $\SI{2.75}{\metre\per\second}$ i \textit{motsatt} retning av Oda.
 
 \smallskip\noindent
 \textbf{b)} Bevegelsesmengden til hver av dem:
 \[
-    p_O = m_O u_O = \SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second} = \doubleunderline{\SI{220}{\kilo\gram\metre\per\second}}
+    p_O = m_O u_O = \SI{55}{\kilo\gram}\cdot\SI{4.0}{\metre\per\second} = \SI{220}{\kilo\gram\metre\per\second} \approx \doubleunderline{\SI{2.2e2}{\kilo\gram\metre\per\second}}
 \]
 \[
-    p_P = m_P u_P = \SI{80}{\kilo\gram}\cdot(\SI{-2.75}{\metre\per\second}) = \doubleunderline{\SI{-220}{\kilo\gram\metre\per\second}}
+    p_P = m_P u_P = \SI{80}{\kilo\gram}\cdot(\SI{-2.75}{\metre\per\second}) = \SI{-220}{\kilo\gram\metre\per\second} \approx \doubleunderline{\SI{-2.2e2}{\kilo\gram\metre\per\second}}
 \]
 Bevegelsesmengdene er like store og motsatt rettet, slik at summen fortsatt er null -- akkurat som før skyvingen. Dette er nøyaktig det bevaringsloven sier skal skje.
 }
@@ -294,13 +294,13 @@ Vi velger bil 1 sin bevegelsesretning som positiv, slik at $v_1=\SI{20}{\metre\p
 \smallskip\noindent
 \textbf{a)} Total bevegelsesmengde før kollisjonen:
 \[
-    p_{tot,\,\text{før}} = m_1 v_1 + m_2 v_2 = \SI{1200}{\kilo\gram}\cdot\SI{20}{\metre\per\second} + \SI{1000}{\kilo\gram}\cdot(\SI{-15}{\metre\per\second}) = \doubleunderline{\SI{9000}{\kilo\gram\metre\per\second}}
+    p_{tot,\,\text{før}} = m_1 v_1 + m_2 v_2 = \SI{1200}{\kilo\gram}\cdot\SI{20}{\metre\per\second} + \SI{1000}{\kilo\gram}\cdot(\SI{-15}{\metre\per\second}) = \doubleunderline{\SI{9.0e3}{\kilo\gram\metre\per\second}}
 \]
 
 \smallskip\noindent
 \textbf{b)} Siden bevegelsesmengden er bevart, og bilene beveger seg som én masse $m_1+m_2$ etter kollisjonen:
 \[
-    p_{tot,\,\text{før}} = (m_1+m_2)\,u \quad\Rightarrow\quad u = \frac{p_{tot,\,\text{før}}}{m_1+m_2} = \frac{\SI{9000}{\kilo\gram\metre\per\second}}{\SI{2200}{\kilo\gram}} = \doubleunderline{\SI{4.09}{\metre\per\second}}
+    p_{tot,\,\text{før}} = (m_1+m_2)\,u \quad\Rightarrow\quad u = \frac{p_{tot,\,\text{før}}}{m_1+m_2} = \frac{\SI{9000}{\kilo\gram\metre\per\second}}{\SI{2200}{\kilo\gram}} = \SI{4.09}{\metre\per\second} \approx \doubleunderline{\SI{4.1}{\metre\per\second}}
 \]
 Farten er positiv, så bilvraket beveger seg videre i \doubleunderline{samme retning som bil 1} (den tyngste og raskeste av de to) etter sammenstøtet.
 }
@@ -361,17 +361,17 @@ Farten er positiv, så bilvraket beveger seg videre i \doubleunderline{samme ret
 
 \textbf{b)} Normalkraften:
 \[
-    N = m\mathrm{g}\cos\theta = \SI{5.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\cos(30^\circ) = \doubleunderline{\SI{42.5}{\newton}}
+    N = m\mathrm{g}\cos\theta = \SI{5.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\cos(30^\circ) = \SI{42.5}{\newton} \approx \doubleunderline{\SI{42}{\newton}}
 \]
 
 \textbf{c)} Friksjonskraften:
 \[
-    R = \mu_k N = 0.20\cdot\SI{42.5}{\newton} = \doubleunderline{\SI{8.50}{\newton}}
+    R = \mu_k N = 0.20\cdot\SI{42.5}{\newton} = \SI{8.50}{\newton} \approx \doubleunderline{\SI{8.5}{\newton}}
 \]
 
 \textbf{d)} Akselerasjonen (se også \textit{Utledning av akselerasjon ned et skråplan med friksjon} i Kapittel~\ref{komp-Chapter:dynamikk}):
 \[
-    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(30^\circ) - 0.20\cos(30^\circ)\right) = \doubleunderline{\SI{3.21}{\metre\per\second\squared}}
+    a = \mathrm{g}(\sin\theta - \mu_k\cos\theta) = \SI{9.81}{\metre\per\second\squared}\cdot\left(\sin(30^\circ) - 0.20\cos(30^\circ)\right) = \SI{3.21}{\metre\per\second\squared} \approx \doubleunderline{\SI{3.2}{\metre\per\second\squared}}
 \]
 rettet nedover langs planet.
 }
@@ -408,12 +408,12 @@ Siden bilen følger en sirkelbane, må kraftsummen inn mot sentrum (nedover) væ
 
 \textbf{b)} Normalkraften:
 \[
-    N = m\left(\mathrm{g} - \frac{v^2}{r}\right) = \SI{1000}{\kilo\gram}\cdot\left(\SI{9.81}{\metre\per\second\squared} - \frac{(\SI{15}{\metre\per\second})^2}{\SI{40}{\metre}}\right) = \doubleunderline{\SI{4190}{\newton}}
+    N = m\left(\mathrm{g} - \frac{v^2}{r}\right) = \SI{1000}{\kilo\gram}\cdot\left(\SI{9.81}{\metre\per\second\squared} - \frac{(\SI{15}{\metre\per\second})^2}{\SI{40}{\metre}}\right) = \SI{4190}{\newton} \approx \doubleunderline{\SI{4.2e3}{\newton}}
 \]
 
 \textbf{c)} Bilen mister kontakten med veien når $N=0$:
 \[
-    m\mathrm{g} = \frac{mv_\text{maks}^2}{r} \quad\Rightarrow\quad \doubleunderline{v_\text{maks} = \sqrt{\mathrm{g}r} = \sqrt{\SI{9.81}{\metre\per\second\squared}\cdot\SI{40}{\metre}} = \SI{19.8}{\metre\per\second}}
+    m\mathrm{g} = \frac{mv_\text{maks}^2}{r} \quad\Rightarrow\quad v_\text{maks} = \sqrt{\mathrm{g}r} = \sqrt{\SI{9.81}{\metre\per\second\squared}\cdot\SI{40}{\metre}} = \SI{19.8}{\metre\per\second} \approx \doubleunderline{\SI{2.0e1}{\metre\per\second}}
 \]
 Kjører bilen fortere enn dette, letter den fra veibanen akkurat på toppen av bakken.
 }
@@ -426,19 +426,19 @@ Kjører bilen fortere enn dette, letter den fra veibanen akkurat på toppen av b
 \noindent
 \textbf{a)} Ballen er i ro før sparket, så endringen i bevegelsesmengde er (se \textit{Impuls} i Kapittel~\ref{komp-Chapter:dynamikk}):
 \[
-    \Delta p = m v - m\cdot 0 = \SI{0.45}{\kilo\gram}\cdot\SI{25}{\metre\per\second} = \doubleunderline{\SI{11.25}{\kilo\gram\metre\per\second}}
+    \Delta p = m v - m\cdot 0 = \SI{0.45}{\kilo\gram}\cdot\SI{25}{\metre\per\second} = \SI{11.25}{\kilo\gram\metre\per\second} \approx \doubleunderline{\SI{11}{\kilo\gram\metre\per\second}}
 \]
 
 \smallskip\noindent
 \textbf{b)} Siden $\Delta p = F\,\Delta t$, finner vi den gjennomsnittlige kraften:
 \[
-    F = \frac{\Delta p}{\Delta t} = \frac{\SI{11.25}{\kilo\gram\metre\per\second}}{\SI{8.0e-3}{\second}} = \doubleunderline{\SI{1410}{\newton}}
+    F = \frac{\Delta p}{\Delta t} = \frac{\SI{11.25}{\kilo\gram\metre\per\second}}{\SI{8.0e-3}{\second}} = \SI{1410}{\newton} \approx \doubleunderline{\SI{1.4e3}{\newton}}
 \]
 
 \smallskip\noindent
 \textbf{c)} Tyngdekraften på ballen er $G=m\mathrm{g}=\SI{0.45}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}=\SI{4.41}{\newton}$. Forholdet mellom kraftene er
 \[
-    \frac{F}{G} = \frac{\SI{1410}{\newton}}{\SI{4.41}{\newton}} \approx \doubleunderline{320}
+    \frac{F}{G} = \frac{\SI{1410}{\newton}}{\SI{4.41}{\newton}} \approx \doubleunderline{3.2e2}
 \]
 Kraften fra foten er altså omtrent 320 ganger så stor som tyngdekraften på ballen -- et godt eksempel på hvor store krefter som kan oppstå i et kort støt.
 }
@@ -454,13 +454,13 @@ Astronauten og verktøykassa utgjør et isolert system (ingen ytre krefter i ver
 \smallskip\noindent
 \textbf{a)} Bevaringslikningen gir
 \[
-    0 = M\,U + m_\text{kasse}\,v_\text{kasse} \quad\Rightarrow\quad U = -\frac{m_\text{kasse}\,v_\text{kasse}}{M} = -\frac{\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{90}{\kilo\gram}} = \doubleunderline{\SI{-0.0667}{\metre\per\second}}
+    0 = M\,U + m_\text{kasse}\,u_\text{kasse} \quad\Rightarrow\quad U = -\frac{m_\text{kasse}\,u_\text{kasse}}{M} = -\frac{\SI{2.0}{\kilo\gram}\cdot\SI{3.0}{\metre\per\second}}{\SI{90}{\kilo\gram}} = \SI{-0.0667}{\metre\per\second} \approx \doubleunderline{\SI{-0.067}{\metre\per\second}}
 \]
 Astronauten får altså en fart på $\SI{0.0667}{\metre\per\second}$ i \textit{motsatt} retning av kasteretningen, altså tilbake mot romstasjonen.
 
 \smallskip\noindent
 \textbf{b)} Hun beveger seg med konstant fart $|U|$ tilbake mot stasjonen, en avstand $d=\SI{20}{\metre}$ unna:
 \[
-    t = \frac{d}{|U|} = \frac{\SI{20}{\metre}}{\SI{0.0667}{\metre\per\second}} = \doubleunderline{\SI{300}{\second}} = \SI{5.0}{\minute}
+    t = \frac{d}{|U|} = \frac{\SI{20}{\metre}}{\SI{0.0667}{\metre\per\second}} = \doubleunderline{\SI{3.0e2}{\second}} = \SI{5.0}{\minute}
 \]
 }

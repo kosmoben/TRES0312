@@ -66,12 +66,12 @@ m = \rho \cdot V
 
 Siden vi har oppgitt volumet som \( V = 1 \, \text{L} \), konverterer vi dette til kubikkmeter:
 \[
-1 \, \text{L} = 1 \, \text{dm}^3 = 1 \times 10^{-3} \, \text{m}^3
+1 \, \text{L} = 1 \, \text{dm}^3 = 1 \cdot 10^{-3} \, \text{m}^3
 \]
 
-Nå setter vi inn verdiene med \( \rho = 1.0 \times 10^3 \, \text{kg/m}^3 \) og \( V = 1 \times 10^{-3} \, \text{m}^3 \):
+Nå setter vi inn verdiene med \( \rho = 1.0 \cdot 10^3 \, \text{kg/m}^3 \) og \( V = 1 \cdot 10^{-3} \, \text{m}^3 \):
 \[
-m = (1.0 \times 10^3 \, \text{kg/m}^3) \times (1 \times 10^{-3} \, \text{m}^3)
+m = (1.0 \cdot 10^3 \, \text{kg/m}^3) \cdot (1 \cdot 10^{-3} \, \text{m}^3)
 \]
 \[
 m = \doubleunderline{1.0 \, \text{kg}}
@@ -198,7 +198,7 @@ I en væske som er i ro, vil trykket øke med dybden på grunn av vekten av væs
 \end{figure}
 
 \exm{Beregning av trykk ved ulike dybder}{
-En dykker er under vann med tetthet \( \rho = 1000 \, \text{kg/m}^3 \), og det atmosfæriske trykket ved overflaten er \( p_0 = 101325 \, \text{Pa} \). Hva er det totale trykket på dykkeren ved dybdene \( h = 2 \, \text{m} \), \( h = 5 \, \text{m} \), og \( h = 10 \, \text{m} \)? \\
+En dykker er under vann med tetthet \( \rho = 1000 \, \text{kg/m}^3 \), og det atmosfæriske trykket ved overflaten er \( p_0 = 101325 \, \text{Pa} \). Hva er det totale trykket på dykkeren ved dybdene \( h = 2.0 \, \text{m} \), \( h = 5.0 \, \text{m} \), og \( h = 10 \, \text{m} \)? \\
 
 \textit{Metode:}
 Bruk formelen for trykk i væsken:
@@ -207,23 +207,23 @@ p(h) = p_0 + \rho \mathrm{g} h
 \]
 hvor \( p_0 = 101325 \, \text{Pa} \), \( \rho = 1000 \, \text{kg/m}^3 \), og \( \mathrm{g} = 9.81 \, \text{m/s}^2 \). Vi setter inn de tre ulike dybdene én etter én. \\
 
-\textbf{Ved \( h = 2 \, \text{m} \):}
+\textbf{Ved \( h = 2.0 \, \text{m} \):}
 \[
-p(2) = 101325 + 1000 \cdot 9.81 \cdot 2 = 101325 + 19620 = \doubleunderline{120945 \, \text{Pa}}.
+p(2) = 101325 + 1000 \cdot 9.81 \cdot 2 = 101325 + 19620 = 120945 \, \text{Pa} \approx \doubleunderline{1.2 \cdot 10^5 \, \text{Pa}}.
 \]
 
-\textbf{Ved \( h = 5 \, \text{m} \):}
+\textbf{Ved \( h = 5.0 \, \text{m} \):}
 \[
-p(5) = 101325 + 1000 \cdot 9.81 \cdot 5 = 101325 + 49050 = \doubleunderline{150375 \, \text{Pa}}.
+p(5) = 101325 + 1000 \cdot 9.81 \cdot 5 = 101325 + 49050 = 150375 \, \text{Pa} \approx \doubleunderline{1.5 \cdot 10^5 \, \text{Pa}}.
 \]
 
 \textbf{Ved \( h = 10 \, \text{m} \):}
 \[
-p(10) = 101325 + 1000 \cdot 9.81 \cdot 10 = 101325 + 98100 = \doubleunderline{199425 \, \text{Pa}}.
+p(10) = 101325 + 1000 \cdot 9.81 \cdot 10 = 101325 + 98100 = 199425 \, \text{Pa} \approx \doubleunderline{2.0 \cdot 10^5 \, \text{Pa}}.
 \]
 
 \textit{Svar:}
-Trykket på dykkeren ved \( h = 2 \, \text{m} \) er \( 120945 \, \text{Pa} \), ved \( h = 5 \, \text{m} \) er det \( 150375 \, \text{Pa} \), og ved \( h = 10 \, \text{m} \) er det \( 199425 \, \text{Pa} \).
+Trykket på dykkeren er omtrent \( 1.2 \cdot 10^5 \, \text{Pa} \) ved \( h = 2.0 \, \text{m} \), \( 1.5 \cdot 10^5 \, \text{Pa} \) ved \( h = 5.0 \, \text{m} \), og \( 2.0 \cdot 10^5 \, \text{Pa} \) ved \( h = 10 \, \text{m} \).
 }
 
 \section{Pascals lov}
@@ -306,7 +306,7 @@ Fra Pascals lov er trykket likt på begge sider:
   \implies
   F_2 = F_1 \cdot \frac{A_2}{A_1}
       = \SI{50}{\newton} \cdot \frac{\SI{2.0e-2}{\metre\squared}}{\SI{5.0e-4}{\metre\squared}}
-      = \doubleunderline{\SI{2000}{\newton}}
+      = \doubleunderline{\SI{2.0e3}{\newton}}
 \]
 Med et lite stempel kan vi altså løfte en last som er 40 ganger så tung — det er prinsippet bak bilheis og hydrauliske bremser.
 }
@@ -444,11 +444,11 @@ G = m \mathrm{g} = \rho_L V \mathrm{g}.
 \]
 Løs for massen \( m \):
 \[
-m = \frac{O}{\mathrm{g}} = \frac{10594.8}{9.81} \approx \doubleunderline{1080 \, \text{kg}}.
+m = \frac{O}{\mathrm{g}} = \frac{10594.8}{9.81} = 1080 \, \text{kg} \approx \doubleunderline{1.1 \cdot 10^3 \, \text{kg}}.
 \]
 
 \textit{Svar:}  
-Oppdriftskraften på båten er \( 11 \, \text{kN} \), og vekten av båten er \( 1080 \, \text{kg} \).
+Oppdriftskraften på båten er \( 11 \, \text{kN} \), og massen til båten er omtrent \( 1.1 \cdot 10^3 \, \text{kg} \).
 }
 
 

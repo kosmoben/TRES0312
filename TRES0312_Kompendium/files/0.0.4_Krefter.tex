@@ -56,7 +56,7 @@ Deretter bruker vi definisjonen av bevegelsesmengde:
 \end{wrapfigure}
 Se for deg en ishockey-puck ute på isen. Hva skal til for å endre bevegelsen til pucken? Jo, da må pucken interagere med et annet legeme. Så langt har vi brukt begrep som \textit{legeme} og \textit{objekt} om hverandre. La oss være litt mer presise:
 \defn{Legeme}{%
-Et legeme er et objekt med masse og posisjon. Massen $m$ måles i kg (kilogram), og posisjonen $\vec{r}$ måles i meter (m).
+Et legeme er et objekt med masse og posisjon. Massen $m$ måles i kg (kilogram), og posisjonen $\vec{r}$ måles i meter (m). Realistiske legemer har dessuten romlig utstrekning.
 }
 Dette kan være alt fra en liten partikkel til en stor planet. Alle legemer kan derfor erverve bevegelsesmengde, så lenge de kan interagere med andre legemer. Legemer er brikkene i spillet vi kaller \textit{dynamikk}. Dette spillet har videre noen regler for hvordan brikkene, altså legemene, kan interagere. Interaksjon mellom legemer kalles i fysikken for \text{krefter}. Vi sier at \textit{krefter} er \textit{vekselvirkning mellom legemer}. Og som i all interaksjon så er den ikke ensidig. Dersom legeme A virker på legeme B, så virker legeme B på legeme A. Det som kanskje ikke er like opplagt, er at legemene virker like mye på hverandre. Det vil si at kraften som legeme A utøver på legeme B, er like stor som kraften som legeme B utøver på legeme A, bare i motsatt retning. Dette kalles Newtons tredje lov, og vi skal tenke på den som en av tre krav som totalt sett gjør \textit{kraft}-begrepet veldefinert si fysikken.
 
@@ -255,7 +255,7 @@ Sofie har masse $m = \SI{60}{\kilo\gram}$. Hva er tyngdekraften som virker på h
 Vi bruker definisjonen av tyngdekraft med $\mathrm{g} = \SI{9.81}{\metre\per\second\squared}$:
 \[
     G = m \cdot \mathrm{g} = \SI{60}{\kilo\gram} \cdot \SI{9.81}{\metre\per\second\squared}
-    = \doubleunderline{\SI{588.6}{\newton}}
+    = \SI{588.6}{\newton} \approx \doubleunderline{\SI{5.9e2}{\newton}}
 \]
 }
 
@@ -341,7 +341,7 @@ Siden Ola er i ro, er summen av krefter i vertikal retning null (Newtons 2. lov 
 \]
 \[
     N = \SI{80}{\kilo\gram} \cdot \SI{9.81}{\metre\per\second\squared}
-    = \doubleunderline{\SI{784.8}{\newton}}
+    = \SI{784.8}{\newton} \approx \doubleunderline{\SI{7.8e2}{\newton}}
 \]
 Gulvet skyver Ola opp med nøyaktig like stor kraft som tyngdekraften trekker Ola ned — dette er et eksempel på Newtons 3. lov i praksis.
 }
@@ -366,7 +366,7 @@ Vi tegner inn kreftene på Kari: tyngdekraften $\vec{G}$ peker ned og normalkraf
 \[
     N = G + ma = m(\mathrm{g} + a)
     = \SI{70}{\kilo\gram} \cdot (\SI{9.81}{\metre\per\second\squared} + \SI{2.0}{\metre\per\second\squared})
-    = \doubleunderline{\SI{827}{\newton}}
+    = \SI{827}{\newton} \approx \doubleunderline{\SI{8.3e2}{\newton}}
 \]
 Til sammenligning er tyngdekraften på Kari $G = \SI{70}{\kilo\gram} \cdot \SI{9.81}{\metre\per\second\squared} \approx \SI{687}{\newton}$. Normalkraften er altså større enn tyngdekraften når heisen akselererer oppover — Kari føler seg tyngre enn til vanlig.
 }
@@ -479,9 +479,9 @@ Normalkraften er $N = m\mathrm{g} = \SI{15}{\kilo\gram}\cdot\SI{9.81}{\metre\per
 Maksimal hvilefriksjon er
 \[
     R_{s,\text{maks}} = \mu_s \cdot N = 0.40 \cdot \SI{147.2}{\newton}
-    = \doubleunderline{\SI{58.9}{\newton}}
+    = \SI{58.9}{\newton} \approx \doubleunderline{\SI{59}{\newton}}
 \]
-Siden $F = \SI{40}{\newton} < R_{s,\text{maks}} = \SI{58.9}{\newton}$, holder hvilefriksjonen kassen i ro. Den beveger seg ikke.
+Siden $F = \SI{40}{\newton} < R_{s,\text{maks}} = \SI{59}{\newton}$, holder hvilefriksjonen kassen i ro. Den beveger seg ikke.
 }
 
 \oppgaver{Flytte et skap}{k4oppg6}{%
@@ -513,7 +513,7 @@ En boks med masse $m = \SI{10}{\kilo\gram}$ glir langs et gulv med kinetisk frik
 \noindent
 \textbf{a)} Normalkraften er $N = m\mathrm{g} = \SI{10}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{98.1}{\newton}$.
 \[
-    R = \mu_k \cdot N = 0.30 \cdot \SI{98.1}{\newton} = \doubleunderline{\SI{29.4}{\newton}}
+    R = \mu_k \cdot N = 0.30 \cdot \SI{98.1}{\newton} = \SI{29.4}{\newton} \approx \doubleunderline{\SI{29}{\newton}}
 \]
 
 \noindent
@@ -521,7 +521,7 @@ En boks med masse $m = \SI{10}{\kilo\gram}$ glir langs et gulv med kinetisk frik
 \[
     \sum F = -R = ma \implies a = -\frac{R}{m}
     = -\frac{\SI{29.4}{\newton}}{\SI{10}{\kilo\gram}}
-    = \doubleunderline{\SI{-2.94}{\metre\per\second\squared}}
+    = \SI{-2.94}{\metre\per\second\squared} \approx \doubleunderline{\SI{-2.9}{\metre\per\second\squared}}
 \]
 Minustegnet betyr at boksen bremser ned.
 }
@@ -647,7 +647,7 @@ En kloss med masse $m = \SI{500}{\gram}$ festes til en vertikal spiralfjær som 
 \[
     k = \frac{m\mathrm{g}}{x}
     = \frac{\SI{0.500}{\kilo\gram} \cdot \SI{9.81}{\metre\per\second\squared}}{\SI{0.040}{\metre}}
-    = \doubleunderline{\SI{123}{\newton\per\metre}}
+    = \SI{123}{\newton\per\metre} \approx \doubleunderline{\SI{1.2e2}{\newton\per\metre}}
 \]
 }
 
@@ -729,7 +729,7 @@ En slede med Dashman, med samlet masse $m$, ligger i ro på et friksjonsfritt sk
 \smallskip\noindent
 \textbf{b) Fjærkrafta:}
 \[
-    F_k = kx = \SI{180}{\newton\per\metre}\cdot\SI{0.12}{\metre} = \doubleunderline{\SI{21.6}{\newton}}
+    F_k = kx = \SI{180}{\newton\per\metre}\cdot\SI{0.12}{\metre} = \SI{21.6}{\newton} \approx \doubleunderline{\SI{22}{\newton}}
 \]
 
 \smallskip\noindent
@@ -1065,7 +1065,7 @@ En kloss med masse $m = \SI{2.0}{\kilo\gram}$ ligger på et skråplan med helnin
 \[
     k = \frac{m\mathrm{g}(\sin\theta - \mu_s\cos\theta)}{x}
     = \frac{\SI{2.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}(\sin 30° - 0.20\cdot\cos 30°)}{\SI{0.030}{\metre}}
-    = \doubleunderline{\SI{214}{\newton\per\metre}}
+    = \SI{214}{\newton\per\metre} \approx \doubleunderline{\SI{2.1e2}{\newton\per\metre}}
 \]
 }
 
@@ -1113,7 +1113,7 @@ Positivt fortegn betyr at friksjonen peker oppover langs planet (motsatt av beve
 \[
     N = G\cos\theta = m\mathrm{g}\cos\theta
     = \SI{3.0}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\cos 25°
-    = \doubleunderline{\SI{26.7}{\newton}}
+    = \SI{26.7}{\newton} \approx \doubleunderline{\SI{27}{\newton}}
 \]
 }
 
@@ -1252,7 +1252,7 @@ Snorkraften $S$ fra wiren er den eneste kraften vi tar med, og den peker alltid 
     S = \frac{mv^2}{r}
     = \frac{\SI{4.0}{\kilo\gram} \cdot (\SI{15}{\metre\per\second})^2}{\SI{1.2}{\metre}}
     = \frac{\SI{900}{\newton\metre}}{\SI{1.2}{\metre}}
-    = \doubleunderline{\SI{750}{\newton}}
+    = \doubleunderline{\SI{7.5e2}{\newton}}
 \]
 Det tilsvarer omtrent tyngden av en person på \SI{75}{\kilo\gram}, så sleggekasteren må holde godt fast!
 }
@@ -1458,7 +1458,7 @@ Massen faller ut — doseringa er uavhengig av kjøretøyets masse. Med tall ($v
 \[
     \tan\alpha = \frac{(\SI{25}{\metre\per\second})^2}{\SI{200}{\metre}\cdot\SI{9.81}{\metre\per\second\squared}} = 0.318
     \implies
-    \alpha = \arctan(0.318) = \doubleunderline{17.7°}
+    \alpha = \arctan(0.318) = 17.7° \approx \doubleunderline{18°}
 \]
 }
 

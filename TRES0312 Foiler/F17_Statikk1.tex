@@ -1,0 +1,518 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Kraftlikevekt og kraftmoment}
+\subtitle{TRES0312 --- kapittel 6.1--6.2}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{6}   % Kapittel 6: "Statikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 6.1--6.2}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: kraftlikevekt. Etter pausen: kraftmoment.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Skriv opp to uttrykk for effekt $P$.
+      \item Hvilke størrelser er bevart i et elastisk støt?
+      \item En kule treffer en identisk kule i ro, rett front-mot-front, i et elastisk støt. Hva skjer?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: KRAFTLIKEVEKT (6.1)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: i ro
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftlikevekt}
+
+  \tanke{}{%
+  Hva må gjelde for kreftene på et legeme for at det skal bli stående i ro?
+  }
+  \pause
+  \svar{
+  Summen av kreftene må være null. Fra Newtons 2.\ lov, $\sum\vec{F} = m\vec{a}$, betyr $\sum\vec{F} = \vec{0}$ at $\vec{a} = \vec{0}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: translasjonslikevekt
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftlikevekt}
+
+  \defnat{6.1.1}{Translasjonslikevekt}{
+  Et legeme er i translasjonslikevekt når
+  \[
+    \sum \vec{F} = \vec{0}
+  \]
+  I to dimensjoner betyr dette to likninger:
+  \[
+    \sum F_x = 0 \qquad \text{og} \qquad \sum F_y = 0
+  \]
+  }
+
+  \pause
+  \merk{Framgangsmåte}{%
+  1.\ Tegn alle kreftene på legemet. \quad
+  2.\ Velg akser og dekomponer. \quad
+  3.\ Sett $\sum F_x = 0$ og $\sum F_y = 0$, og løs.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: trafikklys
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \aktivitet{Trafikklys}{%
+      Et trafikklys med masse $m = 50\,\mathrm{kg}$ henger i ro i to like lange snorer. Begge snorene danner vinkelen $\alpha = 30^\circ$ med horisontalen.
+      \begin{enumerate}[a)]
+        \item Tegn kreftene på trafikklyset.
+        \item Finn snorkraften $S$ i hver snor.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.0]
+        \fill[gray!40] (-2.0,1.30) rectangle (2.0,1.42);
+        \draw[textcolor!80, thick] (-1.732,1.30) -- (0,0.30) -- (1.732,1.30);
+        \draw[gray!60, dashed] (-1.2,0.30) -- (1.2,0.30);
+        \draw[textcolor!70, thin] (-0.7,0.30) arc (180:150:0.7);
+        \node[font=\small] at (-0.95,0.45) {$\alpha$};
+        \draw[textcolor!70, thin] (0.7,0.30) arc (0:30:0.7);
+        \node[font=\small] at (0.95,0.45) {$\alpha$};
+        \fill[gray!70, rounded corners=2pt] (-0.25,0.30) rectangle (0.25,-1.0);
+        \fill[red!80] (0,0.05) circle (0.12);
+        \fill[yellow!80!orange] (0,-0.33) circle (0.12);
+        \fill[green!60!black] (0,-0.71) circle (0.12);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: lampe i to ulike snorer
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \aktivitet{Lampe i to ulike snorer}{%
+      En lampe med masse $m = 6.0\,\mathrm{kg}$ henger i ro i to snorer. Snor 1 danner vinkelen $30^\circ$ og snor 2 vinkelen $60^\circ$ med horisontalen.
+      \begin{enumerate}[a)]
+        \item Tegn kreftene på lampa.
+        \item Sett opp $\sum F_x = 0$ og $\sum F_y = 0$.
+        \item Finn snorkreftene $S_1$ og $S_2$.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.2]
+        \fill[gray!40] (-2.3,1.2) rectangle (1.0,1.32);
+        \draw[textcolor!80, thick] (0,0) -- (-2.078,1.2);
+        \draw[textcolor!80, thick] (0,0) -- (0.693,1.2);
+        \draw[dashed, gray!60] (-1.1,0) -- (0.9,0);
+        \draw[textcolor!70, thin] (-0.6,0) arc (180:150:0.6);
+        \node[font=\small] at (-0.85,0.17) {$30^\circ$};
+        \draw[textcolor!70, thin] (0.40,0) arc (0:60:0.40);
+        \node[font=\small] at (0.68,0.25) {$60^\circ$};
+        \node[font=\small] at (-1.45,0.50) {snor 1};
+        \node[font=\small] at (0.85,0.80) {snor 2};
+        \fill[headCol!70!white] (-0.22,-0.05) -- (0.22,-0.05) -- (0.32,-0.32) -- (-0.32,-0.32) -- cycle;
+        \fill[yellow!70!orange] (0,-0.32) circle (0.09);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \pause
+  \vspace{5mm}
+  \textit{Tips:} Lampa henger ikke symmetrisk, så vi kan ikke anta at $S_1 = S_2$.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Til ettertanke: likevekt i bevegelse
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftlikevekt}
+
+  \tanke{}{%
+  Kan et legeme som \textit{beveger seg} være i translasjonslikevekt?
+  }
+  \pause
+  \svar{
+  Ja. $\sum\vec{F} = \vec{0}$ betyr bare at akselerasjonen er null. Legemet kan da enten være i ro, eller bevege seg med konstant hastighet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: bil trukket opp en bakke
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \aktivitet{Bil trukket opp en bakke}{%
+      En vinsj trekker en bil med masse $m = 1200\,\mathrm{kg}$ opp en bakke med \textit{konstant fart}. Bakken har helningsvinkel $\theta = 20^\circ$, og wiren er parallell med bakken. Se bort fra friksjon og luftmotstand.
+      \begin{enumerate}[a)]
+        \item Tegn kreftene på bilen.
+        \item Finn normalkraften $N$.
+        \item Finn kraften $S$ i wiren.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \vspace{8mm}
+      \begin{tikzpicture}[scale=0.95]
+        \fill[gray!25] (0,0) -- (6.108,2.223) -- (6.108,0) -- cycle;
+        \draw[textcolor!70, thick] (0,0) -- (6.108,2.223) -- (6.108,0) -- cycle;
+        \draw[black!85, line width=1pt] (1.3,0) arc (0:20:1.3);
+        \node[font=\small, text=black!90] at (1.62,0.24) {$\theta$};
+        \begin{scope}[rotate=20]
+          \fill[headCol!60!white, rounded corners=2pt] (2.3,0.12) rectangle (3.9,0.55);
+          \fill[headCol!35!white, rounded corners=2pt] (2.6,0.55) rectangle (3.5,0.85);
+          \fill[gray!80] (2.65,0.12) circle (0.13);
+          \fill[gray!80] (3.55,0.12) circle (0.13);
+          \draw[textcolor!80, thick] (3.9,0.35) -- (5.95,0.35);
+          \fill[gray!70] (5.95,0.05) rectangle (6.35,0.6);
+          \node[font=\small, above] at (6.15,0.6) {vinsj};
+        \end{scope}
+      \end{tikzpicture}
+
+      \pause
+      \vspace{8mm}
+      {\small \textit{Tips:} Legg $x$-aksen langs bakken. Da er det bare tyngdekraften som må dekomponeres.}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: kraftlikevekt
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Kraftlikevekt}{%
+  \begin{enumerate}[1.]
+    \item[] Translasjonslikevekt: $\sum\vec{F} = \vec{0}$, altså $\sum F_x = 0$ og $\sum F_y = 0$.
+    \item[] Likevekt betyr null akselerasjon: i ro \textit{eller} konstant hastighet.
+    \item[] Tegn kreftene, velg lure akser, dekomponer --- og løs.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: kraftmoment}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: KRAFTMOMENT (6.2)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: sykkelhjulet
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftmoment}
+
+  \tanke{}{%
+  Sikrer $\sum \vec{F}=0$ at et legemes bestanddeler ikke akselererer?
+  }
+
+  \pause
+  \begin{center}
+  \begin{tikzpicture}[scale=0.85, >={Stealth[length=8pt,width=6pt]},
+    hjul/.pic={
+      \fill[gray!20] (0,0) circle (1.4);
+      \draw[line width=4pt, gray!80] (0,0) circle (1.4);
+      \draw[line width=1.2pt, gray!60] (0,0) circle (1.25);
+      \foreach \a in {0,20,...,340} \draw[gray!55, thin] (0,0) -- (\a:1.25);
+      \fill[gray!70] (0,0) circle (0.16);
+    }]
+    \begin{scope}
+      \pic {hjul};
+      \draw[->, line width=2.5pt, defscol] (0,1.4) -- (0,0.5)
+          node[pos=0.45, right=2pt, font=\small] {$\vec{F}_1$};
+      \draw[->, line width=2.5pt, defscol] (0,-1.4) -- (0,-0.5)
+          node[pos=0.45, right=2pt, font=\small] {$\vec{F}_2$};
+      \node[font=\small] at (0,-1.85) {(a)};
+    \end{scope}
+    \begin{scope}[xshift=5.0cm]
+      \pic {hjul};
+      \draw[->, line width=2.5pt, defscol] (-1.4,0) -- (-1.4,-0.9)
+          node[pos=0.6, left=2pt, font=\small] {$\vec{F}_1$};
+      \draw[->, line width=2.5pt, defscol] (1.4,0) -- (1.4,0.9)
+          node[pos=0.6, right=2pt, font=\small] {$\vec{F}_2$};
+      \node[font=\small] at (0,-1.85) {(b)};
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+
+  \pause
+  \vspace{-2mm}
+  {\small I begge tilfellene er $\sum\vec{F} = \vec{0}$. Men i (b) begynner hjulet å rotere! Kraftens \textit{angrepspunkt} har betydning.}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Definisjon: kraftmoment (med sykkelhjulet som illustrasjon)
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftmoment}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \defnat{6.2.1}{Kraftmoment}{
+      Kraftmomentet om et punkt $O$ er
+      \[
+        \vec{\tau} = \vec{r}\times\vec{F},
+      \]
+      der armvektoren $\vec{r}$ går fra $O$ til kraftens angrepspunkt. Størrelsen er gitt ved
+      \[
+        \tau = r\cdot F\sin\theta,
+      \]
+      der $\theta$ er vinkelen mellom $\vec{r}$ og $\vec{F}$. Enhet: $\mathrm{N\,m}$.
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[>={Stealth[length=7pt,width=5pt]},
+        hjul/.pic={
+          \fill[gray!20] (0,0) circle (1.1);
+          \draw[line width=3pt, gray!80] (0,0) circle (1.1);
+          \draw[line width=0.8pt, gray!60] (0,0) circle (1.0);
+          \foreach \a in {0,20,...,340} \draw[gray!55, very thin] (0,0) -- (\a:1.0);
+          \fill[gray!70] (0,0) circle (0.11);
+        }]
+        % (a) krefter på toppen og bunnen
+        \begin{scope}
+          \pic {hjul};
+          % Stiplede hjelpelinjer: gjennom navet, og gjennom angrepspunktene øverst og nederst
+          \draw[dashed, gray!85, semithick] (-1.5,0) -- (1.5,0);
+          \draw[dashed, gray!85, semithick] (-1.5,1.1) -- (1.5,1.1);
+          \draw[dashed, gray!85, semithick] (-1.5,-1.1) -- (1.5,-1.1);
+          \draw[->, thick, orange!85!black] (-0.08,0) -- (-0.08,1.1)
+              node[pos=0.55, left=0pt, font=\small] {$\vec{r}_1$};
+          \draw[->, thick, orange!85!black] (-0.34,0) -- (-0.34,-1.1)
+              node[pos=0.55, left=0pt, font=\small] {$\vec{r}_2$};
+          \draw[->, line width=2.2pt, defscol] (0.06,1.1) -- (0.06,0.35)
+              node[pos=0.65, right=1pt, font=\small, defscol!70!black] {$\vec{F}_1$};
+          \draw[->, line width=2.2pt, defscol] (0.06,-1.1) -- (0.06,-0.35)
+              node[pos=0.65, right=1pt, font=\small, defscol!70!black] {$\vec{F}_2$};
+          \node[font=\small, anchor=west] at (2.1,0.4) {(a) $\tau = 0$};
+        \end{scope}
+        % (b) krefter på venstre og høyre side
+        \begin{scope}[shift={(0,-3.7)}]
+          \pic {hjul};
+          \draw[->, thick, orange!85!black] (0,0) -- (-1.1,0)
+              node[pos=0.5, above=0pt, font=\small] {$\vec{r}_1$};
+          \draw[->, thick, orange!85!black] (0,0) -- (1.1,0)
+              node[pos=0.5, below=0pt, font=\small] {$\vec{r}_2$};
+          \draw[->, line width=2.2pt, defscol] (-1.1,0) -- (-1.1,-0.8)
+              node[left=1pt, font=\small] {$\vec{F}_1$};
+          \draw[->, line width=2.2pt, defscol] (1.1,0) -- (1.1,0.8)
+              node[right=1pt, font=\small] {$\vec{F}_2$};
+          \node[font=\small, anchor=west] at (2.1,0) {(b) $\tau \neq 0$};
+        \end{scope}
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Tolkning: F sin theta
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftmoment}
+
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \merk{Tolkning}{%
+      $F\sin\theta$ er den delen av kraften som står \textit{vinkelrett} på $\vec{r}$. Bare den kan sette legemet i rotasjon om $O$.
+
+      Den delen som peker langs $\vec{r}$, drar eller skyver bare mot eller bort fra $O$.
+      }
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.15, >={Stealth[length=8pt,width=6pt]}]
+        \fill[headCol!70!white] (0,0) circle (0.10);
+        \node[below left, font=\small] at (0,0) {$O$};
+        \draw[->, line width=1.5pt, textcolor!75] (0,0) -- (4,0)
+            node[midway, below=3pt, font=\small] {$\vec{r}$};
+        \draw[dashed, gray!60] (4,0) -- (5.4,0);
+        \draw[->, line width=2pt, defscol!55] (4,0) -- (4,1.905)
+            node[midway, left=3pt, font=\small, defscol!80!white] {$F\sin\theta$};
+        \draw[gray!70, thin] (3.75,0) -- (3.75,0.25) -- (4,0.25);
+        \draw[dashed, gray!60] (5.1,1.905) -- (4,1.905);
+        \draw[->, line width=2.5pt, defscol] (4,0) -- (5.1,1.905)
+            node[right=2pt, font=\small, defscol] {$\vec{F}$};
+        \draw[textcolor!60, thin] (4.5,0) arc (0:60:0.5);
+        \node[font=\small] at (4.72,0.28) {$\theta$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Om et punkt, og fortegn
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftmoment}
+
+  \merk{Kraftmoment virker \textit{om et punkt}}{%
+  Et kraftmoment er alltid regnet \textit{om et bestemt punkt} $O$. Den samme kraften gir ulike kraftmoment om ulike punkter, fordi $\vec{r}$ endrer seg. Når du løser oppgaver: \textbf{velg punktet først, og skriv det ned.}
+  }
+
+  \pause
+  \merk{Fortegn}{%
+  Kraftmomentet er \textit{positivt} når det vil dreie legemet \textit{mot} klokka, og \textit{negativt} når det vil dreie legemet \textit{med} klokka.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Til ettertanke: dørhåndtak
+%--------------------------------------------------------------------------
+\begin{frame}{Kraftmoment}
+
+  \tanke{}{%
+  Hvorfor sitter dørhåndtaket langt unna hengslene?
+  }
+  \pause
+  \svar{
+  Kraftmomentet om hengslene er $\tau = r\cdot F\sin\theta$. Stor avstand $r$ gir stort kraftmoment, så du trenger mindre kraft for å åpne døra.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Aktivitet: bolt og skiftenøkkel
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Bolt og skiftenøkkel}{%
+  En skiftenøkkel med armlengde $\ell = 25\,\mathrm{cm}$ brukes til å stramme en bolt. En kraft $F = 80\,\mathrm{N}$ virker vinkelrett på nøkkelskaftet.
+
+  Finn kraftmomentet om boltens sentrum.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Aktivitet: sykkelpedal
+%--------------------------------------------------------------------------
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.60\textwidth}
+      \aktivitet{Tråkke på en sykkelpedal}{%
+      Pedalarmen har lengde $r = 0.17\,\mathrm{m}$. Syklisten trår rett ned med en kraft $F = 300\,\mathrm{N}$. Finn kraftmomentet om akselen når pedalarmen
+      \begin{enumerate}[a)]
+        \item er horisontal,
+        \item danner vinkelen $60^\circ$ med horisontalen (se figuren),
+        \item peker rett ned.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \centering
+      \vspace{4mm}
+      \begin{tikzpicture}[scale=1.3, >={Stealth[length=8pt,width=6pt]}]
+        \draw[gray!60, thick] (0,0) circle (0.55);
+        \draw[line width=4pt, gray!80] (0,0) -- (60:1.7);
+        \fill[gray!90] (0,0) circle (0.10);
+        \node[below left, font=\small] at (-0.05,-0.05) {$O$};
+        \fill[gray!90] ($(60:1.7)+(-0.22,-0.05)$) rectangle ($(60:1.7)+(0.22,0.05)$);
+        \draw[dashed, gray!60] (0,0) -- (1.4,0);
+        \draw[textcolor!60, thin] (0.55,0) arc (0:60:0.55);
+        \node[font=\small] at (0.85,0.30) {$60^\circ$};
+        \node[font=\small] at ($(60:0.9)+(-0.3,0.12)$) {$\vec{r}$};
+        \draw[->, line width=2.5pt, defscol] (60:1.7) -- ++(0,-1.0)
+            node[pos=0.5, right=2pt, font=\small] {$\vec{F}$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \pause
+  \textit{Tips:} Finn vinkelen $\theta$ mellom $\vec{r}$ og $\vec{F}$ i hvert tilfelle.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Oppsummering: kraftmoment
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Kraftmoment}{%
+  \begin{enumerate}[1.]
+    \item[] $\sum\vec{F} = \vec{0}$ hindrer ikke rotasjon. Kraftens angrepspunkt betyr noe.
+    \item[] Kraftmoment: $\tau = r\cdot F\sin\theta$, der $F\sin\theta$ er delen av kraften vinkelrett på $\vec{r}$.
+    \item[] Kraftmoment regnes alltid \textit{om et punkt}. Positivt mot klokka, negativt med klokka.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 19 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: rotasjonslikevekt og massesenter}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}
