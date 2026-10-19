@@ -70,9 +70,6 @@ Vi bruker definisjonen av trykk, $p = F/A$ (se \textit{Trykk} i Kapittel~\ref{ko
 
 \smallskip\noindent
 \textbf{b)} Trykket i et punkt skyldes vekten av vannet over punktet (pluss lufttrykket). Tenk deg at vannet i tuten stod lavere enn vannet i kanna. Da ville det vært mindre vann over B enn over A, og trykket i B ville vært lavere enn i A. Vannet ville da strømmet fra A mot B, altså inn i tuten, helt til trykkene var like. Vannet kommer derfor bare til ro når det står like høyt i tuten som i kanna.
-
-\smallskip\noindent
-\textbf{c)} \doubleunderline{Nei.} Regelen $p_A = p_B$ gjelder bare for en væske i ro. Når vannet strømmer ut gjennom tuten, er væsken i bevegelse, og da kan trykket variere langs et horisontalt nivå. (Det er nettopp en trykkforskjell som får vannet til å strømme.)
 }
 
 \oppgaver{Vanntårn}{k7oppg4}{%
@@ -101,6 +98,24 @@ Vi bruker definisjonen av trykk, $p = F/A$ (se \textit{Trykk} i Kapittel~\ref{ko
     p = \SI{1.013e5}{\pascal} + \SI{2.45e5}{\pascal} = \SI{3.47e5}{\pascal} \approx \doubleunderline{\SI{3.5e5}{\pascal}}
 \]
 Huset som ligger lavest (lengst under vannflaten i tårnet) får det største trykket og dermed best vanntrykk. Det er derfor vanntårn bygges høyt, eller på toppen av en høyde.
+}
+
+\oppgaver{Vannsøyle og lufttrykk}{k7oppg15}{%
+\input{Oppgaver/k7_oppg15.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Trykket i bunnen av en vannsøyle med høyde $h$ er det hydrostatiske trykket $\rho\mathrm{g}h$ (se \textit{Vertikalt væskeelement} i Kapittel~\ref{komp-Chapter:fluiddynamikk}). Vi setter dette lik lufttrykket:
+\[
+    \rho\mathrm{g}h = p_0
+    \quad\implies\quad
+    h = \frac{p_0}{\rho\mathrm{g}} = \frac{\SI{1.013e5}{\pascal}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{10.33}{\metre} \approx \doubleunderline{\SI{10.3}{\metre}}
+\]
+En vannsøyle på drøyt ti meter gir altså like stort trykk som hele lufthavet over oss.
+
+\smallskip\noindent
+\textbf{b)} Det er ingen luft inne i koppen over vannet, så det er ingenting der som presser vannet ned. Utenfor koppen presser lufta på vannflaten med lufttrykket $p_0$. Inne i vannet, i samme høyde som vannflaten utenfor, er trykket derfor også $p_0$, også rett under koppen. Dette trykket presser vannet opp i koppen og holder det der. Etter a) kan lufttrykket holde oppe en vannsøyle på hele \SI{10.3}{\metre}, så en kopp på noen få centimeter er ikke noe problem. Først når kanten av koppen kommer over vannflaten, kan luft slippe inn, og da renner vannet ut.
 }
 
 \oppgaver{Billøfter på verkstedet}{k7oppg5}{%

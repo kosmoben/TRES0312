@@ -174,9 +174,22 @@ På mikroskopisk nivå er trykk en konsekvens av interaksjoner. Se for deg en be
 Her nede på jordens overflate er vi mennesker omgitt av luft. Det vi kanskje ikke tenker på, er at denne luften veier noe. Den har vekt. Når du stiger ned i vann, merker du at vannet utøver et trykk på deg. Det er på grunn av vannets vekt. Men luften gjør det samme. Lufttrykket rundt oss (som følge av luftens vekt) er omtrent \SI{1.013e5}{\pascal}. Dette trykket kalles også \emph{én atmosfære} (1 atm).
 \graabox{$\displaystyle 1\,\text{atm} = \SI{101325}{\pascal} \approx \SI{1.013e5}{\pascal}$}
 
-Grunnen til at sugekopper fungerer, er at luftens molekyler hele veien kolliderer med sugekoppen, og presser den på plass. Det er altså lufttrykket som tvinger sugekoppen til å holde seg på plass. Desto større flate sugekoppen har, desto større blir de totale kreftene som holder den på plass. Det er derfor sugekopper med større diameter holder bedre enn små sugekopper. Dette betyr at dersom du pumper vekk luften fra et rom, vil alt som er festet med sugekopper slippe taket, fordi det ikke lenger er lufttrykk som holder dem på plass.
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://www.nrk.no/video/132654}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/NRK_Campingvogn.png}};
+\fill[black, opacity=0.55] (thumb.center) circle (0.42cm);
+\draw[white, line width=1.2pt] (thumb.center) circle (0.42cm);
+\fill[white] ($(thumb.center)+(-0.13,-0.2)$) -- ($(thumb.center)+(-0.13,0.2)$) -- ($(thumb.center)+(0.22,0)$) -- cycle;
+\node[anchor=north west, font=\scriptsize\bfseries, text=black!75] at ([yshift=-2pt]thumb.south west) {Videoklipp};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Grunnen til at sugekopper fungerer, er trykket fra luften. Lufttrykket tvinger sugekoppen til å holde seg på plass. Desto større flate sugekoppen har, desto større blir de totale kreftene som holder den på plass. Det er derfor sugekopper med større diameter holder bedre enn små sugekopper. Dette betyr at dersom du pumper vekk luften fra et rom, vil alt som er festet med sugekopper slippe taket, fordi det ikke lenger er lufttrykk som holder dem på plass.
 
-Lufttrykket virker fra alle kanter på alt som er omgitt av luft. Siden \SI{1}{atm} er et stort trykk, kan kraften fra lufta bli svært stor, selv på helt vanlige flater. Det ser vi i neste eksempel.
+Lufttrykket virker fra alle kanter på alt som er omgitt av luft. Siden \SI{1}{atm} er et stort trykk, kan kraften fra lufta bli svært stor, selv på helt vanlige flater. I videoklippet (fra NRK) ser du hva som skjer med en campingvogn når lufta inni den pumpes ut. Hvor store krefter det er snakk om, ser vi i neste eksempel.
+\WFclear
 
 \exm{Lufta presser på et bord}{%
 Et bord har en rektangulær bordplate som er \SI{1.2}{\metre} lang og \SI{0.80}{\metre} bred. Lufttrykket er $p_0 = \SI{1.013e5}{\pascal}$.
@@ -367,10 +380,10 @@ Kreftene fra væsken på sidene av søylen er horisontale og like store fra alle
   \draw[->, line width=2.5pt, defscol] (0.45,2.6) -- (0.45,1.75)
       node[midway, right=1pt, font=\small] {$\vec{F}_1$};
   \fill[black] (1.0,1.3) circle (1.5pt);
-  \draw[->, line width=2.5pt, defscol] (1.0,1.3) -- (1.0,0.55)
+  \draw[->, line width=2.5pt, defscol] (1.0,1.3) -- (1.0,0.75)
       node[below, font=\small] {$\vec{G}$};
-  \draw[->, line width=2.5pt, defscol] (1.55,0) -- (1.55,1.7)
-      node[pos=0.75, right=1pt, font=\small] {$\vec{F}_2$};
+  \draw[->, line width=2.5pt, defscol] (1.7,0) -- (1.7,1.7);
+  \node[right, font=\small, defscol] at (2.05,1.3) {$\vec{F}_2$};
   % Trykk-etiketter
   \node[right, font=\small] at (2.0,2.6) {$p_1$};
   \node[right, font=\small] at (2.0,0) {$p_2$};
@@ -407,12 +420,10 @@ Trykket ved bunnen av søylen er altså større enn trykket ved toppen, og forsk
 Legg merke til at arealet $A$ forsvant fra likningen. Hvor bred søylen er, spiller altså ingen rolle. Sammenhengen gjelder derfor for \emph{hvilke som helst} to punkter i en væske i ro, der det ene ligger en høyde $h$ under det andre: trykket i det nederste punktet er alltid $\rho\mathrm{g}h$ større enn trykket i det øverste.
 
 La oss nå legge toppen av søylen i væskeoverflaten. Da blir $h$ dybden under overflaten. Trykkøkningen fra overflaten og ned til dybden $h$ skyldes vekten av væsken over punktet, og den kalles det \emph{hydrostatiske trykket}:
-\graabox{$\displaystyle p_\text{hydrostatisk} = \rho\mathrm{g}h$}
-Det hydrostatiske trykket avhenger bare av dybden $h$, væskens tetthet $\rho$ og tyngdeakselerasjonen $\mathrm{g}$.
+\graabox{$\displaystyle p = \rho\mathrm{g}h$}
+Det hydrostatiske trykket avhenger bare av dybden $h$, væskens tetthet $\rho$ og tyngdeakselerasjonen $\mathrm{g}$. Men over væskeoverflaten er det som regel luft, og som vi så i delkapittelet om lufttrykk, presser lufta også på overflaten. Trykket ved toppen av søylen er da ikke null, men lik trykket $p_0$ ved overflaten. Setter vi $p_1 = p_0$ og $p_2 = p(h)$ inn i $p_2 - p_1 = \rho\mathrm{g}h$, får vi det totale trykket i dybden $h$:
 
-Men over væskeoverflaten er det som regel luft, og som vi så i delkapittelet om lufttrykk, presser lufta også på overflaten. Trykket ved toppen av søylen er da ikke null, men lik trykket $p_0$ ved overflaten. Setter vi $p_1 = p_0$ og $p_2 = p(h)$ inn i $p_2 - p_1 = \rho\mathrm{g}h$, får vi det totale trykket i dybden $h$:
-
-\defn{Trykk i et vertikalt væskeelement}{
+\defn{Trykk i vertikalt væskeelement}{
     Trykket \( p(h) \) i en væske som er i ro er gitt som:
     \begin{align}
         p(h) = p_0 + \rho \mathrm{g} h
@@ -435,7 +446,7 @@ Men over væskeoverflaten er det som regel luft, og som vi så i delkapittelet o
       \node[font=\normalsize] at (1.7,3.75) {$p_0$};
       % Væskeelement
       \fill[oppgcol!40] (1.35,1.35) rectangle (2.05,2.05);
-      \draw[thick, headCol!60!black] (1.35,1.35) rectangle (2.05,2.05);
+      \draw[thick, dotted, headCol!60!black] (1.35,1.35) rectangle (2.05,2.05);
       % Trykkrefter på elementet (halen i flaten, peker innover)
       \draw[->, thick, black!80] (1.70,2.05) -- (1.70,1.80);
       \draw[->, thick, black!80] (1.70,1.35) -- (1.70,1.60);
@@ -557,8 +568,61 @@ Trykket er lavere høyere opp, fordi det er mindre vann over punktet. Derfor kom
 \]
 }
 
+\exm{Et langt rør heises opp av vannet}{%
+Et \SI{12}{\metre} langt rør er tett i den ene enden og åpent i den andre. Røret ligger helt fylt med vann nede i sjøen. En kran heiser røret loddrett opp, med den tette enden først. Den åpne enden er hele tiden under vannflaten. Kranføreren legger merke til at det blir med vann opp i røret (se figuren). Lufttrykket er $p_0 = \SI{1.013e5}{\pascal}$.
+\begin{enumerate}[a)]
+    \item Hvor høy blir vannsøylen i røret, målt fra vannflaten utenfor?
+    \item Over vannsøylen ser det ut som om det er luft. Men hva er det egentlig der?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4, font=\small, >={Stealth[length=6pt,width=5pt]}]
+  % Sjøen
+  \fill[oppgcol!18] (-4,-3) rectangle (5,0);
+  \draw[oppgcol!70!black, thick] (-4,0) -- (5,0);
+  % Vann i røret
+  \fill[oppgcol!35] (0,-2) rectangle (0.8,10.3);
+  % Røret
+  \draw[very thick, black!75] (0,-2) -- (0,12) -- (0.8,12) -- (0.8,-2);
+  % Kranwire og krok
+  \draw[thick, black!70] (0.4,12) -- (0.4,14);
+  \fill[black!70] (0.4,14) circle (0.18);
+  % Spørsmålstegn i rommet over vannet
+  \node[font=\small\bfseries] at (0.4,11.15) {?};
+  % Høyde
+  \draw[<->, thin, gray!40!black] (2.0,0) -- (2.0,10.3)
+      node[midway, right, font=\footnotesize] {$h = {?}$};
+  \draw[gray!50, thin, dashed] (0.8,10.3) -- (2.4,10.3);
+  % Etiketter
+  \node[left, font=\footnotesize] at (-0.2,12) {tett ende};
+  \node[left, font=\footnotesize] at (-0.2,-1.6) {åpen ende};
+  \node[right, font=\footnotesize] at (2.6,-1.5) {sjøen};
+\end{tikzpicture}
+\captionof{figure}{Et rør som er tett i toppen, heises opp av vannet. Vannet blir med opp i røret. Figuren er ikke i målestokk.}
+\label{fig:ror_heises}
+\end{center}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Vi ser på to punkter. Det ene ligger inne i røret, i samme høyde som vannflaten utenfor. Der er trykket $p_0$, fordi punktet ligger på samme nivå som vannflaten utenfor, i den samme sammenhengende væsken (se \textit{Horisontalt væskeelement}). Det andre punktet ligger på toppen av vannsøylen inne i røret. Over vannsøylen er det ikke noe luft som kan presse ned, så trykket der er (nesten) null. Trykkforskjellen mellom bunnen og toppen av vannsøylen er da
+\[
+    p_0 - 0 = \rho\mathrm{g}h
+    \quad\implies\quad
+    h = \frac{p_0}{\rho\mathrm{g}} = \frac{\SI{1.013e5}{\pascal}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{10.33}{\metre} \approx \doubleunderline{\SI{10.3}{\metre}}
+\]
+Det er lufttrykket på vannflaten utenfor røret som holder vannsøylen oppe. Men lufttrykket klarer ikke å presse vannet høyere enn \SI{10.3}{\metre}. Resten av røret blir derfor ikke fylt med vann.
+
+\smallskip\noindent
+\textbf{b)} Det er ikke luft over vannsøylen. Det kom ikke noe luft inn i røret, for den tette enden er i toppen og den åpne enden er under vann. Rommet over vannsøylen er derfor tilnærmet \doubleunderline{vakuum}, altså tomt rom. Helt tomt er det likevel ikke: Litt av vannet fordamper, og rommet fylles med vanndamp med et svært lavt trykk (omtrent \SI{2}{\kilo\pascal} ved romtemperatur). Derfor blir vannsøylen i virkeligheten litt lavere enn \SI{10.3}{\metre}, omtrent \SI{10.1}{\metre}.
+}
+
 \oppgaver{Vanntårn}{k7oppg4}{%
 \input{Oppgaver/k7_oppg04.tex}%
+}
+
+\oppgaver{Vannsøyle og lufttrykk}{k7oppg15}{%
+\input{Oppgaver/k7_oppg15.tex}%
 }
 
 

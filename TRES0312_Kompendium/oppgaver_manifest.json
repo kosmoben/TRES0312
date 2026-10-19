@@ -1008,5 +1008,15 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k7_oppg14.tex",
     "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Vannsøyle og lufttrykk",
+    "label": "k7oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg15.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
   }
 ]
