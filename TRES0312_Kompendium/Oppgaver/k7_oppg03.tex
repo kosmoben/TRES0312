@@ -1,0 +1,31 @@
+%
+En vannkanne er fylt med vann som står i ro. Punkt A ligger inne i kanna, og punkt B ligger i tuten, i samme høyde som A (se figuren).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, font=\small]
+  % Vann (klippes ved vannflaten y = 2.4)
+  \begin{scope}
+    \clip (-1,-1) rectangle (5,2.4);
+    \fill[oppgcol!18] (0,0) rectangle (2.4,3.0);
+    \fill[oppgcol!18] (2.35,0.3) -- (3.75,3.0) -- (3.15,3.0) -- (2.35,1.5) -- cycle;
+  \end{scope}
+  \draw[oppgcol!70!black, thick] (0,2.4) -- (2.4,2.4);
+  \draw[oppgcol!70!black, thick] (2.85,2.4) -- (3.45,2.4);
+  % Kanne
+  \draw[very thick, black!75] (0,3.0) -- (0,0) -- (2.4,0) -- (2.4,0.3) -- (3.75,3.0);
+  \draw[very thick, black!75] (2.4,3.0) -- (2.4,1.5) -- (3.15,3.0);
+  % Hank
+  \draw[very thick, black!75] (0,2.6) .. controls (-0.9,2.6) and (-0.9,0.8) .. (0,0.8);
+  % Punkter
+  \draw[dashed, gray!70] (0.6,1.8) -- (2.85,1.8);
+  \fill[black] (1.0,1.8) circle (2pt) node[below] {A};
+  \fill[black] (2.85,1.8) circle (2pt) node[right=4pt] {B};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[a)]
+    \item En trykkmåler viser at trykket i A er \SI{1.05e5}{\pascal}. Hva er trykket i B? Begrunn svaret.
+    \item Bruk svaret i a) til å forklare hvorfor vannet i tuten står like høyt som vannet i kanna.
+    \item Du vipper kanna slik at vannet renner ut av tuten. Kan du fortsatt være sikker på at trykket i A og B er likt? Begrunn svaret.
+\end{enumerate}
+%

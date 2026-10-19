@@ -868,5 +868,145 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k6_oppg09.tex",
     "sourcefile": "0.0.6_Statikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Hvilket metall?",
+    "label": "k7oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg01.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Tegnestift",
+    "label": "k7oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg02.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Vannkanne",
+    "label": "k7oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg03.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Vanntårn",
+    "label": "k7oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg04.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Billøfter på verkstedet",
+    "label": "k7oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg05.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Hydrauliske bremser",
+    "label": "k7oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg06.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Er kronen av gull?",
+    "label": "k7oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg07.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Trekloss som flyter",
+    "label": "k7oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg08.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Lufta i et klasserom",
+    "label": "k7oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg09.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Dykking i sjøen",
+    "label": "k7oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg10.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Sugerør",
+    "label": "k7oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg11.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Vindu i en ubåt",
+    "label": "k7oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg12.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Heliumballong",
+    "label": "k7oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg13.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 7,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Olje og vann i et U-rør",
+    "label": "k7oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k7_oppg14.tex",
+    "sourcefile": "0.0.7_Fluidynamikk.tex"
   }
 ]

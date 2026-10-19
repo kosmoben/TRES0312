@@ -1,25 +1,37 @@
 % !TEX root = ../main.tex
 \chapter{Fluiddynamikk}
 \label{Chapter:fluiddynamikk}
-\intro{... }
+\intro{Så langt har vi stort sett sett på faste legemer: klosser, biler, bjelker og stiger. Men mye av verden rundt oss består av stoffer som flyter — vann, olje og luft. Slike stoffer kaller vi \emph{fluider}. I dette kapitlet skal vi innføre to nye størrelser, massetetthet og trykk, og se hvordan trykket i en væske øker jo dypere vi kommer. Deretter skal vi se hvordan en liten kraft kan løfte en bil (Pascals lov), og hvorfor noen ting flyter mens andre synker (Arkimedes' lov).}
 
 \spm{}{%
 \item Hva er et fluid, og hva skiller det fra et fast stoff?
 \item Hva bestemmer trykket i en væske?
+\item Hvordan kan en liten kraft løfte en bil?
 \item Hva er oppdrift, og hvorfor flyter noen ting mens andre synker?}
 \newpage
 
 \section{Introduksjon til Fluidfysikk}
 
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/yae_lrRpSNM?si=wnCO-6XRPvQMeHbb}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Fluidmekanikk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+
 Fluidfysikk handler om studiet av fluider, som inkluderer både væsker og gasser. Et fluid er et materiale som kan flyte og tilpasse seg formen til beholderen det er i. I motsetning til faste stoffer, som har en fast form og volum, kan fluider lett endre form og tilpasse seg omgivelsene.\\
 
-Væsker, som vann, har et bestemt volum, men kan flyte og tilpasse seg formen til beholderen sin. De har høyere tetthet enn gasser, og molekylene i en væske er relativt tettpakket, men de kan fortsatt bevege seg rundt hverandre. Gasser, som luft, har verken en fast form eller et fast volum. Gasser vil utvide seg og fylle hele volumet til beholderen de er i, og molekylene i en gass har mye større bevegelsesfrihet enn i en væske.
+Væsker, som vann, har gjerne et bestemt volum, men kan flyte og tilpasse seg formen til beholderen sin. De har høyere tetthet enn gasser, og molekylene i en væske er relativt tettpakket, men de kan fortsatt bevege seg rundt hverandre. Gasser, som luft, har verken en fast form eller et fast volum. Gasser vil utvide seg og fylle hele volumet til beholderen de er i, og molekylene i en gass har mye større bevegelsesfrihet enn i en væske.
 
-\subsection{Massettethet}
+\subsection{Massetetthet}
 
-Massetetthet, også kjent som tetthet, er et mål på hvor mye masse som er pakket inn i et gitt volum av et stoff. Tettheten avgjør om et objekt vil synke eller flyte i et fluid, og den varierer mellom forskjellige materialer. For eksempel har metall en høyere tetthet enn tre, noe som forklarer hvorfor metall synker i vann mens mange tresorter flyter.
+Massetetthet er et mål på hvor mye masse som er pakket inn i et gitt volum av et stoff. Tettheten varierer mellom forskjellige materialer. For eksempel har metall en høyere tetthet enn tre.
+\tanke{}{Skip med skrog laget av metall flyter, enda metall er tyngre enn vann. Kan du forklare hvorfor?}
 
-Tetthet er en viktig egenskap i både fysikk og ingeniørfag fordi den gir informasjon om hvordan ulike materialer oppfører seg når de påvirkes av krefter som tyngdekraft. Enheten for massetetthet er vanligvis kg/m\(^3\) eller g/cm\(^3\).
+Tetthet er en viktig egenskap i både fysikk og ingeniørfag og måles naturligvis i kg/m\(^3\) eller g/cm\(^3\).
 
 \defn{Massetetthet}{
     Massetetthet \( \rho \) kan uttrykkes som:
@@ -38,9 +50,17 @@ Tetthet er en viktig egenskap i både fysikk og ingeniørfag fordi den gir infor
         \hline
         Gull & 19.3 \\
         \hline
+        Kvikksølv & 13.6 \\
+        \hline
         Stål & 7.85 \\
         \hline
+        Aluminium & 2.70 \\
+        \hline
+        Sjøvann & 1.03 \\
+        \hline
         Vann & 1.0 \\
+        \hline
+        Is & 0.92 \\
         \hline
         Luft & 0.0012 \\
         \hline
@@ -51,10 +71,11 @@ Tetthet er en viktig egenskap i både fysikk og ingeniørfag fordi den gir infor
     \label{tab:massetetthet}
 \end{table}
 
-\exm{Massetetthet av 1 liter vann}{
-Hva er massen til 1 liter vann?
+\exm{Massen til en liter vann}{%
+Hva er massen til \SI{1.0}{\litre} vann?
+}
 
-\textit{Løsning:} \\
+\svar{%
 Vi vet at massetetthet \( \rho \) er definert som massen \( m \) per volum \( V \):
 \[
 \rho = \frac{m}{V}
@@ -64,22 +85,22 @@ For å finne massen \( m \), omformer vi formelen slik at
 m = \rho \cdot V
 \]
 
-Siden vi har oppgitt volumet som \( V = 1 \, \text{L} \), konverterer vi dette til kubikkmeter:
+Siden vi har oppgitt volumet som \( V = 1.0 \, \text{L} \), konverterer vi dette til kubikkmeter:
 \[
-1 \, \text{L} = 1 \, \text{dm}^3 = 1 \cdot 10^{-3} \, \text{m}^3
+1.0 \, \text{L} = 1.0 \, \text{dm}^3 = 1.0 \cdot 10^{-3} \, \text{m}^3
 \]
 
-Nå setter vi inn verdiene med \( \rho = 1.0 \cdot 10^3 \, \text{kg/m}^3 \) og \( V = 1 \cdot 10^{-3} \, \text{m}^3 \):
+Nå setter vi inn verdiene med \( \rho = 1.0 \cdot 10^3 \, \text{kg/m}^3 \) (tabell~\ref{tab:massetetthet}) og \( V = 1.0 \cdot 10^{-3} \, \text{m}^3 \):
 \[
-m = (1.0 \cdot 10^3 \, \text{kg/m}^3) \cdot (1 \cdot 10^{-3} \, \text{m}^3)
+m = (1.0 \cdot 10^3 \, \text{kg/m}^3) \cdot (1.0 \cdot 10^{-3} \, \text{m}^3)
+  = \doubleunderline{1.0 \, \text{kg}}
 \]
-\[
-m = \doubleunderline{1.0 \, \text{kg}}
-\]
-
-Massen til 1 liter vann er dermed \( 1.0 \, \text{kg} \).
+Én liter vann har altså en masse på omtrent ett kilogram. Dette er lurt å huske, fordi det gjør det lett å anslå massen til vann i bøtter, flasker og badekar.
 }
 
+\oppgaver{Hvilket metall?}{k7oppg1}{%
+\input{Oppgaver/k7_oppg01.tex}%
+}
 
 
 \subsection{Trykk}
@@ -87,27 +108,61 @@ Massen til 1 liter vann er dermed \( 1.0 \, \text{kg} \).
 Trykk er definert som kraften som virker vinkelrett på en overflate per arealenhet. Det beskriver hvor mye kraft som påføres en bestemt flate, og det oppstår når molekyler i et fluid kolliderer med overflaten. Trykk måles ofte i enheter av pascal (Pa), hvor \( 1 \, \text{Pa} = 1 \, \text{N/m}^2 \).
 
 \defn{Trykk}{
-    Trykket \( p \) i et fluid er gitt ved:
+    Trykket \( p \) er gitt ved:
     \begin{align}
         p = \frac{F}{A}
     \end{align}
     hvor \( F \) er kraften som virker vinkelrett på overflaten, og \( A \) er arealet til overflaten. Trykk måler kraft per arealenhet og uttrykkes vanligvis i pascal (Pa).
-}
+Dette betyr at trykk også kan uttrykkes som \( 1 \, \text{Pa} = 1 \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-2} \).}
 
-Trykk beskriver kraften som virker vinkelrett på en overflate per arealenhet. Det er en skalar størrelse, noe som betyr at trykk kun har en størrelse, men ingen retning som en vektor.\\
+Trykk er en skalar størrelse. Det betyr at trykk kun har en størrelse, men ingen retning. Trykk er altså IKKE en vektor! Det er \emph{kraften} fra trykket som har en retning: den står alltid vinkelrett på flaten den virker på.\\
 
 SI-enheten for trykk er pascal (Pa). En pascal tilsvarer én newton per kvadratmeter:
 \[
 1 \, \text{Pa} = 1 \, \text{N/m}^2
 \]
-En newton (N) er definert som kraften som gir en masse på 1 kg en akselerasjon på 1 m/s\(^2\), altså:
+
+En pascal er et lite trykk. Lufttrykket rundt oss er omtrent \SI{1.013e5}{\pascal}. Dette trykket kalles også \emph{én atmosfære} (1 atm).
+
+Formelen $p = F/A$ forteller oss at den samme kraften kan gi svært ulikt trykk, avhengig av hvor stort areal kraften fordeles over. Det skal vi se i neste eksempel.
+
+\exm{Ski eller støvler?}{%
+En person med masse $m = \SI{72}{\kilo\gram}$ står på snø. Vi antar at trykket er jevnt fordelt over støvelsålene.
+\begin{enumerate}[a)]
+    \item Finn trykket mot snøen når personen står i støvler. Til sammen har de to sålene et areal på $A = \SI{0.050}{\metre\squared}$.
+    \item Personen tar på seg ski. Hver ski er \SI{1.8}{\metre} lang og \SI{7.0}{\centi\metre} bred. Finn trykket mot snøen nå (anta at skiene er uendelig stive, slik at trykket blir jevnt fordelt).
+    \item Forklar hvorfor det er lettere å gå i dyp snø med ski enn med støvler.
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+Kraften som virker vinkelrett på snøen, er tyngden av personen:
 \[
-1 \, \text{N} = 1 \, \text{kg} \cdot \text{m/s}^2
+    F = m\mathrm{g} = \SI{72}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{706.3}{\newton}
 \]
-Dette betyr at trykk også kan uttrykkes som \( 1 \, \text{Pa} = 1 \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-2} \).\\
 
+\smallskip\noindent
+\textbf{a)} Med støvler fordeles kraften over $A = \SI{0.050}{\metre\squared}$:
+\[
+    p = \frac{F}{A} = \frac{\SI{706.3}{\newton}}{\SI{0.050}{\metre\squared}} = \SI{14126}{\pascal} \approx \doubleunderline{\SI{14}{\kilo\pascal}}
+\]
 
-På mikroskopisk nivå kan trykk forstås som resultatet av at gassmolekyler kolliderer med veggene i en beholder. Hvert molekyl utøver en liten kraft på veggen når det treffer den, og summen av alle disse kollisjonene per arealenhet gir opphav til trykket i beholderen.
+\smallskip\noindent
+\textbf{b)} Med ski er arealet
+\[
+    A = 2\cdot \SI{1.8}{\metre}\cdot\SI{0.070}{\metre} = \SI{0.252}{\metre\squared},
+\]
+og trykket blir
+\[
+    p = \frac{\SI{706.3}{\newton}}{\SI{0.252}{\metre\squared}} = \SI{2803}{\pascal} \approx \doubleunderline{\SI{2.8}{\kilo\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Kraften mot snøen er like stor i begge tilfeller. Men med ski fordeles kraften over et omtrent fem ganger så stort areal, og da blir trykket omtrent fem ganger så lite. Snøen blir derfor ikke presset like mye sammen, og man synker mindre ned.
+}
+
+På mikroskopisk nivå er trykk en konsekvens av interaksjoner. Se for deg en beholder med gassmolekyler. Hvert molekyl i gassen utøver en liten kraft på veggen i beholeren hver gang det treffer den, og summen av alle disse kollisjonene per arealenhet gir opphav til trykket i beholderen. Kreftene som påføres veggen skyldes altså impulsoverføringen fra molekylene til veggen. Jo flere molekyler som treffer veggen per tidsenhet, og jo raskere de beveger seg, desto større blir trykket.
 
 \begin{figure}[H]
     \centering
@@ -116,53 +171,172 @@ På mikroskopisk nivå kan trykk forstås som resultatet av at gassmolekyler kol
     \label{fig:Trykk}
     \end{figure}
 
+\oppgaver{Tegnestift}{k7oppg2}{%
+\input{Oppgaver/k7_oppg02.tex}%
+}
+
 
 \section{Trykk i væsker}
 
-Trykk i væsker oppstår som følge av vekten av væsken over et gitt punkt og de kreftene som væsken utøver på overflatene rundt seg. Dette trykket avhenger av væskens tetthet \( \rho \), dybden \( h \), og tyngdeakselerasjonen \( g \). Vi kan analysere væsketrykket ved å bruke to forskjellige elementer: et horisontalt væskeelement og et vertikalt væskeelement.
+Trykk i væsker oppstår som følge av vekten av væsken over et gitt punkt og de kreftene som væsken utøver på overflatene rundt seg. Dette trykket avhenger av væskens tetthet \( \rho \), dybden \( h \), og tyngdeakselerasjonen \( \mathrm{g} \). Vi kan analysere væsketrykket ved å bruke to forskjellige elementer: et horisontalt væskeelement og et vertikalt væskeelement.
 
 \subsection{Horisontalt væskeelement}
 I et horisontalt væskeelement er trykket likt i alle retninger, forutsatt at væsken er i ro. Dette skyldes at væsker alltid fordeler kreftene jevnt i et horisontalt plan når de ikke er i bevegelse. Dersom trykket ikke var likt, ville væsken begynne å strømme fra områder med høyt trykk til områder med lavt trykk. Derfor gjelder:
-\[
-p_1 = p_2 \quad \text{(i et horisontalt væskeelement i ro)}.
-\]
+\begin{tcolorbox}[enhanced, arc=2mm, boxrule=0pt, colframe=black!8!white, colback=black!8!white,
+    top=7pt, bottom=7pt, before skip=6pt, after skip=6pt]
+\centering $\displaystyle p_1 = p_2$
+\end{tcolorbox}
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/wLk8RaTSvn8?si=7_7LX2zwetDUtLVY}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Hydrostatikk1.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+I et horisontalt væskeelement i ro er altså trykket det samme i alle punkter på samme nivå.
 
-Men dersom væsken er i bevegelse, kan trykket variere i horisontal retning. For eksempel, i et rør hvor arealet av røret endrer seg, vil væsken begynne å strømme, og trykket blir forskjellig i de ulike delene av røret. Dette skyldes at væskens hastighet endres når røret innsnevres eller utvides, noe som påvirker trykket. 
+Men merk at dersom væsken er i bevegelse, kan trykket variere i horisontal retning. For eksempel, i et rør hvor arealet av røret endrer seg, vil væsken strømme med ulik fart i de ulike delene av røret, med det resultat at trykket blir forskjellig. Der røret er smalt, strømmer væsken fortere, og der er trykket lavere.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel4:Fluiddynamikk/rør_ulikt_trykk.png} 
-    \caption{Et rør arealet reduseres fra \( A_1 \) til \( A_2 \). Trykket øker fra \( A_1 \) til \( A_2 \) når væsken passerer gjennom røret.}
+    \includegraphics[width=0.8\textwidth]{Images/Kapittel4:Fluiddynamikk/rør_ulikt_trykk.png}
+    \caption{Et rør der arealet reduseres fra \( A_1 \) til \( A_2 \). Væsken strømmer fortere i den smale delen av røret (\(v_2 > v_1\)), og trykket i punkt 2 er lavere enn i punkt 1. Slike scenario er ikke del av pensum i dette faget, hvor vi holder oss til fluidstatikk.}
     \label{fig:roer_variabelt_areal}
 \end{figure}
 
 
-Dersom røret derimot har samme areal langs hele lengden og er horisontalt, vil trykket være det samme langs hele røret, fordi væsken beveger seg med konstant hastighet, og det er ingen høydeforskjell som kan endre trykket.
+I dette faget skal vi ikke studere væsker i bevegelse, slik som i eksemplet over. Vi holder oss til fluid\textit{statikken}.
 
 \defn{Trykk i horisontalt væskeelement}{
     I et horisontalt væskeelement i ro gjelder:
     \begin{align}
         p_1 = p_2
     \end{align}
-    hvor \( p_1 \) og \( p_2 \) er trykkene i forskjellige punkter på samme horisontale nivå. Dersom væsken strømmer og rørets areal endrer seg, vil trykket kunne variere.
+    hvor \( p_1 \) og \( p_2 \) er trykkene i forskjellige punkter på samme horisontale nivå i den samme sammenhengende væsken. Dersom væsken strømmer og rørets areal endrer seg, vil trykket kunne variere.
 }
 
-\textbf{Hydrostatisk trykk:}  
-Når vi beveger oss nedover i væsken, øker trykket på grunn av vekten av væsken over et gitt punkt. Det hydrostatiske trykket \( p \) ved en viss dybde \( h \) kan uttrykkes som:
+Legg merke til at definisjonen krever at punktene ligger i den \emph{samme sammenhengende} væsken. Det betyr at vi må kunne gå fra det ene punktet til det andre uten å forlate væsken. Hvor mye vann som ligger rett over hvert punkt, spiller ingen rolle. Det ser vi i neste eksempel.
 
-\defn{Hydrostatisk Trykk}{
-    Trykket \( p \) i en væske i ro på grunn av vekten av væsken over et punkt er gitt som:
-    \begin{align}
-        p = \rho \mathrm{g} h
-    \end{align}
-    hvor \( \rho \) er væskens tetthet (\( \text{kg/m}^3 \)), \( g \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden (\( \text{m} \)).
+\exm{Trykket i et akvarium}{%
+Et akvarium er fylt med vann som står i ro. På bunnen ligger en stein med en hule, der fiskene kan gjemme seg (se figuren). Punktene A, B og C ligger alle \SI{0.30}{\metre} under vannoverflaten. Punkt C ligger inne i hula, rett under steinen. En trykkmåler viser at trykket i punkt A er \SI{1.04e5}{\pascal}.
+\begin{enumerate}[a)]
+    \item Hva er trykket i punkt B?
+    \item Hva er trykket i punkt C, inne i hula?
+    \item Punkt D ligger litt dypere enn A, B og C. Er trykket i D større eller mindre enn i A?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % Vann
+  \fill[oppgcol!18] (0,0) rectangle (7.0,3.0);
+  % Stein med overheng (hule åpen mot venstre)
+  \fill[gray!45, rounded corners=4pt] (5.0,0) -- (5.0,1.4) -- (3.8,1.4) -- (3.8,1.9) -- (4.5,2.2) -- (6.2,2.25) -- (6.6,1.8) -- (6.6,0) -- cycle;
+  \draw[gray!30!black, rounded corners=4pt] (5.0,0) -- (5.0,1.4) -- (3.8,1.4) -- (3.8,1.9) -- (4.5,2.2) -- (6.2,2.25) -- (6.6,1.8) -- (6.6,0);
+  % Akvarium
+  \draw[very thick, black!70] (0,3.5) -- (0,0) -- (7.0,0) -- (7.0,3.5);
+  \draw[oppgcol!70!black, thick] (0,3.0) -- (7.0,3.0);
+  % Nivålinje
+  \draw[dashed, gray!70] (0,1.0) -- (7.0,1.0);
+  % Punkter
+  \foreach \x/\n in {1.2/A, 2.8/B, 4.4/C}{
+    \fill[black] (\x,1.0) circle (2pt);
+    \node[below] at (\x,1.0) {\n};
+  }
+  \fill[black] (2.0,0.35) circle (2pt);
+  \node[right] at (2.0,0.35) {D};
+  % Dybde
+  \draw[<->, thin, gray!70!black] (-0.4,3.0) -- (-0.4,1.0)
+      node[midway, left, font=\footnotesize] {\SI{0.30}{\metre}};
+  \draw[gray!50, thin] (-0.5,1.0) -- (0,1.0);
+  \draw[gray!50, thin] (-0.5,3.0) -- (0,3.0);
+\end{tikzpicture}
+\captionof{figure}{Et akvarium med en stein med hule. Punktene A, B og C ligger på samme dybde. Figuren er ikke i målestokk.}
+\label{fig:akvarium_hule}
+\end{center}
 }
 
-Det hydrostatiske trykket avhenger bare av dybden \( h \), væskens tetthet \( \rho \), og tyngdeakselerasjonen \( g \), og er uavhengig av væskeelementets horisontale størrelse.
+\svar{%
+\noindent
+\textbf{a)} Punktene A og B ligger på samme horisontale nivå i den samme vannmassen, og vannet er i ro. Da er trykket likt:
+\[
+    p_B = p_A = \doubleunderline{\SI{1.04e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Det ligger mindre vann rett over punkt C enn over punkt A, fordi steinen er i veien. Likevel kan vi gå fra A til C gjennom vannet, inn i hula, uten å forlate vannet. Punktene ligger altså på samme nivå i den samme sammenhengende væsken, og derfor er
+\[
+    p_C = p_A = \doubleunderline{\SI{1.04e5}{\pascal}}
+\]
+Vi kan også forstå dette slik: Hvis trykket i C var lavere enn i A, ville vannet begynt å strømme fra A inn i hula. Men vannet er i ro, så trykket må være likt.
+
+\smallskip\noindent
+\textbf{c)} Punkt D ligger dypere enn A. Da er det mer vann over D som presser nedover, og trykket i D er \doubleunderline{større} enn i A. Hvor mye større, skal vi finne ut i neste delkapittel.
+}
+
+\oppgaver{Vannkanne}{k7oppg3}{%
+\input{Oppgaver/k7_oppg03.tex}%
+}
 
 
 \subsection{Vertikalt væskeelement}
-I et vertikalt væskeelement virker vekten av væsken, som gir opphav til det hydrostatiske trykket. Kreftene som virker på dette væskeelementet inkluderer trykket \( p_1 \) på toppen, trykket \( p_2 \) på bunnen, og tyngdekraften på væskeelementet.
+Vi skal nå finne ut hvordan trykket endrer seg når vi går nedover i en væske. Tenk deg at vi plukker ut en loddrett søyle av væsken, med grunnflate \( A \) og høyde \( h \) (se figur~\ref{fig:vertikalt_element}). Søylen er en del av væsken, og den er i ro. Tre krefter virker på den:
+\begin{itemize}
+    \item Væsken over søylen presser \emph{ned} på toppen med kraften $F_1 = p_1 A$, der $p_1$ er trykket ved toppen.
+    \item Væsken under søylen presser \emph{opp} på bunnen med kraften $F_2 = p_2 A$, der $p_2$ er trykket ved bunnen.
+    \item Tyngdekraften $G = m\mathrm{g}$ virker nedover. Massen til søylen er $m = \rho V = \rho A h$.
+\end{itemize}
+Kreftene fra væsken på sidene av søylen er horisontale og like store fra alle kanter, så de opphever hverandre.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=8pt,width=6pt]}]
+  % Væske rundt
+  \fill[oppgcol!18] (-1.6,-1.0) rectangle (3.6,3.6);
+  \draw[oppgcol!70!black, thick] (-1.6,3.6) -- (3.6,3.6);
+  % Søyle
+  \fill[oppgcol!35] (0,0) rectangle (2.0,2.6);
+  \draw[thick, black!70] (0,0) rectangle (2.0,2.6);
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, defscol] (0.45,2.6) -- (0.45,1.75)
+      node[midway, right=1pt, font=\small] {$\vec{F}_1$};
+  \fill[black] (1.0,1.3) circle (1.5pt);
+  \draw[->, line width=2.5pt, defscol] (1.0,1.3) -- (1.0,0.55)
+      node[below, font=\small] {$\vec{G}$};
+  \draw[->, line width=2.5pt, defscol] (1.55,0) -- (1.55,1.7)
+      node[pos=0.75, right=1pt, font=\small] {$\vec{F}_2$};
+  % Trykk-etiketter
+  \node[right, font=\small] at (2.0,2.6) {$p_1$};
+  \node[right, font=\small] at (2.0,0) {$p_2$};
+  % Mål
+  \draw[<->, thin, gray!70!black] (-0.4,0) -- (-0.4,2.6)
+      node[midway, left, font=\footnotesize] {$h$};
+  \draw[<->, thin, gray!70!black] (0,-0.5) -- (2.0,-0.5)
+      node[midway, below, font=\footnotesize] {grunnflate $A$};
+\end{tikzpicture}
+\captionof{figure}{En loddrett væskesøyle i ro. Væsken over presser ned på toppen ($\vec{F}_1$), væsken under presser opp på bunnen ($\vec{F}_2$), og tyngdekraften $\vec{G}$ virker nedover.}
+\label{fig:vertikalt_element}
+\end{center}
+
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/RpJu9hDTsGU?si=Uph8MEDxbePmV4Zu}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_HydrostatiskTrykk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Siden søylen er i ro, er summen av kreftene null (Newtons 1.\ lov). Med positiv retning oppover får vi:
+\[
+    p_2 A - p_1 A - \rho A h \mathrm{g} = 0
+\]
+Alle leddene inneholder arealet $A$, så vi kan dele på $A$ på begge sider:
+\[
+    p_2 - p_1 = \rho \mathrm{g} h
+\]
+Trykket ved bunnen av søylen er altså større enn trykket ved toppen, og forskjellen er nøyaktig det som trengs for å bære tyngden av væsken i søylen.
+\WFclear
 
 \defn{Trykkdifferanse i vertikalt væskeelement}{
     For et væskeelement i ro gjelder:
@@ -172,36 +346,108 @@ I et vertikalt væskeelement virker vekten av væsken, som gir opphav til det hy
     hvor \( p_2 \) er trykket ved bunnen av elementet, \( p_1 \) er trykket ved toppen, og \( h \) er høyden til væskeelementet.
 }
 
-I en væske som er i ro, vil trykket øke med dybden på grunn av vekten av væsken over punktet. Dette trykket avhenger av væskens tetthet, tyngdeakselerasjonen, og dybden under overflaten. Dersom det også er et ytre trykk \( p_0 \) på væskeoverflaten, kan det totale trykket ved en dybde \( h \) uttrykkes som:
+\textbf{Hydrostatisk trykk:}
+La oss nå legge toppen av søylen i væskeoverflaten. Da er $h$ dybden under overflaten, og leddet $\rho\mathrm{g}h$ er den delen av trykket som skyldes vekten av væsken over punktet. Denne delen kaller vi det \emph{hydrostatiske trykket}.
+
+\defn{Hydrostatisk trykk}{
+    Trykket \( p \) i en væske i ro på grunn av vekten av væsken over et punkt er gitt som:
+    \begin{align}
+        p = \rho \mathrm{g} h
+    \end{align}
+    hvor \( \rho \) er væskens tetthet (\( \text{kg/m}^3 \)), \( \mathrm{g} \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden (\( \text{m} \)).
+}
+
+Det hydrostatiske trykket avhenger bare av dybden \( h \), væskens tetthet \( \rho \), og tyngdeakselerasjonen \( \mathrm{g} \), og er uavhengig av væskeelementets horisontale størrelse.
+
+I en væske som er i ro, vil trykket altså øke med dybden på grunn av vekten av væsken over punktet. Men over væskeoverflaten er det som regel luft, og lufta presser også på overflaten. Dersom det er et ytre trykk \( p_0 \) på væskeoverflaten, kan det totale trykket ved en dybde \( h \) uttrykkes som:
 
 \defn{Trykk i et vertikalt væskeelement}{
     Trykket \( p(h) \) i en væske som er i ro er gitt som:
     \begin{align}
         p(h) = p_0 + \rho \mathrm{g} h
     \end{align}
-    Her er \( p_0 \) det ytre trykket ved væskeoverflaten, \( \rho \) er tettheten til væsken (\( \text{kg/m}^3 \)), \( g \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden i væsken (\( \text{m} \)).
+    Her er \( p_0 \) det ytre trykket ved væskeoverflaten, \( \rho \) er tettheten til væsken (\( \text{kg/m}^3 \)), \( \mathrm{g} \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden i væsken (\( \text{m} \)).
 
 }
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{Images/Kapittel4:Fluiddynamikk/hydro1.png} 
-    \caption{Hydrostatisk trykk \( p \) i en væske, som avhenger av væskens tetthet \( \rho \), tyngdeakselerasjonen \( g \), dybden \( h \), og det ytre trykket \( p_0 \). Trykket øker jevnt med dybden.}
+    \begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=6pt,width=5pt]}]
+      % Beholder og væske
+      \fill[oppgcol!18] (0,0) rectangle (3.4,3.3);
+      \draw[oppgcol!70!black, thick] (0,3.3) -- (3.4,3.3);
+      \draw[very thick, black!75] (0,4.1) -- (0,0) -- (3.4,0) -- (3.4,4.1);
+      % Ytre trykk p0 på overflaten (halen i overflaten)
+      \foreach \x in {0.7,1.7,2.7}{
+        \draw[->, thick, black!75] (\x,3.3) -- (\x,2.85);
+      }
+      \node[font=\normalsize] at (1.7,3.75) {$p_0$};
+      % Væskeelement
+      \fill[oppgcol!40] (1.35,1.35) rectangle (2.05,2.05);
+      \draw[thick, headCol!60!black] (1.35,1.35) rectangle (2.05,2.05);
+      % Trykkrefter på elementet (halen i flaten, peker innover)
+      \draw[->, thick, black!80] (1.70,2.05) -- (1.70,1.80);
+      \draw[->, thick, black!80] (1.70,1.35) -- (1.70,1.60);
+      \draw[->, thick, black!80] (1.35,1.70) -- (1.60,1.70);
+      \draw[->, thick, black!80] (2.05,1.70) -- (1.80,1.70);
+      \node[font=\normalsize] at (2.45,1.25) {$p$};
+      % Dybde h
+      \draw[gray!60, thin] (-0.9,3.3) -- (0,3.3);
+      \draw[gray!60, thin] (-0.9,1.70) -- (1.35,1.70);
+      \draw[<->, thin, black!75] (-0.6,3.3) -- (-0.6,1.70)
+          node[midway, left, font=\normalsize] {$h$};
+      % Formel
+      \node[font=\normalsize] at (1.7,-0.6) {$p = p_0 + \rho\,\mathrm{g}\,h$};
+    \end{tikzpicture}
+    \caption{Hydrostatisk trykk \( p \) i en væske, som avhenger av væskens tetthet \( \rho \), tyngdeakselerasjonen \( \mathrm{g} \), dybden \( h \), og det ytre trykket \( p_0 \). Væsken rundt det lille væskeelementet presser på det fra alle kanter med trykket \( p \). Trykket øker jevnt med dybden.}
     \label{fig:hydro1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Images/Kapittel4:Fluiddynamikk/hydrostatisk2.png} 
-    \caption{Illustrasjon av trykk i en væske som øker med dybden. Ved større dybde er trykket høyere på grunn av vekten av væsken over punktet. Dette demonstreres av vannstrålene som går lenger ut jo dypere det er.}
+    \begin{tikzpicture}[scale=0.62, font=\small, >={Stealth[length=6pt,width=5pt]}]
+      % Parametre: vannflate H=3.0 over bunnen, stativhøyde 3.0, hull i y = 2.5, 1.5, 0.3
+      % Gulv og stativ
+      \fill[gray!20] (-1.0,-3.25) rectangle (9.6,-3.0);
+      \draw[gray!60!black] (-1.0,-3.0) -- (9.6,-3.0);
+      \fill[gray!45] (0.15,-3.0) rectangle (0.45,-0.25);
+      \fill[gray!45] (1.95,-3.0) rectangle (2.25,-0.25);
+      \fill[gray!55] (-0.15,-0.3) rectangle (2.55,0.0);
+      % Beholder: vann
+      \fill[oppgcol!30] (0,0) -- (0,3.0) arc (180:360:1.2 and 0.3) -- (2.4,0) arc (360:180:1.2 and 0.3) -- cycle;
+      \fill[oppgcol!45] (1.2,3.0) ellipse (1.2 and 0.3);
+      \draw[oppgcol!70!black] (1.2,3.0) ellipse (1.2 and 0.3);
+      % Beholder: kontur
+      \draw[thick, black!75] (1.2,3.6) ellipse (1.2 and 0.3);
+      \draw[thick, black!75] (0,3.6) -- (0,0) arc (180:360:1.2 and 0.3) -- (2.4,3.6);
+      % Vannstråler: y = y_h - (x-2.4)^2/(4 d), d = 3.0 - y_h
+      \draw[oppgcol!80!black, line width=2.2pt, domain=0:3.32, samples=40]
+          plot ({2.4+\x},{2.5-\x*\x/(4*0.5)});
+      \draw[oppgcol!80!black, line width=2.2pt, domain=0:5.20, samples=40]
+          plot ({2.4+\x},{1.5-\x*\x/(4*1.5)});
+      \draw[oppgcol!80!black, line width=2.2pt, domain=0:5.97, samples=40]
+          plot ({2.4+\x},{0.3-\x*\x/(4*2.7)});
+      \foreach \y in {2.5,1.5,0.3}{ \fill[black] (2.4,\y) circle (2.5pt); }
+      % Etiketter
+      \draw[thin, black!70] (2.45,2.55) -- (3.6,3.4) node[right] {Lavt trykk};
+      \draw[thin, black!70] (2.45,0.25) -- (2.95,-0.85) node[below right=-2pt, align=left] {Høyt\\trykk};
+      % Dybde
+      \draw[->, thick, black!75] (-0.7,3.0) -- (-0.7,0.1);
+      \node[left] at (-0.8,1.55) {Dybde};
+    \end{tikzpicture}
+    \caption{Illustrasjon av trykk i en væske som øker med dybden. Ved større dybde er trykket høyere på grunn av vekten av væsken over punktet. Derfor strømmer vannet ut med større fart jo dypere hullet ligger. (Hvor langt strålen når, avhenger også av hvor høyt over gulvet hullet sitter.)}
     \label{fig:hydro2}
 \end{figure}
 
-\exm{Beregning av trykk ved ulike dybder}{
-En dykker er under vann med tetthet \( \rho = 1000 \, \text{kg/m}^3 \), og det atmosfæriske trykket ved overflaten er \( p_0 = 101325 \, \text{Pa} \). Hva er det totale trykket på dykkeren ved dybdene \( h = 2.0 \, \text{m} \), \( h = 5.0 \, \text{m} \), og \( h = 10 \, \text{m} \)? \\
+\tanke{}{%
+Tre beholdere med ulik form — en smal sylinder, en vid bolle og en kjegle med spissen opp — fylles med vann til samme høyde. Er trykket i bunnen størst i beholderen med mest vann?}
 
-\textit{Metode:}
-Bruk formelen for trykk i væsken:
+\exm{Beregning av trykk ved ulike dybder}{%
+En dykker er under vann med tetthet \( \rho = 1000 \, \text{kg/m}^3 \), og det atmosfæriske trykket ved overflaten er \( p_0 = 101325 \, \text{Pa} \). Hva er det totale trykket på dykkeren ved dybdene \( h = 2.0 \, \text{m} \), \( h = 5.0 \, \text{m} \), og \( h = 10 \, \text{m} \)?
+}
+
+\svar{%
+Vi bruker formelen for trykk i væsken:
 \[
 p(h) = p_0 + \rho \mathrm{g} h
 \]
@@ -209,12 +455,12 @@ hvor \( p_0 = 101325 \, \text{Pa} \), \( \rho = 1000 \, \text{kg/m}^3 \), og \( 
 
 \textbf{Ved \( h = 2.0 \, \text{m} \):}
 \[
-p(2) = 101325 + 1000 \cdot 9.81 \cdot 2 = 101325 + 19620 = 120945 \, \text{Pa} \approx \doubleunderline{1.2 \cdot 10^5 \, \text{Pa}}.
+p(2.0) = 101325 + 1000 \cdot 9.81 \cdot 2.0 = 101325 + 19620 = 120945 \, \text{Pa} \approx \doubleunderline{1.2 \cdot 10^5 \, \text{Pa}}.
 \]
 
 \textbf{Ved \( h = 5.0 \, \text{m} \):}
 \[
-p(5) = 101325 + 1000 \cdot 9.81 \cdot 5 = 101325 + 49050 = 150375 \, \text{Pa} \approx \doubleunderline{1.5 \cdot 10^5 \, \text{Pa}}.
+p(5.0) = 101325 + 1000 \cdot 9.81 \cdot 5.0 = 101325 + 49050 = 150375 \, \text{Pa} \approx \doubleunderline{1.5 \cdot 10^5 \, \text{Pa}}.
 \]
 
 \textbf{Ved \( h = 10 \, \text{m} \):}
@@ -222,26 +468,141 @@ p(5) = 101325 + 1000 \cdot 9.81 \cdot 5 = 101325 + 49050 = 150375 \, \text{Pa} \
 p(10) = 101325 + 1000 \cdot 9.81 \cdot 10 = 101325 + 98100 = 199425 \, \text{Pa} \approx \doubleunderline{2.0 \cdot 10^5 \, \text{Pa}}.
 \]
 
-\textit{Svar:}
-Trykket på dykkeren er omtrent \( 1.2 \cdot 10^5 \, \text{Pa} \) ved \( h = 2.0 \, \text{m} \), \( 1.5 \cdot 10^5 \, \text{Pa} \) ved \( h = 5.0 \, \text{m} \), og \( 2.0 \cdot 10^5 \, \text{Pa} \) ved \( h = 10 \, \text{m} \).
+Legg merke til at trykket ved \SI{10}{\metre} dybde er omtrent dobbelt så stort som ved overflaten. For hver tiende meter nedover i vann øker trykket med omtrent én atmosfære.
 }
 
+I forrige eksempel regnet vi ut trykket målt fra overflaten. Men ofte kjenner vi trykket i ett punkt inne i væsken og vil finne trykket i et annet punkt høyere opp eller lenger ned. Da bruker vi trykkdifferansen direkte.
+
+\exm{Vannrør i et høyhus}{%
+Et vannrør går loddrett fra kjelleren og opp til toppen av et høyhus. Kranene er stengt, så vannet i røret står i ro. I kjelleren viser en trykkmåler at trykket i røret er \SI{4.5e5}{\pascal}.
+\begin{enumerate}[a)]
+    \item Finn trykket i røret i en etasje som ligger \SI{18}{\metre} over kjelleren.
+    \item Tenk deg at røret var åpent i toppen, slik at trykket på vannoverflaten i røret var lufttrykket $p_0 = \SI{1.013e5}{\pascal}$. Hvor høyt over kjelleren ville vannet da stått i røret?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Vi kaller trykket i kjelleren $p_2$ (bunnen) og trykket \SI{18}{\metre} høyere opp $p_1$ (toppen). Vannet står i ro, så
+\[
+    p_2 - p_1 = \rho\mathrm{g}h
+    \quad\implies\quad
+    p_1 = p_2 - \rho\mathrm{g}h
+\]
+\[
+    p_1 = \SI{4.5e5}{\pascal} - \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{18}{\metre}
+\]
+\[
+    p_1 = \SI{4.5e5}{\pascal} - \SI{1.77e5}{\pascal} = \SI{2.73e5}{\pascal} \approx \doubleunderline{\SI{2.7e5}{\pascal}}
+\]
+Trykket er lavere høyere opp, fordi det er mindre vann over punktet. Derfor kommer det ofte mindre vann ut av kranen i de øverste etasjene.
+
+\smallskip\noindent
+\textbf{b)} Nå er trykket på toppen av vannsøylen $p_1 = p_0$, og vi søker høyden $h$:
+\[
+    h = \frac{p_2 - p_0}{\rho\mathrm{g}}
+      = \frac{\SI{4.5e5}{\pascal} - \SI{1.013e5}{\pascal}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}}
+      = \SI{35.5}{\metre} \approx \doubleunderline{\SI{36}{\metre}}
+\]
+}
+
+\oppgaver{Vanntårn}{k7oppg4}{%
+\input{Oppgaver/k7_oppg04.tex}%
+}
+
+
+\Needspace{12\baselineskip}
 \section{Pascals lov}
 
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/x221Q0IpBBg?si=fvDQgEAswbZcFDk8}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_PascalsLov.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Når vi utøver et ytre trykk \( \Delta p \) på en væske som er i ro, vil trykket i hele væsken øke med samme beløp \( \Delta p \). Dette betyr at trykkøkningen er lik i alle retninger, uavhengig av væskens høyde. Selv om trykkøkningen er konstant, vil det totale trykket fortsatt variere med høyden på grunn av det hydrostatiske trykket.
+\WFclear
 
 \tips{Viktige punkter om Pascals lov}{
-- Trykkøkningen \( \Delta p \) forplanter seg likt i hele væsken.  
-- Det totale trykket i væsken kan uttrykkes som summen av trykkøkningen og det hydrostatiske trykket.  
+- Trykkøkningen \( \Delta p \) forplanter seg likt i hele væsken.
+- Det totale trykket i væsken kan uttrykkes som summen av trykkøkningen og det hydrostatiske trykket.
 - Pascals lov danner grunnlaget for hydrauliske systemer, der små krefter kan forsterkes ved å bruke større arealer.
 }
+
+\exm{Lodd på et stempel}{%
+En sylinderformet beholder er fylt med vann og lukket med et tett stempel som kan gli uten friksjon. Stempelet har areal $A = \SI{0.010}{\metre\squared}$, og vi ser bort fra massen til stempelet. Over stempelet er det luft med trykket $p_0 = \SI{1.013e5}{\pascal}$. Vi legger et lodd med masse $m = \SI{20}{\kilo\gram}$ på stempelet.
+\begin{enumerate}[a)]
+    \item Hvor mye øker trykket i vannet like under stempelet?
+    \item Hvor mye øker trykket i bunnen av beholderen, \SI{0.50}{\metre} under stempelet?
+    \item Hva er det totale trykket i bunnen av beholderen?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=8pt,width=6pt]}]
+  % Vann
+  \fill[oppgcol!18] (0,0) rectangle (2.0,2.5);
+  % Stempel
+  \fill[gray!55] (0,2.5) rectangle (2.0,2.75);
+  \draw[black!70] (0,2.5) rectangle (2.0,2.75);
+  % Lodd
+  \fill[black!65] (0.6,2.75) rectangle (1.4,3.35);
+  \node[white, font=\footnotesize] at (1.0,3.05) {\SI{20}{\kilo\gram}};
+  % Beholder
+  \draw[very thick, black!75] (0,3.6) -- (0,0) -- (2.0,0) -- (2.0,3.6);
+  % Mål
+  \draw[<->, thin, gray!70!black] (2.4,2.5) -- (2.4,0)
+      node[midway, right, font=\footnotesize] {\SI{0.50}{\metre}};
+  \node[font=\footnotesize, right] at (2.05,2.9) {stempel, $A$};
+\end{tikzpicture}
+\captionof{figure}{Et lodd ligger på et stempel som stenger inne vann i en beholder.}
+\label{fig:lodd_stempel}
+\end{center}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Loddet presser på stempelet med en kraft lik tyngden sin, $F = m\mathrm{g}$. Denne kraften fordeles over stempelets areal, og trykkøkningen like under stempelet er
+\[
+    \Delta p = \frac{m\mathrm{g}}{A} = \frac{\SI{20}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{\SI{0.010}{\metre\squared}} = \SI{19620}{\pascal} \approx \doubleunderline{\SI{2.0e4}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Etter Pascals lov forplanter trykkøkningen seg uforminsket til hele væsken. Trykket i bunnen øker derfor med akkurat like mye:
+\[
+    \Delta p_\text{bunn} = \Delta p \approx \doubleunderline{\SI{2.0e4}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Det totale trykket i bunnen er summen av lufttrykket, trykkøkningen fra loddet og det hydrostatiske trykket fra vannet:
+\[
+    p = p_0 + \Delta p + \rho\mathrm{g}h = \SI{1.013e5}{\pascal} + \SI{19620}{\pascal} + \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{0.50}{\metre}
+\]
+\[
+    p = \SI{1.013e5}{\pascal} + \SI{1.96e4}{\pascal} + \SI{4.9e3}{\pascal} = \SI{1.26e5}{\pascal} \approx \doubleunderline{\SI{1.3e5}{\pascal}}
+\]
+}
+
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/MNDUv5L4Um8?si=YGa-eRKFr7cpIgZh}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_HydrauliskJekk.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Pascals lov blir særlig nyttig når to stempler med ulikt areal er koblet sammen gjennom den samme væsken. Trykkøkningen er den samme ved begge stemplene, men kraften er trykk ganget med areal. Da blir kraften størst på det største stempelet. Dette er prinsippet bak den hydrauliske jekken.
+\WFclear
 
 \defn{Pascals lov i hydrauliske systemer}{
     Når trykk påføres en væske i ro, gjelder følgende forhold for krefter og arealer i et hydraulisk system:
     \begin{align}
         \frac{F_1}{A_1} = \frac{F_2}{A_2},
     \end{align}
-    hvor \( F_1 \) og \( F_2 \) er kreftene på stemplene, og \( A_1 \) og \( A_2 \) er arealene deres.  
+    hvor \( F_1 \) og \( F_2 \) er kreftene på stemplene, og \( A_1 \) og \( A_2 \) er arealene deres.
     \textit{Utledning:} Trykkøkningen \( \Delta p \) i væsken er lik for begge stemplene:
     \[
     \Delta p = \frac{F_1}{A_1} = \frac{F_2}{A_2}.
@@ -257,7 +618,7 @@ Når vi utøver et ytre trykk \( \Delta p \) på en væske som er i ro, vil tryk
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel4:Fluiddynamikk/pascals lov.png} 
+    \includegraphics[width=0.8\textwidth]{Images/Kapittel4:Fluiddynamikk/pascals lov.png}
     \caption{Pascals lov i et hydraulisk system. En liten kraft \( F_1 \) påføres et lite stempel med areal \( A_1 \), og skaper et trykk som forplanter seg gjennom væsken. Dette trykket løfter en bil ved å bruke et større stempel med areal \( A_2 \), som resulterer i en større kraft \( F_2 \).}
     \label{fig:pascalslov}
 \end{figure}
@@ -269,38 +630,36 @@ En hydraulisk jekk har to stempler. Det lille stempelet har areal
 $A_1 = \SI{5.0}{\centi\metre\squared} = \SI{5.0e-4}{\metre\squared}$
 og det store stempelet har areal
 $A_2 = \SI{200}{\centi\metre\squared} = \SI{2.0e-2}{\metre\squared}$.
-En kraft $F_1 = \SI{50}{\newton}$ påføres det lille stempelet.
+En kraft $F_1 = \SI{50}{\newton}$ påføres det lille stempelet. Hva er kraften $F_2$ fra væsken på det store stempelet?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.95, >={Stealth[length=5pt,width=4pt]}]
-  % Left cylinder (small)
-  \draw[thick] (0,0) rectangle (0.7, 1.5);
-  % Right cylinder (large)
-  \draw[thick] (1.5,0) rectangle (4.5, 1.5);
-  % Connecting base
-  \draw[thick] (0,0) -- (4.5,0);
-  % Fluid fill
-  \fill[defscol!15] (0.05,0.05) rectangle (0.65,0.7);
-  \fill[defscol!15] (1.55,0.05) rectangle (4.45,0.7);
-  % Left piston
-  \fill[gray!50] (0.05,0.65) rectangle (0.65,0.85);
-  % Right piston
-  \fill[gray!50] (1.55,0.65) rectangle (4.45,0.85);
-  % Force arrow left
-  \draw[->, very thick, red!70!black] (0.35, 2.0) -- (0.35, 0.87)
-      node[midway, right, font=\footnotesize] {$F_1$};
-  % Force arrow right (up, larger)
-  \draw[->, very thick, headCol] (3.0, 0.87) -- (3.0, 2.5)
-      node[midway, right, font=\footnotesize] {$F_2$};
-  % Area labels
-  \node[font=\footnotesize, gray!60!black] at (0.35, -0.3) {$A_1$};
-  \node[font=\footnotesize, gray!60!black] at (3.0, -0.3) {$A_2$};
+\begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=8pt,width=6pt]}]
+  % Væske
+  \fill[oppgcol!18] (0,0) -- (4.6,0) -- (4.6,1.2) -- (1.6,1.2) -- (1.6,0.4) -- (0.6,0.4) -- (0.6,1.2) -- (0,1.2) -- cycle;
+  % Stempler
+  \fill[gray!55] (0,1.2) rectangle (0.6,1.4);
+  \draw[black!70] (0,1.2) rectangle (0.6,1.4);
+  \fill[gray!55] (1.6,1.2) rectangle (4.6,1.4);
+  \draw[black!70] (1.6,1.2) rectangle (4.6,1.4);
+  % Sylindre
+  \draw[very thick, black!75] (0,2.4) -- (0,0) -- (4.6,0) -- (4.6,2.4);
+  \draw[very thick, black!75] (0.6,2.4) -- (0.6,0.4) -- (1.6,0.4) -- (1.6,2.4);
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, red!70!black] (0.3,1.4) -- (0.3,0.55);
+  \node[font=\small] at (0.3,1.9) {$\vec{F}_1$};
+  \draw[->, line width=2.5pt, defscol] (3.1,1.2) -- (3.1,2.9)
+      node[right=2pt, font=\small] {$\vec{F}_2$};
+  % Arealer
+  \node[font=\footnotesize, gray!40!black] at (0.3,2.65) {$A_1$};
+  \node[font=\footnotesize, gray!40!black] at (4.1,1.75) {$A_2$};
 \end{tikzpicture}
+\captionof{figure}{Hydraulisk jekk. Kraften $\vec{F}_1$ virker på det lille stempelet, og væsken presser opp på det store stempelet med kraften $\vec{F}_2$. Figuren er ikke i målestokk.}
+\label{fig:hydraulisk_jekk}
 \end{center}
+}
 
-\noindent Hva er kraften $F_2$ som løfter på det store stempelet?
-
-Fra Pascals lov er trykket likt på begge sider:
+\svar{%
+Fra Pascals lov er trykkøkningen den samme ved begge stemplene:
 \[
   \frac{F_1}{A_1} = \frac{F_2}{A_2}
   \implies
@@ -311,6 +670,15 @@ Fra Pascals lov er trykket likt på begge sider:
 Med et lite stempel kan vi altså løfte en last som er 40 ganger så tung — det er prinsippet bak bilheis og hydrauliske bremser.
 }
 
+\oppgaver{Billøfter på verkstedet}{k7oppg5}{%
+\input{Oppgaver/k7_oppg05.tex}%
+}
+
+\oppgaver{Hydrauliske bremser}{k7oppg6}{%
+\input{Oppgaver/k7_oppg06.tex}%
+}
+
+
 \section{Oppdrift og Arkimedes' lov}
 
 Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes forskjellen i trykk mellom væskens underside og overside av legemet. Oppdriftskraften \( O \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
@@ -318,67 +686,131 @@ Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. De
 \subsection{Oppdriftskraft}
 Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir en netto oppdriftskraft \( O \), som kan uttrykkes som:
 \[
-O = \rho_B \mathrm{g} V_q
+O = \rho_v \mathrm{g} V_\text{f}
 \]
-hvor \( \rho_B \) er tettheten til væsken, \( g \) er tyngdeakselerasjonen, og \( V_q \) er volumet av væsken som fortrenges av legemet.
+hvor \( \rho_v \) er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Det fortrengte volumet er den delen av legemets volum som er under væskeoverflaten. Er legemet helt under vann, er $V_\text{f}$ lik hele volumet til legemet.
 
 \defn{Oppdriftskraft}{
     Oppdriftskraften \( O \) på et legeme omgitt av en væske i ro kan uttrykkes som:
     \begin{align}
-        O = \rho_B \mathrm{g} V_q
+        O = \rho_v \mathrm{g} V_\text{f}
     \end{align}
-    Her er \( \rho_B \) tettheten til væsken, \( g \) er tyngdeakselerasjonen, og \( V_q \) er volumet av væsken som fortrenges av legemet.
+    Her er \( \rho_v \) tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet.
 }
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Images/Kapittel4:Fluiddynamikk/oppdrift_h fortrengt.png} 
-    \caption{Oppdrift \( F_b \), hvor oppdriftskraften beregnes ut fra volumet av væsken som fortrenges. Det fortrengte volumet er gitt som \( V_q = h_{\text{sub}} \cdot A \), der \( h_{\text{sub}} \) er dybden av den nedsenkede delen av legemet, og \( A \) er arealet av bunnflaten.}
+    \includegraphics[width=0.5\textwidth]{Images/Kapittel4:Fluiddynamikk/oppdrift_h fortrengt.png}
+    \caption{Oppdriftskraften (merket \( F_b \) i figuren) beregnes ut fra volumet av væsken som fortrenges. Det fortrengte volumet er gitt som \( V_\text{f} = h_{\text{sub}} \cdot A \), der \( h_{\text{sub}} \) er dybden av den nedsenkede delen av legemet, og \( A \) er arealet av bunnflaten.}
     \label{fig:h-fortrengt}
 \end{figure}
+
+\exm{Stein i vann}{%
+Du holder en stein i en snor, slik at steinen henger i ro helt under vann. Steinen har masse $m = \SI{5.4}{\kilo\gram}$ og volum $V = \SI{2.0}{\litre}$.
+\begin{enumerate}[a)]
+    \item Tegn kreftene som virker på steinen.
+    \item Finn oppdriftskraften på steinen.
+    \item Finn snorkraften $S$. Sammenlign med snorkraften som trengs for å holde steinen i lufta.
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Tre krefter virker på steinen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{O}$ oppover og snorkraften $\vec{S}$ oppover.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=8pt,width=6pt]}]
+  \fill[oppgcol!18] (-2.0,-2.2) rectangle (2.0,1.9);
+  \draw[oppgcol!70!black, thick] (-2.0,1.9) -- (2.0,1.9);
+  \draw[black!70, thick] (0,0.7) -- (0,2.6);
+  \fill[gray!55] (0,0) ellipse (0.95 and 0.7);
+  \draw[gray!30!black] (0,0) ellipse (0.95 and 0.7);
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, defscol] (0,0.7) -- (0,1.75)
+      node[right=2pt, font=\small] {$\vec{S}$};
+  \fill[black] (0.3,0) circle (1.5pt);
+  \draw[->, line width=2.5pt, defscol] (0.3,0) -- (0.3,-1.75)
+      node[right=2pt, font=\small] {$\vec{G}$};
+  \fill[black] (-0.3,0) circle (1.5pt);
+  \draw[->, line width=2.5pt, defscol] (-0.3,0) -- (-0.3,0.65)
+      node[left=2pt, font=\small] {$\vec{O}$};
+\end{tikzpicture}
+\captionof{figure}{Kreftene som virker på steinen. Pilene for $\vec{G}$ og $\vec{O}$ er tegnet litt til side for hverandre, slik at begge synes.}
+\label{fig:stein_i_vann}
+\end{center}
+
+\noindent
+\textbf{b)} Steinen er helt under vann, så det fortrengte volumet er hele steinens volum, $V_\text{f} = \SI{2.0}{\litre} = \SI{2.0e-3}{\metre\cubed}$:
+\[
+    O = \rho_v\mathrm{g}V_\text{f} = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton} \approx \doubleunderline{\SI{20}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Steinen er i ro, så $\sum F = 0$. Med positiv retning oppover:
+\[
+    S + O - G = 0 \quad\implies\quad S = G - O
+\]
+Tyngdekraften er $G = m\mathrm{g} = \SI{5.4}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{53.0}{\newton}$, så
+\[
+    S = \SI{53.0}{\newton} - \SI{19.6}{\newton} = \SI{33.4}{\newton} \approx \doubleunderline{\SI{33}{\newton}}
+\]
+I lufta må snora holde hele tyngden, \SI{53}{\newton} (oppdriften i luft er så liten at vi kan se bort fra den). Under vann trenger snora bare å holde \SI{33}{\newton}. Derfor føles steiner lettere når vi løfter dem under vann.
+}
 
 
 \subsection{Utledning fra trykkdifferanse}
 
 Oppdriftskraften kan utledes direkte fra det hydrostatiske trykket.
-Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket til dybde $h_1$ (topp) og $h_2 = h_1 + h_s$ (bunn):
+Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket slik at toppen er på dybde $h_1$ og bunnen på dybde $h_2 = h_1 + h_s$:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.90, >={Stealth[length=5pt,width=4pt]}]
-  % Water surface
-  \draw[dashed, gray!60] (-1.2, 2.5) -- (2.8, 2.5) node[right, font=\footnotesize, gray!60] {overflate};
-  % Body
-  \fill[headCol!20] (0.4, 0.6) rectangle (2.0, 1.9);
-  \draw[thick] (0.4, 0.6) rectangle (2.0, 1.9);
-  % Depth annotations
-  \draw[<->, thin, gray!70] (-0.8, 2.5) -- (-0.8, 1.9)
+\begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=7pt,width=5pt]}]
+  % Væske
+  \fill[oppgcol!18] (-1.6,-0.4) rectangle (3.4,2.5);
+  \draw[oppgcol!70!black, thick] (-1.6,2.5) -- (3.4,2.5) node[right, font=\footnotesize, black!70] {overflate};
+  % Legeme
+  \fill[headCol!20] (0.2, 0.6) rectangle (2.4, 1.9);
+  \draw[thick] (0.2, 0.6) rectangle (2.4, 1.9);
+  % Dybder
+  \draw[<->, thin, gray!40!black] (-0.4, 2.5) -- (-0.4, 1.9)
       node[midway, left, font=\footnotesize] {$h_1$};
-  \draw[<->, thin, gray!70] (-0.8, 2.5) -- (-0.8, 0.6)
-      node[midway, right, font=\footnotesize] {$h_2$};
-  % Force arrows
-  \draw[->, very thick, defscol] (1.2, 1.9) -- (1.2, 2.6)
-      node[above, font=\footnotesize] {$F_{\text{topp}}$};
-  \draw[->, very thick, headCol] (1.2, 0.6) -- (1.2, -0.1)
-      node[below, font=\footnotesize] {$F_{\text{bunn}}$};
-  % Area label
-  \node[font=\footnotesize] at (1.2, 1.25) {$A$};
+  \draw[<->, thin, gray!40!black] (-1.1, 2.5) -- (-1.1, 0.6)
+      node[midway, left, font=\footnotesize] {$h_2$};
+  \draw[gray!50, thin, dashed] (-1.2,1.9) -- (0.2,1.9);
+  \draw[gray!50, thin, dashed] (-1.2,0.6) -- (0.2,0.6);
+  \draw[<->, thin, gray!40!black] (2.7, 1.9) -- (2.7, 0.6)
+      node[midway, right, font=\footnotesize] {$h_s$};
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, defscol] (0.7, 1.9) -- (0.7, 1.3)
+      node[midway, right=2pt, font=\footnotesize] {$\vec{F}_{\text{topp}}$};
+  \draw[->, line width=2.5pt, defscol] (1.9, 0.6) -- (1.9, 1.65)
+      node[pos=0.35, left=2pt, font=\footnotesize] {$\vec{F}_{\text{bunn}}$};
 \end{tikzpicture}
+\captionof{figure}{Trykkreftene på toppen og bunnen av et legeme under vann. Kraften på bunnen er større enn kraften på toppen, fordi trykket er større lenger ned.}
+\label{fig:oppdrift_utledning}
 \end{center}
 
-Trykkkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
-og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$.
+Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
+og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$. (Lufttrykket $p_0$ på overflaten øker begge trykkene like mye, så det faller bort når vi trekker dem fra hverandre.) Trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
 Nettokraften oppover er:
 \[
   O = F_{\text{bunn}} - F_{\text{topp}}
     = \rho_v \mathrm{g} A (h_2 - h_1)
     = \rho_v \mathrm{g} A h_s
-    = \rho_v \mathrm{g} V_{\text{fortrengt}}
+    = \rho_v \mathrm{g} V_\text{f}
 \]
 Dette er Arkimedes' lov, utledet fra hydrostatikk.
 
+\subsection{Gravitasjonskraft på et legeme}
+Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( \mathrm{g} \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:
+\[
+G = m \mathrm{g} = \rho_L V \mathrm{g}.
+\]
+Nå har vi både oppdriftskraften og tyngdekraften uttrykt ved tettheter og volum. Det gjør det lett å sammenligne dem.
+
 \subsection{Flyter eller synker?}
 
-Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ i en væske med tetthet $\rho_v$ er:
+Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ helt nedsenket i en væske med tetthet $\rho_v$ er:
 \[
   F_{\text{netto}} = O - G = \rho_v \mathrm{g} V - \rho_L \mathrm{g} V = (\rho_v - \rho_L)\,\mathrm{g} V
 \]
@@ -392,17 +824,33 @@ Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ i en væske med tet
 \end{itemize}
 \end{tcolorbox}
 
+Når et legeme flyter i ro på overflaten, er bare en del av det under væsken. Da er oppdriftskraften akkurat like stor som tyngdekraften, $O = G$.
+
 \merk{Stål flyter ikke i vann — men et stålskip gjør det!}{%
 Stål har tetthet $\rho \approx \SI{7850}{\kilo\gram\per\metre\cubed}$, langt høyere enn vann.
 Likevel flyter et skip laget av stål, fordi \emph{skipet som helhet} — stål pluss luft inni —
 har en gjennomsnittlig tetthet \emph{lavere} enn vann.
 Det er den totale massen delt på det totale volumet som avgjør.}
 
-\subsection{Gravitasjonskraft på et legeme}
-Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( g \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:
+\exm{Toppen av isfjellet}{%
+Et isfjell flyter i sjøen. Hvor stor andel av isfjellet ligger under vann? Bruk tettheter fra tabell~\ref{tab:massetetthet}.
+}
+
+\svar{%
+Isfjellet flyter i ro, så oppdriftskraften er like stor som tyngdekraften:
 \[
-G = m \mathrm{g} = \rho_L V \mathrm{g}.
+    O = G
 \]
+La $V$ være hele volumet til isfjellet og $V_\text{f}$ volumet som er under vann. Vi setter inn uttrykkene for $O$ og $G$:
+\[
+    \rho_\text{sjø}\,\mathrm{g}\,V_\text{f} = \rho_\text{is}\,\mathrm{g}\,V
+\]
+Vi deler på $\mathrm{g}$ og på $V$ på begge sider og får
+\[
+    \frac{V_\text{f}}{V} = \frac{\rho_\text{is}}{\rho_\text{sjø}} = \frac{\SI{0.92e3}{\kilo\gram\per\metre\cubed}}{\SI{1.03e3}{\kilo\gram\per\metre\cubed}} = 0.893 \approx \doubleunderline{\SI{89}{\percent}}
+\]
+Omtrent ni tideler av isfjellet ligger altså under vann, og bare én tidel stikker opp. Det er derfor vi sier at noe bare er «toppen av isfjellet».
+}
 
 \subsection{Arkimedes' lov}
 Arkimedes' lov gir en generell beskrivelse av oppdriftskraften og sier:
@@ -411,51 +859,76 @@ Arkimedes' lov gir en generell beskrivelse av oppdriftskraften og sier:
 \defn{Arkimedes' lov}{
     Oppdriftskraften \( O \) på et legeme i væske i ro kan skrives som:
     \begin{align}
-        O = G_B
+        O = G_\text{f}
     \end{align}
-    hvor \( G_B = \rho_B g V_q \) er vekten av den fortrengte væsken.
+    hvor \( G_\text{f} = \rho_v \mathrm{g} V_\text{f} \) er vekten av den fortrengte væsken.
 }
 
-\exm{Oppdrift på en båt}{
+\exm{Oppdrift på en båt}{%
 En båt har et volum på \( V = 9.0 \, \text{m}^3 \), og \( 12\% \) av dette volumet er under vann.
+\begin{enumerate}[a)]
+    \item Hva er oppdriftskraften på båten?
+    \item Hva er massen til båten?
+\end{enumerate}
+}
 
-\textbf{a) Hva er oppdriftskraften på båten?}
-
-\textit{Metode:}  
-Volumet av vann som fortrenges er:
+\svar{%
+\noindent
+\textbf{a)} Volumet av vann som fortrenges er:
 \[
-V_q = 0.12 \cdot V = 0.12 \cdot 9.0 = 1.08 \, \text{m}^3.
+V_\text{f} = 0.12 \cdot V = 0.12 \cdot 9.0 \, \text{m}^3 = 1.08 \, \text{m}^3.
 \]
 Oppdriftskraften beregnes ved å bruke formelen for oppdrift:
 \[
-O = \rho_B \mathrm{g} V_q = 1000 \cdot 9.81 \cdot 1.08 = 10594.8 \, \text{N}.
-\]
-Rundt av til:
-\[
-O \approx \doubleunderline{11 \, \text{kN}}.
+O = \rho_v \mathrm{g} V_\text{f} = 1000 \, \text{kg/m}^3 \cdot 9.81 \, \text{m/s}^2 \cdot 1.08 \, \text{m}^3 = 10594.8 \, \text{N} \approx \doubleunderline{11 \, \text{kN}}.
 \]
 
-\textbf{b) Hva veier båten?}
-
-\textit{Metode:}  
-Når båten flyter, er oppdriftskraften lik tyngdekraften på båten. Tyngdekraften på båten kan skrives som:
+\smallskip\noindent
+\textbf{b)} Når båten flyter, er oppdriftskraften lik tyngdekraften på båten:
 \[
-G = m \mathrm{g} = \rho_L V \mathrm{g}.
+O = G = m \mathrm{g}.
 \]
-Løs for massen \( m \):
+Vi løser for massen \( m \):
 \[
-m = \frac{O}{\mathrm{g}} = \frac{10594.8}{9.81} = 1080 \, \text{kg} \approx \doubleunderline{1.1 \cdot 10^3 \, \text{kg}}.
+m = \frac{O}{\mathrm{g}} = \frac{10594.8 \, \text{N}}{9.81 \, \text{m/s}^2} = 1080 \, \text{kg} \approx \doubleunderline{1.1 \cdot 10^3 \, \text{kg}}.
 \]
+Legg merke til at båtens masse er lik massen til vannet den fortrenger, $\rho_v V_\text{f} = \SI{1080}{\kilo\gram}$. Det er nettopp det Arkimedes' lov sier.
+}
 
-\textit{Svar:}  
-Oppdriftskraften på båten er \( 11 \, \text{kN} \), og massen til båten er omtrent \( 1.1 \cdot 10^3 \, \text{kg} \).
+\oppgaver{Er kronen av gull?}{k7oppg7}{%
+\input{Oppgaver/k7_oppg07.tex}%
+}
+
+\oppgaver{Trekloss som flyter}{k7oppg8}{%
+\input{Oppgaver/k7_oppg08.tex}%
 }
 
 
+\clearpage
+\section{Ekstraoppgaver}
 
+Her er flere oppgaver fra temaene vi har behandlet i dette kapitlet.
 
+\oppgaver{Lufta i et klasserom}{k7oppg9}{%
+\input{Oppgaver/k7_oppg09.tex}%
+}
 
+\oppgaver{Dykking i sjøen}{k7oppg10}{%
+\input{Oppgaver/k7_oppg10.tex}%
+}
 
+\oppgaver{Sugerør}{k7oppg11}{%
+\input{Oppgaver/k7_oppg11.tex}%
+}
 
+\oppgaver{Vindu i en ubåt}{k7oppg12}{%
+\input{Oppgaver/k7_oppg12.tex}%
+}
 
+\oppgaver{Heliumballong}{k7oppg13}{%
+\input{Oppgaver/k7_oppg13.tex}%
+}
 
+\oppgaver{Olje og vann i et U-rør}{k7oppg14}{%
+\input{Oppgaver/k7_oppg14.tex}%
+}

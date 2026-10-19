@@ -1,0 +1,382 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Fluiddynamikk}
+\label{LF:Chapter:fluiddynamikk}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:fluiddynamikk}, \textit{Fluiddynamikk}, i kompendiet.
+
+\oppgaver{Hvilket metall?}{k7oppg1}{%
+\input{Oppgaver/k7_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Volumet til en terning er sidekanten opphøyd i tredje:
+\[
+    V = (\SI{3.0}{\centi\metre})^3 = \doubleunderline{\SI{27}{\centi\metre\cubed}}
+\]
+Siden $\SI{1}{\centi\metre} = \SI{1e-2}{\metre}$, er $\SI{1}{\centi\metre\cubed} = (\SI{1e-2}{\metre})^3 = \SI{1e-6}{\metre\cubed}$. Dermed er
+\[
+    V = 27\cdot\SI{1e-6}{\metre\cubed} = \doubleunderline{\SI{2.7e-5}{\metre\cubed}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi bruker definisjonen av massetetthet (se \textit{Massetetthet} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\[
+    \rho = \frac{m}{V} = \frac{\SI{73}{\gram}}{\SI{27}{\centi\metre\cubed}} = \SI{2.70}{\gram\per\centi\metre\cubed} \approx \doubleunderline{\SI{2.7e3}{\kilo\gram\per\metre\cubed}}
+\]
+I tabell~\komplabel{tab:massetetthet} ser vi at dette passer med \doubleunderline{aluminium}.
+
+\smallskip\noindent
+\textbf{c)} Gull har $\rho = \SI{19.3e3}{\kilo\gram\per\metre\cubed}$. En terning av gull med samme volum har massen
+\[
+    m = \rho\cdot V = \SI{19.3e3}{\kilo\gram\per\metre\cubed}\cdot\SI{2.7e-5}{\metre\cubed} = \SI{0.521}{\kilo\gram} \approx \doubleunderline{\SI{0.52}{\kilo\gram}}
+\]
+Gullterningen ville altså vært omtrent sju ganger så tung som aluminiumsterningen, selv om de er like store.
+}
+
+\oppgaver{Tegnestift}{k7oppg2}{%
+\input{Oppgaver/k7_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi bruker definisjonen av trykk, $p = F/A$ (se \textit{Trykk} i Kapittel~\ref{komp-Chapter:fluiddynamikk}).
+
+\smallskip\noindent
+\textbf{a)} Arealet av hodet er $A = \SI{1.0}{\centi\metre\squared} = \SI{1.0e-4}{\metre\squared}$:
+\[
+    p_\text{tommel} = \frac{F}{A} = \frac{\SI{20}{\newton}}{\SI{1.0e-4}{\metre\squared}} = \doubleunderline{\SI{2.0e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Arealet av spissen er $A = \SI{0.10}{\milli\metre\squared} = 0.10\cdot\SI{1e-6}{\metre\squared} = \SI{1.0e-7}{\metre\squared}$:
+\[
+    p_\text{vegg} = \frac{F}{A} = \frac{\SI{20}{\newton}}{\SI{1.0e-7}{\metre\squared}} = \doubleunderline{\SI{2.0e8}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Kraften er like stor i begge ender av stiften, men spissen har et areal som er tusen ganger mindre enn hodet. Derfor er trykket mot veggen tusen ganger større enn trykket mot tommelen. Det store trykket er nok til at spissen trenger inn i veggen, mens trykket mot tommelen er så lite at det ikke gjør vondt.
+}
+
+\oppgaver{Vannkanne}{k7oppg3}{%
+\input{Oppgaver/k7_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Punktene A og B ligger på samme horisontale nivå, og vi kan gå fra A til B gjennom vannet uten å forlate det. Vannet står i ro. Da er trykket likt i de to punktene (se \textit{Horisontalt væskeelement} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\[
+    p_B = p_A = \doubleunderline{\SI{1.05e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Trykket i et punkt skyldes vekten av vannet over punktet (pluss lufttrykket). Tenk deg at vannet i tuten stod lavere enn vannet i kanna. Da ville det vært mindre vann over B enn over A, og trykket i B ville vært lavere enn i A. Vannet ville da strømmet fra A mot B, altså inn i tuten, helt til trykkene var like. Vannet kommer derfor bare til ro når det står like høyt i tuten som i kanna.
+
+\smallskip\noindent
+\textbf{c)} \doubleunderline{Nei.} Regelen $p_A = p_B$ gjelder bare for en væske i ro. Når vannet strømmer ut gjennom tuten, er væsken i bevegelse, og da kan trykket variere langs et horisontalt nivå. (Det er nettopp en trykkforskjell som får vannet til å strømme.)
+}
+
+\oppgaver{Vanntårn}{k7oppg4}{%
+\input{Oppgaver/k7_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Det hydrostatiske trykket er $\rho\mathrm{g}h$, der $h$ er dybden under vannflaten (se \textit{Vertikalt væskeelement} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\[
+    \rho\mathrm{g}h = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{40}{\metre} = \SI{3.92e5}{\pascal} \approx \doubleunderline{\SI{3.9e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Det totale trykket er lufttrykket pluss det hydrostatiske trykket:
+\[
+    p = p_0 + \rho\mathrm{g}h = \SI{1.013e5}{\pascal} + \SI{3.92e5}{\pascal} = \SI{4.94e5}{\pascal} \approx \doubleunderline{\SI{4.9e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Nå er dybden under vannflaten \SI{25}{\metre}:
+\[
+    p = p_0 + \rho\mathrm{g}h = \SI{1.013e5}{\pascal} + \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{25}{\metre}
+\]
+\[
+    p = \SI{1.013e5}{\pascal} + \SI{2.45e5}{\pascal} = \SI{3.47e5}{\pascal} \approx \doubleunderline{\SI{3.5e5}{\pascal}}
+\]
+Huset som ligger lavest (lengst under vannflaten i tårnet) får det største trykket og dermed best vanntrykk. Det er derfor vanntårn bygges høyt, eller på toppen av en høyde.
+}
+
+\oppgaver{Billøfter på verkstedet}{k7oppg5}{%
+\input{Oppgaver/k7_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Radiene er $r_1 = \SI{1.0}{\centi\metre}$ og $r_2 = \SI{10}{\centi\metre}$. Forholdet mellom arealene er
+\[
+    \frac{A_2}{A_1} = \frac{\pi r_2^2}{\pi r_1^2} = \left(\frac{r_2}{r_1}\right)^2 = \left(\frac{\SI{10}{\centi\metre}}{\SI{1.0}{\centi\metre}}\right)^2 = \doubleunderline{100}
+\]
+Når diameteren blir ti ganger så stor, blir arealet hundre ganger så stort.
+
+\smallskip\noindent
+\textbf{b)} For å holde bilen oppe må kraften fra væsken på det store stempelet være lik tyngden av bilen, $F_2 = m\mathrm{g} = \SI{1500}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{14715}{\newton}$. Fra Pascals lov (se \textit{Pascals lov} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\[
+    \frac{F_1}{A_1} = \frac{F_2}{A_2}
+    \quad\implies\quad
+    F_1 = F_2\cdot\frac{A_1}{A_2} = \frac{\SI{14715}{\newton}}{100} = \SI{147}{\newton} \approx \doubleunderline{\SI{1.5e2}{\newton}}
+\]
+Det tilsvarer tyngden av omtrent \SI{15}{\kilo\gram}.
+
+\smallskip\noindent
+\textbf{c)} Væsken kan ikke presses sammen, så volumet som presses ut av den lille sylinderen, må være lik volumet som går inn i den store:
+\[
+    A_1 s_1 = A_2 s_2
+    \quad\implies\quad
+    s_2 = s_1\cdot\frac{A_1}{A_2} = \frac{\SI{10}{\centi\metre}}{100} = \SI{0.10}{\centi\metre} = \doubleunderline{\SI{1.0}{\milli\metre}}
+\]
+
+\smallskip\noindent
+\textbf{d)} Arbeidet på det lille stempelet:
+\[
+    W_1 = F_1 s_1 = \SI{147}{\newton}\cdot\SI{0.10}{\metre} = \SI{14.7}{\joule} \approx \doubleunderline{\SI{15}{\joule}}
+\]
+Arbeidet på bilen:
+\[
+    W_2 = F_2 s_2 = \SI{14715}{\newton}\cdot\SI{1.0e-3}{\metre} = \SI{14.7}{\joule} \approx \doubleunderline{\SI{15}{\joule}}
+\]
+Arbeidene er like store. Den hydrauliske jekken gir oss en hundre ganger større kraft, men vi må presse det lille stempelet hundre ganger lenger enn bilen løftes. Vi får altså ikke noe gratis: energien er bevart.
+}
+
+\oppgaver{Hydrauliske bremser}{k7oppg6}{%
+\input{Oppgaver/k7_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Trykkøkningen er kraften delt på arealet til det lille stempelet, $A_1 = \SI{1.5e-4}{\metre\squared}$:
+\[
+    \Delta p = \frac{F_1}{A_1} = \frac{\SI{200}{\newton}}{\SI{1.5e-4}{\metre\squared}} = \SI{1.33e6}{\pascal} \approx \doubleunderline{\SI{1.3e6}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Etter Pascals lov får bremsevæsken den samme trykkøkningen overalt. Kraften på hvert stempel ved hjulene, med $A_2 = \SI{9.0e-4}{\metre\squared}$, er da
+\[
+    F_2 = \Delta p\cdot A_2 = \SI{1.33e6}{\pascal}\cdot\SI{9.0e-4}{\metre\squared} = \doubleunderline{\SI{1.2e3}{\newton}}
+\]
+Hvert stempel ved hjulene får altså en kraft som er seks ganger så stor som kraften fra pedalen.
+
+\smallskip\noindent
+\textbf{c)} Ifølge Pascals lov forplanter trykkøkningen seg uforminsket til alle deler av væsken, uansett hvor lange rørene er og hvilken vei de går. Siden stemplene ved hjulene har samme areal, blir kraften $F = \Delta p\cdot A$ like stor ved alle fire hjulene. Bilen bremser derfor likt på alle hjulene.
+}
+
+\oppgaver{Er kronen av gull?}{k7oppg7}{%
+\input{Oppgaver/k7_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Tre krefter virker på kronen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{O}$ oppover og kraften $\vec{S}$ fra kraftmåleren oppover. Det er $S$ som kraftmåleren viser.
+
+\smallskip\noindent
+\textbf{b)} Kronen henger i ro, så $\sum F = 0$:
+\[
+    S + O - G = 0 \quad\implies\quad O = G - S
+\]
+Tyngdekraften er $G = m\mathrm{g} = \SI{1.00}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{9.81}{\newton}$, så
+\[
+    O = \SI{9.81}{\newton} - \SI{9.15}{\newton} = \doubleunderline{\SI{0.660}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Kronen er helt under vann, så det fortrengte volumet er lik volumet til kronen. Fra $O = \rho_v\mathrm{g}V$ (se \textit{Oppdriftskraft} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\[
+    V = \frac{O}{\rho_v\mathrm{g}} = \frac{\SI{0.660}{\newton}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{6.728e-5}{\metre\cubed} \approx \doubleunderline{\SI{6.73e-5}{\metre\cubed}}
+\]
+
+\smallskip\noindent
+\textbf{d)} Massetettheten er
+\[
+    \rho = \frac{m}{V} = \frac{\SI{1.00}{\kilo\gram}}{\SI{6.73e-5}{\metre\cubed}} = \SI{1.486e4}{\kilo\gram\per\metre\cubed} \approx \doubleunderline{\SI{1.49e4}{\kilo\gram\per\metre\cubed}}
+\]
+Rent gull har $\rho = \SI{19.3e3}{\kilo\gram\per\metre\cubed}$. Kronen har lavere tetthet, så den er \doubleunderline{ikke laget av rent gull}. Den er trolig blandet med et lettere metall, for eksempel sølv. En krone av rent gull ville hatt mindre volum, fått mindre oppdrift, og kraftmåleren ville vist omtrent \SI{9.30}{\newton}.
+}
+
+\oppgaver{Trekloss som flyter}{k7oppg8}{%
+\input{Oppgaver/k7_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Volumet til klossen er
+\[
+    V = \SI{0.20}{\metre}\cdot\SI{0.10}{\metre}\cdot\SI{0.10}{\metre} = \SI{2.0e-3}{\metre\cubed},
+\]
+og massen er
+\[
+    m = \rho_L V = \SI{600}{\kilo\gram\per\metre\cubed}\cdot\SI{2.0e-3}{\metre\cubed} = \doubleunderline{\SI{1.2}{\kilo\gram}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Klossen flyter i ro, så oppdriftskraften er lik tyngdekraften, $O = G$:
+\[
+    \rho_v\mathrm{g}V_\text{f} = \rho_L\mathrm{g}V
+    \quad\implies\quad
+    \frac{V_\text{f}}{V} = \frac{\rho_L}{\rho_v} = \frac{\SI{600}{\kilo\gram\per\metre\cubed}}{\SI{1000}{\kilo\gram\per\metre\cubed}} = 0.60 = \doubleunderline{\SI{60}{\percent}}
+\]
+(Dette er samme fremgangsmåte som i eksempelet \textit{Toppen av isfjellet} i Kapittel~\ref{komp-Chapter:fluiddynamikk}.)
+
+\smallskip\noindent
+\textbf{c)} Klossen ligger med den største flaten ned, så høyden er \SI{10}{\centi\metre}. Siden 60\,\% av volumet er under vann, og grunnflaten er den samme hele veien opp, er også 60\,\% av høyden under vann:
+\[
+    h_\text{f} = 0.60\cdot\SI{10}{\centi\metre} = \doubleunderline{\SI{6.0}{\centi\metre}}
+\]
+
+\smallskip\noindent
+\textbf{d)} Den største oppdriftskraften klossen kan få, er når hele klossen er under vann, $V_\text{f} = V$:
+\[
+    O_\text{maks} = \rho_v\mathrm{g}V = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton}
+\]
+Denne kraften kan bære en total masse på
+\[
+    m_\text{total} = \frac{O_\text{maks}}{\mathrm{g}} = \frac{\SI{19.6}{\newton}}{\SI{9.81}{\metre\per\second\squared}} = \SI{2.0}{\kilo\gram}
+\]
+Klossen selv har masse \SI{1.2}{\kilo\gram}, så vi kan legge på
+\[
+    \Delta m = \SI{2.0}{\kilo\gram} - \SI{1.2}{\kilo\gram} = \doubleunderline{\SI{0.80}{\kilo\gram}}
+\]
+}
+
+\oppgaver{Lufta i et klasserom}{k7oppg9}{%
+\input{Oppgaver/k7_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Volumet av rommet er
+\[
+    V = \SI{5.0}{\metre}\cdot\SI{4.0}{\metre}\cdot\SI{2.5}{\metre} = \SI{50}{\metre\cubed},
+\]
+og massen til lufta er
+\[
+    m = \rho V = \SI{1.2}{\kilo\gram\per\metre\cubed}\cdot\SI{50}{\metre\cubed} = \doubleunderline{\SI{60}{\kilo\gram}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Lufta i klasserommet har omtrent like stor masse som en voksen person. Mange blir overrasket over dette, fordi vi ikke merker at lufta veier noe. Lufta har liten massetetthet, men et klasserom har et stort volum.
+}
+
+\oppgaver{Dykking i sjøen}{k7oppg10}{%
+\input{Oppgaver/k7_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi bruker $p = p_0 + \rho\mathrm{g}h$:
+\[
+    p = \SI{1.013e5}{\pascal} + \SI{1030}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{30}{\metre}
+\]
+\[
+    p = \SI{1.013e5}{\pascal} + \SI{3.03e5}{\pascal} = \SI{4.04e5}{\pascal} \approx \doubleunderline{\SI{4.0e5}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+    \frac{p}{p_0} = \frac{\SI{4.04e5}{\pascal}}{\SI{1.013e5}{\pascal}} = 3.99 \approx \doubleunderline{4.0}
+\]
+Trykket på \SI{30}{\metre} dybde er omtrent fire ganger så stort som ved overflaten: én atmosfære fra lufta og omtrent én atmosfære for hver tiende meter med vann.
+}
+
+\oppgaver{Sugerør}{k7oppg11}{%
+\input{Oppgaver/k7_oppg11.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi ser på vannsøylen i sugerøret. Ved vannflaten i glasset er trykket $p_0$. Inne i røret, i samme høyde, er trykket også $p_0$ (samme nivå i den samme sammenhengende væsken). Over vannet i røret er trykket null. Trykkdifferansen mellom bunnen og toppen av vannsøylen i røret er da
+\[
+    p_0 - 0 = \rho\mathrm{g}h
+    \quad\implies\quad
+    h = \frac{p_0}{\rho\mathrm{g}} = \frac{\SI{1.013e5}{\pascal}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \doubleunderline{\SI{10.3}{\metre}}
+\]
+
+\smallskip\noindent
+\textbf{b)} \doubleunderline{Nei.} Selv med et perfekt vakuum i røret kan lufttrykket bare presse vannet \SI{10.3}{\metre} opp. Det hjelper ikke å suge hardere, for vi kan ikke senke trykket under null. Det er lufttrykket som gjør jobben, ikke selve sugingen.
+}
+
+\oppgaver{Vindu i en ubåt}{k7oppg12}{%
+\input{Oppgaver/k7_oppg12.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Utenfor vinduet er trykket $p_\text{ute} = p_0 + \rho\mathrm{g}h$, og inne i ubåten er det $p_\text{inne} = p_0$. Trykkforskjellen er derfor bare det hydrostatiske trykket:
+\[
+    \Delta p = p_\text{ute} - p_\text{inne} = \rho\mathrm{g}h = \SI{1030}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{100}{\metre} = \SI{1.01e6}{\pascal} \approx \doubleunderline{\SI{1.0e6}{\pascal}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Nettokraften på vinduet er trykkforskjellen ganget med arealet:
+\[
+    F = \Delta p\cdot A = \SI{1.01e6}{\pascal}\cdot\SI{0.050}{\metre\squared} = \SI{5.05e4}{\newton} \approx \doubleunderline{\SI{5.1e4}{\newton}}
+\]
+Det tilsvarer tyngden av omtrent fem tonn. Vinduet må derfor være svært kraftig.
+}
+
+\oppgaver{Heliumballong}{k7oppg13}{%
+\input{Oppgaver/k7_oppg13.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Ballongen fortrenger \SI{0.010}{\metre\cubed} luft. Etter Arkimedes' lov er oppdriftskraften lik tyngden av denne lufta:
+\[
+    O = \rho_\text{luft}\mathrm{g}V = \SI{1.2}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{0.010}{\metre\cubed} = \SI{0.118}{\newton} \approx \doubleunderline{\SI{0.12}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Massen til heliumet er $m_\text{He} = \rho_\text{He}V = \SI{0.18}{\kilo\gram\per\metre\cubed}\cdot\SI{0.010}{\metre\cubed} = \SI{1.8e-3}{\kilo\gram}$. Den totale massen er
+\[
+    m = \SI{1.8e-3}{\kilo\gram} + \SI{3.0e-3}{\kilo\gram} = \SI{4.8e-3}{\kilo\gram},
+\]
+og tyngdekraften er
+\[
+    G = m\mathrm{g} = \SI{4.8e-3}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{0.0471}{\newton} \approx \doubleunderline{\SI{0.047}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Med positiv retning oppover er nettokraften
+\[
+    F_\text{netto} = O - G = \SI{0.118}{\newton} - \SI{0.047}{\newton} = \SI{0.071}{\newton}
+\]
+Nettokraften er positiv, så ballongen \doubleunderline{stiger}, med en nettokraft på omtrent \doubleunderline{\SI{0.071}{\newton}} oppover.
+}
+
+\oppgaver{Olje og vann i et U-rør}{k7oppg14}{%
+\input{Oppgaver/k7_oppg14.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Under punkt A er det bare vann, og vannet henger sammen gjennom bunnen av U-røret og opp til punkt B. A og B ligger altså på samme horisontale nivå i den samme sammenhengende væsken (vannet), og alt står i ro. Da er $p_A = p_B$.
+
+(Over grenseflaten er det olje i det venstre røret og vann i det høyre. Der er det ikke samme væske på begge sider, og da kan vi ikke bruke denne regelen.)
+
+\smallskip\noindent
+\textbf{b)} Trykket i A skyldes lufta og oljesøylen over A. Trykket i B skyldes lufta og vannsøylen over B:
+\[
+    p_A = p_0 + \rho_\text{olje}\mathrm{g}h_\text{olje}
+    \qquad\text{og}\qquad
+    p_B = p_0 + \rho_\text{vann}\mathrm{g}h_\text{vann}
+\]
+Vi setter $p_A = p_B$. Da faller $p_0$ og $\mathrm{g}$ bort, og vi får
+\[
+    \rho_\text{olje}h_\text{olje} = \rho_\text{vann}h_\text{vann}
+    \quad\implies\quad
+    h_\text{vann} = \frac{\rho_\text{olje}}{\rho_\text{vann}}\,h_\text{olje} = \frac{800}{1000}\cdot\SI{10.0}{\centi\metre} = \doubleunderline{\SI{8.0}{\centi\metre}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Oljeoverflaten ligger \SI{10.0}{\centi\metre} over grenseflaten, og vannoverflaten ligger \SI{8.0}{\centi\metre} over grenseflaten. Forskjellen er
+\[
+    \SI{10.0}{\centi\metre} - \SI{8.0}{\centi\metre} = \doubleunderline{\SI{2.0}{\centi\metre}}
+\]
+Oljen står høyest fordi den har lavere massetetthet enn vann. Det trengs en høyere oljesøyle for å gi det samme trykket.
+}

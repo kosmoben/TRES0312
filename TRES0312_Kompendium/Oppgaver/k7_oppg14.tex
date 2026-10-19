@@ -1,0 +1,30 @@
+%
+Et U-rør inneholder vann. I det venstre røret heller vi oppå vannet en \SI{10.0}{\centi\metre} høy søyle med olje, som har massetetthet \SI{800}{\kilo\gram\per\metre\cubed}. Olje og vann blander seg ikke. Når alt står i ro, ligger grenseflaten mellom olje og vann i den venstre delen av røret (se figuren).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, font=\small]
+  % Vann
+  \fill[oppgcol!25] (0,0) -- (2.6,0) -- (2.6,1.8) -- (2.0,1.8) -- (2.0,0.6) -- (0.6,0.6) -- (0.6,1.0) -- (0,1.0) -- cycle;
+  % Olje
+  \fill[yellow!45!orange!40] (0,1.0) rectangle (0.6,2.0);
+  % Rør
+  \draw[very thick, black!75] (0,3.0) -- (0,0) -- (2.6,0) -- (2.6,3.0);
+  \draw[very thick, black!75] (0.6,3.0) -- (0.6,0.6) -- (2.0,0.6) -- (2.0,3.0);
+  % Nivålinje ved grenseflaten
+  \draw[dashed, gray!60!black] (-0.3,1.0) -- (2.9,1.0);
+  \fill[black] (0.3,1.0) circle (1.8pt) node[below right=-1pt, font=\footnotesize] {A};
+  \fill[black] (2.3,1.0) circle (1.8pt) node[below right=-1pt, font=\footnotesize] {B};
+  % Etiketter
+  \draw[thin, black!60] (0.45,1.7) -- (1.2,2.3) node[right, font=\footnotesize] {olje};
+  \node[right, font=\footnotesize] at (2.7,1.4) {vann};
+  \draw[<->, thin, gray!40!black] (-0.3,1.0) -- (-0.3,2.0)
+      node[midway, left, font=\footnotesize] {\SI{10.0}{\centi\metre}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[a)]
+    \item Punkt A ligger ved grenseflaten mellom olje og vann i det venstre røret, og punkt B ligger i samme høyde i det høyre røret. Forklar hvorfor trykket i A og B er likt.
+    \item Hvor høyt over grenseflaten står vannet i det høyre røret?
+    \item Hvor mye høyere står oljeoverflaten enn vannoverflaten?
+\end{enumerate}
+%
