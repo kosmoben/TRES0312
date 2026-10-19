@@ -105,7 +105,7 @@ m = (1.0 \cdot 10^3 \, \text{kg/m}^3) \cdot (1.0 \cdot 10^{-3} \, \text{m}^3)
 
 \subsection{Trykk}
 
-Trykk er definert som kraften som virker vinkelrett på en overflate per arealenhet. Det beskriver hvor mye kraft som påføres en bestemt flate, og det oppstår når molekyler i et fluid kolliderer med overflaten. Trykk måles ofte i enheter av pascal (Pa), hvor \( 1 \, \text{Pa} = 1 \, \text{N/m}^2 \).
+Trykk er definert som kraften som virker vinkelrett på en overflate per arealenhet. Det beskriver hvor mye kraft som påføres en bestemt flate. Trykk måles ofte i enheter av pascal (Pa), hvor \( 1 \, \text{Pa} = 1 \, \text{N/m}^2 \).
 
 \defn{Trykk}{
     Trykket \( p \) er gitt ved:
@@ -116,13 +116,6 @@ Trykk er definert som kraften som virker vinkelrett på en overflate per arealen
 Dette betyr at trykk også kan uttrykkes som \( 1 \, \text{Pa} = 1 \, \text{kg} \cdot \text{m}^{-1} \cdot \text{s}^{-2} \).}
 
 Trykk er en skalar størrelse. Det betyr at trykk kun har en størrelse, men ingen retning. Trykk er altså IKKE en vektor! Det er \emph{kraften} fra trykket som har en retning: den står alltid vinkelrett på flaten den virker på.\\
-
-SI-enheten for trykk er pascal (Pa). En pascal tilsvarer én newton per kvadratmeter:
-\[
-1 \, \text{Pa} = 1 \, \text{N/m}^2
-\]
-
-En pascal er et lite trykk. Lufttrykket rundt oss er omtrent \SI{1.013e5}{\pascal}. Dette trykket kalles også \emph{én atmosfære} (1 atm).
 
 Formelen $p = F/A$ forteller oss at den samme kraften kan gi svært ulikt trykk, avhengig av hvor stort areal kraften fordeles over. Det skal vi se i neste eksempel.
 
@@ -175,6 +168,79 @@ På mikroskopisk nivå er trykk en konsekvens av interaksjoner. Se for deg en be
 \input{Oppgaver/k7_oppg02.tex}%
 }
 
+\subsection{Lufttrykk}
+\tanke{}{Hvorfor fungerer sugekopper?}
+
+Her nede på jordens overflate er vi mennesker omgitt av luft. Det vi kanskje ikke tenker på, er at denne luften veier noe. Den har vekt. Når du stiger ned i vann, merker du at vannet utøver et trykk på deg. Det er på grunn av vannets vekt. Men luften gjør det samme. Lufttrykket rundt oss (som følge av luftens vekt) er omtrent \SI{1.013e5}{\pascal}. Dette trykket kalles også \emph{én atmosfære} (1 atm).
+\graabox{$\displaystyle 1\,\text{atm} = \SI{101325}{\pascal} \approx \SI{1.013e5}{\pascal}$}
+
+Grunnen til at sugekopper fungerer, er at luftens molekyler hele veien kolliderer med sugekoppen, og presser den på plass. Det er altså lufttrykket som tvinger sugekoppen til å holde seg på plass. Desto større flate sugekoppen har, desto større blir de totale kreftene som holder den på plass. Det er derfor sugekopper med større diameter holder bedre enn små sugekopper. Dette betyr at dersom du pumper vekk luften fra et rom, vil alt som er festet med sugekopper slippe taket, fordi det ikke lenger er lufttrykk som holder dem på plass.
+
+Lufttrykket virker fra alle kanter på alt som er omgitt av luft. Siden \SI{1}{atm} er et stort trykk, kan kraften fra lufta bli svært stor, selv på helt vanlige flater. Det ser vi i neste eksempel.
+
+\exm{Lufta presser på et bord}{%
+Et bord har en rektangulær bordplate som er \SI{1.2}{\metre} lang og \SI{0.80}{\metre} bred. Lufttrykket er $p_0 = \SI{1.013e5}{\pascal}$.
+\begin{enumerate}[a)]
+    \item Finn kraften fra lufta på oversiden av bordplata.
+    \item Hvor stor masse ville hatt en like stor tyngde?
+    \item Hvorfor knekker ikke bordet sammen?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Arealet av bordplata er
+\[
+    A = \SI{1.2}{\metre}\cdot\SI{0.80}{\metre} = \SI{0.96}{\metre\squared}
+\]
+Fra definisjonen av trykk, $p = F/A$, er kraften fra lufta
+\[
+    F = p_0 A = \SI{1.013e5}{\pascal}\cdot\SI{0.96}{\metre\squared} = \SI{9.72e4}{\newton} \approx \doubleunderline{\SI{9.7e4}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{b)} En masse $m$ har tyngden $m\mathrm{g}$. Vi setter $m\mathrm{g} = F$:
+\[
+    m = \frac{F}{\mathrm{g}} = \frac{\SI{9.72e4}{\newton}}{\SI{9.81}{\metre\per\second\squared}} = \SI{9.91e3}{\kilo\gram} \approx \doubleunderline{\SI{9.9e3}{\kilo\gram}}
+\]
+Lufta presser altså på bordplata med en kraft som tilsvarer tyngden av nesten ti tonn!
+
+\smallskip\noindent
+\textbf{c)} Lufta presser ikke bare på oversiden av bordplata, men også på undersiden, med det samme trykket. Kraften oppover på undersiden er derfor like stor som kraften nedover på oversiden, og de to kreftene opphever hverandre. Bordet merker bare tyngden av det som ligger på det.
+}
+
+Inne i et bildekk er trykket større enn lufttrykket utenfor. Trykkmålere på bensinstasjonen viser \emph{overtrykket}, altså hvor mye større trykket i dekket er enn lufttrykket rundt. Dekktrykk oppgis ofte i enheten bar, der $\SI{1}{bar} = \SI{1.0e5}{\pascal}$.
+
+\exm{Lufttrykk i bildekk}{%
+En trykkmåler viser at overtrykket i et bildekk er \SI{2.3}{bar}, altså $\SI{2.3e5}{\pascal}$. Lufttrykket utenfor er $p_0 = \SI{1.013e5}{\pascal}$.
+\begin{enumerate}[a)]
+    \item Finn det totale trykket inne i dekket. Hvor mange atmosfærer er det?
+    \item Bilen har masse \SI{1200}{\kilo\gram}, og vi antar at tyngden fordeler seg likt på de fire hjulene. Det er overtrykket i dekket som bærer bilen. Hvor stort areal av hvert dekk må ligge an mot veien? Vi ser bort fra stivheten i dekkveggen.
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Det totale trykket er lufttrykket pluss overtrykket:
+\[
+    p = p_0 + \Delta p = \SI{1.013e5}{\pascal} + \SI{2.3e5}{\pascal} = \SI{3.31e5}{\pascal} \approx \doubleunderline{\SI{3.3e5}{\pascal}}
+\]
+Målt i atmosfærer er dette
+\[
+    \frac{\SI{3.31e5}{\pascal}}{\SI{1.013e5}{\pascal}} = 3.27 \approx \doubleunderline{\SI{3.3}{atm}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Hvert hjul bærer en fjerdedel av tyngden:
+\[
+    F = \frac{m\mathrm{g}}{4} = \frac{\SI{1200}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}{4} = \SI{2943}{\newton}
+\]
+Der dekket ligger an mot veien, presser lufta inne i dekket nedover med trykket $p_0 + \Delta p$, mens lufta utenfor bare presser med $p_0$. Det er altså overtrykket $\Delta p$ som gir nettokraften som bærer bilen: $F = \Delta p\cdot A$. Dermed er
+\[
+    A = \frac{F}{\Delta p} = \frac{\SI{2943}{\newton}}{\SI{2.3e5}{\pascal}} = \SI{1.28e-2}{\metre\squared} \approx \doubleunderline{\SI{1.3e-2}{\metre\squared}}
+\]
+Det tilsvarer omtrent \SI{130}{\centi\metre\squared}, eller en flate på omtrent $\SI{11}{\centi\metre}\times\SI{11}{\centi\metre}$. Har dekket for lavt trykk, må en større del av dekket ligge an mot veien for å bære bilen. Dekket blir da flatere, og bilen bruker mer drivstoff.
+}
 
 \section{Trykk i væsker}
 
@@ -338,28 +404,13 @@ Alle leddene inneholder arealet $A$, så vi kan dele på $A$ på begge sider:
 Trykket ved bunnen av søylen er altså større enn trykket ved toppen, og forskjellen er nøyaktig det som trengs for å bære tyngden av væsken i søylen.
 \WFclear
 
-\defn{Trykkdifferanse i vertikalt væskeelement}{
-    For et væskeelement i ro gjelder:
-    \begin{align}
-        p_2 - p_1 = \rho \mathrm{g} h
-    \end{align}
-    hvor \( p_2 \) er trykket ved bunnen av elementet, \( p_1 \) er trykket ved toppen, og \( h \) er høyden til væskeelementet.
-}
+Legg merke til at arealet $A$ forsvant fra likningen. Hvor bred søylen er, spiller altså ingen rolle. Sammenhengen gjelder derfor for \emph{hvilke som helst} to punkter i en væske i ro, der det ene ligger en høyde $h$ under det andre: trykket i det nederste punktet er alltid $\rho\mathrm{g}h$ større enn trykket i det øverste.
 
-\textbf{Hydrostatisk trykk:}
-La oss nå legge toppen av søylen i væskeoverflaten. Da er $h$ dybden under overflaten, og leddet $\rho\mathrm{g}h$ er den delen av trykket som skyldes vekten av væsken over punktet. Denne delen kaller vi det \emph{hydrostatiske trykket}.
+La oss nå legge toppen av søylen i væskeoverflaten. Da blir $h$ dybden under overflaten. Trykkøkningen fra overflaten og ned til dybden $h$ skyldes vekten av væsken over punktet, og den kalles det \emph{hydrostatiske trykket}:
+\graabox{$\displaystyle p_\text{hydrostatisk} = \rho\mathrm{g}h$}
+Det hydrostatiske trykket avhenger bare av dybden $h$, væskens tetthet $\rho$ og tyngdeakselerasjonen $\mathrm{g}$.
 
-\defn{Hydrostatisk trykk}{
-    Trykket \( p \) i en væske i ro på grunn av vekten av væsken over et punkt er gitt som:
-    \begin{align}
-        p = \rho \mathrm{g} h
-    \end{align}
-    hvor \( \rho \) er væskens tetthet (\( \text{kg/m}^3 \)), \( \mathrm{g} \) er tyngdeakselerasjonen (\( 9.81 \, \text{m/s}^2 \)), og \( h \) er dybden (\( \text{m} \)).
-}
-
-Det hydrostatiske trykket avhenger bare av dybden \( h \), væskens tetthet \( \rho \), og tyngdeakselerasjonen \( \mathrm{g} \), og er uavhengig av væskeelementets horisontale størrelse.
-
-I en væske som er i ro, vil trykket altså øke med dybden på grunn av vekten av væsken over punktet. Men over væskeoverflaten er det som regel luft, og lufta presser også på overflaten. Dersom det er et ytre trykk \( p_0 \) på væskeoverflaten, kan det totale trykket ved en dybde \( h \) uttrykkes som:
+Men over væskeoverflaten er det som regel luft, og som vi så i delkapittelet om lufttrykk, presser lufta også på overflaten. Trykket ved toppen av søylen er da ikke null, men lik trykket $p_0$ ved overflaten. Setter vi $p_1 = p_0$ og $p_2 = p(h)$ inn i $p_2 - p_1 = \rho\mathrm{g}h$, får vi det totale trykket i dybden $h$:
 
 \defn{Trykk i et vertikalt væskeelement}{
     Trykket \( p(h) \) i en væske som er i ro er gitt som:
