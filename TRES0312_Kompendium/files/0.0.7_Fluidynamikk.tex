@@ -1,5 +1,5 @@
 % !TEX root = ../main.tex
-\chapter{Fluiddynamikk}
+\chapter{Fluidfysikk}
 \label{Chapter:fluiddynamikk}
 \intro{Så langt har vi stort sett sett på faste legemer: klosser, biler, bjelker og stiger. Men mye av verden rundt oss består av stoffer som flyter — vann, olje og luft. Slike stoffer kaller vi \emph{fluider}. I dette kapitlet skal vi innføre to nye størrelser, massetetthet og trykk, og se hvordan trykket i en væske øker jo dypere vi kommer. Deretter skal vi se hvordan en liten kraft kan løfte en bil (Pascals lov), og hvorfor noen ting flyter mens andre synker (Arkimedes' lov).}
 
@@ -790,6 +790,15 @@ Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket slik
 \label{fig:oppdrift_utledning}
 \end{center}
 
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/euvIlejovCA?si=ZIf3kAZPGtganxjj}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Oppdrift.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
 Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
 og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$. (Lufttrykket $p_0$ på overflaten øker begge trykkene like mye, så det faller bort når vi trekker dem fra hverandre.) Trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
 Nettokraften oppover er:
@@ -800,6 +809,7 @@ Nettokraften oppover er:
     = \rho_v \mathrm{g} V_\text{f}
 \]
 Dette er Arkimedes' lov, utledet fra hydrostatikk.
+\WFclear
 
 \subsection{Gravitasjonskraft på et legeme}
 Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( \mathrm{g} \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:
