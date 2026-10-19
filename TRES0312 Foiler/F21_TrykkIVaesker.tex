@@ -214,71 +214,22 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 10 — Utledning: krefter på en vannsøyle
+%  SLIDE 10 — Definisjon: trykk i vertikalt væskeelement
 %--------------------------------------------------------------------------
 \begin{frame}{Vertikalt væskeelement}
 
-  \begin{columns}[c]
-    \begin{column}{0.56\textwidth}
-      Vi ser på en loddrett søyle av væsken, med grunnflate $A$ og høyde $h$. Søylen er i ro.
-      \begin{itemize}
-        \item<2-> Væsken over presser \textit{ned}: $F_1 = p_1 A$
-        \item<3-> Væsken under presser \textit{opp}: $F_2 = p_2 A$
-        \item<4-> Tyngdekraften: $G = m\mathrm{g} = \rho A h\,\mathrm{g}$
-      \end{itemize}
-      \onslide<5->{Søylen er i ro, så $\sum F = 0$:
-      \[
-        p_2 A - p_1 A - \rho A h \mathrm{g} = 0
-      \]}
-      \onslide<6->{Vi deler på $A$:}
-      \onslide<6->{\graabox{$\displaystyle p_2 - p_1 = \rho\mathrm{g}h$}}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=8pt,width=6pt]}]
-        \fill[oppgcol!30!pagecolor] (-1.2,-0.8) rectangle (3.2,3.4);
-        \draw[oppgcol!70!white, thick] (-1.2,3.4) -- (3.2,3.4);
-        \fill[oppgcol!55!pagecolor] (0,0) rectangle (2.0,2.6);
-        \draw[thick, textcolor] (0,0) rectangle (2.0,2.6);
-        \node[right] at (2.0,2.6) {$p_1$};
-        \node[right] at (2.0,0) {$p_2$};
-        \draw[<->, thin, textcolor!70] (-0.4,0) -- (-0.4,2.6) node[midway, left] {$h$};
-        \draw[<->, thin, textcolor!70] (0,-0.45) -- (2.0,-0.45) node[midway, below] {$A$};
-        \draw<2->[->, line width=2.5pt, defscol] (0.45,2.6) -- (0.45,1.75)
-            node[midway, right=1pt] {$\vec{F}_1$};
-        \draw<3->[->, line width=2.5pt, defscol] (1.7,0) -- (1.7,1.7);
-        \node<3->[right, defscol] at (2.05,1.3) {$\vec{F}_2$};
-        \fill<4->[textcolor] (1.0,1.3) circle (1.5pt);
-        \draw<4->[->, line width=2.5pt, defscol] (1.0,1.3) -- (1.0,0.75)
-            node[below] {$\vec{G}$};
-      \end{tikzpicture}
-    \end{column}
-  \end{columns}
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 11 — Hydrostatisk trykk og definisjonen
-%--------------------------------------------------------------------------
-\begin{frame}{Vertikalt væskeelement}
-
-  \begin{itemize}
-    \item Arealet $A$ forsvant: hvor bred søylen er, spiller ingen rolle.
-    \item<2-> Legger vi toppen av søylen i overflaten, blir $h$ dybden. Trykkøkningen kalles det \textit{hydrostatiske trykket}:
-  \end{itemize}
-  \onslide<2->{\graabox{$\displaystyle p = \rho\mathrm{g}h$}}
-
-  \onslide<3->{Over overflaten er det luft med trykket $p_0$. Vi setter $p_1 = p_0$:}
-  \vspace{-2mm}
-
-  \onslide<3->{%
   \defnat{7.2.2}{Trykk i vertikalt væskeelement}{
   Trykket i dybden $h$ i en væske i ro er
   \[
     p(h) = p_0 + \rho\mathrm{g}h
   \]
   der $p_0$ er trykket ved overflaten og $\rho$ er tettheten til væsken.
-  }}
+  }
+
+  \pause
+  \merk{Hydrostatisk trykk}{%
+  Leddet $\rho\mathrm{g}h$ kalles det \textit{hydrostatiske trykket}. Det skyldes vekten av væsken over punktet. Mellom to punkter med høydeforskjell $h$ er trykkforskjellen $p_2 - p_1 = \rho\mathrm{g}h$.
+  }
 
 \end{frame}
 
