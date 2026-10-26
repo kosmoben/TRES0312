@@ -843,14 +843,15 @@ Du holder en stein i en snor, slik at steinen henger i ro helt under vann. Stein
   % Krefter (halen i angrepspunktet)
   \draw[->, line width=2.5pt, defscol] (0,0.7) -- (0,1.75)
       node[right=2pt, font=\small] {$\vec{S}$};
-  \fill[black] (0.3,0) circle (1.5pt);
-  \draw[->, line width=2.5pt, defscol] (0.3,0) -- (0.3,-1.75)
+  % G og O angriper i samme punkt (sentrum); stiplede linjer flytter pilene til siden
+  \draw[dashed, thick, black!75] (-0.6,0) -- (0.6,0);
+  \fill[black] (0,0) circle (1.8pt);
+  \draw[->, line width=2.5pt, defscol] (0.6,0) -- (0.6,-1.75)
       node[right=2pt, font=\small] {$\vec{G}$};
-  \fill[black] (-0.3,0) circle (1.5pt);
-  \draw[->, line width=2.5pt, defscol] (-0.3,0) -- (-0.3,0.65)
+  \draw[->, line width=2.5pt, defscol] (-0.6,0) -- (-0.6,0.65)
       node[left=2pt, font=\small] {$\vec{O}$};
 \end{tikzpicture}
-\captionof{figure}{Kreftene som virker på steinen. Pilene for $\vec{G}$ og $\vec{O}$ er tegnet litt til side for hverandre, slik at begge synes.}
+\captionof{figure}{Kreftene som virker på steinen. $\vec{G}$ og $\vec{O}$ angriper begge i sentrum av steinen (prikken). Pilene er flyttet ut til hver sin side langs den stiplede linjen, slik at de ikke tegnes oppå hverandre.}
 \label{fig:stein_i_vann}
 \end{center}
 
@@ -926,14 +927,11 @@ Nettokraften oppover er:
 Dette er Arkimedes' lov, utledet fra hydrostatikk.
 \WFclear
 
-\subsection{Gravitasjonskraft på et legeme}
-Gravitasjonskraften \( G \) som virker på et legeme, avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( \mathrm{g} \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan gravitasjonskraften skrives som:
+For å avgjøre om et legeme flyter eller synker, må vi sammenligne oppdriftskraften med tyngdekraften på legemet. Tyngdekraften \( G \) avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( \mathrm{g} \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan tyngdekraften skrives som:
 \[
 G = m \mathrm{g} = \rho_L V \mathrm{g}.
 \]
 Nå har vi både oppdriftskraften og tyngdekraften uttrykt ved tettheter og volum. Det gjør det lett å sammenligne dem.
-
-\subsection{Flyter eller synker?}
 
 Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ helt nedsenket i en væske med tetthet $\rho_v$ er:
 \[
