@@ -868,8 +868,33 @@ hvor \( \rho_v \) er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasj
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Images/Kapittel4:Fluiddynamikk/oppdrift_h fortrengt.png}
-    \caption{Oppdriftskraften (merket \( F_b \) i figuren) beregnes ut fra volumet av væsken som fortrenges. Det fortrengte volumet er gitt som \( V_\text{f} = h_{\text{sub}} \cdot A \), der \( h_{\text{sub}} \) er dybden av den nedsenkede delen av legemet, og \( A \) er arealet av bunnflaten.}
+    \begin{tikzpicture}[scale=1.3, font=\small, >={Stealth[length=8pt,width=6pt]}]
+      % Vann og beholder
+      \fill[oppgcol!18] (0,0) rectangle (5.0,2.0);
+      \draw[oppgcol!70!black, thick] (0,2.0) -- (5.0,2.0);
+      \draw[very thick, black!75] (0,3.4) -- (0,0) -- (5.0,0) -- (5.0,3.4);
+      % Legeme som flyter
+      \fill[headCol!20] (1.6,1.2) rectangle (3.4,2.8);
+      \draw[thick, headCol!60!black] (1.6,1.2) rectangle (3.4,2.8);
+      \node at (2.5,2.5) {$m$};
+      % Dybden h_f
+      \draw[<->, thin, gray!40!black] (1.25,1.2) -- (1.25,2.0)
+          node[midway, left, font=\footnotesize] {$h_\text{f}$};
+      \draw[gray!50, thin] (1.15,1.2) -- (1.6,1.2);
+      % Tyngdekraften angriper i massesenteret, oppdriften i sentrum av det
+      % fortrengte volumet. Begge ligger på midtlinjen; pilene er skjøvet litt
+      % ut til hver side langs stiplede linjer, så de ikke ligger oppå hverandre.
+      \draw[dashed, thin, gray!60] (2.5,1.2) -- (2.5,2.8);
+      \fill[black] (2.5,2.0) circle (1.8pt);
+      \draw[dashed, thick, black!80] (2.5,2.0) -- (2.85,2.0);
+      \draw[->, line width=2.5pt, defscol] (2.85,2.0) -- (2.85,0.6)
+          node[right=2pt] {$\vec{G}$};
+      \fill[black] (2.5,1.6) circle (1.8pt);
+      \draw[dashed, thick, black!80] (2.5,1.6) -- (2.15,1.6);
+      \draw[->, line width=2.5pt, defscol] (2.15,1.6) -- (2.15,3.0)
+          node[left=2pt] {$\vec{O}$};
+    \end{tikzpicture}
+    \caption{Et legeme med masse $m$ flyter i vann. Det fortrengte volumet er den delen av legemet som er under vannflaten, $V_\text{f} = h_\text{f}\cdot A$, der $h_\text{f}$ er hvor dypt legemet stikker ned, og $A$ er arealet av bunnflaten. Begge kreftene angriper på legemets midtlinje: oppdriftskraften $\vec{O}$ i sentrum av det fortrengte volumet og tyngdekraften $\vec{G}$ i massesenteret (prikkene). Pilene er skjøvet litt ut til hver side langs de stiplede linjene, slik at de ikke tegnes oppå hverandre.}
     \label{fig:h-fortrengt}
 \end{figure}
 
