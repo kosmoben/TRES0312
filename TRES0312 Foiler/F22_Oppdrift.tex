@@ -1,0 +1,249 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Oppdrift og Arkimedes' lov}
+\subtitle{TRES0312 --- kapittel 7.4}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{7}   % Kapittel 7: "Fluiddynamikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 7.4}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: oppdriftskraft. Etter pausen: flyter eller synker?}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva sier Pascals lov?
+      \item I en hydraulisk jekk er $A_2$ ti ganger så stort som $A_1$. Hvor mye større blir $F_2$ enn $F_1$?
+      \item Får vi noe «gratis» med en hydraulisk jekk?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: OPPDRIFTSKRAFT
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: steiner under vann
+%--------------------------------------------------------------------------
+\begin{frame}{Oppdrift}
+
+  \tanke{}{%
+  Hvorfor føles en stein lettere når du løfter den under vann?
+  }
+  \pause
+  \svar{
+  Trykket i vannet øker med dybden. Derfor presser vannet hardere opp på undersiden av steinen enn ned på oversiden. Resultatet er en kraft oppover: \textit{oppdriftskraften}.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: oppdriftskraft
+%--------------------------------------------------------------------------
+\begin{frame}{Oppdrift}
+
+  \defnat{7.4.1}{Oppdriftskraft}{
+  Oppdriftskraften på et legeme i en væske i ro er
+  \[
+    O = \rho_v\,\mathrm{g}\,V_\text{f}
+  \]
+  der $\rho_v$ er tettheten til væsken og $V_\text{f}$ er volumet av væsken som legemet fortrenger.
+  }
+
+  \pause
+  \merk{Fortrengt volum}{%
+  $V_\text{f}$ er den delen av legemet som er under væskeoverflaten. Er legemet helt under, er $V_\text{f}$ lik hele volumet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: stein i vann
+%--------------------------------------------------------------------------
+%  Fasit: G = 6.0*9.81 = 58.9 N; O = 1000*9.81*2.5e-3 = 24.5 N ≈ 25 N;
+%         S = G - O = 34.3 N ≈ 34 N (i lufta: 59 N).
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Stein i vann}{%
+  Du holder en stein i en snor, slik at den henger i ro helt under vann. Steinen har masse $6.0\,\mathrm{kg}$ og volum $2.5\,\mathrm{L}$.
+  \begin{enumerate}[a)]
+    \item Tegn kreftene som virker på steinen.
+    \item Finn oppdriftskraften.
+    \item Finn snorkraften. Sammenlign med snorkraften i lufta.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Oppsummering: oppdriftskraft
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Oppdriftskraft}{%
+  \begin{enumerate}[1.]
+    \item[] Oppdriften skyldes at trykket er større under legemet enn over.
+    \item[] $O = \rho_v\,\mathrm{g}\,V_\text{f}$, der $V_\text{f}$ er volumet under væskeoverflaten.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: flyter eller synker?}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: FLYTER ELLER SYNKER? ARKIMEDES' LOV
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Til ettertanke: stålskip
+%--------------------------------------------------------------------------
+\begin{frame}{Flyter eller synker?}
+
+  \tanke{}{%
+  Stål har nesten åtte ganger så stor tetthet som vann. Hvordan kan et skip av stål flyte?
+  }
+  \pause
+  \svar{
+  Det er skipet \textit{som helhet} som teller: stål pluss all lufta inni. Den gjennomsnittlige tettheten er mindre enn tettheten til vann.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Flyter eller synker?
+%--------------------------------------------------------------------------
+\begin{frame}{Flyter eller synker?}
+
+  For et legeme helt under væsken er $G = \rho_L\,\mathrm{g}\,V$ og $O = \rho_v\,\mathrm{g}\,V$:
+  \graabox{$\displaystyle F_\text{netto} = O - G = (\rho_v - \rho_L)\,\mathrm{g}\,V$}
+  \pause
+  \begin{itemize}
+    \item $\rho_L < \rho_v$: legemet \textbf{flyter}.
+    \item $\rho_L = \rho_v$: legemet \textbf{svever}.
+    \item $\rho_L > \rho_v$: legemet \textbf{synker}.
+  \end{itemize}
+  \pause
+  Når et legeme flyter i ro, er $O = G$.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Aktivitet: isbit i et glass vann
+%--------------------------------------------------------------------------
+%  Fasit: O = G gir V_f/V = rho_is/rho_vann = 0.92/1.0 = 0.92 = 92 %.
+%         Bonus: isfjell i sjøvann: 0.92/1.03 = 0.89 = 89 %.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Isbit i et glass vann}{%
+  En isbit ($\rho_\text{is} = 920\,\mathrm{kg/m^3}$) flyter i et glass vann ($\rho_\text{vann} = 1.0\cdot 10^3\,\mathrm{kg/m^3}$).
+  \begin{enumerate}[a)]
+    \item Hvor stor andel av isbiten ligger under vann? \textit{(Hint: sett $O = G$.)}
+    \item Et isfjell flyter i sjøvann ($1.03\cdot 10^3\,\mathrm{kg/m^3}$). Hvor stor andel ligger under vann?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Definisjon: Arkimedes' lov
+%--------------------------------------------------------------------------
+\begin{frame}{Arkimedes' lov}
+
+  \defnat{7.4.2}{Arkimedes' lov}{
+  Oppdriftskraften på et legeme i en væske i ro er lik tyngden av den fortrengte væsken:
+  \[
+    O = G_\text{f} = \rho_v\,\mathrm{g}\,V_\text{f}
+  \]
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Aktivitet: oppdrift på en båt
+%--------------------------------------------------------------------------
+%  Fasit: V_f = 0.15*12 = 1.8 m^3; O = 1000*9.81*1.8 = 1.77e4 N ≈ 1.8e4 N;
+%         m = O/g = 1.8e3 kg.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Oppdrift på en båt}{%
+  En båt har et volum på $12\,\mathrm{m^3}$, og $15\,\%$ av volumet ligger under vann.
+  \begin{enumerate}[a)]
+    \item Finn oppdriftskraften på båten.
+    \item Hva er massen til båten?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Oppsummering: flyter eller synker
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Flyter eller synker?}{%
+  \begin{enumerate}[1.]
+    \item[] Sammenlign tettheten til legemet med tettheten til væsken.
+    \item[] Et legeme som flyter i ro, har $O = G$.
+    \item[] Arkimedes' lov: oppdriften er lik tyngden av den fortrengte væsken.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: termofysikk}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

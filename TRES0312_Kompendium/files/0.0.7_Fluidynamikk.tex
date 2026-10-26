@@ -638,14 +638,8 @@ Det er lufttrykket på vannflaten utenfor røret som holder vannsøylen oppe. Me
 \end{tikzpicture}%
 }}%
 \end{wrapfigure}
-Når vi utøver et ytre trykk \( \Delta p \) på en væske som er i ro, vil trykket i hele væsken øke med samme beløp \( \Delta p \). Dette betyr at trykkøkningen er lik i alle retninger, uavhengig av væskens høyde. Selv om trykkøkningen er konstant, vil det totale trykket fortsatt variere med høyden på grunn av det hydrostatiske trykket.
+Når vi utøver et ytre trykk \( \Delta p \) på en væske som er i ro, vil trykket i hele væsken øke med samme mengde \( \Delta p \). Dette betyr at trykkøkningen er lik i alle retninger, uavhengig av væskens høyde. Selv om trykkøkningen er konstant, vil det totale trykket fortsatt variere med høyden på grunn av det hydrostatiske trykket.
 \WFclear
-
-\tips{Viktige punkter om Pascals lov}{
-- Trykkøkningen \( \Delta p \) forplanter seg likt i hele væsken.
-- Det totale trykket i væsken kan uttrykkes som summen av trykkøkningen og det hydrostatiske trykket.
-- Pascals lov danner grunnlaget for hydrauliske systemer, der små krefter kan forsterkes ved å bruke større arealer.
-}
 
 \exm{Lodd på et stempel}{%
 En sylinderformet beholder er fylt med vann og lukket med et tett stempel som kan gli uten friksjon. Stempelet har areal $A = \SI{0.010}{\metre\squared}$, og vi ser bort fra massen til stempelet. Over stempelet er det luft med trykket $p_0 = \SI{1.013e5}{\pascal}$. Vi legger et lodd med masse $m = \SI{20}{\kilo\gram}$ på stempelet.
@@ -691,7 +685,7 @@ En sylinderformet beholder er fylt med vann og lukket med et tett stempel som ka
 \]
 
 \smallskip\noindent
-\textbf{c)} Det totale trykket i bunnen er summen av lufttrykket, trykkøkningen fra loddet og det hydrostatiske trykket fra vannet:
+\textbf{c)} Det totale trykket i bunnen er summen av lufttrykket, trykkøkningen på grunn av vekten av loddet, samt det hydrostatiske trykket fra vannet:
 \[
     p = p_0 + \Delta p + \rho\mathrm{g}h = \SI{1.013e5}{\pascal} + \SI{19620}{\pascal} + \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{0.50}{\metre}
 \]
@@ -710,31 +704,90 @@ En sylinderformet beholder er fylt med vann og lukket med et tett stempel som ka
 }}%
 \end{wrapfigure}
 Pascals lov blir særlig nyttig når to stempler med ulikt areal er koblet sammen gjennom den samme væsken. Trykkøkningen er den samme ved begge stemplene, men kraften er trykk ganget med areal. Da blir kraften størst på det største stempelet. Dette er prinsippet bak den hydrauliske jekken.
+
+La oss se hvordan dette fungerer. Figur~\ref{fig:hydraulikk_utledning} viser et lite stempel med areal $A_1$ og et stort stempel med areal $A_2$. Stemplene står i samme høyde, og de er koblet sammen gjennom den samme væsken.
 \WFclear
 
+\begin{center}
+\begin{tikzpicture}[scale=1.1, font=\small, >={Stealth[length=8pt,width=6pt]}]
+  % Væske
+  \fill[oppgcol!18] (0,0) -- (5.0,0) -- (5.0,1.2) -- (1.8,1.2) -- (1.8,0.4) -- (0.8,0.4) -- (0.8,1.2) -- (0,1.2) -- cycle;
+  % Stempler
+  \fill[gray!55] (0,1.2) rectangle (0.8,1.4);
+  \draw[black!70] (0,1.2) rectangle (0.8,1.4);
+  \fill[gray!55] (1.8,1.2) rectangle (5.0,1.4);
+  \draw[black!70] (1.8,1.2) rectangle (5.0,1.4);
+  % Sylindre
+  \draw[very thick, black!75] (0,2.5) -- (0,0) -- (5.0,0) -- (5.0,2.5);
+  \draw[very thick, black!75] (0.8,2.5) -- (0.8,0.4) -- (1.8,0.4) -- (1.8,2.5);
+  % Samme nivå
+  \draw[dashed, gray!70] (-0.3,1.2) -- (5.3,1.2);
+  % Trykkøkning i væsken
+  \node[font=\small] at (0.4,0.6) {$\Delta p$};
+  \node[font=\small] at (3.4,0.6) {$\Delta p$};
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, red!70!black] (0.4,1.4) -- (0.4,1.0);
+  \node[font=\small] at (0.4,1.95) {$\vec{F}_1$};
+  \draw[->, line width=2.5pt, defscol] (3.4,1.2) -- (3.4,2.9)
+      node[right=2pt, font=\small] {$\vec{F}_2$};
+  % Arealer
+  \node[font=\footnotesize, gray!40!black] at (0.4,2.75) {$A_1$};
+  \node[font=\footnotesize, gray!40!black] at (4.5,1.75) {$A_2$};
+\end{tikzpicture}
+\captionof{figure}{To stempler koblet sammen gjennom samme væske. Kraften $\vec{F}_1$ på det lille stempelet gir en trykkøkning $\Delta p$ i væsken. Den samme trykkøkningen virker under det store stempelet og gir kraften $\vec{F}_2$.}
+\label{fig:hydraulikk_utledning}
+\end{center}
+
+Vi presser ned på det lille stempelet med kraften $F_1$. Kraften fordeles over arealet $A_1$, så trykket i væsken like under det lille stempelet øker med
+\[
+    \Delta p = \frac{F_1}{A_1}
+\]
+Etter Pascals lov forplanter denne trykkøkningen seg uforminsket gjennom hele væsken. Under det store stempelet, i samme høyde, øker trykket derfor med den samme $\Delta p$. Væsken presser da opp på det store stempelet med kraften
+\[
+    F_2 = \Delta p\cdot A_2
+    \quad\Longrightarrow\quad
+    \Delta p = \frac{F_2}{A_2}
+\]
+Trykkøkningen er den samme i begge uttrykkene, så vi kan sette dem lik hverandre:
+\[
+    \frac{F_1}{A_1} = \frac{F_2}{A_2}
+    \quad\Longrightarrow\quad
+    F_2 = F_1\cdot\frac{A_2}{A_1}
+\]
+Kraften på det store stempelet blir altså så mange ganger større enn $F_1$ som arealet $A_2$ er større enn $A_1$.
+
 \defn{Pascals lov i hydrauliske systemer}{
-    Når trykk påføres en væske i ro, gjelder følgende forhold for krefter og arealer i et hydraulisk system:
+    For to stempler i samme høyde, koblet sammen gjennom samme væske i ro, er
     \begin{align}
-        \frac{F_1}{A_1} = \frac{F_2}{A_2},
+        \frac{F_1}{A_1} = \frac{F_2}{A_2}
     \end{align}
-    hvor \( F_1 \) og \( F_2 \) er kreftene på stemplene, og \( A_1 \) og \( A_2 \) er arealene deres.
-    \textit{Utledning:} Trykkøkningen \( \Delta p \) i væsken er lik for begge stemplene:
-    \[
-    \Delta p = \frac{F_1}{A_1} = \frac{F_2}{A_2}.
-    \]
-    Ved å omskrive får vi:
-    \[
-    F_2 = F_1 \cdot \frac{A_2}{A_1}.
-    \]
-    Dette viser at kraften \( F_2 \) på det større stempelet er proporsjonal med forholdet mellom arealene \( \frac{A_2}{A_1} \).
 }
 
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Kapittel4:Fluiddynamikk/pascals lov.png}
-    \caption{Pascals lov i et hydraulisk system. En liten kraft \( F_1 \) påføres et lite stempel med areal \( A_1 \), og skaper et trykk som forplanter seg gjennom væsken. Dette trykket løfter en bil ved å bruke et større stempel med areal \( A_2 \), som resulterer i en større kraft \( F_2 \).}
+    \begin{tikzpicture}[font=\small, >={Stealth[length=8pt,width=6pt]}]
+      \node[anchor=south west, inner sep=0] (img) at (0,0)
+          {\includegraphics[width=0.85\textwidth]{Images/Kapittel4:Fluiddynamikk/pascal_bil_skisse.png}};
+      \begin{scope}[x={(img.south east)}, y={(img.north west)}]
+        % Kraften på det lille stempelet (halen i angrepspunktet)
+        \draw[->, line width=2.5pt, red!70!black] (0.150,0.591) -- (0.150,0.480);
+        \node[right=2pt, red!70!black] at (0.150,0.535) {$\vec{F}_1$};
+        \node[anchor=east] at (0.122,0.36) {$A_1$};
+        % Trykkøkning i væsken
+        \node at (0.342,0.127) {$\Delta p$};
+        \node at (0.752,0.326) {$\Delta p$};
+        \node at (0.752,0.461) {$A_2$};
+        % Kraften fra væsken på det store stempelet: angriper på undersiden,
+        % pila er flyttet ut til siden langs den stiplede linjen
+        \fill[black] (0.866,0.525) circle (1.8pt);
+        \draw[dashed, thick, black!75] (0.866,0.525) -- (0.967,0.525);
+        \draw[->, line width=2.5pt, defscol] (0.967,0.525) -- (0.967,0.80);
+        \node[above, defscol] at (0.967,0.80) {$\vec{F}_2$};
+      \end{scope}
+    \end{tikzpicture}
+    \caption{Pascals lov i et hydraulisk system. Personen presser lett ned på det lille stempelet (areal \( A_1 \)) med kraften \( \vec{F}_1 \). Trykkøkningen \( \Delta p \) forplanter seg gjennom væsken, og væsken presser opp på det store stempelet (areal \( A_2 \)) med en mye større kraft \( \vec{F}_2 \), som løfter bilen. \( \vec{F}_2 \) virker på undersiden av det store stempelet. Pila er flyttet ut til siden langs den stiplede linjen.}
     \label{fig:pascalslov}
 \end{figure}
 

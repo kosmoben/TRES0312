@@ -1,0 +1,262 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Pascals lov}
+\subtitle{TRES0312 --- kapittel 7.3}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{7}   % Kapittel 7: "Fluiddynamikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 7.3}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: Pascals lov. Etter pausen: hydrauliske systemer.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er trykket i dybden $h$ i en væske i ro?
+      \item To punkter ligger på samme nivå i samme væske i ro. Hva vet vi om trykket i de to punktene?
+      \item Omtrent hvor mye øker trykket for hver tiende meter nedover i vann?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: PASCALS LOV
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: tannkremtuben
+%--------------------------------------------------------------------------
+\begin{frame}{Pascals lov}
+
+  \tanke{}{%
+  Du klemmer på midten av en tannkremtube. Hvorfor kommer tannkremen ut i enden, og ikke bare der du klemmer?
+  }
+  \pause
+  \svar{
+  Trykkøkningen fra fingrene forplanter seg gjennom hele tannkremen, helt ut til åpningen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Pascals lov
+%--------------------------------------------------------------------------
+\begin{frame}{Pascals lov}
+
+  \begin{itemize}
+    \item Øker vi trykket på en innestengt væske i ro med $\Delta p$, øker trykket \textit{overalt} i væsken med den samme $\Delta p$.
+    \item<2-> Det totale trykket varierer fortsatt med dybden. I dybden $h$ under overflaten er trykket
+  \end{itemize}
+  \onslide<2->{\graabox{$\displaystyle p = p_0 + \Delta p + \rho\mathrm{g}h$}}
+  \onslide<3->{\merk{Pascals lov er grunnlaget for hydrauliske systemer}{%
+  Der kan en liten kraft forsterkes ved hjelp av et stort areal. Det ser vi etter pausen.
+  }}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: lodd på et stempel
+%--------------------------------------------------------------------------
+%  Fasit: a) Δp = m g / A = 30*9.81/0.020 = 1.47e4 Pa ≈ 1.5e4 Pa.
+%         b) Samme: 1.5e4 Pa (Pascals lov).
+%         c) p = 1.013e5 + 1.47e4 + 1000*9.81*0.40 = 1.20e5 Pa ≈ 1.2e5 Pa.
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.72\textwidth}
+      \aktivitet{Lodd på et stempel}{%
+      En beholder med vann er lukket med et tett stempel med areal $A = 0.020\,\mathrm{m^2}$. Over stempelet er det luft med trykket $p_0 = 1.013\cdot 10^5\,\mathrm{Pa}$. Vi legger et lodd på $30\,\mathrm{kg}$ på stempelet.
+      \begin{enumerate}[a)]
+        \item Hvor mye øker trykket like under stempelet?
+        \item Hvor mye øker trykket i bunnen, $0.40\,\mathrm{m}$ lenger ned?
+        \item Hva er det totale trykket i bunnen?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.26\textwidth}
+      \centering
+      \vspace{6mm}
+      \begin{tikzpicture}[scale=0.75, font=\small]
+        \fill[oppgcol!45!pagecolor] (0,0) rectangle (2.0,2.5);
+        \fill[gray!55] (0,2.5) rectangle (2.0,2.75);
+        \fill[gray!80] (0.6,2.75) rectangle (1.4,3.35);
+        \node[font=\footnotesize, white] at (1.0,3.05) {$30\,\mathrm{kg}$};
+        \draw[very thick, textcolor] (0,3.6) -- (0,0) -- (2.0,0) -- (2.0,3.6);
+        \draw[<->, thin, textcolor!70] (2.4,2.5) -- (2.4,0) node[midway, right, font=\footnotesize] {$0.40\,\mathrm{m}$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Oppsummering: Pascals lov
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Pascals lov}{%
+  \begin{enumerate}[1.]
+    \item[] En trykkøkning $\Delta p$ forplanter seg uforminsket til hele væsken.
+    \item[] Totalt trykk i dybden $h$: $p = p_0 + \Delta p + \rho\mathrm{g}h$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: hydrauliske systemer}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: HYDRAULISKE SYSTEMER
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Til ettertanke: løfte en bil
+%--------------------------------------------------------------------------
+\begin{frame}{Hydrauliske systemer}
+
+  \tanke{}{%
+  Hvordan kan du løfte en bil på over et tonn med en jekk, bare ved å presse lett på et lite stempel?
+  }
+  \pause
+  \svar{
+  Trykkøkningen $\Delta p$ er den samme ved begge stemplene. Men kraft er trykk ganget med areal, $F = \Delta p\cdot A$. Et stort stempel får derfor en stor kraft.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Definisjon: Pascals lov i hydrauliske systemer
+%--------------------------------------------------------------------------
+\begin{frame}{Hydrauliske systemer}
+
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \defnat{7.3.1}{Pascals lov i hydrauliske systemer}{
+      For to stempler koblet sammen gjennom samme væske er
+      \[
+        \frac{F_1}{A_1} = \frac{F_2}{A_2}
+        \quad\Longrightarrow\quad
+        F_2 = F_1\cdot\frac{A_2}{A_1}
+      \]
+      }
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.85, font=\small, >={Stealth[length=7pt,width=5pt]}]
+        \fill[oppgcol!45!pagecolor] (0,0) -- (4.6,0) -- (4.6,1.2) -- (1.6,1.2) -- (1.6,0.4) -- (0.6,0.4) -- (0.6,1.2) -- (0,1.2) -- cycle;
+        \fill[gray!55] (0,1.2) rectangle (0.6,1.4);
+        \fill[gray!55] (1.6,1.2) rectangle (4.6,1.4);
+        \draw[very thick, textcolor] (0,2.4) -- (0,0) -- (4.6,0) -- (4.6,2.4);
+        \draw[very thick, textcolor] (0.6,2.4) -- (0.6,0.4) -- (1.6,0.4) -- (1.6,2.4);
+        \draw[->, line width=2.5pt, red!70!white] (0.3,1.4) -- (0.3,0.55);
+        \node at (0.3,1.9) {$\vec{F}_1$};
+        \draw[->, line width=2.5pt, defscol] (3.1,1.2) -- (3.1,2.9) node[right=2pt] {$\vec{F}_2$};
+        \node[font=\footnotesize] at (0.3,2.65) {$A_1$};
+        \node[font=\footnotesize] at (4.1,1.75) {$A_2$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Aktivitet: hydraulisk jekk
+%--------------------------------------------------------------------------
+%  Fasit: F_2 = 60 N * 160/4.0 = 2.4e3 N (40 ganger større).
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Hydraulisk jekk}{%
+  En hydraulisk jekk har et lite stempel med areal $A_1 = 4.0\,\mathrm{cm^2}$ og et stort stempel med areal $A_2 = 160\,\mathrm{cm^2}$. Du presser på det lille stempelet med kraften $F_1 = 60\,\mathrm{N}$.
+  \begin{enumerate}[a)]
+    \item Finn kraften $F_2$ på det store stempelet.
+    \item Hvor mange ganger større er $F_2$ enn $F_1$?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: får vi noe gratis?
+%--------------------------------------------------------------------------
+\begin{frame}{Hydrauliske systemer}
+
+  \tanke{}{%
+  Jekken gir oss 40 ganger så stor kraft. Får vi da noe «gratis»?
+  }
+  \pause
+  \svar{
+  Nei. Væsken som presses ut av den lille sylinderen, må inn i den store. Det lille stempelet må derfor presses 40 ganger så langt som det store løftes. Arbeidet $W = F\cdot s$ er det samme på begge sider: energien er bevart.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Oppsummering: hydrauliske systemer
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Hydrauliske systemer}{%
+  \begin{enumerate}[1.]
+    \item[] Samme trykkøkning ved begge stemplene: $F_1/A_1 = F_2/A_2$.
+    \item[] Stort areal gir stor kraft: $F_2 = F_1\cdot A_2/A_1$.
+    \item[] Men det lille stempelet må flyttes tilsvarende lenger. Arbeidet er det samme.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: oppdrift og Arkimedes' lov}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}
