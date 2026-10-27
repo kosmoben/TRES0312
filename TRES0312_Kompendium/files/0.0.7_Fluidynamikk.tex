@@ -849,21 +849,65 @@ Med et lite stempel kan vi altså løfte en last som er 40 ganger så tung — d
 
 \section{Oppdrift og Arkimedes' lov}
 
-Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes forskjellen i trykk mellom væskens underside og overside av legemet. Oppdriftskraften \( O \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
+Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes at trykket varierer langs legemets høyde.
 
-\subsection{Oppdriftskraft}
-Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir en netto oppdriftskraft \( O \), som kan uttrykkes som:
+La oss se nærmere på dette. Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, som er senket helt ned i en væske. Toppen er på dybden $h_1$, og bunnen er på dybden $h_2 = h_1 + h_s$:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=7pt,width=5pt]}]
+  % Væske
+  \fill[oppgcol!18] (-1.6,-0.4) rectangle (3.4,2.5);
+  \draw[oppgcol!70!black, thick] (-1.6,2.5) -- (3.4,2.5) node[right, font=\footnotesize, black!70] {overflate};
+  % Legeme
+  \fill[headCol!20] (0.2, 0.6) rectangle (2.4, 1.9);
+  \draw[thick] (0.2, 0.6) rectangle (2.4, 1.9);
+  % Dybder
+  \draw[<->, thin, gray!40!black] (-0.4, 2.5) -- (-0.4, 1.9)
+      node[midway, left, font=\footnotesize] {$h_1$};
+  \draw[<->, thin, gray!40!black] (-1.1, 2.5) -- (-1.1, 0.6)
+      node[midway, left, font=\footnotesize] {$h_2$};
+  \draw[gray!50, thin, dashed] (-1.2,1.9) -- (0.2,1.9);
+  \draw[gray!50, thin, dashed] (-1.2,0.6) -- (0.2,0.6);
+  \draw[<->, thin, gray!40!black] (2.7, 1.9) -- (2.7, 0.6)
+      node[midway, right, font=\footnotesize] {$h_s$};
+  % Krefter (halen i angrepspunktet)
+  \draw[->, line width=2.5pt, defscol] (0.7, 1.9) -- (0.7, 1.3)
+      node[midway, right=2pt, font=\footnotesize] {$\vec{F}_{\text{topp}}$};
+  \draw[->, line width=2.5pt, defscol] (1.9, 0.6) -- (1.9, 1.65)
+      node[pos=0.35, left=2pt, font=\footnotesize] {$\vec{F}_{\text{bunn}}$};
+\end{tikzpicture}
+\captionof{figure}{Trykkreftene på toppen og bunnen av et legeme under vann. Kraften på bunnen er større enn kraften på toppen, fordi trykket er større lenger ned.}
+\label{fig:oppdrift_utledning}
+\end{center}
+
+\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
+\vspace{-\baselineskip}%
+\rotatebox{-15}{\href{https://youtu.be/euvIlejovCA?si=ZIf3kAZPGtganxjj}{%
+\begin{tikzpicture}[inner sep=0pt]
+\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Oppdrift.png}};
+\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
+\end{tikzpicture}%
+}}%
+\end{wrapfigure}
+Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
+og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$. (Lufttrykket $p_0$ på overflaten øker begge trykkene like mye, så det faller bort når vi trekker dem fra hverandre.) Trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
+Legemet er helt under væsken, så det fortrengte volumet er hele volumet til legemet, $V_\text{f} = A h_s$. Nettokraften oppover er:
 \[
-O = \rho_v \mathrm{g} V_\text{f}
+  O = F_{\text{bunn}} - F_{\text{topp}}
+    = \rho_v \mathrm{g} A (h_2 - h_1)
+    = \rho_v \mathrm{g} A h_s
+    = \rho_v \mathrm{g} V_\text{f}
 \]
-hvor \( \rho_v \) er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Det fortrengte volumet er den delen av legemets volum som er under væskeoverflaten. Er legemet helt under vann, er $V_\text{f}$ lik hele volumet til legemet.
+Leddet $\rho_v$ er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Dermed ser vi at oppdriftskraften \( O \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
 
-\defn{Oppdriftskraft}{
+Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir altså et netto løft, kalt oppdriftskraften \( O \). 
+
+\defn{Arkimedes' oppdriftslov}{
     Oppdriftskraften \( O \) på et legeme omgitt av en væske i ro kan uttrykkes som:
     \begin{align}
         O = \rho_v \mathrm{g} V_\text{f}
     \end{align}
-    Her er \( \rho_v \) tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet.
+    Her er \( \rho_v \) tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Dette tilsvarer tyngden av den fortrengte væsken.
 }
 
 \begin{figure}[H]
@@ -952,59 +996,6 @@ I lufta må snora holde hele tyngden, \SI{53}{\newton} (oppdriften i luft er så
 }
 
 
-\subsection{Utledning fra trykkdifferanse}
-
-Oppdriftskraften kan utledes direkte fra det hydrostatiske trykket.
-Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, senket slik at toppen er på dybde $h_1$ og bunnen på dybde $h_2 = h_1 + h_s$:
-
-\begin{center}
-\begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=7pt,width=5pt]}]
-  % Væske
-  \fill[oppgcol!18] (-1.6,-0.4) rectangle (3.4,2.5);
-  \draw[oppgcol!70!black, thick] (-1.6,2.5) -- (3.4,2.5) node[right, font=\footnotesize, black!70] {overflate};
-  % Legeme
-  \fill[headCol!20] (0.2, 0.6) rectangle (2.4, 1.9);
-  \draw[thick] (0.2, 0.6) rectangle (2.4, 1.9);
-  % Dybder
-  \draw[<->, thin, gray!40!black] (-0.4, 2.5) -- (-0.4, 1.9)
-      node[midway, left, font=\footnotesize] {$h_1$};
-  \draw[<->, thin, gray!40!black] (-1.1, 2.5) -- (-1.1, 0.6)
-      node[midway, left, font=\footnotesize] {$h_2$};
-  \draw[gray!50, thin, dashed] (-1.2,1.9) -- (0.2,1.9);
-  \draw[gray!50, thin, dashed] (-1.2,0.6) -- (0.2,0.6);
-  \draw[<->, thin, gray!40!black] (2.7, 1.9) -- (2.7, 0.6)
-      node[midway, right, font=\footnotesize] {$h_s$};
-  % Krefter (halen i angrepspunktet)
-  \draw[->, line width=2.5pt, defscol] (0.7, 1.9) -- (0.7, 1.3)
-      node[midway, right=2pt, font=\footnotesize] {$\vec{F}_{\text{topp}}$};
-  \draw[->, line width=2.5pt, defscol] (1.9, 0.6) -- (1.9, 1.65)
-      node[pos=0.35, left=2pt, font=\footnotesize] {$\vec{F}_{\text{bunn}}$};
-\end{tikzpicture}
-\captionof{figure}{Trykkreftene på toppen og bunnen av et legeme under vann. Kraften på bunnen er større enn kraften på toppen, fordi trykket er større lenger ned.}
-\label{fig:oppdrift_utledning}
-\end{center}
-
-\begin{wrapfigure}[6]{r}[1.5cm]{3.6cm}
-\vspace{-\baselineskip}%
-\rotatebox{-15}{\href{https://youtu.be/euvIlejovCA?si=ZIf3kAZPGtganxjj}{%
-\begin{tikzpicture}[inner sep=0pt]
-\node[anchor=south west] (thumb) at (0,0) {\includegraphics[width=3.6cm]{Images/YouTubeLenker/YT_Oppdrift.png}};
-\node[anchor=north west] at (thumb.south west) {\includegraphics[width=1.2cm]{Images/YouTubeLenker/Icon.png}};
-\end{tikzpicture}%
-}}%
-\end{wrapfigure}
-Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
-og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$. (Lufttrykket $p_0$ på overflaten øker begge trykkene like mye, så det faller bort når vi trekker dem fra hverandre.) Trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
-Nettokraften oppover er:
-\[
-  O = F_{\text{bunn}} - F_{\text{topp}}
-    = \rho_v \mathrm{g} A (h_2 - h_1)
-    = \rho_v \mathrm{g} A h_s
-    = \rho_v \mathrm{g} V_\text{f}
-\]
-Dette er Arkimedes' lov, utledet fra hydrostatikk.
-\WFclear
-
 For å avgjøre om et legeme flyter eller synker, må vi sammenligne oppdriftskraften med tyngdekraften på legemet. Tyngdekraften \( G \) avhenger av legemets masse \( m \) og tyngdeakselerasjonen \( \mathrm{g} \). Hvis massen til legemet uttrykkes som \( m = \rho_L V \), der \( \rho_L \) er legemets tetthet og \( V \) er volumet, kan tyngdekraften skrives som:
 \[
 G = m \mathrm{g} = \rho_L V \mathrm{g}.
@@ -1051,18 +1042,6 @@ Vi deler på $\mathrm{g}$ og på $V$ på begge sider og får
     \frac{V_\text{f}}{V} = \frac{\rho_\text{is}}{\rho_\text{sjø}} = \frac{\SI{0.92e3}{\kilo\gram\per\metre\cubed}}{\SI{1.03e3}{\kilo\gram\per\metre\cubed}} = 0.893 \approx \doubleunderline{\SI{89}{\percent}}
 \]
 Omtrent ni tideler av isfjellet ligger altså under vann, og bare én tidel stikker opp. Det er derfor vi sier at noe bare er «toppen av isfjellet».
-}
-
-\subsection{Arkimedes' lov}
-Arkimedes' lov gir en generell beskrivelse av oppdriftskraften og sier:
-\textit{Oppdriftskraften på et legeme i en væske i ro er lik vekten av den fortrengte væsken.}
-
-\defn{Arkimedes' lov}{
-    Oppdriftskraften \( O \) på et legeme i væske i ro kan skrives som:
-    \begin{align}
-        O = G_\text{f}
-    \end{align}
-    hvor \( G_\text{f} = \rho_v \mathrm{g} V_\text{f} \) er vekten av den fortrengte væsken.
 }
 
 \exm{Oppdrift på en båt}{%
