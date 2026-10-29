@@ -849,9 +849,9 @@ Med et lite stempel kan vi altså løfte en last som er 40 ganger så tung — d
 
 \section{Oppdrift og Arkimedes' lov}
 
-Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes at trykket varierer langs legemets høyde.
+Når et legeme er omgitt av en væske, utøves en oppdriftskraft på legemet. Denne kraften skyldes at trykket varierer langs legemets høyde. La oss se nærmere på dette. 
 
-La oss se nærmere på dette. Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, som er senket helt ned i en væske. Toppen er på dybden $h_1$, og bunnen er på dybden $h_2 = h_1 + h_s$:
+Tenk deg et rektangulært legeme med grunnflate $A$ og høyde $h_s$, som er senket helt ned i en væske. Toppen er på dybden $h_1$, og bunnen er på dybden $h_2 = h_1 + h_s$:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=7pt,width=5pt]}]
@@ -889,25 +889,25 @@ La oss se nærmere på dette. Tenk deg et rektangulært legeme med grunnflate $A
 \end{tikzpicture}%
 }}%
 \end{wrapfigure}
-Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1 \cdot A = (\rho_v \mathrm{g} h_1)\,A$,
-og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (\rho_v \mathrm{g} h_2)\,A$. (Lufttrykket $p_0$ på overflaten øker begge trykkene like mye, så det faller bort når vi trekker dem fra hverandre.) Trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
-Legemet er helt under væsken, så det fortrengte volumet er hele volumet til legemet, $V_\text{f} = A h_s$. Nettokraften oppover er:
+Trykkraften \emph{ned} på toppen er $F_{\text{topp}} = p_1\cdot A = (p_0+\rho_v \mathrm{g} h_1)\,A$,
+og kraften \emph{opp} på bunnen er $F_{\text{bunn}} = p_2 \cdot A = (p_0+\rho_v \mathrm{g} h_2)\,A$. Merk forøvrig at trykkreftene på sidene er like store fra begge kanter og opphever hverandre.
+Kraftsummen fra trykket på legemet kaller vi \emph{oppdriftskraften} $F_{\textrm{B}}$. Bokstaven B står for det engelske ordet \textit{buoyancy}, som betyr oppdrift. Oppdriftskraften er gitt ved:
 \[
-  O = F_{\text{bunn}} - F_{\text{topp}}
+  F_{\textrm{B}} = F_{\text{bunn}} - F_{\text{topp}}
     = \rho_v \mathrm{g} A (h_2 - h_1)
     = \rho_v \mathrm{g} A h_s
     = \rho_v \mathrm{g} V_\text{f}
 \]
-Leddet $\rho_v$ er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Dermed ser vi at oppdriftskraften \( O \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
+Leddet $\rho_v$ er tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Dermed ser vi at oppdriftskraften \( F_{\textrm{B}} \) er direkte knyttet til vekten av væsken som fortrenges av legemet.
 
-Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir altså et netto løft, kalt oppdriftskraften \( O \). 
+Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir altså et netto løft, kalt oppdriftskraften \( F_{\textrm{B}} \). 
 
 \defn{Arkimedes' oppdriftslov}{
-    Oppdriftskraften \( O \) på et legeme omgitt av en væske i ro kan uttrykkes som:
+    Oppdriftskraften \( F_{\textrm{B}} \) på et legeme omgitt av en væske i ro kan uttrykkes som:
     \begin{align}
-        O = \rho_v \mathrm{g} V_\text{f}
+        F_{\textrm{B}} = \rho_v \mathrm{g} V_\text{f}
     \end{align}
-    Her er \( \rho_v \) tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken som fortrenges av legemet. Dette tilsvarer tyngden av den fortrengte væsken.
+    Her er \( \rho_v \) tettheten til væsken, \( \mathrm{g} \) er tyngdeakselerasjonen, og \( V_\text{f} \) er volumet av væsken under vann. Volumet av legemet i væsken må naturligvis være like stort som volumet av den fortrengte væsken. Dermed ser vi at oppdriftskraften $F_{\textrm{B}}$ er direkte knyttet til tyngden av den fortrengte væsken! 
 }
 
 \begin{figure}[H]
@@ -936,9 +936,9 @@ Forskjellen mellom trykkreftene på oversiden og undersiden av legemet gir alts�
       \fill[black] (2.5,1.6) circle (1.8pt);
       \draw[dashed, thick, black!80] (2.5,1.6) -- (2.15,1.6);
       \draw[->, line width=2.5pt, defscol] (2.15,1.6) -- (2.15,3.0)
-          node[left=2pt] {$\vec{O}$};
+          node[left=2pt] {$\vec{F}_{\textrm{B}}$};
     \end{tikzpicture}
-    \caption{Et legeme med masse $m$ flyter i vann. Det fortrengte volumet er den delen av legemet som er under vannflaten, $V_\text{f} = h_\text{f}\cdot A$, der $h_\text{f}$ er hvor dypt legemet stikker ned, og $A$ er arealet av bunnflaten. Begge kreftene angriper på legemets midtlinje: oppdriftskraften $\vec{O}$ i sentrum av det fortrengte volumet og tyngdekraften $\vec{G}$ i massesenteret (prikkene). Pilene er skjøvet litt ut til hver side langs de stiplede linjene, slik at de ikke tegnes oppå hverandre.}
+    \caption{Et legeme med masse $m$ flyter i vann. Det fortrengte volumet er den delen av legemet som er under vannflaten, $V_\text{f} = h_\text{f}\cdot A$, der $h_\text{f}$ er hvor dypt legemet stikker ned, og $A$ er arealet av bunnflaten. Begge kreftene angriper på legemets midtlinje: oppdriftskraften $\vec{F}_{\textrm{B}}$ i sentrum av det fortrengte volumet og tyngdekraften $\vec{G}$ i massesenteret (prikkene). Pilene er skjøvet litt ut til hver side langs de stiplede linjene, slik at de ikke tegnes oppå hverandre.}
     \label{fig:h-fortrengt}
 \end{figure}
 
@@ -953,7 +953,7 @@ Du holder en stein i en snor, slik at steinen henger i ro helt under vann. Stein
 
 \svar{%
 \noindent
-\textbf{a)} Tre krefter virker på steinen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{O}$ oppover og snorkraften $\vec{S}$ oppover.
+\textbf{a)} Tre krefter virker på steinen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{F}_{\textrm{B}}$ oppover og snorkraften $\vec{S}$ oppover.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=8pt,width=6pt]}]
@@ -965,28 +965,28 @@ Du holder en stein i en snor, slik at steinen henger i ro helt under vann. Stein
   % Krefter (halen i angrepspunktet)
   \draw[->, line width=2.5pt, defscol] (0,0.7) -- (0,1.75)
       node[right=2pt, font=\small] {$\vec{S}$};
-  % G og O angriper i samme punkt (sentrum); stiplede linjer flytter pilene til siden
+  % G og F_{\textrm{B}} angriper i samme punkt (sentrum); stiplede linjer flytter pilene til siden
   \draw[dashed, thick, black!75] (-0.6,0) -- (0.6,0);
   \fill[black] (0,0) circle (1.8pt);
   \draw[->, line width=2.5pt, defscol] (0.6,0) -- (0.6,-1.75)
       node[right=2pt, font=\small] {$\vec{G}$};
   \draw[->, line width=2.5pt, defscol] (-0.6,0) -- (-0.6,0.65)
-      node[left=2pt, font=\small] {$\vec{O}$};
+      node[left=2pt, font=\small] {$\vec{F}_{\textrm{B}}$};
 \end{tikzpicture}
-\captionof{figure}{Kreftene som virker på steinen. $\vec{G}$ og $\vec{O}$ angriper begge i sentrum av steinen (prikken). Pilene er flyttet ut til hver sin side langs den stiplede linjen, slik at de ikke tegnes oppå hverandre.}
+\captionof{figure}{Kreftene som virker på steinen. $\vec{G}$ og $\vec{F}_{\textrm{B}}$ angriper begge i sentrum av steinen (prikken). Pilene er flyttet ut til hver sin side langs den stiplede linjen, slik at de ikke tegnes oppå hverandre.}
 \label{fig:stein_i_vann}
 \end{center}
 
 \noindent
 \textbf{b)} Steinen er helt under vann, så det fortrengte volumet er hele steinens volum, $V_\text{f} = \SI{2.0}{\litre} = \SI{2.0e-3}{\metre\cubed}$:
 \[
-    O = \rho_v\mathrm{g}V_\text{f} = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton} \approx \doubleunderline{\SI{20}{\newton}}
+    F_{\textrm{B}} = \rho_v\mathrm{g}V_\text{f} = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton} \approx \doubleunderline{\SI{20}{\newton}}
 \]
 
 \smallskip\noindent
 \textbf{c)} Steinen er i ro, så $\sum F = 0$. Med positiv retning oppover:
 \[
-    S + O - G = 0 \quad\implies\quad S = G - O
+    S + F_{\textrm{B}} - G = 0 \quad\implies\quad S = G - F_{\textrm{B}}
 \]
 Tyngdekraften er $G = m\mathrm{g} = \SI{5.4}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{53.0}{\newton}$, så
 \[
@@ -1004,7 +1004,7 @@ Nå har vi både oppdriftskraften og tyngdekraften uttrykt ved tettheter og volu
 
 Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ helt nedsenket i en væske med tetthet $\rho_v$ er:
 \[
-  F_{\text{netto}} = O - G = \rho_v \mathrm{g} V - \rho_L \mathrm{g} V = (\rho_v - \rho_L)\,\mathrm{g} V
+  F_{\text{netto}} = F_{\textrm{B}} - G = \rho_v \mathrm{g} V - \rho_L \mathrm{g} V = (\rho_v - \rho_L)\,\mathrm{g} V
 \]
 
 \begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
@@ -1016,7 +1016,7 @@ Nettokraften på et legeme med tetthet $\rho_L$ og volum $V$ helt nedsenket i en
 \end{itemize}
 \end{tcolorbox}
 
-Når et legeme flyter i ro på overflaten, er bare en del av det under væsken. Da er oppdriftskraften akkurat like stor som tyngdekraften, $O = G$.
+Når et legeme flyter i ro på overflaten, er bare en del av det under væsken. Da er oppdriftskraften akkurat like stor som tyngdekraften, $F_{\textrm{B}} = G$.
 
 \merk{Stål flyter ikke i vann — men et stålskip gjør det!}{%
 Stål har tetthet $\rho \approx \SI{7850}{\kilo\gram\per\metre\cubed}$, langt høyere enn vann.
@@ -1031,9 +1031,9 @@ Et isfjell flyter i sjøen. Hvor stor andel av isfjellet ligger under vann? Bruk
 \svar{%
 Isfjellet flyter i ro, så oppdriftskraften er like stor som tyngdekraften:
 \[
-    O = G
+    F_{\textrm{B}} = G
 \]
-La $V$ være hele volumet til isfjellet og $V_\text{f}$ volumet som er under vann. Vi setter inn uttrykkene for $O$ og $G$:
+La $V$ være hele volumet til isfjellet og $V_\text{f}$ volumet som er under vann. Vi setter inn uttrykkene for $F_{\textrm{B}}$ og $G$:
 \[
     \rho_\text{sjø}\,\mathrm{g}\,V_\text{f} = \rho_\text{is}\,\mathrm{g}\,V
 \]
@@ -1060,19 +1060,94 @@ V_\text{f} = 0.12 \cdot V = 0.12 \cdot 9.0 \, \text{m}^3 = 1.08 \, \text{m}^3.
 \]
 Oppdriftskraften beregnes ved å bruke formelen for oppdrift:
 \[
-O = \rho_v \mathrm{g} V_\text{f} = 1000 \, \text{kg/m}^3 \cdot 9.81 \, \text{m/s}^2 \cdot 1.08 \, \text{m}^3 = 10594.8 \, \text{N} \approx \doubleunderline{11 \, \text{kN}}.
+F_{\textrm{B}} = \rho_v \mathrm{g} V_\text{f} = 1000 \, \text{kg/m}^3 \cdot 9.81 \, \text{m/s}^2 \cdot 1.08 \, \text{m}^3 = 10594.8 \, \text{N} \approx \doubleunderline{11 \, \text{kN}}.
 \]
 
 \smallskip\noindent
 \textbf{b)} Når båten flyter, er oppdriftskraften lik tyngdekraften på båten:
 \[
-O = G = m \mathrm{g}.
+F_{\textrm{B}} = G = m \mathrm{g}.
 \]
 Vi løser for massen \( m \):
 \[
-m = \frac{O}{\mathrm{g}} = \frac{10594.8 \, \text{N}}{9.81 \, \text{m/s}^2} = 1080 \, \text{kg} \approx \doubleunderline{1.1 \cdot 10^3 \, \text{kg}}.
+m = \frac{F_{\textrm{B}}}{\mathrm{g}} = \frac{10594.8 \, \text{N}}{9.81 \, \text{m/s}^2} = 1080 \, \text{kg} \approx \doubleunderline{1.1 \cdot 10^3 \, \text{kg}}.
 \]
 Legg merke til at båtens masse er lik massen til vannet den fortrenger, $\rho_v V_\text{f} = \SI{1080}{\kilo\gram}$. Det er nettopp det Arkimedes' lov sier.
+}
+
+\exm{Stein, båt og basseng}{%
+En liten båt flyter i et basseng. I båten ligger en stein med masse $m_\text{s} = \SI{3.0}{\kilo\gram}$ og massetetthet $\rho_\text{s} = \SI{2.5e3}{\kilo\gram\per\metre\cubed}$. Vannflaten i bassenget har areal $A = \SI{2.0}{\metre\squared}$. Du tar steinen ut av båten og slipper den ned i bassenget, der den synker til bunnen (se figuren).
+
+Når står vannet høyest i bassenget: når steinen ligger i båten, eller når steinen ligger på bunnen av bassenget?
+\begin{enumerate}[a)]
+    \item Finn volumet av vann som fortrenges på grunn av steinen når steinen ligger i båten.
+    \item Finn volumet av vann som fortrenges på grunn av steinen når den ligger på bunnen.
+    \item Hvor mye høyere står vannet i det ene tilfellet enn i det andre?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, font=\small]
+  % ---- (a) Steinen i båten ----
+  \begin{scope}
+    \fill[oppgcol!18] (0,0) rectangle (4.5,1.6);
+    \draw[oppgcol!70!black, thick] (0,1.6) -- (4.5,1.6);
+    \draw[very thick, black!75] (0,2.6) -- (0,0) -- (4.5,0) -- (4.5,2.6);
+    % Båt (lavt i vannet)
+    \fill[headCol!45] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+    \draw[thick, headCol!70!black] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+    % Stein i båten
+    \fill[gray!60] (2.25,2.13) ellipse (0.32 and 0.18);
+    \draw[gray!30!black] (2.25,2.13) ellipse (0.32 and 0.18);
+    \node[font=\small] at (2.25,-0.35) {(a) Steinen i båten};
+  \end{scope}
+  % ---- (b) Steinen på bunnen ----
+  \begin{scope}[xshift=5.5cm]
+    \fill[oppgcol!18] (0,0) rectangle (4.5,1.4);
+    \draw[oppgcol!70!black, thick] (0,1.4) -- (4.5,1.4);
+    \draw[very thick, black!75] (0,2.6) -- (0,0) -- (4.5,0) -- (4.5,2.6);
+    % Båt (høyere i vannet)
+    \fill[headCol!45] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+    \draw[thick, headCol!70!black] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+    % Stein på bunnen
+    \fill[gray!60] (3.6,0.18) ellipse (0.32 and 0.18);
+    \draw[gray!30!black] (3.6,0.18) ellipse (0.32 and 0.18);
+    \node[font=\small] at (2.25,-0.35) {(b) Steinen på bunnen};
+  \end{scope}
+  % Vannstanden i (a) som referanse
+  \draw[dashed, gray!60!black] (4.5,1.6) -- (10.0,1.6);
+  \node[right, font=\footnotesize] at (10.0,1.6) {?};
+\end{tikzpicture}
+\captionof{figure}{En båt med en stein flyter i et basseng. (a) Steinen ligger i båten. (b) Steinen er sluppet ned i bassenget og ligger på bunnen. Den stiplede linjen viser vannstanden i (a). Figuren er ikke i målestokk.}
+\label{fig:stein_baat_basseng}
+\end{center}
+}
+
+\svar{%
+\noindent
+Båten fortrenger like mye vann på grunn av sin egen masse i begge tilfellene. Vi trenger derfor bare å se på hvor mye vann som fortrenges på grunn av \emph{steinen}.
+
+\smallskip\noindent
+\textbf{a)} Når steinen ligger i båten, flyter båten og steinen sammen. Da er oppdriftskraften lik tyngden: $F_{\textrm{B}} = G$. Den ekstra oppdriftskraften som trengs for å bære steinen, er lik tyngden av steinen:
+\[
+    \rho_v\mathrm{g}V_1 = m_\text{s}\mathrm{g}
+    \quad\implies\quad
+    V_1 = \frac{m_\text{s}}{\rho_v} = \frac{\SI{3.0}{\kilo\gram}}{\SI{1.0e3}{\kilo\gram\per\metre\cubed}} = \doubleunderline{\SI{3.0e-3}{\metre\cubed}}
+\]
+Båten må altså fortrenge vann med \emph{samme masse} som steinen, \SI{3.0}{\litre}.
+
+\smallskip\noindent
+\textbf{b)} Når steinen ligger på bunnen, fortrenger den bare sitt eget volum:
+\[
+    V_2 = \frac{m_\text{s}}{\rho_\text{s}} = \frac{\SI{3.0}{\kilo\gram}}{\SI{2.5e3}{\kilo\gram\per\metre\cubed}} = \doubleunderline{\SI{1.2e-3}{\metre\cubed}}
+\]
+Det er bare \SI{1.2}{\litre}, fordi steinen har større massetetthet enn vann.
+
+\smallskip\noindent
+\textbf{c)} Når et volum $V$ vann blir fortrengt, stiger vannflaten med $\Delta h = V/A$. Forskjellen i vannstand er derfor
+\[
+    \Delta h = \frac{V_1 - V_2}{A} = \frac{\SI{3.0e-3}{\metre\cubed} - \SI{1.2e-3}{\metre\cubed}}{\SI{2.0}{\metre\squared}} = \SI{9.0e-4}{\metre} = \doubleunderline{\SI{0.90}{\milli\metre}}
+\]
+Vannet står altså \doubleunderline{høyest når steinen ligger i båten}. Når du slipper steinen ned i bassenget, synker vannstanden litt. Grunnen er at en flytende stein må fortrenge vann med like stor \emph{masse} som seg selv, mens en stein på bunnen bare fortrenger vann med like stort \emph{volum} som seg selv.
 }
 
 \oppgaver{Er kronen av gull?}{k7oppg7}{%

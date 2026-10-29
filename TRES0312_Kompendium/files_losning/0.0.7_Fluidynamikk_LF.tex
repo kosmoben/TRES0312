@@ -187,22 +187,22 @@ Hvert stempel ved hjulene får altså en kraft som er seks ganger så stor som k
 
 \svar[title={Løsningsforslag}]{%
 \noindent
-\textbf{a)} Tre krefter virker på kronen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{O}$ oppover og kraften $\vec{S}$ fra kraftmåleren oppover. Det er $S$ som kraftmåleren viser.
+\textbf{a)} Tre krefter virker på kronen: tyngdekraften $\vec{G}$ nedover, oppdriftskraften $\vec{F}_{\textrm{B}}$ oppover og kraften $\vec{S}$ fra kraftmåleren oppover. Det er $S$ som kraftmåleren viser.
 
 \smallskip\noindent
 \textbf{b)} Kronen henger i ro, så $\sum F = 0$:
 \[
-    S + O - G = 0 \quad\implies\quad O = G - S
+    S + F_{\textrm{B}} - G = 0 \quad\implies\quad F_{\textrm{B}} = G - S
 \]
 Tyngdekraften er $G = m\mathrm{g} = \SI{1.00}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared} = \SI{9.81}{\newton}$, så
 \[
-    O = \SI{9.81}{\newton} - \SI{9.15}{\newton} = \doubleunderline{\SI{0.660}{\newton}}
+    F_{\textrm{B}} = \SI{9.81}{\newton} - \SI{9.15}{\newton} = \doubleunderline{\SI{0.660}{\newton}}
 \]
 
 \smallskip\noindent
-\textbf{c)} Kronen er helt under vann, så det fortrengte volumet er lik volumet til kronen. Fra $O = \rho_v\mathrm{g}V$ (se \textit{Oppdriftskraft} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
+\textbf{c)} Kronen er helt under vann, så det fortrengte volumet er lik volumet til kronen. Fra $F_{\textrm{B}} = \rho_v\mathrm{g}V$ (se \textit{Oppdriftskraft} i Kapittel~\ref{komp-Chapter:fluiddynamikk}):
 \[
-    V = \frac{O}{\rho_v\mathrm{g}} = \frac{\SI{0.660}{\newton}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{6.728e-5}{\metre\cubed} \approx \doubleunderline{\SI{6.73e-5}{\metre\cubed}}
+    V = \frac{F_{\textrm{B}}}{\rho_v\mathrm{g}} = \frac{\SI{0.660}{\newton}}{\SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{6.728e-5}{\metre\cubed} \approx \doubleunderline{\SI{6.73e-5}{\metre\cubed}}
 \]
 
 \smallskip\noindent
@@ -229,7 +229,7 @@ og massen er
 \]
 
 \smallskip\noindent
-\textbf{b)} Klossen flyter i ro, så oppdriftskraften er lik tyngdekraften, $O = G$:
+\textbf{b)} Klossen flyter i ro, så oppdriftskraften er lik tyngdekraften, $F_{\textrm{B}} = G$:
 \[
     \rho_v\mathrm{g}V_\text{f} = \rho_L\mathrm{g}V
     \quad\implies\quad
@@ -246,11 +246,11 @@ og massen er
 \smallskip\noindent
 \textbf{d)} Den største oppdriftskraften klossen kan få, er når hele klossen er under vann, $V_\text{f} = V$:
 \[
-    O_\text{maks} = \rho_v\mathrm{g}V = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton}
+    F_{\textrm{B},\text{maks}} = \rho_v\mathrm{g}V = \SI{1000}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{2.0e-3}{\metre\cubed} = \SI{19.6}{\newton}
 \]
 Denne kraften kan bære en total masse på
 \[
-    m_\text{total} = \frac{O_\text{maks}}{\mathrm{g}} = \frac{\SI{19.6}{\newton}}{\SI{9.81}{\metre\per\second\squared}} = \SI{2.0}{\kilo\gram}
+    m_\text{total} = \frac{F_{\textrm{B},\text{maks}}}{\mathrm{g}} = \frac{\SI{19.6}{\newton}}{\SI{9.81}{\metre\per\second\squared}} = \SI{2.0}{\kilo\gram}
 \]
 Klossen selv har masse \SI{1.2}{\kilo\gram}, så vi kan legge på
 \[
@@ -343,7 +343,7 @@ Det tilsvarer tyngden av omtrent fem tonn. Vinduet må derfor være svært kraft
 \noindent
 \textbf{a)} Ballongen fortrenger \SI{0.010}{\metre\cubed} luft. Etter Arkimedes' lov er oppdriftskraften lik tyngden av denne lufta:
 \[
-    O = \rho_\text{luft}\mathrm{g}V = \SI{1.2}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{0.010}{\metre\cubed} = \SI{0.118}{\newton} \approx \doubleunderline{\SI{0.12}{\newton}}
+    F_{\textrm{B}} = \rho_\text{luft}\mathrm{g}V = \SI{1.2}{\kilo\gram\per\metre\cubed}\cdot\SI{9.81}{\metre\per\second\squared}\cdot\SI{0.010}{\metre\cubed} = \SI{0.118}{\newton} \approx \doubleunderline{\SI{0.12}{\newton}}
 \]
 
 \smallskip\noindent
@@ -359,7 +359,7 @@ og tyngdekraften er
 \smallskip\noindent
 \textbf{c)} Med positiv retning oppover er nettokraften
 \[
-    F_\text{netto} = O - G = \SI{0.118}{\newton} - \SI{0.047}{\newton} = \SI{0.071}{\newton}
+    F_\text{netto} = F_{\textrm{B}} - G = \SI{0.118}{\newton} - \SI{0.047}{\newton} = \SI{0.071}{\newton}
 \]
 Nettokraften er positiv, så ballongen \doubleunderline{stiger}, med en nettokraft på omtrent \doubleunderline{\SI{0.071}{\newton}} oppover.
 }

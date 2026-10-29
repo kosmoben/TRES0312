@@ -75,6 +75,43 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
+%  SLIDE 3b — Hvor kommer oppdriften fra?
+%--------------------------------------------------------------------------
+\begin{frame}{Oppdrift}
+
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      Trykket øker med dybden, så væsken presser hardere opp på bunnen enn ned på toppen:
+      \begin{itemize}
+        \item<2-> $F_\text{topp} = (p_0 + \rho_v\mathrm{g}h_1)\,A$
+        \item<2-> $F_\text{bunn} = (p_0 + \rho_v\mathrm{g}h_2)\,A$
+      \end{itemize}
+      \onslide<3->{Nettokraften oppover er \textit{oppdriftskraften} $F_{\textrm{B}}$ (B for engelsk \textit{buoyancy}):
+      \[
+        F_{\textrm{B}} = F_\text{bunn} - F_\text{topp} = \rho_v\mathrm{g}A h_s = \rho_v\mathrm{g}V_\text{f}
+      \]}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.0, font=\small, >={Stealth[length=7pt,width=5pt]}]
+        \fill[oppgcol!30!pagecolor] (-1.5,-0.4) rectangle (3.0,2.5);
+        \draw[oppgcol!70!white, thick] (-1.5,2.5) -- (3.0,2.5);
+        \fill[headCol!45!pagecolor] (0.2,0.6) rectangle (2.4,1.9);
+        \draw[thick, textcolor] (0.2,0.6) rectangle (2.4,1.9);
+        \draw[<->, thin, textcolor!70] (-0.4,2.5) -- (-0.4,1.9) node[midway, left, font=\footnotesize] {$h_1$};
+        \draw[<->, thin, textcolor!70] (-1.1,2.5) -- (-1.1,0.6) node[midway, left, font=\footnotesize] {$h_2$};
+        \draw[<->, thin, textcolor!70] (2.7,1.9) -- (2.7,0.6) node[midway, right, font=\footnotesize] {$h_s$};
+        \draw<2->[->, line width=2.5pt, defscol] (0.7,1.9) -- (0.7,1.3)
+            node[midway, right=2pt, font=\footnotesize] {$\vec{F}_\text{topp}$};
+        \draw<2->[->, line width=2.5pt, defscol] (1.9,0.6) -- (1.9,1.65)
+            node[pos=0.35, left=2pt, font=\footnotesize] {$\vec{F}_\text{bunn}$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
 %  SLIDE 4 — Definisjon: oppdriftskraft
 %--------------------------------------------------------------------------
 \begin{frame}{Oppdrift}
@@ -82,7 +119,7 @@
   \defnat{7.4.1}{Arkimedes' oppdriftslov}{
   Oppdriftskraften på et legeme i en væske i ro er
   \[
-    O = \rho_v\,\mathrm{g}\,V_\text{f}
+    F_{\textrm{B}} = \rho_v\,\mathrm{g}\,V_\text{f}
   \]
   der $\rho_v$ er tettheten til væsken og $V_\text{f}$ er volumet av væsken som legemet fortrenger. Dette tilsvarer tyngden av den fortrengte væsken.
   }
@@ -97,8 +134,8 @@
 %--------------------------------------------------------------------------
 %  SLIDE 5 — Aktivitet: stein i vann
 %--------------------------------------------------------------------------
-%  Fasit: G = 6.0*9.81 = 58.9 N; O = 1000*9.81*2.5e-3 = 24.5 N ≈ 25 N;
-%         S = G - O = 34.3 N ≈ 34 N (i lufta: 59 N).
+%  Fasit: G = 6.0*9.81 = 58.9 N; F_{\textrm{B}} = 1000*9.81*2.5e-3 = 24.5 N ≈ 25 N;
+%         S = G - F_{\textrm{B}} = 34.3 N ≈ 34 N (i lufta: 59 N).
 \begin{frame}{Aktivitet}
 
   \aktivitet{Stein i vann}{%
@@ -120,7 +157,7 @@
   \oppsum{Oppdriftskraft}{%
   \begin{enumerate}[1.]
     \item[] Oppdriften skyldes at trykket er større under legemet enn over.
-    \item[] $O = \rho_v\,\mathrm{g}\,V_\text{f}$, der $V_\text{f}$ er volumet under væskeoverflaten.
+    \item[] $F_{\textrm{B}} = \rho_v\,\mathrm{g}\,V_\text{f}$, der $V_\text{f}$ er volumet under væskeoverflaten.
   \end{enumerate}
   }
 
@@ -160,8 +197,8 @@
 %--------------------------------------------------------------------------
 \begin{frame}{Flyter eller synker?}
 
-  For et legeme helt under væsken er $G = \rho_L\,\mathrm{g}\,V$ og $O = \rho_v\,\mathrm{g}\,V$:
-  \graabox{$\displaystyle F_\text{netto} = O - G = (\rho_v - \rho_L)\,\mathrm{g}\,V$}
+  For et legeme helt under væsken er $G = \rho_L\,\mathrm{g}\,V$ og $F_{\textrm{B}} = \rho_v\,\mathrm{g}\,V$:
+  \graabox{$\displaystyle F_\text{netto} = F_{\textrm{B}} - G = (\rho_v - \rho_L)\,\mathrm{g}\,V$}
   \pause
   \begin{itemize}
     \item $\rho_L < \rho_v$: legemet \textbf{flyter}.
@@ -169,21 +206,21 @@
     \item $\rho_L > \rho_v$: legemet \textbf{synker}.
   \end{itemize}
   \pause
-  Når et legeme flyter i ro, er $O = G$.
+  Når et legeme flyter i ro, er $F_{\textrm{B}} = G$.
 
 \end{frame}
 
 %--------------------------------------------------------------------------
 %  SLIDE 10 — Aktivitet: isbit i et glass vann
 %--------------------------------------------------------------------------
-%  Fasit: O = G gir V_f/V = rho_is/rho_vann = 0.92/1.0 = 0.92 = 92 %.
+%  Fasit: F_{\textrm{B}} = G gir V_f/V = rho_is/rho_vann = 0.92/1.0 = 0.92 = 92 %.
 %         Bonus: isfjell i sjøvann: 0.92/1.03 = 0.89 = 89 %.
 \begin{frame}{Aktivitet}
 
   \aktivitet{Isbit i et glass vann}{%
   En isbit ($\rho_\text{is} = 920\,\mathrm{kg/m^3}$) flyter i et glass vann ($\rho_\text{vann} = 1.0\cdot 10^3\,\mathrm{kg/m^3}$).
   \begin{enumerate}[a)]
-    \item Hvor stor andel av isbiten ligger under vann? \textit{(Hint: sett $O = G$.)}
+    \item Hvor stor andel av isbiten ligger under vann? \textit{(Hint: sett $F_{\textrm{B}} = G$.)}
     \item Et isfjell flyter i sjøvann ($1.03\cdot 10^3\,\mathrm{kg/m^3}$). Hvor stor andel ligger under vann?
   \end{enumerate}
   }
@@ -193,8 +230,8 @@
 %--------------------------------------------------------------------------
 %  SLIDE 12 — Aktivitet: oppdrift på en båt
 %--------------------------------------------------------------------------
-%  Fasit: V_f = 0.15*12 = 1.8 m^3; O = 1000*9.81*1.8 = 1.77e4 N ≈ 1.8e4 N;
-%         m = O/g = 1.8e3 kg.
+%  Fasit: V_f = 0.15*12 = 1.8 m^3; F_{\textrm{B}} = 1000*9.81*1.8 = 1.77e4 N ≈ 1.8e4 N;
+%         m = F_{\textrm{B}}/g = 1.8e3 kg.
 \begin{frame}{Aktivitet}
 
   \aktivitet{Oppdrift på en båt}{%
@@ -208,6 +245,58 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
+%  SLIDE 12b — Aktivitet: stein, båt og basseng
+%--------------------------------------------------------------------------
+%  Fasit: I båten: V_1 = m/rho_vann = 4.0/1.0e3 = 4.0e-3 m^3 (4.0 L).
+%         På bunnen: V_2 = m/rho_s = 4.0/2.0e3 = 2.0e-3 m^3 (2.0 L).
+%         Δh = (V_1 - V_2)/A = 2.0e-3/1.6 = 1.25e-3 m ≈ 1.3 mm. Høyest når steinen er i båten.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Stein, båt og basseng}{%
+  En båt flyter i et basseng med vannflate $1.6\,\mathrm{m^2}$. I båten ligger en stein med masse $4.0\,\mathrm{kg}$ og tetthet $2.0\cdot 10^3\,\mathrm{kg/m^3}$. Du slipper steinen ned i bassenget, der den synker til bunnen.
+
+  Står vannet høyest når steinen ligger i båten, eller når den ligger på bunnen? Hvor stor er forskjellen i vannstand?
+  }
+
+  \vspace{-2mm}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.62, font=\small]
+    \begin{scope}
+      \fill[oppgcol!45!pagecolor] (0,0) rectangle (4.5,1.6);
+      \draw[very thick, textcolor] (0,2.6) -- (0,0) -- (4.5,0) -- (4.5,2.6);
+      \fill[headCol!60!pagecolor] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+      \fill[gray!60] (2.25,2.13) ellipse (0.32 and 0.18);
+      \node at (2.25,-0.4) {i båten};
+    \end{scope}
+    \begin{scope}[xshift=5.5cm]
+      \fill[oppgcol!45!pagecolor] (0,0) rectangle (4.5,1.4);
+      \draw[very thick, textcolor] (0,2.6) -- (0,0) -- (4.5,0) -- (4.5,2.6);
+      \fill[headCol!60!pagecolor] (1.2,1.95) -- (3.3,1.95) -- (3.0,1.25) -- (1.5,1.25) -- cycle;
+      \fill[gray!60] (3.6,0.18) ellipse (0.32 and 0.18);
+      \node at (2.25,-0.4) {på bunnen};
+    \end{scope}
+    \draw[dashed, textcolor!60] (4.5,1.6) -- (10.0,1.6) node[right] {?};
+  \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12c — Til ettertanke: masse eller volum?
+%--------------------------------------------------------------------------
+\begin{frame}{Flyter eller synker?}
+
+  \tanke{}{%
+  Hvorfor stiger vannet mer når steinen ligger i båten?
+  }
+  \pause
+  \svar{
+  En stein som flyter (i båten), må fortrenge vann med like stor \textit{masse} som seg selv. En stein på bunnen fortrenger bare vann med like stort \textit{volum} som seg selv. Siden steinen har større tetthet enn vann, er det siste mindre vann.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
 %  SLIDE 13 — Oppsummering: flyter eller synker
 %--------------------------------------------------------------------------
 \begin{frame}{}
@@ -215,7 +304,7 @@
   \oppsum{Flyter eller synker?}{%
   \begin{enumerate}[1.]
     \item[] Sammenlign tettheten til legemet med tettheten til væsken.
-    \item[] Et legeme som flyter i ro, har $O = G$.
+    \item[] Et legeme som flyter i ro, har $F_{\textrm{B}} = G$.
     \item[] Oppdriften er lik tyngden av den fortrengte væsken (Arkimedes' oppdriftslov).
   \end{enumerate}
   }
