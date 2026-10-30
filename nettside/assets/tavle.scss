@@ -1,0 +1,179 @@
+/*-- scss:defaults --*/
+// Tavla: mørk skifer med krittfarger fra Dr. Normanns tegninger.
+$slate:   #0d1110;
+$slate-2: #151b19;
+$line:    #2a3330;
+$chalk:   #ecefe6;
+$dust:    #9aa49e;
+$neon:    #6ef04a;
+$orange:  #f19c2c;
+$cyan:    #56d7b8;
+$yellow:  #eee462;
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Architects+Daughter&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap";
+$font-family-sans-serif: "Comic Neue", "Comic Sans MS", "Chalkboard SE", "Nunito Sans", system-ui, sans-serif;
+$headings-font-family: "Comic Neue", "Comic Sans MS", "Chalkboard SE", system-ui, sans-serif;
+$display-font: "Montserrat", "Arial Black", system-ui, sans-serif;
+$headings-font-weight: 700;
+$font-size-root: 18px;
+
+$body-bg: $slate;
+$body-color: $chalk;
+$body-secondary-color: $dust;
+$primary: $neon;
+$secondary: $dust;
+$info: $cyan;
+$warning: $orange;
+$link-color: $neon;
+$border-color: $line;
+$code-color: $yellow;
+$code-bg: $slate-2;
+$navbar-bg: $slate;
+$navbar-fg: $dust;
+$navbar-hl: $chalk;
+$sidebar-bg: $slate;
+$sidebar-fg: $dust;
+$footer-bg: $slate;
+$footer-fg: $dust;
+$toc-color: $dust;
+$callout-color-note: $cyan;
+$callout-color-tip: $neon;
+$callout-color-warning: $orange;
+$input-bg: $slate-2;
+$input-color: $chalk;
+
+/*-- scss:rules --*/
+:root { color-scheme: dark; }
+body { background: $slate; }
+h1, h2, h3, h4 { text-wrap: balance; color: $chalk; }
+h1.title { font-weight: 900; letter-spacing: -0.02em; }
+a { text-underline-offset: 3px; }
+.navbar { border-bottom: 1px solid $line; }
+.navbar-brand .navbar-title { font: 900 22px/1 $display-font; color: $chalk; }
+.navbar-brand .dot { color: $neon; }
+.nav-link[aria-label^="Matematikk"] { opacity: .5; pointer-events: none; }
+.sidebar nav[role="doc-toc"] ul > li > a.active, .sidebar-item .active { color: $neon !important; }
+.hand { font-family: "Architects Daughter", "Comic Sans MS", cursive; }
+.muted { color: $dust; }
+.c-o { color: $orange; } .c-g { color: $neon; } .c-c { color: $cyan; } .c-y { color: $yellow; }
+.eyebrow { font: 600 13px/1 $headings-font-family; letter-spacing: .14em; text-transform: uppercase; color: $neon; margin-bottom: .6rem; }
+mjx-container { color: $chalk; }
+
+// ---------- forside ----------
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; margin: 1.5rem 0 3.5rem; }
+.hero h1 { font-family: $display-font; font-size: clamp(2.6rem, 6.5vw, 4.8rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.04; margin: 0; }
+.hero h1 .g { color: $neon; display: block; }
+.hero .lead { margin-top: 1.2rem; font-size: 1.15rem; max-width: 34ch; }
+.hero .note { margin-top: 1rem; font-family: "Architects Daughter", cursive; color: $yellow; font-size: 1.15rem; display: inline-block; transform: rotate(-1.5deg); }
+.cta { display: flex; gap: .75rem; margin-top: 1.6rem; flex-wrap: wrap; }
+.btn-chalk { display: inline-flex; align-items: center; padding: .8rem 1.25rem; border-radius: 8px; font: 800 .95rem/1 $headings-font-family; text-decoration: none; border: 2px solid $neon; background: $neon; color: #0b130a !important; }
+.btn-chalk.ghost { background: transparent; color: $chalk !important; border-color: $line; }
+.btn-chalk.ghost:hover { border-color: $dust; }
+.board { position: relative; background: $slate-2; border: 1px solid $line; border-radius: 10px; padding: 1.3rem; min-width: 0; }
+.board canvas { display: block; width: 100%; height: auto; }
+.board .tag { position: absolute; left: 1.1rem; top: .8rem; font-family: "Architects Daughter", cursive; color: $dust; }
+.tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.track { border: 1px solid $line; border-radius: 10px; padding: 1.2rem; display: flex; flex-direction: column; gap: .5rem; text-decoration: none; color: $dust; min-width: 0; }
+.track h3 { margin: 0; font-size: 1.15rem; color: inherit; }
+.track .status { font: 700 12px/1 $headings-font-family; letter-spacing: .1em; text-transform: uppercase; }
+.track.live { color: $chalk; border-color: mix($neon, $line, 55%); background: rgba($neon, .05); }
+.track.live .status { color: $neon; }
+.track.live:hover { border-color: $neon; }
+.about { display: grid; grid-template-columns: 170px 1fr; gap: 1.8rem; align-items: center; border-top: 1px solid $line; padding-top: 2.5rem; margin-top: 3.5rem; }
+.about img { width: 150px; }
+
+// ---------- emneoversikt ----------
+.topics { list-style: none; padding: 0; margin: .8rem 0 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .6rem; }
+.topics li > a, .topics li > span { display: flex; justify-content: space-between; align-items: center; gap: .6rem; padding: .75rem .9rem; border-radius: 8px; border: 1px solid $line; text-decoration: none; font-weight: 600; color: $chalk; }
+.topics li > span { color: $dust; border-style: dashed; }
+.topics li > a { border-color: mix($neon, $line, 55%); }
+.topics li > a:hover { background: rgba($neon, .08); }
+.pill { font: 700 11px/1 $headings-font-family; letter-spacing: .08em; text-transform: uppercase; padding: 5px 8px; border-radius: 99px; white-space: nowrap; font-style: normal; }
+.pill.on { background: $neon; color: #0b130a; }
+.pill.off { color: $dust; border: 1px solid $line; }
+
+// ---------- emneside ----------
+.video-card { display: block; position: relative; border-radius: 10px; overflow: hidden; border: 1px solid $line; margin: 1rem 0 .4rem; }
+.video-card img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; margin: 0; }
+.video-card .play { position: absolute; right: 1rem; bottom: 1rem; background: $neon; color: #0b130a; font: 800 .9rem/1 $headings-font-family; padding: .7rem 1rem; border-radius: 8px; }
+.formel { background: $slate-2; border: 1px solid $line; border-radius: 10px; padding: .6rem 1.1rem; margin: 1rem 0; overflow-x: auto; }
+.formel > p:first-child { font-family: "Architects Daughter", cursive; color: $dust; margin: 0; font-size: .95rem; }
+
+// ---------- kjørbar kode ----------
+.kode-boks { border: 1px solid $line; border-radius: 10px; overflow: hidden; margin: 1.2rem 0; background: $slate-2; }
+.kode-boks .kode-topp { display: flex; justify-content: space-between; align-items: center; gap: .6rem; padding: .45rem .7rem; border-bottom: 1px solid $line; font: 600 12px/1 $headings-font-family; letter-spacing: .08em; text-transform: uppercase; color: $dust; }
+.kode-boks .kode-knapper { display: flex; gap: .4rem; }
+.kode-boks button { font: 700 13px/1 $headings-font-family; border-radius: 6px; padding: .5rem .8rem; border: 1px solid $line; background: transparent; color: $chalk; cursor: pointer; }
+.kode-boks button.kjor { background: $neon; border-color: $neon; color: #0b130a; }
+.kode-boks button:disabled { opacity: .6; cursor: progress; }
+.kode-boks textarea { display: block; width: 100%; min-height: 8rem; resize: vertical; border: 0; background: $slate-2; color: $chalk; font: 14px/1.55 ui-monospace, "SF Mono", Menlo, Consolas, monospace; padding: .9rem 1rem; tab-size: 4; outline: none; }
+.kode-boks .kode-ut { border-top: 1px dashed $line; padding: .7rem 1rem; font: 13.5px/1.5 ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; color: $chalk; }
+.kode-boks .kode-ut:empty { display: none; }
+.kode-boks .kode-ut .feil { color: $orange; }
+.kode-boks .kode-ut img { max-width: 100%; background: #fff; border-radius: 6px; margin-top: .4rem; display: block; }
+
+// ---------- oppgaver ----------
+.oppgave { border: 1px solid $line; border-radius: 10px; padding: 1.1rem 1.2rem; margin: 1rem 0; counter-increment: oppg; }
+.oppgaver { counter-reset: oppg; }
+.oppgave > .oppg-hode { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .4rem; }
+.oppgave > .oppg-hode .nr { font: 800 .95rem/1 $headings-font-family; color: $neon; }
+.oppgave > .oppg-hode .nr::after { content: " " counter(oppg); }
+.oppgave > .oppg-hode .tt { flex: 1; font-weight: 700; color: $chalk; }
+.oppgave > .oppg-hode { justify-content: flex-start; }
+.oppgave > .oppg-hode .niva { margin-left: auto; }
+.oppgave > .oppg-hode .niva { font: 700 11px/1 $headings-font-family; letter-spacing: .08em; text-transform: uppercase; color: $dust; }
+.oppg-verktoy { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .6rem; }
+.oppg-verktoy button, .hint-panel button { font: 700 13px/1 $headings-font-family; border-radius: 6px; padding: .55rem .85rem; border: 1px solid $line; background: transparent; color: $chalk; cursor: pointer; }
+.oppg-verktoy button.hint, .hint-panel button.send { border-color: mix($cyan, $line, 60%); color: $cyan; }
+.oppg-verktoy button:disabled, .hint-panel button:disabled { opacity: .6; cursor: progress; }
+.losning { margin-top: .8rem; padding-left: .9rem; border-left: 2px solid $cyan; }
+.hint-panel { margin-top: .8rem; display: grid; gap: .5rem; }
+.hint-panel label { font-size: .9rem; color: $dust; }
+.hint-panel textarea { width: 100%; min-height: 4.2rem; border-radius: 8px; border: 1px solid $line; background: $slate-2; color: $chalk; padding: .6rem .8rem; font: inherit; font-size: .95rem; }
+.hint-svar { border-radius: 8px; padding: .7rem .9rem; background: rgba($cyan, .08); border: 1px solid mix($cyan, $line, 40%); }
+.hint-svar .hint-tittel { font: 700 12px/1 $headings-font-family; letter-spacing: .08em; text-transform: uppercase; color: $cyan; margin-bottom: .35rem; }
+.hint-svar.feil { background: rgba($orange, .08); border-color: mix($orange, $line, 40%); }
+.hint-svar.feil .hint-tittel { color: $orange; }
+
+@media (max-width: 860px) {
+  .hero, .about { grid-template-columns: 1fr; }
+  .tracks { grid-template-columns: 1fr; }
+  .about img { width: 110px; }
+}
+
+// ---------- kompendium (TRES) ----------
+.intro { font-size: 1.12rem; color: $chalk; border-left: 3px solid $neon; padding: .2rem 0 .2rem 1rem; margin: 1rem 0 1.4rem; }
+.spm { background: $slate-2; border: 1px solid $line; border-radius: 12px; padding: 1rem 1.2rem .4rem; margin: 1.2rem 0; }
+.spm .spm-tittel { display: block; font-weight: 700; color: $yellow; margin-bottom: .4rem; font-family: "Architects Daughter", cursive; font-size: 1.1rem; }
+.spq { text-align: center; font-size: 1.15rem; }
+.eksempel { border-left: 3px solid #e04b52; padding: .3rem 0 .3rem 1rem; margin: 1.4rem 0 .6rem; }
+.eksempel .eks-tittel { display: block; font-weight: 700; font-style: italic; color: #ff8a8f; margin-bottom: .3rem; }
+.callout.svar { margin-top: .2rem; }
+.graa { background: rgba($chalk, .07); border: 1px solid $line; border-radius: 10px; padding: .4rem 1.2rem; margin: 1rem auto; width: fit-content; max-width: 100%; overflow-x: auto; }
+.figurtekst { display: block; text-align: center; font-size: .92rem; color: $dust; margin: -.3rem auto 1.2rem; max-width: 60ch; }
+img.tikz-fig { display: block; margin: 1.2rem auto .6rem; max-width: 100%; height: auto; filter: invert(1) hue-rotate(180deg) brightness(1.05); }
+img.kompendium-bilde { display: block; margin: 1.2rem auto .6rem; max-width: min(100%, 640px); height: auto; border-radius: 10px; }
+div.center { text-align: center; }
+.quarto-video { margin: 1rem 0 1.4rem; border-radius: 10px; overflow: hidden; border: 1px solid $line; }
+.utskrift, pre.text { color: $dust; }
+.oppgave .oppg-tittel { display: none; }
+.callout { background: $slate-2 !important; color: $chalk; }
+.callout .callout-title-container { color: $chalk; font-weight: 700; }
+table { color: $chalk; }
+.table { --bs-table-color: #{$chalk}; --bs-table-bg: transparent; }
+
+// kapitteloversikt
+.kapitler { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.kapittel { border: 1px solid mix($neon, $line, 45%); border-radius: 12px; padding: 1rem 1.1rem; min-width: 0; }
+.kapittel.arbeid { border-style: dashed; border-color: $line; }
+.kapittel .kap-hode { display: flex; align-items: baseline; gap: .6rem; text-decoration: none; color: $chalk; flex-wrap: wrap; }
+.kapittel .kap-nr { font: 900 1.6rem/1 $display-font; color: $neon; }
+.kapittel.arbeid .kap-nr { color: $dust; }
+.kapittel .kap-navn { font-weight: 700; font-size: 1.2rem; }
+.kapittel .kap-meta { font-size: .9rem; color: $dust; margin: .3rem 0 .2rem; }
+.kapittel ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.kapittel li { margin: .15rem 0; }
+.kapittel li a { color: $chalk; text-decoration: none; }
+.kapittel li a:hover { color: $neon; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 2px 0; }
+main table { display: block; overflow-x: auto; max-width: 100%; }

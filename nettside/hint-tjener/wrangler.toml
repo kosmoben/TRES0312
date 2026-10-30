@@ -1,0 +1,13 @@
+name = "fysikkhjelp-hint"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Valgfritt: begrens antall hint per bruker. Lag en KV-navnerom med
+#   npx wrangler kv namespace create HINT_KV
+# og lim inn id-en under (fjern #-tegnene).
+# [[kv_namespaces]]
+# binding = "HINT_KV"
+# id = "LIM-INN-ID-HER"
+
+# Egen adresse (hint.fysikkhjelp.no) når domenet ligger i Cloudflare:
+# routes = [{ pattern = "hint.fysikkhjelp.no/hint", custom_domain = false, zone_name = "fysikkhjelp.no" }]
