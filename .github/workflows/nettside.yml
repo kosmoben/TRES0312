@@ -1,0 +1,56 @@
+# Bygger fysikkhjelp.no fra kompendiet og legger den ut, hver gang noe pushes til main.
+name: Nettside (fysikkhjelp.no)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "TRES0312_Kompendium/**"
+      - "nettside/**"
+      - ".github/workflows/nettside.yml"
+  workflow_dispatch:   # gjør det mulig å starte manuelt fra Actions-fanen
+
+concurrency:
+  group: nettside
+  cancel-in-progress: true
+
+jobs:
+  bygg-og-publiser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer LaTeX (til TikZ-figurene) og pdftocairo
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-pictures texlive-science texlive-fonts-recommended \
+            texlive-lang-european poppler-utils
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.6.42
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Husk ferdige figurer mellom kjøringer
+        uses: actions/cache@v4
+        with:
+          path: nettside/.figur-cache
+          key: figurer-${{ hashFiles('TRES0312_Kompendium/files/*.tex', 'TRES0312_Kompendium/amd.sty') }}
+          restore-keys: figurer-
+
+      - name: Bygg nettsiden
+        run: bash nettside/bygg.sh
+
+      - name: Publiser til Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: nettside
+          command: deploy
