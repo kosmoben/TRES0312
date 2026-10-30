@@ -1,0 +1,146 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+  resources:
+    - assets/
+
+lang: nb
+
+website:
+  title: "fysikkhjelp.no"
+  site-url: "https://fysikkhjelp.no"
+  description: "Fysikk forklart på tavla – videoer, formler, kjørbar kode og oppgaver med hint. Av Dr. Normann."
+  favicon: assets/img/drnormann-logo.png
+  page-navigation: true
+  navbar:
+    title: "fysikkhjelp<span class='dot'>.</span>no"
+    left:
+      - href: index.qmd
+        text: Forside
+      - href: forkurs/index.qmd
+        text: Forkurs (TRES)
+      - text: Matematikk
+        href: "#"
+        aria-label: "Matematikk (kommer)"
+  sidebar:
+    - id: forkurs
+      title: "Forkurs (TRES)"
+      style: docked
+      collapse-level: 1
+      contents:
+        - forkurs/index.qmd
+        - section: "1. Hva er fysikk?"
+          href: forkurs/01-hva-er-fysikk/index.qmd
+          contents:
+            - forkurs/01-hva-er-fysikk/01-hva-er-fysikk.qmd
+            - forkurs/01-hva-er-fysikk/02-fysiske-storrelser.qmd
+            - forkurs/01-hva-er-fysikk/03-a-regne-med-enheter.qmd
+            - forkurs/01-hva-er-fysikk/04-signifikante-siffer.qmd
+            - forkurs/01-hva-er-fysikk/05-tall-pa-standardform.qmd
+            - forkurs/01-hva-er-fysikk/06-eksempel-pa-beregning.qmd
+            - forkurs/01-hva-er-fysikk/07-ekstraoppgaver.qmd
+        - section: "2. Matematiske verktøy vi trenger"
+          href: forkurs/02-matematikk/index.qmd
+          contents:
+            - forkurs/02-matematikk/01-likninger-og-algebra.qmd
+            - forkurs/02-matematikk/02-funksjoner-og-plotting.qmd
+            - forkurs/02-matematikk/03-trigonometri.qmd
+            - forkurs/02-matematikk/04-vektorer.qmd
+            - forkurs/02-matematikk/05-operasjoner-med-vektorer.qmd
+            - forkurs/02-matematikk/06-matematisk-modellering.qmd
+            - forkurs/02-matematikk/07-ekstraoppgaver.qmd
+        - section: "3. Kinematikk"
+          href: forkurs/03-kinematikk/index.qmd
+          contents:
+            - forkurs/03-kinematikk/01-hva-er-kinematikk.qmd
+            - forkurs/03-kinematikk/02-strekning-s-og-hastighet-v.qmd
+            - forkurs/03-kinematikk/03-akselerasjon.qmd
+            - forkurs/03-kinematikk/04-bevegelseslikningene-for-konstant-akselerasjon.qmd
+            - forkurs/03-kinematikk/05-sirkelbevegelse.qmd
+            - forkurs/03-kinematikk/06-ekstraoppgaver.qmd
+        - section: "4. Dynamikk"
+          href: forkurs/04-krefter/index.qmd
+          contents:
+            - forkurs/04-krefter/01-bevegelsesmengde.qmd
+            - forkurs/04-krefter/02-newtons-lover-og-kraft-begrepet.qmd
+            - forkurs/04-krefter/03-krefter-i-dagliglivet.qmd
+            - forkurs/04-krefter/04-krefter-i-planet-dekomponering.qmd
+            - forkurs/04-krefter/05-bevaring-av-bevegelsesmengde.qmd
+            - forkurs/04-krefter/06-ekstraoppgaver.qmd
+        - section: "5. Arbeid og energi"
+          href: forkurs/05-energi/index.qmd
+          contents:
+            - forkurs/05-energi/01-arbeid.qmd
+            - forkurs/05-energi/02-energi.qmd
+            - forkurs/05-energi/03-energitap.qmd
+            - forkurs/05-energi/04-bevaring-av-mekanisk-energi.qmd
+            - forkurs/05-energi/05-effekt.qmd
+            - forkurs/05-energi/06-stot.qmd
+            - forkurs/05-energi/07-ekstraoppgaver.qmd
+        - section: "6. Statikk"
+          href: forkurs/06-statikk/index.qmd
+          contents:
+            - forkurs/06-statikk/01-kraftlikevekt-f-0.qmd
+            - forkurs/06-statikk/02-kraftmoment.qmd
+            - forkurs/06-statikk/03-rotasjonslikevekt-og-fullstendig-likevekt.qmd
+            - forkurs/06-statikk/04-massesenter.qmd
+            - forkurs/06-statikk/05-ekstraoppgaver.qmd
+        - section: "7. Fluidfysikk"
+          href: forkurs/07-fluider/index.qmd
+          contents:
+            - forkurs/07-fluider/01-introduksjon-til-fluidfysikk.qmd
+            - forkurs/07-fluider/02-trykk-i-vaesker.qmd
+            - forkurs/07-fluider/03-pascals-lov.qmd
+            - forkurs/07-fluider/04-oppdrift-og-arkimedes-lov.qmd
+            - forkurs/07-fluider/05-ekstraoppgaver.qmd
+        - section: "8. Termofysikk"
+          href: forkurs/08-termofysikk/index.qmd
+          contents:
+            - forkurs/08-termofysikk/01-indre-energi-og-varme.qmd
+            - forkurs/08-termofysikk/02-termodynamikkens-1-lov.qmd
+            - forkurs/08-termofysikk/03-faseoverganger.qmd
+            - forkurs/08-termofysikk/04-kalorimetri.qmd
+            - forkurs/08-termofysikk/05-temperaturskalaer.qmd
+            - forkurs/08-termofysikk/06-kinetisk-gassteori.qmd
+            - forkurs/08-termofysikk/07-tilstandslikninga-for-idealgass.qmd
+            - forkurs/08-termofysikk/08-prosesstyper-og-pv-diagram.qmd
+        - section: "9. Elektrisitet"
+          href: forkurs/09-elektrisitet/index.qmd
+          contents:
+            - forkurs/09-elektrisitet/01-begreper.qmd
+            - forkurs/09-elektrisitet/02-elektrisk-kraft-og-ladning.qmd
+            - forkurs/09-elektrisitet/03-kirchoff-s-lover.qmd
+            - forkurs/09-elektrisitet/04-motstand.qmd
+            - forkurs/09-elektrisitet/05-effekt.qmd
+  page-footer:
+    left: "fysikkhjelp.no · Dr. Normann"
+    right: "Laget med [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: [cosmo, assets/tavle.scss]
+    html-math-method: mathjax
+    toc: true
+    toc-title: "På denne siden"
+    toc-depth: 2
+    lightbox: true
+    code-copy: true
+    highlight-style: github-dark
+    include-in-header:
+      - text: |
+          <!-- Adressen til hint-tjeneren (Cloudflare Worker). Bytt ut når den er satt opp. -->
+          <meta name="fysikkhjelp-hint-api" content="https://hint.fysikkhjelp.no/hint">
+    include-after-body:
+      - text: |
+          <script>
+            // Finn rotmappen til nettstedet ut fra Quartos egne filer, så stiene virker på alle undersider.
+            (function () {
+              var s = document.querySelector('script[src*="site_libs/"]');
+              var root = s ? s.getAttribute('src').split('site_libs/')[0] : '';
+              ['assets/js/kode.js', 'assets/js/oppgaver.js'].forEach(function (p) {
+                var el = document.createElement('script'); el.src = root + p; document.body.appendChild(el);
+              });
+            })();
+          </script>
