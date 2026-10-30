@@ -1,8 +1,0 @@
-# Oppsett for opplasting av fysikkhjelp.no til Cloudflare (brukes av GitHub-automatikken).
-# fysikkhjelp.no og www er koblet til i Cloudflare-dashbordet og beholdes ved hver opplasting.
-name = "polished-surf-6e11"          # navnet Cloudflare ga prosjektet ved første opplasting
-compatibility_date = "2024-11-01"
-workers_dev = true
-
-[assets]
-directory = "./_site"
