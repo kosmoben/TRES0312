@@ -1,0 +1,12 @@
+---
+title: "Avansert fysikk"
+toc: false
+---
+
+```{=html}
+<div class="kommer">
+  <p class="kommer-stor">Innhold kommer!</p>
+  <p>Videregående emner for deg som vil lenger: analytisk mekanikk, kvantemekanikk, relativitetsteori og kosmologi.</p>
+  <p>I mellomtiden finner du alt som er klart under <a href="../forkurs/index.html">Forkurs</a>.</p>
+</div>
+```

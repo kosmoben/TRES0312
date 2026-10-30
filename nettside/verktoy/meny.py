@@ -10,7 +10,11 @@ toc = json.loads((P / 'forkurs' / '_innhold.json').read_text(encoding='utf-8'))
 # ---- oversiktsside
 q = ['---', 'title: "Forkurs (TRES0312)"',
      'subtitle: "Fysikk for deg som ikke har hatt mye matematikk eller fysikk før. Video, forklaring, eksempler og oppgaver med løsning og hint."',
-     'toc: false', 'page-layout: full', '---', '', '```{=html}', '<div class="kapitler">']
+     'toc: false', 'page-layout: full', '---', '']
+klare = [c for c in toc if c['status'] == 'klar']
+n_opp_tot = sum(s['oppgaver'] for c in toc for s in c['sider'])
+n_vid_tot = sum(c.get('videoer', 0) for c in toc)
+q += ['```{=html}', f'<p class="forkurs-tall">→ {len(klare)} ferdige kapitler, {n_opp_tot} oppgaver, {n_vid_tot} videoer</p>', '<div class="kapitler">']
 for c in toc:
     live = c['status'] == 'klar'
     n_opp = sum(s['oppgaver'] for s in c['sider'])

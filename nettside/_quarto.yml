@@ -20,10 +20,13 @@ website:
       - href: index.qmd
         text: Forside
       - href: forkurs/index.qmd
-        text: Forkurs (TRES)
-      - text: Matematikk
-        href: "#"
-        aria-label: "Matematikk (kommer)"
+        text: Forkurs
+      - href: kommer/ingeniorfysikk.qmd
+        text: Ingeniørfysikk
+      - href: kommer/matematikk.qmd
+        text: Matematikk
+      - href: kommer/avansert-fysikk.qmd
+        text: Avansert fysikk
   sidebar:
     - id: forkurs
       title: "Forkurs (TRES)"
@@ -95,17 +98,6 @@ website:
             - forkurs/07-fluider/03-pascals-lov.qmd
             - forkurs/07-fluider/04-oppdrift-og-arkimedes-lov.qmd
             - forkurs/07-fluider/05-ekstraoppgaver.qmd
-        - section: "8. Termofysikk"
-          href: forkurs/08-termofysikk/index.qmd
-          contents:
-            - forkurs/08-termofysikk/01-indre-energi-og-varme.qmd
-            - forkurs/08-termofysikk/02-termodynamikkens-1-lov.qmd
-            - forkurs/08-termofysikk/03-faseoverganger.qmd
-            - forkurs/08-termofysikk/04-kalorimetri.qmd
-            - forkurs/08-termofysikk/05-temperaturskalaer.qmd
-            - forkurs/08-termofysikk/06-kinetisk-gassteori.qmd
-            - forkurs/08-termofysikk/07-tilstandslikninga-for-idealgass.qmd
-            - forkurs/08-termofysikk/08-prosesstyper-og-pv-diagram.qmd
         - section: "9. Elektrisitet"
           href: forkurs/09-elektrisitet/index.qmd
           contents:

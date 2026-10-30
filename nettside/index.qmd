@@ -7,13 +7,11 @@ page-layout: full
 ```{=html}
 <section class="hero">
   <div>
-    <p class="eyebrow">Forkurs for ingeniør- og realfag · TRES0312</p>
-    <h1>Fysikk, forklart <span class="g">på tavla.</span></h1>
+    <p class="eyebrow">Fysikk og matematikk for ingeniør- og realfag</p>
+    <h1>Fysikk forklart <span class="g">på tavla.</span></h1>
     <p class="lead">Korte videoer, tydelige formler, kode du kan kjøre selv og oppgaver med hint når du står fast. Laget av Dr.&nbsp;Normann, emne for emne.</p>
-    <span class="note">→ 7 kapitler, over 100 oppgaver</span>
     <div class="cta">
-      <a class="btn-chalk" href="forkurs/01-hva-er-fysikk/index.html">Start på kapittel 1</a>
-      <a class="btn-chalk ghost" href="forkurs/index.html">Alle kapitler</a>
+      <a class="btn-chalk" href="forkurs/index.html">Gå til forkurset</a>
     </div>
   </div>
   <div class="board" role="img" aria-label="Tavletegning: kjelke dratt med kraften F i vinkel theta, med komponentene Fx og Fy og forflytningen s">
@@ -27,25 +25,30 @@ page-layout: full
 Velg kurs
 :::
 
-## Hvor er du?
+## Hvor i løypa er du?
 
 ```{=html}
 <div class="tracks">
   <a class="track live" href="forkurs/index.html">
     <span class="status">Åpent nå</span>
-    <h3>Forkurs (TRES)</h3>
-    <p>Fra «hva er fysikk?» via kinematikk, krefter og energi til statikk og fluider. Termofysikk og elektrisitet kommer.</p>
+    <h3>Forkurs</h3>
+    <p>For deg som skal begynne på ingeniør- eller realfag. Fra «hva er fysikk?» via kinematikk, krefter og energi til statikk og fluider.</p>
   </a>
-  <div class="track">
+  <a class="track" href="kommer/ingeniorfysikk.html">
     <span class="status">Kommer</span>
-    <h3>Fysikk – alle emner</h3>
-    <p>Samme innhold ordnet etter emne, for ingeniørstudenter og alle andre.</p>
-  </div>
-  <div class="track">
+    <h3>Ingeniørfysikk</h3>
+    <p>Fysikken i ingeniørstudiet, ordnet etter emne.</p>
+  </a>
+  <a class="track" href="kommer/matematikk.html">
     <span class="status">Kommer</span>
     <h3>Matematikk</h3>
     <p>Algebra, funksjoner, derivasjon og integrasjon, på samme måte.</p>
-  </div>
+  </a>
+  <a class="track" href="kommer/avansert-fysikk.html">
+    <span class="status">Kommer</span>
+    <h3>Avansert fysikk</h3>
+    <p>For deg som vil lenger enn pensum.</p>
+  </a>
 </div>
 
 <section class="about">
