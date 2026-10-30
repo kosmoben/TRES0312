@@ -31,7 +31,7 @@ Siden åpnes på `http://localhost:4200`. Første gang tar det noen minutter (fi
 | `verktoy/convert.py` | Konverterer LaTeX til nettsider |
 | `verktoy/tillegg/` | Ekstra innhold som ikke står i kompendiet, f.eks. kjørbar Python: `tillegg/<kapittelmappe>/<side>.md` |
 | `hint-tjener/` | Tjeneren som henter KI-hint |
-| `wrangler.jsonc` | Opplasting til Cloudflare |
+| `wrangler.toml` | Opplasting til Cloudflare |
 | `forkurs/`, `_site/` | Lages automatisk – ikke rediger, og de lagres ikke i git |
 
 ## 4. Om konverteringen
