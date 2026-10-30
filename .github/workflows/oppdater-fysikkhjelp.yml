@@ -1,0 +1,18 @@
+# Sier fra til fysikkhjelp-repoet at kompendiet er endret, så nettsiden bygges på nytt.
+name: Oppdater fysikkhjelp.no
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "TRES0312_Kompendium/**"
+  workflow_dispatch:
+
+jobs:
+  ring-pa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Si fra til kosmoben/fysikkhjelp
+        env:
+          GH_TOKEN: ${{ secrets.FYSIKKHJELP_TOKEN }}
+        run: gh api repos/kosmoben/fysikkhjelp/dispatches -f event_type=kilde-oppdatert
