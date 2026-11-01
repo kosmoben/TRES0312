@@ -1018,5 +1018,215 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k7_oppg15.tex",
     "sourcefile": "0.0.7_Fluidynamikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Varme eller arbeid?",
+    "label": "k8oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg01.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "Riktig eller galt?",
+    "label": "k8oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg02.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Sykkelpumpe",
+    "label": "k8oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg03.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Gass som komprimeres",
+    "label": "k8oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg04.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Les av oppvarmingskurven",
+    "label": "k8oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg05.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Hvorfor svetter vi?",
+    "label": "k8oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg06.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Cola og is",
+    "label": "k8oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg07.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Vannkoker",
+    "label": "k8oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg08.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Omregning av temperaturer",
+    "label": "k8oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg09.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Dobbelt så varmt?",
+    "label": "k8oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg10.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Oksygenmolekyler",
+    "label": "k8oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg11.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Helium og oksygen",
+    "label": "k8oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg12.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Sylindereksperiment",
+    "label": "k8oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg13.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Bildekk om vinteren",
+    "label": "k8oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg14.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Arbeid i et pV-diagram",
+    "label": "k8oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg15.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 16,
+    "kind": "oppgave",
+    "title": "To prosesser etter hverandre",
+    "label": "k8oppg16",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg16.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 17,
+    "kind": "oppgave",
+    "title": "Bremser som blir varme",
+    "label": "k8oppg17",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg17.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 18,
+    "kind": "oppgave",
+    "title": "Isbiter i te",
+    "label": "k8oppg18",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg18.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 19,
+    "kind": "oppgave",
+    "title": "Ballong i fryseren",
+    "label": "k8oppg19",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg19.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 20,
+    "kind": "oppgave",
+    "title": "Molekyler i et klasserom",
+    "label": "k8oppg20",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg20.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 8,
+    "number": 21,
+    "kind": "oppgave",
+    "title": "Kobber i vann",
+    "label": "k8oppg21",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k8_oppg21.tex",
+    "sourcefile": "0.0.8_Termofysikk.tex"
   }
 ]
