@@ -3,6 +3,135 @@
 \label{LF:Chapter:termofysikk}
 Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:termofysikk}, \textit{Termofysikk}, i kompendiet.
 
+\oppgaver{Omregning av temperaturer}{k8oppg9}{%
+\input{Oppgaver/k8_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi bruker $T = t + 273$ og $t_\text{F} = \tfrac{9}{5}\,t_\text{C} + 32$.
+
+\smallskip\noindent
+\textbf{a)} $T = 37 + 273 = \doubleunderline{\SI{310}{\kelvin}}$
+
+\smallskip\noindent
+\textbf{b)} $t = 77 - 273 = \doubleunderline{-196\,^\circ\text{C}}$
+
+\smallskip\noindent
+\textbf{c)} $t = 5800 - 273 = 5527\,^\circ\text{C} \approx \doubleunderline{5.5\cdot 10^3\,^\circ\text{C}}$. Når temperaturen er så høy, spiller det liten rolle om vi bruker kelvin eller celsius.
+
+\smallskip\noindent
+\textbf{d)} Vi løser formelen for $t_\text{C}$:
+\[
+  t_\text{C} = \frac{5}{9}\,(t_\text{F} - 32) = \frac{5}{9}\,(50 - 32) = \doubleunderline{10\,^\circ\text{C}}
+\]
+}
+
+\oppgaver{Dobbelt så varmt?}{k8oppg10}{%
+\input{Oppgaver/k8_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi må regne i kelvin: $T_1 = 10 + 273 = \SI{283}{\kelvin}$ og $T_2 = 20 + 273 = \SI{293}{\kelvin}$. Den gjennomsnittlige kinetiske energien er proporsjonal med $T$, så
+\[
+  \frac{\bar{E}_{\text{K},2}}{\bar{E}_{\text{K},1}} = \frac{T_2}{T_1} = \frac{\SI{293}{\kelvin}}{\SI{283}{\kelvin}} = 1.035
+\]
+Energien har bare økt med omtrent \SI{3.5}{\percent}. Den er \doubleunderline{ikke doblet}. Det er bare i kelvin det gir mening å si «dobbelt så høy temperatur».
+
+\smallskip\noindent
+\textbf{b)} En grad celsius er like stor som én kelvin, så
+\[
+  \Delta T = 15 - (-5) = \doubleunderline{\SI{20}{\kelvin}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Vi setter $t_\text{F} = t_\text{C} = t$:
+\[
+  t = \frac{9}{5}\,t + 32 \quad\implies\quad -\frac{4}{5}\,t = 32 \quad\implies\quad t = \doubleunderline{-40}
+\]
+Altså er $-40\,^\circ$C det samme som $-40\,^\circ$F.
+}
+
+\oppgaver{Oksygenmolekyler}{k8oppg11}{%
+\input{Oppgaver/k8_oppg11.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Vi bruker $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$ med temperaturen i kelvin.
+
+\smallskip\noindent
+\textbf{a)} $T = 0 + 273 = \SI{273}{\kelvin}$:
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{273}{\kelvin} = \doubleunderline{\SI{5.65e-21}{\joule}}
+\]
+
+\smallskip\noindent
+\textbf{b)} $T = 100 + 273 = \SI{373}{\kelvin}$:
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{373}{\kelvin} = \doubleunderline{\SI{7.72e-21}{\joule}}
+\]
+
+\smallskip\noindent
+\textbf{c)}
+\[
+  \frac{\SI{7.72e-21}{\joule}}{\SI{5.65e-21}{\joule}} = \frac{373}{273} = 1.37
+\]
+Energien er \doubleunderline{\SI{37}{\percent}} større. Legg merke til at svaret ikke avhenger av hva slags gass det er.
+}
+
+\oppgaver{Helium og oksygen}{k8oppg12}{%
+\input{Oppgaver/k8_oppg12.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Den gjennomsnittlige kinetiske energien avhenger bare av temperaturen, $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$. Begge gassene har samme temperatur, og har derfor \doubleunderline{like stor} gjennomsnittlig kinetisk energi:
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{300}{\kelvin} = \SI{6.21e-21}{\joule}
+\]
+
+\smallskip\noindent
+\textbf{b)} Vi løser $\bar{E}_\text{K} = \tfrac{1}{2}mv^2$ for $v$:
+\[
+  v = \sqrt{\frac{2\bar{E}_\text{K}}{m}}
+\]
+For helium:
+\[
+  v_\text{He} = \sqrt{\frac{2\cdot\SI{6.21e-21}{\joule}}{\SI{6.64e-27}{\kilo\gram}}} = \doubleunderline{\SI{1.37e3}{\metre\per\second}}
+\]
+For oksygen:
+\[
+  v_{\text{O}_2} = \sqrt{\frac{2\cdot\SI{6.21e-21}{\joule}}{\SI{5.31e-26}{\kilo\gram}}} = \doubleunderline{\SI{484}{\metre\per\second}}
+\]
+
+\smallskip\noindent
+\textbf{c)}
+\[
+  \frac{v_\text{He}}{v_{\text{O}_2}} = \frac{\SI{1.37e3}{\metre\per\second}}{\SI{484}{\metre\per\second}} = \doubleunderline{2.83}
+\]
+Heliumatomene er lettere, og må derfor bevege seg raskere for å ha like stor kinetisk energi.
+}
+
+\oppgaver{Riktig eller galt?}{k8oppg2}{%
+\input{Oppgaver/k8_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} \doubleunderline{Galt}. Varme er energi \emph{på vei} mellom to systemer. Kaffen har mye \emph{indre energi}, men den «inneholder» ikke varme. Den kan derimot \emph{avgi} varme til en kaldere omgivelse.
+
+\smallskip\noindent
+\textbf{b)} \doubleunderline{Galt}. Varme går alltid fra høy \emph{temperatur} til lav temperatur. Et badekar med lunkent vann har mye mer indre energi enn en kopp kokende vann, men varmen går likevel fra koppen til badevannet hvis vi setter koppen i karet.
+
+\smallskip\noindent
+\textbf{c)} \doubleunderline{Riktig}. Varme strømmer bare når det er en temperaturforskjell. To legemer med samme temperatur er i \emph{termisk likevekt}.
+
+\smallskip\noindent
+\textbf{d)} \doubleunderline{Riktig}. Vi kan også øke den indre energien ved å gjøre \emph{arbeid} på stoffet, for eksempel med friksjon eller ved å presse sammen en gass, som i en sykkelpumpe.
+}
+
 \oppgaver{Varme eller arbeid?}{k8oppg1}{%
 \input{Oppgaver/k8_oppg01.tex}%
 }
@@ -25,24 +154,6 @@ Varme er energi som overføres \emph{bare} på grunn av en temperaturforskjell. 
 
 \smallskip\noindent
 \textbf{e)} \doubleunderline{Arbeid}. Mikseren skyver deigen rundt. Deigen blir litt varmere, selv om ingenting varmt er i kontakt med den.
-}
-
-\oppgaver{Riktig eller galt?}{k8oppg2}{%
-\input{Oppgaver/k8_oppg02.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-\textbf{a)} \doubleunderline{Galt}. Varme er energi \emph{på vei} mellom to systemer. Kaffen har mye \emph{indre energi}, men den «inneholder» ikke varme. Den kan derimot \emph{avgi} varme til en kaldere omgivelse.
-
-\smallskip\noindent
-\textbf{b)} \doubleunderline{Galt}. Varme går alltid fra høy \emph{temperatur} til lav temperatur. Et badekar med lunkent vann har mye mer indre energi enn en kopp kokende vann, men varmen går likevel fra koppen til badevannet hvis vi setter koppen i karet.
-
-\smallskip\noindent
-\textbf{c)} \doubleunderline{Riktig}. Varme strømmer bare når det er en temperaturforskjell. To legemer med samme temperatur er i \emph{termisk likevekt}.
-
-\smallskip\noindent
-\textbf{d)} \doubleunderline{Riktig}. Vi kan også øke den indre energien ved å gjøre \emph{arbeid} på stoffet, for eksempel med friksjon eller ved å presse sammen en gass, som i en sykkelpumpe.
 }
 
 \oppgaver{Sykkelpumpe}{k8oppg3}{%
@@ -186,117 +297,6 @@ Det er omtrent \SI{4.6}{\minute}.
   t = \frac{Q}{P} = \frac{\SI{452e3}{\joule}}{\SI{2.0e3}{\watt}} = \SI{226}{\second} \approx \doubleunderline{\SI{2.3e2}{\second}}
 \]
 Det er nesten fire minutter, selv om bare en liten del av vannet koker bort.
-}
-
-\oppgaver{Omregning av temperaturer}{k8oppg9}{%
-\input{Oppgaver/k8_oppg09.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-Vi bruker $T = t + 273$ og $t_\text{F} = \tfrac{9}{5}\,t_\text{C} + 32$.
-
-\smallskip\noindent
-\textbf{a)} $T = 37 + 273 = \doubleunderline{\SI{310}{\kelvin}}$
-
-\smallskip\noindent
-\textbf{b)} $t = 77 - 273 = \doubleunderline{-196\,^\circ\text{C}}$
-
-\smallskip\noindent
-\textbf{c)} $t = 5800 - 273 = 5527\,^\circ\text{C} \approx \doubleunderline{5.5\cdot 10^3\,^\circ\text{C}}$. Når temperaturen er så høy, spiller det liten rolle om vi bruker kelvin eller celsius.
-
-\smallskip\noindent
-\textbf{d)} Vi løser formelen for $t_\text{C}$:
-\[
-  t_\text{C} = \frac{5}{9}\,(t_\text{F} - 32) = \frac{5}{9}\,(50 - 32) = \doubleunderline{10\,^\circ\text{C}}
-\]
-}
-
-\oppgaver{Dobbelt så varmt?}{k8oppg10}{%
-\input{Oppgaver/k8_oppg10.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-\textbf{a)} Vi må regne i kelvin: $T_1 = 10 + 273 = \SI{283}{\kelvin}$ og $T_2 = 20 + 273 = \SI{293}{\kelvin}$. Den gjennomsnittlige kinetiske energien er proporsjonal med $T$, så
-\[
-  \frac{\bar{E}_{\text{K},2}}{\bar{E}_{\text{K},1}} = \frac{T_2}{T_1} = \frac{\SI{293}{\kelvin}}{\SI{283}{\kelvin}} = 1.035
-\]
-Energien har bare økt med omtrent \SI{3.5}{\percent}. Den er \doubleunderline{ikke doblet}. Det er bare i kelvin det gir mening å si «dobbelt så høy temperatur».
-
-\smallskip\noindent
-\textbf{b)} En grad celsius er like stor som én kelvin, så
-\[
-  \Delta T = 15 - (-5) = \doubleunderline{\SI{20}{\kelvin}}
-\]
-
-\smallskip\noindent
-\textbf{c)} Vi setter $t_\text{F} = t_\text{C} = t$:
-\[
-  t = \frac{9}{5}\,t + 32 \quad\implies\quad -\frac{4}{5}\,t = 32 \quad\implies\quad t = \doubleunderline{-40}
-\]
-Altså er $-40\,^\circ$C det samme som $-40\,^\circ$F.
-}
-
-\oppgaver{Oksygenmolekyler}{k8oppg11}{%
-\input{Oppgaver/k8_oppg11.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-Vi bruker $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$ med temperaturen i kelvin.
-
-\smallskip\noindent
-\textbf{a)} $T = 0 + 273 = \SI{273}{\kelvin}$:
-\[
-  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{273}{\kelvin} = \doubleunderline{\SI{5.65e-21}{\joule}}
-\]
-
-\smallskip\noindent
-\textbf{b)} $T = 100 + 273 = \SI{373}{\kelvin}$:
-\[
-  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{373}{\kelvin} = \doubleunderline{\SI{7.72e-21}{\joule}}
-\]
-
-\smallskip\noindent
-\textbf{c)}
-\[
-  \frac{\SI{7.72e-21}{\joule}}{\SI{5.65e-21}{\joule}} = \frac{373}{273} = 1.37
-\]
-Energien er \doubleunderline{\SI{37}{\percent}} større. Legg merke til at svaret ikke avhenger av hva slags gass det er.
-}
-
-\oppgaver{Helium og oksygen}{k8oppg12}{%
-\input{Oppgaver/k8_oppg12.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-\textbf{a)} Den gjennomsnittlige kinetiske energien avhenger bare av temperaturen, $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$. Begge gassene har samme temperatur, og har derfor \doubleunderline{like stor} gjennomsnittlig kinetisk energi:
-\[
-  \bar{E}_\text{K} = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{300}{\kelvin} = \SI{6.21e-21}{\joule}
-\]
-
-\smallskip\noindent
-\textbf{b)} Vi løser $\bar{E}_\text{K} = \tfrac{1}{2}mv^2$ for $v$:
-\[
-  v = \sqrt{\frac{2\bar{E}_\text{K}}{m}}
-\]
-For helium:
-\[
-  v_\text{He} = \sqrt{\frac{2\cdot\SI{6.21e-21}{\joule}}{\SI{6.64e-27}{\kilo\gram}}} = \doubleunderline{\SI{1.37e3}{\metre\per\second}}
-\]
-For oksygen:
-\[
-  v_{\text{O}_2} = \sqrt{\frac{2\cdot\SI{6.21e-21}{\joule}}{\SI{5.31e-26}{\kilo\gram}}} = \doubleunderline{\SI{484}{\metre\per\second}}
-\]
-
-\smallskip\noindent
-\textbf{c)}
-\[
-  \frac{v_\text{He}}{v_{\text{O}_2}} = \frac{\SI{1.37e3}{\metre\per\second}}{\SI{484}{\metre\per\second}} = \doubleunderline{2.83}
-\]
-Heliumatomene er lettere, og må derfor bevege seg raskere for å ha like stor kinetisk energi.
 }
 
 \oppgaver{Sylindereksperiment}{k8oppg13}{%

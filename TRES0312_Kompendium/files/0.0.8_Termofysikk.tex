@@ -2,30 +2,31 @@
 \chapter{Termofysikk}
 % nettside: arbeid
 \label{Chapter:termofysikk}
-\intro{Termofysikk handler om varme, temperatur og energioverføring. Vi ser på hva varme egentlig er på mikroskopisk nivå, hva som skjer med energien til et system når vi varmer det opp, og hva som foregår under faseoverganger som smelting og fordamping. Disse ideene er grunnleggende for å forstå alt fra klimaendringer og forbrenningmotorer til kjøleskap og koking av mat.}
+\intro{Er det så farlig om temperaturen i havet stiger med en grad eller to da? Ja, for temperatur handler om energi. Den delen av fysikken som beskriver det, kalles termofysikk, og handler om varme, temperatur og energioverføring. I dette kapitlet ser vi derfor på hva varme egentlig er på mikroskopisk nivå, hva som skjer med energien til et system når vi varmer det opp, og hva som foregår under faseoverganger som smelting og fordamping. Disse ideene er grunnleggende for å forstå alt fra klimaendringer og forbrenningmotorer til kjøleskap og koking av mat.}
 
 \spm{}{%
-\item Hva er forskjellen mellom varme og temperatur?
-\item Hva sier termodynamikkens 1.\ lov, og hvordan bruker vi den?
-\item Hva skjer med temperaturen til et stoff \emph{under} en faseovergang?
+\item Hva er forskjellen på varme og temperatur?
+\item Hva er sammenhengen mellom temperatur og energi?
 \item Hvordan beregner vi energien som trengs for å varme opp eller smelte et stoff?}
 
 \newpage
 
 %=============================================================
-\section{Indre energi og varme}
+\section{Indre energi, varme og temperatur}
 %=============================================================
 
-Alt stoff er bygget opp av atomer og molekyler i stadig bevegelse. Den samlede energien knyttet til disse mikroskopiske bevegelsene og posisjonene kalles \emph{indre energi} $U$.
+Alt stoff er bygget opp av atomer og molekyler i stadig bevegelse. Den samlede energien knyttet til disse mikroskopiske bevegelsene og bindingene mellom stoffets mikroskopiske bestanddeler kalles \emph{indre energi} $U$. Bestanddelene er her molekyler eller ioner, altså atomer.
 
-Den indre energien deles i to: \emph{kinetisk} indre energi (bevegelsesenergi til molekylene) og \emph{potensiell} indre energi (energi lagret i bindingene mellom molekylene).
+Den indre energien deles i to: \emph{kinetisk} indre energi (bestanddelenes bevegelsesenergi) og \emph{potensiell} indre energi (energi lagret i bindingene mellom bestanddelene).
 
 Den kinetiske delen har tre bidrag:
 \begin{itemize}
-  \item \textbf{Translasjon}: molekylene beveger seg fra sted til sted. Temperaturen $T$ er direkte knyttet til nettopp denne bevegelsen.
+  \item \textbf{Translasjon}: molekylene beveger seg fra sted til sted. 
   \item \textbf{Vibrasjon}: atomene i molekylet svinger fram og tilbake.
   \item \textbf{Rotasjon}: molekylet snurrer rundt seg selv.
 \end{itemize}
+På makroskopisk nivå så erfarer vi disse bidragene som temperatur. Jo høyere temperatur, desto mer bevegelse er det i molekylene.
+
 Den potensielle delen er energi lagret i bindingene mellom molekylene (den endres for eksempel når is smelter) og i de kjemiske bindingene inne i molekylene. Figur~\ref{fig:indre_energi_tre} viser en oversikt.
 
 \begin{center}
@@ -60,7 +61,7 @@ Den potensielle delen er energi lagret i bindingene mellom molekylene (den endre
   \draw[black!35, dashed, thick] ($(tr.center)+(-1.1,-0.15)$) -- ($(tr.center)+(-0.35,-0.15)$);
   \node[atom=oppgcol] at ($(tr.center)+(-0.2,-0.15)$) {};
   \draw[->, thick, defscol!70!black] ($(tr.center)+(0.05,-0.15)$) -- ($(tr.center)+(1.0,-0.15)$);
-  \node[font=\footnotesize, defscol!50!black, anchor=south] at ($(tr.south)+(0,0.1)$) {knyttet til $T$};
+  \node[font=\footnotesize, defscol!50!black, anchor=south] at ($(tr.south)+(0,0.1)$) {};
 
   % Vibrasjon: to atomer bundet med en fjær
   \node[font=\small\bfseries, anchor=north] at ($(vi.north)+(0,-0.12)$) {Vibrasjon};
@@ -102,38 +103,134 @@ Den potensielle delen er energi lagret i bindingene mellom molekylene (den endre
 \label{fig:indre_energi_tre}
 \end{center}
 
-\medskip
+\subsection{Temperatur som mål på bevegelse}
 
-Den indre energien kan økes på to måter: ved å tilføre \emph{varme}, eller ved å utføre \emph{arbeid} på systemet. Bremseklosser varmes opp av friksjon (arbeid), og en kopp te avkjøles ved å avgi varme til omgivelsene.
+Vi har sagt at temperaturen henger sammen med hvor mye molekylene beveger seg. Denne sammenhengen kan gjøres helt presis. Se for deg en gass av molekyler. Molekylene farer rundt i alle retninger og kolliderer med hverandre og med veggene. Hvert molekyl har sin bevegelse (translasjon, vibrasjon og rotasjon) og denne bevegelsen endres ved kollisjon med andre molekyler, ellr med veggen i gassbeholderen. Faktisk kan vi regne ut \emph{gjennomsnittet} av den kinetiske energien molekylene i gassen har. Det vi kaller \emph{absolutt} temperatur, er et mål på dette gjennomsnittet.
 
-\defn{Varme}{
-Varme $Q$ er indre energi som overføres fra ett system til et annet \emph{utelukkende} på grunn av en temperaturforskjell $\Delta T$. Varme er ikke noe et system «har» — det er energi i bevegelse mellom systemer.
+Om du lurer på hvorfor jeg skrev \emph{absolutt} temperatur, så er det fordi vi benytter en litt spesiell temperaturskala. Jo mindre molekylene beveger seg, desto lavere er temperaturen. Det må derfor finnes en lavest mulig temperatur, der molekylene ikke kan miste mer bevegelsesenergi. Den kalles det \emph{absolutte nullpunktet}. Måler vi temperaturen fra dette nullpunktet, får vi den \emph{absolutte temperaturen} $T$. Enheten er kelvin (\si{\kelvin}), og det er SI-enheten for temperatur. Den absolutte temperaturen er et direkte mål på bevegelsen: dobler vi $T$, dobler vi også den gjennomsnittlige kinetiske energien til molekylene.
+
+Sammenhengen mellom temperatur og energien til ett molekyl i gassen kan utledes presist i \emph{kinetisk gassteori}, som kobler makroskopiske størrelser som trykk og temperatur til bevegelser på mikronivå. Det viser seg at resultatet avhenger av bestanddelene i gassen; molekylene. Her holder vi oss til én-atomige gasser.
+
+\defn{Gjennomsnittlig kinetisk energi}{%
+Den gjennomsnittlige kinetiske energien til hvert molekyl i en én-atomig gass kan er til god tilnærming gitt ved
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B} T,
+\]
+hvor $k_\text{B} = \SI{1.38e-23}{\joule\per\kelvin}$ er Boltzmanns konstant, og $T$ er den absolutte temperaturen i kelvin.
 }
 
-Temperatur og varme er to ulike størrelser. Temperaturen forteller om den gjennomsnittlige translasjonsenergien til molekylene. Varme forteller om \emph{overføringen} av energi mellom to systemer på grunn av temperaturforskjellen mellom dem.
+\merk{Temperatur = bevegelse}{%
+Temperatur er \emph{ikke} en egenskap ved ett enkelt molekyl — det er et statistisk
+gjennomsnitt over svært mange molekyler.
+Dobler du den absolutte temperaturen ($T_2 = 2T_1$),
+dobles også den gjennomsnittlige kinetiske energien.}
+
+\exm{Gjennomsnittlig energi til et heliumatom}{%
+Heliumgass holdes ved romtemperatur $T = \SI{293}{\kelvin}$.
+Finn den gjennomsnittlige translasjonsenergien til ett He-atom.
+}
+
+\svar{%
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B} T
+            = \frac{3}{2} \cdot \SI{1.38e-23}{\joule\per\kelvin} \cdot \SI{293}{\kelvin}
+            = \doubleunderline{\SI{6.07e-21}{\joule}}
+\]
+Selv om dette er svært lite, beveger et heliumatom seg ved romtemperatur med en
+gjennomsnittlig hastighet på rundt $\SI{1350}{\metre\per\second}$ — raskere enn lyden!
+}
+
+\merk{Celsius, kelvin og fahrenheit}{%
+I hverdagen bruker vi celsius-skalaen. Der fryser vann ved $0\,^\circ$C og koker ved $100\,^\circ$C (ved vanlig lufttrykk). En grad celsius er like stor som én kelvin, men nullpunktet er flyttet: det absolutte nullpunktet ligger ved $-273.15\,^\circ$C. Vi bruker $t$ for temperaturen i celsius og $T$ for den absolutte temperaturen. Da er
+\graabox{$\displaystyle T = t + 273.15 \approx t + 273$}
+der $T$ er i kelvin og $t$ er i grader celsius. Romtemperatur, $20\,^\circ$C, er altså omtrent \SI{293}{\kelvin}.
+
+Siden gradene er like store, er en temperatur\emph{endring} like stor på begge skalaene: $\Delta T = \Delta t$. Men i formler der selve temperaturen inngår, som $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$, \emph{må} vi bruke den absolutte temperaturen i kelvin. I USA brukes fahrenheit-skalaen. Sammenhengen med celsius er $t_\text{F} = \tfrac{9}{5}\,t + 32$.
+}
+
+\exm{Dobbelt så stor energi}{%
+En gass har temperaturen $27\,^\circ$C. Vi varmer opp gassen helt til den gjennomsnittlige kinetiske energien til molekylene er dobbelt så stor. Hva er temperaturen da, i kelvin og i celsius?
+}
+
+\svar{%
+\noindent
+Den gjennomsnittlige kinetiske energien er proporsjonal med den absolutte temperaturen, $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$. Dobbelt så stor energi betyr dobbelt så høy temperatur \emph{i kelvin}. Starttemperaturen er $T_1 = 27 + 273 = \SI{300}{\kelvin}$, så
+\[
+  T_2 = 2\,T_1 = 2\cdot\SI{300}{\kelvin} = \doubleunderline{\SI{600}{\kelvin}} = \doubleunderline{327\,^\circ\text{C}}
+\]
+Legg merke til at temperaturen i celsius blir mer enn tolv ganger så høy. Det viser hvorfor vi må regne i kelvin.
+}
+
+\exm{Farten til oksygenmolekyler}{%
+Lufta i et klasserom holder romtemperatur, $20\,^\circ$C. Omtrent hvor fort beveger oksygenmolekylene i lufta seg? Et oksygenmolekyl ($\text{O}_2$) har massen $m = \SI{5.31e-26}{\kilo\gram}$.
+}
+
+\svar{%
+\noindent
+Oksygenmolekylet består av to atomer, men formelen $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$ gir også for slike molekyler den gjennomsnittlige kinetiske energien knyttet til translasjon. Det er nettopp den som bestemmer hvor fort molekylene farer rundt.
+
+Først gjør vi om temperaturen til kelvin: $T = 20 + 273 = \SI{293}{\kelvin}$. Den gjennomsnittlige kinetiske energien er
+\[
+  \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B}T = \frac{3}{2}\cdot\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{293}{\kelvin} = \SI{6.07e-21}{\joule}
+\]
+Kinetisk energi er $E_\text{K} = \tfrac{1}{2}mv^2$. Vi setter $\tfrac{1}{2}mv^2 = \bar{E}_\text{K}$ og løser for $v$:
+\[
+  v = \sqrt{\frac{2\bar{E}_\text{K}}{m}} = \sqrt{\frac{2\cdot\SI{6.07e-21}{\joule}}{\SI{5.31e-26}{\kilo\gram}}} = \doubleunderline{\SI{478}{\metre\per\second}}
+\]
+Det er omtrent \SI{1700}{\kilo\metre\per\hour}, raskere enn lyden i luft (omtrent \SI{340}{\metre\per\second})! Molekylene kommer likevel ikke langt av gangen, fordi de hele tiden kolliderer med andre molekyler.
+
+\smallskip
+\textit{Merk:} Molekylene har ulik fart, og farten vi har regnet ut, er en \emph{typisk} fart for molekylene. (Den kalles rms-farten og er kvadratroten av gjennomsnittet av $v^2$. Den vanlige gjennomsnittsfarten er litt mindre, omtrent \SI{440}{\metre\per\second}.) Vi snakker om \emph{fart}, ikke hastighet: molekylene beveger seg i alle retninger, så i gjennomsnitt er hastigheten, som har retning, lik null.
+}
+
+\oppgaver{Omregning av temperaturer}{k8oppg9}{%
+\input{Oppgaver/k8_oppg09.tex}%
+}
+
+\oppgaver{Dobbelt så varmt?}{k8oppg10}{%
+\input{Oppgaver/k8_oppg10.tex}%
+}
+
+\oppgaver{Oksygenmolekyler}{k8oppg11}{%
+\input{Oppgaver/k8_oppg11.tex}%
+}
+
+\oppgaver{Helium og oksygen}{k8oppg12}{%
+\input{Oppgaver/k8_oppg12.tex}%
+}
+
+\subsection{Varme}
+
+Den indre energien kan endres på to måter: ved å tilføre \emph{varme}, eller ved å utføre \emph{arbeid} på systemet. Bremseklosser varmes opp av friksjon (arbeid), og en kopp te avkjøles ved å avgi varme til omgivelsene.
+
+\defn{Varme}{
+Varme $Q$ er overføring av indre energi fra ett system til et annet, \emph{som følge av temperaturforskjell} $\Delta T$.
+}
+
+Temperatur og varme henger sammen, men de er ikke den samme størrelsen. Som vi nettopp har sett, er temperatur et mål på den gjennomsnittlige kinetiske energien til molekylene. Varme er derimot energi som \emph{overføres} mellom to systemer fordi de har ulik temperatur. Et system \emph{har} en temperatur, men det «har» ikke varme.
 
 \exm{Liten og stor kjele}{%
 En liten kjele med \SI{1.0}{\litre} vann og en stor kjele med \SI{5.0}{\litre} vann har begge temperaturen $60\,^\circ$C. Kjelene settes på kjøkkenbenken, der det er $20\,^\circ$C.
 \begin{enumerate}[a)]
     \item Hvilken av kjelene har høyest temperatur? Hvilken har mest indre energi?
     \item Hvilken av kjelene avgir mest varme til omgivelsene før den har kjølt seg ned til romtemperatur?
-    \item Vi heller vannet fra de to kjelene sammen. Hva blir temperaturen?
+    \item Vi blander vannet fra de to kjelene sammen. Hva blir temperaturen?
+    \item Hva forventer du at temperaturen ville blitt dersom vi hadde blandet \SI{1.0}{\litre} vann ved $60\,^\circ$C med \SI{1.0}{\litre} vann ved $20\,^\circ$C?
 \end{enumerate}
 }
 
 \svar{%
 \noindent
-\textbf{a)} Kjelene har \doubleunderline{samme temperatur}. Molekylene i de to kjelene har altså i gjennomsnitt like stor translasjonsenergi. Men det er fem ganger så mange molekyler i den store kjelen, så den har \doubleunderline{mest indre energi}.
+\textbf{a)} Kjelene har \doubleunderline{samme temperatur}. Atomene i de to kjelene har altså i gjennomsnitt like mye kinetisk energi. Men det er fem ganger så mange molekyler i den store kjelen, så den har \doubleunderline{mest indre energi}.
 
 \smallskip\noindent
 \textbf{b)} Begge kjelene kjøles ned like mange grader, men i den store kjelen er det fem ganger så mye vann som skal kjøles ned. Den store kjelen avgir derfor \doubleunderline{fem ganger så mye varme} som den lille.
 
 \smallskip\noindent
-\textbf{c)} Vannet har samme temperatur før vi heller det sammen, og da går det ingen varme mellom det. Temperaturen blir \doubleunderline{$60\,^\circ$C}. Temperatur er ikke noe vi «legger sammen». Det er den indre energien som legges sammen.
-}
+\textbf{c)} Vannet har samme temperatur før vi blander det sammen, og da går det ingen varme mellom det. Temperaturen forblir \doubleunderline{$60\,^\circ$C}. Temperatur er ikke noe vi «legger sammen». Det er den indre energien som legges sammen.
 
-\oppgaver{Varme eller arbeid?}{k8oppg1}{%
-\input{Oppgaver/k8_oppg01.tex}%
+\smallskip\noindent
+\textbf{d)} Dersom vi hadde blandet \SI{1.0}{\litre} vann ved $60\,^\circ$C med \SI{1.0}{\litre} vann ved $20\,^\circ$C, ville temperaturen jevnet seg ut og blitt gjennomsnittet av disse; altså \doubleunderline{$40\,^\circ$C}. 
 }
 
 \oppgaver{Riktig eller galt?}{k8oppg2}{%
@@ -170,7 +267,7 @@ Endringen i den indre energien $\Delta U$ er lik summen av tilført varme $Q$ og
 \noindent
 \begin{minipage}[t]{0.54\linewidth}
 \vspace{0pt}
-Figuren viser et typisk termodynamisk system: en gass i en sylinder med bevegelig stempel. Varme $Q > 0$ kan tilføres fra en varmekilde. Stempelet kan gjøre arbeid $W > 0$ på gassen ved å komprimere den — eller gassen kan ekspandere og løfte stempelet ($W < 0$). Endringen $\Delta U$ samler opp begge bidragene.
+Figuren viser et typisk termodynamisk system: en gass i en sylinder med bevegelig stempel. Varme $Q > 0$ kan tilføres fra en varmekilde. Stempelet kan gjøre arbeid $W > 0$ på gassen ved å komprimere den — eller gassen kan ekspandere og senke stempelet ($W < 0$). Endringen $\Delta U$ samler opp begge bidragene.
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.42\linewidth}
@@ -238,6 +335,10 @@ En \emph{adiabatisk} prosess er en prosess uten varmeoverføring: $Q = 0$. Da gi
   \Delta U = W
 \]
 All endring i indre energi skyldes arbeid. Eksempler: en \textbf{sykkelpumpe} (komprimering skjer for raskt til at varme rekker å slippe ut — pumpa blir varm), og \textbf{dieselmotorer} (luften komprimeres adiabatisk inntil temperaturen er høy nok til at drivstoffet antennes av seg selv, uten tennplugg).
+}
+
+\oppgaver{Varme eller arbeid?}{k8oppg1}{%
+\input{Oppgaver/k8_oppg01.tex}%
 }
 
 \oppgaver{Sykkelpumpe}{k8oppg3}{%
@@ -505,134 +606,6 @@ All tilført energi $E$ fordeles mellom væsken og termosen:
 
 \oppgaver{Vannkoker}{k8oppg8}{%
 \input{Oppgaver/k8_oppg08.tex}%
-}
-
-
-\section{Temperaturskalaer}
-
-Temperatur måler den gjennomsnittlige kinetiske translasjonsenergien til molekylene i et stoff.
-Vi bruker tre skalaer i fysikk og hverdagsliv:
-
-\defn{Kelvin og Celsius}{%
-Kelvin (K) er SI-enheten for temperatur og tar utgangspunkt i det \emph{absolutte nullpunktet}
-— den laveste mulige temperaturen, der molekylbevegelsen stopper.
-Sammenhengen med Celsius er:
-\[
-  T\,[\text{K}] = t\,[{^\circ}\text{C}] + 273.15 \approx t + 273
-\]
-}
-
-\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
-    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
-\textbf{Omregningstabell}
-
-\medskip
-\begin{tabular}{lll}
-  \textbf{Situasjon} & \textbf{Celsius} & \textbf{Kelvin} \\
-  \hline
-  Absolutt nullpunkt & $-273\,^\circ\text{C}$ & $\SI{0}{\kelvin}$ \\
-  Vann fryser        & $0\,^\circ\text{C}$    & $\SI{273}{\kelvin}$ \\
-  Romtemperatur      & $20\,^\circ\text{C}$   & $\SI{293}{\kelvin}$ \\
-  Vann koker         & $100\,^\circ\text{C}$  & $\SI{373}{\kelvin}$ \\
-\end{tabular}
-
-\medskip
-Fahrenheit (brukes i USA): $t_F = \frac{9}{5}\,t_C + 32$.
-\end{tcolorbox}
-
-\merk{Bruk alltid Kelvin i formler}{%
-I fysikk-formler (kinetisk gassteori, tilstandslikninga) \emph{må} du bruke kelvin.
-Celsius fungerer bare når du regner med \emph{temperaturforskjeller} $\Delta T$,
-siden $\Delta T_{\text{K}} = \Delta T_{\text{C}}$.}
-
-\exm{Omregning mellom skalaene}{%
-\begin{enumerate}[a)]
-    \item Gjør om $20.0\,^\circ$C til kelvin.
-    \item Hva er det absolutte nullpunktet målt i fahrenheit?
-    \item En morgen er det $4\,^\circ$C. Om ettermiddagen er det $19\,^\circ$C. Hva er temperaturendringen i kelvin?
-\end{enumerate}
-}
-
-\svar{%
-\noindent
-\textbf{a)} $T = t + 273.15 = 20.0 + 273.15 = \SI{293.15}{\kelvin} \approx \doubleunderline{\SI{293.2}{\kelvin}}$
-
-\smallskip\noindent
-\textbf{b)} Det absolutte nullpunktet er $t_\text{C} = -273.15\,^\circ$C:
-\[
-  t_\text{F} = \frac{9}{5}\,t_\text{C} + 32 = \frac{9}{5}\cdot(-273.15) + 32 = -459.67 \approx \doubleunderline{-460\,^\circ\text{F}}
-\]
-
-\smallskip\noindent
-\textbf{c)} $\Delta T = 19 - 4 = 15\,^\circ$C. En grad celsius er like stor som én kelvin, så $\Delta T = \doubleunderline{\SI{15}{\kelvin}}$.
-}
-
-\oppgaver{Omregning av temperaturer}{k8oppg9}{%
-\input{Oppgaver/k8_oppg09.tex}%
-}
-
-\oppgaver{Dobbelt så varmt?}{k8oppg10}{%
-\input{Oppgaver/k8_oppg10.tex}%
-}
-
-
-\section{Kinetisk gassteori}
-
-Kinetisk gassteori kobler makroskopiske størrelser (trykk, temperatur) til mikroskopisk
-molekylbevegelse. Utgangspunktet er enkle antagelser: mange små molekyler,
-urelaterte elastiske kollisjoner, ubetydeliges eget volum.
-
-Det kan vises at den gjennomsnittlige translasjonsenergien til ett molekyl er
-direkte proporsjonal med den absolutte temperaturen:
-
-\defn{Gjennomsnittlig kinetisk energi per molekyl}{%
-\[
-  \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B} T
-\]
-Her er $k_\text{B} = \SI{1.38e-23}{\joule\per\kelvin}$ Boltzmanns konstant og
-$T$ temperaturen i kelvin.
-}
-
-\merk{Temperatur = bevegelse}{%
-Temperatur er \emph{ikke} en egenskap ved ett enkelt molekyl — det er et statistisk
-gjennomsnitt over svært mange molekyler.
-Dobler du den absolutte temperaturen ($T_2 = 2T_1$),
-dobles også den gjennomsnittlige kinetiske energien.}
-
-\exm{Gjennomsnittlig energi til et heliumatom}{%
-Heliumgass holdes ved romtemperatur $T = \SI{293}{\kelvin}$.
-Finn den gjennomsnittlige translasjonsenergien til ett He-atom.
-}
-
-\svar{%
-\[
-  \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B} T
-            = \frac{3}{2} \cdot \SI{1.38e-23}{\joule\per\kelvin} \cdot \SI{293}{\kelvin}
-            = \doubleunderline{\SI{6.07e-21}{\joule}}
-\]
-Selv om dette er svært lite, beveger et heliumatom seg ved romtemperatur med en
-gjennomsnittlig hastighet på rundt $\SI{1350}{\metre\per\second}$ — raskere enn lyden!
-}
-
-\exm{Dobbelt så stor energi}{%
-En gass har temperaturen $27\,^\circ$C. Vi varmer opp gassen helt til den gjennomsnittlige kinetiske energien til molekylene er dobbelt så stor. Hva er temperaturen da, i kelvin og i celsius?
-}
-
-\svar{%
-\noindent
-Den gjennomsnittlige kinetiske energien er proporsjonal med den absolutte temperaturen, $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$. Dobbelt så stor energi betyr dobbelt så høy temperatur \emph{i kelvin}. Starttemperaturen er $T_1 = 27 + 273 = \SI{300}{\kelvin}$, så
-\[
-  T_2 = 2\,T_1 = 2\cdot\SI{300}{\kelvin} = \doubleunderline{\SI{600}{\kelvin}} = \doubleunderline{327\,^\circ\text{C}}
-\]
-Legg merke til at temperaturen i celsius blir mer enn tolv ganger så høy. Det viser hvorfor vi må regne i kelvin.
-}
-
-\oppgaver{Oksygenmolekyler}{k8oppg11}{%
-\input{Oppgaver/k8_oppg11.tex}%
-}
-
-\oppgaver{Helium og oksygen}{k8oppg12}{%
-\input{Oppgaver/k8_oppg12.tex}%
 }
 
 
