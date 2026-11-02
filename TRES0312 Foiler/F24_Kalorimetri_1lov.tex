@@ -1,0 +1,384 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Kalorimetri og termodynamikkens 1.\ lov}
+\subtitle{TRES0312 --- kapittel 8.3 og 8.4}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{8}   % Kapittel 8: "Termofysikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 8.3 og 8.4}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: kalorimetri. Etter pausen: termodynamikkens 1.\ lov.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva er $20\,^\circ$C i kelvin?
+      \item Hva er forskjellen på temperatur og varme?
+      \item Hva skjer med temperaturen mens is smelter?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: KALORIMETRI (8.3)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: sand og vann
+%--------------------------------------------------------------------------
+\begin{frame}{Kalorimetri}
+
+  \tanke{}{%
+  En sommerdag blir sanden på stranda glovarm, mens vannet holder seg kjølig. Begge får like mye sol. Hvorfor?
+  }
+  \pause
+  \svar{
+  Blant annet fordi vann trenger mye mer energi enn sand for å bli én grad varmere: vann har stor \textit{spesifikk varmekapasitet}. (I tillegg blandes vannet, så varmen fordeles på mye mer vann.)
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Definisjon: spesifikk varmekapasitet
+%--------------------------------------------------------------------------
+\begin{frame}{Kalorimetri}
+
+  \begin{columns}[c]
+    \begin{column}{0.62\textwidth}
+      \defnat{8.3.1}{Spesifikk varmekapasitet}{
+      Varmen som trengs for å endre temperaturen til et legeme med masse $m$ med $\Delta T$:
+      \[
+        Q = c\cdot m\cdot\Delta T
+      \]
+      der $c$ er den \textit{spesifikke varmekapasiteten}, med enhet $\mathrm{kJ/(kg\,K)}$.
+      }
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \centering
+      \small
+      \begin{tabular}{lc}
+        \hline
+        Stoff & $c$ / $\mathrm{\tfrac{kJ}{kg\,K}}$ \\
+        \hline
+        Kobber    & 0.39 \\
+        Jern      & 0.45 \\
+        Aluminium & 0.90 \\
+        Is        & 2.1 \\
+        \textbf{Vann} & \textbf{4.2} \\
+        \hline
+      \end{tabular}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: avkjøling av aluminium
+%--------------------------------------------------------------------------
+%  Fasit: Q = c m dT = 0.90 * 2.0 * (20 - 80) kJ = -108 kJ ≈ -1.1e2 kJ.
+%         Negativt: aluminiumet avgir varme.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Avkjøling av aluminium}{%
+  En kjele av aluminium med masse $2.0\,\mathrm{kg}$ kjøles fra $80\,^\circ$C til $20\,^\circ$C. Hvor mye varme avgir kjelen? Hva betyr fortegnet på svaret?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5b — Definisjon: varmekapasitet
+%--------------------------------------------------------------------------
+\begin{frame}{Kalorimetri}
+
+  \defnat{8.3.2}{Varmekapasitet}{
+  For et sammensatt system, som en termos med vann, bruker vi den samlede \textit{varmekapasiteten} $C$:
+  \[
+    Q = C\cdot\Delta T \qquad [C] = \mathrm{J/K}
+  \]
+  $C$ er summen av $c_i m_i$ for alle delene av systemet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon: spesifikk fasevarme
+%--------------------------------------------------------------------------
+\begin{frame}{Kalorimetri}
+
+  \defnat{8.3.3}{Spesifikk fasevarme}{
+  Varmen som tilføres eller avgis når en masse $m$ av et stoff skifter fase ved konstant temperatur:
+  \[
+    Q = \ell\cdot m
+  \]
+  der $\ell$ er den \textit{spesifikke fasevarmen}, med enhet $\mathrm{kJ/kg}$.
+  }
+  \pause
+  For vann: $\ell_\text{smelte} = 334\,\mathrm{kJ/kg}$ og $\ell_\text{fordamp} = 2259\,\mathrm{kJ/kg}$. Det avgis like mye ved størkning og kondensasjon.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: fra is til vann
+%--------------------------------------------------------------------------
+%  Fasit: Q1 = 2.1 * 0.50 * 10 = 10.5 kJ  (is fra -10 til 0 °C)
+%         Q2 = 334 * 0.50 = 167 kJ          (smelte)
+%         Q3 = 4.2 * 0.50 * 20 = 42 kJ      (vann fra 0 til 20 °C)
+%         Q = 219.5 kJ ≈ 2.2e2 kJ. Det meste går til smeltingen.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Fra is til vann}{%
+  Du har $0.50\,\mathrm{kg}$ is med temperatur $-10\,^\circ$C. Hvor mye energi trengs for å gjøre isen om til vann med temperatur $20\,^\circ$C? Hvilket av trinnene krever mest energi?
+  }
+  \pause
+  \merk{Tips:}{%
+  Del opp i tre trinn: varme opp isen, smelte isen, varme opp vannet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: kobber i vann
+%--------------------------------------------------------------------------
+%  Fasit: Avgitt = mottatt:
+%         0.39*0.30*(100 - t) = 4.2*0.40*(t - 20)
+%         11.7 - 0.117 t = 1.68 t - 33.6  =>  t = 45.3/1.797 = 25.2 °C ≈ 25 °C.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kobber i vann}{%
+  Et lodd av kobber med masse $0.30\,\mathrm{kg}$ og temperatur $100\,^\circ$C slippes ned i en godt isolert beholder med $0.40\,\mathrm{kg}$ vann med temperatur $20\,^\circ$C. Se bort fra beholderen. Hva blir slutt-temperaturen?
+  }
+  \pause
+  \merk{Tips:}{%
+  Varmen kobberet avgir, er lik varmen vannet tar opp.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Kalorimetri}{%
+  \begin{enumerate}[1.]
+    \item[] Temperaturendring: $Q = cm\Delta T$ (eller $Q = C\Delta T$).
+    \item[] Faseovergang: $Q = \ell m$, ved konstant temperatur.
+    \item[] I et isolert system er avgitt varme lik mottatt varme.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: termodynamikkens 1.\ lov}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: TERMODYNAMIKKENS 1. LOV (8.4)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: sykkelpumpa
+%--------------------------------------------------------------------------
+\begin{frame}{Termodynamikkens 1.\ lov}
+
+  \tanke{}{%
+  Når du pumper sykkel, blir pumpa varm. Men du har ikke tilført noe varme. Hvor kommer energien fra?
+  }
+  \pause
+  \svar{
+  Fra \textit{arbeidet} du gjør på lufta når du presser den sammen. Indre energi kan endres både ved varme og ved arbeid.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Definisjon: 1. lov
+%--------------------------------------------------------------------------
+\begin{frame}{Termodynamikkens 1.\ lov}
+
+  \defnat{8.4.1}{Termodynamikkens 1.\ lov}{
+  Endringen i den indre energien er lik summen av tilført varme $Q$ og arbeid $W$ utført \textit{på} systemet:
+  \[
+    \Delta U = Q + W
+  \]
+  }
+  \pause
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item $Q > 0$: varme \textit{inn} i systemet
+        \item $Q < 0$: systemet avgir varme
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item $W > 0$: arbeid gjøres \textit{på} systemet
+        \item $W < 0$: systemet gjør arbeid
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Arbeid gjort av en gass
+%--------------------------------------------------------------------------
+\begin{frame}{Arbeid gjort av en gass}
+
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item<1-> Gassen presser på stempelet med kraften $F = p\cdot A$.
+        \item<2-> Stempelet flyttes $\Delta x$, så gassen gjør arbeidet $W_\text{gass} = F\cdot\Delta x = pA\,\Delta x$.
+        \item<3-> Men $A\,\Delta x = \Delta V$!
+      \end{itemize}
+      \onslide<4->{\graabox{$\displaystyle W_\text{gass} = p\,\Delta V$}}
+      \onslide<5->{\small I 1.\ lov er $W$ arbeidet \textit{på} gassen: $W = -p\,\Delta V$.}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.85, font=\small, >={Stealth[length=6pt,width=4pt]}]
+        \fill[textcolor!15!pagecolor] (0,0) rectangle (3.0,1.8);
+        \fill[defscol!35!pagecolor] (3.0,0) rectangle (4.0,1.8);
+        \draw[thick, textcolor] (5.4,0) -- (0,0) -- (0,1.8) -- (5.4,1.8);
+        \draw[dashed, thick, textcolor!60] (3.0,0) -- (3.0,1.8);
+        \fill[textcolor!45!pagecolor] (4.0,0) rectangle (4.3,1.8);
+        \draw[thick, textcolor] (4.0,0) rectangle (4.3,1.8);
+        \draw[->, line width=2.5pt, defscol] (4.3,1.3) -- (5.5,1.3) node[right] {$\vec{F}$};
+        \draw[<->, thin, textcolor] (3.0,-0.3) -- (4.0,-0.3) node[midway, below] {$\Delta x$};
+        \node at (1.5,0.9) {gass, $p$};
+        \node[font=\footnotesize] at (3.5,0.9) {$\Delta V$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Til ettertanke: p dV eller dp V?
+%--------------------------------------------------------------------------
+\begin{frame}{Arbeid gjort av en gass}
+
+  \tanke{}{%
+  Trykket i en lukket boks med stive vegger øker når vi varmer den opp. Gjør gassen noe arbeid?
+  }
+  \pause
+  \svar{
+  Nei. Arbeid krever at noe flytter seg. Volumet er konstant, så $\Delta V = 0$ og $W = 0$. Det er volum\textit{endringen} som gir arbeid. $\Delta p\cdot V$ er \textit{ikke} et arbeid.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Aktivitet: gass i sylinder
+%--------------------------------------------------------------------------
+%  Fasit: a) W = dU - Q = 150 - 600 = -450 J. Gassen gjør 450 J arbeid på stempelet.
+%         b) 450 J = m g h  =>  h = 450/(40*9.81) = 1.15 m ≈ 1.1 m.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Gass i sylinder}{%
+  En gass i en sylinder får tilført $Q = 600\,\mathrm{J}$ varme. Den indre energien øker med $\Delta U = 150\,\mathrm{J}$.
+  \begin{enumerate}[a)]
+    \item Finn $W$. Hva betyr fortegnet?
+    \item Stempelet sitter på toppen og har masse $40\,\mathrm{kg}$. Gassen løfter det rett opp. Hvor høyt løftes stempelet? Se bort fra lufttrykket over stempelet og friksjon.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Adiabatisk prosess
+%--------------------------------------------------------------------------
+\begin{frame}{Termodynamikkens 1.\ lov}
+
+  \merk{Adiabatisk prosess}{%
+  En prosess uten varmeoverføring, $Q = 0$, kalles \textit{adiabatisk}. Da er $\Delta U = W$. Eksempler: Sykkelpumpa blir varm fordi lufta presses sammen for raskt til at varme slipper ut. I en dieselmotor blir lufta så varm av sammenpressingen at drivstoffet tennes av seg selv.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Aktivitet: gass som presses sammen
+%--------------------------------------------------------------------------
+%  Fasit: W = +300 J, Q = -120 J.  dU = Q + W = +180 J. Temperaturen stiger.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Gass som presses sammen}{%
+  Et stempel presser sammen en gass og gjør $300\,\mathrm{J}$ arbeid på den. Samtidig avgir gassen $120\,\mathrm{J}$ varme til omgivelsene.
+  \begin{enumerate}[a)]
+    \item Finn endringen i den indre energien.
+    \item Stiger eller synker temperaturen?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Termodynamikkens 1.\ lov}{%
+  \begin{enumerate}[1.]
+    \item[] $\Delta U = Q + W$, der $W$ er arbeidet \textit{på} systemet.
+    \item[] En gass som utvider seg ved konstant trykk, gjør arbeidet $W_\text{gass} = p\,\Delta V$.
+    \item[] Adiabatisk prosess: $Q = 0$, så $\Delta U = W$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 19 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: idealgass og $pV$-diagram}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

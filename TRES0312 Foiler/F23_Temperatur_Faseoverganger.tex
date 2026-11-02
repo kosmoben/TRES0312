@@ -1,0 +1,360 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Temperatur, varme og faseoverganger}
+\subtitle{TRES0312 --- kapittel 8.1 og 8.2}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{8}   % Kapittel 8: "Termofysikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 8.1 og 8.2}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: indre energi, temperatur og varme. Etter pausen: faseoverganger.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Et kast: Hvilken bevegelse har vi i $x$-retning, og hvilken i $y$-retning?
+      \item Når er den mekaniske energien $E_\text{K} + E_\text{P}$ bevart?
+      \item Hva er trykket i dybden $h$ i en væske i ro?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: INDRE ENERGI, TEMPERATUR OG VARME (8.1)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: havet
+%--------------------------------------------------------------------------
+\begin{frame}{Indre energi}
+
+  \tanke{}{%
+  Er det så farlig om temperaturen i havet stiger med en grad eller to?
+  }
+  \pause
+  \svar{
+  Ja. Temperatur handler om \textit{energi}. Når hele havet blir en grad varmere, har det fått tilført enormt mye energi. Den energien påvirker vær, strømmer, is og liv i havet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Indre energi
+%--------------------------------------------------------------------------
+\begin{frame}{Indre energi}
+
+  Alt stoff består av molekyler i stadig bevegelse. Den samlede energien til molekylene kalles \textbf{indre energi} $U$.
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \onslide<2->{%
+      \textbf{Kinetisk} (bevegelse):
+      \begin{itemize}
+        \item translasjon (fra sted til sted)
+        \item vibrasjon (atomene svinger)
+        \item rotasjon (molekylet snurrer)
+      \end{itemize}}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \onslide<3->{%
+      \textbf{Potensiell} (bindinger):
+      \begin{itemize}
+        \item bindinger mellom molekylene
+        \item kjemiske bindinger i molekylene
+      \end{itemize}}
+    \end{column}
+  \end{columns}
+  \onslide<4->{\merk{Temperatur og bindinger}{%
+  Temperaturen viser hvor mye molekylene beveger seg og svinger. Energien som skal til for å bryte bindinger, viser seg \textit{ikke} på temperaturen.
+  }}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Til ettertanke: lavest mulig temperatur
+%--------------------------------------------------------------------------
+\begin{frame}{Temperatur}
+
+  \tanke{}{%
+  Finnes det en lavest mulig temperatur?
+  }
+  \pause
+  \svar{
+  Ja. Jo mindre molekylene beveger seg, desto lavere er temperaturen. Det finnes en temperatur der molekylene ikke kan miste mer bevegelsesenergi: det \textit{absolutte nullpunktet}, $-273.15\,^\circ$C. Den \textit{absolutte temperaturen} $T$ måles fra dette nullpunktet, i kelvin (K).
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon: gjennomsnittlig kinetisk energi
+%--------------------------------------------------------------------------
+\begin{frame}{Temperatur}
+
+  \defnat{8.1.1}{Gjennomsnittlig kinetisk energi}{
+  Den gjennomsnittlige kinetiske energien knyttet til translasjon er for hvert molekyl i en gass
+  \[
+    \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B}T
+  \]
+  der $k_\text{B} = 1.38\cdot 10^{-23}\,\mathrm{J/K}$ er Boltzmanns konstant og $T$ er den absolutte temperaturen.
+  }
+  \pause
+  \graabox{$\displaystyle T = t + 273$ \qquad ($T$ i kelvin, $t$ i grader celsius)}
+  \pause
+  En temperatur\textit{endring} er like stor på begge skalaene: $\Delta T = \Delta t$.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: farten til nitrogenmolekyler
+%--------------------------------------------------------------------------
+%  Fasit: T = 25 + 273 = 298 K.
+%         E_K = 3/2 * 1.38e-23 * 298 = 6.17e-21 J.
+%         v = sqrt(2 E_K / m) = sqrt(2*6.17e-21/4.65e-26) = 515 m/s  (ca. 1850 km/t).
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Farten til nitrogenmolekyler}{%
+  Lufta i rommet holder $25\,^\circ$C. Et nitrogenmolekyl har massen $m = 4.65\cdot 10^{-26}\,\mathrm{kg}$.
+  \begin{enumerate}[a)]
+    \item Finn den gjennomsnittlige kinetiske energien til et nitrogenmolekyl.
+    \item Omtrent hvor fort beveger nitrogenmolekylene seg? \textit{(Hint: $E_\text{K} = \tfrac{1}{2}mv^2$.)}
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: dobbelt så stor energi
+%--------------------------------------------------------------------------
+%  Fasit: T1 = 17 + 273 = 290 K. Dobbel energi gir dobbel T: T2 = 580 K = 307 °C.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Dobbelt så stor energi}{%
+  En gass har temperaturen $17\,^\circ$C. Vi varmer den opp til den gjennomsnittlige kinetiske energien til molekylene er dobbelt så stor. Hva er temperaturen da, i kelvin og i celsius?
+  }
+
+  \pause
+  \merk{Husk:}{%
+  Dobbelt så stor energi betyr dobbelt så høy temperatur \textit{i kelvin}.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Definisjon: varme
+%--------------------------------------------------------------------------
+\begin{frame}{Varme}
+
+  \defnat{8.1.2}{Varme}{
+  Varme $Q$ er indre energi som overføres fra ett system til et annet \textit{som følge av en temperaturforskjell}.
+  }
+  \pause
+  \begin{itemize}
+    \item Et system \textit{har} en temperatur, men det «har» ikke varme.
+    \item<3-> Varme overføres ved \textbf{varmeledning} (kontakt), \textbf{konveksjon} (strømmende væske eller gass) og \textbf{stråling} (som fra sola).
+  \end{itemize}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Til ettertanke: to kjeler
+%--------------------------------------------------------------------------
+\begin{frame}{Varme}
+
+  \tanke{}{%
+  En kjele med $1\,\mathrm{L}$ vann og en kjele med $5\,\mathrm{L}$ vann har begge $60\,^\circ$C. Hvilken har høyest temperatur? Hvilken har mest indre energi? Hvilken avgir mest varme når den kjøles ned til romtemperatur?
+  }
+  \pause
+  \svar{
+  Samme temperatur. Men den store kjelen har fem ganger så mange molekyler, og dermed mest indre energi. Den avgir også fem ganger så mye varme når den kjøles ned.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Indre energi, temperatur og varme}{%
+  \begin{enumerate}[1.]
+    \item[] Indre energi $U$: kinetisk (bevegelse) og potensiell (bindinger).
+    \item[] Absolutt temperatur er et mål på bevegelsen: $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$, med $T = t + 273$.
+    \item[] Varme $Q$ er energi som overføres på grunn av en temperaturforskjell.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: faseoverganger}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: FASEOVERGANGER (8.2)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Til ettertanke: poteter på full plate
+%--------------------------------------------------------------------------
+\begin{frame}{Faseoverganger}
+
+  \tanke{}{%
+  Potetene koker. Blir de fortere ferdige om du skrur plata opp på full effekt?
+  }
+  \pause
+  \svar{
+  Nei. Vannet blir ikke varmere enn $100\,^\circ$C, uansett hvor mye energi du tilfører. Den ekstra energien går bare til å koke bort vannet fortere.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Oppvarmingskurven for vann
+%--------------------------------------------------------------------------
+\begin{frame}{Faseoverganger}
+
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item<1-> Under en \textbf{faseovergang} er temperaturen \textit{konstant}.
+        \item<2-> Energien går til å bryte bindinger mellom molekylene, ikke til mer bevegelse.
+        \item<3-> Fordamping krever mye mer energi enn smelting.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \begin{tikzpicture}[xscale=0.62, yscale=0.62, font=\scriptsize]
+        \draw[->, textcolor!70] (0,0) -- (9.0,0) node[right] {$E$/kJ};
+        \draw[->, textcolor!70] (0,0) -- (0,7.6) node[above] {$t$/$^\circ$C};
+        \foreach \x/\l in {0/0, 2/800, 4/1600, 6/2400, 8/3200} \draw[textcolor!70] (\x,0.08) -- (\x,-0.08) node[below] {\l};
+        \foreach \y/\l in {0/{-20}, 1/0, 6/100} \draw[textcolor!70] (0.08,\y) -- (-0.08,\y) node[left] {$\l$};
+        \draw[line width=2pt, defscol] (0,0) -- (0.105,1);
+        \draw[line width=2pt, oppgcol] (0.105,1) -- (0.94,1);
+        \draw[line width=2pt, defscol] (0.94,1) -- (1.99,6);
+        \draw[line width=2pt, oppgcol] (1.99,6) -- (7.64,6);
+        \draw[line width=2pt, defscol] (7.64,6) -- (8.5,7.2);
+        \node[right] at (0.15,0.45) {is};
+        \node[above] at (0.52,1.05) {smelting};
+        \node[right] at (1.45,3.5) {vann};
+        \node[above] at (4.8,6.05) {fordamping, $2259\,\mathrm{kJ}$};
+        \node[below] at (0.6,0.95) {$334\,\mathrm{kJ}$};
+        \node[left] at (8.05,6.95) {damp};
+      \end{tikzpicture}
+      \\[-1mm]{\scriptsize Oppvarming av $1\,\mathrm{kg}$ vann fra $-20\,^\circ$C}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Aktivitet: kokende vann på full plate
+%--------------------------------------------------------------------------
+%  Fasit: a) Energien går til å bryte bindinger (fordamping), T holder seg på 100 °C.
+%         b) Fra kurven: 0 -> 100 °C krever ca. 420 kJ, fordamping 2259 kJ.
+%            Forhold 2259/420 = 5.4. Tid: 5.4 * 3.0 min = 16 min.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kokende vann på full plate}{%
+  En kjele med $1.0\,\mathrm{kg}$ vann står på en plate som hele tiden gir like mye energi per sekund. Det tar $3.0\,\mathrm{min}$ å varme vannet fra $0\,^\circ$C til $100\,^\circ$C.
+  \begin{enumerate}[a)]
+    \item Hvorfor blir ikke vannet varmere enn $100\,^\circ$C?
+    \item Bruk oppvarmingskurven: Omtrent hvor lang tid tar det før alt vannet har kokt bort?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Til ettertanke: svette og damp
+%--------------------------------------------------------------------------
+\begin{frame}{Faseoverganger}
+
+  \tanke{}{%
+  Hvorfor blir vi avkjølt når svetten fordamper? Og hvorfor gir ett gram damp på $100\,^\circ$C mer energi til huden enn ett gram vann på $100\,^\circ$C?
+  }
+  \pause
+  \svar{
+  Fordamping krever energi, og den tas fra huden. Motsatt: Når damp kondenserer på huden, avgis den samme energien, $2259\,\mathrm{kJ}$ per kilogram, før vannet i tillegg kjøles ned.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Merk: trykk
+%--------------------------------------------------------------------------
+\begin{frame}{Faseoverganger}
+
+  \merk{Faseoverganger avhenger av trykk}{%
+  Høyt til fjells er lufttrykket lavere, og vann koker ved under $100\,^\circ$C. Det tar derfor lenger tid å koke egg på fjellet: vannet blir aldri like varmt.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Faseoverganger}{%
+  \begin{enumerate}[1.]
+    \item[] Smelting, størkning, fordamping og kondensering er faseoverganger.
+    \item[] Under en faseovergang er temperaturen konstant.
+    \item[] For vann: smelting krever $334\,\mathrm{kJ/kg}$, fordamping $2259\,\mathrm{kJ/kg}$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 19 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: kalorimetri og termodynamikkens 1.\ lov}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

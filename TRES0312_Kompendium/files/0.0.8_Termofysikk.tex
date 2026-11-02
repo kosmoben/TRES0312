@@ -15,7 +15,7 @@
 \section{Indre energi, varme og temperatur}
 %=============================================================
 
-Alt stoff er bygget opp av atomer og molekyler i stadig bevegelse. Den samlede energien knyttet til disse mikroskopiske bevegelsene og bindingene mellom stoffets mikroskopiske bestanddeler kalles \emph{indre energi} $U$. Bestanddelene er her molekyler eller ioner, altså atomer.
+Alt stoff er bygget opp av atomer og molekyler i stadig bevegelse. Den samlede energien knyttet til disse mikroskopiske bevegelsene og bindingene mellom stoffets mikroskopiske bestanddeler kalles \emph{indre energi} $U$. Bestanddelene kan være atomer, molekyler eller ioner. For enkelhets skyld kommer vi ofte til å kalle de molekyler i dette kapitlet.
 
 Den indre energien deles i to: \emph{kinetisk} indre energi (bestanddelenes bevegelsesenergi) og \emph{potensiell} indre energi (energi lagret i bindingene mellom bestanddelene).
 
@@ -27,7 +27,7 @@ Den kinetiske delen har tre bidrag:
 \end{itemize}
 På makroskopisk nivå så erfarer vi disse bidragene som temperatur. Jo høyere temperatur, desto mer bevegelse er det i molekylene.
 
-Den potensielle delen er energi lagret i bindingene mellom molekylene (den endres for eksempel når is smelter) og i de kjemiske bindingene inne i molekylene. Figur~\ref{fig:indre_energi_tre} viser en oversikt.
+Den potensielle delen er energi lagret i bindingene mellom molekylene (den endres for eksempel når is smelter) og i de kjemiske bindingene inne i molekylene. Temperaturen viser hvor mye molekylene beveger seg og svinger. Energien som skal til for å bryte bindinger, når stoffet smelter, fordamper eller reagerer kjemisk, vises ikke på temperaturen. Figur~\ref{fig:indre_energi_tre} viser en oversikt.
 
 \begin{center}
 \resizebox{\linewidth}{!}{%
@@ -99,25 +99,26 @@ Den potensielle delen er energi lagret i bindingene mellom molekylene (den endre
   \node[font=\scriptsize, red!50!black, anchor=south] at ($(ke.south)+(0,0.08)$) {(kjemiske reaksjoner)};
 \end{tikzpicture}%
 }
-\captionof{figure}{Den indre energien $U$ består av kinetisk og potensiell energi til molekylene. Temperaturen $T$ er knyttet til den kinetiske energien molekylene har på grunn av translasjon.}
+\captionof{figure}{Den indre energien $U$ består av kinetisk og potensiell energi til molekylene. Temperaturen $T$ er et mål på bevegelsen til molekylene (den kinetiske delen). Energien som skal til for å bryte bindingene (den potensielle delen), viser seg ikke på temperaturen.}
 \label{fig:indre_energi_tre}
 \end{center}
 
-\subsection{Temperatur som mål på bevegelse}
+\subsection{Temperatur}
 
-Vi har sagt at temperaturen henger sammen med hvor mye molekylene beveger seg. Denne sammenhengen kan gjøres helt presis. Se for deg en gass av molekyler. Molekylene farer rundt i alle retninger og kolliderer med hverandre og med veggene. Hvert molekyl har sin bevegelse (translasjon, vibrasjon og rotasjon) og denne bevegelsen endres ved kollisjon med andre molekyler, ellr med veggen i gassbeholderen. Faktisk kan vi regne ut \emph{gjennomsnittet} av den kinetiske energien molekylene i gassen har. Det vi kaller \emph{absolutt} temperatur, er et mål på dette gjennomsnittet.
+Vi har sagt at temperaturen henger sammen med hvor mye molekylene beveger seg. Denne sammenhengen kan gjøres helt presis. Se for deg en gass av molekyler. Molekylene farer rundt i alle retninger og kolliderer med hverandre og med veggene. Hvert molekyl har sin bevegelse (translasjon, vibrasjon og rotasjon) og denne bevegelsen endres ved kollisjon med andre molekyler, eller med veggen i gassbeholderen. Faktisk kan vi regne ut \emph{gjennomsnittet} av den kinetiske energien molekylene i gassen har. Det vi kaller \emph{absolutt} temperatur, er et mål på dette gjennomsnittet.
 
-Om du lurer på hvorfor jeg skrev \emph{absolutt} temperatur, så er det fordi vi benytter en litt spesiell temperaturskala. Jo mindre molekylene beveger seg, desto lavere er temperaturen. Det må derfor finnes en lavest mulig temperatur, der molekylene ikke kan miste mer bevegelsesenergi. Den kalles det \emph{absolutte nullpunktet}. Måler vi temperaturen fra dette nullpunktet, får vi den \emph{absolutte temperaturen} $T$. Enheten er kelvin (\si{\kelvin}), og det er SI-enheten for temperatur. Den absolutte temperaturen er et direkte mål på bevegelsen: dobler vi $T$, dobler vi også den gjennomsnittlige kinetiske energien til molekylene.
+Om du lurer på hvorfor jeg skrev \emph{absolutt} temperatur, så er det fordi vi benytter en litt spesiell temperaturskala. Jo mindre molekylene beveger seg, desto lavere er temperaturen. Det må derfor finnes en lavest mulig temperatur, der molekylene ikke kan miste mer bevegelsesenergi. Den kalles for \emph{det absolutte nullpunktet}. Måler vi temperaturen fra dette nullpunktet, får vi den \emph{absolutte temperaturen} $T$. Enheten er kelvin (\si{\kelvin}), og det er SI-enheten for temperatur. Den absolutte temperaturen er et direkte mål på bevegelsen: dobler vi $T$, dobler vi også den gjennomsnittlige, kinetiske energien til molekylene.
 
-Sammenhengen mellom temperatur og energien til ett molekyl i gassen kan utledes presist i \emph{kinetisk gassteori}, som kobler makroskopiske størrelser som trykk og temperatur til bevegelser på mikronivå. Det viser seg at resultatet avhenger av bestanddelene i gassen; molekylene. Her holder vi oss til én-atomige gasser.
+Sammenhengen mellom temperatur og energien til ett molekyl i gassen kan utledes presist i \emph{kinetisk gassteori}, som kobler makroskopiske størrelser som trykk og temperatur til bevegelser på mikronivå. Resultatet er enklest for energien knyttet til \emph{translasjon}, altså bevegelsen fra sted til sted. Den er den samme for alle gasser:
 
 \defn{Gjennomsnittlig kinetisk energi}{%
-Den gjennomsnittlige kinetiske energien til hvert molekyl i en én-atomig gass kan er til god tilnærming gitt ved
+Den gjennomsnittlige kinetiske energien knyttet til translasjon er for hvert molekyl i en gass gitt ved
 \[
   \bar{E}_\text{K} = \frac{3}{2}\,k_\text{B} T,
 \]
 hvor $k_\text{B} = \SI{1.38e-23}{\joule\per\kelvin}$ er Boltzmanns konstant, og $T$ er den absolutte temperaturen i kelvin.
 }
+For én-atomige gasser, som helium og neon, er dette all den kinetiske energien. Molekyler med to eller flere atomer kan i tillegg rotere og vibrere, og har derfor mer kinetisk energi totalt. Men translasjonsdelen er fortsatt $\tfrac{3}{2}k_\text{B}T$, og det er den som bestemmer hvor fort molekylene farer rundt.
 
 \merk{Temperatur = bevegelse}{%
 Temperatur er \emph{ikke} en egenskap ved ett enkelt molekyl — det er et statistisk
@@ -137,7 +138,7 @@ Finn den gjennomsnittlige translasjonsenergien til ett He-atom.
             = \doubleunderline{\SI{6.07e-21}{\joule}}
 \]
 Selv om dette er svært lite, beveger et heliumatom seg ved romtemperatur med en
-gjennomsnittlig hastighet på rundt $\SI{1350}{\metre\per\second}$ — raskere enn lyden!
+typisk fart på rundt $\SI{1350}{\metre\per\second}$ — raskere enn lyden!
 }
 
 \merk{Celsius, kelvin og fahrenheit}{%
@@ -200,14 +201,15 @@ Det er omtrent \SI{1700}{\kilo\metre\per\hour}, raskere enn lyden i luft (omtren
 }
 
 \subsection{Varme}
-
-Den indre energien kan endres på to måter: ved å tilføre \emph{varme}, eller ved å utføre \emph{arbeid} på systemet. Bremseklosser varmes opp av friksjon (arbeid), og en kopp te avkjøles ved å avgi varme til omgivelsene.
+I dagligtale betrakter vi varme og temperatur som mer eller mindre det samme. Men i fysikken er det en viktig forskjell: temperatur er et mål på den gjennomsnittlige kinetiske energien til molekylene, mens varme er energi som overføres mellom to systemer \emph{som følge av at }de har ulik temperatur.
 
 \defn{Varme}{
-Varme $Q$ er overføring av indre energi fra ett system til et annet, \emph{som følge av temperaturforskjell} $\Delta T$.
+Varme $Q$ er indre energi som overføres fra ett system til et annet, \emph{som følge av temperaturforskjell} $\Delta T$.
 }
 
-Temperatur og varme henger sammen, men de er ikke den samme størrelsen. Som vi nettopp har sett, er temperatur et mål på den gjennomsnittlige kinetiske energien til molekylene. Varme er derimot energi som \emph{overføres} mellom to systemer fordi de har ulik temperatur. Et system \emph{har} en temperatur, men det «har» ikke varme.
+Temperatur og varme er altså tett forbundet, men ikke helt det samme. Merk at ettersom varme er energi som \emph{overføres} mellom to systemer fordi de har ulik temperatur, kan vi ikke si at et system «har» varme. Et system \emph{har} en temperatur, men det «har» ikke varme. Varme er overføring av indre energi.
+
+Varme kan overføres på tre måter: ved \emph{varmeledning} gjennom direkte kontakt (en gryte på en varm kokeplate), ved \emph{konveksjon}, der en varm væske eller gass strømmer og tar energien med seg (varm luft som stiger), og ved \emph{stråling} (sola som varmer oss gjennom det tomme rommet).
 
 \exm{Liten og stor kjele}{%
 En liten kjele med \SI{1.0}{\litre} vann og en stor kjele med \SI{5.0}{\litre} vann har begge temperaturen $60\,^\circ$C. Kjelene settes på kjøkkenbenken, der det er $20\,^\circ$C.
@@ -221,7 +223,7 @@ En liten kjele med \SI{1.0}{\litre} vann og en stor kjele med \SI{5.0}{\litre} v
 
 \svar{%
 \noindent
-\textbf{a)} Kjelene har \doubleunderline{samme temperatur}. Atomene i de to kjelene har altså i gjennomsnitt like mye kinetisk energi. Men det er fem ganger så mange molekyler i den store kjelen, så den har \doubleunderline{mest indre energi}.
+\textbf{a)} Kjelene har \doubleunderline{samme temperatur}. Molekylene i de to kjelene har altså i gjennomsnitt like mye kinetisk energi. Men det er fem ganger så mange molekyler i den store kjelen, så den har \doubleunderline{mest indre energi}.
 
 \smallskip\noindent
 \textbf{b)} Begge kjelene kjøles ned like mange grader, men i den store kjelen er det fem ganger så mye vann som skal kjøles ned. Den store kjelen avgir derfor \doubleunderline{fem ganger så mye varme} som den lille.
@@ -235,118 +237,6 @@ En liten kjele med \SI{1.0}{\litre} vann og en stor kjele med \SI{5.0}{\litre} v
 
 \oppgaver{Riktig eller galt?}{k8oppg2}{%
 \input{Oppgaver/k8_oppg02.tex}%
-}
-
-%=============================================================
-\section{Termodynamikkens 1.\ lov}
-%=============================================================
-
-Den indre energien $U$ til et system kan endres på to måter: varme $Q$ tilføres (eller avgis), og arbeid $W$ utføres på (eller av) systemet. Termodynamikkens 1.\ lov er energibevaringsloven uttrykt for termodynamiske systemer:
-
-\defn{Termodynamikkens 1. lov}{
-Endringen i den indre energien $\Delta U$ er lik summen av tilført varme $Q$ og arbeid $W$ utført \emph{på} systemet:
-\[
-  \Delta U = Q + W
-\]
-}
-
-\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
-    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
-\textbf{Fortegnskonvensjon:}
-\begin{itemize}
-  \item $\Delta U > 0$: indre energi øker (systemet lagrer mer energi)
-  \item $Q > 0$: varme strømmer \emph{inn} i systemet
-  \item $Q < 0$: systemet avgir varme til omgivelsene
-  \item $W > 0$: arbeid utføres \emph{på} systemet (f.eks.\ stempelet komprimerer gassen)
-  \item $W < 0$: systemet gjør arbeid \emph{på} omgivelsene (f.eks.\ gassen ekspanderer og løfter et stempel)
-\end{itemize}
-\end{tcolorbox}
-
-\medskip
-
-\noindent
-\begin{minipage}[t]{0.54\linewidth}
-\vspace{0pt}
-Figuren viser et typisk termodynamisk system: en gass i en sylinder med bevegelig stempel. Varme $Q > 0$ kan tilføres fra en varmekilde. Stempelet kan gjøre arbeid $W > 0$ på gassen ved å komprimere den — eller gassen kan ekspandere og senke stempelet ($W < 0$). Endringen $\Delta U$ samler opp begge bidragene.
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.42\linewidth}
-\vspace{0pt}
-\centering
-\begin{tikzpicture}[scale=0.88, >={Stealth[length=6pt,width=4pt]}]
-  % Sylinder
-  \fill[gray!10] (0.0, 0.0) rectangle (2.6, 2.2);
-  \draw[thick] (0.0, 0.0) -- (0.0, 2.2) -- (2.6, 2.2) -- (2.6, 0.0) -- (0.0, 0.0);
-  % Stempel
-  \fill[gray!40] (0.0, -0.35) rectangle (2.6, 0.0);
-  \draw[thick] (0.0, -0.35) rectangle (2.6, 0.0);
-  % Stempel-stang
-  \draw[thick, gray!60] (1.3, -0.35) -- (1.3, -0.80);
-  % W-pil oppover mot stempel
-  \draw[->, very thick, defscol]
-      (1.3, -1.4) -- (1.3, -0.85)
-      node[midway, right=2pt, font=\small, defscol] {$W > 0$};
-  % Gass-partikler
-  \node[font=\small, gray!50] at (1.3, 1.1) {Gass $(U)$};
-  \foreach \px/\py in {0.4/0.4, 0.9/1.5, 1.8/0.7, 0.6/1.8, 2.1/1.5, 1.5/0.5} {
-    \fill[defscol!50] (\px,\py) circle (0.055);
-  }
-  % Q-pil inn fra venstre
-  \draw[->, very thick, red!70!black]
-      (-1.3, 1.1) -- (-0.05, 1.1)
-      node[midway, above=2pt, font=\small, red!70!black] {$Q > 0$};
-  % Varmekilde-boks
-  \draw[red!50, thick, rounded corners=2pt] (-2.0,0.7) rectangle (-1.4,1.5);
-  \node[font=\tiny, red!70!black, align=center] at (-1.7, 1.1) {varme-\\kilde};
-\end{tikzpicture}
-\captionof{figure}{Gass i sylinder. Varme $Q$ tilføres fra en varmekilde, og stempelet gjør arbeid $W$ på gassen.}
-\label{fig:1lov_system}
-\end{minipage}
-
-\medskip
-
-\exm{Gass i sylinder}{%
-$Q = \SI{500}{\joule}$ tilføres en gass i en sylinder. Den indre energien øker med $\Delta U = \SI{100}{\joule}$.
-\begin{enumerate}[a)]
-  \item Hvor stort arbeid gjør stempelet på gassen?
-  \item Dersom stempelet har masse $m = \SI{50}{\kilo\gram}$ og beveger seg vertikalt \emph{mot} tyngdekraftens retning, hvor langt flyttes det?
-\end{enumerate}
-}
-
-\svar{%
-\textbf{a)} Fra 1.\ lov løser vi for $W$:
-\[
-  \Delta U = Q + W \implies W = \Delta U - Q = \SI{100}{\joule} - \SI{500}{\joule}
-  = \doubleunderline{-\SI{400}{\joule}}
-\]
-Det negative fortegnet viser at stempelet \emph{ikke} gjør arbeid på gassen — det er gassen som gjør \SI{400}{\joule} arbeid på stempelet og løfter det oppover.
-
-\textbf{b)} Gassen gjør \SI{400}{\joule} arbeid på stempelet. Dette arbeidet brukes til å løfte stempelet mot tyngdekraften ($W = \Delta E_{\text{pot}} = m\mathrm{g}y$):
-\[
-  y = \frac{W}{m\mathrm{g}} = \frac{\SI{400}{\joule}}{\SI{50}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}
-  = \doubleunderline{\SI{0.82}{\metre}}
-\]
-Stempelet flyttes \SI{82}{\centi\metre}.
-}
-
-\tips{Adiabatisk prosess}{%
-En \emph{adiabatisk} prosess er en prosess uten varmeoverføring: $Q = 0$. Da gir 1.\ lov:
-\[
-  \Delta U = W
-\]
-All endring i indre energi skyldes arbeid. Eksempler: en \textbf{sykkelpumpe} (komprimering skjer for raskt til at varme rekker å slippe ut — pumpa blir varm), og \textbf{dieselmotorer} (luften komprimeres adiabatisk inntil temperaturen er høy nok til at drivstoffet antennes av seg selv, uten tennplugg).
-}
-
-\oppgaver{Varme eller arbeid?}{k8oppg1}{%
-\input{Oppgaver/k8_oppg01.tex}%
-}
-
-\oppgaver{Sykkelpumpe}{k8oppg3}{%
-\input{Oppgaver/k8_oppg03.tex}%
-}
-
-\oppgaver{Gass som komprimeres}{k8oppg4}{%
-\input{Oppgaver/k8_oppg04.tex}%
 }
 
 %=============================================================
@@ -409,7 +299,7 @@ Figuren viser oppvarmingskurven for \SI{1}{\kilo\gram} vann, fra is ved $-20\,^\
   \node[font=\tiny, headCol]        at (0.52, 1.22) {Smelting};
   \node[font=\tiny, black!70, right] at (1.40, 3.60) {Vann};
   \node[font=\tiny, headCol]        at (4.82, 6.22) {Fordamping};
-  \node[font=\tiny, black!70, right] at (7.90, 6.80) {Damp};
+  \node[font=\tiny, black!70, left] at (8.05, 6.95) {Damp};
 
   % Energy labels on plateaus
   \node[font=\tiny, headCol!80!black] at (0.52, 0.72) {\SI{334}{kJ}};
@@ -468,6 +358,8 @@ Kalorimetri er den kvantitative beskrivelsen av varme — vi beregner nøyaktig 
 
 \subsection*{Temperaturendring innen en fase}
 
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
 \defn{Spesifikk varmekapasitet}{
 Varmen som trengs for å endre temperaturen til et legeme med masse $m$ med $\Delta T$:
 \[
@@ -478,8 +370,10 @@ der $c$ er den \emph{spesifikke varmekapasiteten} med enhet \si{\kilo\joule\per(
 \smallskip\noindent
 \textit{Merk:} $\Delta T$ er den samme i Celsius og Kelvin: $\Delta T[\si{K}] = \Delta T[\si{^\circ C}]$.
 }
-
-\begin{center}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.34\linewidth}
+\centering
 \small
 \begin{tabular}{lc}
 \hline
@@ -487,7 +381,7 @@ der $c$ er den \emph{spesifikke varmekapasiteten} med enhet \si{\kilo\joule\per(
 \hline
 Bly            & 0.13 \\
 Sølv           & 0.24 \\
-Kopper         & 0.39 \\
+Kobber         & 0.39 \\
 Jern           & 0.45 \\
 Glass          & 0.84 \\
 Aluminium      & 0.90 \\
@@ -498,7 +392,7 @@ Menneskekropp  & 3.5 \\
 \textbf{Vann}  & \textbf{4.2} \\
 \hline
 \end{tabular}
-\end{center}
+\end{minipage}
 
 For sammensatte systemer (f.eks.\ termos + vann) bruker vi den totale \emph{varmekapasiteten} $C$ (uten masse):
 
@@ -519,23 +413,52 @@ Varmen som tilføres eller avgis når en masse $m$ av et stoff skifter fase ved 
 der $\ell$ er den \emph{spesifikke fasevarmen} med enhet \si{kJ/kg}.
 }
 
+Når et stoff størkner, avgis like mye varme som det trengs for å smelte det. Den spesifikke \emph{smeltevarmen} er derfor også den spesifikke størkningsvarmen. På samme måte er den spesifikke \emph{fordampingsvarmen} lik den spesifikke kondensasjonsvarmen. Tabellene viser verdier for noen vanlige stoffer ved normalt lufttrykk.
+
 \begin{center}
 \small
-\begin{tabular}{lcc}
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+\textbf{Smelting og størkning}\\[3pt]
+\begin{tabular}{lrr}
 \hline
-\textbf{Stoff} & $\ell_{\text{smelte}}$ / \si{kJ/kg} & $\ell_{\text{fordamp}}$ / \si{kJ/kg} \\
+\textbf{Stoff} & $t_\text{smelte}$ / \si{\celsius} & $\ell_\text{smelte}$ / \si{kJ/kg} \\
 \hline
-Oksygen         &  13.8 &    213 \\
-Nitrogen        &  25.8 &    199 \\
-Kvikksølv       &  11.7 &    270 \\
-Bly             &  25     &    871 \\
-Etanol          & 104     &    854 \\
-Sølv            & 105     &  2\,336 \\
-Kopper          & 205     &  5\,069 \\
-\textbf{Vann}   & \textbf{334}  & \textbf{2\,259} \\
-Aluminium       & 395     & 10\,500 \\
+Oksygen     & $-219$ & 13.9 \\
+Nitrogen    & $-210$ & 25.7 \\
+Etanol      & $-114$ & 108 \\
+Kvikksølv   & $-39$  & 11.4 \\
+\textbf{Vann (is)} & \textbf{0} & \textbf{334} \\
+Bly         & 327    & 23 \\
+Aluminium   & 660    & 397 \\
+Sølv        & 962    & 105 \\
+Gull        & 1064   & 64 \\
+Kobber      & 1085   & 207 \\
+Jern        & 1538   & 247 \\
 \hline
 \end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\centering
+\textbf{Fordamping og kondensasjon}\\[3pt]
+\begin{tabular}{lrr}
+\hline
+\textbf{Stoff} & $t_\text{koke}$ / \si{\celsius} & $\ell_\text{fordamp}$ / \si{kJ/kg} \\
+\hline
+Helium      & $-269$ & 20.9 \\
+Nitrogen    & $-196$ & 199 \\
+Oksygen     & $-183$ & 213 \\
+Etanol      & 78     & 855 \\
+\textbf{Vann} & \textbf{100} & \textbf{2\,259} \\
+Kvikksølv   & 357    & 295 \\
+Bly         & 1749   & 860 \\
+Sølv        & 2162   & 2\,360 \\
+Aluminium   & 2519   & 10\,500 \\
+Kobber      & 2562   & 4\,730 \\
+\hline
+\end{tabular}
+\end{minipage}
 \end{center}
 
 \exm{Fordampe vann}{%
@@ -609,13 +532,201 @@ All tilført energi $E$ fordeles mellom væsken og termosen:
 }
 
 
-\section{Tilstandslikninga for idealgass}
+%=============================================================
+\section{Termodynamikkens 1.\ lov}
+\label{sec:1lov}
+%=============================================================
+
+Den indre energien $U$ til et system kan endres på to måter: varme $Q$ tilføres (eller avgis), og arbeid $W$ utføres på (eller av) systemet. Termodynamikkens 1.\ lov er energibevaringsloven uttrykt for termodynamiske systemer:
+
+\defn{Termodynamikkens 1. lov}{
+Endringen i den indre energien $\Delta U$ er lik summen av tilført varme $Q$ og arbeid $W$ utført \emph{på} systemet:
+\[
+  \Delta U = Q + W
+\]
+}
+
+\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
+    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+\textbf{Fortegnskonvensjon:}
+\begin{itemize}
+  \item $\Delta U > 0$: indre energi øker (systemet lagrer mer energi)
+  \item $Q > 0$: varme strømmer \emph{inn} i systemet
+  \item $Q < 0$: systemet avgir varme til omgivelsene
+  \item $W > 0$: arbeid utføres \emph{på} systemet (f.eks.\ stempelet komprimerer gassen)
+  \item $W < 0$: systemet gjør arbeid \emph{på} omgivelsene (f.eks.\ gassen ekspanderer og løfter et stempel)
+\end{itemize}
+\end{tcolorbox}
+
+\medskip
+
+\noindent
+\begin{minipage}[t]{0.54\linewidth}
+\vspace{0pt}
+Figuren viser et typisk termodynamisk system: en gass i en sylinder med bevegelig stempel. Varme $Q > 0$ kan tilføres fra en varmekilde. Stempelet kan gjøre arbeid $W > 0$ på gassen ved å komprimere den — eller gassen kan ekspandere og løfte stempelet ($W < 0$). Endringen $\Delta U$ samler opp begge bidragene.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.88, >={Stealth[length=6pt,width=4pt]}]
+  % Sylinder (lukket i bunnen, stempel på toppen)
+  \fill[gray!10] (0.0, 0.0) rectangle (2.6, 2.2);
+  \draw[thick] (0.0, 2.9) -- (0.0, 0.0) -- (2.6, 0.0) -- (2.6, 2.9);
+  % Stempel
+  \fill[gray!40] (0.0, 2.2) rectangle (2.6, 2.55);
+  \draw[thick] (0.0, 2.2) rectangle (2.6, 2.55);
+  % Stempel-stang
+  \draw[thick, gray!60] (1.3, 2.55) -- (1.3, 3.0);
+  % W-pil nedover mot stempel
+  \draw[->, very thick, defscol]
+      (1.3, 3.6) -- (1.3, 3.05)
+      node[midway, right=2pt, font=\small, defscol] {$W > 0$};
+  % Gass-partikler
+  \node[font=\small, gray!50] at (1.3, 1.1) {Gass $(U)$};
+  \foreach \px/\py in {0.4/0.4, 0.9/1.5, 1.8/0.7, 0.6/1.8, 2.1/1.5, 1.5/0.5} {
+    \fill[defscol!50] (\px,\py) circle (0.055);
+  }
+  % Q-pil inn fra venstre
+  \draw[->, very thick, red!70!black]
+      (-1.3, 1.1) -- (-0.05, 1.1)
+      node[midway, above=2pt, font=\small, red!70!black] {$Q > 0$};
+  % Varmekilde-boks
+  \draw[red!50, thick, rounded corners=2pt] (-2.0,0.7) rectangle (-1.4,1.5);
+  \node[font=\tiny, red!70!black, align=center] at (-1.7, 1.1) {varme-\\kilde};
+\end{tikzpicture}
+\captionof{figure}{Gass i sylinder. Varme $Q$ tilføres fra en varmekilde, og stempelet gjør arbeid $W$ på gassen.}
+\label{fig:1lov_system}
+\end{minipage}
+
+\medskip
+
+\subsection*{Arbeid gjort av en gass}
+
+Hvor stort arbeid gjør en gass når den utvider seg? Se på en gass i en sylinder med et bevegelig stempel med areal $A$. Gassen har trykket $p$, så den presser på stempelet med kraften
+\[
+  F = p\cdot A
+\]
+Anta at trykket holdes konstant mens gassen utvider seg og skyver stempelet et lite stykke $\Delta x$ utover. Kraften og bevegelsen har samme retning, så arbeidet gassen gjør på stempelet, er kraft ganger strekning:
+\[
+  W_\text{gass} = F\cdot\Delta x = p\cdot A\cdot\Delta x
+\]
+Men $A\cdot\Delta x$ er nettopp økningen i volumet til gassen, $\Delta V$ (se figur~\ref{fig:arbeid_stempel}). Dermed er arbeidet gassen gjør
+\graabox{$\displaystyle W_\text{gass} = p\,\Delta V$}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.85, font=\small, >={Stealth[length=6pt,width=4pt]}]
+  % Gass
+  \fill[gray!10] (0,0) rectangle (3.0,1.8);
+  \fill[defscol!15] (3.0,0) rectangle (4.0,1.8);
+  % Sylinder (åpen til høyre)
+  \draw[thick] (5.6,0) -- (0,0) -- (0,1.8) -- (5.6,1.8);
+  % Stempel før (stiplet) og etter
+  \draw[dashed, thick, gray] (3.0,0) -- (3.0,1.8);
+  \fill[gray!40] (4.0,0) rectangle (4.3,1.8);
+  \draw[thick] (4.0,0) rectangle (4.3,1.8);
+  \draw[thick, gray!60] (4.3,0.9) -- (5.4,0.9);
+  % Kraft fra gassen på stempelet (halen i stempelet)
+  \draw[->, line width=2.5pt, defscol] (4.3,1.35) -- (5.5,1.35) node[right] {$\vec{F} = p A\,\hat{x}$};
+  % Delta x
+  \draw[<->, thin] (3.0,-0.3) -- (4.0,-0.3) node[midway, below] {$\Delta x$};
+  \node at (1.5,0.9) {gass, $p$};
+  \node[defscol!60!black, font=\footnotesize] at (3.5,0.9) {$A\,\Delta x$};
+  \node[font=\footnotesize, left] at (0,0.9) {$A$};
+\end{tikzpicture}
+\captionof{figure}{Gassen skyver stempelet $\Delta x$ utover med kraften $F = pA$. Volumet øker med $\Delta V = A\,\Delta x$ (det fargede området), og gassen gjør arbeidet $W_\text{gass} = F\,\Delta x = p\,\Delta V$.}
+\label{fig:arbeid_stempel}
+\end{center}
+\end{minipage}
+
+\merk{$p\,\Delta V$, ikke $\Delta p\, V$}{%
+Arbeid krever at noe flytter seg. Det er derfor volum\emph{endringen} $\Delta V$ som inngår. Øker trykket mens volumet er konstant (en isokor prosess), flytter ikke stempelet seg, og gassen gjør \emph{ingen} arbeid, selv om trykket endres. $\Delta p\,V$ er altså ikke et arbeid. Formelen $W_\text{gass} = p\,\Delta V$ gjelder når trykket er konstant. Endres trykket underveis, må vi regne annerledes. Det ser vi på i delkapittel~\ref{sec:prosesser}.
+}
+
+I termodynamikkens 1.\ lov er $W$ arbeidet som gjøres \emph{på} gassen. Når gassen utvider seg ($\Delta V > 0$), gjør den arbeid på omgivelsene, og $W = -p\,\Delta V$ er negativ. Når gassen presses sammen, er $W$ positiv.
+
+\exm{Gass i sylinder}{%
+$Q = \SI{500}{\joule}$ tilføres en gass i en sylinder. Den indre energien øker med $\Delta U = \SI{100}{\joule}$.
+\begin{enumerate}[a)]
+  \item Hvor stort arbeid gjør stempelet på gassen?
+  \item Stempelet sitter på toppen av sylinderen, som i figur~\ref{fig:1lov_system}, og har masse $m = \SI{50}{\kilo\gram}$. Gassen løfter stempelet rett opp. Hvor langt flyttes det? Se bort fra lufttrykket over stempelet og friksjon.
+\end{enumerate}
+}
+
+\svar{%
+\textbf{a)} Fra 1.\ lov løser vi for $W$:
+\[
+  \Delta U = Q + W \implies W = \Delta U - Q = \SI{100}{\joule} - \SI{500}{\joule}
+  = \doubleunderline{-\SI{400}{\joule}}
+\]
+Det negative fortegnet viser at stempelet \emph{ikke} gjør arbeid på gassen — det er gassen som gjør \SI{400}{\joule} arbeid på stempelet og løfter det oppover.
+
+\textbf{b)} Gassen gjør \SI{400}{\joule} arbeid på stempelet. Dette arbeidet brukes til å løfte stempelet mot tyngdekraften ($W = \Delta E_{\text{pot}} = m\mathrm{g}y$):
+\[
+  y = \frac{W}{m\mathrm{g}} = \frac{\SI{400}{\joule}}{\SI{50}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}}
+  = \doubleunderline{\SI{0.82}{\metre}}
+\]
+Stempelet flyttes \SI{82}{\centi\metre}.
+}
+
+\subsubsection*{Adiabatisk prosess}
+En \emph{adiabatisk} prosess er en prosess uten varmeoverføring: $Q = 0$. Da gir 1.\ lov:
+\[
+  \Delta U = W
+\]
+I en slik prosess skyldes all endring i indre energi arbeid. Eksempler: en \textbf{sykkelpumpe} (komprimering skjer for raskt til at varme rekker å slippe ut — pumpa blir varm), og \textbf{dieselmotorer} (luften komprimeres adiabatisk inntil temperaturen er høy nok til at drivstoffet antennes av seg selv, uten tennplugg).
+
+
+\oppgaver{Varme eller arbeid?}{k8oppg1}{%
+\input{Oppgaver/k8_oppg01.tex}%
+}
+
+\oppgaver{Sykkelpumpe}{k8oppg3}{%
+\input{Oppgaver/k8_oppg03.tex}%
+}
+
+\oppgaver{Gass som komprimeres}{k8oppg4}{%
+\input{Oppgaver/k8_oppg04.tex}%
+}
+
+\section{Tilstandslikningen for idealgass}
 
 For en idealgass er det en enkel sammenheng mellom trykk $p$, volum $V$ og
-absolutt temperatur $T$. Vi bruker $N$ for antall molekyler og
-$k_\text{B}$ for Boltzmanns konstant:
+absolutt temperatur $T$. Før vi skriver den opp, skal vi se hvorfor den må se ut som den gjør.
 
-\defn{Tilstandslikninga for idealgass}{%
+Se først på enhetene til produktet $pV$:
+\[
+  [pV] = \si{\pascal}\cdot\si{\metre\cubed} = \frac{\si{\newton}}{\si{\metre\squared}}\cdot\si{\metre\cubed} = \si{\newton\metre} = \si{\joule}
+\]
+Produktet av trykk og volum er altså en \emph{energi}. Hvilken energi kan det være? En idealgass består av molekyler som farer rundt og bare påvirker hverandre når de kolliderer. Den viktigste energien gassen har, er derfor bevegelsesenergien til molekylene. Hvert molekyl har i gjennomsnitt translasjonsenergien $\tfrac{3}{2}k_\text{B}T$, så en gass med $N$ molekyler har til sammen translasjonsenergien
+\[
+  N\cdot\tfrac{3}{2}k_\text{B}T
+\]
+Det er derfor rimelig at $pV$ er proporsjonal med $Nk_\text{B}T$. Det stemmer også med det vi forventer fysisk. Trykket skyldes at molekylene treffer veggene. Flere molekyler (større $N$) og raskere molekyler (høyere $T$) gir flere og hardere treff, og dermed høyere trykk. Et større volum betyr at molekylene treffer veggene sjeldnere, og da blir trykket lavere. Kinetisk gassteori viser at $pV$ er nøyaktig to tredjedeler av den samlede translasjonsenergien:
+\[
+  pV = \tfrac{2}{3}\cdot N\cdot\tfrac{3}{2}k_\text{B}T = Nk_\text{B}T
+\]
+
+\merk{Utledning for de spesielt interesserte}{%
+Se på ett molekyl med masse $m$ i en kubeformet boks med sidekant $L$. Fartskomponenten mot høyre vegg er $v_x$. Når molekylet spretter elastisk tilbake fra veggen, endres bevegelsesmengden fra $mv_x$ til $-mv_x$, altså med $2mv_x$. Molekylet treffer den samme veggen igjen etter tiden $\Delta t = 2L/v_x$. Kraft ganger tid er lik endringen i bevegelsesmengde (se kapittel~\ref{Chapter:dynamikk}), så den gjennomsnittlige kraften fra molekylet på veggen er
+\[
+  F = \frac{2mv_x}{2L/v_x} = \frac{mv_x^2}{L}
+\]
+Med $N$ molekyler blir kraften $F = Nm\overline{v_x^2}/L$, der $\overline{v_x^2}$ er gjennomsnittet av $v_x^2$. Trykket er kraft per areal, $p = F/L^2$, og $L^3 = V$:
+\[
+  p = \frac{Nm\overline{v_x^2}}{V}
+\]
+Molekylene beveger seg like mye i alle tre retninger, så $\overline{v^2} = \overline{v_x^2} + \overline{v_y^2} + \overline{v_z^2} = 3\,\overline{v_x^2}$. Da er
+\[
+  pV = \tfrac{1}{3}Nm\overline{v^2} = \tfrac{2}{3}N\cdot\tfrac{1}{2}m\overline{v^2} = \tfrac{2}{3}N\bar{E}_\text{K}
+\]
+Med $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$ får vi $pV = Nk_\text{B}T$. Historisk gikk man faktisk den andre veien: Tilstandslikningen var kjent fra målinger, og utledningen over viste da at $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$.
+}
+
+Vi bruker $N$ for antall molekyler og $k_\text{B}$ for Boltzmanns konstant:
+
+\defn{Tilstandslikningen for idealgass}{%
 \[
   pV = N k_\text{B} T
 \]
@@ -625,7 +736,7 @@ bestemmer de to andre hverandre.
 
 \merk{Molform: $pV = nRT$}{%
 Er antall \emph{mol} $n$ gitt i stedet for antall molekyler $N$,
-bruker man gassonstanten $R = \SI{8.314}{\joule\per(\mol\kelvin)}$:
+bruker man gasskonstanten $R = \SI{8.314}{\joule\per(\mol\kelvin)}$:
 $pV = nRT$.
 Sammenhengen er $N k_\text{B} = n R$.}
 
@@ -638,7 +749,7 @@ Finn den nye temperaturen $T_2$.
 }
 
 \svar{%
-Siden $N$ og $V$ er konstante, gir tilstandslikninga:
+Siden $N$ og $V$ er konstante, gir tilstandslikningen:
 \[
   \frac{p_1}{T_1} = \frac{p_2}{T_2}
   \implies
@@ -654,7 +765,7 @@ En ballong har volumet \SI{5.0}{\litre}. Trykket i ballongen er \SI{1.0e5}{\pasc
 
 \svar{%
 \noindent
-Vi gjør om til SI-enheter: $V = \SI{5.0}{\litre} = \SI{5.0e-3}{\metre\cubed}$ og $T = 20 + 273 = \SI{293}{\kelvin}$. Vi løser tilstandslikninga for $N$:
+Vi gjør om til SI-enheter: $V = \SI{5.0}{\litre} = \SI{5.0e-3}{\metre\cubed}$ og $T = 20 + 273 = \SI{293}{\kelvin}$. Vi løser tilstandslikningen for $N$:
 \[
   N = \frac{pV}{k_\text{B}T} = \frac{\SI{1.0e5}{\pascal}\cdot\SI{5.0e-3}{\metre\cubed}}{\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{293}{\kelvin}} = \num{1.24e23} \approx \doubleunderline{\num{1.2e23}}
 \]
@@ -671,8 +782,9 @@ Det er et enormt tall, selv for en liten ballong. Det tilsvarer omtrent $0.2$ mo
 
 
 \section{Prosesstyper og $pV$-diagram}
+\label{sec:prosesser}
 
-Tilstandslikninga $pV = Nk_\text{B}T$ forbinder tre størrelser.
+Tilstandslikningen $pV = Nk_\text{B}T$ forbinder tre størrelser.
 Avhengig av hvilken som holdes \emph{konstant}, skiller vi mellom tre idealprosesser:
 
 \begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
@@ -688,6 +800,7 @@ Avhengig av hvilken som holdes \emph{konstant}, skiller vi mellom tre idealprose
 
 Et \emph{$pV$-diagram} viser trykket $p$ som funksjon av volumet $V$.
 Arealet under kurven tilsvarer arbeidet gassen gjør (eller arbeidet som gjøres på gassen).
+For en isobar prosess er arealet et rektangel med høyde $p$ og bredde $\Delta V$. Det er nettopp arbeidet $W_\text{gass} = p\,\Delta V$ fra delkapittel~\ref{sec:1lov}. Endres trykket underveis, er arbeidet fortsatt arealet under kurven.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.05, >={Stealth[length=5pt,width=4pt]}]
@@ -731,12 +844,6 @@ Isobar (blå): trykket er konstant, volumet øker — A$\to$C.
 Isoterm (grønn): temperaturen er konstant, $pV$ er konstant — A$\to$D.}
 \label{fig:pV_prosesser}
 \end{center}
-
-For en isobar prosess er arealet under linjen et rektangel med høyde $p$ og bredde $\Delta V$. Arbeidet gassen gjør på omgivelsene, er da
-\[
-  W_\text{gass} = p\,\Delta V
-\]
-I termodynamikkens 1.\ lov er $W$ arbeidet som gjøres \emph{på} gassen. Når gassen utvider seg ($\Delta V > 0$), gjør den arbeid på omgivelsene, og $W = -p\,\Delta V$ er negativ. Når gassen presses sammen, er $W$ positiv.
 
 \exm{Arbeid ved isobar utvidelse}{%
 En gass i en sylinder har trykket \SI{2.0e5}{\pascal}. Gassen varmes opp og utvider seg ved konstant trykk fra \SI{1.0}{\litre} til \SI{3.0}{\litre}.

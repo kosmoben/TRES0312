@@ -1,0 +1,450 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Eksamensregning}
+\subtitle{TRES0312 --- tidligere eksamensoppgaver fra kapittel 1--7}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{7}
+
+% Figurene er klippet ut fra eksamenssettene (Ordinær 2025 og Konte 2026).
+% Hver figur finnes i to versjoner med gjennomsiktig bakgrunn:
+% _mork (lyse streker for mørk modus) og _lys (originalfarger for lys modus).
+\ifdarkmode
+  \newcommand{\eksfig}[2]{\includegraphics[width=#1]{Images/Eksamen/#2_mork.png}}
+\else
+  \newcommand{\eksfig}[2]{\includegraphics[width=#1]{Images/Eksamen/#2_lys.png}}
+\fi
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 1--7}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: bevegelse, krefter og energi. Etter pausen: statikk og fluider.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hva sier Arkimedes' oppdriftslov?
+      \item Et legeme flyter i ro. Hva vet vi om oppdriftskraften og tyngdekraften?
+      \item Hvorfor kan et skip av stål flyte?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Slik løser du en eksamensoppgave
+%--------------------------------------------------------------------------
+\begin{frame}{Slik angriper du en eksamensoppgave}
+
+  \begin{enumerate}[1.]
+    \item<1-> \textbf{Les hele oppgaven først.} Hva er gitt, og hva spørres det etter?
+    \item<2-> \textbf{Tegn en figur.} Tegn inn kreftene, og velg en positiv retning.
+    \item<3-> \textbf{Finn riktig prinsipp.} Newtons lover? Energibevaring? Likevekt? Oppdrift?
+    \item<4-> \textbf{Regn med symboler først}, og sett inn tall til slutt.
+    \item<5-> \textbf{Sjekk svaret.} Riktig enhet? Rimelig størrelse? Riktig antall gjeldende siffer?
+  \end{enumerate}
+  \onslide<6->{\merk{«Vis at»-oppgaver}{%
+  Får du oppgitt svaret, kan du bruke det videre selv om du ikke får til å vise det. Gå videre!
+  }}
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: BEVEGELSE, KREFTER OG ENERGI
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Flervalg: fritt fall (Ordinær 2025, oppgave 1)
+%--------------------------------------------------------------------------
+%  Fasit: s = 1/2 g t^2  =>  t = sqrt(2s/g) = sqrt(2*3.0000/9.81) = 0.782 s.  Svar A.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Appelsin fra Preikestolen \hfill {\normalfont\small(Ordinær 2025, oppg.\ 1)}}{%
+  Bibliotekaren Kenny er på Preikestolen og mister en appelsin utfor. Den faller loddrett nedover, med startfart lik 0. Hvor lang tid bruker den på å falle de første $3.0000\,\mathrm{m}$? Se bort fra luftmotstand.
+
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.22\textwidth} A.\ $0.782\,\mathrm{s}$ \end{column}
+    \begin{column}{0.22\textwidth} B.\ $0.771\,\mathrm{s}$ \end{column}
+    \begin{column}{0.22\textwidth} C.\ $0.698\,\mathrm{s}$ \end{column}
+    \begin{column}{0.22\textwidth} D.\ $0.807\,\mathrm{s}$ \end{column}
+  \end{columns}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Flervalg: båt (Konte 2026, oppgave 3)
+%--------------------------------------------------------------------------
+%  Fasit: W = Delta E_K = 1/2 m v^2  =>  v = sqrt(2W/m) = sqrt(2*5.6e6/5.0e4) = 15.0 m/s = 54 km/t.  Svar A.
+%  (C, 14 m/s, er en felle: 15 m/s er ikke 14 m/s.)
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Båt som setter i gang \hfill {\normalfont\small(Konte 2026, oppg.\ 3)}}{%
+  En båt med masse $m = 50$ tonn står i ro. Så gjør båtens motorer et arbeid som samlet er på $W = 5.6\,\mathrm{MJ}$. Hvor fort går båten som følge av dette, gitt at alt arbeidet går med til å skape framdrift?
+
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.22\textwidth} A.\ $54\,\mathrm{km/t}$ \end{column}
+    \begin{column}{0.22\textwidth} B.\ $14\,\mathrm{km/t}$ \end{column}
+    \begin{column}{0.22\textwidth} C.\ $14\,\mathrm{m/s}$ \end{column}
+    \begin{column}{0.22\textwidth} D.\ $54\,\mathrm{m/s}$ \end{column}
+  \end{columns}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Vogn utfor stup, del 1 (Konte 2026, oppgave 6 a–b)
+%--------------------------------------------------------------------------
+%  Fasit: a) h = 1/2 g t^2  =>  t = sqrt(2h/g) = sqrt(2*4.0/9.81) = 0.9030 s ≈ 0.90 s.
+%         b) v2x = v1 = 3.0 m/s (ingen krefter horisontalt).
+%            v2y = -g t = -9.81*0.903 = -8.86 m/s ≈ -8.9 m/s (nedover).
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Vogn utfor stup \hfill {\normalfont\small(Konte 2026, oppg.\ 6)}}{%
+      Ei vogn triller utfor et stup med horisontal utgangsfart $v_1 = 3.0\,\mathrm{m/s}$, og faller en høyde $h = 4.0\,\mathrm{m}$ ned til punkt 2. Hastigheten der er $\vec{v}_2 = [v_{2x}, v_{2y}]$.
+      \begin{enumerate}[a)]
+        \item Vis at fallet tar $t_\text{stup} = 0.90\,\mathrm{s}$.
+        \item Bestem komponentene $v_{2x}$ og $v_{2y}$.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \vspace{2mm}
+      \eksfig{0.95\linewidth}{fig_vogn}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Vogn utfor stup, del 2 (Konte 2026, oppgave 6 c–d)
+%--------------------------------------------------------------------------
+%  Fasit: c) Energibevaring: E = 1/2 m v1^2 + m g H = 1/2*20*3.0^2 + 20*9.81*2.0
+%            = 90 J + 392.4 J = 482.4 J ≈ 0.48 kJ.
+%         d) 1/2 k x^2 = E  =>  k = 2E/x^2 = 2*482.4/1.00^2 = 965 N/m ≈ 9.6e2 N/m.
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Vogn utfor stup, fortsatt}{%
+      \small
+      Før stupet ble vogna dyttet opp ei rampe med høyde $H = 2.0\,\mathrm{m}$ av ei spiralfjær. Vogna startet med $v_0 = 0$ i bunnen og nådde toppen med farten $v_1 = 3.0\,\mathrm{m/s}$. Massen er $m = 20\,\mathrm{kg}$. Ingen friksjon.
+      \begin{enumerate}[a)]
+        \setcounter{enumi}{2}
+        \item Vis at fjæra leverte energien $E = 482.4\,\mathrm{J} = 0.48\,\mathrm{kJ}$ til vogna.
+        \item Fjæra var presset sammen $x = 1.00\,\mathrm{m}$. Hva er fjærkonstanten?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \vspace{2mm}
+      \eksfig{0.95\linewidth}{fig_vogn}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Dame på hustak (Ordinær 2025, oppgave 7)
+%--------------------------------------------------------------------------
+%  Fasit: a) Mannen henger i ro: T - mg = 0, så T = mg. Tauet er masseløst og trinsa
+%            friksjonsfri, så dama trekkes med samme T.
+%         b) På dama: tyngdekraft Mg (loddrett ned), normalkraft N (vinkelrett på taket),
+%            taukraft T (langs taket, mot kanten), friksjonskraft R (langs taket, bort fra kanten).
+%         c) System mann + dame, positiv retning nedover taket (mot kanten):
+%            (m + M) a = mg + Mg sin(theta) - mu_k M g cos(theta)
+%            a = g (m + M sin(theta) - mu_k M cos(theta)) / (m + M).
+%            NB: Uttrykket som sto i eksamenssettet var feil. Her er det rettet.
+%         d) R_max = mu_s M g cos(theta) = 0.70*93*9.81*cos 20° = 600 N.
+%            Krefter nedover: mg + Mg sin(theta) = 9.81*(62.3 + 93 sin 20°) = 923 N > 600 N.
+%            Ja, hun sklir.
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.66\textwidth}
+      \aktivitet{Dame på hustak \hfill {\normalfont\small(Ordinær 2025, oppg.\ 7)}}{%
+      En mann ($m = 62.3\,\mathrm{kg}$) henger i ro i et tau utfor et tak med helning $\theta$. Kona ($M = 93\,\mathrm{kg}$) holder i den andre enden. Tauet går over ei friksjonsfri trinse, parallelt med taket.
+      \begin{enumerate}[a)]
+        \item Forklar hvorfor kraften fra tauet på dama er $T = m\mathrm{g}$.
+        \item Tegn alle kreftene som virker på dama.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \centering
+      \eksfig{0.90\linewidth}{fig_tak}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.66\textwidth}
+      \aktivitet{Dame på hustak, fortsatt}{%
+      \begin{enumerate}[a)]
+        \setcounter{enumi}{2}
+        \item Vis at dersom hun begynner å skli, er akselerasjonen nedover taket
+        \[
+          a = \mathrm{g}\,\frac{m + M\sin\theta - \mu_k M\cos\theta}{m + M}.
+        \]
+        \item Den statiske friksjonskoeffisienten er $\mu_s = 0.70$, og $\theta = 20^\circ$. Begynner hun å skli?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \centering
+      \eksfig{0.90\linewidth}{fig_tak}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Bevegelse, krefter og energi}{%
+  \begin{enumerate}[1.]
+    \item[] Kast og fall: del opp i $x$ (konstant fart) og $y$ (konstant akselerasjon $\mathrm{g}$).
+    \item[] Energibevaring når det ikke er friksjon: $E_\text{K} + E_\text{P}$ er konstant.
+    \item[] Krefter: tegn figur, velg positiv retning, og bruk $\sum F = ma$.
+    \item[] Statisk friksjon: $R \le \mu_s N$. Sjekk om kreftene som drar, er større enn $\mu_s N$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: statikk og fluider}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: STATIKK OG FLUIDER
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Hammer på spiker (Konte 2026, oppgave 8)
+%--------------------------------------------------------------------------
+%  Fasit: a) Tyngdekreftene G1, G2, G3 (ned, i hvert massesenter) og normalkraften N fra
+%            spikeren (opp, i x_T), N = (m1 + m2 + m3) g = 1.75*9.81 = 17.2 N.
+%         b) x_T = (m1 x1 + m2 x2 + m3 x3)/(m1 + m2 + m3)
+%                = (0.500*10 + 0.500*20 + 0.750*35)/1.750 cm = 41.25/1.750 cm = 23.6 cm ≈ 24 cm.
+%         c) Motkreftene: G1', G2', G3' virker på jorda (opp), N' virker på spikeren (ned).
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Hammer på spiker \hfill {\normalfont\small(Konte 2026, oppg.\ 8)}}{%
+      \small
+      En hammer av tre deler balanserer på en spiker, som står i tyngdepunktet, $x_T$ fra veggen.
+      \smallskip
+      \centerline{$m_1 = 500\,\mathrm{g},\ x_1 = 10\,\mathrm{cm}$ \quad $m_2 = 500\,\mathrm{g},\ x_2 = 20\,\mathrm{cm}$}
+      \centerline{$m_3 = 750\,\mathrm{g},\ x_3 = 35\,\mathrm{cm}$}
+      \begin{enumerate}[a)]
+        \item Tegn kreftene som virker på hammeren.
+        \item Bestem $x_T$.
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \eksfig{0.95\linewidth}{fig_hammer}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \aktivitet{Hammer på spiker, fortsatt}{%
+      \begin{enumerate}[a)]
+        \setcounter{enumi}{2}
+        \item Tegn motkreftene til kreftene du fant i a). Hvilke legemer virker de på?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \eksfig{0.95\linewidth}{fig_hammer}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Demning og ROV (Konte 2026, oppgave 9)
+%--------------------------------------------------------------------------
+%  Fasit: a) p = p0 + rho g z = 1.01e5 + 1000*9.81*10 = 1.99e5 Pa ≈ 2.0e5 Pa.
+%            (Bare vannet: rho g z = 9.8e4 Pa. Begge ble godkjent til eksamen.)
+%            NB: Løsningsforslaget fra eksamen har en skrivefeil her («1.1 kPa»).
+%         b) Positiv retning nedover: m a = m g - rho V g
+%            a = g (1 - rho V/m) = 9.81*(1 - 15/17.0) = 1.15 m/s^2 ≈ 1.2 m/s^2.
+%         c) Tømt tank: ROV-massen blir 17.0 - 10 = 7.0 kg. Med stein: 13.9 kg i 16.1 L.
+%            rho = 13.9 kg / 16.1 L = 0.86 kg/L < 1.0 kg/L. Ja, den flyter opp.
+%            (Eller: F_B = 1000*9.81*0.0161 = 158 N > G = 13.9*9.81 = 136 N.)
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Demning og undervannsrobot \hfill {\normalfont\small(Konte 2026, oppg.\ 9)}}{%
+  En demning skal dimensjoneres for å demme opp et vassdrag. Demningen skal tåle en vannstand på $10\,\mathrm{m}$.
+  \begin{enumerate}[a)]
+    \item Hva er det største trykket mot demningen når vanndybden er $z = 10\,\mathrm{m}$?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+\begin{frame}{Aktivitet}
+
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \aktivitet{Demning og undervannsrobot, fortsatt}{%
+      En ROV har en tank på $10\,\mathrm{L}$ som kan tømmes for å gi oppdrift. ROVen veier $17.0\,\mathrm{kg}$ med full tank, og hele ROVen har volum $15\,\mathrm{L}$.
+      \begin{enumerate}[a)]
+        \setcounter{enumi}{1}
+        \item ROVen slippes ut med full tank. Hva er akselerasjonen nedover?
+        \item På bunnen henter ROVen en stein på $6.9\,\mathrm{kg}$. ROV og stein har til sammen volum $16.1\,\mathrm{L}$. Kommer ROVen opp igjen hvis den tømmer tanken helt?
+      \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \centering
+      \vspace{8mm}
+      \eksfig{0.98\linewidth}{fig_rov}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Lastepram, del 1 (Ordinær 2025, oppgave 9 a–b)
+%--------------------------------------------------------------------------
+%  Fasit: a) Flyter i ro: F_B = G, så rho g V(d) = m g og m = rho V(d).
+%            V(1.5 m) = 168*1.5 + 2.24*1.5^2 = 252 + 5.04 = 257.04 m^3.
+%            m = 1.0e3*257.04 = 257.04e3 kg ≈ 0.26 ktonn.
+%         b) p = p0 + rho g d = 1.01e5 + 1.0e3*9.81*1.5 = 1.157e5 Pa ≈ 0.12 MPa.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Lastepram \hfill {\normalfont\small(Ordinær 2025, oppg.\ 9)}}{%
+  Volumet av skroget under vannlinjen er $V(d) = 168\,\mathrm{m^2}\cdot d + 2.24\,\mathrm{m}\cdot d^2$, der $d$ er dybden fra kjølen til vannlinjen. Prammen flyter i ro med $d = 1.5\,\mathrm{m}$. Bruk $\rho = 1.0\cdot 10^3\,\mathrm{kg/m^3}$ og $p_0 = 101\,\mathrm{kPa}$.
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \begin{enumerate}[a)]
+        \item Vis at prammen veier $257.04\cdot 10^3\,\mathrm{kg} = 0.26\,\mathrm{ktonn}$.
+        \item En trykkmåler sitter helt nederst på kjølen. Hva viser den?
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \eksfig{0.95\linewidth}{fig_pram}
+    \end{column}
+  \end{columns}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Lastepram, del 2 (Ordinær 2025, oppgave 9 c)
+%--------------------------------------------------------------------------
+%  Fasit: c) Hvert av de store stemplene bærer halve tyngden: F1 = mg/2 = 257.04e3*9.81/2 = 1.26e6 N.
+%            Pascal: F1/A1 = F2/A2, med A = pi (D/2)^2:  (D2/D1)^2 = F2/F1
+%            D2 = D1 sqrt(2 F2/(m g)) = 0.20 m * sqrt(2*5.0e3/(257.04e3*9.81)) = 0.0126 m ≈ 1.3 cm.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Lastepram, fortsatt}{%
+  Prammen løftes med en hydraulisk jekk. To store stempler, hvert med diameter $D_1 = 20\,\mathrm{cm}$, bærer båten.
+  \begin{columns}[T]
+    \begin{column}{0.46\textwidth}
+      \begin{enumerate}[a)]
+        \setcounter{enumi}{2}
+        \item Anslå den største diameteren $D_2$ de små stemplene kan ha, dersom motoren skal kunne holde båten oppe med kraften $F_2 = 5.0\,\mathrm{kN}$ på hvert av dem.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \centering
+      \eksfig{0.95\linewidth}{fig_jekk}
+    \end{column}
+  \end{columns}
+  }
+
+  \pause
+  \textit{Tips:} Hvert av de store stemplene bærer halve tyngden, og arealet til et stempel er $A = \pi (D/2)^2$.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Statikk og fluider}{%
+  \begin{enumerate}[1.]
+    \item[] Likevekt: $\sum F = 0$ og $\sum \tau = 0$. Tyngdepunkt: $x_T = \sum m_i x_i / \sum m_i$.
+    \item[] Trykk i dybden $h$: $p = p_0 + \rho\mathrm{g}h$. Les nøye om det spørres om \emph{totalt} trykk.
+    \item[] Oppdrift: $F_{\textrm{B}} = \rho_v\mathrm{g}V_\text{f}$. Flyter i ro: $F_{\textrm{B}} = G$.
+    \item[] Pascals lov: $F_1/A_1 = F_2/A_2$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: termofysikk}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

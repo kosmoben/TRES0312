@@ -25,6 +25,19 @@ Vi bruker $T = t + 273$ og $t_\text{F} = \tfrac{9}{5}\,t_\text{C} + 32$.
 \[
   t_\text{C} = \frac{5}{9}\,(t_\text{F} - 32) = \frac{5}{9}\,(50 - 32) = \doubleunderline{10\,^\circ\text{C}}
 \]
+
+\smallskip\noindent
+\textbf{e)} En grad celsius er like stor som én kelvin, så
+\[
+  \Delta T = 15 - (-5) = \doubleunderline{\SI{20}{\kelvin}}
+\]
+
+\smallskip\noindent
+\textbf{f)} Vi setter $t_\text{F} = t_\text{C} = t$:
+\[
+  t = \frac{9}{5}\,t + 32 \quad\implies\quad -\frac{4}{5}\,t = 32 \quad\implies\quad t = \doubleunderline{-40}
+\]
+Altså er $-40\,^\circ$C det samme som $-40\,^\circ$F.
 }
 
 \oppgaver{Dobbelt så varmt?}{k8oppg10}{%
@@ -33,24 +46,11 @@ Vi bruker $T = t + 273$ og $t_\text{F} = \tfrac{9}{5}\,t_\text{C} + 32$.
 
 \svar[title={Løsningsforslag}]{%
 \noindent
-\textbf{a)} Vi må regne i kelvin: $T_1 = 10 + 273 = \SI{283}{\kelvin}$ og $T_2 = 20 + 273 = \SI{293}{\kelvin}$. Den gjennomsnittlige kinetiske energien er proporsjonal med $T$, så
+Den gjennomsnittlige kinetiske energien er proporsjonal med den absolutte temperaturen, $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$. Vi må derfor regne i kelvin: $T_1 = 10 + 273 = \SI{283}{\kelvin}$ og $T_2 = 20 + 273 = \SI{293}{\kelvin}$. Da er
 \[
-  \frac{\bar{E}_{\text{K},2}}{\bar{E}_{\text{K},1}} = \frac{T_2}{T_1} = \frac{\SI{293}{\kelvin}}{\SI{283}{\kelvin}} = 1.035
+  \frac{\bar{E}_{\text{K},2}}{\bar{E}_{\text{K},1}} = \frac{\tfrac{3}{2}k_\text{B}T_2}{\tfrac{3}{2}k_\text{B}T_1} = \frac{T_2}{T_1} = \frac{\SI{293}{\kelvin}}{\SI{283}{\kelvin}} = 1.035 \approx \doubleunderline{1.04}
 \]
-Energien har bare økt med omtrent \SI{3.5}{\percent}. Den er \doubleunderline{ikke doblet}. Det er bare i kelvin det gir mening å si «dobbelt så høy temperatur».
-
-\smallskip\noindent
-\textbf{b)} En grad celsius er like stor som én kelvin, så
-\[
-  \Delta T = 15 - (-5) = \doubleunderline{\SI{20}{\kelvin}}
-\]
-
-\smallskip\noindent
-\textbf{c)} Vi setter $t_\text{F} = t_\text{C} = t$:
-\[
-  t = \frac{9}{5}\,t + 32 \quad\implies\quad -\frac{4}{5}\,t = 32 \quad\implies\quad t = \doubleunderline{-40}
-\]
-Altså er $-40\,^\circ$C det samme som $-40\,^\circ$F.
+Energien er altså bare omtrent \SI{3.5}{\percent} større, selv om temperaturen i celsius er dobbelt så høy. Det er bare i kelvin det gir mening å si «dobbelt så høy temperatur».
 }
 
 \oppgaver{Oksygenmolekyler}{k8oppg11}{%
@@ -132,67 +132,6 @@ Heliumatomene er lettere, og må derfor bevege seg raskere for å ha like stor k
 \textbf{d)} \doubleunderline{Riktig}. Vi kan også øke den indre energien ved å gjøre \emph{arbeid} på stoffet, for eksempel med friksjon eller ved å presse sammen en gass, som i en sykkelpumpe.
 }
 
-\oppgaver{Varme eller arbeid?}{k8oppg1}{%
-\input{Oppgaver/k8_oppg01.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-Varme er energi som overføres \emph{bare} på grunn av en temperaturforskjell. All annen energioverføring, der noe skyver, drar eller rører, er arbeid.
-
-\smallskip\noindent
-\textbf{a)} \doubleunderline{Arbeid}. Friksjonskraften virker langs bevegelsen og gjør arbeid på hendene.
-
-\smallskip\noindent
-\textbf{b)} \doubleunderline{Varme}. Kokeplata er varmere enn gryta og vannet, og energien går fra det varme til det kalde.
-
-\smallskip\noindent
-\textbf{c)} \doubleunderline{Arbeid}. Stempelet skyver på lufta og presser den sammen.
-
-\smallskip\noindent
-\textbf{d)} \doubleunderline{Varme}. Sola er mye varmere enn steinen. Energien kommer som stråling, og det regner vi som varme.
-
-\smallskip\noindent
-\textbf{e)} \doubleunderline{Arbeid}. Mikseren skyver deigen rundt. Deigen blir litt varmere, selv om ingenting varmt er i kontakt med den.
-}
-
-\oppgaver{Sykkelpumpe}{k8oppg3}{%
-\input{Oppgaver/k8_oppg03.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-\textbf{a)} Prosessen er adiabatisk, så $Q = 0$. Termodynamikkens 1.\ lov gir
-\[
-  \Delta U = Q + W = 0 + \SI{30}{\joule} = \doubleunderline{+\SI{30}{\joule}}
-\]
-
-\smallskip\noindent
-\textbf{b)} $\Delta U > 0$, så den indre energien øker. Den indre energien til lufta er knyttet til bevegelsen til molekylene, og dermed til temperaturen. Temperaturen \doubleunderline{stiger}. Stempelet beveger seg mot molekylene og gir dem større fart når de spretter mot det. Du kan kjenne at pumpa blir varm etter bruk.
-}
-
-\oppgaver{Gass som komprimeres}{k8oppg4}{%
-\input{Oppgaver/k8_oppg04.tex}%
-}
-
-\svar[title={Løsningsforslag}]{%
-\noindent
-\textbf{a)} Arbeidet utføres \emph{på} gassen, så $W = +\SI{250}{\joule}$. Gassen \emph{avgir} varme, så $Q = -\SI{80}{\joule}$. Termodynamikkens 1.\ lov gir
-\[
-  \Delta U = Q + W = -\SI{80}{\joule} + \SI{250}{\joule} = \doubleunderline{+\SI{170}{\joule}}
-\]
-
-\smallskip\noindent
-\textbf{b)} Den indre energien øker. Siden den indre energien bare avhenger av temperaturen, \doubleunderline{stiger temperaturen}.
-
-\smallskip\noindent
-\textbf{c)} Temperaturen er uendret når $\Delta U = 0$:
-\[
-  0 = Q + W \quad\implies\quad Q = -W = \doubleunderline{-\SI{250}{\joule}}
-\]
-Gassen måtte altså ha avgitt \SI{250}{\joule} varme, like mye som arbeidet stempelet gjør på den.
-}
-
 \oppgaver{Les av oppvarmingskurven}{k8oppg5}{%
 \input{Oppgaver/k8_oppg05.tex}%
 }
@@ -226,7 +165,20 @@ Gassen måtte altså ha avgitt \SI{250}{\joule} varme, like mye som arbeidet ste
 \textbf{b)} Når du er våt, fordamper vannet fra huden, og fordampingen tar energi fra kroppen. Vinden fjerner den fuktige lufta like ved huden, slik at vannet fordamper \emph{raskere}. Da tas det mer energi fra kroppen per sekund, og du fryser, selv om lufta er varm.
 
 \smallskip\noindent
-\textbf{c)} Når damp treffer huden, kondenserer den til vann. Ved kondensering avgis like mye energi som det trengs for å fordampe vannet, \SI{2259}{\kilo\joule} per kilogram. Deretter kan vannet avgi enda mer varme mens det kjøles ned. Vann på $100\,^\circ$C avgir bare varme når det kjøles ned, og det er mye mindre (omtrent \SI{4.2}{\kilo\joule} per kilogram og grad). Damp gir derfor mye mer energi til huden.
+\textbf{c)} Vi sammenligner per kilogram og leser av figuren.
+
+\emph{Vann på $100\,^\circ$C} avgir bare varme mens det kjøles ned til $37\,^\circ$C. Fra figuren trengs det omtrent \SI{420}{\kilo\joule} for å varme \SI{1}{\kilo\gram} vann \SI{100}{\kelvin}. Avkjøling på \SI{63}{\kelvin} gir derfor omtrent
+\[
+  \frac{63}{100}\cdot\SI{420}{\kilo\joule} \approx \SI{2.6e2}{\kilo\joule}
+\]
+\emph{Damp på $100\,^\circ$C} kondenserer først til vann og avgir da like mye energi som det trengs for å fordampe det, \SI{2259}{\kilo\joule}. Deretter kjøles vannet ned som over. Til sammen er det omtrent
+\[
+  \SI{2259}{\kilo\joule} + \SI{2.6e2}{\kilo\joule} \approx \SI{2.5e3}{\kilo\joule}
+\]
+Per gram gir altså \doubleunderline{dampen nesten ti ganger så mye energi} til huden som vannet.
+
+\smallskip\noindent
+\textit{Merk:} Svaret gjelder for like stor \emph{masse}. Vanndamp har mye mindre massetetthet enn vann. En liter vanndamp har bare en masse på omtrent \SI{0.6}{\gram}, mens en liter vann har massen \SI{1}{\kilo\gram}. En liter kokende vann over hånda er derfor langt verre enn en liter damp. Men en dampstråle fra en kjele eller en dampkoker fortsetter å kondensere på huden så lenge den treffer, og da blir det fort mye energi.
 }
 
 \oppgaver{Cola og is}{k8oppg7}{%
@@ -299,13 +251,84 @@ Det er omtrent \SI{4.6}{\minute}.
 Det er nesten fire minutter, selv om bare en liten del av vannet koker bort.
 }
 
+\oppgaver{Varme eller arbeid?}{k8oppg1}{%
+\input{Oppgaver/k8_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+Varme er energi som overføres \emph{bare} på grunn av en temperaturforskjell. All annen energioverføring, der noe skyver, drar eller rører, er arbeid.
+
+\smallskip\noindent
+\textbf{a)} \doubleunderline{Arbeid}. Friksjonskraften virker langs bevegelsen og gjør arbeid på hendene.
+
+\smallskip\noindent
+\textbf{b)} \doubleunderline{Varme}. Kokeplata er varmere enn gryta og vannet, og energien går fra det varme til det kalde.
+
+\smallskip\noindent
+\textbf{c)} \doubleunderline{Arbeid}. Stempelet skyver på lufta og presser den sammen.
+
+\smallskip\noindent
+\textbf{d)} \doubleunderline{Varme}. Sola er mye varmere enn steinen. Energien kommer som stråling, og det regner vi som varme.
+
+\smallskip\noindent
+\textbf{e)} \doubleunderline{Arbeid}. Mikseren skyver deigen rundt. Deigen blir litt varmere, selv om ingenting varmt er i kontakt med den.
+}
+
+\oppgaver{Sykkelpumpe}{k8oppg3}{%
+\input{Oppgaver/k8_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Prosessen er adiabatisk, så $Q = 0$. Termodynamikkens 1.\ lov gir
+\[
+  \Delta U = Q + W = 0 + \SI{30}{\joule} = \doubleunderline{+\SI{30}{\joule}}
+\]
+
+\smallskip\noindent
+\textbf{b)} $\Delta U > 0$, så den indre energien øker. Den indre energien til lufta er knyttet til bevegelsen til molekylene, og dermed til temperaturen. Temperaturen \doubleunderline{stiger}. Stempelet beveger seg mot molekylene og gir dem større fart når de spretter mot det. Du kan kjenne at pumpa blir varm etter bruk.
+}
+
+\oppgaver{Gass som komprimeres}{k8oppg4}{%
+\input{Oppgaver/k8_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Arbeidet utføres \emph{på} gassen, så $W = +\SI{250}{\joule}$. Gassen \emph{avgir} varme, så $Q = -\SI{80}{\joule}$. Termodynamikkens 1.\ lov gir
+\[
+  \Delta U = Q + W = -\SI{80}{\joule} + \SI{250}{\joule} = \doubleunderline{+\SI{170}{\joule}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Den indre energien øker. Siden den indre energien bare avhenger av temperaturen, \doubleunderline{stiger temperaturen}.
+
+\smallskip\noindent
+\textbf{c)} Temperaturen er uendret når $\Delta U = 0$:
+\[
+  0 = Q + W \quad\implies\quad Q = -W = \doubleunderline{-\SI{250}{\joule}}
+\]
+Gassen måtte altså ha avgitt \SI{250}{\joule} varme, like mye som arbeidet stempelet gjør på den.
+
+\smallskip\noindent
+\textbf{d)} Nå er $Q = +\SI{600}{\joule}$ og $\Delta U = +\SI{450}{\joule}$. Termodynamikkens 1.\ lov gir
+\[
+  W = \Delta U - Q = \SI{450}{\joule} - \SI{600}{\joule} = -\SI{150}{\joule}
+\]
+Det negative fortegnet betyr at gassen gjør \SI{150}{\joule} arbeid på stempelet. Arbeidet går til å løfte stempelet mot tyngdekraften, $W_\text{gass} = m\mathrm{g}h$:
+\[
+  h = \frac{W_\text{gass}}{m\mathrm{g}} = \frac{\SI{150}{\joule}}{\SI{25}{\kilo\gram}\cdot\SI{9.81}{\metre\per\second\squared}} = \SI{0.612}{\metre} \approx \doubleunderline{\SI{0.61}{\metre}}
+\]
+}
+
 \oppgaver{Sylindereksperiment}{k8oppg13}{%
 \input{Oppgaver/k8_oppg13.tex}%
 }
 
 \svar[title={Løsningsforslag}]{%
 \noindent
-\textbf{a)} Antall molekyler og trykket er konstant. Tilstandslikninga $pV = Nk_\text{B}T$ gir da at $V/T$ er konstant:
+\textbf{a)} Antall molekyler og trykket er konstant. Tilstandslikningen $pV = Nk_\text{B}T$ gir da at $V/T$ er konstant:
 \[
   \frac{V_1}{T_1} = \frac{V_2}{T_2}
   \quad\implies\quad
@@ -331,7 +354,7 @@ at $Q$ er positiv og \emph{større} enn $\Delta U$. Gassen \doubleunderline{må 
 Temperaturene i kelvin er $T_1 = 20 + 273 = \SI{293}{\kelvin}$ og $T_2 = -15 + 273 = \SI{258}{\kelvin}$.
 
 \smallskip\noindent
-\textbf{a)} Vi løser tilstandslikninga for $N$:
+\textbf{a)} Vi løser tilstandslikningen for $N$:
 \[
   N = \frac{p_1V}{k_\text{B}T_1} = \frac{\SI{3.0e5}{\pascal}\cdot\SI{0.030}{\metre\cubed}}{\SI{1.38e-23}{\joule\per\kelvin}\cdot\SI{293}{\kelvin}} = \doubleunderline{\num{2.2e24}}
 \]

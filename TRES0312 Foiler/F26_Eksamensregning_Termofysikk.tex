@@ -1,0 +1,263 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Eksamensregning: termofysikk}
+\subtitle{TRES0312 --- tidligere eksamensoppgaver fra kapittel 8}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{8}   % Kapittel 8: "Termofysikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 8}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: temperatur, varme og kalorimetri. Etter pausen: 1.\ lov og idealgass.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Skriv opp tilstandslikningen for idealgass. Hvilken enhet må $T$ ha?
+      \item Hva er konstant i en isobar, en isokor og en isoterm prosess?
+      \item Hva betyr arealet under kurven i et $pV$-diagram?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Typiske grep i termofysikk
+%--------------------------------------------------------------------------
+\begin{frame}{Typiske grep i termofysikk}
+
+  \begin{enumerate}[1.]
+    \item<1-> \textbf{Gjør om til kelvin} når selve temperaturen inngår ($\bar{E}_\text{K}$, $pV = Nk_\text{B}T$).
+    \item<2-> \textbf{Del opp i trinn} når et stoff både varmes opp og skifter fase.
+    \item<3-> \textbf{Avgitt varme = mottatt varme} i et isolert system.
+    \item<4-> \textbf{Hold styr på fortegnene} i $\Delta U = Q + W$.
+    \item<5-> \textbf{Skriv opp hva som er konstant}, og bruk tilstandslikningen på den forenklede formen.
+  \end{enumerate}
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: TEMPERATUR, VARME OG KALORIMETRI
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Flervalg: smelte is (Ordinær 2025, oppgave 4)
+%--------------------------------------------------------------------------
+%  Fasit: Q = l m = 334 J/g * 2970 g = 9.92e5 J.  t = Q/P = 9.92e5/501 = 1980 s = 33.0 min.  Svar A.
+%         (D, 1990 s, er nesten riktig, men 1980 s er ikke 1990 s.)
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Smelte is \hfill {\normalfont\small(Ordinær 2025, oppg.\ 4)}}{%
+  Vi har is med massen $2.97\,\mathrm{kg}$ og temperatur $0\,^\circ$C ved $1\,\mathrm{atm}$. Den spesifikke smeltevarmen til is er $\ell = 334\,\mathrm{J/g}$. Hvor lang tid tar det før all isen er smeltet, når den får tilført en varmeeffekt på $P = 501\,\mathrm{W}$?
+
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.22\textwidth} A.\ $33.0\,\mathrm{min}$ \end{column}
+    \begin{column}{0.22\textwidth} B.\ $1.98\,\mathrm{s}$ \end{column}
+    \begin{column}{0.22\textwidth} C.\ $20.0\,\mathrm{s}$ \end{column}
+    \begin{column}{0.22\textwidth} D.\ $1990\,\mathrm{s}$ \end{column}
+  \end{columns}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Flervalg: temperaturen til helium (Konte 2026, oppgave 4)
+%--------------------------------------------------------------------------
+%  Fasit: 1/2 m v^2 = 3/2 k T  =>  T = m v^2/(3k) = 6.640e-27*(1.50e3)^2/(3*1.38e-23) = 361 K.  Svar A.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Temperaturen til helium \hfill {\normalfont\small(Konte 2026, oppg.\ 4)}}{%
+  Den gjennomsnittlige translatoriske farten til heliumatomene i en beholder er $v = 1.50\,\mathrm{km/s}$. Massen til et heliumatom er $m_\text{He} = 6.640\cdot 10^{-27}\,\mathrm{kg}$, og $k_\text{B} = 1.38\cdot 10^{-23}\,\mathrm{J/K}$. Hva er temperaturen i beholderen?
+
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.22\textwidth} A.\ $361\,\mathrm{K}$ \end{column}
+    \begin{column}{0.22\textwidth} B.\ $360\,^\circ$C \end{column}
+    \begin{column}{0.22\textwidth} C.\ $298\,^\circ$C \end{column}
+    \begin{column}{0.22\textwidth} D.\ $274\,\mathrm{K}$ \end{column}
+  \end{columns}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Isbit i vann (Ordinær 2024, oppgave 9)
+%--------------------------------------------------------------------------
+%  Fasit: a) Q_is = c_is m dT = 2090*0.010*10.0 = 209 J.
+%         b) Q_smelte = l m = 334 J/g * 10 g = 3340 J = 3.34 kJ.
+%         c) (c_v M + C)(T0 - T') = Q_is + Q_smelte + c_v m (T' - 0)   (i °C)
+%            (4184*0.20 + 50)(7.00 - T') = 209 + 3340 + 4184*0.010*T'
+%            886.8*(7.00 - T') = 3549 + 41.84 T'  =>  T' = 2658.6/928.6 = 2.86 °C ≈ 276 K.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Isbit i vann \hfill {\normalfont\small(Ordinær 2024, oppg.\ 9)}}{%
+  \small
+  I en termos er det $2.0\,\mathrm{dL}$ vann med temperatur $T_0 = 7.00\,^\circ$C. Termosen holder samme temperatur som vannet og har varmekapasiteten $C_\text{termos} = 50\,\mathrm{J/K}$. En isbit med masse $m = 10\,\mathrm{g}$ og temperatur $-10.0\,^\circ$C legges i termosen, og korken skrus igjen. Bruk $c_\text{vann} = 4184\,\mathrm{J/(kg\,K)}$, $c_\text{is} = 2090\,\mathrm{J/(kg\,K)}$ og $\ell = 334\,\mathrm{J/g}$.
+  \begin{enumerate}[a)]
+    \item Hvor mye varme trengs for å øke temperaturen til isbiten fra $-10.0\,^\circ$C til $0\,^\circ$C?
+    \item Hvor mye varme trengs for å smelte isbiten?
+    \item Finn likevektstemperaturen $T'$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Temperatur, varme og kalorimetri}{%
+  \begin{enumerate}[1.]
+    \item[] $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T = \tfrac{1}{2}mv^2$ kobler temperatur og fart.
+    \item[] Oppvarming: $Q = cm\Delta T$. Faseovergang: $Q = \ell m$. Effekt: $P = Q/t$.
+    \item[] Isolert system: varmen som avgis, er lik varmen som tas opp.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: 1.\ lov og idealgass}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: 1. LOV OG IDEALGASS
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Termos med ukjent væske (Konte 2026, oppgave 10)
+%--------------------------------------------------------------------------
+%  Fasit: a) Energien fra varmeelementet, P t, går til å varme opp termosen og væsken.
+%            Energibevaring (ingen tap, ingen faseovergang).
+%         b) P t = 5.00e3*20 = 1.00e5 J. C_T(T2 - T_T1) = 150*35 = 5250 J.
+%            c_V = (1.00e5 - 5250)/(0.70*32) = 94750/22.4 = 4.2e3 J/(kg K). Vann.
+%         c) T = 298 K. E_K = 3/2 k T = 6.17e-21 J. p = sqrt(2 m E_K) = sqrt(2*5.3e-26*6.17e-21)
+%            = 2.6e-23 kg m/s.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Termos med ukjent væske \hfill {\normalfont\small(Konte 2026, oppg.\ 10)}}{%
+  \small
+  En termos med varmekapasitet $C_T = 150\,\mathrm{J/K}$ har temperaturen $T_{T1} = 5.0\,^\circ$C. Vi heller $m = 0.70\,\mathrm{kg}$ av en ukjent væske med temperatur $T_{V1} = 8.0\,^\circ$C i termosen. Et varmeelement med effekt $P = 5.00\,\mathrm{kW}$ står på i $20\,\mathrm{s}$. Til slutt har væske og termos felles temperatur $T_2 = 40\,^\circ$C. Ingen faseovergang og ingen varmetap.
+  \begin{enumerate}[a)]
+    \item Forklar likningen $Pt = C_T(T_2 - T_{T1}) + c_V m(T_2 - T_{V1})$.
+    \item Finn den spesifikke varmekapasiteten $c_V$ til væsken. Hvilken væske kan det være?
+    \item Lufta utenfor holder $25\,^\circ$C. Hva er bevegelsesmengden til et luftmolekyl ($m = 5.3\cdot 10^{-26}\,\mathrm{kg}$) med gjennomsnittlig kinetisk energi?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Utvidelse av gass (Konte 2025, oppgave 9)
+%--------------------------------------------------------------------------
+%  Fasit: a) Isobar, V2 = 5 V1 = 10 L. W_gass = p dV = 2.50e5 * 8.0e-3 = 2.0e3 J.
+%         b) Tilstand 2: p = 2.50 bar, V = 10 L, T = 5*330 = 1650 K.
+%            Tilstand 3 (isokor, p dobles): p = 5.00 bar, V = 10 L, T = 3300 K.
+%            Tilstand 4 (isoterm til p = 2.50 bar): V = 20 L, T = 3300 K.
+%         c) 1->2 horisontal, 2->3 loddrett opp, 3->4 isoterm ned mot høyre.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Utvidelse av gass \hfill {\normalfont\small(Konte 2025, oppg.\ 9)}}{%
+  En idealgass har i tilstand 1 temperaturen $T_1 = 330\,\mathrm{K}$, trykket $p_1 = 2.50\,\mathrm{bar}$ og volumet $V_1 = 2.0\,\mathrm{L}$. Gassen utvider seg isobart til volumet er femdoblet (tilstand 2). Bruk $1\,\mathrm{bar} = 10^5\,\mathrm{Pa}$.
+  \begin{enumerate}[a)]
+    \item Hvor stort arbeid gjør gassen fra tilstand 1 til tilstand 2?
+  \end{enumerate}
+  Så dobles trykket isokort (tilstand 3). Til slutt går gassen gjennom en isoterm prosess og ender med samme trykk som i tilstand 2 (tilstand 4).
+  \begin{enumerate}[a)]
+    \setcounter{enumi}{1}
+    \item Beregn trykk, volum og temperatur i tilstand 2, 3 og 4.
+    \item Tegn et $pV$-diagram for prosessen fra tilstand 1 til tilstand 4.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Sykkelpumpe og oksygenatom (Ordinær 2025, oppgave 10 a og c)
+%--------------------------------------------------------------------------
+%  Fasit: a) p1 = 1.01e5 Pa, p2 = p1 + 2.0e5 = 3.01e5 Pa. T dobles (i kelvin): T2/T1 = 2.
+%            V2/V1 = (p1/p2)*(T2/T1) = (1.01/3.01)*2 = 0.671 = 67 %.
+%            NB: Eksamensteksten skrev «1.01·10^5 Atm»; det skal være Pa.
+%         c) m = 32*1.66e-27 = 5.31e-26 kg. T = 293 K. E_K = 6.07e-21 J.
+%            v = sqrt(2 E_K/m) = 478 m/s. Elastisk, rettlinjet støt mellom like masser:
+%            det første atomet stopper, det andre får u = 478 m/s ≈ 4.8e2 m/s.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Sykkelpumpe og oksygenatom \hfill {\normalfont\small(Ordinær 2025, oppg.\ 10)}}{%
+  \small
+  \begin{enumerate}[a)]
+    \item En sykkelpumpe med luft ved $25\,^\circ$C har trykket $p_1 = 1.01\cdot 10^5\,\mathrm{Pa}$. Åpningen dekkes til, og stempelet presses inn. Trykket øker med $\Delta p = 2.0\,\mathrm{bar}$, og temperaturen (i kelvin) dobles. Finn forholdet $V_2/V_1$ i prosent.
+    \item[c)] Et oksygenmolekyl har massen $32\,\mathrm{u}$, der $\mathrm{u} = 1.66\cdot 10^{-27}\,\mathrm{kg}$. Det har en fart som svarer til gjennomsnittlig kinetisk energi ved $20\,^\circ$C. Det treffer et annet oksygenmolekyl som står stille, i et elastisk og rettlinjet støt. Hva blir farten til det andre molekylet etter støtet?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{1.\ lov og idealgass}{%
+  \begin{enumerate}[1.]
+    \item[] Energibevaring: tilført energi = økning i indre energi + arbeid.
+    \item[] Tilstandslikningen: $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$ når $N$ er konstant.
+    \item[] Arbeid ved konstant trykk: $W_\text{gass} = p\,\Delta V$. Ved konstant volum: $W = 0$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: elektrisitet}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,308 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Idealgass og $pV$-diagram}
+\subtitle{TRES0312 --- kapittel 8.5 og 8.6}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{8}   % Kapittel 8: "Termofysikk"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 8.5 og 8.6}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: tilstandslikningen for idealgass. Etter pausen: prosesser og $pV$-diagram.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hvor mye energi trengs for å varme $2.0\,\mathrm{kg}$ vann $10\,^\circ$C?
+      \item Hva sier termodynamikkens 1.\ lov?
+      \item Hvor stort arbeid gjør en gass som utvider seg ved konstant trykk?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: TILSTANDSLIKNINGEN FOR IDEALGASS (8.5)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: bildekk
+%--------------------------------------------------------------------------
+\begin{frame}{Tilstandslikningen for idealgass}
+
+  \tanke{}{%
+  Dekktrykket i bilen synker når det blir kaldt ute, selv om det ikke lekker luft. Hvorfor?
+  }
+  \pause
+  \svar{
+  Når lufta blir kaldere, beveger molekylene seg langsommere. De treffer dekkveggen sjeldnere og mindre hardt, og da blir trykket lavere.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Motivasjon: pV er en energi
+%--------------------------------------------------------------------------
+\begin{frame}{Tilstandslikningen for idealgass}
+
+  \begin{itemize}
+    \item<1-> Enheten til $pV$:\quad $[pV] = \mathrm{Pa}\cdot\mathrm{m^3} = \dfrac{\mathrm{N}}{\mathrm{m^2}}\cdot\mathrm{m^3} = \mathrm{N\,m} = \mathrm{J}$. \quad $pV$ er en \textit{energi}!
+    \item<2-> Energien i en idealgass er bevegelsesenergien til molekylene: $N\cdot\tfrac{3}{2}k_\text{B}T$.
+    \item<3-> Flere molekyler eller raskere molekyler gir flere og hardere treff på veggene, altså høyere trykk. Større volum gir sjeldnere treff.
+    \item<4-> Kinetisk gassteori: $pV$ er to tredjedeler av translasjonsenergien,
+  \end{itemize}
+  \onslide<4->{\graabox{$\displaystyle pV = \tfrac{2}{3}\cdot N\cdot\tfrac{3}{2}k_\text{B}T = Nk_\text{B}T$}}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Definisjon: tilstandslikningen
+%--------------------------------------------------------------------------
+\begin{frame}{Tilstandslikningen for idealgass}
+
+  \defnat{8.5.1}{Tilstandslikningen for idealgass}{
+  \[
+    pV = Nk_\text{B}T
+  \]
+  der $N$ er antall molekyler, $k_\text{B}$ er Boltzmanns konstant og $T$ er den absolutte temperaturen.
+  }
+  \pause
+  \merk{Molform}{%
+  Med antall mol $n$ i stedet for antall molekyler: $pV = nRT$, der $R = 8.314\,\mathrm{J/(mol\,K)}$.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Aktivitet: molekyler i en ballong
+%--------------------------------------------------------------------------
+%  Fasit: N = pV/(k T) = 1.0e5 * 4.0e-3 / (1.38e-23 * 293) = 9.9e22 molekyler.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Molekyler i en ballong}{%
+  En ballong har volumet $4.0\,\mathrm{L}$. Trykket i ballongen er $1.0\cdot 10^5\,\mathrm{Pa}$, og temperaturen er $20\,^\circ$C. Hvor mange molekyler er det i ballongen?
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: lukket beholder
+%--------------------------------------------------------------------------
+%  Fasit: N og V konstante: p1/T1 = p2/T2.
+%         T2 = 290 K * 150/100 = 435 K = 162 °C.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Gass i lukket beholder}{%
+  En gass i en lukket beholder med stive vegger har trykket $100\,\mathrm{kPa}$ og temperaturen $290\,\mathrm{K}$. Gassen varmes opp til trykket er $150\,\mathrm{kPa}$. Hva er temperaturen nå, i kelvin og i celsius?
+  }
+  \pause
+  \merk{Tips:}{%
+  Når $N$ og $V$ er konstante, er $p/T$ konstant.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Aktivitet: bildekk om vinteren
+%--------------------------------------------------------------------------
+%  Fasit: T1 = 293 K, T2 = 263 K. p2 = 2.8e5 * 263/293 = 2.51e5 Pa ≈ 2.5e5 Pa.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Bildekk om vinteren}{%
+  Et bildekk fylles i en garasje som holder $20\,^\circ$C. Det absolutte trykket i dekket er $2.8\cdot 10^5\,\mathrm{Pa}$. Bilen kjøres ut i $-10\,^\circ$C. Hva blir trykket i dekket når lufta i det har fått samme temperatur som omgivelsene? Anta at volumet ikke endres.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Tilstandslikningen for idealgass}{%
+  \begin{enumerate}[1.]
+    \item[] $pV = Nk_\text{B}T$, med $T$ i kelvin.
+    \item[] $pV$ er en energi, og den er knyttet til bevegelsesenergien til molekylene.
+    \item[] Holder vi to størrelser konstante, bestemmer de to andre hverandre.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: prosesser og $pV$-diagram}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: PROSESSTYPER OG pV-DIAGRAM (8.6)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: hva holdes konstant?
+%--------------------------------------------------------------------------
+\begin{frame}{Prosesstyper}
+
+  \tanke{}{%
+  I $pV = Nk_\text{B}T$ inngår trykk, volum og temperatur. Hva skjer med de to andre hvis vi holder én av dem konstant?
+  }
+  \pause
+  \svar{
+  Da er forholdet mellom de to andre bestemt. Det gir tre enkle typer prosesser.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Tre prosesstyper
+%--------------------------------------------------------------------------
+\begin{frame}{Prosesstyper}
+
+  \begin{center}
+  \begin{tabular}{llll}
+    \textbf{Prosess} & \textbf{Konstant} & \textbf{Sammenheng} & \textbf{Eksempel} \\
+    \hline
+    Isokor   & $V$ & $p/T$ konstant & Trykkbeholder \\
+    Isobar   & $p$ & $V/T$ konstant & Stempel under lufttrykket \\
+    Isoterm  & $T$ & $pV$ konstant  & Langsom sammenpressing \\
+  \end{tabular}
+  \end{center}
+  \pause
+  \merk{Husk:}{%
+  Det er bare $N$ (og $k_\text{B}$) som er konstant i alle tre. Bruk alltid $T$ i kelvin.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — pV-diagram og arbeid
+%--------------------------------------------------------------------------
+\begin{frame}{$pV$-diagram}
+
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item<1-> Et $pV$-diagram viser trykket som funksjon av volumet.
+        \item<2-> \textbf{Arealet under kurven} er arbeidet gassen gjør.
+        \item<3-> Isobar: arealet er et rektangel, $W_\text{gass} = p\,\Delta V$.
+        \item<4-> Isokor: ingen volumendring, ingen arbeid.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.95, font=\small, >={Stealth[length=5pt,width=4pt]}]
+        \onslide<3->{\fill[oppgcol!35!pagecolor] (1.2,0) rectangle (3.5,3.2);}
+        \draw[->, textcolor] (0,0) -- (5.0,0) node[right] {$V$};
+        \draw[->, textcolor] (0,0) -- (0,4.0) node[above] {$p$};
+        \fill[textcolor] (1.2,3.2) circle (0.07) node[above left] {A};
+        \draw[->, thick, red!70!white] (1.2,3.2) -- (1.2,1.4) node[midway, left, font=\footnotesize] {isokor};
+        \draw[->, thick, oppgcol!70!white] (1.2,3.2) -- (3.5,3.2) node[midway, above, font=\footnotesize] {isobar};
+        \draw[->, thick, defscol] (1.2,3.2) .. controls (1.8,2.4) and (2.6,1.7) .. (3.84,1.0) node[right, font=\footnotesize] {isoterm};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Aktivitet: isobar utvidelse
+%--------------------------------------------------------------------------
+%  Fasit: a) W_gass = p dV = 1.5e5 * 2.0e-3 = 300 J = 3.0e2 J.
+%         b) W = -300 J i 1. lov. dU = Q + W = 800 - 300 = 500 J = 5.0e2 J.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Isobar utvidelse}{%
+  En gass har trykket $1.5\cdot 10^5\,\mathrm{Pa}$. Den varmes opp og utvider seg ved konstant trykk fra $2.0\,\mathrm{L}$ til $4.0\,\mathrm{L}$.
+  \begin{enumerate}[a)]
+    \item Tegn prosessen i et $pV$-diagram, og finn arbeidet gassen gjør.
+    \item Under prosessen tilføres $800\,\mathrm{J}$ varme. Finn endringen i den indre energien.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Aktivitet: to prosesser etter hverandre
+%--------------------------------------------------------------------------
+%  Fasit: a) Isoterm: pA VA = pB VB  =>  pB = 100 kPa * 3.0/1.0 = 3.0e2 kPa.
+%         b) Isokor: pC = pB * TC/TB = 300 kPa * 450/300 = 4.5e2 kPa.
+%         c) A->B: kurve (hyperbel) opp mot venstre. B->C: loddrett linje opp.
+%         d) B->C: dV = 0, så W = 0.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{To prosesser etter hverandre}{%
+  En gass er i tilstand A: $p_\text{A} = 100\,\mathrm{kPa}$, $V_\text{A} = 3.0\,\mathrm{L}$, $T_\text{A} = 300\,\mathrm{K}$. Den presses først sammen isotermt til $1.0\,\mathrm{L}$ (tilstand B). Så varmes den opp ved konstant volum til $450\,\mathrm{K}$ (tilstand C).
+  \begin{enumerate}[a)]
+    \item Finn trykket i B og i C.
+    \item Skisser prosessene i et $pV$-diagram.
+    \item Gjør gassen noe arbeid fra B til C?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Prosesser og $pV$-diagram}{%
+  \begin{enumerate}[1.]
+    \item[] Isokor ($V$ konstant), isobar ($p$ konstant), isoterm ($T$ konstant).
+    \item[] Arealet under kurven i et $pV$-diagram er arbeidet gassen gjør.
+    \item[] Isobar: $W_\text{gass} = p\,\Delta V$. Isokor: $W = 0$.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: eksamensoppgaver i termofysikk}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}
