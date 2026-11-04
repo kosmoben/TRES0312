@@ -77,32 +77,86 @@
 %--------------------------------------------------------------------------
 %  SLIDE 4 — Indre energi
 %--------------------------------------------------------------------------
-\begin{frame}{Indre energi}
+\begin{frame}[fragile]{Indre energi}
 
   Alt stoff består av molekyler i stadig bevegelse. Den samlede energien til molekylene kalles \textbf{indre energi} $U$.
-  \medskip
-  \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
-      \onslide<2->{%
-      \textbf{Kinetisk} (bevegelse):
-      \begin{itemize}
-        \item translasjon (fra sted til sted)
-        \item vibrasjon (atomene svinger)
-        \item rotasjon (molekylet snurrer)
-      \end{itemize}}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \onslide<3->{%
-      \textbf{Potensiell} (bindinger):
-      \begin{itemize}
-        \item bindinger mellom molekylene
-        \item kjemiske bindinger i molekylene
-      \end{itemize}}
-    \end{column}
-  \end{columns}
-  \onslide<4->{\merk{Temperatur og bindinger}{%
-  Temperaturen viser hvor mye molekylene beveger seg og svinger. Energien som skal til for å bryte bindinger, viser seg \textit{ikke} på temperaturen.
-  }}
+
+  \begin{center}
+\resizebox{0.92\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  every node/.style={text=white},
+  >={Stealth[length=5pt,width=4pt]},
+  pil/.style={->, thick, white!55},
+  kat/.style={draw=#1!80, fill=#1!35!black, rounded corners=4pt, thick,
+              minimum width=3.4cm, minimum height=0.8cm, font=\small\bfseries},
+  leaf/.style={draw=#1!70, fill=#1!12!black, rounded corners=4pt, thick,
+               minimum width=3.2cm, minimum height=2.5cm},
+  atom/.style={circle, shading=ball, ball color=#1, minimum size=0.36cm, inner sep=0pt},
+  merk/.style={font=\scriptsize, text=#1!40!white, anchor=south},
+]
+  % Nivå 1
+  \node[draw=headCol!80, fill=headCol!45!black, rounded corners=4pt, thick,
+        minimum width=4.2cm, minimum height=0.9cm, font=\bfseries] (U) at (0,0) {Indre energi $U$};
+  % Nivå 2
+  \node[kat=defscol] (K) at (-3.8,-1.6) {Kinetisk};
+  \node[kat=red]     (P) at ( 5.3,-1.6) {Potensiell};
+  \draw[pil] (U.south) -- ++(0,-0.35) -| (K.north);
+  \draw[pil] (U.south) -- ++(0,-0.35) -| (P.north);
+
+  % Nivå 3: bokser
+  \foreach \x/\n/\c in {-7.2/tr/defscol, -3.8/vi/defscol, -0.4/ro/defscol, 3.6/fa/red, 7.0/ke/red} {
+    \node[leaf=\c] (\n) at (\x,-4.0) {};
+  }
+  \foreach \n in {tr,vi,ro} { \draw[pil] (K.south) -- ++(0,-0.3) -| (\n.north); }
+  \foreach \n in {fa,ke} { \draw[pil] (P.south) -- ++(0,-0.3) -| (\n.north); }
+
+  % Translasjon
+  \node[font=\small\bfseries, anchor=north] at ($(tr.north)+(0,-0.12)$) {Translasjon};
+  \draw[white!45, dashed, thick] ($(tr.center)+(-1.1,-0.15)$) -- ($(tr.center)+(-0.35,-0.15)$);
+  \node[atom=oppgcol!45!white] at ($(tr.center)+(-0.2,-0.15)$) {};
+  \draw[->, thick, defscol!60!white] ($(tr.center)+(0.05,-0.15)$) -- ($(tr.center)+(1.0,-0.15)$);
+
+  % Vibrasjon
+  \node[font=\small\bfseries, anchor=north] at ($(vi.north)+(0,-0.12)$) {Vibrasjon};
+  \draw[decorate, decoration={coil, segment length=3pt, amplitude=2.5pt}, white!70, thick]
+       ($(vi.center)+(-0.45,-0.15)$) -- ($(vi.center)+(0.45,-0.15)$);
+  \node[atom=oppgcol!45!white] at ($(vi.center)+(-0.6,-0.15)$) {};
+  \node[atom=oppgcol!45!white] at ($(vi.center)+(0.6,-0.15)$) {};
+  \draw[<->, thick, defscol!60!white] ($(vi.center)+(-0.95,-0.65)$) -- ($(vi.center)+(-0.25,-0.65)$);
+  \draw[<->, thick, defscol!60!white] ($(vi.center)+(0.25,-0.65)$) -- ($(vi.center)+(0.95,-0.65)$);
+
+  % Rotasjon
+  \node[font=\small\bfseries, anchor=north] at ($(ro.north)+(0,-0.12)$) {Rotasjon};
+  \draw[white!70, thick] ($(ro.center)+(-0.45,-0.15)$) -- ($(ro.center)+(0.45,-0.15)$);
+  \node[atom=oppgcol!45!white] at ($(ro.center)+(-0.5,-0.15)$) {};
+  \node[atom=oppgcol!45!white] at ($(ro.center)+(0.5,-0.15)$) {};
+  \draw[->, thick, defscol!60!white] ($(ro.center)+(0.95,0.05)$) arc (15:330:0.98 and 0.5);
+
+  % Bindinger mellom molekylene
+  \node[font=\footnotesize\bfseries, anchor=north, align=center] at ($(fa.north)+(0,-0.12)$) {Bindinger mellom\\[-2pt]molekylene};
+  \foreach \i in {0,1,2} \foreach \j in {0,1} {
+    \coordinate (a\i\j) at ($(fa.center)+(-0.5+0.5*\i,-0.45+0.5*\j)$);
+  }
+  \foreach \i in {0,1,2} \draw[white!60, thick] (a\i0) -- (a\i1);
+  \foreach \j in {0,1} \draw[white!60, thick] (a0\j) -- (a2\j);
+  \foreach \i in {0,1,2} \foreach \j in {0,1} { \node[atom=headCol!70!white, minimum size=0.3cm] at (a\i\j) {}; }
+  \node[merk=red] at ($(fa.south)+(0,0.08)$) {(faseoverganger)};
+
+  % Kjemiske bindinger
+  \node[font=\small\bfseries, anchor=north, align=center] at ($(ke.north)+(0,-0.12)$) {Kjemiske\\[-2pt]bindinger};
+  \coordinate (o) at ($(ke.center)+(0,-0.05)$);
+  \draw[white!65, thick] (o) -- ++(-0.5,-0.35) (o) -- ++(0.5,-0.35);
+  \node[atom=red, minimum size=0.45cm] at (o) {};
+  \node[atom=white, minimum size=0.3cm] at ($(o)+(-0.55,-0.38)$) {};
+  \node[atom=white, minimum size=0.3cm] at ($(o)+(0.55,-0.38)$) {};
+  \node[merk=red] at ($(ke.south)+(0,0.08)$) {(kjemiske reaksjoner)};
+\end{tikzpicture}%
+}
+  \end{center}
+
+  \vspace{-0.6em}
+  {\footnotesize Temperaturen $T$ er et mål på bevegelsen til molekylene (den kinetiske delen). Energien som skal til for å bryte bindingene (den potensielle delen), viser seg ikke på temperaturen.\par}
 
 \end{frame}
 
