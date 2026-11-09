@@ -1228,5 +1228,165 @@
     "was_labeled": false,
     "bodyfile": "Oppgaver/k8_oppg21.tex",
     "sourcefile": "0.0.8_Termofysikk.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 1,
+    "kind": "oppgave",
+    "title": "Ballong og genser",
+    "label": "k9oppg1",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg01.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 2,
+    "kind": "oppgave",
+    "title": "To ladde kuler",
+    "label": "k9oppg2",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg02.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 3,
+    "kind": "oppgave",
+    "title": "Lading av mobil",
+    "label": "k9oppg3",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg03.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 4,
+    "kind": "oppgave",
+    "title": "Måle strøm og spenning",
+    "label": "k9oppg4",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg04.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 5,
+    "kind": "oppgave",
+    "title": "Ohms lov i tre varianter",
+    "label": "k9oppg5",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg05.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 6,
+    "kind": "oppgave",
+    "title": "Måleserie for en motstand",
+    "label": "k9oppg6",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg06.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 7,
+    "kind": "oppgave",
+    "title": "Julelys i serie",
+    "label": "k9oppg7",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg07.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 8,
+    "kind": "oppgave",
+    "title": "Lamper i parallell",
+    "label": "k9oppg8",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg08.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 9,
+    "kind": "oppgave",
+    "title": "Krets med fire motstander",
+    "label": "k9oppg9",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg09.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 10,
+    "kind": "oppgave",
+    "title": "Spenningsloven",
+    "label": "k9oppg10",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg10.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 11,
+    "kind": "oppgave",
+    "title": "Lyspære",
+    "label": "k9oppg11",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg11.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 12,
+    "kind": "oppgave",
+    "title": "Lading av elbil",
+    "label": "k9oppg12",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg12.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 13,
+    "kind": "oppgave",
+    "title": "Tre like motstander",
+    "label": "k9oppg13",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg13.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 14,
+    "kind": "oppgave",
+    "title": "Kortslutning",
+    "label": "k9oppg14",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg14.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 15,
+    "kind": "oppgave",
+    "title": "Strømregning",
+    "label": "k9oppg15",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg15.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
+  },
+  {
+    "chapter": 9,
+    "number": 16,
+    "kind": "oppgave",
+    "title": "Krets med voltmeter",
+    "label": "k9oppg16",
+    "was_labeled": false,
+    "bodyfile": "Oppgaver/k9_oppg16.tex",
+    "sourcefile": "0.0.9_Elektrisitet.tex"
   }
 ]

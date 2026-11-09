@@ -2,383 +2,621 @@
 \chapter{Elektrisitet}
 \label{Chapter:elektrisitet}
 
-\intro{Dette er en introtekst, hvor vi henviser til\cite{OleBrumm} for mer informasjon. Dette er altså en flott tekst som fungerer som et slags sammendrag / motivasjon for innholdet i kapitlet.}
+\intro{Lyset i rommet, mobilen i lomma og elbilen i garasjen virker alle fordi elektrisk ladning flytter seg gjennom ledninger. I dette kapitlet starter vi med selve ladningen og kraften mellom ladninger. Deretter ser vi på hva strøm og spenning er, og hvordan de henger sammen med motstand gjennom Ohms lov. Vi lærer å regne på kretser med motstander koblet i serie og i parallell, og bruker Kirchhoffs lover når kretsene blir sammensatte. Til slutt ser vi på elektrisk effekt og energi, altså hva som faktisk står på strømregningen.}
 
 \spm{}{%
-\item Hva er elektrisk ladning og elektrisk strøm?
-\item Hva er sammenhengen mellom spenning, strøm og motstand (Ohms lov)?
-\item Hvordan fungerer serie- og parallellkoblinger i en krets?}
+\item Hva er elektrisk ladning, og hvor stor er kraften mellom to ladninger?
+\item Hva er strøm og spenning, og hva sier Ohms lov?
+\item Hvordan regner vi på serie- og parallellkoblinger?
+\item Hvor mye effekt og energi bruker et elektrisk apparat?}
+
 \newpage
 
-\section{Begreper}
-Her kommer noen begreper som er relevante å forstå for dette kapittelet.
+%=============================================================
+\section{Elektrisk ladning og Coulombs lov}
+%=============================================================
 
-\textbf{Elektrisitet}\\
-Elektrisitet er små partikler med positive eller negative ladninger.\\
+\tanke{}{Du gnir en ballong mot genseren din, og etterpå kan ballongen henge fast i taket. Hva er det som har skjedd?}
 
+All materie er bygget opp av atomer. Et atom har en kjerne med positivt ladde \emph{protoner} (og nøytrale nøytroner), og rundt kjernen beveger det seg negativt ladde \emph{elektroner}. Et atom har like mange protoner som elektroner og er derfor elektrisk \emph{nøytralt}: den positive og den negative ladningen opphever hverandre.
 
-\textbf{Krets}\\
-En krets er en vei som strømmen går igjennom. Strømmen går alltid gjennom den delen av kretsen som er lukket. Gjennpm en åpen krets går det ingen strøm. Elektronene i en krets beveger seg motsatt retning som strømmen. Elektronene vil bevege seg fra en negativ ladd pol mot en positiv ladd pol. \\
+Elektronene i de ytterste skallene kan forholdsvis lett flyttes fra ett legeme til et annet. Når du gnir ballongen mot genseren, flyttes elektroner fra genseren over til ballongen. Ballongen får da et \emph{overskudd} av elektroner og blir negativt ladet, mens genseren får et \emph{underskudd} og blir positivt ladet. Ladning blir verken laget eller ødelagt, den bare flyttes. Dette kalles \emph{ladningsbevaring}.
 
-
-\textbf{Elektrisk strøm}\\
-Elektrisk strøm er partikler i bevegelse. Strøm har symbolet \textit{I} og enhet ampere, [A]. Strømmen beveger seg fra den positive polen mot den negative polen. \\
-Strømmen i en krets kan illustreres slik: \\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.1\linewidth]{Images/Kapittel6:Elektrisitet/Strøm_illustrering.png}
-    \caption{Caption}
-    \label{fig:enter-label}
-\end{figure}
-
-
-\textbf{Spenning}\\
-Tenk på spenning som et «elektrisk høydekart»: akkurat som en ball ruller ned fra høyt til lavt i tyngdefeltet,
-beveger ladninger seg fra høyt spenningspotensial til lavt.
-
-\defn{Spenning}{%
-Spenningen $U$ mellom to punkter er arbeidet som kreves for å flytte ladningen $q$ fra det ene punktet til det andre:
+Elektrisk ladning har symbolet $q$ (eller $Q$) og enheten \emph{coulomb} (\si{\coulomb}). Den minste frie ladningen som finnes i naturen, er ladningen til et proton. Den kalles \emph{elementærladningen}:
+\graabox{$\displaystyle e = \SI{1.602e-19}{\coulomb}$}
+Et proton har ladningen $+e$, og et elektron har ladningen $-e$. Ladningen til et legeme er derfor alltid et helt antall elementærladninger:
 \[
-  U = \frac{W}{q}
+  q = N\cdot e
 \]
-Enhet: volt, $\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}$.
-En spenning på $\SI{9}{\volt}$ betyr at det kreves $\SI{9}{\joule}$ per coulomb ladning som flyttes.
+der $N$ er antall elektroner i overskudd (eller underskudd).
+
+\exm{Ladningen på en ballong}{%
+En ballong er gnidd mot en genser og har fått ladningen $q = \SI{-0.10}{\micro\coulomb}$.
+\begin{enumerate}[a)]
+    \item Hvor mange elektroner har ballongen i overskudd?
+    \item Hvilken ladning har genseren fått?
+\end{enumerate}
 }
 
-Spenningskilden i en krets tegnes typisk to forskjellige måter vist i Figur \ref{fig:Spenningskilde1} og Figur \ref{fig:Spenningskilde2}.
+\svar{%
+\noindent
+\textbf{a)} Vi løser $q = N\cdot e$ for $N$ og bruker størrelsen av ladningen:
+\[
+  N = \frac{|q|}{e} = \frac{\SI{0.10e-6}{\coulomb}}{\SI{1.602e-19}{\coulomb}} = \num{6.24e11} \approx \doubleunderline{\num{6.2e11}}
+\]
+Det er mange elektroner, men likevel en svært liten andel av alle elektronene i ballongen.
 
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.2\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Images/Kapittel6:Elektrisitet/Spenningskilde(1).png}
-        \caption{Spenningskilde 1}
-        \label{fig:Spenningskilde1}
-    \end{minipage}%
-    \begin{minipage}{0.28\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Images/Kapittel6:Elektrisitet/Spenningskilde(2).png}
-        \caption{Spenningskilde 2}
-        \label{fig:Spenningskilde2}
-    \end{minipage}
-\end{figure}
+\smallskip\noindent
+\textbf{b)} Ladning er bevart. Elektronene som ballongen har fått, kommer fra genseren. Genseren har derfor fått ladningen $\doubleunderline{+\SI{0.10}{\micro\coulomb}}$.
+}
 
+\subsection*{Ledere, isolatorer og halvledere}
 
-
-\textbf{Seriekobling}\\
-En seriekobling er en krets som er koblet slik at strømmen bare kan gå "en vei". I Figur \ref{fig:Seriekobling} er R1, R2, og R3 resistanser og V1 er en spenningskilde. Strømmen vil gå inn og gjennom i R1, R2 og R3. Siden strømmen bare "har en vei" å gå, vil det i teorien være like mye strøm over hele området i seriekoblingen som vises i Figur \ref{fig:Seriekobling}. Strømmen har ingen plass å dele seg.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Images/Kapittel6:Elektrisitet/Seriekobling.png}
-    \caption{Seriekobling}
-    \label{fig:Seriekobling}
-\end{figure}
-
-
-\textbf{Parallellkobling}\\
-Parallellkobling er en måte å koble en krets slik at komponentene ligger "over" hverandre. I Figur \ref{fig:Parallellkobling} vises en parallellkobling, der R1 og R2 er resistanser og U er en spenningskilde. I denne kretsen vil strømmen vil gå fra spenningskilden og "dele" seg utover resistansene.\\
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Images/Kapittel6:Elektrisitet/Parallellkobling.png}
-    \caption{Parallellkobling}
-    \label{fig:Parallellkobling}
-\end{figure}
-
-
-\textbf{Leder, isolator og halvleder}\\
-Stoffer deles inn i tre grupper etter evnen til å lede elektrisk strøm:
+Stoffer deles inn i tre grupper etter hvor godt de leder elektrisk strøm:
 \begin{itemize}
-  \item \textbf{Ledere} har mange løst bundne elektroner i det ytterste skallet.
-        Disse kan bevege seg fritt og transportere ladning — metaller som kopper og aluminium er gode ledere.
-  \item \textbf{Isolatorer} holder fast på alle elektroner; ingen kan bevege seg fritt.
-        Eksempler: gummi, plast, glass. Brukes til å hindre strøm fra å renne «feil vei».
-  \item \textbf{Halvledere} er midt imellom — ledningsevnen kan styres ved temperatur eller spenning.
-        Grunnlaget for transistorer, dioder og all moderne elektronikk (silisium, Si).
+  \item \textbf{Ledere} har mange løst bundne elektroner som kan bevege seg fritt gjennom stoffet. Metaller som kobber og aluminium er gode ledere, og brukes derfor i ledninger.
+  \item \textbf{Isolatorer} holder godt fast på elektronene sine, så ingen ladning kan bevege seg fritt. Eksempler er gummi, plast og glass. De brukes rundt ledninger, slik at strømmen ikke går dit den ikke skal.
+  \item \textbf{Halvledere}, som silisium, ligger imellom. Ledningsevnen kan styres, og de er grunnlaget for dioder, transistorer og all moderne elektronikk.
 \end{itemize}
 
-\tips{Forståelse av elektroner, strøm og spenning}{Å forstå hva en elektrisk krets er og hvordan den fungerer kan være utfordrende. En god måte å tenke på en elektrisk krets er å forestille seg en krets bestående av elektroner som kuler plassert side om side. Disse elektronene kan bevege seg fra ett punkt til et annet innen kretsen. \\
+\subsection*{Coulombs lov}
 
-Når en spenningskilde, som et batteri, påvirker elektronene nærmest seg, skaper dette en dominoeffekt der elektronene setter hverandre i bevegelse. En motstand kan ses på som en trangere del av kretsen, som gjør det vanskeligere for strømmen å passere, derav navnet "motstand". \\
-
-I en \textbf{seriekobling} har elektronene bare én vei å følge gjennom kretsen. Denne veien forbinder ett punkt til et annet uten avkjøringer. \\
-
-
-I en \textbf{parallellkobling}, derimot, deler veien seg og elektronene kan "velge" mellom flere stier. Dette resulterer i at strømmen tar veien med minst motstand på grunn av fysiske lover.}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Images/Kapittel6:Elektrisitet/Elektroner.png}
-    \caption{Krets med elektroner i}
-    \label{fig:Elektroner}
-\end{figure}
-
-%https://www.codrey.com/dc-circuits/conventional-current-vs-electron-current/   Hentet 31.12.2024
-
-
-
-\section{Elektrisk kraft og ladning}
-
-Elektrisk ladning er det som gir opphav til elektriske krefter.
-To ladede legemer tiltrekker eller frastøter hverandre — akkurat som gravitasjon tiltrekker to masser,
-men med en viktig forskjell: elektrisk kraft kan \emph{både} tiltrekke og frastøte.
+To ladde legemer virker med en kraft på hverandre. Ladninger med \emph{likt} fortegn frastøter hverandre, og ladninger med \emph{motsatt} fortegn tiltrekker hverandre. Kraften blir mindre jo lenger fra hverandre ladningene er.
 
 \defn{Coulombs lov}{%
-Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ er:
+Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ har størrelsen
 \[
   F_e = k \frac{|q_1|\,|q_2|}{r^2}, \qquad k = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
 \]
 Kraften er \emph{tiltrekkende} dersom ladningene har motsatt fortegn, og \emph{frastøtende} dersom de har likt fortegn.
 }
 
+Coulombs lov ligner på Newtons gravitasjonslov. Begge kreftene avtar med kvadratet av avstanden. Forskjellen er at gravitasjonen alltid tiltrekker, mens den elektriske kraften både kan tiltrekke og frastøte.
+
 \begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
     arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
-\textbf{Gravitasjon vs.\ elektrisitet — to naturkrefter med samme form}
+\textbf{Gravitasjon og elektrisitet: to naturkrefter med samme form}
 
 \medskip
 \begin{tabular}{lll}
   & \textbf{Gravitasjon} & \textbf{Elektrisitet} \\
   \hline
   Formel & $F_g = G\,\dfrac{m_1 m_2}{r^2}$ & $F_e = k\,\dfrac{|q_1||q_2|}{r^2}$ \\[8pt]
-  «Ladning» & Masse $m$ & Elektrisk ladning $q$ \\
-  Konstant & $G = \SI{6.67e-11}{}$ & $k = \SI{8.99e9}{}$ \\
-  Retning & Alltid tiltrekkende & Tiltrekker (±) eller frastøter (++) \\
+  Hva gir kraften & Masse $m$ & Elektrisk ladning $q$ \\
+  Konstant & $G = \SI{6.67e-11}{\newton\metre\squared\per\kilo\gram\squared}$ & $k = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}$ \\
+  Retning & Alltid tiltrekkende & Tiltrekkende eller frastøtende \\
 \end{tabular}
-
-\medskip
-Merk at $k$ er \emph{enorm} sammenliknet med $G$ — elektrisk kraft er typisk mange størrelsesordener sterkere enn gravitasjon på atomnivå.
 \end{tcolorbox}
 
 \exm{Kraft mellom to ladninger}{%
-To ladninger $q_1 = \SI{+2.0}{\micro\coulomb}$ og $q_2 = \SI{-3.0}{\micro\coulomb}$
-befinner seg $r = \SI{0.10}{\metre}$ fra hverandre.
-Finn kraften mellom dem.
+To ladninger, $q_1 = \SI{+2.0}{\micro\coulomb}$ og $q_2 = \SI{-3.0}{\micro\coulomb}$, er $r = \SI{0.10}{\metre}$ fra hverandre. Finn kraften mellom dem. Er den tiltrekkende eller frastøtende?
+}
 
+\svar{%
 \[
   F_e = k\frac{|q_1||q_2|}{r^2}
       = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
         \cdot \frac{\SI{2.0e-6}{\coulomb}\cdot\SI{3.0e-6}{\coulomb}}{(\SI{0.10}{\metre})^2}
       = \doubleunderline{\SI{5.4}{\newton}}
 \]
-Siden ladningene har motsatt fortegn, er kraften \emph{tiltrekkende}.
+Ladningene har motsatt fortegn, så kraften er \doubleunderline{tiltrekkende}.
 }
 
-\section{Kirchoff's lover}
-Kirchoff's lover brukes til å regne ut strøm eller spenning i en elektrisk krets.
+\exm{Elektrisk kraft og gravitasjon i et hydrogenatom}{%
+I et hydrogenatom er avstanden mellom protonet og elektronet omtrent $r = \SI{5.3e-11}{\metre}$. Protonet har massen $\SI{1.67e-27}{\kilo\gram}$, og elektronet har massen $\SI{9.11e-31}{\kilo\gram}$. Sammenlign den elektriske kraften og gravitasjonskraften mellom dem.
+}
 
-\subsection{Kirchoff's første lov}
-Denne loven er også omtalt som \textit{Kirchoff's strømlov}. Denne loven går ut på at strømmen som går inn, eller ut av en node/knytepunkt til sammen blir 0.
-\[\sum{I}=I_1+I_2+...+I_n=0\]
+\svar{%
+\noindent
+Begge partiklene har ladning med størrelse $e$:
+\[
+  F_e = k\frac{e^2}{r^2} = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}\cdot\frac{(\SI{1.602e-19}{\coulomb})^2}{(\SI{5.3e-11}{\metre})^2} = \SI{8.2e-8}{\newton}
+\]
+\[
+  F_g = G\frac{m_p m_e}{r^2} = \SI{6.67e-11}{\newton\metre\squared\per\kilo\gram\squared}\cdot\frac{\SI{1.67e-27}{\kilo\gram}\cdot\SI{9.11e-31}{\kilo\gram}}{(\SI{5.3e-11}{\metre})^2} = \SI{3.6e-47}{\newton}
+\]
+\[
+  \frac{F_e}{F_g} = \frac{\SI{8.2e-8}{\newton}}{\SI{3.6e-47}{\newton}} \approx \doubleunderline{\num{2.3e39}}
+\]
+Den elektriske kraften er altså omtrent $10^{39}$ ganger sterkere! Gravitasjonen merker vi likevel best i hverdagen, fordi store legemer nesten alltid er elektrisk nøytrale. Da opphever de elektriske kreftene hverandre, mens gravitasjonen fra alle partiklene legges sammen.
+}
 
-\subsection{Kirchoff's andre lov}
-Denne loven er også omtalt som \textit{Kirchoff's spenningslov}.
+\oppgaver{Ballong og genser}{k9oppg1}{%
+\input{Oppgaver/k9_oppg01.tex}%
+}
 
-\[\sum{U}=U_1+U_2+...+U_n=0\]
+\oppgaver{To ladde kuler}{k9oppg2}{%
+\input{Oppgaver/k9_oppg02.tex}%
+}
 
+%=============================================================
+\section{Strøm, spenning og elektriske kretser}
+%=============================================================
 
+\tanke{}{Når du slår på lysbryteren, lyser lampa nesten med en gang. Betyr det at elektronene farer gjennom ledningen fra bryteren til lampa på et øyeblikk?}
 
-\subsection{Fysisk tolkning}
+\subsection*{Elektrisk strøm}
 
-\textbf{Kirchhoffs 1.\ lov} (strømloven) følger av at ladning er bevart: ingen ladning kan «forsvinne» i et forgreningspunkt, så all strøm inn må ut igjen.
+\emph{Elektrisk strøm} er ladning i bevegelse. I en metalledning er det de frie elektronene som beveger seg. Strømmen $I$ forteller hvor mye ladning som passerer et tverrsnitt av ledningen per tid.
 
-\textbf{Kirchhoffs 2.\ lov} (spenningsloven) følger av energibevaring: i en lukket sløyfe må summen av alle spenningsfall (over motstander) være lik summen av alle spenningsstigninger (fra kilder). Tilsvarende: vandrer du i en ring tilbake til startpunktet, er nettohøydeforskjellen null.
+\defn{Elektrisk strøm}{%
+Når ladningen $q$ passerer et tverrsnitt i løpet av tiden $t$, er strømmen
+\[
+  I = \frac{q}{t}
+\]
+Enheten er ampere, $\SI{1}{\ampere} = \SI{1}{\coulomb\per\second}$.
+}
 
-\exm{Krets med Kirchhoffs lover}{%
-En krets har en spenningskilde $U_0 = \SI{24}{\volt}$.
-Motstand $R_1 = \SI{3.0}{\ohm}$ er i serie med en parallellkobling av $R_2 = \SI{6.0}{\ohm}$ og $R_3 = \SI{12}{\ohm}$.
+Elektronene i en ledning beveger seg faktisk svært langsomt, typisk under en millimeter per sekund. Men ledningen er full av frie elektroner fra før. Når kretsen sluttes, begynner alle elektronene i hele ledningen å bevege seg nesten samtidig, omtrent som vann i en hageslange som allerede er full. Derfor lyser lampa med en gang.
+
+\merk{Strømretning}{%
+Vi sier at strømmen går fra den positive polen (\textbf{+}) på batteriet, gjennom kretsen, og tilbake til den negative polen (\textbf{$-$}). Dette er den \emph{tekniske strømretningen}, og den ble bestemt før man kjente til elektronene. Elektronene beveger seg faktisk motsatt vei, fra $-$ til $+$. I regning bruker vi alltid den tekniske strømretningen.
+}
+
+Strømmen fra et batteri går alltid samme vei. Det kalles \emph{likestrøm}. Strømmen i stikkontakten skifter retning mange ganger i sekundet og kalles \emph{vekselstrøm}. I dette kurset ser vi bare på likestrøm.
+
+\subsection*{Spenning}
+
+For at det skal gå strøm, må noe drive ladningene rundt i kretsen. Det er det batteriet gjør. Tenk på spenning som et «elektrisk høydekart»: Akkurat som en ball ruller ned fra høyt til lavt i tyngdefeltet, går strømmen fra høy til lav elektrisk potensial gjennom kretsen. Batteriet fungerer som en heis som løfter ladningene opp igjen.
+
+\defn{Spenning}{%
+Spenningen $U$ mellom to punkter er arbeidet $W$ som trengs per ladning $q$ for å flytte ladningen fra det ene punktet til det andre:
+\[
+  U = \frac{W}{q}
+\]
+Enheten er volt, $\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}$.
+}
+
+Et batteri på $\SI{9.0}{\volt}$ gir altså $\SI{9.0}{\joule}$ energi til hver coulomb ladning som går gjennom det. Spenningen mellom polene på et batteri kalles \emph{polspenningen}.
+
+\exm{Strøm i en ladekabel}{%
+En mobil lades med strømmen $\SI{2.0}{\ampere}$ i $\SI{30}{\minute}$, fra en lader med spenningen $\SI{5.0}{\volt}$.
+\begin{enumerate}[a)]
+    \item Hvor mye ladning har gått gjennom ladekabelen?
+    \item Hvor mange elektroner tilsvarer det?
+    \item Hvor mye energi har laderen levert?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Tiden er $t = 30\cdot\SI{60}{\second} = \SI{1800}{\second}$:
+\[
+  q = I\cdot t = \SI{2.0}{\ampere}\cdot\SI{1800}{\second} = \doubleunderline{\SI{3.6e3}{\coulomb}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+  N = \frac{q}{e} = \frac{\SI{3.6e3}{\coulomb}}{\SI{1.602e-19}{\coulomb}} = \doubleunderline{\num{2.2e22}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Fra definisjonen av spenning er $W = U\cdot q$:
+\[
+  W = \SI{5.0}{\volt}\cdot\SI{3.6e3}{\coulomb} = \doubleunderline{\SI{1.8e4}{\joule}}
+\]
+}
+
+\subsection*{Elektriske kretser}
+
+En \emph{krets} er en lukket vei som strømmen kan gå rundt i. Det går bare strøm når kretsen er \emph{lukket}. Er det et brudd et sted, for eksempel en åpen bryter, er kretsen \emph{åpen}, og det går ingen strøm noe sted i den.
+
+Kretser tegnes med standardsymboler. Figur~\ref{fig:kretssymboler} viser de vanligste.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.92, >={Stealth[length=4pt,width=3pt]},
-    component/.style={draw, thick, minimum width=0.5cm, minimum height=0.9cm}]
-  % Nodes
-  \coordinate (A) at (0,2);
-  \coordinate (B) at (3,2);
-  \coordinate (C) at (5,2);
-  \coordinate (D) at (5,0);
-  \coordinate (E) at (3,0);
-  \coordinate (F) at (0,0);
-  % Battery
-  \draw[thick] (A) -- (F);
-  \draw[thick] (0,1.3) -- (0,0.7);
-  \node[left, font=\footnotesize] at (-0.1,1.0) {$U_0$};
-  \draw[thick, double] (0,1.15) -- (0,0.85);
-  % Top wire
-  \draw[thick] (A) -- (B);
-  % R1
-  \draw[thick] (B) -- (B)+(0.3,0);
-  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
-      (3.3,2) -- (4.7,2);
-  \node[above, font=\footnotesize] at (4,2.3) {$R_1$};
-  \draw[thick] (4.7,2) -- (C);
-  % Junction C
-  \fill (C) circle (0.06);
-  % R2 (upper branch)
-  \draw[thick] (C) -- (5,2.7);
-  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
-      (5,2.7) -- (5,3.5);
-  \node[right, font=\footnotesize] at (5.2,3.1) {$R_2$};
-  \draw[thick] (5,3.5) -- (3,3.5) -- (E);
-  % R3 (lower branch)
-  \draw[thick] (C) -- (5,1.3);
-  \draw[thick, decorate, decoration={zigzag,segment length=4pt,amplitude=3pt}]
-      (5,1.3) -- (5,0.5);
-  \node[right, font=\footnotesize] at (5.2,0.9) {$R_3$};
-  \draw[thick] (5,0.5) -- (D);
-  % Bottom wire
-  \fill (E) circle (0.06);
-  \draw[thick] (E) -- (F);
-  % Current labels
-  \node[above, font=\footnotesize, defscol] at (1.5,2) {$I_0$};
-  \node[right, font=\footnotesize, headCol] at (5.5,3.1) {$I_2$};
-  \node[right, font=\footnotesize, headCol!60!black] at (5.5,0.9) {$I_3$};
-\end{tikzpicture}
+\begin{circuitikz}[scale=0.9, transform shape]
+  \draw (0,0) to[battery1] (1.6,0);
+  \node[below] at (0.8,-0.5) {\small batteri};
+  \draw (2.8,0) to[R] (4.4,0);
+  \node[below] at (3.6,-0.5) {\small motstand};
+  \draw (5.6,0) to[lamp] (7.2,0);
+  \node[below] at (6.4,-0.5) {\small lyspære};
+  \draw (8.4,0) to[nos] (10.0,0);
+  \node[below] at (9.2,-0.5) {\small bryter};
+  \draw (11.2,0) to[ammeter] (12.8,0);
+  \node[below] at (12.0,-0.5) {\small amperemeter};
+  \draw (14.0,0) to[voltmeter] (15.6,0);
+  \node[below] at (14.8,-0.5) {\small voltmeter};
+\end{circuitikz}
+\captionof{figure}{Vanlige kretssymboler. Den lange streken på batterisymbolet er den positive polen.}
+\label{fig:kretssymboler}
 \end{center}
 
-\noindent\textbf{Steg 1 — Totalmotstand:}
+Vi måler strøm med et \emph{amperemeter} og spenning med et \emph{voltmeter}:
+\begin{itemize}
+  \item Et \textbf{amperemeter} kobles \emph{i serie}, slik at strømmen vi vil måle, går gjennom det.
+  \item Et \textbf{voltmeter} kobles \emph{i parallell} over komponenten, slik at det måler spenningen mellom de to endene av den.
+\end{itemize}
 
-Parallellkoblingen: $\frac{1}{R_p} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$,
-så $R_p = \SI{4.0}{\ohm}$.
-
-Totalmotstanden: $R_{\text{tot}} = R_1 + R_p = \SI{3.0}{\ohm} + \SI{4.0}{\ohm} = \SI{7.0}{\ohm}$.
-
-\noindent\textbf{Steg 2 — Totalstrøm (Kirchhoffs 2.\ lov + Ohms lov):}
-\[
-  U_0 = R_{\text{tot}}\,I_0 \implies I_0 = \frac{U_0}{R_{\text{tot}}} = \frac{\SI{24}{\volt}}{\SI{7.0}{\ohm}}
-  = \SI{3.43}{\ampere} \approx \doubleunderline{\SI{3.4}{\ampere}}
-\]
-
-\noindent\textbf{Steg 3 — Spenning over parallellkoblingen:}
-\[
-  U_p = R_p\,I_0 = \SI{4.0}{\ohm}\cdot\SI{3.43}{\ampere} \approx \SI{13.7}{\volt}
-\]
-
-\noindent\textbf{Steg 4 — Strøm i grenene (Kirchhoffs 1.\ lov):}
-\[
-  I_2 = \frac{U_p}{R_2} = \frac{\SI{13.7}{\volt}}{\SI{6.0}{\ohm}} \approx \doubleunderline{\SI{2.3}{\ampere}}, \qquad
-  I_3 = \frac{U_p}{R_3} = \frac{\SI{13.7}{\volt}}{\SI{12}{\ohm}} \approx \doubleunderline{\SI{1.1}{\ampere}}
-\]
-Sjekk K1: $I_2 + I_3 \approx \SI{2.3}{\ampere} + \SI{1.1}{\ampere} = \SI{3.4}{\ampere} = I_0$ \checkmark
-}
-
-\section{Motstand}
-Motstand, eller resistanser, R, er komponenter i en krets som har påvirkning på strømmen og spenningen. \textit{Ohm's lov} viser at spenningen, U, er proporsjonal med resistansen og strømmen. 
-
-\defn{Ohm's lov}{\centering U=R$\cdot$ I \\
-Hvor U er spenningen i volt, \textit{V}, R er resistansen i ohm \textit{$\Omega$} og I er strømmen i ampere, \textit{A}.}
-
-Ohm's lov viser at strømmen, I$=$$\frac{U}{R}$, er er omvendt proporsjonal med resistansen. Det vil si at det høyere motstand, det mindre strøm vil gå. Ved fullstendig motstand, for eksempel ved en åpen krets, er det teoretisk sett ingen strøm som passerer. Ved mindre motstand, er det lettere for strømmen å gå.
-
-\subsection{Motstander i seriekobling}
-Når motstander er seriekoblet, kan man finne den totale motstanden i kretsen ved bruk av Formel \ref{eq:sum_motstand_serie}.
-
-\begin{align}
-    &\sum R_{tot}= R_1+R_2 +...+ R_n
-    \label{eq:sum_motstand_serie}
-\end{align}
-
-
-\exm{Sum av motstand i seriekobling}{De to øverste i Figur \ref{fig:Seriekobling_motstand} mostandende er henholdsvis 6$\Omega$ og 10$\Omega$. Hvis summen av motstander i kretsen er 25 $\Omega$, hva er da verdien til den siste motstanden? \\
 \begin{center}
-\includegraphics[width=0.3\linewidth]{Images/Kapittel6:Elektrisitet/Krets_med_spenningskilde(1).png}
-\captionof{figure}{Motstander i seriekobling}
-\label{fig:Seriekobling_motstand}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$U$] (0,3)
+        to[ammeter, l=$I$] (3,3)
+        to[lamp] (3,0) -- (0,0);
+  \draw (3,3) -- (4.6,3) to[voltmeter] (4.6,0) -- (3,0);
+\end{circuitikz}
+\captionof{figure}{Et batteri og en lyspære. Amperemeteret er koblet i serie og måler strømmen. Voltmeteret er koblet i parallell over lyspæra og måler spenningen over den.}
+\label{fig:amperemeter_voltmeter}
 \end{center}
-Bruker formelen:\\
-\[\ R_{tot}=R_1+R_2+R_3\]\\
-\[\ R_3=R_{tot}-R_1-R_2\]
-\[R_3 = 25\,\Omega - 6\,\Omega - 10\,\Omega = \doubleunderline{9\,\Omega}\]}
 
-
-
-
-\subsection{Motstander i parallellkobling}
-Når motstander ligger i parallellkobling, kan man finne den totale motstanden i kretsen ved bruk av Formel \ref{eq:sum_motstand_parallell}.
-\begin{align}
-    &\sum \frac{1}{R_{tot}}= \frac{1}{R_1} + \frac{1}{R_2} +...+ \frac{1}{R_n}
-    \label{eq:sum_motstand_parallell}
-\end{align}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\linewidth]{Images/Kapittel6:Elektrisitet/Parallellkobling_motstander.png}
-    \caption{Motstander i parallellkobling}
-    \label{fig:Parallellkobling_motstander}
-\end{figure}
-
-
-\subsection{Elektrisk strøm og ladning}
-Elektrisk strøm er definert som elektrisk ladning i bevegelse. Det finnes \textit{vekselstrøm} og \textit{likestrøm}. Vekselstrøm er strøm med varierende retning, mens likestrøm har samme retning. Strømmen i stikkontakten som er knyttet opp mot strømnettet er vekselstrøm. I TRES skal det være fokus på likestrøm. Likestrøm får man fra for eksempel batterier, hvor strømmen går i en retning. Elektronene går fra negativ pol til positiv pol i en lukket krets. En \textit{lukket krets} er en krets som er koblet sammen på begge sider av batteri og komponenter. En \textit{åpen krets} er en krets som har et "hull" i seg, eller som ikke er koblet opp på både positiv og negativ pol.
-
-
-
-\subsubsection{Elementærladning}
-Elementærladningen er den elektriske ladningen til et proton. Elektroner har samme størrelse på ladning som protoner, bare i motsatt retning. Derfor er ladningen til et elektron lik \textit{-e}. \\
-\[e=1,602 \cdot 10^{-19} C\]
-
-\defn{Strøm og ladning}{Nedenfor står en formel for strøm, hvor \textit{I} er strøm i Ampere, \textit{q} er ladning i Coulomb og \textit{t} er tid i sekund.\\
-\centering I=$\frac{q}{t}$ \\
-Under står en formel for ladningen \textit{q}, elementærladningen er \textit{e}=1,602$\cdot$ 10$^{-19}$ C og \textit{N} er antall elektroner. \\
-\centering q=e$\cdot$N\\
+\oppgaver{Lading av mobil}{k9oppg3}{%
+\input{Oppgaver/k9_oppg03.tex}%
 }
 
-\exm{Antall elektroner}{Ladningen på et område er -100 Coulomb. Hvor mange overskudds-elektroner er på området? \\
-\[q=e\cdot N\]
-\[N=\frac{q}{e}\]
-\[N=\frac{-100 C}{-1,602\cdot 10^{-19}\frac{C}{elektroner}}\]
-\[N=\doubleunderline{6,24\cdot 10^{20}\text{ elektroner}}\]}
-
-
-\section{Effekt}
-Effekt innenfor elektrisitet er elektrisk energi per tidsenhet. Effekten er proporsjonal med strømmen og spenningen.
-
-\defn{Effekt}{Nedenfor står formelen for effekt, \textit{P}. \textit{U} er spenningen og \textit{I} er strømmen.
-\[P=U\cdot I\]
-Spenningen kan regnes ved:
-\[U=R\cdot I\]
-Dermed kan effekten også skrives som:
-\[P=R\cdot I^2\]
+\oppgaver{Måle strøm og spenning}{k9oppg4}{%
+\input{Oppgaver/k9_oppg04.tex}%
 }
 
-\subsection{Eksempeloppgaver}
+%=============================================================
+\section{Resistans og Ohms lov}
+%=============================================================
 
-\tips{Hvordan løse oppgaver innen for elektrisitet?}{Steg for steg over hvordan løse oppgaver innenfor elektrisitet:
+\tanke{}{Hvorfor blir ledningen til en vannkoker nesten ikke varm, mens glødetråden i en gammeldags lyspære blir så varm at den lyser?}
 
+Når elektronene beveger seg gjennom et stoff, kolliderer de med atomene. Stoffet hindrer altså strømmen litt. Dette kalles \emph{resistans} eller \emph{motstand}, $R$. En komponent som er laget for å ha en bestemt resistans, kalles også en motstand. Jo større resistans, desto større spenning trengs for å drive en bestemt strøm gjennom komponenten. I kollisjonene gir elektronene energi til atomene, og komponenten blir varm.
+
+For mange materialer, særlig metaller ved konstant temperatur, er strømmen proporsjonal med spenningen. Det er Ohms lov:
+
+\defn{Ohms lov}{%
+\[
+  U = R\cdot I
+\]
+der $U$ er spenningen over komponenten, $I$ er strømmen gjennom den og $R$ er resistansen. Enheten for resistans er ohm, $\SI{1}{\ohm} = \SI{1}{\volt\per\ampere}$.
+}
+
+Ohms lov kan skrives på tre måter, avhengig av hva vi skal finne: $U = RI$, $I = U/R$ og $R = U/I$. Formen $I = U/R$ viser at strømmen blir mindre jo større resistansen er.
+
+\exm{Strøm gjennom en motstand}{%
+En motstand på $\SI{47}{\ohm}$ kobles til et batteri på $\SI{9.0}{\volt}$. Hvor stor blir strømmen?
+}
+
+\svar{%
+\[
+  I = \frac{U}{R} = \frac{\SI{9.0}{\volt}}{\SI{47}{\ohm}} = \SI{0.191}{\ampere} \approx \doubleunderline{\SI{0.19}{\ampere}}
+\]
+}
+
+\exm{Resistansen i en lyspære}{%
+En lyspære kobles til $\SI{230}{\volt}$, og et amperemeter viser at strømmen er $\SI{0.26}{\ampere}$. Hva er resistansen i lyspæra?
+}
+
+\svar{%
+\[
+  R = \frac{U}{I} = \frac{\SI{230}{\volt}}{\SI{0.26}{\ampere}} = \SI{885}{\ohm} \approx \doubleunderline{\SI{8.8e2}{\ohm}}
+\]
+}
+
+\merk{Kortslutning}{%
+Kobler vi polene på et batteri sammen med bare en ledning, er resistansen nesten null. Etter Ohms lov, $I = U/R$, blir strømmen da svært stor. Ledningen og batteriet kan bli så varme at det begynner å brenne. Dette kalles \emph{kortslutning}, og det er derfor vi har sikringer.
+}
+
+\oppgaver{Ohms lov i tre varianter}{k9oppg5}{%
+\input{Oppgaver/k9_oppg05.tex}%
+}
+
+\oppgaver{Måleserie for en motstand}{k9oppg6}{%
+\input{Oppgaver/k9_oppg06.tex}%
+}
+
+%=============================================================
+\section{Serie- og parallellkobling}
+%=============================================================
+
+\tanke{}{I et gammeldags julelys slukker hele lenka når én pære går. Men når én lampe i stua går, lyser de andre fortsatt. Hva er forskjellen?}
+
+\subsection*{Seriekobling}
+
+I en \emph{seriekobling} ligger komponentene etter hverandre, slik at strømmen bare har én vei å gå. Da gjelder:
+\begin{itemize}
+  \item Strømmen er \emph{den samme} gjennom alle komponentene. Ladning kan ikke hope seg opp noe sted.
+  \item Spenningen fra batteriet \emph{deles} mellom komponentene: $U = U_1 + U_2 + \dots$
+\end{itemize}
+Bruker vi Ohms lov på hver motstand, får vi $U = R_1 I + R_2 I + \dots = (R_1 + R_2 + \dots)\,I$. Motstandene virker altså som én motstand $R_\text{tot}$.
+
+\begin{center}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$U$] (0,2.5)
+        to[R, l=$R_1$] (2.5,2.5)
+        to[R, l=$R_2$] (5,2.5)
+        to[R, l=$R_3$] (5,0) -- (0,0);
+\end{circuitikz}
+\captionof{figure}{Tre motstander i serie. Den samme strømmen går gjennom alle tre.}
+\label{fig:Seriekobling}
+\end{center}
+
+\subsection*{Parallellkobling}
+
+I en \emph{parallellkobling} ligger komponentene ved siden av hverandre, mellom de samme to punktene. Strømmen deler seg og går gjennom komponentene samtidig. Da gjelder:
+\begin{itemize}
+  \item Spenningen er \emph{den samme} over alle komponentene, fordi de er koblet mellom de samme to punktene.
+  \item Strømmen \emph{deles}: $I = I_1 + I_2 + \dots$
+\end{itemize}
+Med Ohms lov er $I = U/R_1 + U/R_2 + \dots = U\,(1/R_1 + 1/R_2 + \dots)$.
+
+\begin{center}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$U$] (0,2.5) -- (4,2.5);
+  \draw (2,2.5) to[R, l=$R_1$] (2,0);
+  \draw (4,2.5) to[R, l=$R_2$] (4,0);
+  \draw (4,0) -- (0,0);
+  \fill (2,2.5) circle (2pt) (2,0) circle (2pt);
+\end{circuitikz}
+\captionof{figure}{To motstander i parallell. Spenningen over dem er den samme, og strømmen deler seg.}
+\label{fig:Parallellkobling}
+\end{center}
+
+\defn{Serie- og parallellkobling av motstander}{%
+\textbf{Serie:}
+\[
+  R_\text{tot} = R_1 + R_2 + \dots + R_n
+\]
+\textbf{Parallell:}
+\[
+  \frac{1}{R_\text{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
+\]
+For to motstander i parallell kan dette skrives $R_\text{tot} = \dfrac{R_1 R_2}{R_1 + R_2}$.
+}
+
+\merk{Parallellkobling gir mindre resistans}{%
+Når vi kobler en motstand i parallell med en annen, får strømmen en ekstra vei å gå. Den totale resistansen blir derfor alltid \emph{mindre} enn den minste av motstandene.
+}
+
+\exm{Motstander i serie}{%
+Tre motstander er koblet i serie, som i figur~\ref{fig:Seriekobling}. To av dem er $R_1 = \SI{6.0}{\ohm}$ og $R_2 = \SI{10}{\ohm}$. Den totale resistansen er $\SI{25}{\ohm}$. Hva er $R_3$?
+}
+
+\svar{%
+\[
+  R_\text{tot} = R_1 + R_2 + R_3 \quad\implies\quad R_3 = R_\text{tot} - R_1 - R_2 = \SI{25}{\ohm} - \SI{6.0}{\ohm} - \SI{10}{\ohm} = \doubleunderline{\SI{9}{\ohm}}
+\]
+}
+
+\exm{Spenningsdeling i en seriekobling}{%
+To motstander, $R_1 = \SI{2.0}{\ohm}$ og $R_2 = \SI{4.0}{\ohm}$, er koblet i serie til et batteri på $\SI{12}{\volt}$. Finn strømmen og spenningen over hver motstand.
+}
+
+\svar{%
+\noindent
+Den totale resistansen er $R_\text{tot} = \SI{2.0}{\ohm} + \SI{4.0}{\ohm} = \SI{6.0}{\ohm}$. Strømmen er den samme overalt:
+\[
+  I = \frac{U}{R_\text{tot}} = \frac{\SI{12}{\volt}}{\SI{6.0}{\ohm}} = \doubleunderline{\SI{2.0}{\ampere}}
+\]
+Spenningene:
+\[
+  U_1 = R_1 I = \SI{2.0}{\ohm}\cdot\SI{2.0}{\ampere} = \doubleunderline{\SI{4.0}{\volt}}, \qquad
+  U_2 = R_2 I = \SI{4.0}{\ohm}\cdot\SI{2.0}{\ampere} = \doubleunderline{\SI{8.0}{\volt}}
+\]
+Kontroll: $U_1 + U_2 = \SI{12}{\volt}$. Den største motstanden får den største spenningen.
+}
+
+\exm{Motstander i parallell}{%
+To motstander, $R_1 = \SI{6.0}{\ohm}$ og $R_2 = \SI{12}{\ohm}$, er koblet i parallell til et batteri på $\SI{12}{\volt}$, som i figur~\ref{fig:Parallellkobling}. Finn den totale resistansen, strømmen gjennom hver motstand og strømmen fra batteriet.
+}
+
+\svar{%
+\[
+  R_\text{tot} = \frac{R_1R_2}{R_1 + R_2} = \frac{\SI{6.0}{\ohm}\cdot\SI{12}{\ohm}}{\SI{6.0}{\ohm} + \SI{12}{\ohm}} = \doubleunderline{\SI{4.0}{\ohm}}
+\]
+Spenningen over begge er $\SI{12}{\volt}$:
+\[
+  I_1 = \frac{\SI{12}{\volt}}{\SI{6.0}{\ohm}} = \doubleunderline{\SI{2.0}{\ampere}}, \qquad
+  I_2 = \frac{\SI{12}{\volt}}{\SI{12}{\ohm}} = \doubleunderline{\SI{1.0}{\ampere}}
+\]
+Strømmen fra batteriet er $I = I_1 + I_2 = \doubleunderline{\SI{3.0}{\ampere}}$. Kontroll: $U/R_\text{tot} = \SI{12}{\volt}/\SI{4.0}{\ohm} = \SI{3.0}{\ampere}$. Den minste motstanden får den største strømmen.
+}
+
+\oppgaver{Julelys i serie}{k9oppg7}{%
+\input{Oppgaver/k9_oppg07.tex}%
+}
+
+\oppgaver{Lamper i parallell}{k9oppg8}{%
+\input{Oppgaver/k9_oppg08.tex}%
+}
+
+%=============================================================
+\section{Kirchhoffs lover}
+%=============================================================
+
+Når kretsene blir mer sammensatte, er det nyttig å ha to generelle regler. De er oppkalt etter den tyske fysikeren Gustav Kirchhoff.
+
+\defn{Kirchhoffs lover}{%
+\textbf{1.\ lov (strømloven):} I et forgreningspunkt er summen av strømmene inn lik summen av strømmene ut:
+\[
+  \sum I_\text{inn} = \sum I_\text{ut}
+\]
+\textbf{2.\ lov (spenningsloven):} Rundt en lukket sløyfe i en krets er summen av spenningsøkningene (fra batterier) lik summen av spenningsfallene (over motstander og andre komponenter):
+\[
+  \sum U_\text{kilder} = \sum U_\text{fall}
+\]
+}
+
+Begge lovene er bevaringslover:
+\begin{itemize}
+  \item \textbf{Strømloven} følger av at ladning er bevart. Ladning kan ikke forsvinne eller hope seg opp i et forgreningspunkt, så all strøm som går inn, må ut igjen.
+  \item \textbf{Spenningsloven} følger av at energi er bevart. Går du en runde i en sløyfe og tilbake til startpunktet, har du kommet tilbake til samme «høyde». Batteriet løfter ladningene opp, og motstandene tar dem ned igjen like mye.
+\end{itemize}
+
+Det er disse lovene som ligger bak reglene for serie- og parallellkobling. I en seriekobling sier spenningsloven at $U = U_1 + U_2 + \dots$, og i en parallellkobling sier strømloven at $I = I_1 + I_2 + \dots$.
+
+\tips{Slik regner du på en sammensatt krets}{%
 \begin{enumerate}
-    \item \textbf{Tegn kretsen} - Start med å visualisere problemet ved å tegne kretsen. Dette gir en klar oversikt og hjelper deg å identifisere hvilke komponenter som er involvert.
+    \item \textbf{Tegn kretsen}, og marker strømmene.
+    \item \textbf{Finn ut hvilke deler som er i serie og hvilke som er i parallell.}
+    \item \textbf{Forenkle kretsen} trinn for trinn. Slå sammen motstander i parallell og i serie til du har én total resistans.
+    \item \textbf{Finn strømmen fra batteriet} med Ohms lov, $I = U/R_\text{tot}$.
+    \item \textbf{Gå baklengs}: Finn spenningen over hver del, og bruk Kirchhoffs lover og Ohms lov til å finne strømmene i grenene.
+\end{enumerate}
+}
 
-    \item \textbf{Identifiser koblingstype} - Bestem om kretsen består av en seriekobling, parallellkobling eller en kombinasjon av begge. Dette påvirker hvordan strøm og spenning distribueres gjennom kretsen.
-
-    \item \textbf{Forenkel kretsen} - Bruk prinsippene vist i eksemplene i dette kapittelet for å forenkle kretsen til mer håndterbare deler. Dette kan inkludere å kombinere resistanser i serie eller parallell for å redusere kompleksiteten.
-
-    \item \textbf{Løs oppgaven med relevante formler} - Etter at du har forenklet kretsen, bruk relevante elektriske formler for å finne de ønskede verdier som strøm, spenning eller motstand. Sørg for å lese oppgaveteksten nøye for å forstå hva som er spurt om.
-\end{enumerate}}
-
-
-\exm{Krets 1}{Krets 1 består av et batteri som energikilde, med en spenning på 5,0 V. Batteriet er seriekoblet med spenningen R$_1$. R$_1$ er koblet opp med to resistanser i seriekobling R$_2$ og R$_3$. R$_1$ er på 1,0 $\Omega$, R$_2$ er på 2,0 $\Omega$, mens R$_3$ er på 1,4 $\Omega$.
-
-a) Hva er den totale strømmen i kretsen?
+\exm{Krets med serie- og parallellkobling}{%
+Et batteri har polspenningen $U_0 = \SI{24}{\volt}$. Motstanden $R_1 = \SI{3.0}{\ohm}$ er koblet i serie med en parallellkobling av $R_2 = \SI{6.0}{\ohm}$ og $R_3 = \SI{12}{\ohm}$. Finn strømmen fra batteriet og strømmene $I_2$ og $I_3$ i de to grenene.
 
 \begin{center}
-\includegraphics[width=0.5\linewidth]{Images/Kapittel6:Elektrisitet/Parallellkobling_eksempel.png}
-\captionof{figure}{Tegning av Krets 1}
-\label{fig:parallellkobling_eksempel}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$U_0$] (0,3)
+        to[R, l=$R_1$, i>^=$I_0$] (3,3) -- (6,3);
+  \draw (3,3) to[R, l_=$R_2$, i>_=$I_2$] (3,0);
+  \draw (6,3) to[R, l=$R_3$, i>^=$I_3$] (6,0);
+  \draw (6,0) -- (0,0);
+  \fill (3,3) circle (2pt) (3,0) circle (2pt);
+\end{circuitikz}
+\captionof{figure}{$R_1$ i serie med parallellkoblingen av $R_2$ og $R_3$.}
+\label{fig:kirchhoff_krets}
 \end{center}
-Løsning:
-1. \textbf{Tegn kretsen.} Se Figur \ref{fig:parallellkobling_eksempel} som eksempel på en tegning.\\
+}
 
-2. \textbf{Identifiser koblingstype}. R$_1$ er i serie med R$_2$ og R$_3$ i parallellkobling.\\
+\svar{%
+\noindent\textbf{1. Forenkle kretsen.} Parallellkoblingen:
+\[
+  R_p = \frac{R_2R_3}{R_2 + R_3} = \frac{\SI{6.0}{\ohm}\cdot\SI{12}{\ohm}}{\SI{6.0}{\ohm} + \SI{12}{\ohm}} = \SI{4.0}{\ohm}
+\]
+Den er i serie med $R_1$: $R_\text{tot} = \SI{3.0}{\ohm} + \SI{4.0}{\ohm} = \SI{7.0}{\ohm}$.
 
-3 \textbf{Forenkle kretsen.} Første steg her er å "sette sammen" R$_2$ og R$_3$ slik at de representerer en resistans. Formel \ref{eq:sum_motstand_parallell} viser hvordan det kan regnes ut.
+\smallskip\noindent\textbf{2. Strømmen fra batteriet:}
+\[
+  I_0 = \frac{U_0}{R_\text{tot}} = \frac{\SI{24}{\volt}}{\SI{7.0}{\ohm}} = \SI{3.43}{\ampere} \approx \doubleunderline{\SI{3.4}{\ampere}}
+\]
 
-\[\Sigma R_{parallell} = (\frac{1}{R_2}+\frac{1}{R_3})^{-1}\]
-\[\Sigma R_{parallell} = (\frac{1}{2}+\frac{1}{1,4})^{-1}\]
-\[\Sigma R_{parallell} = 0,82 \Omega\]
+\smallskip\noindent\textbf{3. Spenningen over parallellkoblingen:}
+\[
+  U_p = R_p\,I_0 = \SI{4.0}{\ohm}\cdot\SI{3.43}{\ampere} = \SI{13.7}{\volt}
+\]
+Kontroll med spenningsloven: Over $R_1$ er spenningsfallet $\SI{3.0}{\ohm}\cdot\SI{3.43}{\ampere} = \SI{10.3}{\volt}$, og $\SI{10.3}{\volt} + \SI{13.7}{\volt} = \SI{24}{\volt}$.
 
-4. \textbf{Løs oppgaven med relevante formler.} Kretsen består nå av batteriet koblet opp med to resistanser, R$_1$ og R$_{paralell}$. Den totale resistansen blir da, ved hjelp av formel for seriekoblet resistanser; Formel \ref{eq:sum_motstand_serie}:
+\smallskip\noindent\textbf{4. Strømmene i grenene:}
+\[
+  I_2 = \frac{U_p}{R_2} = \frac{\SI{13.7}{\volt}}{\SI{6.0}{\ohm}} = \doubleunderline{\SI{2.3}{\ampere}}, \qquad
+  I_3 = \frac{U_p}{R_3} = \frac{\SI{13.7}{\volt}}{\SI{12}{\ohm}} = \doubleunderline{\SI{1.1}{\ampere}}
+\]
+Kontroll med strømloven: $I_2 + I_3 = \SI{2.3}{\ampere} + \SI{1.1}{\ampere} = \SI{3.4}{\ampere} = I_0$.
+}
 
-\[\Sigma R_{serie} = \Sigma R_{total} =1 + 0,82\]
-\[\Sigma R_{serie} = 1,82\]
+\exm{Et lite batteri med tre motstander}{%
+Et batteri på $\SI{5.0}{\volt}$ er koblet i serie med $R_1 = \SI{1.0}{\ohm}$. Etter $R_1$ deler kretsen seg i to grener med $R_2 = \SI{2.0}{\ohm}$ og $R_3 = \SI{1.4}{\ohm}$ i parallell. Hva er strømmen fra batteriet?
+}
 
-Strømmen finner vi ved bruk av $U=RI$:
-\[I = \frac{U}{R} = \frac{5,0\,\mathrm{V}}{1,82\,\Omega} \approx \doubleunderline{2,7\,\mathrm{A}}\]}
+\svar{%
+\noindent
+$R_1$ er i serie med parallellkoblingen av $R_2$ og $R_3$. Parallellkoblingen:
+\[
+  R_p = \frac{R_2R_3}{R_2 + R_3} = \frac{\SI{2.0}{\ohm}\cdot\SI{1.4}{\ohm}}{\SI{2.0}{\ohm} + \SI{1.4}{\ohm}} = \SI{0.82}{\ohm}
+\]
+Total resistans: $R_\text{tot} = \SI{1.0}{\ohm} + \SI{0.82}{\ohm} = \SI{1.82}{\ohm}$. Strømmen:
+\[
+  I = \frac{U}{R_\text{tot}} = \frac{\SI{5.0}{\volt}}{\SI{1.82}{\ohm}} = \SI{2.75}{\ampere} \approx \doubleunderline{\SI{2.7}{\ampere}}
+\]
+}
+
+\oppgaver{Krets med fire motstander}{k9oppg9}{%
+\input{Oppgaver/k9_oppg09.tex}%
+}
+
+\oppgaver{Spenningsloven}{k9oppg10}{%
+\input{Oppgaver/k9_oppg10.tex}%
+}
+
+%=============================================================
+\section{Elektrisk effekt og energi}
+%=============================================================
+
+\tanke{}{På en vannkoker står det \SI{2000}{\watt}. På en lyspære står det \SI{60}{\watt}. Hva forteller disse tallene?}
+
+Fra kapittel~\ref{Chapter:energi} vet vi at effekt er energi per tid, $P = E/t$. Når ladningen $q$ går gjennom en komponent med spenningen $U$, avgir den energien $W = Uq$. Per tid blir det $P = Uq/t = UI$.
+
+\defn{Elektrisk effekt}{%
+Effekten som en komponent bruker, er
+\[
+  P = U\cdot I
+\]
+der $U$ er spenningen over komponenten og $I$ er strømmen gjennom den. Enheten er watt, $\SI{1}{\watt} = \SI{1}{\volt\ampere} = \SI{1}{\joule\per\second}$.
+}
+
+Med Ohms lov, $U = RI$, kan effekten også skrives
+\[
+  P = R\cdot I^2 = \frac{U^2}{R}
+\]
+Hvilken form som er enklest, avhenger av hva vi kjenner.
+
+\subsection*{Elektrisk energi og kilowattimer}
+
+Energien et apparat bruker, er effekt ganger tid: $E = P\cdot t$. På strømregningen måles energien i \emph{kilowattimer} (\si{kWh}). En kilowattime er energien et apparat med effekten $\SI{1}{\kilo\watt}$ bruker på én time:
+\graabox{$\displaystyle \SI{1}{kWh} = \SI{1000}{\watt}\cdot\SI{3600}{\second} = \SI{3.6e6}{\joule}$}
+
+\exm{Vannkoker}{%
+En vannkoker har effekten $\SI{2000}{\watt}$ og er koblet til $\SI{230}{\volt}$.
+\begin{enumerate}[a)]
+    \item Hvor stor er strømmen gjennom vannkokeren?
+    \item Hva er resistansen i varmeelementet?
+    \item Vannkokeren står på i $\SI{3.0}{\minute}$. Hvor mye energi bruker den, i joule og i kilowattimer?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)}
+\[
+  I = \frac{P}{U} = \frac{\SI{2000}{\watt}}{\SI{230}{\volt}} = \SI{8.70}{\ampere} \approx \doubleunderline{\SI{8.7}{\ampere}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+  R = \frac{U^2}{P} = \frac{(\SI{230}{\volt})^2}{\SI{2000}{\watt}} = \SI{26.5}{\ohm} \approx \doubleunderline{\SI{26}{\ohm}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Tiden er $t = \SI{180}{\second}$:
+\[
+  E = P\cdot t = \SI{2000}{\watt}\cdot\SI{180}{\second} = \doubleunderline{\SI{3.6e5}{\joule}}
+\]
+I kilowattimer: $E = \SI{2.0}{\kilo\watt}\cdot\SI{0.050}{\hour} = \doubleunderline{\SI{0.10}{kWh}}$.
+}
+
+\exm{Hvilken pære lyser sterkest?}{%
+To like lyspærer har hver resistansen $\SI{6.0}{\ohm}$. De kobles til et batteri på $\SI{12}{\volt}$, først i serie og så i parallell. Finn effekten i hver pære i de to tilfellene. Når lyser pærene sterkest?
+}
+
+\svar{%
+\noindent
+\textbf{Serie:} $R_\text{tot} = \SI{12}{\ohm}$, så strømmen er $I = \SI{12}{\volt}/\SI{12}{\ohm} = \SI{1.0}{\ampere}$ gjennom begge pærene. Effekten i hver pære:
+\[
+  P = RI^2 = \SI{6.0}{\ohm}\cdot(\SI{1.0}{\ampere})^2 = \doubleunderline{\SI{6.0}{\watt}}
+\]
+
+\smallskip\noindent
+\textbf{Parallell:} Hver pære har hele spenningen, $\SI{12}{\volt}$, over seg:
+\[
+  P = \frac{U^2}{R} = \frac{(\SI{12}{\volt})^2}{\SI{6.0}{\ohm}} = \doubleunderline{\SI{24}{\watt}}
+\]
+I parallell lyser hver pære med fire ganger så stor effekt. Pærene lyser altså \doubleunderline{sterkest i parallell}. Det er derfor lamper i et hus er koblet i parallell: Hver lampe får hele spenningen fra stikkontakten.
+}
+
+\oppgaver{Lyspære}{k9oppg11}{%
+\input{Oppgaver/k9_oppg11.tex}%
+}
+
+\oppgaver{Lading av elbil}{k9oppg12}{%
+\input{Oppgaver/k9_oppg12.tex}%
+}
+
+\clearpage
+\section{Ekstraoppgaver}
+
+Her er flere oppgaver fra temaene vi har behandlet i dette kapitlet.
+
+\oppgaver{Tre like motstander}{k9oppg13}{%
+\input{Oppgaver/k9_oppg13.tex}%
+}
+
+\oppgaver{Kortslutning}{k9oppg14}{%
+\input{Oppgaver/k9_oppg14.tex}%
+}
+
+\oppgaver{Strømregning}{k9oppg15}{%
+\input{Oppgaver/k9_oppg15.tex}%
+}
+
+\oppgaver{Krets med voltmeter}{k9oppg16}{%
+\input{Oppgaver/k9_oppg16.tex}%
+}

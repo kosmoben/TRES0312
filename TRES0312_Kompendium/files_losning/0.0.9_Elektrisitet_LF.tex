@@ -1,0 +1,344 @@
+% !TEX root = ../LosningsforslagTRES0312.tex
+\chapter{Elektrisitet}
+\label{LF:Chapter:elektrisitet}
+Dette kapittelet inneholder løsningsforslag til oppgavene i Kapittel~\ref{komp-Chapter:elektrisitet}, \textit{Elektrisitet}, i kompendiet.
+
+\oppgaver{Ballong og genser}{k9oppg1}{%
+\input{Oppgaver/k9_oppg01.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)}
+\[
+  N = \frac{|q|}{e} = \frac{\SI{8.0e-9}{\coulomb}}{\SI{1.602e-19}{\coulomb}} = \doubleunderline{\num{5.0e10}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Ladning er bevart, og elektronene kom fra genseren. Genseren har fått ladningen $\doubleunderline{+\SI{8.0}{\nano\coulomb}}$.
+
+\smallskip\noindent
+\textbf{c)} Den negative ballongen frastøter elektronene i veggen litt bort fra overflaten. Overflaten nærmest ballongen blir da litt positiv, mens den negative ladningen havner litt lenger inne. Den positive ladningen er nærmest ballongen, og tiltrekningen blir derfor sterkere enn frastøtningen (Coulombkraften avtar med avstanden). Ballongen blir trukket mot veggen. Dette kalles \emph{polarisering}.
+}
+
+\oppgaver{To ladde kuler}{k9oppg2}{%
+\input{Oppgaver/k9_oppg02.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)}
+\[
+  F_e = k\frac{|q_1||q_2|}{r^2} = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}\cdot\frac{\SI{4.0e-6}{\coulomb}\cdot\SI{1.0e-6}{\coulomb}}{(\SI{0.30}{\metre})^2} = \SI{0.400}{\newton} \approx \doubleunderline{\SI{0.40}{\newton}}
+\]
+Begge ladningene er positive, så kraften er \doubleunderline{frastøtende}.
+
+\smallskip\noindent
+\textbf{b)} Kraften er omvendt proporsjonal med $r^2$. Når avstanden dobles, blir kraften $2^2 = 4$ ganger mindre:
+\[
+  F_e = \frac{\SI{0.40}{\newton}}{4} = \doubleunderline{\SI{0.10}{\newton}}
+\]
+
+\smallskip\noindent
+\textbf{c)} \doubleunderline{Nei}, kreftene er like store og motsatt rettet. Det følger av Newtons 3.\ lov, og ser vi også av Coulombs lov: Formelen er den samme for begge kulene, fordi den inneholder produktet $|q_1||q_2|$.
+}
+
+\oppgaver{Lading av mobil}{k9oppg3}{%
+\input{Oppgaver/k9_oppg03.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Tiden er $t = 2.0\cdot\SI{3600}{\second} = \SI{7200}{\second}$:
+\[
+  q = I\cdot t = \SI{1.5}{\ampere}\cdot\SI{7200}{\second} = \SI{1.08e4}{\coulomb} \approx \doubleunderline{\SI{1.1e4}{\coulomb}}
+\]
+
+\smallskip\noindent
+\textbf{b)}
+\[
+  N = \frac{q}{e} = \frac{\SI{1.08e4}{\coulomb}}{\SI{1.602e-19}{\coulomb}} = \doubleunderline{\num{6.7e22}}
+\]
+
+\smallskip\noindent
+\textbf{c)}
+\[
+  W = U\cdot q = \SI{5.0}{\volt}\cdot\SI{1.08e4}{\coulomb} = \doubleunderline{\SI{5.4e4}{\joule}}
+\]
+}
+
+\oppgaver{Måle strøm og spenning}{k9oppg4}{%
+\input{Oppgaver/k9_oppg04.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)}
+\begin{center}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$U$] (0,3)
+        to[ammeter, l=$I$] (3,3)
+        to[lamp] (5.5,3) -- (5.5,1.5) to[lamp] (5.5,0) -- (0,0);
+  \draw (5.5,1.5) ++(0,0) -- (7,1.5);
+  \draw (7,1.5) to[voltmeter] (7,0) -- (5.5,0);
+  \fill (5.5,1.5) circle (2pt) (5.5,0) circle (2pt);
+\end{circuitikz}
+\end{center}
+Amperemeteret står i serie med resten av kretsen. Voltmeteret er koblet over den nederste lyspæra.
+
+\smallskip\noindent
+\textbf{b)} Amperemeteret skal måle strømmen \emph{gjennom} kretsen, så strømmen må gå gjennom det. Da må det kobles i serie. Voltmeteret skal måle spenningen \emph{mellom} de to endene av pæra, så det må kobles til begge endene, altså i parallell.
+
+\smallskip\noindent
+\textbf{c)} Amperemeteret står i serie. Har det stor resistans, blir strømmen i kretsen mindre, og vi måler noe annet enn det som var der før. Derfor må resistansen være svært liten. Voltmeteret står i parallell. Har det liten resistans, går det mye strøm gjennom voltmeteret i stedet for gjennom pæra, og kretsen endres. Derfor må resistansen være svært stor, slik at nesten ingen strøm går gjennom det.
+}
+
+\oppgaver{Ohms lov i tre varianter}{k9oppg5}{%
+\input{Oppgaver/k9_oppg05.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $U = RI = \SI{220}{\ohm}\cdot\SI{0.050}{\ampere} = \doubleunderline{\SI{11}{\volt}}$
+
+\smallskip\noindent
+\textbf{b)} $I = \dfrac{U}{R} = \dfrac{\SI{12}{\volt}}{\SI{4.0}{\ohm}} = \doubleunderline{\SI{3.0}{\ampere}}$
+
+\smallskip\noindent
+\textbf{c)} $R = \dfrac{U}{I} = \dfrac{\SI{1.5}{\volt}}{\SI{0.30}{\ampere}} = \doubleunderline{\SI{5.0}{\ohm}}$
+}
+
+\oppgaver{Måleserie for en motstand}{k9oppg6}{%
+\input{Oppgaver/k9_oppg06.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Vi regner ut $U/I$ for hver måling: $\SI{22}{\ohm}$, $\SI{22}{\ohm}$, $\SI{21.7}{\ohm}$ og $\SI{22}{\ohm}$. Forholdet er konstant (innenfor måleusikkerheten), så spenningen er proporsjonal med strømmen. Motstanden \doubleunderline{følger Ohms lov}.
+
+\smallskip\noindent
+\textbf{b)} Resistansen er $R = U/I \approx \doubleunderline{\SI{22}{\ohm}}$. Det er også stigningstallet til grafen hvis vi plotter $U$ mot $I$.
+
+\smallskip\noindent
+\textbf{c)} $U = RI = \SI{22}{\ohm}\cdot\SI{0.25}{\ampere} = \doubleunderline{\SI{5.5}{\volt}}$
+}
+
+\oppgaver{Julelys i serie}{k9oppg7}{%
+\input{Oppgaver/k9_oppg07.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} I en seriekobling deles spenningen. Pærene er like, så hver får like mye:
+\[
+  U_1 = \frac{\SI{230}{\volt}}{20} = \doubleunderline{\SI{11.5}{\volt}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Den samme strømmen går gjennom alle pærene:
+\[
+  R_1 = \frac{U_1}{I} = \frac{\SI{11.5}{\volt}}{\SI{0.10}{\ampere}} = \SI{115}{\ohm} \approx \doubleunderline{\SI{1.2e2}{\ohm}}
+\]
+
+\smallskip\noindent
+\textbf{c)} I en seriekobling har strømmen bare én vei. Når én pære går, blir kretsen \emph{åpen}, og det går ingen strøm noe sted. Da slukner alle pærene.
+}
+
+\oppgaver{Lamper i parallell}{k9oppg8}{%
+\input{Oppgaver/k9_oppg08.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Begge lampene har hele spenningen over seg:
+\[
+  I_1 = \frac{U}{R} = \frac{\SI{230}{\volt}}{\SI{530}{\ohm}} = \SI{0.434}{\ampere} \approx \doubleunderline{\SI{0.43}{\ampere}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Strømmen deler seg, så $I = I_1 + I_2 = 2\cdot\SI{0.434}{\ampere} = \SI{0.868}{\ampere} \approx \doubleunderline{\SI{0.87}{\ampere}}$.
+
+\smallskip\noindent
+\textbf{c)}
+\[
+  R_\text{tot} = \frac{R_1R_2}{R_1 + R_2} = \frac{\SI{530}{\ohm}\cdot\SI{530}{\ohm}}{\SI{1060}{\ohm}} = \doubleunderline{\SI{265}{\ohm}}
+\]
+Kontroll: $U/R_\text{tot} = \SI{230}{\volt}/\SI{265}{\ohm} = \SI{0.868}{\ampere}$.
+
+\smallskip\noindent
+\textbf{d)} Spenningen over de to første lampene er fortsatt $\SI{230}{\volt}$, så strømmen gjennom dem er \doubleunderline{uendret}. Den nye lampa trekker også $\SI{0.43}{\ampere}$, så den totale strømmen \doubleunderline{øker} til omtrent $\SI{1.3}{\ampere}$. Den totale resistansen blir mindre.
+}
+
+\oppgaver{Krets med fire motstander}{k9oppg9}{%
+\input{Oppgaver/k9_oppg09.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Parallellkoblingen:
+\[
+  R_p = \frac{R_3R_4}{R_3 + R_4} = \frac{\SI{10}{\ohm}\cdot\SI{15}{\ohm}}{\SI{25}{\ohm}} = \SI{6.0}{\ohm}
+\]
+Den er i serie med $R_1$ og $R_2$: $R_\text{tot} = \SI{2.0}{\ohm} + \SI{4.0}{\ohm} + \SI{6.0}{\ohm} = \doubleunderline{\SI{12}{\ohm}}$.
+
+\smallskip\noindent
+\textbf{b)} $I = \dfrac{U}{R_\text{tot}} = \dfrac{\SI{24}{\volt}}{\SI{12}{\ohm}} = \doubleunderline{\SI{2.0}{\ampere}}$
+
+\smallskip\noindent
+\textbf{c)} $U_p = R_p I = \SI{6.0}{\ohm}\cdot\SI{2.0}{\ampere} = \doubleunderline{\SI{12}{\volt}}$
+
+\smallskip\noindent
+\textbf{d)}
+\[
+  I_3 = \frac{U_p}{R_3} = \frac{\SI{12}{\volt}}{\SI{10}{\ohm}} = \doubleunderline{\SI{1.2}{\ampere}}, \qquad
+  I_4 = \frac{U_p}{R_4} = \frac{\SI{12}{\volt}}{\SI{15}{\ohm}} = \doubleunderline{\SI{0.80}{\ampere}}
+\]
+Strømloven: $I_3 + I_4 = \SI{1.2}{\ampere} + \SI{0.80}{\ampere} = \SI{2.0}{\ampere} = I$.
+}
+
+\oppgaver{Spenningsloven}{k9oppg10}{%
+\input{Oppgaver/k9_oppg10.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Etter Kirchhoffs \emph{spenningslov} er summen av spenningsfallene lik batterispenningen:
+\[
+  U_2 = \SI{9.0}{\volt} - \SI{3.5}{\volt} = \doubleunderline{\SI{5.5}{\volt}}
+\]
+
+\smallskip\noindent
+\textbf{b)} $I = \dfrac{U_1}{R_1} = \dfrac{\SI{3.5}{\volt}}{\SI{7.0}{\ohm}} = \doubleunderline{\SI{0.50}{\ampere}}$
+
+\smallskip\noindent
+\textbf{c)} Den samme strømmen går gjennom $R_2$:
+\[
+  R_2 = \frac{U_2}{I} = \frac{\SI{5.5}{\volt}}{\SI{0.50}{\ampere}} = \doubleunderline{\SI{11}{\ohm}}
+\]
+}
+
+\oppgaver{Lyspære}{k9oppg11}{%
+\input{Oppgaver/k9_oppg11.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $I = \dfrac{P}{U} = \dfrac{\SI{60}{\watt}}{\SI{230}{\volt}} = \SI{0.261}{\ampere} \approx \doubleunderline{\SI{0.26}{\ampere}}$
+
+\smallskip\noindent
+\textbf{b)} $R = \dfrac{U^2}{P} = \dfrac{(\SI{230}{\volt})^2}{\SI{60}{\watt}} = \SI{882}{\ohm} \approx \doubleunderline{\SI{8.8e2}{\ohm}}$
+
+\smallskip\noindent
+\textbf{c)} Tiden er $t = 30\cdot\SI{5.0}{\hour} = \SI{150}{\hour}$:
+\[
+  E = P\cdot t = \SI{0.060}{\kilo\watt}\cdot\SI{150}{\hour} = \doubleunderline{\SI{9.0}{kWh}}
+\]
+
+\smallskip\noindent
+\textbf{d)} LED-pæra bruker $E = \SI{0.0080}{\kilo\watt}\cdot\SI{150}{\hour} = \SI{1.2}{kWh}$. Vi sparer
+\[
+  \SI{9.0}{kWh} - \SI{1.2}{kWh} = \doubleunderline{\SI{7.8}{kWh}}
+\]
+}
+
+\oppgaver{Lading av elbil}{k9oppg12}{%
+\input{Oppgaver/k9_oppg12.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $I = \dfrac{P}{U} = \dfrac{\SI{22e3}{\watt}}{\SI{400}{\volt}} = \doubleunderline{\SI{55}{\ampere}}$
+
+\smallskip\noindent
+\textbf{b)} Fra \SI{20}{\percent} til \SI{80}{\percent} er \SI{60}{\percent} av kapasiteten: $E = 0.60\cdot\SI{60}{kWh} = \SI{36}{kWh}$.
+\[
+  t = \frac{E}{P} = \frac{\SI{36}{kWh}}{\SI{22}{\kilo\watt}} = \SI{1.64}{\hour} \approx \doubleunderline{\SI{1.6}{\hour}}
+\]
+Det er omtrent 1 time og 40 minutter.
+
+\smallskip\noindent
+\textbf{c)} $E = 36\cdot\SI{3.6e6}{\joule} = \SI{1.30e8}{\joule} \approx \doubleunderline{\SI{1.3e8}{\joule}}$
+}
+
+\oppgaver{Tre like motstander}{k9oppg13}{%
+\input{Oppgaver/k9_oppg13.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} Serie: $R_\text{tot} = 3\cdot\SI{30}{\ohm} = \doubleunderline{\SI{90}{\ohm}}$
+
+\smallskip\noindent
+\textbf{b)} Parallell: $\dfrac{1}{R_\text{tot}} = \dfrac{3}{\SI{30}{\ohm}}$, så $R_\text{tot} = \doubleunderline{\SI{10}{\ohm}}$.
+
+\smallskip\noindent
+\textbf{c)} To i parallell gir $\SI{15}{\ohm}$. Med den tredje i serie: $R_\text{tot} = \SI{15}{\ohm} + \SI{30}{\ohm} = \doubleunderline{\SI{45}{\ohm}}$.
+
+\smallskip\noindent
+\textbf{d)} Størst strøm får vi med minst resistans, altså når alle tre er i \doubleunderline{parallell}:
+\[
+  I = \frac{\SI{12}{\volt}}{\SI{10}{\ohm}} = \doubleunderline{\SI{1.2}{\ampere}}
+\]
+}
+
+\oppgaver{Kortslutning}{k9oppg14}{%
+\input{Oppgaver/k9_oppg14.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $I = \dfrac{U}{R} = \dfrac{\SI{12}{\volt}}{\SI{0.020}{\ohm}} = \doubleunderline{\SI{6.0e2}{\ampere}}$
+
+\smallskip\noindent
+\textbf{b)} $P = U\cdot I = \SI{12}{\volt}\cdot\SI{600}{\ampere} = \doubleunderline{\SI{7.2e3}{\watt}}$
+
+\smallskip\noindent
+\textbf{c)} Den store strømmen gir svært stor effekt i en liten gjenstand. Skiftenøkkelen og batteripolene blir glovarme på kort tid, og det kan bli gnister, brannskader og brann. Batteriet kan også bli skadet. I virkeligheten har batteriet selv en liten resistans som begrenser strømmen noe, men strømmen blir likevel flere hundre ampere.
+}
+
+\oppgaver{Strømregning}{k9oppg15}{%
+\input{Oppgaver/k9_oppg15.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)} $I = \dfrac{P}{U} = \dfrac{\SI{1500}{\watt}}{\SI{230}{\volt}} = \SI{6.52}{\ampere} \approx \doubleunderline{\SI{6.5}{\ampere}}$
+
+\smallskip\noindent
+\textbf{b)} Tiden er $t = 30\cdot\SI{8.0}{\hour} = \SI{240}{\hour}$:
+\[
+  E = P\cdot t = \SI{1.5}{\kilo\watt}\cdot\SI{240}{\hour} = \doubleunderline{\SI{3.6e2}{kWh}}
+\]
+
+\smallskip\noindent
+\textbf{c)} Kostnaden er $\SI{360}{kWh}\cdot\SI{1.20}{kr/kWh} = \SI{432}{kr} \approx \doubleunderline{\SI{4.3e2}{kr}}$.
+}
+
+\oppgaver{Krets med voltmeter}{k9oppg16}{%
+\input{Oppgaver/k9_oppg16.tex}%
+}
+
+\svar[title={Løsningsforslag}]{%
+\noindent
+\textbf{a)}
+\begin{center}
+\begin{circuitikz}
+  \draw (0,0) to[battery1, l=$\SI{12}{\volt}$] (0,3)
+        to[R, l=$R_1$] (3,3)
+        to[lamp] (3,0) -- (0,0);
+  \draw (3,3) -- (4.6,3) to[voltmeter] (4.6,0) -- (3,0);
+\end{circuitikz}
+\end{center}
+
+\noindent
+\textbf{b)} Spenningsloven: $U_1 = \SI{12}{\volt} - \SI{8.0}{\volt} = \doubleunderline{\SI{4.0}{\volt}}$
+
+\smallskip\noindent
+\textbf{c)} $I = \dfrac{U_1}{R_1} = \dfrac{\SI{4.0}{\volt}}{\SI{4.0}{\ohm}} = \doubleunderline{\SI{1.0}{\ampere}}$
+
+\smallskip\noindent
+\textbf{d)} $R_\text{L} = \dfrac{\SI{8.0}{\volt}}{\SI{1.0}{\ampere}} = \doubleunderline{\SI{8.0}{\ohm}}$
+
+\smallskip\noindent
+\textbf{e)} Pæra: $P_\text{L} = U_\text{L}I = \SI{8.0}{\volt}\cdot\SI{1.0}{\ampere} = \doubleunderline{\SI{8.0}{\watt}}$. Batteriet: $P = \SI{12}{\volt}\cdot\SI{1.0}{\ampere} = \doubleunderline{\SI{12}{\watt}}$. Resten, $\SI{4.0}{\watt}$, blir til varme i $R_1$.
+}

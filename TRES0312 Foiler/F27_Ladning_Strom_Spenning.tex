@@ -1,0 +1,325 @@
+%==========================================================================
+%  TRES0312 Fysikk — Foiler-mal
+%
+%  MØrk/lys modus: kommenter ut én av de to linjene nedenfor.
+%==========================================================================
+\newif\ifdarkmode
+\darkmodetrue      % ← mørk modus
+%\darkmodefalse   % ← lys modus  (fjern % foran og legg % foran linjen over)
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage{amd-beamer}
+\usepackage[european]{circuitikz}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{calc}
+
+%--------------------------------------------------------------------------
+%  DOKUMENTINFO
+%--------------------------------------------------------------------------
+\title{Ladning, strøm og spenning}
+\subtitle{TRES0312 --- kapittel 9.1 og 9.2}
+\author{Ben David Normann}
+\date{\today}
+
+%--------------------------------------------------------------------------
+%  SEKSJONSKONTEKST
+%--------------------------------------------------------------------------
+\setcounter{section}{9}   % Kapittel 9: "Elektrisitet"
+
+\begin{document}
+
+%--------------------------------------------------------------------------
+%  SLIDE 1 — TITTELSIDE
+%--------------------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+  \dekkerdelkap{kapittel 9.1 og 9.2}
+  \vspace{0.3cm}
+  \begin{center}
+  {\bfseries\color{repcol} Første time: elektrisk ladning og Coulombs lov. Etter pausen: strøm, spenning og kretser.}
+  \end{center}
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 2 — Tre kjappe fra forrige gang
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \repetisjon{Tre kjappe fra forrige gang}{%
+    \begin{enumerate}[1.]
+      \item Hvorfor må vi regne med temperaturen i kelvin i $pV = Nk_\text{B}T$?
+      \item Hvor mye energi trengs for å varme $1.0\,\mathrm{kg}$ vann med $1\,^\circ$C?
+      \item Hva er effekt? Hvilken enhet har effekt?
+    \end{enumerate}
+  }
+
+\end{frame}
+
+%==========================================================================
+%  DEL 1: ELEKTRISK LADNING OG COULOMBS LOV (9.1)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 3 — Til ettertanke: ballongen
+%--------------------------------------------------------------------------
+\begin{frame}{Elektrisk ladning}
+
+  \tanke{}{%
+  Du gnir en ballong mot genseren din, og etterpå kan ballongen henge fast i taket. Hva er det som har skjedd?
+  }
+  \pause
+  \svar{
+  Elektroner er flyttet fra genseren til ballongen. Ballongen har fått et \textit{overskudd} av elektroner og er negativt ladet. Genseren har fått et \textit{underskudd} og er positivt ladet.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 4 — Ladning
+%--------------------------------------------------------------------------
+\begin{frame}{Elektrisk ladning}
+
+  \begin{itemize}
+    \item<1-> Atomer består av positive \textbf{protoner}, nøytrale nøytroner og negative \textbf{elektroner}.
+    \item<2-> Et atom er \textbf{nøytralt}: like mange protoner som elektroner.
+    \item<3-> Ladning er \textbf{bevart}. Den kan flyttes, men ikke lages eller ødelegges.
+    \item<4-> Ladning måles i coulomb (C). Den minste frie ladningen er \textbf{elementærladningen}:
+  \end{itemize}
+  \onslide<4->{\graabox{$\displaystyle e = 1.602\cdot 10^{-19}\,\mathrm{C} \qquad\qquad q = N\cdot e$}}
+  \onslide<5->{\small \textbf{Ledere} (metaller) har frie elektroner. \textbf{Isolatorer} (plast, gummi, glass) har det ikke.}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 5 — Aktivitet: ballongen
+%--------------------------------------------------------------------------
+%  Fasit: a) N = |q|/e = 0.20e-6/1.602e-19 = 1.25e12 ≈ 1.2e12 elektroner.
+%         b) Genseren får +0.20 µC (ladningsbevaring).
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Ladningen på en ballong}{%
+  En ballong er gnidd mot en genser og har fått ladningen $q = -0.20\,\mathrm{\mu C}$.
+  \begin{enumerate}[a)]
+    \item Hvor mange elektroner har ballongen i overskudd?
+    \item Hvilken ladning har genseren fått?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 6 — Definisjon: Coulombs lov
+%--------------------------------------------------------------------------
+\begin{frame}{Coulombs lov}
+
+  \defnat{9.1.1}{Coulombs lov}{
+  Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ har størrelsen
+  \[
+    F_e = k\,\frac{|q_1|\,|q_2|}{r^2}, \qquad k = 8.99\cdot 10^{9}\,\mathrm{N\,m^2/C^2}
+  \]
+  Likt fortegn: \textit{frastøtende}. Motsatt fortegn: \textit{tiltrekkende}.
+  }
+  \pause
+  \merk{Ligner på gravitasjonsloven}{%
+  $F_g = G\,m_1m_2/r^2$ har samme form. Men gravitasjonen kan bare tiltrekke.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 7 — Aktivitet: kraft mellom to ladninger
+%--------------------------------------------------------------------------
+%  Fasit: a) F = 8.99e9 * 3.0e-6 * 5.0e-6 / 0.20^2 = 3.37 N ≈ 3.4 N, tiltrekkende.
+%         b) Dobbel avstand: F/4 = 0.84 N.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Kraft mellom to ladninger}{%
+  To ladninger, $q_1 = +3.0\,\mathrm{\mu C}$ og $q_2 = -5.0\,\mathrm{\mu C}$, er $r = 0.20\,\mathrm{m}$ fra hverandre.
+  \begin{enumerate}[a)]
+    \item Finn kraften mellom dem. Er den tiltrekkende eller frastøtende?
+    \item Hva blir kraften hvis avstanden dobles?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 8 — Til ettertanke: elektrisk kraft og gravitasjon
+%--------------------------------------------------------------------------
+\begin{frame}{Coulombs lov}
+
+  \tanke{}{%
+  I et hydrogenatom er den elektriske kraften mellom protonet og elektronet omtrent $10^{39}$ ganger sterkere enn gravitasjonen. Hvorfor merker vi da gravitasjonen best i hverdagen?
+  }
+  \pause
+  \svar{
+  Store legemer er nesten alltid elektrisk nøytrale. Da opphever tiltrekning og frastøtning hverandre. Gravitasjonen fra alle partiklene kan bare legges sammen.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Elektrisk ladning og Coulombs lov}{%
+  \begin{enumerate}[1.]
+    \item[] Ladning er bevart. Et legeme blir ladet ved å få overskudd eller underskudd av elektroner.
+    \item[] $q = N\cdot e$, med $e = 1.602\cdot 10^{-19}\,\mathrm{C}$.
+    \item[] Coulombs lov: $F_e = k\,|q_1||q_2|/r^2$. Likt fortegn frastøter, motsatt tiltrekker.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: strøm, spenning og kretser}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: STRØM, SPENNING OG ELEKTRISKE KRETSER (9.2)
+%==========================================================================
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — Til ettertanke: lysbryteren
+%--------------------------------------------------------------------------
+\begin{frame}{Elektrisk strøm}
+
+  \tanke{}{%
+  Når du slår på lysbryteren, lyser lampa nesten med en gang. Farer elektronene fra bryteren til lampa på et øyeblikk?
+  }
+  \pause
+  \svar{
+  Nei, elektronene beveger seg typisk under en millimeter per sekund. Men ledningen er full av frie elektroner fra før. Alle begynner å bevege seg nesten samtidig, som vann i en hageslange som allerede er full.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 12 — Definisjon: strøm
+%--------------------------------------------------------------------------
+\begin{frame}{Elektrisk strøm}
+
+  \defnat{9.2.1}{Elektrisk strøm}{
+  Når ladningen $q$ passerer et tverrsnitt i løpet av tiden $t$, er strømmen
+  \[
+    I = \frac{q}{t} \qquad [I] = \mathrm{A} = \mathrm{C/s}
+  \]
+  }
+  \pause
+  \merk{Strømretning}{%
+  Vi sier at strømmen går fra $+$ til $-$ utenfor batteriet. Elektronene beveger seg faktisk motsatt vei.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 13 — Definisjon: spenning
+%--------------------------------------------------------------------------
+\begin{frame}{Spenning}
+
+  \defnat{9.2.2}{Spenning}{
+  Spenningen $U$ mellom to punkter er arbeidet per ladning som trengs for å flytte ladningen fra det ene punktet til det andre:
+  \[
+    U = \frac{W}{q} \qquad [U] = \mathrm{V} = \mathrm{J/C}
+  \]
+  }
+  \pause
+  Tenk på spenning som \textbf{høydeforskjell}: Batteriet løfter ladningene opp, og strømmen «renner nedover» gjennom kretsen. Et batteri på $9.0\,\mathrm{V}$ gir $9.0\,\mathrm{J}$ til hver coulomb.
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 14 — Aktivitet: ladekabel
+%--------------------------------------------------------------------------
+%  Fasit: a) t = 45 min = 2700 s. q = 2.0 * 2700 = 5.4e3 C.
+%         b) N = 5.4e3/1.602e-19 = 3.4e22.
+%         c) W = U q = 5.0 * 5.4e3 = 2.7e4 J.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Strøm i en ladekabel}{%
+  En mobil lades med strømmen $2.0\,\mathrm{A}$ i $45\,\mathrm{min}$ fra en lader på $5.0\,\mathrm{V}$.
+  \begin{enumerate}[a)]
+    \item Hvor mye ladning har gått gjennom kabelen?
+    \item Hvor mange elektroner tilsvarer det?
+    \item Hvor mye energi har laderen levert?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 15 — Kretser og symboler
+%--------------------------------------------------------------------------
+\begin{frame}{Elektriske kretser}
+
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \begin{itemize}
+        \item<1-> Det går bare strøm i en \textbf{lukket} krets.
+        \item<2-> \textbf{Amperemeter} kobles \textit{i serie}: strømmen må gå gjennom det.
+        \item<3-> \textbf{Voltmeter} kobles \textit{i parallell} over komponenten.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{circuitikz}[color=textcolor, scale=0.9, transform shape]
+        \draw (0,0) to[battery1, l=$U$] (0,3)
+              to[ammeter, l=$A$] (3,3)
+              to[lamp] (3,0) -- (0,0);
+        \draw (3,3) -- (4.6,3) to[voltmeter, l=$V$] (4.6,0) -- (3,0);
+      \end{circuitikz}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 16 — Til ettertanke: amperemeter og voltmeter
+%--------------------------------------------------------------------------
+\begin{frame}{Elektriske kretser}
+
+  \tanke{}{%
+  Et godt amperemeter har svært liten resistans, mens et godt voltmeter har svært stor resistans. Hvorfor?
+  }
+  \pause
+  \svar{
+  Måleinstrumentet skal ikke endre kretsen. Et amperemeter i serie må slippe strømmen lett gjennom. Et voltmeter i parallell skal ikke «stjele» strøm fra komponenten det måler over.
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 17 — Oppsummering: del 2
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Strøm, spenning og kretser}{%
+  \begin{enumerate}[1.]
+    \item[] Strøm er ladning per tid: $I = q/t$.
+    \item[] Spenning er energi per ladning: $U = W/q$.
+    \item[] Amperemeter i serie, voltmeter i parallell.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 18 — Neste gang
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Neste gang: Ohms lov, koblinger og effekt}
+  \vspace{6mm}
+\end{center}
+\end{frame}
+
+\end{document}
