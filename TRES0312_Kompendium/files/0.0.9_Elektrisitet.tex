@@ -2,10 +2,10 @@
 \chapter{Elektrisitet}
 \label{Chapter:elektrisitet}
 
-\intro{Lyset i rommet, mobilen i lomma og elbilen i garasjen virker alle fordi elektrisk ladning flytter seg gjennom ledninger. I dette kapitlet starter vi med selve ladningen og kraften mellom ladninger. Deretter ser vi på hva strøm og spenning er, og hvordan de henger sammen med motstand gjennom Ohms lov. Vi lærer å regne på kretser med motstander koblet i serie og i parallell, og bruker Kirchhoffs lover når kretsene blir sammensatte. Til slutt ser vi på elektrisk effekt og energi, altså hva som faktisk står på strømregningen.}
+\intro{Lyset i rommet, mobilen i lomma og elbilen i garasjen virker alle fordi elektrisk ladning flytter seg gjennom ledninger. I dette kapitlet starter vi med selve ladningen. Deretter ser vi på hva strøm og spenning er, og hvordan de henger sammen med motstand gjennom Ohms lov. Vi lærer å regne på kretser med motstander koblet i serie og i parallell, og bruker Kirchhoffs lover når kretsene blir sammensatte. Til slutt ser vi på elektrisk effekt og energi, altså hva som faktisk står på strømregningen.}
 
 \spm{}{%
-\item Hva er elektrisk ladning, og hvor stor er kraften mellom to ladninger?
+\item Hva er elektrisk ladning?
 \item Hva er strøm og spenning, og hva sier Ohms lov?
 \item Hvordan regner vi på serie- og parallellkoblinger?
 \item Hvor mye effekt og energi bruker et elektrisk apparat?}
@@ -13,7 +13,7 @@
 \newpage
 
 %=============================================================
-\section{Elektrisk ladning og Coulombs lov}
+\section{Elektrisk ladning}
 %=============================================================
 
 \tanke{}{Du gnir en ballong mot genseren din, og etterpå kan ballongen henge fast i taket. Hva er det som har skjedd?}
@@ -59,74 +59,10 @@ Stoffer deles inn i tre grupper etter hvor godt de leder elektrisk strøm:
   \item \textbf{Halvledere}, som silisium, ligger imellom. Ledningsevnen kan styres, og de er grunnlaget for dioder, transistorer og all moderne elektronikk.
 \end{itemize}
 
-\subsection*{Coulombs lov}
+\merk{Til orientering: kraften mellom ladninger}{%
+Ladninger med \emph{likt} fortegn frastøter hverandre, og ladninger med \emph{motsatt} fortegn tiltrekker hverandre. Kraften blir mindre jo lenger fra hverandre ladningene er. Dette beskrives av \emph{Coulombs lov}, $F = k\,|q_1||q_2|/r^2$, som har samme form som Newtons gravitasjonslov. Ingen av de to lovene er pensum i dette faget.
 
-To ladde legemer virker med en kraft på hverandre. Ladninger med \emph{likt} fortegn frastøter hverandre, og ladninger med \emph{motsatt} fortegn tiltrekker hverandre. Kraften blir mindre jo lenger fra hverandre ladningene er.
-
-\defn{Coulombs lov}{%
-Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ har størrelsen
-\[
-  F_e = k \frac{|q_1|\,|q_2|}{r^2}, \qquad k = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
-\]
-Kraften er \emph{tiltrekkende} dersom ladningene har motsatt fortegn, og \emph{frastøtende} dersom de har likt fortegn.
-}
-
-Coulombs lov ligner på Newtons gravitasjonslov. Begge kreftene avtar med kvadratet av avstanden. Forskjellen er at gravitasjonen alltid tiltrekker, mens den elektriske kraften både kan tiltrekke og frastøte.
-
-\begin{tcolorbox}[colback=gray!13, colframe=gray!40, boxrule=0.5pt,
-    arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
-\textbf{Gravitasjon og elektrisitet: to naturkrefter med samme form}
-
-\medskip
-\begin{tabular}{lll}
-  & \textbf{Gravitasjon} & \textbf{Elektrisitet} \\
-  \hline
-  Formel & $F_g = G\,\dfrac{m_1 m_2}{r^2}$ & $F_e = k\,\dfrac{|q_1||q_2|}{r^2}$ \\[8pt]
-  Hva gir kraften & Masse $m$ & Elektrisk ladning $q$ \\
-  Konstant & $G = \SI{6.67e-11}{\newton\metre\squared\per\kilo\gram\squared}$ & $k = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}$ \\
-  Retning & Alltid tiltrekkende & Tiltrekkende eller frastøtende \\
-\end{tabular}
-\end{tcolorbox}
-
-\exm{Kraft mellom to ladninger}{%
-To ladninger, $q_1 = \SI{+2.0}{\micro\coulomb}$ og $q_2 = \SI{-3.0}{\micro\coulomb}$, er $r = \SI{0.10}{\metre}$ fra hverandre. Finn kraften mellom dem. Er den tiltrekkende eller frastøtende?
-}
-
-\svar{%
-\[
-  F_e = k\frac{|q_1||q_2|}{r^2}
-      = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
-        \cdot \frac{\SI{2.0e-6}{\coulomb}\cdot\SI{3.0e-6}{\coulomb}}{(\SI{0.10}{\metre})^2}
-      = \doubleunderline{\SI{5.4}{\newton}}
-\]
-Ladningene har motsatt fortegn, så kraften er \doubleunderline{tiltrekkende}.
-}
-
-\exm{Elektrisk kraft og gravitasjon i et hydrogenatom}{%
-I et hydrogenatom er avstanden mellom protonet og elektronet omtrent $r = \SI{5.3e-11}{\metre}$. Protonet har massen $\SI{1.67e-27}{\kilo\gram}$, og elektronet har massen $\SI{9.11e-31}{\kilo\gram}$. Sammenlign den elektriske kraften og gravitasjonskraften mellom dem.
-}
-
-\svar{%
-\noindent
-Begge partiklene har ladning med størrelse $e$:
-\[
-  F_e = k\frac{e^2}{r^2} = \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}\cdot\frac{(\SI{1.602e-19}{\coulomb})^2}{(\SI{5.3e-11}{\metre})^2} = \SI{8.2e-8}{\newton}
-\]
-\[
-  F_g = G\frac{m_p m_e}{r^2} = \SI{6.67e-11}{\newton\metre\squared\per\kilo\gram\squared}\cdot\frac{\SI{1.67e-27}{\kilo\gram}\cdot\SI{9.11e-31}{\kilo\gram}}{(\SI{5.3e-11}{\metre})^2} = \SI{3.6e-47}{\newton}
-\]
-\[
-  \frac{F_e}{F_g} = \frac{\SI{8.2e-8}{\newton}}{\SI{3.6e-47}{\newton}} \approx \doubleunderline{\num{2.3e39}}
-\]
-Den elektriske kraften er altså omtrent $10^{39}$ ganger sterkere! Gravitasjonen merker vi likevel best i hverdagen, fordi store legemer nesten alltid er elektrisk nøytrale. Da opphever de elektriske kreftene hverandre, mens gravitasjonen fra alle partiklene legges sammen.
-}
-
-\oppgaver{Ballong og genser}{k9oppg1}{%
-\input{Oppgaver/k9_oppg01.tex}%
-}
-
-\oppgaver{To ladde kuler}{k9oppg2}{%
-\input{Oppgaver/k9_oppg02.tex}%
+Det forklarer også ballongen i taket: Den negative ballongen skyver elektronene i taket litt unna, slik at overflaten nærmest ballongen blir svakt positiv. Siden de positive ladningene er nærmest, blir ballongen trukket mot taket.
 }
 
 %=============================================================
@@ -240,12 +176,12 @@ Vi måler strøm med et \emph{amperemeter} og spenning med et \emph{voltmeter}:
 \label{fig:amperemeter_voltmeter}
 \end{center}
 
-\oppgaver{Lading av mobil}{k9oppg3}{%
-\input{Oppgaver/k9_oppg03.tex}%
+\oppgaver{Lading av mobil}{k9oppg1}{%
+\input{Oppgaver/k9_oppg01.tex}%
 }
 
-\oppgaver{Måle strøm og spenning}{k9oppg4}{%
-\input{Oppgaver/k9_oppg04.tex}%
+\oppgaver{Måle strøm og spenning}{k9oppg2}{%
+\input{Oppgaver/k9_oppg02.tex}%
 }
 
 %=============================================================
@@ -291,12 +227,12 @@ En lyspære kobles til $\SI{230}{\volt}$, og et amperemeter viser at strømmen e
 Kobler vi polene på et batteri sammen med bare en ledning, er resistansen nesten null. Etter Ohms lov, $I = U/R$, blir strømmen da svært stor. Ledningen og batteriet kan bli så varme at det begynner å brenne. Dette kalles \emph{kortslutning}, og det er derfor vi har sikringer.
 }
 
-\oppgaver{Ohms lov i tre varianter}{k9oppg5}{%
-\input{Oppgaver/k9_oppg05.tex}%
+\oppgaver{Ohms lov i tre varianter}{k9oppg3}{%
+\input{Oppgaver/k9_oppg03.tex}%
 }
 
-\oppgaver{Måleserie for en motstand}{k9oppg6}{%
-\input{Oppgaver/k9_oppg06.tex}%
+\oppgaver{Måleserie for en motstand}{k9oppg4}{%
+\input{Oppgaver/k9_oppg04.tex}%
 }
 
 %=============================================================
@@ -406,12 +342,12 @@ Spenningen over begge er $\SI{12}{\volt}$:
 Strømmen fra batteriet er $I = I_1 + I_2 = \doubleunderline{\SI{3.0}{\ampere}}$. Kontroll: $U/R_\text{tot} = \SI{12}{\volt}/\SI{4.0}{\ohm} = \SI{3.0}{\ampere}$. Den minste motstanden får den største strømmen.
 }
 
-\oppgaver{Julelys i serie}{k9oppg7}{%
-\input{Oppgaver/k9_oppg07.tex}%
+\oppgaver{Julelys i serie}{k9oppg5}{%
+\input{Oppgaver/k9_oppg05.tex}%
 }
 
-\oppgaver{Lamper i parallell}{k9oppg8}{%
-\input{Oppgaver/k9_oppg08.tex}%
+\oppgaver{Lamper i parallell}{k9oppg6}{%
+\input{Oppgaver/k9_oppg06.tex}%
 }
 
 %=============================================================
@@ -508,12 +444,12 @@ Total resistans: $R_\text{tot} = \SI{1.0}{\ohm} + \SI{0.82}{\ohm} = \SI{1.82}{\o
 \]
 }
 
-\oppgaver{Krets med fire motstander}{k9oppg9}{%
-\input{Oppgaver/k9_oppg09.tex}%
+\oppgaver{Krets med fire motstander}{k9oppg7}{%
+\input{Oppgaver/k9_oppg07.tex}%
 }
 
-\oppgaver{Spenningsloven}{k9oppg10}{%
-\input{Oppgaver/k9_oppg10.tex}%
+\oppgaver{Spenningsloven}{k9oppg8}{%
+\input{Oppgaver/k9_oppg08.tex}%
 }
 
 %=============================================================
@@ -592,12 +528,12 @@ To like lyspærer har hver resistansen $\SI{6.0}{\ohm}$. De kobles til et batter
 I parallell lyser hver pære med fire ganger så stor effekt. Pærene lyser altså \doubleunderline{sterkest i parallell}. Det er derfor lamper i et hus er koblet i parallell: Hver lampe får hele spenningen fra stikkontakten.
 }
 
-\oppgaver{Lyspære}{k9oppg11}{%
-\input{Oppgaver/k9_oppg11.tex}%
+\oppgaver{Lyspære}{k9oppg9}{%
+\input{Oppgaver/k9_oppg09.tex}%
 }
 
-\oppgaver{Lading av elbil}{k9oppg12}{%
-\input{Oppgaver/k9_oppg12.tex}%
+\oppgaver{Lading av elbil}{k9oppg10}{%
+\input{Oppgaver/k9_oppg10.tex}%
 }
 
 \clearpage
@@ -605,18 +541,18 @@ I parallell lyser hver pære med fire ganger så stor effekt. Pærene lyser alts
 
 Her er flere oppgaver fra temaene vi har behandlet i dette kapitlet.
 
-\oppgaver{Tre like motstander}{k9oppg13}{%
+\oppgaver{Tre like motstander}{k9oppg11}{%
+\input{Oppgaver/k9_oppg11.tex}%
+}
+
+\oppgaver{Kortslutning}{k9oppg12}{%
+\input{Oppgaver/k9_oppg12.tex}%
+}
+
+\oppgaver{Strømregning}{k9oppg13}{%
 \input{Oppgaver/k9_oppg13.tex}%
 }
 
-\oppgaver{Kortslutning}{k9oppg14}{%
+\oppgaver{Krets med voltmeter}{k9oppg14}{%
 \input{Oppgaver/k9_oppg14.tex}%
-}
-
-\oppgaver{Strømregning}{k9oppg15}{%
-\input{Oppgaver/k9_oppg15.tex}%
-}
-
-\oppgaver{Krets med voltmeter}{k9oppg16}{%
-\input{Oppgaver/k9_oppg16.tex}%
 }

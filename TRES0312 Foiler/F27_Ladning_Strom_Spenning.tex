@@ -37,7 +37,7 @@
   \dekkerdelkap{kapittel 9.1 og 9.2}
   \vspace{0.3cm}
   \begin{center}
-  {\bfseries\color{repcol} Første time: elektrisk ladning og Coulombs lov. Etter pausen: strøm, spenning og kretser.}
+  {\bfseries\color{repcol} Første time: elektrisk ladning og strøm. Etter pausen: spenning og kretser.}
   \end{center}
 \end{frame}
 
@@ -57,7 +57,7 @@
 \end{frame}
 
 %==========================================================================
-%  DEL 1: ELEKTRISK LADNING OG COULOMBS LOV (9.1)
+%  DEL 1: ELEKTRISK LADNING OG STRØM (9.1 OG 9.2)
 %==========================================================================
 
 %--------------------------------------------------------------------------
@@ -87,7 +87,6 @@
     \item<4-> Ladning måles i coulomb (C). Den minste frie ladningen er \textbf{elementærladningen}:
   \end{itemize}
   \onslide<4->{\graabox{$\displaystyle e = 1.602\cdot 10^{-19}\,\mathrm{C} \qquad\qquad q = N\cdot e$}}
-  \onslide<5->{\small \textbf{Ledere} (metaller) har frie elektroner. \textbf{Isolatorer} (plast, gummi, glass) har det ikke.}
 
 \end{frame}
 
@@ -109,87 +108,23 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 6 — Definisjon: Coulombs lov
+%  SLIDE 6 — Ledere og isolatorer + orientering om kraft mellom ladninger
 %--------------------------------------------------------------------------
-\begin{frame}{Coulombs lov}
+\begin{frame}{Ledere og isolatorer}
 
-  \defnat{9.1.1}{Coulombs lov}{
-  Kraften mellom to punktladninger $q_1$ og $q_2$ med avstand $r$ har størrelsen
-  \[
-    F_e = k\,\frac{|q_1|\,|q_2|}{r^2}, \qquad k = 8.99\cdot 10^{9}\,\mathrm{N\,m^2/C^2}
-  \]
-  Likt fortegn: \textit{frastøtende}. Motsatt fortegn: \textit{tiltrekkende}.
-  }
-  \pause
-  \merk{Ligner på gravitasjonsloven}{%
-  $F_g = G\,m_1m_2/r^2$ har samme form. Men gravitasjonen kan bare tiltrekke.
-  }
+  \begin{itemize}
+    \item<1-> \textbf{Ledere} (metaller som kobber) har frie elektroner som kan bevege seg.
+    \item<2-> \textbf{Isolatorer} (plast, gummi, glass) holder fast på elektronene sine.
+    \item<3-> \textbf{Halvledere} (silisium) ligger imellom. De er grunnlaget for all elektronikk.
+  \end{itemize}
+  \onslide<4->{\merk{Til orientering (ikke pensum)}{%
+  Likt fortegn frastøter, motsatt fortegn tiltrekker, og kraften avtar med avstanden. Derfor henger ballongen i taket: Den skyver elektronene i taket litt unna, og den positive overflaten som blir igjen, trekker på ballongen.
+  }}
 
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 7 — Aktivitet: kraft mellom to ladninger
-%--------------------------------------------------------------------------
-%  Fasit: a) F = 8.99e9 * 3.0e-6 * 5.0e-6 / 0.20^2 = 3.37 N ≈ 3.4 N, tiltrekkende.
-%         b) Dobbel avstand: F/4 = 0.84 N.
-\begin{frame}{Aktivitet}
-
-  \aktivitet{Kraft mellom to ladninger}{%
-  To ladninger, $q_1 = +3.0\,\mathrm{\mu C}$ og $q_2 = -5.0\,\mathrm{\mu C}$, er $r = 0.20\,\mathrm{m}$ fra hverandre.
-  \begin{enumerate}[a)]
-    \item Finn kraften mellom dem. Er den tiltrekkende eller frastøtende?
-    \item Hva blir kraften hvis avstanden dobles?
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 8 — Til ettertanke: elektrisk kraft og gravitasjon
-%--------------------------------------------------------------------------
-\begin{frame}{Coulombs lov}
-
-  \tanke{}{%
-  I et hydrogenatom er den elektriske kraften mellom protonet og elektronet omtrent $10^{39}$ ganger sterkere enn gravitasjonen. Hvorfor merker vi da gravitasjonen best i hverdagen?
-  }
-  \pause
-  \svar{
-  Store legemer er nesten alltid elektrisk nøytrale. Da opphever tiltrekning og frastøtning hverandre. Gravitasjonen fra alle partiklene kan bare legges sammen.
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 9 — Oppsummering: del 1
-%--------------------------------------------------------------------------
-\begin{frame}{}
-
-  \oppsum{Elektrisk ladning og Coulombs lov}{%
-  \begin{enumerate}[1.]
-    \item[] Ladning er bevart. Et legeme blir ladet ved å få overskudd eller underskudd av elektroner.
-    \item[] $q = N\cdot e$, med $e = 1.602\cdot 10^{-19}\,\mathrm{C}$.
-    \item[] Coulombs lov: $F_e = k\,|q_1||q_2|/r^2$. Likt fortegn frastøter, motsatt tiltrekker.
-  \end{enumerate}
-  }
-
-\end{frame}
-
-%--------------------------------------------------------------------------
-%  SLIDE 10 — PAUSE
-%--------------------------------------------------------------------------
-\begin{frame}
-\begin{center}
-  \Huge{Pause}\\[8pt]
-  {\large Etter pausen: strøm, spenning og kretser}
-\end{center}
-\end{frame}
-
-%==========================================================================
-%  DEL 2: STRØM, SPENNING OG ELEKTRISKE KRETSER (9.2)
-%==========================================================================
-
-%--------------------------------------------------------------------------
-%  SLIDE 11 — Til ettertanke: lysbryteren
+%  SLIDE 7 — Til ettertanke: lysbryteren
 %--------------------------------------------------------------------------
 \begin{frame}{Elektrisk strøm}
 
@@ -204,7 +139,7 @@
 \end{frame}
 
 %--------------------------------------------------------------------------
-%  SLIDE 12 — Definisjon: strøm
+%  SLIDE 8 — Definisjon: strøm
 %--------------------------------------------------------------------------
 \begin{frame}{Elektrisk strøm}
 
@@ -220,6 +155,53 @@
   }
 
 \end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 9 — Aktivitet: lommelykt
+%--------------------------------------------------------------------------
+%  Fasit: a) t = 10 min = 600 s. q = 0.50 * 600 = 3.0e2 C.
+%         b) N = 300/1.602e-19 = 1.87e21 ≈ 1.9e21 elektroner.
+%         c) I = q/t = 1.0/2.0e-3 = 5.0e2 A.
+\begin{frame}{Aktivitet}
+
+  \aktivitet{Strøm og ladning}{%
+  \begin{enumerate}[a)]
+    \item En lommelykt trekker strømmen $0.50\,\mathrm{A}$ i $10\,\mathrm{min}$. Hvor mye ladning har gått gjennom lyspæra?
+    \item Hvor mange elektroner tilsvarer det?
+    \item En gnist overfører ladningen $1.0\,\mathrm{C}$ på $2.0\,\mathrm{ms}$. Hvor stor er strømmen?
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 10 — Oppsummering: del 1
+%--------------------------------------------------------------------------
+\begin{frame}{}
+
+  \oppsum{Elektrisk ladning og strøm}{%
+  \begin{enumerate}[1.]
+    \item[] Ladning er bevart. Et legeme blir ladet ved å få overskudd eller underskudd av elektroner.
+    \item[] $q = N\cdot e$, med $e = 1.602\cdot 10^{-19}\,\mathrm{C}$.
+    \item[] Strøm er ladning per tid: $I = q/t$, målt i ampere.
+  \end{enumerate}
+  }
+
+\end{frame}
+
+%--------------------------------------------------------------------------
+%  SLIDE 11 — PAUSE
+%--------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+  \Huge{Pause}\\[8pt]
+  {\large Etter pausen: spenning og kretser}
+\end{center}
+\end{frame}
+
+%==========================================================================
+%  DEL 2: SPENNING OG ELEKTRISKE KRETSER (9.2)
+%==========================================================================
 
 %--------------------------------------------------------------------------
 %  SLIDE 13 — Definisjon: spenning
@@ -302,7 +284,7 @@
 %--------------------------------------------------------------------------
 \begin{frame}{}
 
-  \oppsum{Strøm, spenning og kretser}{%
+  \oppsum{Spenning og kretser}{%
   \begin{enumerate}[1.]
     \item[] Strøm er ladning per tid: $I = q/t$.
     \item[] Spenning er energi per ladning: $U = W/q$.

@@ -526,6 +526,59 @@ All tilført energi $E$ fordeles mellom væsken og termosen:
 \]
 }
 
+\exm{Dampe eller koke poteter?}{%
+Lønner det seg å \emph{dampe} poteter (lite vann i bunnen og potetene i en innsats over) i stedet for å \emph{koke} dem (potetene dekket av vann)? Vi lager $m_\text{potet} = \SI{1.0}{\kilo\gram}$ poteter med spesifikk varmekapasitet $c_\text{potet} \approx \SI{3.5}{\kilo\joule\per(\kilo\gram\kelvin)}$. Alt starter ved $10\,^\circ$C. Kokes potetene, trengs \SI{1.5}{\litre} vann. Dampes de, trengs \SI{0.30}{\litre} vann. Se bort fra kjelen og varmetap.
+\begin{enumerate}[a)]
+    \item Hvor mye energi trengs for å varme potetene til $100\,^\circ$C?
+    \item Hvor mye energi trengs for å varme vannet til $100\,^\circ$C med hver av metodene?
+    \item Når vi damper, varmes potetene av damp som kondenserer på dem. Hvor mye damp må kondensere? Hvor mye energi trengs totalt med hver metode?
+    \item Hvor mye energi sparer vi ved å dampe? Gi svaret også i kWh.
+    \item Kokeplata har effekten $P = \SI{2.0}{\kilo\watt}$. Hvor lang tid tar det å få potetene opp i $100\,^\circ$C med hver av metodene?
+\end{enumerate}
+}
+
+\svar{%
+\noindent
+\textbf{a)} Potetene varmes $\Delta T = \SI{90}{\kelvin}$, uansett metode:
+\[
+  Q_\text{potet} = c_\text{potet} m_\text{potet} \Delta T = \SI{3.5}{\kilo\joule\per(\kilo\gram\kelvin)}\cdot\SI{1.0}{\kilo\gram}\cdot\SI{90}{\kelvin}
+      = \SI{315}{\kilo\joule} \approx \doubleunderline{\SI{3.2e2}{\kilo\joule}}
+\]
+
+\smallskip\noindent
+\textbf{b)} Med $m = \rho V$ er massen av vannet \SI{1.5}{\kilo\gram} og \SI{0.30}{\kilo\gram}:
+\begin{align*}
+  \text{Koke:}\quad Q_\text{vann} &= \SI{4.2}{\kilo\joule\per(\kilo\gram\kelvin)}\cdot\SI{1.5}{\kilo\gram}\cdot\SI{90}{\kelvin} = \SI{567}{\kilo\joule} \approx \doubleunderline{\SI{5.7e2}{\kilo\joule}}\\
+  \text{Dampe:}\quad Q_\text{vann} &= \SI{4.2}{\kilo\joule\per(\kilo\gram\kelvin)}\cdot\SI{0.30}{\kilo\gram}\cdot\SI{90}{\kelvin} = \SI{113}{\kilo\joule} \approx \doubleunderline{\SI{1.1e2}{\kilo\joule}}
+\end{align*}
+
+\smallskip\noindent
+\textbf{c)} Når dampen kondenserer på potetene, avgir den fordampingsvarmen. Potetene trenger \SI{315}{\kilo\joule}, så massen damp som må kondensere er
+\[
+  Q_\text{potet} = \ell_\text{fordamp}\, m_\text{damp} \implies m_\text{damp} = \frac{Q_\text{potet}}{\ell_\text{fordamp}} = \frac{\SI{315}{\kilo\joule}}{\SI{2259}{\kilo\joule\per\kilo\gram}} = \SI{0.139}{\kilo\gram} \approx \doubleunderline{\SI{0.14}{\kilo\gram}}
+\]
+Plata må lage denne dampen, og det koster akkurat de \SI{315}{\kilo\joule} som dampen senere gir til potetene. Med begge metodene må plata altså levere energien til potetene pluss energien til å varme vannet:
+\begin{align*}
+  \text{Koke:}\quad Q_\text{tot} &= \SI{315}{\kilo\joule} + \SI{567}{\kilo\joule} = \SI{882}{\kilo\joule} \approx \doubleunderline{\SI{8.8e2}{\kilo\joule}}\\
+  \text{Dampe:}\quad Q_\text{tot} &= \SI{315}{\kilo\joule} + \SI{113}{\kilo\joule} = \SI{428}{\kilo\joule} \approx \doubleunderline{\SI{4.3e2}{\kilo\joule}}
+\end{align*}
+
+\smallskip\noindent
+\textbf{d)} Vi sparer $\SI{882}{\kilo\joule} - \SI{428}{\kilo\joule} = \SI{454}{\kilo\joule} \approx \doubleunderline{\SI{4.5e2}{\kilo\joule}}$. Med $\SI{1}{kWh} = \SI{3.6e6}{\joule} = \SI{3600}{\kilo\joule}$ blir dette
+\[
+  \frac{\SI{454}{\kilo\joule}}{\SI{3600}{\kilo\joule/kWh}} = \doubleunderline{\SI{0.13}{kWh}},
+\]
+omtrent halvparten av energien til oppvarmingen.
+
+\smallskip\noindent
+\textbf{e)} Effekt er energi per tid, $P = E/t$, så $t = E/P$:
+\begin{align*}
+  \text{Koke:}\quad t &= \frac{\SI{882}{\kilo\joule}}{\SI{2.0}{\kilo\joule\per\second}} = \SI{441}{\second} \approx \doubleunderline{\SI{7.4}{\minute}}\\
+  \text{Dampe:}\quad t &= \frac{\SI{428}{\kilo\joule}}{\SI{2.0}{\kilo\joule\per\second}} = \SI{214}{\second} \approx \doubleunderline{\SI{3.6}{\minute}}
+\end{align*}
+Damping halverer altså også tiden før det koker. I virkeligheten tar begge deler lenger tid, fordi noe av energien går til kjelen og tapes til omgivelsene. Når det først koker, må plata bare dekke varmetapet, og det er omtrent like stort med begge metodene når det er lokk på kjelen.
+}
+
 \oppgaver{Cola og is}{k8oppg7}{%
 \input{Oppgaver/k8_oppg07.tex}%
 }
