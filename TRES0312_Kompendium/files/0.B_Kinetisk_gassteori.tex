@@ -1,0 +1,127 @@
+% !TEX root = ../main.tex
+\documentclass[../Main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Kinetisk gassteori: hvor kommer \texorpdfstring{$\tfrac{2}{3}$}{2/3} fra?}
+\label{app:gassteori}
+
+\intro{I kapittel~\ref{Chapter:termofysikk} brukte vi at trykket og volumet til en idealgass henger sammen med den kinetiske energien til molekylene, $pV = \tfrac{2}{3}N\bar{E}_\text{K}$. Her viser vi hvor dette kommer fra. Vi trenger ingen ny fysikk: alt følger fra elastiske støt, bevegelsesmengde og Newtons 2.\ lov, som vi har lært i kapittel~\ref{Chapter:dynamikk} og~\ref{Chapter:energi}.}
+
+\section{Modellen}
+
+Vi ser på en idealgass med $N$ like molekyler, hver med masse $m$. Gassen er stengt inne i en kubeformet boks med sidekant $L$, slik at volumet er $V = L^3$ og hver vegg har arealet $A = L^2$. Vi legger en $x$-akse vinkelrett på høyre vegg (figur~\ref{fig:gassteori_boks}).
+
+Molekylene farer rundt i alle retninger. Hvert molekyl har en hastighet $\vec{v}$ med komponentene $v_x$, $v_y$ og $v_z$. Trykket på veggen skyldes at molekylene hele tiden treffer den og spretter tilbake. Vi skal regne ut hvor stor kraft dette gir på høyre vegg.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, >={Stealth[length=8pt,width=6pt]}]
+  % Boks
+  \fill[headCol!8] (0,0) rectangle (4,4);
+  \draw[headCol!60!black, thick] (0,0) rectangle (4,4);
+  \fill[headCol!25] (4,0) rectangle (4.15,4);
+  \node[right, font=\small] at (4.2,3.6) {høyre vegg};
+  % Molekyl
+  \fill[defscol!80] (1.6,2.2) circle (0.12);
+  \node[below left, font=\small] at (1.55,2.15) {$m$};
+  \draw[->, line width=2pt, defscol] (1.6,2.2) -- (2.9,2.9)
+      node[above right=-2pt, font=\small] {$\vec{v}$};
+  \draw[->, thick, dashed, defscol!70] (1.6,2.2) -- (2.9,2.2)
+      node[below right=-1pt, font=\small, defscol!80!black] {$v_x$};
+  % Andre molekyler
+  \foreach \p in {(0.6,0.7),(3.1,0.9),(0.9,3.3),(2.5,1.4),(3.4,3.3),(0.5,1.9)}
+    \fill[defscol!50] \p circle (0.09);
+  % Akse og mål
+  \draw[->, thin, gray!70] (0,-0.6) -- (4.8,-0.6) node[right, font=\small] {$x$};
+  \draw[<->, thin, gray!70] (0,-0.3) -- (4,-0.3) node[midway, below, font=\footnotesize] {$L$};
+\end{tikzpicture}
+\captionof{figure}{Molekyler i en kubeformet boks med sidekant $L$. Bare fartskomponenten $v_x$ bestemmer hvordan et molekyl treffer høyre vegg.}
+\label{fig:gassteori_boks}
+\end{center}
+
+Vi ser bort fra kollisjoner mellom molekylene. Det går an fordi kollisjoner mellom molekyler også er elastiske: Både den totale bevegelsesmengden og den totale kinetiske energien er bevart. Molekylene bytter bare fart og retning med hverandre, og gjennomsnittene vi skal bruke, endres ikke.
+
+\section{Ett molekyl treffer veggen}
+
+\paragraph{Molekylet spretter tilbake.} Når et molekyl treffer veggen, er det et elastisk støt mellom molekylet og veggen. I eksempelet \emph{Elastisk kollisjon mellom vogner med ulik masse} i kapittel~\ref{Chapter:energi} fant vi at et legeme med masse $m_1$ og fart $v_1$ som treffer et legeme med masse $m_2$ i ro, får farten
+\[
+  u_1 = \frac{m_1 - m_2}{m_1 + m_2}\,v_1 .
+\]
+Veggen er enormt mye tyngre enn molekylet ($m_2 \gg m_1$). Da blir brøken svært nær $-1$, og
+\[
+  u_1 \approx -v_1 .
+\]
+Molekylet spretter altså tilbake med like stor fart, men i motsatt retning. Veggen dytter bare vinkelrett på seg selv, så det er bare $x$-komponenten som snur: $v_x$ blir til $-v_x$, mens $v_y$ og $v_z$ er uendret. Farten er den samme, så den kinetiske energien er bevart, slik den skal være i et elastisk støt.
+
+\paragraph{Endring i bevegelsesmengde.} Før støtet har molekylet bevegelsesmengden $mv_x$ i $x$-retning, og etter støtet $-mv_x$. Endringen er
+\[
+  \Delta p_x = (-mv_x) - mv_x = -2mv_x .
+\]
+Etter Newtons 3.\ lov får veggen like stor endring den motsatte veien, altså $+2mv_x$, rettet utover.
+
+\paragraph{Hvor ofte treffer molekylet veggen?} Etter støtet må molekylet fly over til venstre vegg og tilbake igjen før det treffer høyre vegg på nytt. Det er en strekning $2L$ i $x$-retning, og farten i $x$-retning er $v_x$. Tiden mellom hvert treff er derfor
+\[
+  \Delta t = \frac{2L}{v_x} .
+\]
+Bevegelsen i $y$- og $z$-retning påvirker ikke denne tiden. (Treffer molekylet en av de andre veggene, snur bare $v_y$ eller $v_z$, og $v_x$ er uendret.)
+
+\paragraph{Kraft på veggen.} I kapittel~\ref{Chapter:dynamikk} så vi at kraft er endring i bevegelsesmengde per tid, $F = \Delta p/\Delta t$. Den gjennomsnittlige kraften fra ett molekyl på høyre vegg blir da
+\[
+  F_1 = \frac{2mv_x}{2L/v_x} = \frac{mv_x^2}{L} .
+\]
+
+\section{Alle molekylene sammen}
+
+Molekylene har ulike fartskomponenter $v_{x,1}, v_{x,2}, \ldots, v_{x,N}$. Den samlede kraften på høyre vegg er summen av bidragene fra hvert molekyl:
+\[
+  F = \frac{m}{L}\left(v_{x,1}^2 + v_{x,2}^2 + \cdots + v_{x,N}^2\right) = \frac{Nm\,\overline{v_x^2}}{L} ,
+\]
+der $\overline{v_x^2}$ er gjennomsnittet av $v_x^2$ for alle molekylene. Trykket er kraft per areal, $p = F/A = F/L^2$. Med $L^3 = V$ får vi
+\[
+  p = \frac{Nm\,\overline{v_x^2}}{L^3} = \frac{Nm\,\overline{v_x^2}}{V}
+  \qquad\Longrightarrow\qquad
+  pV = Nm\,\overline{v_x^2} .
+\]
+
+\section{Faktoren \texorpdfstring{$\tfrac{1}{3}$}{1/3}: tre like retninger}
+
+Farten $v$ til et molekyl finner vi med Pytagoras' setning i tre dimensjoner:
+\[
+  v^2 = v_x^2 + v_y^2 + v_z^2 .
+\]
+Ingen retning i gassen er spesiell. I gjennomsnitt beveger molekylene seg like mye i $x$-, $y$- og $z$-retning, så $\overline{v_x^2} = \overline{v_y^2} = \overline{v_z^2}$. Da er
+\[
+  \overline{v^2} = 3\,\overline{v_x^2}
+  \qquad\Longrightarrow\qquad
+  \overline{v_x^2} = \tfrac{1}{3}\,\overline{v^2} ,
+\]
+og
+\[
+  pV = \tfrac{1}{3}\,Nm\,\overline{v^2} .
+\]
+Bare én av de tre retningene dytter på høyre vegg. Det er derfor tredjedelen dukker opp.
+
+\section{Faktoren 2: kinetisk energi}
+
+Den gjennomsnittlige kinetiske energien til et molekyl er $\bar{E}_\text{K} = \tfrac{1}{2}m\overline{v^2}$. Altså er $m\overline{v^2} = 2\bar{E}_\text{K}$, og vi får
+\graabox{$\displaystyle pV = \tfrac{1}{3}\cdot N\cdot 2\bar{E}_\text{K} = \tfrac{2}{3}\,N\bar{E}_\text{K}$}
+
+\merk{Hvor kommer \texorpdfstring{$\tfrac{2}{3}$}{2/3} fra?}{%
+Faktoren er $\tfrac{2}{3} = \tfrac{1}{3}\cdot 2$:
+\begin{itemize}
+  \item $\tfrac{1}{3}$ fordi bare én av de tre retningene ($x$) bidrar til trykket på veggen.
+  \item $2$ fordi kinetisk energi har faktoren $\tfrac{1}{2}$ foran: $m\overline{v^2} = 2\cdot\tfrac{1}{2}m\overline{v^2}$.
+\end{itemize}
+}
+
+\section{Koblingen til temperatur}
+
+Setter vi inn $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$, kansellerer $\tfrac{2}{3}$ og $\tfrac{3}{2}$ hverandre:
+\[
+  pV = \tfrac{2}{3}\cdot N\cdot\tfrac{3}{2}k_\text{B}T = Nk_\text{B}T ,
+\]
+som er tilstandslikningen for idealgass. Historisk gikk man faktisk den andre veien: Tilstandslikningen var kjent fra målinger, og utledningen over viste da at $\bar{E}_\text{K} = \tfrac{3}{2}k_\text{B}T$.
+
+Legg merke til at det bare er \emph{translasjonsenergien}, altså bevegelsen fra sted til sted, som inngår. Rotasjon og vibrasjon i molekylene dytter ikke på veggen. Derfor er det translasjonsenergien som bestemmer trykket, også for gasser med molekyler som består av flere atomer.
+
+\end{document}
