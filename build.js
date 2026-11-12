@@ -5,13 +5,13 @@
 const { spawnSync } = require('child_process');
 const path = require('path');
 
-const kompendiumDir = path.join(__dirname, 'TRES0312 Kompendium');
+const kompendiumDir = path.join(__dirname, 'TRES0312_Kompendium');
 
 console.log('Kompilerer fra:', kompendiumDir);
 
 const result = spawnSync(
   'latexmk',
-  ['-pdf', '-interaction=nonstopmode', 'main.tex'],
+  ['-pdf', '-interaction=nonstopmode', 'KompendiumTRES0312.tex'],
   {
     cwd: kompendiumDir,
     stdio: 'inherit',
